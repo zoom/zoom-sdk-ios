@@ -4,7 +4,7 @@ Due to size limit of Github, please download our MobileRTC.framework from https:
 
 put the MobileRTC.framework inside lib folder, along with bundle. 
 
-Example App using Zoom iOS-RTC-Stack - https://developer.zoom.us/ios
+Example App using the SDK is available inside this repository.
 
 This sample include examples for both Android Studio project and Eclipse project. To use it:
 
