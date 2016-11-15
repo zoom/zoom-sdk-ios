@@ -6,7 +6,7 @@ put the MobileRTC.framework inside lib folder, along with bundle.
 
 Example App using the SDK is available inside this repository.
 
-This sample include examples for both Android Studio project and Eclipse project. To use it:
+to use it: 
 
 Sign up for a free 60 day trial at Zoom developer portal
 Get the SDK key and secret from your account in Zoom portal
