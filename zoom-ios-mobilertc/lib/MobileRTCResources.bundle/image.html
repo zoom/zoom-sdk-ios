@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;">
+<style>
+body {
+    border: 0 none;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    /*position:relative;*/
+}
+#loading-mask {
+    background-color: #000;
+    height: 1024px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1024px;
+    z-index: 20000;
+}
+#image1
+{
+    /*position:relative;*/
+}
+.center {
+    text-align: center;
+}
+</style>
+<script type="text/javascript">
+(function(doc) {    
+     var addEvent = 'addEventListener',
+     type = 'gesturestart',
+     qsa = 'querySelectorAll',
+     scales = [1, 1],
+     meta = qsa in doc ? doc[qsa]('meta[name=viewport]') : [];
+     
+     function fix() {
+     meta.content = 'width=device-width,minimum-scale=' + scales[0] + ',maximum-scale=' + scales[1];
+     doc.removeEventListener(type, fix, true);
+     }
+     
+     if ((meta = meta[meta.length - 1]) && addEvent in doc) {
+     fix();
+     scales = [.25, 3.0];
+     doc[addEvent](type, fix, true);
+     }   
+}(document));
+</script>
+</head>
+<body>
+<div id="loading-mask"></div>
+<div class="center">
+    <img id='image1' src='%@' onload='display();'/>
+</div>
+<script type='text/javascript' >
+function display() {
+    var img = document.getElementById('image1');
+    var imgOrigH = img.offsetHeight;
+    var imgOrigW = img.offsetWidth;
+    var bodyH = window.innerHeight;
+    var bodyW = window.innerWidth;
+    if((imgOrigW / imgOrigH) > (bodyW / bodyH)) {
+        var imgNewHeight = (imgOrigH * bodyW) / imgOrigW;
+        img.style.width = bodyW + 'px';
+        img.style.height = imgNewHeight + 'px';
+        img.style.paddingTop = (bodyH - imgNewHeight) / 2 + 'px';
+        //img.style.top = (bodyH - img.offsetHeight) / 2 + 'px';
+    } else {
+        img.style.height = bodyH + 'px';
+        img.style.width = (imgOrigW * bodyH) / imgOrigH + 'px';
+        //img.style.left = (bodyW - img.offsetWidth) / 2 + 'px';
+    }
+	window.setTimeout(function() {
+		document.getElementById('loading-mask').style.display = 'none';
+	}, 100);
+}
+</script>
+</body>
+</html>
