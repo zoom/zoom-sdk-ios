@@ -1,6 +1,6 @@
 # iOS-MobileRTC-Stack
 
-Due to size limit of Github, please download our MobileRTC.framework from https://app.box.com/s/3eakxhkjuiwz7sr7nqcw36mrzt0d7coq
+this version contains devive-only framework, due to size limit of Github, please download our Mobile RTC-Stack with devive and emulator framework from https://app.box.com/s/lgbb6v6i86e09nuhxxdq2nt6dgl17fhd
 
 put the MobileRTC.framework inside lib folder, along with bundle. 
 
