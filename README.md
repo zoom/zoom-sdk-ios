@@ -14,4 +14,4 @@ Update the API key and secret in the project.
 Build the project.
 If you need assistance, please visit Zoom developer portal (https://zoom.us/developer)
 
-Copyright ©2016 Zoom Video Communications, Inc.
+Copyright ©2016-2017 Zoom Video Communications, Inc.
