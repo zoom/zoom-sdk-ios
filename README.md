@@ -1,6 +1,8 @@
 # iOS-MobileRTC-Stack
 
-This version contains device-only framework, due to size limit of Github. Please download our Mobile RTC-Stack with device and emulator framework from https://app.box.com/s/lgbb6v6i86e09nuhxxdq2nt6dgl17fhd
+Use of this software is subject to important terms and conditions as set forth in the License file
+
+This version contains device-only framework, due to size limit of Github. Please download our Mobile RTC-Stack with device and emulator framework from https://zoom.us/developer/ios/download
 
 put the MobileRTC.framework inside lib folder, along with bundle. 
 
