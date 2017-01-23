@@ -1,6 +1,9 @@
 # iOS-MobileRTC-Stack-with-Device-only-framework
 
-this framework only works on real machine which has smaller size. 
+this version contains devive-only framework, due to size limit of Github, please download our Mobile RTC-Stack with devive and emulator framework from https://app.box.com/s/16ivga6459iyg17e1cdn4l7jjx0tm5ze
+
+put the MobileRTC.framework inside lib folder, along with bundle. 
+
 
 Example App using Zoom iOS-RTC-Stack - https://developer.zoom.us/ios
 
