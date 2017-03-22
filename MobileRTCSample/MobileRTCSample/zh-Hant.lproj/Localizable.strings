@@ -1,0 +1,121 @@
+/*
+ Localizable.strings
+ ZoomSDKSample
+ 
+ Created by Xiaojian Hu on 8/6/14.
+ Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
+ */
+
+"Hello MobileRTC" = "妳好，MobileRTC";
+
+"Settings" = "設置";
+
+"Auto Connect Internet Audio" = "自動連接語音";
+
+"Auto Connect Internet Audio Setting" = "加入會議時自動連接設備語音";
+
+"Always Mute My Microphone" = "麥克風自動靜音";
+
+"Always mute my microphone when joining others' meeting" = "當使用互聯網音頻加入會議時，我的麥克風自動靜音";
+
+"Always Mute My Video" = "不自動打開攝像頭";
+
+"Always mute my video when joining others' meeting" = "當加入會議時不要自動打開我的攝像頭";
+
+"Disable Driving Mode" = "禁用駕駛模式";
+
+"Driving Mode Setting" = "駕駛模式下，揚聲器開啟，視頻關閉，麥克風靜音";
+
+"Invite Participant" = "邀請與會人";
+
+"Disable Call in" = "禁用電話呼入";
+
+"Disable Call Out" = "禁用電話呼出";
+
+"Please join meeting with ID: %@" = "請通過會議ID: %@ 加入會議";
+
+"Meeting URL: %@" = "會議鏈接: %@";
+
+"Hide Meeting Title" = "隱藏會議ID";
+
+"Hide Meeting Leave" = "隱藏會議離開功能";
+
+"Hide Meeting Audio" = "隱藏會議音頻功能";
+
+"Hide Meeting Video" = "隱藏會議視頻功能";
+
+"Hide Meeting Invite" = "隱藏會議邀請功能";
+
+"Hide Meeting Participant" = "隱藏會議參會人功能";
+
+"Hide Meeting Share" = "隱藏會議共享功能";
+
+"Hide Meeting TopBar" = "隱藏會議頂欄";
+
+"Hide Meeting BottomBar" = "隱藏會議底欄";
+
+"SDK authentication failed, error code: %zd" = "SDK授權失敗，錯誤碼: %zd";
+
+"OK" = "確定";
+
+"Retry" = "重試";
+
+"Cancel" = "取消";
+
+"Pause/Resume" = "暫停/重啟";
+
+"Meet Now" = "召開會議";
+
+"Join a Meeting" = "加入會議";
+
+"Please input the meeting number" = "請輸入您的會議號";
+
+"Start a Meeting" = "視頻會議";
+
+"Start or join a video meeting on the go" = "方便快捷的召開或加入視頻會議";
+
+"Share Your Content" = "屏幕共享";
+
+"They see what you see" = "身臨其境的逼真體驗";
+
+"Message Your Team" = "團隊信息分享";
+
+"Send texts, voice messages, files and images" = "分享文字，語音消息，文件和圖片";
+
+"Get Zooming!" = "開啟會議的精彩之旅";
+
+"Work anywhere, with anyone, on any device" = "無論何時何地，協作無處不在";
+
+"Select Language" = "選擇語言";
+
+"Waiting..." = "Sample 等待中...";
+
+"Zoom" = "MobileRTC Sample";
+
+"Leave" = "退出";
+
+"Leave Meeting" = "退出會議";
+
+"Select Meeting Type" = "請選擇會議類型";
+
+"App Share Meeting" = "App Share會議";
+
+"Zoom Meeting" = "Zoom會議";
+
+"Unable to access mic" = "麥克風被禁用";
+
+"Unable to access camera" = "相機被禁用";
+
+"Mic Privacy Settings" = "請在設備的“設置”-“隱私”-“麥克風”中允許MobileRTC訪問您的麥克風。";
+
+"Camera Privacy Settings" = "請在設備的“設置”-“隱私”-“相機”中允許MobileRTC訪問您的相機。";
+
+"Photos Privacy Settings" = "請在設備的“設置”-“隱私”-“照片”中允許MobileRTC訪問您的照片。";
+
+"Photos Location Services" = "請在設備的“設置”-“隱私”-“定位服務”中允許MobileRTC訪問您的定位服務。";
+
+"Failed to connect to Zoom video conferencing server" = "無法連接會議服務器，更多信息請訪問：https://support.zoom.us/hc/en-us/articles/201362683";
+
+"Attendee Free Meeting Reminder" = "您的免費會議將於10分鐘後結束, 感謝您選擇使用MobileRTC！";
+
+"Sign in with the specified account to join webinar" = "您需要登入指定的MobileRTC帳號才能加入此網路研討會，請聯絡會議主持人獲得更多詳細資訊。";
