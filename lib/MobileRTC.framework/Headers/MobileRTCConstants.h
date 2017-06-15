@@ -122,3 +122,11 @@ typedef enum {
     DialOutStatus_BlockHighRate,  //The price of callout phone number is too expensive which has been blocked by system
     DialOutStatus_BlockTooFrequent,  //Invite by phone with pressONE required, but invitee frequently does NOT press one then timeout
 }DialOutStatus;
+
+typedef enum {
+    H323CallOutStatus_OK        = 0,
+    H323CallOutStatus_Calling,
+    H323CallOutStatus_Busy,
+    H323CallOutStatus_Failed,
+}H323CallOutStatus;
+

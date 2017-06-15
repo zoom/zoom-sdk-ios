@@ -23,6 +23,11 @@
 - (void)customizeMeetingTitle:(NSString*)title;
 
 /**
+ * This method is used to check whether Dial out is supported in meeting.
+ */
+- (BOOL)isDialOutSupported;
+
+/**
  * This method is used to check whether there exists a dial out in process.
  */
 - (BOOL)isDialOutInProgress;
@@ -42,6 +47,11 @@
 - (BOOL)cancelDialOut:(BOOL)isCallMe;
 
 /**
+ * This method is used to check whether Call Room Device is supported in meeting.
+ */
+- (BOOL)isCallRoomDeviceSupported;
+
+/**
  * This method is used to check whether there exists a call room device in process.
  */
 - (BOOL)isCallingRoomDevice;
@@ -52,7 +62,23 @@
 - (BOOL)cancelCallRoomDevice;
 
 /**
- * This method will return an array of room devices.
+ * This method will return an array of IP Addresses for Call in a room device.
+ *
+ * *Note*: return nil, if there does not exist any IP Address.
+ */
+- (NSArray*)getIPAddressList;
+
+/**
+ * This method will return a meeting password for call in a room device.
+ *
+ * *Note*: return nil, means that user can call in a room device directly.
+ */
+- (NSString*)getH323MeetingPassword;
+
+/**
+ * This method will return an array of room devices for call out a room device.
+ *
+ * *Note*: return nil, if there does not exist any room device.
  */
 - (NSArray*)getRoomDeviceList;
 

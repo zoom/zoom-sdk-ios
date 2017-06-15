@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample Waiting...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "Exit";
 
 "Leave Meeting" = "Exit Meeting";
@@ -102,11 +100,41 @@
 
 "Zoom Meeting" = "Zoom Meeting";
 
-"Unable to access mic" = "Unable to access microphone";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "Unable to access camera";
+"Please join Zoom meeting in progress" = "Treten Sie bitte einer stattfindenden MobileRTC-Meeting bei";
 
-"Mic Privacy Settings" = "Allow MobileRTC to access your microphone from device menu: \"Settings\" - \"Privacy\" - \"Microphone\".";
+"Photos Privacy Settings" = "MobileRTC hat keinen Zugriff auf Ihre Fotos. Bitte anhand der Foto-Einstellungen den Zugriff freigeben.";
 
-"Camera Privacy Settings" = "Allow MobileRTC to access your camera from device menu: \"Settings\" - \"Privacy\" - \"Camera\".";
+"Photos Location Services" = "MobileRTC hat keinen Zugriff auf Ihren Foto-Speicher. Bitte aktivieren Sie in Lokalisierungsdiente den Zugriff.";
 
+"Dial Telephone Alert Message" = "Möchten Sie sich automatisch in die Meeting einwählen?\n\nNachdem Sie sich in die Meeting eingewählt haben, kehren Sie bitte zu MobileRTC zurück.";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC die Identität dieses Servers nicht überprüfen. Möchten Sie trotzdem fortfahren?";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC kann diese Serveridentität nicht verifizieren. Bitte versuchen Sie später noch einmal.";
+
+"Mic Privacy Settings" = "Diese App hat keinen Zugriff auf Ihr Mikrofon und andere können Ihre Stimme nicht hören. Sie können den Zugriff anhand der Privatsphären-Einstellungen freigeben.";
+
+"Camera Privacy Settings" = "Diese Anwendung hat keinen Zugriff auf Ihre Kamera. Sie können den Zugriff anhand der Privatsphären-Einstellungen freigeben.";
+
+"Contacts Privacy Settings" = "MobileRTC hat keinen Zugriff auf Ihre Kontakte. Aktivieren Sie bitte den Zugriff anhand der Privatsphäre-Einstellungen.";
+
+"Failed to connect to Zoom video conferencing server" = "Die Verbindung zum MobileRTC Videokonferenz-Server ist fehlgeschlagen. Falls Sie sich hinter einer Firewall befinden, bitten Sie Ihren IT-Administrator, \"*.zoom.us\" freizugeben. Für weitere Informationen, besuchen Sie bitte: https://support.zoom.us/hc/en-us/articles/201362683";
+
+"Attendee Free Meeting Reminder" = "Diese kostenfreie Meeting endet in 10 Minuten. Danke dafür, dass Sie sich für MobileRTC entschieden!";
+
+"User unsupport annotation join tip" = "Da die Annotationsfunktion deaktiviert ist, müssen Ihre Teilnehmer ein Upgrade auf die neueste Version von MobileRTC vornehmen, um ihren Bildschirm zu teilen";
+
+"Zoom will display closed captioning on main video when available" = "Sind Untertitel verfügbar, werden diese von MobileRTC im Hauptvideo angezeigt";
+
+"Sign in with the specified account to join webinar" = "Sie müssen angemeldet sein, um mit dem spezifiziertem MobileRTC-Konto an diesem Webinar teilzunehmen. Bitte wenden Sie sich an den Host für weitere Informationen.";
+
+"Search for Zoom Rooms" = "MobileRTC Rooms durchsuchen";
+
+"No Zoom Rooms" = "Keine MobileRTC Rooms";
+
+"Select Zoom Rooms" = "MobileRTC Rooms auswählen";
+
+"Invite Zoom Rooms" = "MobileRTC Rooms einladen";

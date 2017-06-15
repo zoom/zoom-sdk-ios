@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample Waiting...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "Exit";
 
 "Leave Meeting" = "Exit Meeting";
@@ -102,11 +100,41 @@
 
 "Zoom Meeting" = "Zoom Meeting";
 
-"Unable to access mic" = "Unable to access microphone";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "Unable to access camera";
+"Please join Zoom meeting in progress" = "進行中の MobileRTC ミーティングに参加してください";
 
-"Mic Privacy Settings" = "Allow MobileRTC to access your microphone from device menu: \"Settings\" - \"Privacy\" - \"Microphone\".";
+"Photos Privacy Settings" = "MobileRTC からあなたの電話にアクセスできません。写真の設定でアクセスを有効にしてください。";
 
-"Camera Privacy Settings" = "Allow MobileRTC to access your camera from device menu: \"Settings\" - \"Privacy\" - \"Camera\".";
+"Photos Location Services" = "MobileRTC からあなたの写真の場所にアクセスできません。ロケーション サービスでアクセスを有効にしてください。";
 
+"Dial Telephone Alert Message" = "ミーティングに自動的にダイヤルしますか?\n\n、ミーティングにダイヤルした後は MobileRTC に戻ってください。";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC では、このサーバー ID を確認できません。続行しますか?";
+
+"Zoom cannot verify this server identity. Please try again later." = "ズームは、このサーバIDを確認できません。後ほどもう一度お試しください。";
+
+"Mic Privacy Settings" = "このアプリはあなたのマイクにアクセスできないため、他のユーザーにはあなたの声が聞こえません。プライバシー設定でアクセスを有効にできます。";
+
+"Camera Privacy Settings" = "このアプリはあなたのカメラにアクセスできません。プライバシー設定でアクセスを有効にできます。";
+
+"Contacts Privacy Settings" = "MobileRTC はあなたの連絡にアクセスできません。プライバシーの設定でアクセスを有効にしてください。";
+
+"Failed to connect to Zoom video conferencing server" = "MobileRTC ビデオ会議サーバーに接続できませんでした。ファイアウォールを利用している場合は、IT 管理者に \*.zoom.us\ を許可するよう依頼してください。詳細については、https://support.zoom.us/hc/en-us/articles/201362683 を参照してください。";
+
+"Attendee Free Meeting Reminder" = "この無料ミーティングはあと 10 分で終了します。MobileRTC をお選びいただきありがとうございます。";
+
+"User unsupport annotation join tip" = "注釈機能がオフであるため、参加者と画面を共有するにはMobileRTCの最新バージョンが必要です";
+
+"Zoom will display closed captioning on main video when available" = "字幕が利用できる場合、MobileRTCはメイン映像に字幕を表示します";
+
+"Sign in with the specified account to join webinar" = "この Web セミナーに参加するには、指定された MobileRTC アカウントでサイン インする必要があります。詳細については、ホストにお問い合わせください。";
+
+"Search for Zoom Rooms" = "ズームルームから検索";
+
+"No Zoom Rooms" = "MobileRTCルームがありません";
+
+"Select Zoom Rooms" = "MobileRTCルーム選択";
+
+"Invite Zoom Rooms" = "MobileRTCルームを招待";

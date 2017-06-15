@@ -94,8 +94,8 @@
 
 - (void)onDone:(id)sender
 {
-    BOOL isNoAudio = [[[MobileRTC sharedRTC] getMeetingService] isNoMeetingAudio];
-    [[[MobileRTC sharedRTC] getMeetingService] pauseMeetingAudio:!isNoAudio];
+    BOOL isNoAudio = ([[[MobileRTC sharedRTC] getMeetingService] myAudioType] == MobileRTCAudioType_None);
+    [[[MobileRTC sharedRTC] getMeetingService] connectMyAudio:isNoAudio];
 }
 
 @end

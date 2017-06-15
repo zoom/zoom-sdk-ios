@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample Waiting...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "Exit";
 
 "Leave Meeting" = "Exit Meeting";
@@ -102,10 +100,41 @@
 
 "Zoom Meeting" = "Zoom Meeting";
 
-"Unable to access mic" = "Unable to access microphone";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "Unable to access camera";
+"Please join Zoom meeting in progress" = "Favor entrar a una reunión de MobileRTC en curso";
 
-"Mic Privacy Settings" = "Allow MobileRTC to access your microphone from device menu: \"Settings\" - \"Privacy\" - \"Microphone\".";
+"Photos Privacy Settings" = "MobileRTC no tiene acceso a sus fotos. Habilite el acceso en Configuración de fotos.";
 
-"Camera Privacy Settings" = "Allow MobileRTC to access your camera from device menu: \"Settings\" - \"Privacy\" - \"Camera\".";
+"Photos Location Services" = "MobileRTC no tiene acceso a la ubicación de sus fotos. Habilite el acceso en Servicios de localización.";
+
+"Dial Telephone Alert Message" = "¿Desea acceder a la reunión marcando de forma automática?\n\nDespués de marcar a la reunión, por favor regrese a MobileRTC";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC no puede verificar la identidad de este servidor. ¿Desea continuar de cualquier modo?";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC no puede verificar la identidad de este servidor. Intente de nuevo más tarde.";
+
+"Mic Privacy Settings" = "Esta aplicación no tiene acceso a su micrófono y los demás no pueden oír su voz. Puede habilitar el acceso en Configuración de privacidad.";
+
+"Camera Privacy Settings" = "Esta aplicación no tiene acceso a su cámara. Puede habilitar el acceso en Configuración de privacidad.";
+
+"Contacts Privacy Settings" = "MobileRTC no tiene acceso a sus contactos. Habilite el acceso en Configuración de privacidad.";
+
+"Failed to connect to Zoom video conferencing server" = "No se pudo conectar al servidor de videoconferencias de MobileRTC. Si usted tiene un firewall de protección, pídale a su administrador de informática que autorice a \"*.zoom.us\".  Para obtener más información, visite: https://support.zoom.us/hc/en-us/articles/201362683";
+
+"Attendee Free Meeting Reminder" = "Esta reunión gratuita terminará en 10 minutos. ¡Gracias por elegir a MobileRTC!";
+
+"User unsupport annotation join tip" = "Debido a que las notificaciones están desactivadas, sus participantes necesitan actualizar la última versión de MobileRTC para compartir sus pantallas";
+
+"Zoom will display closed captioning on main video when available" = "Cuando haya subtítulos, MobileRTC los mostrará en el video principal";
+
+"Sign in with the specified account to join webinar" = "Es necesario haber iniciado sesión con la cuenta MobileRTC especificada para entrar a este seminario web. Póngase en contacto con el anfitrión para obtener más información.";
+
+"Search for Zoom Rooms" = "Búsqueda de sesiones de MobileRTC";
+
+"No Zoom Rooms" = "Sin MobileRTC Rooms";
+
+"Select Zoom Rooms" = "Seleccionar MobileRTC Rooms";
+
+"Invite Zoom Rooms" = "Invitar a MobileRTC Rooms";

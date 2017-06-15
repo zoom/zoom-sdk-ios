@@ -7,14 +7,7 @@
 //
 #import <UIKit/UIKit.h>
 
-//! Project version number for MobileRTC.
-FOUNDATION_EXPORT double MobileRTCVersionNumber;
-
-//! Project version string for MobileRTC.
-FOUNDATION_EXPORT const unsigned char MobileRTCVersionString[];
-
 // In this header, you should import all the public headers of your framework using statements like #import <MobileRTC/PublicHeader.h>
-
 
 #import <Foundation/Foundation.h>
 
@@ -59,6 +52,7 @@ FOUNDATION_EXPORT const unsigned char MobileRTCVersionString[];
 @interface MobileRTC : NSObject
 {
     NSString               *_mobileRTCDomain;
+    NSString               *_mobileRTCResPath;
     MobileRTCMeetingService  *_meetingService;
     MobileRTCMeetingSettings *_meetingSettings;
     
@@ -66,7 +60,8 @@ FOUNDATION_EXPORT const unsigned char MobileRTCVersionString[];
     MobileRTCPremeetingService *_premeetingService;
 }
 
-@property (retain, nonatomic) NSString *mobileRTCDomain;
+@property (retain, nonatomic, readonly) NSString *mobileRTCDomain;
+@property (retain, nonatomic, readonly) NSString *mobileRTCResPath;
 
 /**
  * Returns the MobileRTC default client
@@ -87,8 +82,18 @@ FOUNDATION_EXPORT const unsigned char MobileRTCVersionString[];
  * @param domain A domain which used as start/join zoom meeting
  *
  * *Note*: the domain should not include protocol "https" or "http", the format is just like "zoom.us" or "www.zoom.us".
+ * *Note*: the MobileRTC domain should be set while initializing MobileRTC.
  */
 - (void)setMobileRTCDomain:(NSString*)domain;
+
+/**
+ * Sets the MobileRTC resource bundle path
+ *
+ * @param path the path of MobileRTC Resources bundle
+ *
+ * *Note*: This method is optional, If not call this method, MobileRTCResources.bundle should be located in main bundle; If call this method, the MobileRTC Resources path should be set while initializing MobileRTC.
+ */
+- (void)setMobileRTCResPath:(NSString *)path;
 
 /**
  * Get the MobileRTC client root navigation controller
@@ -105,6 +110,11 @@ FOUNDATION_EXPORT const unsigned char MobileRTCVersionString[];
  * *Note*: This method is optional, If the window's rootViewController of the app is a UINavigationController, you can call this method, or just ignore it.
  */
 - (void)setMobileRTCRootController:(UINavigationController*)navController;
+
+/**
+ * Returns the MobileRTC version
+ */
+- (NSString*)mobileRTCVersion;
 
 /**
  * Returns the MobileRTC default Auth Service

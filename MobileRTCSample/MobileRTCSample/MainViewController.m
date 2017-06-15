@@ -22,7 +22,7 @@
 #define kSDKUserName    @""
 #define kSDKUserToken   @""
 #define kSDKMeetNumber  @""
-//the following parameters are optional, just for special customer
+//the following parameters are optional, just for login user
 #define kParticipantID  @""
 #define kWebinarToken   @""
 
@@ -365,14 +365,14 @@
         
 //        //For login user start scheduled meeting, user type can be ignored
 //        NSDictionary *paramDict = @{
-//                                    //kMeetingParam_UserType:@(ZoomSDKUserType_ZoomUser),
+//                                    //kMeetingParam_UserType:@(MobileRTCUserType_ZoomUser),
 //                                    kMeetingParam_MeetingNumber:kSDKMeetNumber,
 //                                    //kMeetingParam_IsAppShare:@(YES)
 //                                    };
 //
 //        //For login user start instant meeting, user type can be ignored
 //        NSDictionary *paramDict = @{
-//                                    //kMeetingParam_UserType:@(ZoomSDKUserType_ZoomUser),
+//                                    //kMeetingParam_UserType:@(MobileRTCUserType_ZoomUser),
 //                                    //kMeetingParam_IsAppShare:@(YES)
 //                                    };
         
@@ -569,7 +569,7 @@
         {
             UIViewController *vc = [UIViewController new];
             
-            NSString *meetingID = [ZoomSDKInviteHelper sharedInstance].meetingID;
+            NSString *meetingID = [MobileRTCInviteHelper sharedInstance].meetingID;
             vc.title = meetingID;
             
             UIBarButtonItem *leaveItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Leave", @"") style:UIBarButtonItemStylePlain target:self action:@selector(onLeave:)];
@@ -633,10 +633,7 @@
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     NSArray *users = [ms getInMeetingUserList];
-    NSLog(@"In Meeting users:%zd", users.count);
-
-    MobileRTCMeetingUserInfo *myself = [ms getMyUserInfo];
-    NSLog(@"In Meeting myself:%@", myself);
+    NSLog(@"In Meeting users:%@", users);
 }
 #endif
 
@@ -648,7 +645,7 @@
     NSLog(@"onSendPairingCodeStateChanged %zd", state);
 }
 
-- (void)onCallRoomDeviceStateChanged:(NSUInteger)state
+- (void)onCallRoomDeviceStateChanged:(H323CallOutStatus)state
 {
     NSLog(@"onCallRoomDeviceStateChanged %zd", state);
 }

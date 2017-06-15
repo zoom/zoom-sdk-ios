@@ -30,18 +30,11 @@
 - (BOOL)isMeetingLocked;
 
 /**
- * This method is used to tell the client whether the meeting audio existed or not.
+ * This method is used to tell whether the screen share is locked by host or not.
  *
- * @return YES if the meeting audio does not exist.
+ * @return YES, the screen share has been locked by host.
  */
-- (BOOL)isNoMeetingAudio;
-
-/**
- * This method is used to pause/resume audio in the meeting.
- *
- * @param pause, if YES to pause audio; if NO to resume audio.
- */
-- (BOOL)pauseMeetingAudio:(BOOL)pause;
+- (BOOL)isShareLocked;
 
 /**
  * This method is used to tell the client whether cloud record is enabled.
@@ -79,14 +72,24 @@
 - (void)turnOnCMR:(BOOL)on;
 
 /**
- * This method is used to get audio type of myself in meeting.
+ * This method is used to get my audio type in meeting.
  *
- * @return 0:voip; 1:telephony; 2:none.
+ * @return my audio type.
+ * MobileRTCAudioType_VoIP: VoIP audio
+ * MobileRTCAudioType_Telephony: Telephony audio
+ * MobileRTCAudioType_None: None audio
  */
 - (MobileRTCAudioType)myAudioType;
 
 /**
- * This method is used to retrieve user's auido output.
+ * This method is used to connect/disconnect my audio in the meeting.
+ *
+ * @param on, if YES to connect audio; if NO to disconnect audio.
+ */
+- (BOOL)connectMyAudio:(BOOL)on;
+
+/**
+ * This method is used to retrieve my auido output.
  *
  * @return the dscription of audio output.
  *
@@ -96,7 +99,7 @@
  * "Headphones"
  * "Bluetooth"
  */
-- (NSString*)currentAudioOutputDescription;
+- (NSString*)myAudioOutputDescription;
 
 /**
  * This method is used to check my auido is muted or not.
@@ -168,58 +171,48 @@
  *
  * @param inputName, the display name which will be used in meeting.
  * @param userId, user's ID in meeting.
+ *
+ * *Note*: Non-Host user can change self name, Host can change other attendee's name.
  */
 - (BOOL)changeName:(NSString*)inputName withUserID:(NSUInteger)userId;
 
 /**
- * This method is used to tell whether the screen share is locked by host or not.
- *
- * @return YES, the screen share has been locked by host.
- */
-- (BOOL)isShareLocked;
-
-/**
  * This method is used to get all the users in the meeting.
  *
- * @return user list array, each user is a MobileRTCMeetingUserInfo object.
+ * @return user id array, each user id is a NSNumber object.
  */
 - (NSArray*)getInMeetingUserList;
 
 /**
- * This method is used to get my user id in the meeting.
+ * This method is used to get user info in the meeting.
  *
- * @return my user id.
+ * @return user info, a MobileRTCMeetingUserInfo object.
  */
-- (NSUInteger)getMyUserID;
+- (MobileRTCMeetingUserInfo*)userInfoByID:(NSUInteger)userId;
 
 /**
- * This method is used to get my user info in the meeting.
- *
- * @return my user info, a MobileRTCMeetingUserInfo object.
- */
-- (MobileRTCMeetingUserInfo*)getMyUserInfo;
-
-/**
- * This method is used to check the user's video pinned or not.
+ * This method is used to check the user's video spotlighted or not.
  *
  * @param userId, the user id in meeting.
  */
-- (BOOL)isUserVideoPinned:(NSUInteger)userId;
+- (BOOL)isUserSpotlighted:(NSUInteger)userId;
 
 /**
- * This method is used to pin the user's video or not.
+ * This method is used to spotlight the user's video or not.
  *
- * @param on, if YES to pin user's video; if NO to cancel pin user's video.
+ * @param on, if YES to spotlight user's video; if NO to cancel spotlight user's video.
  * @param userId, the user id in meeting.
+ *
+ * *Note*: only meeting host can run this function.
  */
-- (BOOL)pinVideo:(BOOL)on withUser:(NSUInteger)userId;
+- (BOOL)spotlightVideo:(BOOL)on withUser:(NSUInteger)userId;
 
 /**
  * This method is used to assign host role to another user in the meeting.
  *
  * @param userId, the user id in meeting.
  *
- * *Note*: the user should not be myself, and can assign the host role .
+ * *Note*: only meeting host can run this function, and userId should not be myself.
  */
 - (BOOL)makeHost:(NSUInteger)userId;
 
@@ -228,6 +221,7 @@
  *
  * @param userId, the user id in meeting.
  *
+ * *Note*: only meeting host can run this function, and userId should not be myself.
  */
 - (BOOL)removeUser:(NSUInteger)userId;
 
@@ -246,11 +240,18 @@
 - (BOOL)isPlayChimeOn;
 
 /**
- * This method is used to get active video user id in the meeting.
+ * This method is used to get my user id in the meeting.
  *
- * @return active video user id.
+ * @return my user id.
  */
-- (NSUInteger)activeVideoUserID;
+- (NSUInteger)myselfUserID;
+
+/**
+ * This method is used to get active user id in the meeting.
+ *
+ * @return active user id.
+ */
+- (NSUInteger)activeUserID;
 
 /**
  * This method is used to get active share user id in the meeting.

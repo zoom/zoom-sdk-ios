@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample 等待中...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "退出";
 
 "Leave Meeting" = "退出会议";
@@ -102,20 +100,41 @@
 
 "Zoom Meeting" = "Zoom会议";
 
-"Unable to access mic" = "麦克风被禁用";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "相机被禁用";
+"Please join Zoom meeting in progress" = "请加入进行中的MobileRTC会议";
 
-"Mic Privacy Settings" = "请在设备的“设置”-“隐私”-“麦克风”中允许MobileRTC访问您的麦克风。";
-
-"Camera Privacy Settings" = "请在设备的“设置”-“隐私”-“相机”中允许MobileRTC访问您的相机。";
-
-"Photos Privacy Settings" = "请在设备的“设置”-“隐私”-“照片”中允许MobileRTC访问您的照片。";
+"Photos Privacy Settings" = "请在设备的“设置”-“隐私”-“照片”中允许MobileRTC访问您的照片";
 
 "Photos Location Services" = "请在设备的“设置”-“隐私”-“定位服务”中允许MobileRTC访问您的定位服务";
+
+"Dial Telephone Alert Message" = "您是否想自动拨入会议？\n\n在拨入会议后，请返回MobileRTC";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC无法验证服务器身份，您是否想继续？";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC无法验证服务器身份，请稍后重试";
+
+"Mic Privacy Settings" = "请在设备的“设置”-“隐私”-“麦克风”中允许MobileRTC访问您的麦克风";
+
+"Camera Privacy Settings" = "请在设备的“设置”-“隐私”-“相机”中允许MobileRTC访问您的相机";
+
+"Contacts Privacy Settings" = "请在设备的“设置”-“隐私”-“通讯录”中允许MobileRTC访问您的通讯录";
 
 "Failed to connect to Zoom video conferencing server" = "无法连接会议服务器，更多信息请访问：https://support.zoom.us/hc/en-us/articles/201362683";
 
 "Attendee Free Meeting Reminder" = "您的免费会议将在10分钟后结束，感谢您选择MobileRTC！";
 
-"Sign in with the specified account to join webinar" = "您需要登录指定的账号才能加入此次网络研讨会。请联系会议主持人以获取更多详细信息。";
+"User unsupport annotation join tip" = "因为注释功能被禁止，所以您的与会者需要更新到最新的版本才能共享他们的屏幕";
+
+"Zoom will display closed captioning on main video when available" = "当字幕可用时他会被显示在主视频上";
+
+"Sign in with the specified account to join webinar" = "您需要登录指定的账号才能加入此次网络研讨会，请联系会议主持人以获取更多详细信息";
+
+"Search for Zoom Rooms" = "搜索会议室";
+
+"No Zoom Rooms" = "无会议室";
+
+"Select Zoom Rooms" = "选择会议室";
+
+"Invite Zoom Rooms" = "邀请会议室";

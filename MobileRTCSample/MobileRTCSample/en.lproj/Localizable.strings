@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample Waiting...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "Exit";
 
 "Leave Meeting" = "Exit Meeting";
@@ -102,22 +100,41 @@
 
 "Zoom Meeting" = "Zoom Meeting";
 
-"Unable to access mic" = "Unable to access microphone";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "Unable to access camera";
-
-"Mic Privacy Settings" = "Allow MobileRTC to access your microphone from device menu: \"Settings\" - \"Privacy\" - \"Microphone\".";
-
-"Camera Privacy Settings" = "Allow MobileRTC to access your camera from device menu: \"Settings\" - \"Privacy\" - \"Camera\".";
+"Please join Zoom meeting in progress" = "Please join a MobileRTC meeting in progress";
 
 "Photos Privacy Settings" = "Allow MobileRTC to access your photos from device menu: \"Settings\" - \"Privacy\" - \"Photos\".";
 
 "Photos Location Services" = "Allow MobileRTC to access your photos location from device menu: \"Settings\" - \"Privacy\" - \"Location Services\".";
 
-"Failed to connect to Zoom video conferencing server" = "Failed to connect to video conferencing server. For more information, please visit: https://support.zoom.us/hc/en-us/articles/201362683.";
+"Dial Telephone Alert Message" = "Would you like to dial into the meeting automatically?\n\nAfter dialing into the meeting, please return to MobileRTC";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC cannot verify this server identity. Would you like to continue anyway?";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC cannot verify this server identity. Please try again later.";
+
+"Mic Privacy Settings" = "Allow MobileRTC to access your microphone from device menu: \"Settings\" - \"Privacy\" - \"Microphone\".";
+
+"Camera Privacy Settings" = "Allow MobileRTC to access your camera from device menu: \"Settings\" - \"Privacy\" - \"Camera\".";
+
+"Contacts Privacy Settings" = "Allow MobileRTC to access your contacts from device menu: \"Settings\" - \"Privacy\" - \"Contacts\"";
+
+"Failed to connect to Zoom video conferencing server" = "Failed to connect to MobileRTC video conferencing server. If you are behind a firewall, please ask your IT administrator to allow \"*.zoom.us\".  For more information, please visit: https://support.zoom.us/hc/en-us/articles/201362683";
 
 "Attendee Free Meeting Reminder" = "This free meeting will end in 10 minutes. Thank you for choosing MobileRTC!";
 
+"User unsupport annotation join tip" = "Because annotation is disabled, your participants need to upgrade to the latest version of MobileRTC to share their screen";
+
+"Zoom will display closed captioning on main video when available" = "When closed captioning is available, MobileRTC will display it on the main video";
+
 "Sign in with the specified account to join webinar" = "You need to be signed in with the specified MobileRTC account to join this webinar. Please contact the host for more information.";
 
+"Search for Zoom Rooms" = "Search MobileRTC Rooms";
 
+"No Zoom Rooms" = "No MobileRTC Rooms";
+
+"Select Zoom Rooms" = "Select MobileRTC Rooms";
+
+"Invite Zoom Rooms" = "Invite MobileRTC Rooms";

@@ -90,8 +90,6 @@
 
 "Waiting..." = "Sample 等待中...";
 
-"Zoom" = "MobileRTC Sample";
-
 "Leave" = "退出";
 
 "Leave Meeting" = "退出會議";
@@ -100,22 +98,43 @@
 
 "App Share Meeting" = "App Share會議";
 
-"Zoom Meeting" = "Zoom會議";
+"Zoom Meeting" = "Zoom Meeting";
 
-"Unable to access mic" = "麥克風被禁用";
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
 
-"Unable to access camera" = "相機被禁用";
+"Please join Zoom meeting in progress" = "請加入進行中的MobileRTC會議";
 
-"Mic Privacy Settings" = "請在設備的“設置”-“隱私”-“麥克風”中允許MobileRTC訪問您的麥克風。";
+"Photos Privacy Settings" = "請在設備的“設置”-“隱私”-“照片”中允許MobileRTC訪問您的照片";
 
-"Camera Privacy Settings" = "請在設備的“設置”-“隱私”-“相機”中允許MobileRTC訪問您的相機。";
+"Photos Location Services" = "請在設備的“設置”-“隱私”-“定位服務”中允許MobileRTC訪問您的定位服務";
 
-"Photos Privacy Settings" = "請在設備的“設置”-“隱私”-“照片”中允許MobileRTC訪問您的照片。";
+"Dial Telephone Alert Message" = "您想要自動撥號加入會議嗎？\n\n於撥號進入會議後, 請返回MobileRTC畫面";
 
-"Photos Location Services" = "請在設備的“設置”-“隱私”-“定位服務”中允許MobileRTC訪問您的定位服務。";
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC無法驗證此伺服器身份，請問您是否還是要繼續？";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC無法驗證此伺服器身份，請稍後重試";
+
+"Mic Privacy Settings" = "請在設備的“設置”-“隱私”-“麥克風”中允許MobileRTC訪問您的麥克風";
+
+"Camera Privacy Settings" = "請在設備的“設置”-“隱私”-“相機”中允許MobileRTC訪問您的相機";
+
+"Contacts Privacy Settings" = "請在設備的“設置”-“隱私”-“通訊錄”中允許MobileRTC訪問您的通訊錄";
 
 "Failed to connect to Zoom video conferencing server" = "無法連接會議服務器，更多信息請訪問：https://support.zoom.us/hc/en-us/articles/201362683";
 
 "Attendee Free Meeting Reminder" = "您的免費會議將於10分鐘後結束, 感謝您選擇使用MobileRTC！";
 
-"Sign in with the specified account to join webinar" = "您需要登入指定的MobileRTC帳號才能加入此網路研討會，請聯絡會議主持人獲得更多詳細資訊。";
+"User unsupport annotation join tip" = "因為註記功能被禁止，所以您的與會者需要更新到最新的版本才能共享他們的螢幕";
+
+"Zoom will display closed captioning on main video when available" = "當字幕可用時他會被顯示在主視訊上";
+
+"Sign in with the specified account to join webinar" = "您需要登入指定的MobileRTC帳號才能加入此網路研討會，請聯絡會議主持人獲得更多詳細資訊";
+
+"Search for Zoom Rooms" = "搜索會議室";
+
+"No Zoom Rooms" = "無會議室";
+
+"Select Zoom Rooms" = "選擇會議室";
+
+"Invite Zoom Rooms" = "邀請會議室";

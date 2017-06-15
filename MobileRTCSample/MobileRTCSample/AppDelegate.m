@@ -35,12 +35,18 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    //1. Set ZoomSDK Domain
+    NSLog(@"MobileRTC Version: %@", [[MobileRTC sharedRTC] mobileRTCVersion]);
+    
+    //1. Set MobileRTC Domain
     [[MobileRTC sharedRTC] setMobileRTCDomain:kZoomSDKDomain];
-    //2. Set Root Navigation Controller
+//    //2. Set MobileRTC Resource Bundle path
+//    //Note: This step is optional, If MobileRTCResources.bundle is included in other bundle/framework, use this method to set the path of MobileRTCResources.bundle, or just ignore this step
+//    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
+//    [[MobileRTC sharedRTC] setMobileRTCResPath:bundlePath];
+    //3. Set Root Navigation Controller
     //Note: This step is optional, If app’s rootViewController is not a UINavigationController, just ignore this step.
-//    [[MobileRTC sharedRTC] setMobileRTCRootController:navVC];
-    //3. ZoomSDK Authorize
+    [[MobileRTC sharedRTC] setMobileRTCRootController:navVC];
+    //4. ZoomSDK Authorize
     [self sdkAuth];
     
     return YES;

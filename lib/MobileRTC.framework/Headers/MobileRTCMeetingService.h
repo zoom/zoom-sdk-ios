@@ -208,7 +208,7 @@ extern NSString* kMeetingParam_NoVideo;
 /**
  * Designated for Send pairing code state change.
  *
- * @param state tell client the status of sending pairing code to Room Device.
+ * @param state, if 0 means pairing success, or means that call in failed.
  *
  */
 - (void)onSendPairingCodeStateChanged:(NSUInteger)state;
@@ -219,7 +219,7 @@ extern NSString* kMeetingParam_NoVideo;
  * @param state tell client the status of calling Room Device.
  *
  */
-- (void)onCallRoomDeviceStateChanged:(NSUInteger)state;
+- (void)onCallRoomDeviceStateChanged:(H323CallOutStatus)state;
 
 #pragma mark - For User State Delegate
 
@@ -254,18 +254,20 @@ extern NSString* kMeetingParam_NoVideo;
 - (void)inMeetingUserUpdated;
 
 /**
- * Designated for notify user pin video change.
+ * Designated for notify that spotlight user video change.
  *
- * @param userID, the pinned user id.
+ * @param on, if YES means spotlighted; if NO means unspotlighted.
  *
  */
-- (void)onPinVideoChange:(NSUInteger)userID;
+- (void)onSpotlightVideoChange:(BOOL)on;
 
 /**
  * Designated for notify user meeting host change.
  *
+ * @param hostId, the host user id.
+ *
  */
-- (void)onMeetingHostChange;
+- (void)onMeetingHostChange:(NSUInteger)hostId;
 
 @end
 
