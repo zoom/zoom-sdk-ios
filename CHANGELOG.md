@@ -1,4 +1,16 @@
 # CHANGELOG
+## 2017-06-14
+
+### Added
+1. Add interface to get mobileRTC’s version
+
+2. Add interface to set the path of mobileRTCResources.bundle
+
+3. Add interface to get H.323/SIP IP Addresses for call in
+
+4. Add interfaces to check "Invite by Phone" & "Invite H.323/SIP" or not
+
+5. Bug fix
 
 ## 2017-03-03
 
