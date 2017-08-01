@@ -1,8 +1,0 @@
-/* Localized versions of Info.plist keys */
-
-
-NSCameraUsageDescription = "For people to see you during meetings, MobileRTC needs access to your camera.";
-
-NSMicrophoneUsageDescription = "For people to hear you during meetings, MobileRTC needs access to your microphone.";
-
-NSPhotoLibraryUsageDescription = "To share photos, MobileRTC needs access to your photo library.";

@@ -1,8 +1,0 @@
-/* Localized versions of Info.plist keys */
-
-
-NSCameraUsageDescription = "为了让他人在会议中看到您，我们需要您授予相机访问权限。";
-
-NSMicrophoneUsageDescription = "为了让他人在会议中听见您的声音，我们需要您授予麦克风访问权限。";
-
-NSPhotoLibraryUsageDescription = "要共享照片，我们需要访问您的照片库。";
