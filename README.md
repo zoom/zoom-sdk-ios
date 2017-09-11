@@ -7,8 +7,8 @@ Place the MobileRTC.framework inside lib folder, along with bundle.
 Example App using Zoom iOS-RTC-Stack - https://zoom.us/developer/overview/ios-rtc-stack-quickstart
 
 ## Getting Started
-* [Sign up](https://zoom.us) for a free 60 day trial of Zoom
-* Get the SDK key and secret from your account in the [Zoom Developer Portal](https://zoom.us/developer)
+* [Sign up](https://zoom.us) for a free Zoom account
+* Get the App key and secret from your account in the [Zoom Developer Portal](https://zoom.us/developer)
 * Update the API key and secret in the project
 * Build the project
 
