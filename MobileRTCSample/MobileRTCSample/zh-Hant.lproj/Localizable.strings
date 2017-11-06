@@ -54,6 +54,16 @@
 
 "Hide Meeting BottomBar" = "隱藏會議底欄";
 
+"Enable Kubi Device" = "啟用Kubi設備";
+
+"Hide Thumbnail Video" = "觀看共享時隱藏參會人視頻";
+
+"Host Hide Leave Meeting" = "隱藏主持人離會菜單";
+
+"Hide Hint in Meeting" = "隱藏狀態欄提醒";
+
+"Hide Meeting More" = "隱藏更多菜單";
+
 "SDK authentication failed, error code: %zd" = "SDK授權失敗，錯誤碼: %zd";
 
 "OK" = "確定";
@@ -98,7 +108,7 @@
 
 "App Share Meeting" = "App Share會議";
 
-"Zoom Meeting" = "Zoom Meeting";
+"Zoom Meeting" = "Zoom會議";
 
 //For Strings included with Zoom
 "Zoom" = "MobileRTC";
@@ -138,3 +148,7 @@
 "Select Zoom Rooms" = "選擇會議室";
 
 "Invite Zoom Rooms" = "邀請會議室";
+
+"Meeting Settings" = "會議設置";
+
+"Schedule Meeting" = "預約會議";

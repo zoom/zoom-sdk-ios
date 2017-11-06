@@ -28,9 +28,7 @@
 			<key>CFBundleURLName</key>
 			<string>us.zoom.ZoomSDKSample</string>
 			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>db-zecq6smsyshct83</string>
-			</array>
+			<array/>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>

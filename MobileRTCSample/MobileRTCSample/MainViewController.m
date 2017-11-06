@@ -128,15 +128,23 @@
 #define padding 20
 #define button1 50
 #define button2 30
+
     CGFloat btnWidth = MIN(floorf((bounds.size.width - 3 * padding)/2), 160);
     CGFloat btnHeight = 46;
     
-    _meetButton.frame = CGRectMake(bounds.size.width/2-btnWidth-padding/2, bounds.size.height-1.5*padding-btnHeight, btnWidth, btnHeight);
-    _joinButton.frame = CGRectMake(bounds.size.width/2+padding/2, bounds.size.height-1.5*padding-btnHeight, btnWidth, btnHeight);
+    CGFloat safeAreaTop = 0.0f;
+    CGFloat safeAreaBottom = 0.0f;
+    if(fabs(bounds.size.height - 812.0f) < 0.01f) {
+        safeAreaTop = 44.0f;
+        safeAreaBottom = 34.0f;
+    }
+
+    _meetButton.frame = CGRectMake(bounds.size.width/2-btnWidth-padding/2, bounds.size.height-1.5*padding -btnHeight - safeAreaBottom, btnWidth, btnHeight);
+    _joinButton.frame = CGRectMake(bounds.size.width/2+padding/2, bounds.size.height-1.5*padding-btnHeight - safeAreaBottom, btnWidth, btnHeight);
     
-    _expandButton.frame = CGRectMake(bounds.size.width-button1-padding, bounds.size.height-button1-padding, button1, button1);
+    _expandButton.frame = CGRectMake(bounds.size.width-button1-padding, bounds.size.height-button1 -padding - safeAreaBottom, button1, button1);
     
-    _settingButton.frame = CGRectMake(bounds.size.width-button2-padding, 1.5*padding, button2, button2);
+    _settingButton.frame = CGRectMake(bounds.size.width-button2-padding, 1.5*padding + safeAreaTop, button2, button2);
 }
 
 #pragma mark - Sub Views
@@ -451,10 +459,10 @@
     NSLog(@"onMeetingReturn:%d, internalError:%zd", error, internalError);
 }
 
-- (void)onMeetingError:(NSInteger)error message:(NSString*)message
-{
-    NSLog(@"onMeetingError:%zd, message:%@", error, message);
-}
+//- (void)onMeetingError:(NSInteger)error message:(NSString*)message
+//{
+//    NSLog(@"onMeetingError:%zd, message:%@", error, message);
+//}
 
 - (void)onMeetingStateChange:(MobileRTCMeetingState)state
 {
@@ -476,8 +484,8 @@
     if (state == MobileRTCMeetingState_InMeeting)
     {
         //For customizing the content of Invite by SMS
-        NSString *meetingID = [[MobileRTCInviteHelper sharedInstance] meetingID];
-        NSString *smsMessage = [NSString stringWithFormat:NSLocalizedString(@"Please join meeting with ID: %@", @""), meetingID];
+        NSString *meetingNumber = [[MobileRTCInviteHelper sharedInstance] ongoingMeetingNumber];
+        NSString *smsMessage = [NSString stringWithFormat:NSLocalizedString(@"Please join meeting with ID: %@", @""), meetingNumber];
         [[MobileRTCInviteHelper sharedInstance] setInviteSMS:smsMessage];
         
         //For customizing the content of Copy URL
@@ -513,7 +521,9 @@
         if ([ms isStartingShare] || [ms isViewingShare])
         {
             NSLog(@"There exist an ongoing share");
-            [ms showMobileRTCMeeting:nil];
+            [ms showMobileRTCMeeting:^(void){
+                [ms stopAppShare];
+            }];
             return;
         }
         
@@ -569,8 +579,8 @@
         {
             UIViewController *vc = [UIViewController new];
             
-            NSString *meetingID = [MobileRTCInviteHelper sharedInstance].meetingID;
-            vc.title = meetingID;
+            NSString *meetingNumber = [MobileRTCInviteHelper sharedInstance].ongoingMeetingNumber;
+            vc.title = meetingNumber;
             
             UIBarButtonItem *leaveItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Leave", @"") style:UIBarButtonItemStylePlain target:self action:@selector(onLeave:)];
             [vc.navigationItem setRightBarButtonItem:leaveItem];
@@ -629,11 +639,54 @@
 #pragma mark - In meeting users' state updated
 
 #if 0
-- (void)inMeetingUserUpdated
+- (void)onInMeetingUserUpdated
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     NSArray *users = [ms getInMeetingUserList];
     NSLog(@"In Meeting users:%@", users);
+}
+
+- (void)onInMeetingChat:(NSString *)messageID
+{
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    NSLog(@"In Meeting Chat:%@ content:%@", messageID, [ms meetingChatByID:messageID]);
+}
+#endif
+
+#pragma mark - Handle Session Key
+
+#if 0
+- (void)onWaitExternalSessionKey:(NSData*)key
+{
+    NSLog(@"session key: %@", key);
+    Byte byte[] = {0x90,0xd7,0x19,0x28,0x7c,0xa5,0x4c,0xfd,0xca,0x89,0x5a,0x31,0x3f,0xf1,0xbc,0x8f,0x9b,0x6c,0x6b,0x4b,0x3e,0xcd,0xfc,0xa8,0xdf,0xda,0x0e,0xe7,0x00,0x4f,0x32,0xc5};
+    NSData *keyData = [[NSData alloc] initWithBytes:byte length:32];
+    NSLog(@"data: %@", keyData);
+    
+    MobileRTCE2EMeetingKey *mkChat = [[[MobileRTCE2EMeetingKey alloc] init] autorelease];
+    mkChat.type = MobileRTCComponentType_Chat;
+    mkChat.meetingKey = keyData;
+    mkChat.meetingIv = nil;
+    MobileRTCE2EMeetingKey *mkAudio = [[[MobileRTCE2EMeetingKey alloc] init] autorelease];
+    mkAudio.type = MobileRTCComponentType_AUDIO;
+    mkAudio.meetingKey = keyData;
+    mkAudio.meetingIv = nil;
+    MobileRTCE2EMeetingKey *mkVideo = [[[MobileRTCE2EMeetingKey alloc] init] autorelease];
+    mkVideo.type = MobileRTCComponentType_VIDEO;
+    mkVideo.meetingKey = keyData;
+    mkVideo.meetingIv = nil;
+    MobileRTCE2EMeetingKey *mkShare = [[[MobileRTCE2EMeetingKey alloc] init] autorelease];
+    mkShare.type = MobileRTCComponentType_AS;
+    mkShare.meetingKey = keyData;
+    mkShare.meetingIv = nil;
+    MobileRTCE2EMeetingKey *mkFile = [[[MobileRTCE2EMeetingKey alloc] init] autorelease];
+    mkFile.type = MobileRTCComponentType_FT;
+    mkFile.meetingKey = keyData;
+    mkFile.meetingIv = nil;
+    
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    BOOL ret = [ms handleE2EMeetingKey:@[mkChat, mkAudio, mkVideo, mkShare, mkFile] withLeaveMeeting:NO];
+    NSLog(@"handleE2EMeetingKey ret:%zd", ret);
 }
 #endif
 

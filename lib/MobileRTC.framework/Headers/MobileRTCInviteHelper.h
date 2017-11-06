@@ -8,84 +8,107 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- * MobileRTCInviteHelper is class which used to get/set some settings in meeting.
+/*!
+ @class MobileRTCInviteHelper
+ @brief MobileRTCInviteHelper is class which used to get/set some settings in meeting.
  */
 @interface MobileRTCInviteHelper : NSObject
 
-/**
- * To get the ongoing meeting number
+/*!
+ @brief To get the ongoing meeting number, the format is just like 123456789
+ @warning this method should be called during an ongoing meeting, or the value is invalid.
  */
-@property (retain, nonatomic, readonly) NSString *meetingID;
+@property (retain, nonatomic, readonly) NSString *ongoingMeetingNumber;
 
-/**
- * To get the join URL of ongoing meeting
+/*!
+ @brief To get the ongoing meeting unique ID, the format is just like DVLObefSZizM0xQLhtrCQ==
+ @warning this method should be called during an ongoing meeting, or the value is invalid.
+ */
+@property (retain, nonatomic, readonly) NSString *ongoingMeetingID;
+
+/*!
+ @brief To get the ongoing meeting topic
+ @warning this method should be called during an ongoing meeting, or the value is invalid.
+ */
+@property (retain, nonatomic, readonly) NSString *ongoingMeetingTopic;
+
+/*!
+ @brief To get the ongoing meeting start time
+ @warning this method should be called during an ongoing meeting, or the value is invalid.
+ */
+@property (retain, nonatomic, readonly) NSDate *ongoingMeetingStartTime;
+
+/*!
+ @brief To get the ongoing meeting whether is a recurring meeting or not.
+ @warning this method should be called during an ongoing meeting, or the value is invalid.
+ */
+@property (assign, nonatomic, readonly) BOOL ongoingRecurringMeeting;
+
+/*!
+ @brief To get the join URL of ongoing meeting
  */
 @property (retain, nonatomic, readonly) NSString *joinMeetingURL;
 
-/**
- * To get the meeting password
+/*!
+ @brief To get the meeting password
  */
 @property (retain, nonatomic, readonly) NSString *meetingPassword;
 
-/**
- * To get the raw meeting password
+/*!
+ @brief To get the raw meeting password
  */
 @property (retain, nonatomic, readonly) NSString *rawMeetingPassword;
 
-/**
- * To get phone number of toll call in
+/*!
+ @brief To get phone number of toll call in
  */
 @property (retain, nonatomic, readonly) NSString *tollCallInNumber;
 
-/**
- * To get phone number of toll free call in
+/*!
+ @brief To get phone number of toll free call in
  */
 @property (retain, nonatomic, readonly) NSString *tollFreeCallInNumber;
 
-/**
- * To enable Invite by Message
- *
- * *Note*: If set disableInviteSMS to YES, the "Invite by Message" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Invite by Message.
+/*!
+ @brief To enable Invite by Message
+ @warning If set disableInviteSMS to YES, the "Invite by Message" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Invite by Message.
  */
 @property (assign, nonatomic) BOOL disableInviteSMS;
 
-/**
- * To customize the content of invite SMS
+/*!
+ @brief To customize the content of invite SMS
  */
 @property (retain, nonatomic) NSString *inviteSMS;
 
-/**
- * To enable Copy URL
- *
- * *Note*: If set disableCopyURL to YES, the "Copy URL" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Copy URL.
+/*!
+ @brief To enable Copy URL
+ @warning If set disableCopyURL to YES, the "Copy URL" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Copy URL.
  */
 @property (assign, nonatomic) BOOL disableCopyURL;
 
-/**
- * To customize the content of Copy URL
+/*!
+ @brief To customize the content of Copy URL
  */
 @property (retain, nonatomic) NSString *inviteCopyURL;
 
-/**
- * To enable Invite by email
- *
- * *Note*: If set disableEmailInvite to YES, the "Invite by Email" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Email by property inviteEmailSubject and inviteEmailContent.
+/*!
+ @brief To enable Invite by email
+ @warning If set disableEmailInvite to YES, the "Invite by Email" menu will not be displayed in Invite item; if set to NO, partner can customize the content of Email by property inviteEmailSubject and inviteEmailContent.
  */
 @property (assign, nonatomic) BOOL disableInviteEmail;
 
-/**
- * To customize the subject of Invite by Email
+/*!
+ @brief To customize the subject of Invite by Email
  */
 @property (retain, nonatomic) NSString *inviteEmailSubject;
 
-/**
- * To customize the content of Invite by Email
+/*!
+ @brief To customize the content of Invite by Email
  */
 @property (retain, nonatomic) NSString *inviteEmailContent;
 
-/**
- * Returns the instance of MobileRTCInviteHelper
+/*!
+ @brief the instance of MobileRTCInviteHelper
  */
 + (MobileRTCInviteHelper*)sharedInstance;
 

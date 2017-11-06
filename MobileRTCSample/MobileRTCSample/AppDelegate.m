@@ -13,9 +13,6 @@
 #define kZoomSDKAppSecret   @""
 #define kZoomSDKDomain      @""
 
-#define kZoomSDKEmail       @""
-#define kZoomSDKPassword    @""
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -82,6 +79,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    [[MobileRTC sharedRTC] appWillTerminate];
 }
 
 // For iOS 4.2+ support
@@ -117,14 +115,6 @@
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:NSLocalizedString(@"Retry", @""), nil];
         [alert show];
     }
-    else
-    {
-        MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
-        if (authService)
-        {
-            [authService loginWithEmail:kZoomSDKEmail password:kZoomSDKPassword];
-        }
-    }
 }
 
 - (void)onMobileRTCLoginReturn:(NSInteger)returnValue
@@ -156,25 +146,24 @@
 #pragma mark - Premeeting Delegate
 
 
-- (void)sinkSchedultMeeting:(NSInteger)result
+- (void)sinkSchedultMeeting:(PreMeetingError)result meetingNumber:(unsigned long long)number
 {
-    NSLog(@"sinkSchedultMeeting result: %zd", result);
+    NSLog(@"sinkSchedultMeeting result: %zd, meetingNumber:%zd", result, number);
 }
 
-- (void)sinkEditMeeting:(NSInteger)result
+- (void)sinkEditMeeting:(PreMeetingError)result
 {
     NSLog(@"sinkEditMeeting result: %zd", result);
 }
 
-- (void)sinkDeleteMeeting:(NSInteger)result
+- (void)sinkDeleteMeeting:(PreMeetingError)result
 {
     NSLog(@"sinkDeleteMeeting result: %zd", result);
 }
 
-- (void)sinkListMeeting:(NSInteger)result withMeetingItems:(NSArray*)array
+- (void)sinkListMeeting:(PreMeetingError)result withMeetingItems:(NSArray*)array
 {
-    NSLog(@"sinkSchedultMeeting result: %zd  items: %@", result, array);
+    NSLog(@"sinkListMeeting result: %zd  items: %@", result, array);
 }
-
 
 @end

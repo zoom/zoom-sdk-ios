@@ -54,6 +54,13 @@
     [self.scrollView addSubview:self.forthView];
     
     [self.view addSubview:self.pageControl];
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_10_3
+    if (@available(iOS 11.0, *))
+    {
+        self.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+#endif
 }
 
 - (void)dealloc
@@ -83,7 +90,12 @@
 #define kDetailHeight 30
     CGRect bounds = self.view.bounds;
     
-    self.pageControl.frame = CGRectMake(0, bounds.size.height-kPageHeight, bounds.size.width, kPageHeight);
+    
+    if(fabs(bounds.size.height - 812.0f) < 0.01f) {
+        self.pageControl.frame = CGRectMake(0, bounds.size.height-kPageHeight - 34, bounds.size.width, kPageHeight);
+    } else {
+        self.pageControl.frame = CGRectMake(0, bounds.size.height-kPageHeight, bounds.size.width, kPageHeight);
+    }
     
     self.scrollView.frame = CGRectMake(0, 0, bounds.size.width, bounds.size.height);
     self.scrollView.contentSize = CGSizeMake(bounds.size.width*self.pageControl.numberOfPages, self.scrollView.frame.size.height);
@@ -192,7 +204,6 @@
         _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
         _scrollView.delegate = self;
         _scrollView.pagingEnabled = YES;
-        _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.showsVerticalScrollIndicator = NO;
         
         //This is the starting point of the ScrollView

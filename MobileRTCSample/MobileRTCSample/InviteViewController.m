@@ -33,8 +33,8 @@
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Pause/Resume", @"") style:UIBarButtonItemStyleBordered target:self action:@selector(onDone:)];
     [self.navigationItem setRightBarButtonItem:doneItem];
     
-    NSString *meetingID = [MobileRTCInviteHelper sharedInstance].meetingID;
-    self.title = meetingID;
+    NSString *meetingNumber = [MobileRTCInviteHelper sharedInstance].ongoingMeetingNumber;
+    self.title = meetingNumber;
     
     [self.view addSubview:self.meetingURLLabel];
     NSString *meetingURL = [MobileRTCInviteHelper sharedInstance].joinMeetingURL;

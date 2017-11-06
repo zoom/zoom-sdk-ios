@@ -17,9 +17,15 @@
 
 @end
 
+/*!
+ @brief MobileRTCDeviceEncryptType An Enum for Audio Type.
+ */
 typedef enum {
+    ///VoIP
     MobileRTCAudioType_VoIP   = 0,
+    ///Telephony
     MobileRTCAudioType_Telephony,
+    ///None
     MobileRTCAudioType_None,
 }MobileRTCAudioType;
 

@@ -9,86 +9,93 @@
 #import <MobileRTC/MobileRTC.h>
 #import <MobileRTC/MobileRTCRoomDevice.h>
 
-/**
- * Category Customize is designed for providing interfaces for Dial-out and Call Room Device
- *
+/*!
+ @brief Category Customize is designed for providing interfaces for Dial-out and Call Room Device
  */
 @interface MobileRTCMeetingService (Customize)
 
-/**
- * This method is used to customize meeting title for meeting bar while inmeeting status.
- *
- * *Note*: Method need to be call before start or join one meeting & title will be reset after leave/end meeting.
+/*!
+ @brief This method is used to customize meeting title for meeting bar while inmeeting status.
+ @param title the customized content for title
+ @warning Method need to be call before start or join one meeting & title will be reset after leave/end meeting.
  */
 - (void)customizeMeetingTitle:(NSString*)title;
 
-/**
- * This method is used to check whether Dial out is supported in meeting.
+/*!
+ @brief This method is used to check whether Dial out is supported in meeting.
+ @return YES means supported
  */
 - (BOOL)isDialOutSupported;
 
-/**
- * This method is used to check whether there exists a dial out in process.
+/*!
+ @brief This method is used to check whether there exists a dial out in process.
+ @return YES means that a dial out in process.
  */
 - (BOOL)isDialOutInProgress;
 
-/**
- * This method is used to start a dial out.
- *
- * @param phone, the phone number used to dial out, the phone number should add country code at first, such as "+86123456789".
- * @param me, if YES, means "Call Me"; if NO, means "Invite by Phone".
- * @param username, the display name for invite other by phone. If parameter "me" is YES, the param can be ignored.
+/*!
+ @brief This method is used to start a dial out.
+ @param phone the phone number used to dial out, the phone number should add country code at first, such as "+86123456789".
+ @param me YES means "Call Me"; NO means "Invite by Phone".
+ @param username the display name for invite other by phone. If parameter "me" is YES, the param can be ignored.
+ @return YES means call this method successfully.
  */
 - (BOOL)dialOut:(NSString*)phone isCallMe:(BOOL)me withName:(NSString*)username;
 
-/**
- * This method is used to cancel dial out.
+/*!
+ @brief This method is used to cancel dial out.
+ @param isCallMe YES means "Call Me"
+ @return YES means call this method successfully.
  */
 - (BOOL)cancelDialOut:(BOOL)isCallMe;
 
-/**
- * This method is used to check whether Call Room Device is supported in meeting.
+/*!
+ @brief This method is used to check whether Call Room Device is supported in meeting.
+ @return YES means supported
  */
 - (BOOL)isCallRoomDeviceSupported;
 
-/**
- * This method is used to check whether there exists a call room device in process.
+/*!
+ @brief This method is used to check whether there exists a call room device in process.
+ @return YES means that a call room device in process.
  */
 - (BOOL)isCallingRoomDevice;
 
-/**
- * This method is used to cancel call room device.
+/*!
+ @brief This method is used to cancel call room device.
+ @return YES means call this method successfully.
  */
 - (BOOL)cancelCallRoomDevice;
 
-/**
- * This method will return an array of IP Addresses for Call in a room device.
- *
- * *Note*: return nil, if there does not exist any IP Address.
+/*!
+ @brief This method will return an array of IP Addresses for Call in a room device.
+ @return the array of ip address list; or return nil, if there does not exist any IP Address.
  */
 - (NSArray*)getIPAddressList;
 
-/**
- * This method will return a meeting password for call in a room device.
- *
- * *Note*: return nil, means that user can call in a room device directly.
+/*!
+ @brief This method will return a meeting password for call in a room device.
+ @return meeting password for call H323 device; return nil means on password.
  */
 - (NSString*)getH323MeetingPassword;
 
-/**
- * This method will return an array of room devices for call out a room device.
- *
- * *Note*: return nil, if there does not exist any room device.
+/*!
+ @brief This method will return an array of room devices for call out a room device.
+ @return the array of room devices; or return nil, if there does not exist any room device.
  */
 - (NSArray*)getRoomDeviceList;
 
-/**
- * This method is used to call in a room device with pairing code.
+/*!
+ @brief This method is used to call in a room device with pairing code.
+ @param code the pairing code
+ @return YES means call this method successfully.
  */
 - (BOOL)sendPairingCode:(NSString*)code;
 
-/**
- * This method is used to call out a room device.
+/*!
+ @brief This method is used to call out a room device.
+ @param device the room device
+ @return YES means call this method successfully.
  */
 - (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device;
 

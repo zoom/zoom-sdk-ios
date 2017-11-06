@@ -13,6 +13,10 @@
 		C123333318D6D43100894EED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C123333218D6D43100894EED /* Images.xcassets */; };
 		C123335218D6D4E900894EED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335018D6D4E900894EED /* MainViewController.m */; };
 		C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335518D6D87B00894EED /* UIImage+Additions.m */; };
+		D90F5B3A1F501C7500E99195 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B381F501C7500E99195 /* iTunesArtwork */; };
+		D90F5B3B1F501C7500E99195 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B391F501C7500E99195 /* iTunesArtwork@2x */; };
+		D9499BB61F468C160039362A /* MeetingSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BB51F468C160039362A /* MeetingSettingsViewController.m */; };
+		D9499BBC1F4A76770039362A /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BBB1F4A76770039362A /* ScheduleTableViewController.m */; };
 		D960A76F1D6FDD6D001BF94E /* icon_meeting_share.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A7691D6FDD6D001BF94E /* icon_meeting_share.png */; };
 		D960A7701D6FDD6D001BF94E /* icon_meeting_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76A1D6FDD6D001BF94E /* icon_meeting_share@2x.png */; };
 		D960A7711D6FDD6D001BF94E /* icon_meeting_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76B1D6FDD6D001BF94E /* icon_meeting_share@3x.png */; };
@@ -91,6 +95,13 @@
 		C123335418D6D87B00894EED /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
 		C123335518D6D87B00894EED /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
 		C1D8947B19AF2DF800C7D61D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		D90F5B381F501C7500E99195 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
+		D90F5B391F501C7500E99195 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
+		D9499AB21F457E350039362A /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		D9499BB41F468C160039362A /* MeetingSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingSettingsViewController.h; sourceTree = "<group>"; };
+		D9499BB51F468C160039362A /* MeetingSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingSettingsViewController.m; sourceTree = "<group>"; };
+		D9499BBA1F4A76770039362A /* ScheduleTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleTableViewController.h; sourceTree = "<group>"; };
+		D9499BBB1F4A76770039362A /* ScheduleTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleTableViewController.m; sourceTree = "<group>"; };
 		D960A7691D6FDD6D001BF94E /* icon_meeting_share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meeting_share.png; sourceTree = "<group>"; };
 		D960A76A1D6FDD6D001BF94E /* icon_meeting_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_share@2x.png"; sourceTree = "<group>"; };
 		D960A76B1D6FDD6D001BF94E /* icon_meeting_share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_share@3x.png"; sourceTree = "<group>"; };
@@ -174,6 +185,7 @@
 		C123331F18D6D43100894EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9499AB21F457E350039362A /* WebKit.framework */,
 				D9E564911D9CFF7000EF8C30 /* CoreBluetooth.framework */,
 				D9E564461D9CF23B00EF8C30 /* libsqlite3.tbd */,
 				D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */,
@@ -199,6 +211,10 @@
 				D996D2451C99478B00C284F0 /* LaunchScreen.xib */,
 				C123334F18D6D4E900894EED /* MainViewController.h */,
 				C123335018D6D4E900894EED /* MainViewController.m */,
+				D9499BB41F468C160039362A /* MeetingSettingsViewController.h */,
+				D9499BB51F468C160039362A /* MeetingSettingsViewController.m */,
+				D9499BBA1F4A76770039362A /* ScheduleTableViewController.h */,
+				D9499BBB1F4A76770039362A /* ScheduleTableViewController.m */,
 				D996D2461C99478B00C284F0 /* SettingsViewController.h */,
 				D996D2471C99478B00C284F0 /* SettingsViewController.m */,
 				D9FCEC171CEEB9CB0071F330 /* SplashViewController.h */,
@@ -240,6 +256,8 @@
 				D9FCEC201CEEB9F70071F330 /* icon_setting.png */,
 				D9FCEC211CEEB9F70071F330 /* icon_setting@2x.png */,
 				D9FCEC231CEEB9F70071F330 /* icon_share_app@2x.png */,
+				D90F5B381F501C7500E99195 /* iTunesArtwork */,
+				D90F5B391F501C7500E99195 /* iTunesArtwork@2x */,
 				D9FCEC251CEEB9F70071F330 /* zoom_intro1.png */,
 				D9FCEC261CEEB9F70071F330 /* zoom_intro2.png */,
 				D9FCEC271CEEB9F70071F330 /* zoom_intro3.png */,
@@ -361,6 +379,7 @@
 				D996D23F1C99473F00C284F0 /* Localizable.strings in Resources */,
 				D960A7701D6FDD6D001BF94E /* icon_meeting_share@2x.png in Resources */,
 				D960A7711D6FDD6D001BF94E /* icon_meeting_share@3x.png in Resources */,
+				D90F5B3B1F501C7500E99195 /* iTunesArtwork@2x in Resources */,
 				D996D2491C99478B00C284F0 /* LaunchScreen.xib in Resources */,
 				D9FCEC2B1CEEB9F70071F330 /* icon_pause@2x.png in Resources */,
 				D9FCEC291CEEB9F70071F330 /* icon_meet.png in Resources */,
@@ -369,6 +388,7 @@
 				D960A7731D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png in Resources */,
 				D960A76F1D6FDD6D001BF94E /* icon_meeting_share.png in Resources */,
 				C123333318D6D43100894EED /* Images.xcassets in Resources */,
+				D90F5B3A1F501C7500E99195 /* iTunesArtwork in Resources */,
 				D9FCEC2D1CEEB9F70071F330 /* icon_setting.png in Resources */,
 				D9FCEC2E1CEEB9F70071F330 /* icon_setting@2x.png in Resources */,
 			);
@@ -384,6 +404,8 @@
 				D996D2481C99478B00C284F0 /* InviteViewController.m in Sources */,
 				C123333118D6D43100894EED /* AppDelegate.m in Sources */,
 				F75FDB761D6C370B004DC2FA /* LanguaguePickerViewController.m in Sources */,
+				D9499BBC1F4A76770039362A /* ScheduleTableViewController.m in Sources */,
+				D9499BB61F468C160039362A /* MeetingSettingsViewController.m in Sources */,
 				D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */,
 				D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */,
 				C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */,

@@ -39,235 +39,193 @@ extern NSString* kMeetingParam_NoVideo;
 
 @protocol MobileRTCMeetingServiceDelegate;
 
-/**
- * MobileRTCMeetingService is an implementation for client to start/join a Meetings.
- * This meeting service assumes there is only one concurrent operation at a time. This means
- * that at any given time, only one API call will be in progress.
+/*!
+ @class MobileRTCMeetingService
+ @brief MobileRTCMeetingService is an implementation for client to start/join a Meetings.
+ @discussion This meeting service assumes there is only one concurrent operation at a time. This means that at any given time, only one API call will be in progress.
  */
 @interface MobileRTCMeetingService : NSObject
 
-/**
- * The object that acts as the delegate of the receiving meeting events.
+/*!
+ @brief The object that acts as the delegate of the receiving meeting events.
  */
 @property (assign, nonatomic) id<MobileRTCMeetingServiceDelegate> delegate;
 
-/**
- * This method is used to start a meeting with parameters in a dictionary.
- *
- * @param dict The dictionary which contains the meeting parameters.
- *
- * @return A MobileRTCMeetError to tell client whether the meeting started or not.
+/*!
+ @brief This method is used to start a meeting with parameters in a dictionary.
+ @discussion For user type is MobileRTCUserType_APIUser, the parameters in dict should be included kMeetingParam_UserID, kMeetingParam_UserToken,
+    kMeetingParam_UserType, kMeetingParam_Username, kMeetingParam_MeetingNumber; For user type is MobileRTCUserType_ZoomUser/MobileRTCUserType_SSOUser, 
+    the parameters in dict just be included kMeetingParam_UserType and kMeetingParam_MeetingNumber(optional, this parameter can be ignored for instant meeting).
+ @param dict The dictionary which contains the meeting parameters.
+ @return A MobileRTCMeetError to tell client whether the meeting started or not.
+ @warning If start meeting with wrong parameter, this method will return MobileRTCMeetError_InvalidArguments
  */
 - (MobileRTCMeetError)startMeetingWithDictionary:(NSDictionary*)dict;
 
-/**
- * This method is used to join a meeting with parameters in a dictionary.
- *
- * @param dict The dictionary which contains the meeting parameters.
- *
- * @return A MobileRTCMeetError to tell client whether can join the meeting or not.
+/*!
+ @brief This method is used to join a meeting with parameters in a dictionary.
+ @param dict The dictionary which contains the meeting parameters.
+ @return A MobileRTCMeetError to tell client whether can join the meeting or not.
  */
 - (MobileRTCMeetError)joinMeetingWithDictionary:(NSDictionary*)dict;
 
-/**
- * This method is used to tell the client whether the meeting is ongoing or not.
- *
- * @return A MobileRTCMeetingState to tell client the meeting state currently.
+/*!
+ @brief This method is used to join a meeting with parameters in a dictionary.
+ @return A MobileRTCMeetingState to tell client the meeting state currently.
  */
 - (MobileRTCMeetingState)getMeetingState;
 
-/**
- * This method is used to end/leave an ongoing meeting.
- *
- * @param cmd, leave meeting by the command type.
+/*!
+ @brief This method is used to end/leave an ongoing meeting.
+ @param cmd leave meeting by the command type.
  */
 - (void)leaveMeetingWithCmd:(LeaveMeetingCmd)cmd;
 
-/**
- * This method will return the view of meeting UI, which provide an access which allow customer to add their own view in the meeting UI.
- *
- * @return the view of meeting if the meeting is ongoing, or return nil.
+/*!
+ @brief This method will return the view of meeting UI, which provide an access which allow customer to add their own view in the meeting UI.
+ @return the view of meeting if the meeting is ongoing, or return nil.
  */
 - (UIView*)meetingView;
 
 @end
 
-/**
- * MobileRTCMeetingServiceDelegate
- * An Meeting Service will issue the following value when the meeting state changes:
- *
- * MobileRTCMeetError
- * ============================
- * - MobileRTCMeetError_Success: start/join meeting successfully.
- * - MobileRTCMeetError_IncorrectMeetingNumber: the meeting number is incorrect.
- * - MobileRTCMeetError_MeetingTimeout: start/join meeting timeout.
- * - MobileRTCMeetError_NetworkUnavailable: start/join meeting failed for network issue.
- * - MobileRTCMeetError_MeetingClientIncompatible: cannot start/join meeting for the client is too old.
- * - MobileRTCMeetError_UserFull: cannot start/join meeting for the meeting has reached a maximum of participant.
- * - MobileRTCMeetError_MeetingOver: cannot start/join meeting for the meeting is over.
- * - MobileRTCMeetError_MeetingNotExist: cannot start/join meeting for the meeting doest not exist.
- * - MobileRTCMeetError_MeetingLocked: cannot start/join meeting for the meeting was locked by host.
- * - MobileRTCMeetError_MeetingRestricted: cannot start/join meeting for the meeting restricted.
- * - MobileRTCMeetError_MeetingJBHRestricted: cannot start/join meeting for the meeting restricted for joining before host.
- * - MobileRTCMeetError_InvalidArguments: cannot start/join meeting for invalid augument.
- * - MobileRTCMeetError_Unknown: cannot start/join meeting for unknown reason.
- *
- * MobileRTCMeetingState
- * ============================
- * - MobileRTCMeetingState_Idle: idle now, client can start/join meeting if wanted.
- * - MobileRTCMeetingState_Connecting: the client is starting/joining meeting.
- * - MobileRTCMeetingState_InMeeting: the client is a meeting now.
+/*!
+ @protocol MobileRTCMeetingServiceDelegate
+ @brief An Meeting Service will issue the following value when the meeting state changes
  */
 @protocol MobileRTCMeetingServiceDelegate <NSObject>
 
 @optional
-/**
- * Designated for Meeting Response.
- *
- * @param error, tell client related to this meeting event.
- * @param internalError, internal error code
- *
+/*!
+ @brief Designated for Meeting Response.
+ @param error tell client related to this meeting event.
+ @param internalError internal error code
  */
 - (void)onMeetingReturn:(MobileRTCMeetError)error internalError:(NSInteger)internalError;
 
-/**
- * Designated for Meeting Error message.
- *
- * @param error, internal error code.
- * @param message, the message for meeting error
- *
+/*!
+ @brief Designated for Meeting Error message.
+ @param error internal error code.
+ @param message the message for meeting error
  */
 - (void)onMeetingError:(NSInteger)error message:(NSString*)message;
 
-/**
- * Designated for Meeting State Change.
- *
- * @param state, tell client meeting state chagne.
- *
+/*!
+ @brief Designated for Meeting State Change.
+ @param state tell client meeting state chagne.
  */
 - (void)onMeetingStateChange:(MobileRTCMeetingState)state;
 
-/**
- * Designated for Meeting has been ready.
- *
+/*!
+ @brief Designated for Meeting has been ready.
  */
 - (void)onMeetingReady;
 
-/**
- * Designated for join a none-host meeting, Partner can show/hide a customized JBH waiting UI.
- *
+/*!
+ @brief Designated for join a none-host meeting, Partner can show/hide a customized JBH waiting UI..
+ @param cmd JBHCmd_Show or JBHCmd_Hide
  */
 - (void)onJBHWaitingWithCmd:(JBHCmd)cmd;
 
-/**
- * Designated for customize the Invite event.
- *
- * @param parentVC, parent viewcontroller to present customize Invite UI.
- *
+/*!
+ @brief Designated for customize the Invite event.
+ @param parentVC parent viewcontroller to present customize Invite UI.
  */
 - (void)onClickedInviteButton:(UIViewController*)parentVC;
 
 #pragma mark - For AppShare Delegate
-/**
- * Designated for App share has started with default splash.
- *
+/*!
+ @brief Designated for App share has started with default splash.
  */
 - (void)onAppShareSplash;
 
-/**
- * Designated for clicked the Share button in meeting.
- *
+/*!
+ @brief Designated for clicked the Share button in meeting.
  */
 - (void)onClickedShareButton;
 
-/**
- * Designated for notify that there does not exist ongoing share.
- *
+/*!
+ @brief Designated for notify that there does not exist ongoing share.
  */
 - (void)onOngoingShareStopped;
 
 #pragma mark - For DialOut Delegate
-/**
- * Designated for customize Dial out.
- *
- * @param parentVC, parent viewcontroller to present Dial Out UI.
- * @param me, if YES, means "Call Me"; if NO, means "Invite by Phone".
- *
+/*!
+ @brief Designated for customize Dial out.
+ @param parentVC parent viewcontroller to present Dial Out UI.
+ @param me if YES, means "Call Me"; if NO, means "Invite by Phone".
  */
 - (void)onClickedDialOut:(UIViewController*)parentVC isCallMe:(BOOL)me;
 
-/**
- * Designated for Dial Out status change.
- *
- * @param status tell client the status of dial out.
- *
+/*!
+ @brief Designated for Dial Out status change.
+ @param status tell client the status of dial out.
  */
 - (void)onDialOutStatusChanged:(DialOutStatus)status;
 
 #pragma mark - For Call H.323/SIP Delegate
-/**
- * Designated for Send pairing code state change.
- *
- * @param state, if 0 means pairing success, or means that call in failed.
- *
+/*!
+ @brief Designated for Send pairing code state change.
+ @param state if 0 means pairing success, or means that call in failed.
  */
 - (void)onSendPairingCodeStateChanged:(NSUInteger)state;
 
-/**
- * Designated for Call Room Device state change.
- *
- * @param state tell client the status of calling Room Device.
- *
+/*!
+ @brief Designated for Call Room Device state change.
+ @param state tell client the status of calling Room Device.
  */
 - (void)onCallRoomDeviceStateChanged:(H323CallOutStatus)state;
 
 #pragma mark - For User State Delegate
 
-/**
- * Designated for my audio state changed.
- *
+/*!
+ @brief Designated for my audio state changed.
  */
 - (void)onMyAudioStateChange;
 
-/**
- * Designated for my video state changed.
- *
+/*!
+ @brief Designated for my video state changed.
  */
 - (void)onMyVideoStateChange;
 
-/**
- * Designated for my hand state changed (Hand raised/lowered).
- *
+/*!
+ @brief Designated for my hand state changed (Hand raised/lowered).
  */
 - (void)onMyHandStateChange;
 
-/**
- * Designated for audio output changed.
- *
+/*!
+ @brief Designated for audio output changed.
  */
 - (void)onAudioOutputChange;
 
-/**
- * Designated for notify user state updated in meeting.
- *
+/*!
+ @brief Designated for notify user state updated in meeting.
  */
-- (void)inMeetingUserUpdated;
+- (void)onInMeetingUserUpdated;
 
-/**
- * Designated for notify that spotlight user video change.
- *
- * @param on, if YES means spotlighted; if NO means unspotlighted.
- *
+/*!
+ @brief Designated for notify that spotlight user video change.
+ @param on if YES means spotlighted; if NO means unspotlighted.
  */
 - (void)onSpotlightVideoChange:(BOOL)on;
 
-/**
- * Designated for notify user meeting host change.
- *
- * @param hostId, the host user id.
- *
+/*!
+ @brief Designated for notify that spotlight user video change.
+ @param hostId the host user id
  */
 - (void)onMeetingHostChange:(NSUInteger)hostId;
+
+/*!
+ @brief Designated for notify chat content in meeting.
+ @param messageID the message id
+ */
+- (void)onInMeetingChat:(NSString*)messageID;
+
+/*!
+ @brief Designated for notify the meeting is E2E or not.
+ @param key the meeting session key
+ */
+- (void)onWaitExternalSessionKey:(NSData*)key;
 
 @end
 

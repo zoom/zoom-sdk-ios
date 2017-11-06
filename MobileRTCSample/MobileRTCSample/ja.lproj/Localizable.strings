@@ -54,6 +54,16 @@
 
 "Hide Meeting BottomBar" = "Hide Meeting BottomBar";
 
+"Enable Kubi Device" = "Enable Kubi Device";
+
+"Hide Thumbnail Video" = "Hide Thumbnail Video";
+
+"Host Hide Leave Meeting" = "Host Hide Leave Meeting";
+
+"Hide Hint in Meeting" = "Hide Hint in Meeting";
+
+"Hide Meeting More" = "Hide Meeting More";
+
 "SDK authentication failed, error code: %zd" = "SDK authentication failed, error code: %zd";
 
 "OK" = "OK";
@@ -138,3 +148,7 @@
 "Select Zoom Rooms" = "MobileRTCルーム選択";
 
 "Invite Zoom Rooms" = "MobileRTCルームを招待";
+
+"Meeting Settings" = "Meeting Settings";
+
+"Schedule Meeting" = "Schedule Meeting";

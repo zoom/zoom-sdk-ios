@@ -54,6 +54,16 @@
 
 "Hide Meeting BottomBar" = "隐藏会议底栏";
 
+"Enable Kubi Device" = "启用Kubi设备";
+
+"Hide Thumbnail Video" = "观看共享时隐藏参会人视频";
+
+"Host Hide Leave Meeting" = "隐藏主持人离会菜单";
+
+"Hide Hint in Meeting" = "隐藏状态栏提醒";
+
+"Hide Meeting More" = "隐藏更多菜单";
+
 "SDK authentication failed, error code: %zd" = "SDK授权失败，错误码: %zd";
 
 "OK" = "确定";
@@ -138,3 +148,7 @@
 "Select Zoom Rooms" = "选择会议室";
 
 "Invite Zoom Rooms" = "邀请会议室";
+
+"Meeting Settings" = "会议设置";
+
+"Schedule Meeting" = "预约会议";

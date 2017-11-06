@@ -6,48 +6,27 @@
 //  Copyright (c) 2016 Zoom Video Communications, Inc. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-
-// In this header, you should import all the public headers of your framework using statements like #import <MobileRTC/PublicHeader.h>
-
 #import <Foundation/Foundation.h>
-
-//MobileRTC Constants
 #import <MobileRTC/MobileRTCConstants.h>
-
-//MobileRTC AuthService
 #import <MobileRTC/MobileRTCAuthService.h>
-
-//MobileRTC MeetingService
 #import <MobileRTC/MobileRTCMeetingService.h>
 #import <MobileRTC/MobileRTCMeetingService+AppShare.h>
 #import <MobileRTC/MobileRTCMeetingService+InMeeting.h>
 #import <MobileRTC/MobileRTCMeetingService+Customize.h>
-
-//MobileRTC Meeting Settings
 #import <MobileRTC/MobileRTCMeetingSettings.h>
-
-//MobileRTC Invite Helper
 #import <MobileRTC/MobileRTCInviteHelper.h>
-
-//MobileRTC Pre-meeting Service
 #import <MobileRTC/MobileRTCPremeetingService.h>
-
-//MobileRTC Room Device
 #import <MobileRTC/MobileRTCRoomDevice.h>
-
-//MobileRTC Meeting User Info
 #import <MobileRTC/MobileRTCMeetingUserInfo.h>
+#import <MobileRTC/MobileRTCMeetingChat.h>
+#import <MobileRTC/MobileRTCE2EMeetingKey.h>
 
 
-/**
- * The MobileRTC class is a class that exposes an API Rest Client.
- *
- * Access to this class and all other components of the MobileRTC can be granted by including `<MobileRTC/MobileRTC.h>`
- * in your source code.
- *
- * This class provides a class method sharedSDK which provides a preconfigured SDK client,
- * including a MobileRTCMeetingService.
- *
+/*!
+ @class MobileRTC
+ @brief MobileRTC class is a class that exposes an API Rest Client.
+ @discussion Access to this class and all other components of the MobileRTC can be granted by including <MobileRTC/MobileRTC.h> in your source code.
+ @warning This class provides a class method sharedSDK which provides a preconfigured SDK client.
  */
 @interface MobileRTC : NSObject
 {
@@ -60,123 +39,128 @@
     MobileRTCPremeetingService *_premeetingService;
 }
 
+/*!
+ @brief This property knows as the MobileRTC domain, which is readonly for external.
+ */
 @property (retain, nonatomic, readonly) NSString *mobileRTCDomain;
+
+/*!
+ @brief This property knows as the path of MobileRTC Resources Bundle, which is readonly for external.
+ */
 @property (retain, nonatomic, readonly) NSString *mobileRTCResPath;
 
-/**
- * Returns the MobileRTC default client
- *
- * This method is guaranteed to only instantiate one sharedSDK over the lifetime of an app.
- *
- * This client must be configured with your client key and client secret.
- *
- * *Note*: sharedSDK returns a MobileRTC configured with a MobileRTCMeetingService.
- *
- * @return a preconfigured MobileRTC client
+/*!
+ @brief This method returns the MobileRTC default client.
+ @discussion This method is guaranteed to only instantiate one sharedSDK over the lifetime of an app.
+             This client must be configured with specified client key and client secret.
+ @return a preconfigured MobileRTC client
  */
 + (MobileRTC*)sharedRTC;
 
-/**
- * Sets the MobileRTC client domain
- *
- * @param domain A domain which used as start/join zoom meeting
- *
- * *Note*: the domain should not include protocol "https" or "http", the format is just like "zoom.us" or "www.zoom.us".
- * *Note*: the MobileRTC domain should be set while initializing MobileRTC.
+/*!
+ @brief This method sets the MobileRTC client domain.
+ @discussion MobileRTC domain should be set while initializing MobileRTC.
+ @param domain A domain which used as start/join zoom meeting
+ @warning This method is required, please call this method immediately after app launched.
  */
 - (void)setMobileRTCDomain:(NSString*)domain;
 
-/**
- * Sets the MobileRTC resource bundle path
- *
- * @param path the path of MobileRTC Resources bundle
- *
- * *Note*: This method is optional, If not call this method, MobileRTCResources.bundle should be located in main bundle; If call this method, the MobileRTC Resources path should be set while initializing MobileRTC.
+/*!
+ @brief This method sets the path of MobileRTC resource bundle.
+ @discussion This method is optional, If not call this method, MobileRTCResources.bundle should be located in main bundle; 
+             If call this method, the MobileRTC Resources path should be set while initializing MobileRTC.
+ @param path the path of MobileRTC Resources bundle
  */
 - (void)setMobileRTCResPath:(NSString *)path;
 
-/**
- * Get the MobileRTC client root navigation controller
- *
- * @return navController, A root navigation controller.
+/*!
+ @brief This method gets the MobileRTC client root navigation controller.
+ @discussion This method is for internal use, customer usually does not call this method.
+ @return a root navigation controller.
  */
 - (UINavigationController*)mobileRTCRootController;
 
-/**
- * Sets the MobileRTC client root navigation controller
- *
- * @param navController A root navigation controller for pushing MobileRTC meeting UI.
- *
- * *Note*: This method is optional, If the window's rootViewController of the app is a UINavigationController, you can call this method, or just ignore it.
+/*!
+ @brief This method sets the MobileRTC client root navigation controller.
+ @discussion This method is optional, If the window's rootViewController of the app is a UINavigationController, you can call this method, or just ignore it.
+ @param navController the root navigation controller for pushing MobileRTC meeting UI.
  */
 - (void)setMobileRTCRootController:(UINavigationController*)navController;
 
-/**
- * Returns the MobileRTC version
+/*!
+ @brief This method returns the MobileRTC version.
+ @return the version of MobileRTC
  */
 - (NSString*)mobileRTCVersion;
 
-/**
- * Returns the MobileRTC default Auth Service
- *
- * *Note*: Auth Service should be called at first, the MobileRTC can be used after authorizing successfully.
- *
- * @return a preconfigured Auth Service
+/*!
+ @brief This method tells customer whether MobileRTC authorized successfully or not.
+ @return A BOOL indicating whether the MobileRTC was authorized or not.
+ */
+- (BOOL)isRTCAuthorized;
+
+/*!
+ @brief This method returns the MobileRTC default Auth Service.
+ @discussion Auth Service should be called at first, the MobileRTC can be used after authorizing successfully.
+ @return a preconfigured Auth Service
  */
 - (MobileRTCAuthService*)getAuthService;
 
-/**
- * Returns the MobileRTC default Pre-meeting Service
- *
- * *Note*: Pre-meeting Service should be called after signed in with work email, which is used to schedule/eidt/list/delete meeting etc.
- *
- * @return a preconfigured Pre-meeting Service
+/*!
+ @brief This method returns the MobileRTC default Pre-meeting Service.
+ @discussion Pre-meeting Service should be called after signed in with work email, which is used to schedule/eidt/list/delete meeting etc.
+ @return a preconfigured Pre-meeting Service
  */
 - (MobileRTCPremeetingService*)getPreMeetingService;
 
-/**
- * Returns the MobileRTC default Meeting Service
- *
- * @return a preconfigured Meeting Service
+/*!
+ @brief This method returns the MobileRTC default Meeting Service.
+ @return a preconfigured Meeting Service
  */
 - (MobileRTCMeetingService*)getMeetingService;
 
-/**
- * Returns the MobileRTC default Meeting Settings
- *
- * @return a object of Meeting Settings
+/*!
+ @brief This method returns the MobileRTC default Meeting Settings.
+ @return a object of Meeting Settings
  */
 - (MobileRTCMeetingSettings*)getMeetingSettings;
 
-/**
- * To get MobileRTC supported languages
- *
- * @return MobileRTC supported languages array
+/*!
+ @brief This method gets MobileRTC supported languages.
+ @discussion MobileRTC supported languages are English, German, Spanish, Japanese, French, Chinese Simplified, Chinese Traditional.
+ @return an array of MobileRTC supported languages
  */
 - (NSArray *)supportedLanguages;
 
-/**
- * Set the MobileRTC language
- *
- * @param lang indicate language type base on MobileRTC supported language.
- *
- * @return YES if success, Otherwise return NO.
+/*!
+ @brief This method sets the MobileRTC language.
+ @discussion the language type should be one of MobileRTC supported languages.
+ @param lang one of language type.
  */
 - (void)setLanguage:(NSString *)lang;
 
-/**
- * Notify common layer that app will resign active
+/*!
+ @brief Notify common layer that app will resign active.
+ @warning This method is required, please call this method in AppDelegate method "- (void)applicationWillResignActive:(UIApplication *)application".
  */
 - (void)appWillResignActive;
 
-/**
- * Notify common layer that app did become active
+/*!
+ @brief Notify common layer that app did become active.
+ @warning This method is required, please call this method in AppDelegate method "- (void)applicationDidBecomeActive:(UIApplication *)application".
  */
 - (void)appDidBecomeActive;
 
-/**
- * Notify common layer that app did enter backgroud
+/*!
+ @brief Notify common layer that app did enter backgroud.
+ @warning This method is required, please call this method in AppDelegate method "- (void)applicationDidEnterBackground:(UIApplication *)application".
  */
 - (void)appDidEnterBackgroud;
+
+/*!
+ @brief Notify common layer that app will terminate.
+ @warning This method is required, please call this method in AppDelegate method "- (void)applicationWillTerminate:(UIApplication *)application".
+ */
+- (void)appWillTerminate;
 
 @end
