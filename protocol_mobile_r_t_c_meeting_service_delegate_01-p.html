@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Icon-Small@2x.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Icon-76@2x.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MobileRTC
    </div>
@@ -136,16 +136,22 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ab88401e17162e3574f84c17bd94a2b96">onAudioOutputChange</a></td></tr>
 <tr class="memdesc:ab88401e17162e3574f84c17bd94a2b96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for audio output changed. <br /></td></tr>
 <tr class="separator:ab88401e17162e3574f84c17bd94a2b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af82158fdd135c30f07b4c2fe958341e2"><td class="memItemLeft" align="right" valign="top"><a id="af82158fdd135c30f07b4c2fe958341e2"></a>
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#af82158fdd135c30f07b4c2fe958341e2">inMeetingUserUpdated</a></td></tr>
-<tr class="memdesc:af82158fdd135c30f07b4c2fe958341e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify user state updated in meeting. <br /></td></tr>
-<tr class="separator:af82158fdd135c30f07b4c2fe958341e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02742f56af1a86279c17d02348f3fca7"><td class="memItemLeft" align="right" valign="top"><a id="a02742f56af1a86279c17d02348f3fca7"></a>
+(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a02742f56af1a86279c17d02348f3fca7">onInMeetingUserUpdated</a></td></tr>
+<tr class="memdesc:a02742f56af1a86279c17d02348f3fca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify user state updated in meeting. <br /></td></tr>
+<tr class="separator:a02742f56af1a86279c17d02348f3fca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac709ea8fffe800c1bed57cda535b95ed"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ac709ea8fffe800c1bed57cda535b95ed">onSpotlightVideoChange:</a></td></tr>
 <tr class="memdesc:ac709ea8fffe800c1bed57cda535b95ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify that spotlight user video change.  <a href="#ac709ea8fffe800c1bed57cda535b95ed">More...</a><br /></td></tr>
 <tr class="separator:ac709ea8fffe800c1bed57cda535b95ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29d3bf523a79110324969b1dac31633d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a29d3bf523a79110324969b1dac31633d">onMeetingHostChange:</a></td></tr>
 <tr class="memdesc:a29d3bf523a79110324969b1dac31633d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify that spotlight user video change.  <a href="#a29d3bf523a79110324969b1dac31633d">More...</a><br /></td></tr>
 <tr class="separator:a29d3bf523a79110324969b1dac31633d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affee906441c03c6cb47d7c60580788b7"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#affee906441c03c6cb47d7c60580788b7">onInMeetingChat:</a></td></tr>
+<tr class="memdesc:affee906441c03c6cb47d7c60580788b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify chat content in meeting.  <a href="#affee906441c03c6cb47d7c60580788b7">More...</a><br /></td></tr>
+<tr class="separator:affee906441c03c6cb47d7c60580788b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8690c07ae3ef04dd3457eed38d497f93"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a8690c07ae3ef04dd3457eed38d497f93">onWaitExternalSessionKey:</a></td></tr>
+<tr class="memdesc:a8690c07ae3ef04dd3457eed38d497f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify the meeting is E2E or not.  <a href="#a8690c07ae3ef04dd3457eed38d497f93">More...</a><br /></td></tr>
+<tr class="separator:a8690c07ae3ef04dd3457eed38d497f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a id="ab1ffc8a59e233d9566ec2816fe715ea5"></a>
@@ -289,6 +295,40 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">status</td><td>tell client the status of dial out. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="affee906441c03c6cb47d7c60580788b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affee906441c03c6cb47d7c60580788b7">&#9670;&nbsp;</a></span>onInMeetingChat:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onInMeetingChat: </td>
+          <td></td>
+          <td class="paramtype">(NSString *)&#160;</td>
+          <td class="paramname"><em>messageID</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Designated for notify chat content in meeting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageID</td><td>the message id </td></tr>
   </table>
   </dd>
 </dl>
@@ -555,8 +595,42 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a8690c07ae3ef04dd3457eed38d497f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8690c07ae3ef04dd3457eed38d497f93">&#9670;&nbsp;</a></span>onWaitExternalSessionKey:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onWaitExternalSessionKey: </td>
+          <td></td>
+          <td class="paramtype">(NSData *)&#160;</td>
+          <td class="paramname"><em>key</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Designated for notify the meeting is E2E or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>the meeting session key </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this protocol was generated from the following file:<ul>
-<li>MobileRTC/<a class="el" href="_mobile_r_t_c_meeting_service_8h_source.html">MobileRTCMeetingService.h</a></li>
+<li><a class="el" href="_mobile_r_t_c_meeting_service_8h_source.html">MobileRTCMeetingService.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

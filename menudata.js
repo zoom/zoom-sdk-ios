@@ -49,6 +49,7 @@ var menudata={children:[
 {text:"m",url:"functions_prop.html#index_m"},
 {text:"o",url:"functions_prop.html#index_o"},
 {text:"r",url:"functions_prop.html#index_r"},
+{text:"s",url:"functions_prop.html#index_s"},
 {text:"t",url:"functions_prop.html#index_t"}]}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"}]}]}

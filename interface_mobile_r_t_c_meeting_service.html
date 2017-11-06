@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Icon-Small@2x.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Icon-76@2x.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MobileRTC
    </div>
@@ -84,7 +84,7 @@ Inheritance diagram for MobileRTCMeetingService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a1051e2f55c4155c251c477f9eca1962b"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a1051e2f55c4155c251c477f9eca1962b">startMeetingWithDictionary:</a></td></tr>
-<tr class="memdesc:a1051e2f55c4155c251c477f9eca1962b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to start a meeting with parameters in a dictionary.  <a href="#a1051e2f55c4155c251c477f9eca1962b">More...</a><br /></td></tr>
+<tr class="memdesc:a1051e2f55c4155c251c477f9eca1962b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to start a meeting with parameters in a dictionary.  For user type is MobileRTCUserType_APIUser, the parameters in dict should be included kMeetingParam_UserID, kMeetingParam_UserToken, kMeetingParam_UserType, kMeetingParam_Username, kMeetingParam_MeetingNumber; For user type is MobileRTCUserType_ZoomUser/MobileRTCUserType_SSOUser, the parameters in dict just be included kMeetingParam_UserType and kMeetingParam_MeetingNumber(optional, this parameter can be ignored for instant meeting).  <a href="#a1051e2f55c4155c251c477f9eca1962b">More...</a><br /></td></tr>
 <tr class="separator:a1051e2f55c4155c251c477f9eca1962b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16630233f38e12d0fa80ca660476ad10"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a16630233f38e12d0fa80ca660476ad10">joinMeetingWithDictionary:</a></td></tr>
 <tr class="memdesc:a16630233f38e12d0fa80ca660476ad10"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to join a meeting with parameters in a dictionary.  <a href="#a16630233f38e12d0fa80ca660476ad10">More...</a><br /></td></tr>
@@ -95,9 +95,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a7954c7ceb9ea39742f1e3bbdb7ce93e4"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7954c7ceb9ea39742f1e3bbdb7ce93e4">leaveMeetingWithCmd:</a></td></tr>
 <tr class="memdesc:a7954c7ceb9ea39742f1e3bbdb7ce93e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to end/leave an ongoing meeting.  <a href="#a7954c7ceb9ea39742f1e3bbdb7ce93e4">More...</a><br /></td></tr>
 <tr class="separator:a7954c7ceb9ea39742f1e3bbdb7ce93e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b48803c9834b3cfe51b6facc3c8a117"><td class="memItemLeft" align="right" valign="top">(UIView *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a1b48803c9834b3cfe51b6facc3c8a117">meetingView</a></td></tr>
-<tr class="memdesc:a1b48803c9834b3cfe51b6facc3c8a117"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will return the view of meeting UI, which provide an access which allow customer to add their own view in the meeting UI.  <a href="#a1b48803c9834b3cfe51b6facc3c8a117">More...</a><br /></td></tr>
-<tr class="separator:a1b48803c9834b3cfe51b6facc3c8a117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab19618cb7ba2a777ad8c2216eac2ad44"><td class="memItemLeft" align="right" valign="top">(UIView *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ab19618cb7ba2a777ad8c2216eac2ad44">meetingView</a></td></tr>
+<tr class="memdesc:ab19618cb7ba2a777ad8c2216eac2ad44"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will return the view of meeting UI, which provide an access which allow customer to add their own view in the meeting UI.  <a href="#ab19618cb7ba2a777ad8c2216eac2ad44">More...</a><br /></td></tr>
+<tr class="separator:ab19618cb7ba2a777ad8c2216eac2ad44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fd51fd890c5950c91bb550ade406642"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5fd51fd890c5950c91bb550ade406642">isDirectAppShareMeeting</a></td></tr>
 <tr class="memdesc:a5fd51fd890c5950c91bb550ade406642"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to tell the client whether the meeting is an app share meeting.  <a href="#a5fd51fd890c5950c91bb550ade406642">More...</a><br /></td></tr>
 <tr class="separator:a5fd51fd890c5950c91bb550ade406642"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -267,6 +267,39 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:aea70388b41099f33f82417dabffd7afb"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aea70388b41099f33f82417dabffd7afb">isMyself:</a></td></tr>
 <tr class="memdesc:aea70388b41099f33f82417dabffd7afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to check the user is myself or not.  <a href="#aea70388b41099f33f82417dabffd7afb">More...</a><br /></td></tr>
 <tr class="separator:aea70388b41099f33f82417dabffd7afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad9497abb277b4ddf3221a5d22573ab"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a2ad9497abb277b4ddf3221a5d22573ab">isUserAudioMuted:</a></td></tr>
+<tr class="memdesc:a2ad9497abb277b4ddf3221a5d22573ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to check the user audio is muted or not.  <a href="#a2ad9497abb277b4ddf3221a5d22573ab">More...</a><br /></td></tr>
+<tr class="separator:a2ad9497abb277b4ddf3221a5d22573ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66bcca79fab0cf43bdbefb475afb8349"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a66bcca79fab0cf43bdbefb475afb8349">muteUserAudio:withUID:</a></td></tr>
+<tr class="memdesc:a66bcca79fab0cf43bdbefb475afb8349"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to mute/numute user's audio.  <a href="#a66bcca79fab0cf43bdbefb475afb8349">More...</a><br /></td></tr>
+<tr class="separator:a66bcca79fab0cf43bdbefb475afb8349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8457b7778b5071756cfa1bdeb73c68df"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a8457b7778b5071756cfa1bdeb73c68df">muteAllUserAudio:</a></td></tr>
+<tr class="memdesc:a8457b7778b5071756cfa1bdeb73c68df"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to mute all other users' audio.  <a href="#a8457b7778b5071756cfa1bdeb73c68df">More...</a><br /></td></tr>
+<tr class="separator:a8457b7778b5071756cfa1bdeb73c68df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0cffc62a07c0bad2c8909a86d6457e5"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ac0cffc62a07c0bad2c8909a86d6457e5">unmuteAllUserAudio</a></td></tr>
+<tr class="memdesc:ac0cffc62a07c0bad2c8909a86d6457e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to unmute all other users' audio.  <a href="#ac0cffc62a07c0bad2c8909a86d6457e5">More...</a><br /></td></tr>
+<tr class="separator:ac0cffc62a07c0bad2c8909a86d6457e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83a93af88f9e2ab1ce4abbe3c2425ca3"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a83a93af88f9e2ab1ce4abbe3c2425ca3">isUserVideoSending:</a></td></tr>
+<tr class="memdesc:a83a93af88f9e2ab1ce4abbe3c2425ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to check the user video is sending or not.  <a href="#a83a93af88f9e2ab1ce4abbe3c2425ca3">More...</a><br /></td></tr>
+<tr class="separator:a83a93af88f9e2ab1ce4abbe3c2425ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2851b42e8073ba90a627a1f2b611619b"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a2851b42e8073ba90a627a1f2b611619b">stopUserVideo:</a></td></tr>
+<tr class="memdesc:a2851b42e8073ba90a627a1f2b611619b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to stop user's video.  <a href="#a2851b42e8073ba90a627a1f2b611619b">More...</a><br /></td></tr>
+<tr class="separator:a2851b42e8073ba90a627a1f2b611619b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d6da1a3cc12b1ec81ed4143823f1637"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a9d6da1a3cc12b1ec81ed4143823f1637">askUserStartVideo:</a></td></tr>
+<tr class="memdesc:a9d6da1a3cc12b1ec81ed4143823f1637"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to ask to start user's video.  <a href="#a9d6da1a3cc12b1ec81ed4143823f1637">More...</a><br /></td></tr>
+<tr class="separator:a9d6da1a3cc12b1ec81ed4143823f1637"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334d08a546909dcf5e41b21e4bc72954"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_mobile_r_t_c_meeting_chat.html">MobileRTCMeetingChat</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a334d08a546909dcf5e41b21e4bc72954">meetingChatByID:</a></td></tr>
+<tr class="memdesc:a334d08a546909dcf5e41b21e4bc72954"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to get chat content in meeting.  <a href="#a334d08a546909dcf5e41b21e4bc72954">More...</a><br /></td></tr>
+<tr class="separator:a334d08a546909dcf5e41b21e4bc72954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab52273b5cfb88608a3c7cd4413782e09"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ab52273b5cfb88608a3c7cd4413782e09">handleE2EMeetingKey:withLeaveMeeting:</a></td></tr>
+<tr class="memdesc:ab52273b5cfb88608a3c7cd4413782e09"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to set customized meeting session key.  <a href="#ab52273b5cfb88608a3c7cd4413782e09">More...</a><br /></td></tr>
+<tr class="separator:ab52273b5cfb88608a3c7cd4413782e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f77a36dbc312d169937d44e95687ab8"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3f77a36dbc312d169937d44e95687ab8">isExternalMeeting</a></td></tr>
+<tr class="memdesc:a3f77a36dbc312d169937d44e95687ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to get the meeting is external or not.  <a href="#a3f77a36dbc312d169937d44e95687ab8">More...</a><br /></td></tr>
+<tr class="separator:a3f77a36dbc312d169937d44e95687ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af089a2e0f1ad1f5c0e3900b786d0d6f7"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#af089a2e0f1ad1f5c0e3900b786d0d6f7">isInternalMeeting</a></td></tr>
+<tr class="memdesc:af089a2e0f1ad1f5c0e3900b786d0d6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to get the meeting is internal or not.  <a href="#af089a2e0f1ad1f5c0e3900b786d0d6f7">More...</a><br /></td></tr>
+<tr class="separator:af089a2e0f1ad1f5c0e3900b786d0d6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -350,6 +383,36 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 </div>
 </div>
+<a id="a9d6da1a3cc12b1ec81ed4143823f1637"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d6da1a3cc12b1ec81ed4143823f1637">&#9670;&nbsp;</a></span>askUserStartVideo:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) askUserStartVideo: </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to ask to start user's video. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>the user id in meeting, the userID should not be host himself </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting host can run this function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9d6da1a3cc12b1ec81ed4143823f1637">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
 <a id="a8aca1a8e69f3c6f352567020fc54d856"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8aca1a8e69f3c6f352567020fc54d856">&#9670;&nbsp;</a></span>callRoomDevice:()</h2>
 
@@ -373,7 +436,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>YES means call successfully. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a8aca1a8e69f3c6f352567020fc54d856">MobileRTCMeetingService(Customize)</a>.</p>
 
@@ -395,7 +458,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 </div><div class="memdoc">
 
 <p>This method is used to cancel call room device. </p>
-<dl class="section return"><dt>Returns</dt><dd>YES means that cancel successfully </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a180eba151f8072bf193675fcabd83654">MobileRTCMeetingService(Customize)</a>.</p>
 
@@ -424,7 +487,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>YES means that cancel successfully </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a89fd20a21e2965f077ec265212854b7a">MobileRTCMeetingService(Customize)</a>.</p>
 
@@ -614,7 +677,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>YES means that dial out successfully. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a1c1666f6222df14e68e79fce6407bfff">MobileRTCMeetingService(Customize)</a>.</p>
 
@@ -725,6 +788,47 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 <dl class="section return"><dt>Returns</dt><dd>the array of room devices; or return nil, if there does not exist any room device. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a69cc5e0fcc6936a33fc8e2c99f61b8a2">MobileRTCMeetingService(Customize)</a>.</p>
+
+</div>
+</div>
+<a id="ab52273b5cfb88608a3c7cd4413782e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab52273b5cfb88608a3c7cd4413782e09">&#9670;&nbsp;</a></span>handleE2EMeetingKey:withLeaveMeeting:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) handleE2EMeetingKey: </td>
+          <td></td>
+          <td class="paramtype">(NSArray*)&#160;</td>
+          <td class="paramname"><em>keyArray</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withLeaveMeeting:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>leave</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to set customized meeting session key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyArray</td><td>the array of meeting session keys </td></tr>
+    <tr><td class="paramname">leave</td><td>YES means leave meeting directly; NO means not leave meeting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The method is optional. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ab52273b5cfb88608a3c7cd4413782e09">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -976,6 +1080,29 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 </div>
 </div>
+<a id="a3f77a36dbc312d169937d44e95687ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f77a36dbc312d169937d44e95687ab8">&#9670;&nbsp;</a></span>isExternalMeeting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isExternalMeeting </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to get the meeting is external or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means external meeting. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The method is optional. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a3f77a36dbc312d169937d44e95687ab8">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
 <a id="a27340831fce9bf957ad0ecca2225ce3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27340831fce9bf957ad0ecca2225ce3d">&#9670;&nbsp;</a></span>isHostUser:()</h2>
 
@@ -1002,6 +1129,29 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 <dl class="section return"><dt>Returns</dt><dd>YES means host. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a27340831fce9bf957ad0ecca2225ce3d">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="af089a2e0f1ad1f5c0e3900b786d0d6f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af089a2e0f1ad1f5c0e3900b786d0d6f7">&#9670;&nbsp;</a></span>isInternalMeeting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isInternalMeeting </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to get the meeting is internal or not. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means internal meeting. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The method is optional. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#af089a2e0f1ad1f5c0e3900b786d0d6f7">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1250,6 +1400,35 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 </div>
 </div>
+<a id="a2ad9497abb277b4ddf3221a5d22573ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad9497abb277b4ddf3221a5d22573ab">&#9670;&nbsp;</a></span>isUserAudioMuted:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isUserAudioMuted: </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to check the user audio is muted or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>the user id in meeting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means audio muted. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a2ad9497abb277b4ddf3221a5d22573ab">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
 <a id="ac39f35be70f6b9d4f752d2d14a4e895a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac39f35be70f6b9d4f752d2d14a4e895a">&#9670;&nbsp;</a></span>isUserSpotlighted:()</h2>
 
@@ -1276,6 +1455,35 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 <dl class="section return"><dt>Returns</dt><dd>YES means the user's video is spotlighted. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ac39f35be70f6b9d4f752d2d14a4e895a">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="a83a93af88f9e2ab1ce4abbe3c2425ca3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83a93af88f9e2ab1ce4abbe3c2425ca3">&#9670;&nbsp;</a></span>isUserVideoSending:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isUserVideoSending: </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to check the user video is sending or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>the user id in meeting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means video is sending. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a83a93af88f9e2ab1ce4abbe3c2425ca3">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1310,7 +1518,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
         <tr>
           <td class="memname">- (MobileRTCMeetError) joinMeetingWithDictionary: </td>
           <td></td>
-          <td class="paramtype">(NSDictionary*)&#160;</td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
           <td class="paramname"><em>dict</em></td>
           <td></td>
         </tr>
@@ -1430,14 +1638,43 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 </div>
 </div>
-<a id="a1b48803c9834b3cfe51b6facc3c8a117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b48803c9834b3cfe51b6facc3c8a117">&#9670;&nbsp;</a></span>meetingView()</h2>
+<a id="a334d08a546909dcf5e41b21e4bc72954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334d08a546909dcf5e41b21e4bc72954">&#9670;&nbsp;</a></span>meetingChatByID:()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (UIView *) meetingView </td>
+          <td class="memname">- (<a class="el" href="interface_mobile_r_t_c_meeting_chat.html">MobileRTCMeetingChat</a> *) meetingChatByID: </td>
+          <td></td>
+          <td class="paramtype">(NSString*)&#160;</td>
+          <td class="paramname"><em>messageID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to get chat content in meeting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">messageID</td><td>the message ID in meeting chat </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>an instance of meeting chat. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a334d08a546909dcf5e41b21e4bc72954">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="ab19618cb7ba2a777ad8c2216eac2ad44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab19618cb7ba2a777ad8c2216eac2ad44">&#9670;&nbsp;</a></span>meetingView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (UIView*) meetingView </td>
           <td></td>
           <td class="paramname"></td>
           <td></td>
@@ -1447,6 +1684,77 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 <p>This method will return the view of meeting UI, which provide an access which allow customer to add their own view in the meeting UI. </p>
 <dl class="section return"><dt>Returns</dt><dd>the view of meeting if the meeting is ongoing, or return nil. </dd></dl>
+
+</div>
+</div>
+<a id="a8457b7778b5071756cfa1bdeb73c68df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8457b7778b5071756cfa1bdeb73c68df">&#9670;&nbsp;</a></span>muteAllUserAudio:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) muteAllUserAudio: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>allowSelfUnmute</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to mute all other users' audio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowSelfUnmute</td><td>YES means allow self unmute; NO means cannot self unmute </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting host can run this function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a8457b7778b5071756cfa1bdeb73c68df">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="a66bcca79fab0cf43bdbefb475afb8349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66bcca79fab0cf43bdbefb475afb8349">&#9670;&nbsp;</a></span>muteUserAudio:withUID:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) muteUserAudio: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>mute</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">withUID:</td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to mute/numute user's audio. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mute</td><td>YES means mute; NO means unmute </td></tr>
+    <tr><td class="paramname">userID</td><td>the user id in meeting </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting host can run this function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a66bcca79fab0cf43bdbefb475afb8349">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1614,7 +1922,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>YES means send successfully. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#ab2ea9bd0e64dbd5b96e2a0e2710bc3e2">MobileRTCMeetingService(Customize)</a>.</p>
 
@@ -1720,14 +2028,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
         <tr>
           <td class="memname">- (MobileRTCMeetError) startMeetingWithDictionary: </td>
           <td></td>
-          <td class="paramtype">(NSDictionary*)&#160;</td>
+          <td class="paramtype">(NSDictionary *)&#160;</td>
           <td class="paramname"><em>dict</em></td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to start a meeting with parameters in a dictionary. </p>
+<p>This method is used to start a meeting with parameters in a dictionary.  For user type is MobileRTCUserType_APIUser, the parameters in dict should be included kMeetingParam_UserID, kMeetingParam_UserToken, kMeetingParam_UserType, kMeetingParam_Username, kMeetingParam_MeetingNumber; For user type is MobileRTCUserType_ZoomUser/MobileRTCUserType_SSOUser, the parameters in dict just be included kMeetingParam_UserType and kMeetingParam_MeetingNumber(optional, this parameter can be ignored for instant meeting). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dict</td><td>The dictionary which contains the meeting parameters. </td></tr>
@@ -1735,6 +2043,37 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A MobileRTCMeetError to tell client whether the meeting started or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If start meeting with wrong parameter, this method will return MobileRTCMeetError_InvalidArguments </dd></dl>
+
+</div>
+</div>
+<a id="a2851b42e8073ba90a627a1f2b611619b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2851b42e8073ba90a627a1f2b611619b">&#9670;&nbsp;</a></span>stopUserVideo:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) stopUserVideo: </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to stop user's video. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>the user id in meeting, the userID should not be host himself </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting host can run this function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a2851b42e8073ba90a627a1f2b611619b">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1763,6 +2102,29 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 </dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a4fce04d5ce18fb43b0352d6543f00bb1">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="ac0cffc62a07c0bad2c8909a86d6457e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0cffc62a07c0bad2c8909a86d6457e5">&#9670;&nbsp;</a></span>unmuteAllUserAudio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) unmuteAllUserAudio </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This method is used to unmute all other users' audio. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting host can run this function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ac0cffc62a07c0bad2c8909a86d6457e5">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1795,9 +2157,8 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>MobileRTC/<a class="el" href="_mobile_r_t_c_meeting_service_8h_source.html">MobileRTCMeetingService.h</a></li>
-<li>MobileRTC/MobileRTCMeetingService.mm</li>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="_mobile_r_t_c_meeting_service_8h_source.html">MobileRTCMeetingService.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -7,6 +7,8 @@ var searchData=
   ['onclickedinvitebutton_3a',['onClickedInviteButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a5ff6defaae7cf9946ff68c3622901448',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedsharebutton',['onClickedShareButton',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a3bb018a44bd76be5f9d95eec7fd19dea',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['ondialoutstatuschanged_3a',['onDialOutStatusChanged:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ab18c3f382f95fc1f66d653a0c5a1353b',1,'MobileRTCMeetingServiceDelegate -p']]],
+  ['oninmeetingchat_3a',['onInMeetingChat:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#affee906441c03c6cb47d7c60580788b7',1,'MobileRTCMeetingServiceDelegate -p']]],
+  ['oninmeetinguserupdated',['onInMeetingUserUpdated',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a02742f56af1a86279c17d02348f3fca7',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onjbhwaitingwithcmd_3a',['onJBHWaitingWithCmd:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a61e8ce71f1fd6fe00728eec699fe4873',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onmeetingerror_3amessage_3a',['onMeetingError:message:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ae2a6d158e56823f0bb309ab3ea7fee9f',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onmeetinghostchange_3a',['onMeetingHostChange:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a29d3bf523a79110324969b1dac31633d',1,'MobileRTCMeetingServiceDelegate -p']]],
@@ -21,5 +23,6 @@ var searchData=
   ['onmyvideostatechange',['onMyVideoStateChange',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a6d8b70a54e74996c431fc6397f376263',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onongoingsharestopped',['onOngoingShareStopped',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#aac4683de599c316c6d297e874f332209',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onsendpairingcodestatechanged_3a',['onSendPairingCodeStateChanged:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ad37ca5e649f5e2af6ea9431c2d838064',1,'MobileRTCMeetingServiceDelegate -p']]],
-  ['onspotlightvideochange_3a',['onSpotlightVideoChange:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ac709ea8fffe800c1bed57cda535b95ed',1,'MobileRTCMeetingServiceDelegate -p']]]
+  ['onspotlightvideochange_3a',['onSpotlightVideoChange:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ac709ea8fffe800c1bed57cda535b95ed',1,'MobileRTCMeetingServiceDelegate -p']]],
+  ['onwaitexternalsessionkey_3a',['onWaitExternalSessionKey:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a8690c07ae3ef04dd3457eed38d497f93',1,'MobileRTCMeetingServiceDelegate -p']]]
 ];

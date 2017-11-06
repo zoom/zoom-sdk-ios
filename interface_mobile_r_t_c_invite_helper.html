@@ -20,7 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="Icon-Small@2x.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="Icon-76@2x.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">MobileRTC
    </div>
@@ -96,6 +96,15 @@ Properties</h2></td></tr>
 <tr class="memitem:a804da70ac1b5cbf2e80f5d13f8daf145"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_invite_helper.html#a804da70ac1b5cbf2e80f5d13f8daf145">ongoingMeetingID</a></td></tr>
 <tr class="memdesc:a804da70ac1b5cbf2e80f5d13f8daf145"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the ongoing meeting unique ID, the format is just like DVLObefSZizM0xQLhtrCQ==.  <a href="#a804da70ac1b5cbf2e80f5d13f8daf145">More...</a><br /></td></tr>
 <tr class="separator:a804da70ac1b5cbf2e80f5d13f8daf145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee4ad31c4eb756d53cd1ec737fea3635"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_invite_helper.html#aee4ad31c4eb756d53cd1ec737fea3635">ongoingMeetingTopic</a></td></tr>
+<tr class="memdesc:aee4ad31c4eb756d53cd1ec737fea3635"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the ongoing meeting topic.  <a href="#aee4ad31c4eb756d53cd1ec737fea3635">More...</a><br /></td></tr>
+<tr class="separator:aee4ad31c4eb756d53cd1ec737fea3635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4c485f634179489f4880072712345d9"><td class="memItemLeft" align="right" valign="top">NSDate *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_invite_helper.html#af4c485f634179489f4880072712345d9">ongoingMeetingStartTime</a></td></tr>
+<tr class="memdesc:af4c485f634179489f4880072712345d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the ongoing meeting start time.  <a href="#af4c485f634179489f4880072712345d9">More...</a><br /></td></tr>
+<tr class="separator:af4c485f634179489f4880072712345d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab58030301abbcdeb423f48e84a227de0"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_invite_helper.html#ab58030301abbcdeb423f48e84a227de0">ongoingRecurringMeeting</a></td></tr>
+<tr class="memdesc:ab58030301abbcdeb423f48e84a227de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the ongoing meeting whether is a recurring meeting or not.  <a href="#ab58030301abbcdeb423f48e84a227de0">More...</a><br /></td></tr>
+<tr class="separator:ab58030301abbcdeb423f48e84a227de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ccaad85e3c53a58504ac199d83eb7d3"><td class="memItemLeft" align="right" valign="top"><a id="a3ccaad85e3c53a58504ac199d83eb7d3"></a>
 NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_invite_helper.html#a3ccaad85e3c53a58504ac199d83eb7d3">joinMeetingURL</a></td></tr>
 <tr class="memdesc:a3ccaad85e3c53a58504ac199d83eb7d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">To get the join URL of ongoing meeting. <br /></td></tr>
@@ -270,9 +279,84 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href
 
 </div>
 </div>
+<a id="af4c485f634179489f4880072712345d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c485f634179489f4880072712345d9">&#9670;&nbsp;</a></span>ongoingMeetingStartTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSDate *) ongoingMeetingStartTime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To get the ongoing meeting start time. </p>
+<dl class="section warning"><dt>Warning</dt><dd>this method should be called during an ongoing meeting, or the value is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="aee4ad31c4eb756d53cd1ec737fea3635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee4ad31c4eb756d53cd1ec737fea3635">&#9670;&nbsp;</a></span>ongoingMeetingTopic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *) ongoingMeetingTopic</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To get the ongoing meeting topic. </p>
+<dl class="section warning"><dt>Warning</dt><dd>this method should be called during an ongoing meeting, or the value is invalid. </dd></dl>
+
+</div>
+</div>
+<a id="ab58030301abbcdeb423f48e84a227de0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab58030301abbcdeb423f48e84a227de0">&#9670;&nbsp;</a></span>ongoingRecurringMeeting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) ongoingRecurringMeeting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>To get the ongoing meeting whether is a recurring meeting or not. </p>
+<dl class="section warning"><dt>Warning</dt><dd>this method should be called during an ongoing meeting, or the value is invalid. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>MobileRTC/<a class="el" href="_mobile_r_t_c_invite_helper_8h_source.html">MobileRTCInviteHelper.h</a></li>
-<li>MobileRTC/MobileRTCInviteHelper.m</li>
+<li><a class="el" href="_mobile_r_t_c_invite_helper_8h_source.html">MobileRTCInviteHelper.h</a></li>
+<li>MobileRTCInviteHelper.m</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
