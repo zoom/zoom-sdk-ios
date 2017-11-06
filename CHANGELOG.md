@@ -1,4 +1,23 @@
 # CHANGELOG
+## 2017-11-03
+
+### Added
+1. Support iOS 11 and iPhone X compatibility
+
+2. Support SSO login
+
+3. Add interfaces to get ongoing meeting topic, start time and repeat type
+
+4. Add interfaces to check if meeting support inviting by phone and room system
+
+5. Add interfaces to start/stop my audio&video , host start/stop attendees' audio
+
+6. Add interfaces to allow to show thumbnail videos in the right side which viewing sharing
+
+7. Add interfaces to schedule/edit/delete meeting after login with work email/SSO in mobileRTC
+
+8. Bug fixes
+
 ## 2017-06-14
 
 ### Added
