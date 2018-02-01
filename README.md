@@ -14,4 +14,4 @@ Example App using Zoom iOS-RTC-Stack - https://zoom.us/developer/overview/ios-rt
 
 If you need assistance, please visit the [Zoom Developer Portal](https://zoom.us/developer)
 
-Copyright ©2016 Zoom Video Communications, Inc.
+Copyright ©2018 Zoom Video Communications, Inc.
