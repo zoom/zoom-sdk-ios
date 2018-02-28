@@ -18,6 +18,7 @@
 @property (retain, nonatomic) UITableViewCell *callOutCell;
 
 @property (retain, nonatomic) UITableViewCell *titleHiddenCell;
+@property (retain, nonatomic) UITableViewCell *passwordHiddenCell;
 @property (retain, nonatomic) UITableViewCell *leaveHiddenCell;
 @property (retain, nonatomic) UITableViewCell *inviteHiddenCell;
 @property (retain, nonatomic) UITableViewCell *shareHiddenCell;
@@ -33,6 +34,7 @@
 @property (retain, nonatomic) UITableViewCell *thumbnailCell;
 @property (retain, nonatomic) UITableViewCell *hostLeaveCell;
 @property (retain, nonatomic) UITableViewCell *hintCell;
+@property (retain, nonatomic) UITableViewCell *waitingHUDCell;
 
 @property (retain, nonatomic) NSArray *itemArray;
 
@@ -55,6 +57,7 @@
     
     NSMutableArray *ma = [NSMutableArray array];
     [ma addObject:[self titleHiddenCell]];
+    [ma addObject:[self passwordHiddenCell]];
     [ma addObject:[self leaveHiddenCell]];
     [ma addObject:[self audioHiddenCell]];
     [ma addObject:[self videoHiddenCell]];
@@ -66,6 +69,7 @@
     [ma addObject:[self thumbnailCell]];
     [ma addObject:[self hostLeaveCell]];
     [ma addObject:[self hintCell]];
+    [ma addObject:[self waitingHUDCell]];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
     {
         [ma addObject:[self botBarHiddenCell]];
@@ -290,6 +294,29 @@
     }
     
     return _titleHiddenCell;
+}
+
+- (UITableViewCell*)passwordHiddenCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL hidden = [settings meetingPasswordHidden];
+    
+    if (!_passwordHiddenCell)
+    {
+        _passwordHiddenCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _passwordHiddenCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _passwordHiddenCell.textLabel.text = NSLocalizedString(@"Hide Meeting Password", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:hidden animated:NO];
+        [sv addTarget:self action:@selector(onHideMeetingPassword:) forControlEvents:UIControlEventValueChanged];
+        _passwordHiddenCell.accessoryView = sv;
+    }
+    
+    return _passwordHiddenCell;
 }
 
 - (UITableViewCell*)leaveHiddenCell
@@ -534,7 +561,7 @@
     {
         _thumbnailCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         _thumbnailCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        _thumbnailCell.textLabel.text = NSLocalizedString(@"Hide Thumbnail Video", @"");
+        _thumbnailCell.textLabel.text = NSLocalizedString(@"Change Thumbnail Layout", @"");
         
         UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
         [sv setOn:hidden animated:NO];
@@ -591,6 +618,29 @@
     return _hintCell;
 }
 
+- (UITableViewCell*)waitingHUDCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL hidden = [settings waitingHUDHidden];
+    
+    if (!_waitingHUDCell)
+    {
+        _waitingHUDCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _waitingHUDCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _waitingHUDCell.textLabel.text = NSLocalizedString(@"Hide Waiting HUD", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:hidden animated:NO];
+        [sv addTarget:self action:@selector(onHideWaitingHUD:) forControlEvents:UIControlEventValueChanged];
+        _waitingHUDCell.accessoryView = sv;
+    }
+    
+    return _waitingHUDCell;
+}
+
 - (void)onAutoConnectAudio:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
@@ -631,6 +681,12 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [[MobileRTC sharedRTC] getMeetingSettings].meetingTitleHidden = sv.on;
+}
+
+- (void)onHideMeetingPassword:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [[MobileRTC sharedRTC] getMeetingSettings].meetingPasswordHidden = sv.on;
 }
 
 - (void)onHideMeetingLeave:(id)sender
@@ -709,6 +765,12 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [[MobileRTC sharedRTC] getMeetingSettings].hintHidden = sv.on;
+}
+
+- (void)onHideWaitingHUD:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [[MobileRTC sharedRTC] getMeetingSettings].waitingHUDHidden = sv.on;
 }
 
 @end

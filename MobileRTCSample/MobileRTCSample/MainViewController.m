@@ -26,6 +26,7 @@
 #define kParticipantID  @""
 #define kWebinarToken   @""
 
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 
 @interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate>
 
@@ -40,6 +41,7 @@
 @property (retain, nonatomic) UIButton *settingButton;
 
 @property (assign, nonatomic) BOOL isSharing;
+@property (assign, nonatomic) NSTimer  *clockTimer;
 
 @end
 
@@ -311,10 +313,19 @@
     
     UIView *shareView = _isSharing ? self.introVC.view : self.splashVC.view;
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    [ms appShareWithView:shareView];
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11") && _isSharing)
+    {
+        [ms appShareWithReplayKit];
+    }
+    else
+    {
+        [ms appShareWithView:shareView];
+    }
     
-    UIImage *image = [UIImage imageNamed:_isSharing?@"icon_pause":@"icon_resume"];
-    [self.shareButton setImage:image forState:UIControlStateNormal];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIImage *image = [UIImage imageNamed:_isSharing?@"icon_pause":@"icon_resume"];
+        [self.shareButton setImage:image forState:UIControlStateNormal];
+    });
 }
 
 - (void)onExpand:(id)sender
@@ -359,30 +370,32 @@
         ms.delegate = self;
         //If App share meeting is expected, please set kMeetingParam_IsAppShare to YES, or just remove this parameter.
         
+        NSDictionary *paramDict = nil;
+        MobileRTCUserType userType = [[[MobileRTC sharedRTC] getAuthService] getUserType];
         //For API User, the user type should be ZoomSDKUserType_APIUser.
-        NSDictionary *paramDict = @{kMeetingParam_UserID:kSDKUserID,
-                                    kMeetingParam_UserToken:kSDKUserToken,
-                                    kMeetingParam_UserType:@(MobileRTCUserType_APIUser),
-                                    kMeetingParam_Username:kSDKUserName,
-                                    kMeetingParam_MeetingNumber:kSDKMeetNumber,
-                                    kMeetingParam_IsAppShare:@(appShare),
-                                    //kMeetingParam_ParticipantID:kParticipantID,
-                                    //kMeetingParam_NoAudio:@(YES),
-                                    //kMeetingParam_NoVideo:@(YES),
-                                    };
-        
-//        //For login user start scheduled meeting, user type can be ignored
-//        NSDictionary *paramDict = @{
-//                                    //kMeetingParam_UserType:@(MobileRTCUserType_ZoomUser),
-//                                    kMeetingParam_MeetingNumber:kSDKMeetNumber,
-//                                    //kMeetingParam_IsAppShare:@(YES)
-//                                    };
-//
-//        //For login user start instant meeting, user type can be ignored
-//        NSDictionary *paramDict = @{
-//                                    //kMeetingParam_UserType:@(MobileRTCUserType_ZoomUser),
-//                                    //kMeetingParam_IsAppShare:@(YES)
-//                                    };
+        if (MobileRTCUserType_APIUser == userType)
+        {
+            paramDict = @{kMeetingParam_UserID:kSDKUserID,
+                          kMeetingParam_UserToken:kSDKUserToken,
+                          kMeetingParam_UserType:@(userType),
+                          kMeetingParam_Username:kSDKUserName,
+                          kMeetingParam_MeetingNumber:kSDKMeetNumber,
+                          kMeetingParam_IsAppShare:@(appShare),
+                          //kMeetingParam_ParticipantID:kParticipantID,
+                          //kMeetingParam_NoAudio:@(YES),
+                          //kMeetingParam_NoVideo:@(YES),
+                          };
+        }
+        else
+        {
+            //For Zoom/SSO User, can start instant meeting.
+            paramDict = @{kMeetingParam_UserType:@(userType),
+                          kMeetingParam_IsAppShare:@(appShare),
+                          //kMeetingParam_ParticipantID:kParticipantID,
+                          //kMeetingParam_NoAudio:@(YES),
+                          //kMeetingParam_NoVideo:@(YES),
+                          };
+        }
         
         MobileRTCMeetError ret = [ms startMeetingWithDictionary:paramDict];
         
@@ -530,6 +543,8 @@
         BOOL ret = [ms startAppShare];
         NSLog(@"Start App Share... ret:%zd", ret);
     }
+    
+//    [self startClockTimer];
 }
 
 - (void)onAppShareSplash
@@ -544,21 +559,25 @@
     }
 }
 
-- (void)onClickedShareButton
+- (BOOL)onClickedShareButton
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms)
+    if (ms && [ms isDirectAppShareMeeting])
     {
         if ([ms isStartingShare] || [ms isViewingShare])
         {
             NSLog(@"There exist an ongoing share");
-            return;
+            return YES;
         }
 
         [ms hideMobileRTCMeeting:^(void){
             [ms startAppShare];
         }];
+        
+        return YES;
     }
+    
+    return NO;
 }
 
 - (void)onOngoingShareStopped
@@ -704,4 +723,29 @@
 }
 #endif
 
+#pragma mark - Timer
+
+- (void)startClockTimer
+{
+    NSTimeInterval interval = 1.0;
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:interval target:self selector:@selector(handleClockTimer:) userInfo:nil repeats:YES];
+    self.clockTimer = timer;
+}
+
+- (void)stopClockTimer
+{
+    if ([self.clockTimer isValid])
+    {
+        [self.clockTimer invalidate];
+        self.clockTimer = nil;
+    }
+}
+
+- (void)handleClockTimer:(NSTimer *)theTimer
+{
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    MobileRTCNetworkQuality sendQuality = [ms queryNetworkQuality:MobileRTCComponentType_VIDEO withDataFlow:YES];
+    MobileRTCNetworkQuality receiveQuality = [ms queryNetworkQuality:MobileRTCComponentType_VIDEO withDataFlow:NO];
+    NSLog(@"Query Network Data [sending: %zd, receiving: %zd]...", sendQuality, receiveQuality);
+}
 @end

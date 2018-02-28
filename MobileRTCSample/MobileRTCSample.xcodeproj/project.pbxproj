@@ -34,6 +34,8 @@
 		D9E564491D9CF24200EF8C30 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564481D9CF24200EF8C30 /* VideoToolbox.framework */; };
 		D9E5644B1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */; };
 		D9E564921D9CFF7000EF8C30 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564911D9CFF7000EF8C30 /* CoreBluetooth.framework */; };
+		D9EE87871FEC340E0075C049 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE87861FEC340E0075C049 /* CoreMotion.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D9EE87881FEC342E0075C049 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC141CEEB9CB0071F330 /* IntroViewController.m */; };
 		D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC181CEEB9CB0071F330 /* SplashViewController.m */; };
 		D9FCEC291CEEB9F70071F330 /* icon_meet.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1C1CEEB9F70071F330 /* icon_meet.png */; };
@@ -123,11 +125,13 @@
 		D9A095DA1DA8D75500498CA1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D9A095DB1DA8D76700498CA1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D9A095DC1DA8D77E00498CA1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		D9E564431D9CF23300EF8C30 /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
 		D9E564461D9CF23B00EF8C30 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D9E564481D9CF24200EF8C30 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		D9E564911D9CFF7000EF8C30 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		D9EE87861FEC340E0075C049 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		D9FCEC131CEEB9CB0071F330 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
 		D9FCEC141CEEB9CB0071F330 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
 		D9FCEC171CEEB9CB0071F330 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9EE87881FEC342E0075C049 /* ReplayKit.framework in Frameworks */,
+				D9EE87871FEC340E0075C049 /* CoreMotion.framework in Frameworks */,
 				D9E564921D9CFF7000EF8C30 /* CoreBluetooth.framework in Frameworks */,
 				D9E564471D9CF23B00EF8C30 /* libsqlite3.tbd in Frameworks */,
 				D9E5644B1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -185,6 +191,8 @@
 		C123331F18D6D43100894EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9EE87861FEC340E0075C049 /* CoreMotion.framework */,
+				D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */,
 				D9499AB21F457E350039362A /* WebKit.framework */,
 				D9E564911D9CFF7000EF8C30 /* CoreBluetooth.framework */,
 				D9E564461D9CF23B00EF8C30 /* libsqlite3.tbd */,

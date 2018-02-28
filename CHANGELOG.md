@@ -1,4 +1,17 @@
 # CHANGELOG
+## 2018-02-06
+1. Support to show/shrink attendees' video ribbon while viewing screen sharing
+
+2. Support to query network quality of video/audio/share in meeting
+
+3. Add interfaces to allow customer to determine whether show share menu or not while clicking share button in meeting
+
+4. Add interfaces to allow customer to determine whether show waiting HUD or not while starting&joining&leaving meeting
+
+5. Bug fixes
+
+### Added
+
 ## 2017-11-03
 
 ### Added

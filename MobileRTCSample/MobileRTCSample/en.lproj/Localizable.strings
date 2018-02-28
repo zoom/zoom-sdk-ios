@@ -56,13 +56,17 @@
 
 "Enable Kubi Device" = "Enable Kubi Device";
 
-"Hide Thumbnail Video" = "Hide Thumbnail Video";
+"Change Thumbnail Layout" = "Change Thumbnail Layout";
 
 "Host Hide Leave Meeting" = "Host Hide Leave Meeting";
 
 "Hide Hint in Meeting" = "Hide Hint in Meeting";
 
+"Hide Waiting HUD" = "Hide Waiting HUD";
+
 "Hide Meeting More" = "Hide Meeting More";
+
+"Hide Meeting Password" = "Hide Meeting Password";
 
 "SDK authentication failed, error code: %zd" = "SDK authentication failed, error code: %zd";
 

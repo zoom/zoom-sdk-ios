@@ -56,13 +56,17 @@
 
 "Enable Kubi Device" = "启用Kubi设备";
 
-"Hide Thumbnail Video" = "观看共享时隐藏参会人视频";
+"Change Thumbnail Layout" = "共享时变更小视频布局";
 
 "Host Hide Leave Meeting" = "隐藏主持人离会菜单";
 
 "Hide Hint in Meeting" = "隐藏状态栏提醒";
 
+"Hide Waiting HUD" = "隐藏等待HUD";
+
 "Hide Meeting More" = "隐藏更多菜单";
+
+"Hide Meeting Password" = "隐藏会议密码";
 
 "SDK authentication failed, error code: %zd" = "SDK授权失败，错误码: %zd";
 
