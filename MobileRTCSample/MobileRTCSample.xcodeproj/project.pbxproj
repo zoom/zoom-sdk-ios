@@ -7,52 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
-		C123332D18D6D43100894EED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C123332C18D6D43100894EED /* main.m */; };
-		C123333118D6D43100894EED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C123333018D6D43100894EED /* AppDelegate.m */; };
-		C123333318D6D43100894EED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C123333218D6D43100894EED /* Images.xcassets */; };
-		C123335218D6D4E900894EED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335018D6D4E900894EED /* MainViewController.m */; };
-		C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335518D6D87B00894EED /* UIImage+Additions.m */; };
-		D90F5B3A1F501C7500E99195 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B381F501C7500E99195 /* iTunesArtwork */; };
-		D90F5B3B1F501C7500E99195 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B391F501C7500E99195 /* iTunesArtwork@2x */; };
-		D9499BB61F468C160039362A /* MeetingSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BB51F468C160039362A /* MeetingSettingsViewController.m */; };
-		D9499BBC1F4A76770039362A /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BBB1F4A76770039362A /* ScheduleTableViewController.m */; };
-		D960A76F1D6FDD6D001BF94E /* icon_meeting_share.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A7691D6FDD6D001BF94E /* icon_meeting_share.png */; };
-		D960A7701D6FDD6D001BF94E /* icon_meeting_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76A1D6FDD6D001BF94E /* icon_meeting_share@2x.png */; };
-		D960A7711D6FDD6D001BF94E /* icon_meeting_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76B1D6FDD6D001BF94E /* icon_meeting_share@3x.png */; };
-		D960A7721D6FDD6D001BF94E /* icon_meeting_stopshare.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76C1D6FDD6D001BF94E /* icon_meeting_stopshare.png */; };
-		D960A7731D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76D1D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png */; };
-		D960A7741D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76E1D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png */; };
-		D98403EF1DC44DAA00085DBF /* mobileRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98403EE1DC44DAA00085DBF /* mobileRTC.framework */; };
-		D98403F11DC44DB100085DBF /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */; };
-		D996D23F1C99473F00C284F0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D996D23D1C99473F00C284F0 /* Localizable.strings */; };
-		D996D2481C99478B00C284F0 /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D996D2441C99478B00C284F0 /* InviteViewController.m */; };
-		D996D2491C99478B00C284F0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D996D2451C99478B00C284F0 /* LaunchScreen.xib */; };
-		D996D24A1C99478B00C284F0 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D996D2471C99478B00C284F0 /* SettingsViewController.m */; };
-		D9E564441D9CF23300EF8C30 /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564431D9CF23300EF8C30 /* libz.1.2.5.tbd */; };
-		D9E564471D9CF23B00EF8C30 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564461D9CF23B00EF8C30 /* libsqlite3.tbd */; };
-		D9E564491D9CF24200EF8C30 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564481D9CF24200EF8C30 /* VideoToolbox.framework */; };
-		D9E5644B1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */; };
-		D9E564921D9CFF7000EF8C30 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E564911D9CFF7000EF8C30 /* CoreBluetooth.framework */; };
-		D9EE87871FEC340E0075C049 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EE87861FEC340E0075C049 /* CoreMotion.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D9EE87881FEC342E0075C049 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC141CEEB9CB0071F330 /* IntroViewController.m */; };
-		D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC181CEEB9CB0071F330 /* SplashViewController.m */; };
-		D9FCEC291CEEB9F70071F330 /* icon_meet.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1C1CEEB9F70071F330 /* icon_meet.png */; };
-		D9FCEC2A1CEEB9F70071F330 /* icon_meet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1D1CEEB9F70071F330 /* icon_meet@2x.png */; };
-		D9FCEC2B1CEEB9F70071F330 /* icon_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1E1CEEB9F70071F330 /* icon_pause@2x.png */; };
-		D9FCEC2C1CEEB9F70071F330 /* icon_resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1F1CEEB9F70071F330 /* icon_resume@2x.png */; };
-		D9FCEC2D1CEEB9F70071F330 /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC201CEEB9F70071F330 /* icon_setting.png */; };
-		D9FCEC2E1CEEB9F70071F330 /* icon_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC211CEEB9F70071F330 /* icon_setting@2x.png */; };
-		D9FCEC301CEEB9F70071F330 /* icon_share_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC231CEEB9F70071F330 /* icon_share_app@2x.png */; };
-		D9FCEC321CEEB9F70071F330 /* zoom_intro1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC251CEEB9F70071F330 /* zoom_intro1.png */; };
-		D9FCEC331CEEB9F70071F330 /* zoom_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC261CEEB9F70071F330 /* zoom_intro2.png */; };
-		D9FCEC341CEEB9F70071F330 /* zoom_intro3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC271CEEB9F70071F330 /* zoom_intro3.png */; };
-		D9FCEC351CEEB9F70071F330 /* zoom_intro4.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC281CEEB9F70071F330 /* zoom_intro4.png */; };
-		F75FDB761D6C370B004DC2FA /* LanguaguePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75FDB751D6C370B004DC2FA /* LanguaguePickerViewController.m */; };
+		5D8E67B020410ED400EE093E /* InviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D996D2441C99478B00C284F0 /* InviteViewController.m */; };
+		5D8E67B120410ED400EE093E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C123333018D6D43100894EED /* AppDelegate.m */; };
+		5D8E67B220410ED400EE093E /* LanguaguePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F75FDB751D6C370B004DC2FA /* LanguaguePickerViewController.m */; };
+		5D8E67B320410ED400EE093E /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BBB1F4A76770039362A /* ScheduleTableViewController.m */; };
+		5D8E67B420410ED400EE093E /* MeetingSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9499BB51F468C160039362A /* MeetingSettingsViewController.m */; };
+		5D8E67B520410ED400EE093E /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC141CEEB9CB0071F330 /* IntroViewController.m */; };
+		5D8E67B620410ED400EE093E /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D9FCEC181CEEB9CB0071F330 /* SplashViewController.m */; };
+		5D8E67B720410ED400EE093E /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335518D6D87B00894EED /* UIImage+Additions.m */; };
+		5D8E67B820410ED400EE093E /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C123335018D6D4E900894EED /* MainViewController.m */; };
+		5D8E67B920410ED400EE093E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C123332C18D6D43100894EED /* main.m */; };
+		5D8E67BA20410ED400EE093E /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D996D2471C99478B00C284F0 /* SettingsViewController.m */; };
+		5D8E67C520410ED400EE093E /* MobileRTCResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */; };
+		5D8E67C620410ED400EE093E /* icon_meeting_stopshare@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76E1D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png */; };
+		5D8E67C720410ED400EE093E /* icon_meet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1D1CEEB9F70071F330 /* icon_meet@2x.png */; };
+		5D8E67C820410ED400EE093E /* icon_resume@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1F1CEEB9F70071F330 /* icon_resume@2x.png */; };
+		5D8E67C920410ED400EE093E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
+		5D8E67CA20410ED400EE093E /* icon_meeting_stopshare.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76C1D6FDD6D001BF94E /* icon_meeting_stopshare.png */; };
+		5D8E67CB20410ED400EE093E /* icon_share_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC231CEEB9F70071F330 /* icon_share_app@2x.png */; };
+		5D8E67CC20410ED400EE093E /* zoom_intro3.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC271CEEB9F70071F330 /* zoom_intro3.png */; };
+		5D8E67CD20410ED400EE093E /* zoom_intro2.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC261CEEB9F70071F330 /* zoom_intro2.png */; };
+		5D8E67CE20410ED400EE093E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D996D23D1C99473F00C284F0 /* Localizable.strings */; };
+		5D8E67CF20410ED400EE093E /* icon_meeting_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76A1D6FDD6D001BF94E /* icon_meeting_share@2x.png */; };
+		5D8E67D020410ED400EE093E /* icon_meeting_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76B1D6FDD6D001BF94E /* icon_meeting_share@3x.png */; };
+		5D8E67D120410ED400EE093E /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B391F501C7500E99195 /* iTunesArtwork@2x */; };
+		5D8E67D220410ED400EE093E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D996D2451C99478B00C284F0 /* LaunchScreen.xib */; };
+		5D8E67D320410ED400EE093E /* icon_pause@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1E1CEEB9F70071F330 /* icon_pause@2x.png */; };
+		5D8E67D420410ED400EE093E /* icon_meet.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC1C1CEEB9F70071F330 /* icon_meet.png */; };
+		5D8E67D520410ED400EE093E /* zoom_intro1.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC251CEEB9F70071F330 /* zoom_intro1.png */; };
+		5D8E67D620410ED400EE093E /* zoom_intro4.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC281CEEB9F70071F330 /* zoom_intro4.png */; };
+		5D8E67D720410ED400EE093E /* icon_meeting_stopshare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A76D1D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png */; };
+		5D8E67D820410ED400EE093E /* icon_meeting_share.png in Resources */ = {isa = PBXBuildFile; fileRef = D960A7691D6FDD6D001BF94E /* icon_meeting_share.png */; };
+		5D8E67D920410ED400EE093E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C123333218D6D43100894EED /* Images.xcassets */; };
+		5D8E67DA20410ED400EE093E /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = D90F5B381F501C7500E99195 /* iTunesArtwork */; };
+		5D8E67DB20410ED400EE093E /* icon_setting.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC201CEEB9F70071F330 /* icon_setting.png */; };
+		5D8E67DC20410ED400EE093E /* icon_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC211CEEB9F70071F330 /* icon_setting@2x.png */; };
+		5D8E67F32041109F00EE093E /* MobileRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8E67F12041109B00EE093E /* MobileRTC.framework */; };
+		5D8E67F42041109F00EE093E /* MobileRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8E67F12041109B00EE093E /* MobileRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5D8E67AC20410ED400EE093E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C123330718D6D22700894EED;
+			remoteInfo = MobileRTCResources;
+		};
+		5D8E67E320410ED400EE093E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D8E675C2041057100EE093E;
+			remoteInfo = MobileRTC;
+		};
+		5D8E67F5204110D000EE093E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5D8E64C32041057100EE093E;
+			remoteInfo = MobileRTC;
+		};
 		D98403A51DC44D6900085DBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
@@ -67,24 +82,25 @@
 			remoteGlobalIDString = D96B283A1CE413B4000DEDB3;
 			remoteInfo = MobileRTC;
 		};
-		D98403E81DC44D9500085DBF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C123330718D6D22700894EED;
-			remoteInfo = MobileRTCResources;
-		};
-		D98403EA1DC44D9500085DBF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D96B28391CE413B4000DEDB3;
-			remoteInfo = MobileRTC;
-		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D8E67EF2041103400EE093E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5D8E67F42041109F00EE093E /* MobileRTC.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		C123331D18D6D43100894EED /* MobileRTCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileRTCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8E67E020410ED400EE093E /* MobileRTCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileRTCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D8E67F12041109B00EE093E /* MobileRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileRTC.framework; path = ../lib/MobileRTC.framework; sourceTree = "<group>"; };
 		C123332818D6D43100894EED /* MobileRTCSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileRTCSample-Info.plist"; sourceTree = "<group>"; };
 		C123332A18D6D43100894EED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C123332C18D6D43100894EED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -111,7 +127,6 @@
 		D960A76D1D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_stopshare@2x.png"; sourceTree = "<group>"; };
 		D960A76E1D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_stopshare@3x.png"; sourceTree = "<group>"; };
 		D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MobileRTC.xcodeproj; path = ../MobileRTC/MobileRTC.xcodeproj; sourceTree = "<group>"; };
-		D98403EE1DC44DAA00085DBF /* mobileRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mobileRTC.framework; path = ../lib/mobileRTC.framework; sourceTree = "<group>"; };
 		D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MobileRTCResources.bundle; path = ../lib/MobileRTCResources.bundle; sourceTree = "<group>"; };
 		D996D23E1C99473F00C284F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D996D2401C99474500C284F0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -152,18 +167,11 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C123331A18D6D43100894EED /* Frameworks */ = {
+		5D8E67BB20410ED400EE093E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9EE87881FEC342E0075C049 /* ReplayKit.framework in Frameworks */,
-				D9EE87871FEC340E0075C049 /* CoreMotion.framework in Frameworks */,
-				D9E564921D9CFF7000EF8C30 /* CoreBluetooth.framework in Frameworks */,
-				D9E564471D9CF23B00EF8C30 /* libsqlite3.tbd in Frameworks */,
-				D9E5644B1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd in Frameworks */,
-				D9E564441D9CF23300EF8C30 /* libz.1.2.5.tbd in Frameworks */,
-				D98403EF1DC44DAA00085DBF /* mobileRTC.framework in Frameworks */,
-				D9E564491D9CF24200EF8C30 /* VideoToolbox.framework in Frameworks */,
+				5D8E67F32041109F00EE093E /* MobileRTC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,7 +191,7 @@
 		C123331E18D6D43100894EED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C123331D18D6D43100894EED /* MobileRTCSample.app */,
+				5D8E67E020410ED400EE093E /* MobileRTCSample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 		C123331F18D6D43100894EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5D8E67F12041109B00EE093E /* MobileRTC.framework */,
 				D9EE87861FEC340E0075C049 /* CoreMotion.framework */,
 				D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */,
 				D9499AB21F457E350039362A /* WebKit.framework */,
@@ -198,7 +207,6 @@
 				D9E564461D9CF23B00EF8C30 /* libsqlite3.tbd */,
 				D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */,
 				D9E564431D9CF23300EF8C30 /* libz.1.2.5.tbd */,
-				D98403EE1DC44DAA00085DBF /* mobileRTC.framework */,
 				D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */,
 				D9E564481D9CF24200EF8C30 /* VideoToolbox.framework */,
 			);
@@ -279,6 +287,7 @@
 			children = (
 				D98403A61DC44D6900085DBF /* MobileRTCResources.bundle */,
 				D98403A81DC44D6900085DBF /* MobileRTC.framework */,
+				5D8E67E420410ED400EE093E /* MobileRTC.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,23 +295,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C123331C18D6D43100894EED /* MobileRTCSample */ = {
+		5D8E67AA20410ED400EE093E /* MobileRTCSample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C123334918D6D43100894EED /* Build configuration list for PBXNativeTarget "MobileRTCSample" */;
+			buildConfigurationList = 5D8E67DD20410ED400EE093E /* Build configuration list for PBXNativeTarget "MobileRTCSample" */;
 			buildPhases = (
-				C123331918D6D43100894EED /* Sources */,
-				C123331A18D6D43100894EED /* Frameworks */,
-				C123331B18D6D43100894EED /* Resources */,
+				5D8E67AF20410ED400EE093E /* Sources */,
+				5D8E67BB20410ED400EE093E /* Frameworks */,
+				5D8E67C420410ED400EE093E /* Resources */,
+				5D8E67EF2041103400EE093E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D98403E91DC44D9500085DBF /* PBXTargetDependency */,
-				D98403EB1DC44D9500085DBF /* PBXTargetDependency */,
+				5D8E67F6204110D000EE093E /* PBXTargetDependency */,
+				5D8E67AB20410ED400EE093E /* PBXTargetDependency */,
 			);
 			name = MobileRTCSample;
 			productName = ZoomSDKSample;
-			productReference = C123331D18D6D43100894EED /* MobileRTCSample.app */;
+			productReference = 5D8E67E020410ED400EE093E /* MobileRTCSample.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -314,13 +324,8 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Zoom Video Communications, Inc.";
 				TargetAttributes = {
-					C123331C18D6D43100894EED = {
+					5D8E67AA20410ED400EE093E = {
 						DevelopmentTeam = BJ4HAAB9B3;
-						SystemCapabilities = {
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-						};
 					};
 				};
 			};
@@ -348,12 +353,19 @@
 			);
 			projectRoot = "";
 			targets = (
-				C123331C18D6D43100894EED /* MobileRTCSample */,
+				5D8E67AA20410ED400EE093E /* MobileRTCSample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		5D8E67E420410ED400EE093E /* MobileRTC.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MobileRTC.framework;
+			remoteRef = 5D8E67E320410ED400EE093E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		D98403A61DC44D6900085DBF /* MobileRTCResources.bundle */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -371,70 +383,70 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C123331B18D6D43100894EED /* Resources */ = {
+		5D8E67C420410ED400EE093E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D98403F11DC44DB100085DBF /* MobileRTCResources.bundle in Resources */,
-				D960A7741D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png in Resources */,
-				D9FCEC2A1CEEB9F70071F330 /* icon_meet@2x.png in Resources */,
-				D9FCEC2C1CEEB9F70071F330 /* icon_resume@2x.png in Resources */,
-				C123332B18D6D43100894EED /* InfoPlist.strings in Resources */,
-				D960A7721D6FDD6D001BF94E /* icon_meeting_stopshare.png in Resources */,
-				D9FCEC301CEEB9F70071F330 /* icon_share_app@2x.png in Resources */,
-				D9FCEC341CEEB9F70071F330 /* zoom_intro3.png in Resources */,
-				D9FCEC331CEEB9F70071F330 /* zoom_intro2.png in Resources */,
-				D996D23F1C99473F00C284F0 /* Localizable.strings in Resources */,
-				D960A7701D6FDD6D001BF94E /* icon_meeting_share@2x.png in Resources */,
-				D960A7711D6FDD6D001BF94E /* icon_meeting_share@3x.png in Resources */,
-				D90F5B3B1F501C7500E99195 /* iTunesArtwork@2x in Resources */,
-				D996D2491C99478B00C284F0 /* LaunchScreen.xib in Resources */,
-				D9FCEC2B1CEEB9F70071F330 /* icon_pause@2x.png in Resources */,
-				D9FCEC291CEEB9F70071F330 /* icon_meet.png in Resources */,
-				D9FCEC321CEEB9F70071F330 /* zoom_intro1.png in Resources */,
-				D9FCEC351CEEB9F70071F330 /* zoom_intro4.png in Resources */,
-				D960A7731D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png in Resources */,
-				D960A76F1D6FDD6D001BF94E /* icon_meeting_share.png in Resources */,
-				C123333318D6D43100894EED /* Images.xcassets in Resources */,
-				D90F5B3A1F501C7500E99195 /* iTunesArtwork in Resources */,
-				D9FCEC2D1CEEB9F70071F330 /* icon_setting.png in Resources */,
-				D9FCEC2E1CEEB9F70071F330 /* icon_setting@2x.png in Resources */,
+				5D8E67C520410ED400EE093E /* MobileRTCResources.bundle in Resources */,
+				5D8E67C620410ED400EE093E /* icon_meeting_stopshare@3x.png in Resources */,
+				5D8E67C720410ED400EE093E /* icon_meet@2x.png in Resources */,
+				5D8E67C820410ED400EE093E /* icon_resume@2x.png in Resources */,
+				5D8E67C920410ED400EE093E /* InfoPlist.strings in Resources */,
+				5D8E67CA20410ED400EE093E /* icon_meeting_stopshare.png in Resources */,
+				5D8E67CB20410ED400EE093E /* icon_share_app@2x.png in Resources */,
+				5D8E67CC20410ED400EE093E /* zoom_intro3.png in Resources */,
+				5D8E67CD20410ED400EE093E /* zoom_intro2.png in Resources */,
+				5D8E67CE20410ED400EE093E /* Localizable.strings in Resources */,
+				5D8E67CF20410ED400EE093E /* icon_meeting_share@2x.png in Resources */,
+				5D8E67D020410ED400EE093E /* icon_meeting_share@3x.png in Resources */,
+				5D8E67D120410ED400EE093E /* iTunesArtwork@2x in Resources */,
+				5D8E67D220410ED400EE093E /* LaunchScreen.xib in Resources */,
+				5D8E67D320410ED400EE093E /* icon_pause@2x.png in Resources */,
+				5D8E67D420410ED400EE093E /* icon_meet.png in Resources */,
+				5D8E67D520410ED400EE093E /* zoom_intro1.png in Resources */,
+				5D8E67D620410ED400EE093E /* zoom_intro4.png in Resources */,
+				5D8E67D720410ED400EE093E /* icon_meeting_stopshare@2x.png in Resources */,
+				5D8E67D820410ED400EE093E /* icon_meeting_share.png in Resources */,
+				5D8E67D920410ED400EE093E /* Images.xcassets in Resources */,
+				5D8E67DA20410ED400EE093E /* iTunesArtwork in Resources */,
+				5D8E67DB20410ED400EE093E /* icon_setting.png in Resources */,
+				5D8E67DC20410ED400EE093E /* icon_setting@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C123331918D6D43100894EED /* Sources */ = {
+		5D8E67AF20410ED400EE093E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D996D2481C99478B00C284F0 /* InviteViewController.m in Sources */,
-				C123333118D6D43100894EED /* AppDelegate.m in Sources */,
-				F75FDB761D6C370B004DC2FA /* LanguaguePickerViewController.m in Sources */,
-				D9499BBC1F4A76770039362A /* ScheduleTableViewController.m in Sources */,
-				D9499BB61F468C160039362A /* MeetingSettingsViewController.m in Sources */,
-				D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */,
-				D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */,
-				C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */,
-				C123335218D6D4E900894EED /* MainViewController.m in Sources */,
-				C123332D18D6D43100894EED /* main.m in Sources */,
-				D996D24A1C99478B00C284F0 /* SettingsViewController.m in Sources */,
+				5D8E67B020410ED400EE093E /* InviteViewController.m in Sources */,
+				5D8E67B120410ED400EE093E /* AppDelegate.m in Sources */,
+				5D8E67B220410ED400EE093E /* LanguaguePickerViewController.m in Sources */,
+				5D8E67B320410ED400EE093E /* ScheduleTableViewController.m in Sources */,
+				5D8E67B420410ED400EE093E /* MeetingSettingsViewController.m in Sources */,
+				5D8E67B520410ED400EE093E /* IntroViewController.m in Sources */,
+				5D8E67B620410ED400EE093E /* SplashViewController.m in Sources */,
+				5D8E67B720410ED400EE093E /* UIImage+Additions.m in Sources */,
+				5D8E67B820410ED400EE093E /* MainViewController.m in Sources */,
+				5D8E67B920410ED400EE093E /* main.m in Sources */,
+				5D8E67BA20410ED400EE093E /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D98403E91DC44D9500085DBF /* PBXTargetDependency */ = {
+		5D8E67AB20410ED400EE093E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MobileRTCResources;
-			targetProxy = D98403E81DC44D9500085DBF /* PBXContainerItemProxy */;
+			targetProxy = 5D8E67AC20410ED400EE093E /* PBXContainerItemProxy */;
 		};
-		D98403EB1DC44D9500085DBF /* PBXTargetDependency */ = {
+		5D8E67F6204110D000EE093E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MobileRTC;
-			targetProxy = D98403EA1DC44D9500085DBF /* PBXContainerItemProxy */;
+			targetProxy = 5D8E67F5204110D000EE093E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -465,6 +477,70 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5D8E67DE20410ED400EE093E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = BJ4HAAB9B3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../lib,
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileRTCSample/MobileRTCSample-Prefix.pch";
+				INFOPLIST_FILE = "MobileRTCSample/MobileRTCSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5D8E67DF20410ED400EE093E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = BJ4HAAB9B3;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					../lib,
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MobileRTCSample/MobileRTCSample-Prefix.pch";
+				INFOPLIST_FILE = "MobileRTCSample/MobileRTCSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		C123334718D6D43100894EED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,81 +615,23 @@
 			};
 			name = Release;
 		};
-		C123334A18D6D43100894EED /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					../lib,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileRTCSample/MobileRTCSample-Prefix.pch";
-				INFOPLIST_FILE = "MobileRTCSample/MobileRTCSample-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = MobileRTCSample;
-				USER_HEADER_SEARCH_PATHS = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		C123334B18D6D43100894EED /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
-				CLANG_CXX_LIBRARY = "compiler-default";
-				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
-				DEAD_CODE_STRIPPING = YES;
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					../lib,
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MobileRTCSample/MobileRTCSample-Prefix.pch";
-				INFOPLIST_FILE = "MobileRTCSample/MobileRTCSample-Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = MobileRTCSample;
-				USER_HEADER_SEARCH_PATHS = "";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5D8E67DD20410ED400EE093E /* Build configuration list for PBXNativeTarget "MobileRTCSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D8E67DE20410ED400EE093E /* Debug */,
+				5D8E67DF20410ED400EE093E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C123331818D6D43100894EED /* Build configuration list for PBXProject "MobileRTCSample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C123334718D6D43100894EED /* Debug */,
 				C123334818D6D43100894EED /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C123334918D6D43100894EED /* Build configuration list for PBXNativeTarget "MobileRTCSample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C123334A18D6D43100894EED /* Debug */,
-				C123334B18D6D43100894EED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

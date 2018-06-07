@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  ZoomSDKSample
+//  MobileRTCSample
 //
 //  Created by Robust Hu on 16/5/18.
 //  Copyright © 2016年 Zoom Video Communications, Inc. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  ZoomSDKSample
+//  MobileRTCSample
 //
 //  Created by Robust Hu on 16/5/18.
 //  Copyright © 2016年 Zoom Video Communications, Inc. All rights reserved.
@@ -85,10 +85,10 @@
 //    self.settingButton.hidden = YES;
     
 //    //For Enable/Disable Copy URL
-//    [ZoomSDKInviteHelper sharedInstance].disableCopyURL = YES;
+//    [MobileRTCInviteHelper sharedInstance].disableCopyURL = YES;
     
 //    //For Enable/Disable Invite by Message
-//    [ZoomSDKInviteHelper sharedInstance].disableInviteSMS = YES;
+//    [MobileRTCInviteHelper sharedInstance].disableInviteSMS = YES;
     
 //    MBProgressHUD* hud = [[MBProgressHUD alloc] initWithView:self.view];
 //    [self.view addSubview:hud];
@@ -372,7 +372,7 @@
         
         NSDictionary *paramDict = nil;
         MobileRTCUserType userType = [[[MobileRTC sharedRTC] getAuthService] getUserType];
-        //For API User, the user type should be ZoomSDKUserType_APIUser.
+        //For API User, the user type should be MobileRTCUserType_APIUser.
         if (MobileRTCUserType_APIUser == userType)
         {
             paramDict = @{kMeetingParam_UserID:kSDKUserID,
@@ -628,6 +628,17 @@
     nav.modalPresentationStyle = UIModalPresentationFormSheet;
     
     [parentVC presentViewController:nav animated:YES completion:NULL];
+}
+
+- (BOOL)onClickedParticipantsButton:(UIViewController*)parentVC
+{
+    InviteViewController *inviteVC = [[InviteViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:inviteVC];
+    nav.modalPresentationStyle = UIModalPresentationFormSheet;
+    
+    [parentVC presentViewController:nav animated:YES completion:NULL];
+    
+    return YES;
 }
 #endif
 

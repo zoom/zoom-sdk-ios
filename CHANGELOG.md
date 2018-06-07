@@ -1,4 +1,26 @@
 # CHANGELOG
+## 2018-05-28
+
+### Added
+
+1. SDK Framework switch to Dynamic Library, MinimumOSVersion 8.0, Customer need to link SDK Framework as Embedded Binaries
+
+2. Support to show/shrink attendees' video ribbon while viewing screen sharing for panelist in webinar meeting
+
+3. Support to show/shrink active speaker' video ribbon while viewing screen sharing for attendee in webinar meeting
+
+4. Support to query live stream URL & Start Live stream broadcast
+
+5. Support to enable hide the full phone number for pure call in user
+
+6. Add interfaces to allow a customer to show or hide In-Meeting UI View
+
+7. Add interfaces to allow a customer to mute my video
+
+8. Support to config DSCP for audio & video session
+
+9. Bug fixes
+
 ## 2018-02-06
 1. Support to show/shrink attendees' video ribbon while viewing screen sharing
 

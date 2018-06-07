@@ -26,7 +26,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>us.zoom.ZoomSDKSample</string>
+			<string>us.zoom.MobileRTCSample</string>
 			<key>CFBundleURLSchemes</key>
 			<array/>
 		</dict>

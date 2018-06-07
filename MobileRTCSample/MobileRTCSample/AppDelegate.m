@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  ZoomSDKSample
+//  MobileRTCSample
 //
 //  Created by Robust Hu on 3/17/14.
 //  Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
@@ -9,9 +9,9 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
-#define kZoomSDKAppKey      @""
-#define kZoomSDKAppSecret   @""
-#define kZoomSDKDomain      @""
+#define kSDKAppKey      @""
+#define kSDKAppSecret   @""
+#define kSDKDomain      @""
 
 @implementation AppDelegate
 
@@ -35,7 +35,7 @@
     NSLog(@"MobileRTC Version: %@", [[MobileRTC sharedRTC] mobileRTCVersion]);
     
     //1. Set MobileRTC Domain
-    [[MobileRTC sharedRTC] setMobileRTCDomain:kZoomSDKDomain];
+    [[MobileRTC sharedRTC] setMobileRTCDomain:kSDKDomain];
 //    //2. Set MobileRTC Resource Bundle path
 //    //Note: This step is optional, If MobileRTCResources.bundle is included in other bundle/framework, use this method to set the path of MobileRTCResources.bundle, or just ignore this step
 //    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
@@ -43,7 +43,7 @@
     //3. Set Root Navigation Controller
     //Note: This step is optional, If app’s rootViewController is not a UINavigationController, just ignore this step.
     [[MobileRTC sharedRTC] setMobileRTCRootController:navVC];
-    //4. ZoomSDK Authorize
+    //4. MobileRTC Authorize
     [self sdkAuth];
     
     return YES;
@@ -98,8 +98,8 @@
     {
         authService.delegate = self;
         
-        authService.clientKey = kZoomSDKAppKey;
-        authService.clientSecret = kZoomSDKAppSecret;
+        authService.clientKey = kSDKAppKey;
+        authService.clientSecret = kSDKAppSecret;
         
         [authService sdkAuth];
     }
