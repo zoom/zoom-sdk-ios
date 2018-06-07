@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['ongoingmeetingid',['ongoingMeetingID',['../interface_mobile_r_t_c_invite_helper.html#a804da70ac1b5cbf2e80f5d13f8daf145',1,'MobileRTCInviteHelper']]],
-  ['ongoingmeetingnumber',['ongoingMeetingNumber',['../interface_mobile_r_t_c_invite_helper.html#a34e9faccbb0f53292c414aa4646e5bdf',1,'MobileRTCInviteHelper']]],
-  ['ongoingmeetingstarttime',['ongoingMeetingStartTime',['../interface_mobile_r_t_c_invite_helper.html#af4c485f634179489f4880072712345d9',1,'MobileRTCInviteHelper']]],
-  ['ongoingmeetingtopic',['ongoingMeetingTopic',['../interface_mobile_r_t_c_invite_helper.html#aee4ad31c4eb756d53cd1ec737fea3635',1,'MobileRTCInviteHelper']]],
+  ['ongoingmeetingid',['ongoingMeetingID',['../interface_mobile_r_t_c_invite_helper.html#a9176dea7d925a0a241a9b06bdf464f28',1,'MobileRTCInviteHelper']]],
+  ['ongoingmeetingnumber',['ongoingMeetingNumber',['../interface_mobile_r_t_c_invite_helper.html#a34eb0fda118e417b54aaa5a809e63f8a',1,'MobileRTCInviteHelper']]],
+  ['ongoingmeetingstarttime',['ongoingMeetingStartTime',['../interface_mobile_r_t_c_invite_helper.html#a66c1cf60be52dd0aa836747102fe40f1',1,'MobileRTCInviteHelper']]],
+  ['ongoingmeetingtopic',['ongoingMeetingTopic',['../interface_mobile_r_t_c_invite_helper.html#aed6161f788e526ea076f0b1f39867232',1,'MobileRTCInviteHelper']]],
   ['ongoingrecurringmeeting',['ongoingRecurringMeeting',['../interface_mobile_r_t_c_invite_helper.html#ab58030301abbcdeb423f48e84a227de0',1,'MobileRTCInviteHelper']]]
 ];
