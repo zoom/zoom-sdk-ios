@@ -46,6 +46,9 @@
     //4. MobileRTC Authorize
     [self sdkAuth];
     
+    //5. Set AppGroup name
+    //Note: This step is optional, Method is uesd for iOS Replaykit Screen share integration,if not,just ignore this step.
+    //[[MobileRTC sharedRTC] setAppGroupsName:@""];
     return YES;
 }
 

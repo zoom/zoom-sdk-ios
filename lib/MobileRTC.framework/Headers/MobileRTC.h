@@ -20,7 +20,7 @@
 #import <MobileRTC/MobileRTCMeetingUserInfo.h>
 #import <MobileRTC/MobileRTCMeetingChat.h>
 #import <MobileRTC/MobileRTCE2EMeetingKey.h>
-
+#import <MobileRTC/MobileRTCMeetingActionItem.h>
 
 /*!
  @class MobileRTC
@@ -138,6 +138,12 @@
  @param lang one of language type.
  */
 - (void)setLanguage:(NSString *)lang;
+
+/*!
+ @brief This method is used to set AppGroup name.
+ @warning  Method is uesd for iOS Replaykit Screen share integration, function should be called after init SDK
+ */
+- (void)setAppGroupsName:(NSString*)name;
 
 /*!
  @brief Notify common layer that app will resign active.

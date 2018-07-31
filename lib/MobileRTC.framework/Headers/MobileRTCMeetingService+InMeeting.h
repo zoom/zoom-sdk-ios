@@ -22,6 +22,12 @@
 - (BOOL)isMeetingHost;
 
 /*!
+ @brief This method is used to tell whether the current user is the cohost of the meeting or not.
+ @return YES, the current user is the cohost of the meeting
+ */
+- (BOOL)isMeetingCoHost;
+
+/*!
  @brief This method is used to tell whether the meeting is locked by host or not.
  @return YES, the meeting has been locked by host.
  */
@@ -33,6 +39,7 @@
  */
 - (BOOL)isShareLocked;
 
+#pragma mark CMR Related
 /*!
  @brief This method is used to tell the client whether cloud record is enabled.
  @return YES if cloud record is enabled.
@@ -63,6 +70,7 @@
  */
 - (void)turnOnCMR:(BOOL)on;
 
+#pragma mark Audio Related
 /*!
  @brief This method is used to get my audio type in meeting.
  @return my audio type
@@ -100,6 +108,68 @@
 - (BOOL)canUnmuteMyAudio;
 
 /*!
+ @brief This method is used to check whether MuteOnEntry is on in the meeting.
+ @return YES means that MuteOnEntry is on.
+ */
+- (BOOL)isMuteOnEntryOn;
+
+/*!
+ @brief This method is used to check the user audio is muted or not.
+ @param userID the user id in meeting
+ @return YES means audio muted.
+ */
+- (BOOL)isUserAudioMuted:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to mute/numute user's audio.
+ @param mute YES means mute; NO means unmute
+ @param userID the user id in meeting
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)muteUserAudio:(BOOL)mute withUID:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to mute all other users' audio.
+ @param allowSelfUnmute YES means allow self unmute; NO means cannot self unmute
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)muteAllUserAudio:(BOOL)allowSelfUnmute;
+
+/*!
+ @brief This method is used to unmute all other users' audio.
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)unmuteAllUserAudio;
+
+/*!
+ @brief This method is used to check meeting support VOIP or not.
+ @return YES means VOIP Supported.
+ */
+- (BOOL)isSupportedVOIP;
+
+/*!
+ @brief This method is used to check PlayChime or not while user join/leave meeting.
+ @return YES means that PlayChime is on.
+ */
+- (BOOL)isPlayChimeOn;
+
+/*!
+ @brief This method is used to mute My Audio.
+ @param mute: if YES means that mute my audio
+ @return mute my audio result.
+ */
+- (MobileRTCAudioError)muteMyAudio:(BOOL)mute;
+
+/*!
+ @brief This method is used to Switch Audio Source.
+ */
+- (MobileRTCAudioError)switchMyAudioSource;
+
+#pragma mark Video Related
+/*!
  @brief This method is used to check user is sending his video or not.
  @return YES means that video is sending.
  */
@@ -112,11 +182,72 @@
 - (BOOL)canUnmuteMyVideo;
 
 /*!
+ @brief This method is used to mute My Video.
+ @param mute: if YES means that mute my video
+ @return mute my video result.
+ */
+- (MobileRTCVideoError)muteMyVideo:(BOOL)mute;
+
+/*!
+ @brief This method is used to check the user's video spotlighted or not.
+ @param userId user's ID in meeting.
+ @return YES means the user's video is spotlighted.
+ */
+- (BOOL)isUserSpotlighted:(NSUInteger)userId;
+
+/*!
+ @brief This method is used to spotlight the user's video or not.
+ @param on if YES to spotlight user's video; if NO to cancel spotlight user's video.
+ @param userId the user id in meeting.
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function, and userId should not be myself.
+ */
+- (BOOL)spotlightVideo:(BOOL)on withUser:(NSUInteger)userId;
+
+/*!
+ @brief This method is used to check the user video is sending or not.
+ @param userID the user id in meeting
+ @return YES means video is sending.
+ */
+- (BOOL)isUserVideoSending:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to stop user's video.
+ @param userID the user id in meeting, the userID should not be host himself
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)stopUserVideo:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to ask to start user's video.
+ @param userID the user id in meeting, the userID should not be host himself
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)askUserStartVideo:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to retrieve user video's size.
+ @param userID the user id in meeting
+ @return the size of user video.
+ */
+- (CGSize)getUserVideoSize:(NSUInteger)userID;
+
+#pragma mark Camera Related
+/*!
  @brief This method is used to check user is using back camera or not.
  @return YES means that Back camera is using.
  */
 - (BOOL)isBackCamera;
 
+/*!
+ @brief This method is used to Switch Local Device Video Camera Source.
+ @return switch my camera result.
+ */
+- (MobileRTCCameraError)switchMyCamera;
+
+#pragma mark Raise Hand Related
 /*!
  @brief This method is used to raise my hand.
  @return YES means call this method successfully.
@@ -136,12 +267,22 @@
  */
 - (BOOL)lowerAllHand;
 
+#pragma mark Chat Related
 /*!
  @brief This method is used to check chat is disabled in meeting or not.
  @return YES means that chat is disabled.
  */
 - (BOOL)isChatDisabled;
 
+/*!
+ @brief This method is used to get chat content in meeting.
+ @param messageID the message ID in meeting chat
+ @return an instance of meeting chat.
+ @warning The method is optional.
+ */
+- (MobileRTCMeetingChat*)meetingChatByID:(NSString*)messageID;
+
+#pragma mark User info Related
 /*!
  @brief This method is used to change user's display name in meeting.
  @param inputName the display name which will be used in meeting.
@@ -165,22 +306,6 @@
 - (MobileRTCMeetingUserInfo*)userInfoByID:(NSUInteger)userId;
 
 /*!
- @brief This method is used to check the user's video spotlighted or not.
- @param userId user's ID in meeting.
- @return YES means the user's video is spotlighted.
- */
-- (BOOL)isUserSpotlighted:(NSUInteger)userId;
-
-/*!
- @brief This method is used to spotlight the user's video or not.
- @param on if YES to spotlight user's video; if NO to cancel spotlight user's video.
- @param userId the user id in meeting.
- @return YES means call this method successfully.
- @warning only meeting host can run this function, and userId should not be myself.
- */
-- (BOOL)spotlightVideo:(BOOL)on withUser:(NSUInteger)userId;
-
-/*!
  @brief This method is used to assign host role to another user in the meeting.
  @param userId the user id in meeting.
  @return YES means call this method successfully.
@@ -195,18 +320,6 @@
  @warning only meeting host can run this function, and userId should not be myself.
  */
 - (BOOL)removeUser:(NSUInteger)userId;
-
-/*!
- @brief This method is used to check whether MuteOnEntry is on in the meeting.
- @return YES means that MuteOnEntry is on.
- */
-- (BOOL)isMuteOnEntryOn;
-
-/*!
- @brief This method is used to check PlayChime or not while user join/leave meeting.
- @return YES means that PlayChime is on.
- */
-- (BOOL)isPlayChimeOn;
 
 /*!
  @brief This method is used to get my user id in the meeting.
@@ -248,68 +361,7 @@
  */
 - (BOOL)isMyself:(NSUInteger)userID;
 
-/*!
- @brief This method is used to check the user audio is muted or not.
- @param userID the user id in meeting
- @return YES means audio muted.
- */
-- (BOOL)isUserAudioMuted:(NSUInteger)userID;
-
-/*!
- @brief This method is used to mute/numute user's audio.
- @param mute YES means mute; NO means unmute
- @param userID the user id in meeting
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
- */
-- (BOOL)muteUserAudio:(BOOL)mute withUID:(NSUInteger)userID;
-
-/*!
- @brief This method is used to mute all other users' audio.
- @param allowSelfUnmute YES means allow self unmute; NO means cannot self unmute
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
- */
-- (BOOL)muteAllUserAudio:(BOOL)allowSelfUnmute;
-
-/*!
- @brief This method is used to unmute all other users' audio.
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
- */
-- (BOOL)unmuteAllUserAudio;
-
-/*!
- @brief This method is used to check the user video is sending or not.
- @param userID the user id in meeting
- @return YES means video is sending.
- */
-- (BOOL)isUserVideoSending:(NSUInteger)userID;
-
-/*!
- @brief This method is used to stop user's video.
- @param userID the user id in meeting, the userID should not be host himself
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
- */
-- (BOOL)stopUserVideo:(NSUInteger)userID;
-
-/*!
- @brief This method is used to ask to start user's video.
- @param userID the user id in meeting, the userID should not be host himself
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
- */
-- (BOOL)askUserStartVideo:(NSUInteger)userID;
-
-/*!
- @brief This method is used to get chat content in meeting.
- @param messageID the message ID in meeting chat
- @return an instance of meeting chat.
- @warning The method is optional.
- */
-- (MobileRTCMeetingChat*)meetingChatByID:(NSString*)messageID;
-
+#pragma mark Meeting Info Related
 /*!
  @brief This method is used to set customized meeting session key.
  @param keyArray the array of meeting session keys
@@ -350,11 +402,12 @@
 - (MobileRTCNetworkQuality)queryNetworkQuality:(MobileRTCComponentType)type withDataFlow:(BOOL)sending;
 
 /*!
- @brief This method is used to mute My Video.
- @param mute indicate the status wanted to swicth
+ @brief This method is used to present Zoom original Pariticipants ViewController.
+ @param rootViewCtrl indicate Pariticipants ViewController's Root ViewController
  @return YES means call this method successfully.
+ @warning The method can be used while customized whole in-meeting view.
  */
-- (BOOL)muteMyVideo:(BOOL)mute;
+- (BOOL)presentParticipantsViewController:(UIViewController*)rootViewCtrl;
 
 /*!
  @brief This method is used to config DSCP Value.
@@ -374,6 +427,43 @@
 - (BOOL)hideFullPhoneNumberForPureCallInUser:(BOOL)bHide;
 
 /*!
+ @brief This method is used to claim Host With Host Key.
+ @param hostKey indicate host Key.
+ @return YES means call this method successfully.
+ */
+- (BOOL)claimHostWithHostKey:(NSString*)hostKey;
+
+/*!
+ @brief This method is used to assign co-host.
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)assignCohost:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to revoke co-host.
+ @return YES means call this method successfully.
+ @warning only meeting host can run this function.
+ */
+- (BOOL)revokeCoHost:(NSUInteger)userID;
+
+/*!
+ @brief This method is used to check user can be co-host or not.
+ @return YES means call this method successfully.
+ */
+- (BOOL)canBeCoHost:(NSUInteger)userID;
+#pragma mark Live Stream
+/*!
+ @brief This method is used to start Live Stream.
+ @param streamingURL indicate streaming URL.
+ @param key indicate streaming key.
+ @param broadcastURL indicate live streaming page URL.
+ @return YES means call this method successfully.
+ @warning Only meeting host can start live Stream successfully.
+ */
+- (BOOL)startLiveStreamWithSteamingURL:(NSString*)streamingURL StreamingKey:(NSString*)key BroadcastURL:(NSString*)broadcastURL;
+
+/*!
  @brief This method is used to get live stream URL.
  @return Live Stream Url dictionary if Success.
  @warning only meeting host can run this function, and get correct live stream url.
@@ -385,10 +475,11 @@
 /*!
  @brief This method is used to stop live stream.
  @return YES means stop live stream successfully.
- @warning only meeting host can run this function, and get correct live stream url.
+ @warning Only meeting host can stop live Stream successfully.
  */
-- (BOOL)stopLiveStreamURL;
+- (BOOL)stopLiveStream;
 
+#pragma mark Display/Hide Meeting UI
 /*!
  @brief This method is used to show UI of meeting.
  @param completion can be used to do some action after showing meeting UI.
@@ -405,4 +496,15 @@
  */
 - (BOOL)hideMobileRTCMeeting:(void (^)(void))completion;
 
+#pragma mark Push Call Integrate
+/*!
+ @brief This method is used to continue join meeting progress while accept invite.
+ @param name indicate the display name in meeting.
+ */
+- (void)acceptIncomingPushCallWithDisplayName:(NSString*)name;
+
+/*!
+ @brief This method is used to cancel join meeting progress while decline invite.
+ */
+- (void)declineIncomingPushCall;
 @end

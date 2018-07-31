@@ -44,6 +44,12 @@
 		5D8E67DC20410ED400EE093E /* icon_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D9FCEC211CEEB9F70071F330 /* icon_setting@2x.png */; };
 		5D8E67F32041109F00EE093E /* MobileRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8E67F12041109B00EE093E /* MobileRTC.framework */; };
 		5D8E67F42041109F00EE093E /* MobileRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5D8E67F12041109B00EE093E /* MobileRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D9767A5020B7A57A00ABA524 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */; };
+		D9767A5420B7A57A00ABA524 /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D9767A5320B7A57A00ABA524 /* SampleHandler.m */; };
+		D9767A7220B7A6B700ABA524 /* MobileRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9767A7120B7A6B700ABA524 /* MobileRTCScreenShare.framework */; };
+		D9767A7320B7A6C200ABA524 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E5644A1D9CF25900EF8C30 /* libstdc++.6.0.9.tbd */; };
+		D9767A7620B7A6C300ABA524 /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9767A7420B7A6C200ABA524 /* libstdc++.6.tbd */; };
+		D9767A7720B7A6C300ABA524 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D9767A7520B7A6C200ABA524 /* libstdc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 5D8E64C32041057100EE093E;
 			remoteInfo = MobileRTC;
+		};
+		D9767A4820B7A54D00ABA524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D9767A1B20B79B4200ABA524;
+			remoteInfo = MobileRTCScreenShare;
 		};
 		D98403A51DC44D6900085DBF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -126,6 +139,16 @@
 		D960A76C1D6FDD6D001BF94E /* icon_meeting_stopshare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_meeting_stopshare.png; sourceTree = "<group>"; };
 		D960A76D1D6FDD6D001BF94E /* icon_meeting_stopshare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_stopshare@2x.png"; sourceTree = "<group>"; };
 		D960A76E1D6FDD6D001BF94E /* icon_meeting_stopshare@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_stopshare@3x.png"; sourceTree = "<group>"; };
+		D9767A4A20B7A55C00ABA524 /* MobileRTCSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileRTCSample.entitlements; sourceTree = "<group>"; };
+		D9767A4F20B7A57A00ABA524 /* MobileRTCSampleScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MobileRTCSampleScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9767A5220B7A57A00ABA524 /* SampleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleHandler.h; sourceTree = "<group>"; };
+		D9767A5320B7A57A00ABA524 /* SampleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleHandler.m; sourceTree = "<group>"; };
+		D9767A5520B7A57A00ABA524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9767A5C20B7A57B00ABA524 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D9767A7020B7A5CF00ABA524 /* MobileRTCSampleScreenShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileRTCSampleScreenShare.entitlements; sourceTree = "<group>"; };
+		D9767A7120B7A6B700ABA524 /* MobileRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileRTCScreenShare.framework; path = ../lib/MobileRTCScreenShare.framework; sourceTree = "<group>"; };
+		D9767A7420B7A6C200ABA524 /* libstdc++.6.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.tbd"; path = "usr/lib/libstdc++.6.tbd"; sourceTree = SDKROOT; };
+		D9767A7520B7A6C200ABA524 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MobileRTC.xcodeproj; path = ../MobileRTC/MobileRTC.xcodeproj; sourceTree = "<group>"; };
 		D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = MobileRTCResources.bundle; path = ../lib/MobileRTCResources.bundle; sourceTree = "<group>"; };
 		D996D23E1C99473F00C284F0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -175,6 +198,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9767A4C20B7A57A00ABA524 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9767A7620B7A6C300ABA524 /* libstdc++.6.tbd in Frameworks */,
+				D9767A7720B7A6C300ABA524 /* libstdc++.tbd in Frameworks */,
+				D9767A7320B7A6C200ABA524 /* libstdc++.6.0.9.tbd in Frameworks */,
+				D9767A5020B7A57A00ABA524 /* ReplayKit.framework in Frameworks */,
+				D9767A7220B7A6B700ABA524 /* MobileRTCScreenShare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -183,6 +218,7 @@
 			children = (
 				D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */,
 				C123332618D6D43100894EED /* MobileRTCSample */,
+				D9767A5120B7A57A00ABA524 /* MobileRTCSampleScreenShare */,
 				C123331F18D6D43100894EED /* Frameworks */,
 				C123331E18D6D43100894EED /* Products */,
 			);
@@ -192,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				5D8E67E020410ED400EE093E /* MobileRTCSample.app */,
+				D9767A4F20B7A57A00ABA524 /* MobileRTCSampleScreenShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,6 +236,9 @@
 		C123331F18D6D43100894EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9767A7420B7A6C200ABA524 /* libstdc++.6.tbd */,
+				D9767A7520B7A6C200ABA524 /* libstdc++.tbd */,
+				D9767A7120B7A6B700ABA524 /* MobileRTCScreenShare.framework */,
 				5D8E67F12041109B00EE093E /* MobileRTC.framework */,
 				D9EE87861FEC340E0075C049 /* CoreMotion.framework */,
 				D9E1FDBE1FEC275900EFCD4F /* ReplayKit.framework */,
@@ -209,6 +249,7 @@
 				D9E564431D9CF23300EF8C30 /* libz.1.2.5.tbd */,
 				D98403F01DC44DB100085DBF /* MobileRTCResources.bundle */,
 				D9E564481D9CF24200EF8C30 /* VideoToolbox.framework */,
+				D9767A5C20B7A57B00ABA524 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -216,6 +257,7 @@
 		C123332618D6D43100894EED /* MobileRTCSample */ = {
 			isa = PBXGroup;
 			children = (
+				D9767A4A20B7A55C00ABA524 /* MobileRTCSample.entitlements */,
 				C123332F18D6D43100894EED /* AppDelegate.h */,
 				C123333018D6D43100894EED /* AppDelegate.m */,
 				D9FCEC131CEEB9CB0071F330 /* IntroViewController.h */,
@@ -282,12 +324,24 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		D9767A5120B7A57A00ABA524 /* MobileRTCSampleScreenShare */ = {
+			isa = PBXGroup;
+			children = (
+				D9767A7020B7A5CF00ABA524 /* MobileRTCSampleScreenShare.entitlements */,
+				D9767A5220B7A57A00ABA524 /* SampleHandler.h */,
+				D9767A5320B7A57A00ABA524 /* SampleHandler.m */,
+				D9767A5520B7A57A00ABA524 /* Info.plist */,
+			);
+			path = MobileRTCSampleScreenShare;
+			sourceTree = "<group>";
+		};
 		D98403A11DC44D6900085DBF /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				D98403A61DC44D6900085DBF /* MobileRTCResources.bundle */,
 				D98403A81DC44D6900085DBF /* MobileRTC.framework */,
 				5D8E67E420410ED400EE093E /* MobileRTC.framework */,
+				D9767A4920B7A54D00ABA524 /* MobileRTCScreenShare.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +369,23 @@
 			productReference = 5D8E67E020410ED400EE093E /* MobileRTCSample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D9767A4E20B7A57A00ABA524 /* MobileRTCSampleScreenShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9767A6C20B7A57B00ABA524 /* Build configuration list for PBXNativeTarget "MobileRTCSampleScreenShare" */;
+			buildPhases = (
+				D9767A4B20B7A57A00ABA524 /* Sources */,
+				D9767A4C20B7A57A00ABA524 /* Frameworks */,
+				D9767A4D20B7A57A00ABA524 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MobileRTCSampleScreenShare;
+			productName = MobileRTCSampleScreenShare;
+			productReference = D9767A4F20B7A57A00ABA524 /* MobileRTCSampleScreenShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,6 +397,22 @@
 				TargetAttributes = {
 					5D8E67AA20410ED400EE093E = {
 						DevelopmentTeam = BJ4HAAB9B3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
+					D9767A4E20B7A57A00ABA524 = {
+						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = BJ4HAAB9B3;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -354,6 +441,7 @@
 			projectRoot = "";
 			targets = (
 				5D8E67AA20410ED400EE093E /* MobileRTCSample */,
+				D9767A4E20B7A57A00ABA524 /* MobileRTCSampleScreenShare */,
 			);
 		};
 /* End PBXProject section */
@@ -364,6 +452,13 @@
 			fileType = wrapper.framework;
 			path = MobileRTC.framework;
 			remoteRef = 5D8E67E320410ED400EE093E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D9767A4920B7A54D00ABA524 /* MobileRTCScreenShare.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MobileRTCScreenShare.framework;
+			remoteRef = D9767A4820B7A54D00ABA524 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		D98403A61DC44D6900085DBF /* MobileRTCResources.bundle */ = {
@@ -414,6 +509,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9767A4D20B7A57A00ABA524 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -432,6 +534,14 @@
 				5D8E67B820410ED400EE093E /* MainViewController.m in Sources */,
 				5D8E67B920410ED400EE093E /* main.m in Sources */,
 				5D8E67BA20410ED400EE093E /* SettingsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9767A4B20B7A57A00ABA524 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9767A5420B7A57A00ABA524 /* SampleHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +597,11 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = BJ4HAAB9B3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -503,7 +615,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.MobileRTCSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -519,9 +634,11 @@
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = BJ4HAAB9B3;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -535,7 +652,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.MobileRTCSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -615,6 +734,88 @@
 			};
 			name = Release;
 		};
+		D9767A6D20B7A57B00ABA524 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BJ4HAAB9B3;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MobileRTCSampleScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.videomeetings.ExtensionReplayKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D9767A6E20B7A57B00ABA524 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../lib";
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = MobileRTCSampleScreenShare/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.videomeetings.ExtensionReplayKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -632,6 +833,15 @@
 			buildConfigurations = (
 				C123334718D6D43100894EED /* Debug */,
 				C123334818D6D43100894EED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9767A6C20B7A57B00ABA524 /* Build configuration list for PBXNativeTarget "MobileRTCSampleScreenShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D9767A6D20B7A57B00ABA524 /* Debug */,
+				D9767A6E20B7A57B00ABA524 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

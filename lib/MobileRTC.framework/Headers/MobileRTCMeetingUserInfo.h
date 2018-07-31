@@ -63,6 +63,9 @@ typedef enum {
 @property (nonatomic, retain) MobileRTCAudioStatus*  audioStatus;
 @property (nonatomic, assign) BOOL             handRaised;
 @property (nonatomic, assign) BOOL             inSilentMode;
+@property (nonatomic, assign) BOOL             isCohost;
+@property (nonatomic, assign) BOOL             isHost;
+@property (nonatomic, assign) BOOL             isSharingPureComputerAudio;
 @property (nonatomic, assign) MobileRTCFeedbackType  feedbackType;
 
 @end

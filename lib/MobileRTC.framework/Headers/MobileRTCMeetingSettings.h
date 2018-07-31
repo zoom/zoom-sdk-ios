@@ -98,6 +98,11 @@
 @property (assign, nonatomic) BOOL waitingHUDHidden;
 
 /*!
+ @brief Show/Hide "Enter Host Key to Claim Host" item in More Menu.
+ */
+@property (assign, nonatomic) BOOL claimHostWithHostKeyHidden;
+
+/*!
  @brief To check whether client join meeting with Internet audio or not.
  @return YES if auto connect internet audio, or return NO.
  */

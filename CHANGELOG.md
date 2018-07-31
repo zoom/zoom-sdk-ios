@@ -1,4 +1,26 @@
 # CHANGELOG
+## 2017-07-26
+
+The start meeting logic for API users has changed. Please read below before upgrading to this version.
+
+### Added
+
+1. Security Enhancement: ZAK is necessary while Start Meeting for non-login user
+
+2. Support iOS Screen share via Replaykit tech on iOS OS Version 11 and later(Usage Guide refer to MobileRTCSample/MobileRTCSampleScreenShare/iOS SDK Screen Share Extension Integration Guide.docx)
+
+3. Support Add Customize the Invite Action Item into Invite ActionSheet. The original call back: - (void)onClickedInviteButton:(UIViewController*)parentVC has been deprecated, please use - (BOOL)onClickedInviteButton:(UIViewController*)parentVC addInviteActionItem:(NSMutableArray *)array instead;
+
+4. Support Add Customize the Share Action Item into Share ActionSheet. The original call back: - (BOOL)onClickedShareButton has been deprecated, please use - (BOOL)onClickedShareButton:(UIViewController*)parentVC addShareActionItem:(NSMutableArray *)array instead.
+
+5. Support Claim host with host key
+
+6. Support Assgin & Revoke co-host & Check wether user can be co-host
+
+7. Support Start Live Stream directly without Web Integration
+
+8. Bug fixes
+
 ## 2018-05-28
 
 ### Added

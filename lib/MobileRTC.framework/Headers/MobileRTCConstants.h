@@ -125,12 +125,20 @@ typedef enum {
  @brief MobileRTCUserType An Enum which provide all of User Type.
  */
 typedef enum {
+    ///Facebook user type
+    MobileRTCUserType_Facebook    = 0,
+    ///Google OAuth
+    MobileRTCUserType_GoogleOAuth = 2,
+    ///Device User
+    MobileRTCUserType_DeviceUser  = 97,
     ///API user type
     MobileRTCUserType_APIUser     = 99,
     ///Work email user type
     MobileRTCUserType_ZoomUser    = 100,
     ///Single-sign-on user type
     MobileRTCUserType_SSOUser     = 101,
+    ///Unknown
+    MobileRTCUserType_Unknown     = 102,
 }MobileRTCUserType;
 
 /*!
@@ -245,3 +253,64 @@ typedef enum {
     MobileRTCNetworkQuality_Excellent   = 5,
 }MobileRTCNetworkQuality;
 
+/*!
+ @brief MobileRTCAudioError An Enum which provide all of Audio related Action Error state.
+ */
+typedef enum {
+    ///Success
+    MobileRTCAudioError_Success                                   = 0,
+    ///AudioSessionRecordPermissionDenied
+    MobileRTCAudioError_AudioPermissionDenied                     = 1,
+    ///Do not connect to audio session
+    MobileRTCAudioError_AudioNotConnected                         = 2,
+    ///Can not Unmute My Audio
+    MobileRTCAudioError_CannotUnmuteMyAudio                       = 3,
+}MobileRTCAudioError;
+
+/*!
+ @brief MobileRTCVideoError An Enum which provide all of Video related Action Error state.
+ */
+typedef enum {
+    ///Success
+    MobileRTCVideoError_Success                                   = 0,
+    ///Camera PermissionDenied
+    MobileRTCVideoError_CameraPermissionDenied                    = 1,
+    ///Can not Unmute My Audio
+    MobileRTCVideoError_CannotUnmuteMyVideo                       = 3,
+}MobileRTCVideoError;
+
+/*!
+ @brief MobileRTCCameraError An Enum which provide all of Camera related Action Error state.
+ */
+typedef enum {
+    ///Success
+    MobileRTCCameraError_Success                                   = 0,
+    ///Camera PermissionDenied
+    MobileRTCCameraError_CameraPermissionDenied                    = 1,
+    ///Do not connect to video session
+    MobileRTCCameraError_VideoNotSending                           = 2,
+}MobileRTCCameraError;
+
+/*!
+ @brief MobileRTCLiveStreamStatus An Enum which provide Live Stream status in meeting.
+ */
+typedef enum {
+    ///Start Successed
+    MobileRTCLiveStreamStatus_StartSuccessed               = 0,
+    ///Start Failed
+    MobileRTCLiveStreamStatus_StartFailedOrEnded           = 1,
+    ///Start Timeout
+    MobileRTCLiveStreamStatus_StartTimeout                 = 2,
+}MobileRTCLiveStreamStatus;
+
+/*!
+ @brief MobileRTCClaimHostError An Enum which provide claim host result in meeting.
+ */
+typedef enum {
+    ///Successed
+    MobileRTCClaimHostError_Successed                = 0,
+    ///Host Key Error
+    MobileRTCClaimHostError_HostKeyError             = 1,
+    //Network Error
+    MobileRTCClaimHostError_NetWorkError             = 2,
+}MobileRTCClaimHostError;
