@@ -6,6 +6,41 @@ The start meeting logic for API users has changed. Please read below before upgr
 ### Added
 
 1. Security Enhancement: ZAK is necessary while Start Meeting for non-login user
+old API User start meeting logic:
+```
+NSDictionary * paramDict = @{kMeetingParam_UserID:kSDKUserID,
+                          kMeetingParam_UserToken:kSDKUserToken,
+                          kMeetingParam_UserType:@(userType),
+                          kMeetingParam_Username:kSDKUserName,
+                          kMeetingParam_MeetingNumber:kSDKMeetNumber,
+                          kMeetingParam_IsAppShare:@(appShare),
+                          //kMeetingParam_ParticipantID:kParticipantID,
+                          kMeetingParam_NoAudio:@(YES),
+                          //kMeetingParam_NoVideo:@(YES),
+                          };
+MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+MobileRTCMeetError ret = [ms startMeetingWithDictionary:paramDict];
+```
+
+new API User start meeting logic:
+```
+MobileRTCMeetingStartParam * param = nil;
+
+MobileRTCMeetingStartParam4WithoutLoginUser * user = [[[MobileRTCMeetingStartParam4WithoutLoginUser alloc]init] autorelease];
+        user.userType = MobileRTCUserType_APIUser;
+        user.meetingNumber = kSDKMeetNumber;
+        user.userName = kSDKUserName;
+        user.userToken = kSDKUserToken;
+        user.userID = kSDKUserID;
+        user.zak = kZAK;
+        user.isAppShare = appShare;
+        param = user;
+
+MobileRTCMeetError ret = [ms startMeetingWithStartParam:param];
+
+Note that: User need to be clear about your own Usertype, 
+Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return the correct Usertype.
+```
 
 2. Support iOS Screen share via Replaykit tech on iOS OS Version 11 and later(Usage Guide refer to MobileRTCSample/MobileRTCSampleScreenShare/iOS SDK Screen Share Extension Integration Guide.docx)
 
