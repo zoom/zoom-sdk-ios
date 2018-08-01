@@ -22,5 +22,6 @@ var searchData=
   ['getroomdevicelist',['getRoomDeviceList',['../category_mobile_r_t_c_meeting_service_07_customize_08.html#a996861715b294cf37f5d92aa888206f7',1,'MobileRTCMeetingService(Customize)::getRoomDeviceList()'],['../interface_mobile_r_t_c_meeting_service.html#a996861715b294cf37f5d92aa888206f7',1,'MobileRTCMeetingService::getRoomDeviceList()']]],
   ['getstarttime',['getStartTime',['../protocol_mobile_r_t_c_meeting_item_01-p.html#ab63ee7d5cfdaddf280aeb38f3374051c',1,'MobileRTCMeetingItem -p']]],
   ['gettimezoneid',['getTimeZoneID',['../protocol_mobile_r_t_c_meeting_item_01-p.html#a272bbd04d14c2d9b675057a4baa6d142',1,'MobileRTCMeetingItem -p']]],
-  ['getusertype',['getUserType',['../interface_mobile_r_t_c_auth_service.html#a868df22f0bd6d10d4c4ce350219d5a13',1,'MobileRTCAuthService']]]
+  ['getusertype',['getUserType',['../interface_mobile_r_t_c_auth_service.html#a868df22f0bd6d10d4c4ce350219d5a13',1,'MobileRTCAuthService']]],
+  ['getuservideosize_3a',['getUserVideoSize:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ab2ae24f879f951bbfc4150a4f1dad2b2',1,'MobileRTCMeetingService(InMeeting)::getUserVideoSize:()'],['../interface_mobile_r_t_c_meeting_service.html#ab2ae24f879f951bbfc4150a4f1dad2b2',1,'MobileRTCMeetingService::getUserVideoSize:()']]]
 ];

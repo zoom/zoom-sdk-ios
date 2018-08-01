@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['acceptincomingpushcallwithdisplayname_3a',['acceptIncomingPushCallWithDisplayName:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a2fc78b74710668d74766f705f7f72d65',1,'MobileRTCMeetingService(InMeeting)::acceptIncomingPushCallWithDisplayName:()'],['../interface_mobile_r_t_c_meeting_service.html#a2fc78b74710668d74766f705f7f72d65',1,'MobileRTCMeetingService::acceptIncomingPushCallWithDisplayName:()']]],
   ['activeshareuserid',['activeShareUserID',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ada29cc67e016a82e3e199d0fdee43f91',1,'MobileRTCMeetingService(InMeeting)::activeShareUserID()'],['../interface_mobile_r_t_c_meeting_service.html#ada29cc67e016a82e3e199d0fdee43f91',1,'MobileRTCMeetingService::activeShareUserID()']]],
   ['activeuserid',['activeUserID',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9454029693562d061e1da026d8c8a10a',1,'MobileRTCMeetingService(InMeeting)::activeUserID()'],['../interface_mobile_r_t_c_meeting_service.html#a9454029693562d061e1da026d8c8a10a',1,'MobileRTCMeetingService::activeUserID()']]],
   ['appdidbecomeactive',['appDidBecomeActive',['../interface_mobile_r_t_c.html#a8405dd5825931f42b2191a1554db9f7a',1,'MobileRTC']]],
@@ -9,5 +10,6 @@ var searchData=
   ['appwillresignactive',['appWillResignActive',['../interface_mobile_r_t_c.html#a554b853b51c9732361e7b8af1d76bce2',1,'MobileRTC']]],
   ['appwillterminate',['appWillTerminate',['../interface_mobile_r_t_c.html#a030f613034d4c1b03975dd84d04a86e2',1,'MobileRTC']]],
   ['askuserstartvideo_3a',['askUserStartVideo:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9d6da1a3cc12b1ec81ed4143823f1637',1,'MobileRTCMeetingService(InMeeting)::askUserStartVideo:()'],['../interface_mobile_r_t_c_meeting_service.html#a9d6da1a3cc12b1ec81ed4143823f1637',1,'MobileRTCMeetingService::askUserStartVideo:()']]],
+  ['assigncohost_3a',['assignCohost:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9704adad6beaac40bdb64632ac7680c7',1,'MobileRTCMeetingService(InMeeting)::assignCohost:()'],['../interface_mobile_r_t_c_meeting_service.html#a9704adad6beaac40bdb64632ac7680c7',1,'MobileRTCMeetingService::assignCohost:()']]],
   ['autoconnectinternetaudio',['autoConnectInternetAudio',['../interface_mobile_r_t_c_meeting_settings.html#a1e47c82cdede24840b7e21aa8a362afd',1,'MobileRTCMeetingSettings']]]
 ];

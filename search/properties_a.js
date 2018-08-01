@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['senderid',['senderId',['../interface_mobile_r_t_c_meeting_chat.html#adbd5687c488dbe0467887e0ab6121251',1,'MobileRTCMeetingChat']]],
-  ['sendername',['senderName',['../interface_mobile_r_t_c_meeting_chat.html#adda52943814d8585b9cba128f8cf32e1',1,'MobileRTCMeetingChat']]]
+  ['participantid',['participantID',['../interface_mobile_r_t_c_meeting_start_param.html#ae18ae4c7256f0a682a6425dbe0a0ee1e',1,'MobileRTCMeetingStartParam']]]
 ];
