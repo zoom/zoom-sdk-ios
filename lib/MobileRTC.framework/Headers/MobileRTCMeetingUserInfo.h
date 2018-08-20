@@ -69,3 +69,14 @@ typedef enum {
 @property (nonatomic, assign) MobileRTCFeedbackType  feedbackType;
 
 @end
+
+
+@interface MobileRTCMeetingWebinarAttendeeInfo : NSObject
+
+@property (nonatomic, assign, readonly) NSUInteger userID;
+@property (nonatomic, retain, readonly) NSString *userName;
+@property (nonatomic, retain, readonly) NSString *emailAddress;
+
+- (id)initWithUserID:(NSUInteger)userID username:(NSString *)userName emailAddress:(NSString*)emailAddress;
+
+@end

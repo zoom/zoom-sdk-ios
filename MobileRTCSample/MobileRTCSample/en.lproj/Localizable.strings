@@ -56,7 +56,7 @@
 
 "Enable Kubi Device" = "Enable Kubi Device";
 
-"Change Thumbnail Layout" = "Change Thumbnail Layout";
+"Change Thumbnail In Sharing" = "Change Thumbnail In Sharing";
 
 "Host Hide Leave Meeting" = "Host Hide Leave Meeting";
 
@@ -156,3 +156,5 @@
 "Meeting Settings" = "Meeting Settings";
 
 "Schedule Meeting" = "Schedule Meeting";
+
+"Custom Meeting" = "Custom Meeting";

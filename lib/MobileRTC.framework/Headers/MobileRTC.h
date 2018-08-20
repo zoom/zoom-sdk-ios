@@ -13,6 +13,11 @@
 #import <MobileRTC/MobileRTCMeetingService+AppShare.h>
 #import <MobileRTC/MobileRTCMeetingService+InMeeting.h>
 #import <MobileRTC/MobileRTCMeetingService+Customize.h>
+#import <MobileRTC/MobileRTCMeetingService+Audio.h>
+#import <MobileRTC/MobileRTCMeetingService+Video.h>
+#import <MobileRTC/MobileRTCMeetingService+User.h>
+#import <MobileRTC/MobileRTCMeetingService+Chat.h>
+#import <MobileRTC/MobileRTCMeetingService+Webinar.h>
 #import <MobileRTC/MobileRTCMeetingSettings.h>
 #import <MobileRTC/MobileRTCInviteHelper.h>
 #import <MobileRTC/MobileRTCPremeetingService.h>
@@ -20,8 +25,11 @@
 #import <MobileRTC/MobileRTCMeetingUserInfo.h>
 #import <MobileRTC/MobileRTCMeetingChat.h>
 #import <MobileRTC/MobileRTCE2EMeetingKey.h>
+#import <MobileRTC/MobileRTCMeetingDelegate.h>
+#import <MobileRTC/MobileRTCVideoView.h>
 #import <MobileRTC/MobileRTCMeetingActionItem.h>
-
+#import <MobileRTC/MobileRTCAnnotationService.h>
+#import <MobileRTC/MobileRTCRemoteControlService.h>
 /*!
  @class MobileRTC
  @brief MobileRTC class is a class that exposes an API Rest Client.
@@ -37,6 +45,10 @@
     
     MobileRTCAuthService     *_authService;
     MobileRTCPremeetingService *_premeetingService;
+    
+    MobileRTCAnnotationService *_annotationService;
+    
+    MobileRTCRemoteControlService *_remoteControlService;
 }
 
 /*!
@@ -100,6 +112,12 @@
 - (BOOL)isRTCAuthorized;
 
 /*!
+ @brief This method tells customer whether MobileRTC supports to customize meeting UI or not.
+ @return YES, supports to customize meeting UI.
+ */
+- (BOOL)isSupportedCustomizeMeetingUI;
+
+/*!
  @brief This method returns the MobileRTC default Auth Service.
  @discussion Auth Service should be called at first, the MobileRTC can be used after authorizing successfully.
  @return a preconfigured Auth Service
@@ -124,6 +142,18 @@
  @return a object of Meeting Settings
  */
 - (MobileRTCMeetingSettings*)getMeetingSettings;
+
+/*!
+ @brief This method returns the MobileRTC default Annotation Service.
+ @return a preconfigured Annotation Service
+ */
+- (MobileRTCAnnotationService*)getAnnotationService;
+
+/*!
+ @brief This method returns the MobileRTC default RemoteControl Service.
+ @return a preconfigured RemoteControl Service
+ */
+- (MobileRTCRemoteControlService*)getRemoteControlService;
 
 /*!
  @brief This method gets MobileRTC supported languages.

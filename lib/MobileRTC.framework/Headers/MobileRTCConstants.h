@@ -96,7 +96,8 @@ typedef enum {
     MobileRTCMeetError_JoinWebinarWithSameEmail         = 28,
     ///failed to write config file
     MobileRTCMeetError_WriteConfigFile                  = 50,
-    
+    ///Removed By host
+    MobileRTCMeetError_RemovedByHost                    = 61,
     ///Invalid Arguments
     MobileRTCMeetError_InvalidArguments                 = MobileRTCMeetError_WriteConfigFile + 100,
     ///Invalid User Type
@@ -113,12 +114,15 @@ typedef enum {
  */
 typedef enum {
     ///Idle
-    MobileRTCMeetingState_Idle        = 0,
+    MobileRTCMeetingState_Idle              = 0,
     ///Connecting
-    MobileRTCMeetingState_Connecting  = 1,
+    MobileRTCMeetingState_Connecting        = 1,
     ///In Meeting
-    MobileRTCMeetingState_InMeeting   = 2,
-    
+    MobileRTCMeetingState_InMeeting         = 2,
+    ///Webinar Meeting Promote
+    MobileRTCMeetingState_WebinarPromote    = 3,
+    ///Webinar Meeting DePromote
+    MobileRTCMeetingState_WebinarDePromote  = 4,
 }MobileRTCMeetingState;
 
 /*!
@@ -314,3 +318,142 @@ typedef enum {
     //Network Error
     MobileRTCClaimHostError_NetWorkError             = 2,
 }MobileRTCClaimHostError;
+
+/*!
+ @brief MobileRTCSendChatError An Enum which provide send chat result in meeting.
+ */
+typedef enum {
+    ///Successed
+    MobileRTCSendChatError_Successed                = 0,
+    ///Call Failed
+    MobileRTCSendChatError_Failed                   = 1,
+    ///PermissionDenied
+    MobileRTCSendChatError_PermissionDenied         = 2,
+}MobileRTCSendChatError;
+
+/*!
+ @brief MobileRTCAnnotationError An Enum which provide annotation related action result in meeting.
+ */
+typedef enum {
+    ///Successed
+    MobileRTCAnnotationError_Successed                = 0,
+    ///Failed
+    MobileRTCAnnotationError_Failed                   = 1,
+    ///PermissionDenied
+    MobileRTCAnnotationError_PermissionDenied         = 2,
+}MobileRTCAnnotationError;
+
+/*!
+ @brief MobileRTCCMRError An Enum which provide CMR related result.
+ */
+typedef enum {
+    ///Successed
+    MobileRTCCMRError_Successed                = 0,
+    ///Failed
+    MobileRTCCMRError_Failed                   = 1,
+    ///Storage Full
+    MobileRTCCMRError_StorageFull              = 2,
+}MobileRTCCMRError;
+
+/*!
+ @brief MobileRTCJoinMeetingInfo An Enum which need provide Join Meeting Info.
+ */
+typedef enum {
+    ///Need Display name
+    MobileRTCJoinMeetingInfo_NeedName                = 0,
+    ///Need Meeting password
+    MobileRTCJoinMeetingInfo_NeedPassword            = 1,
+    ///Wrong Meeting password
+    MobileRTCJoinMeetingInfo_WrongPassword           = 2,
+    ///Need Display name and Meeting Password
+    MobileRTCJoinMeetingInfo_NeedNameAndPwd          = 3,
+}MobileRTCJoinMeetingInfo;
+
+/*!
+ @brief MobileRTCAudioError An Enum of Audio Error.
+ */
+typedef enum {
+    ///microphone muted while speaking
+    MobileRTCMicrophoneError_MicMuted                = 0,
+    ///audio feedback detected just join into meeting
+    MobileRTCMicrophoneError_FeedbackDetected        = 1,
+    ///microphone unavailable
+    MobileRTCMicrophoneError_MicUnavailable          = 2,
+}MobileRTCMicrophoneError;
+
+/*!
+ @brief MobileRTCAudioError An Enum of Audio Error.
+ */
+typedef enum {
+    ///Leave meeting by myself
+    MobileRTCMeetingEndReason_SelfLeave                 = 0,
+    ///Remove from meeting by host
+    MobileRTCMeetingEndReason_RemovedByHost             = 1,
+    ///meeting end by host
+    MobileRTCMeetingEndReason_EndByHost                 = 2,
+    ///Join meeting before host timeout
+    MobileRTCMeetingEndReason_JBHTimeout                = 3,
+    ///free meeting end by timeout
+    MobileRTCMeetingEndReason_FreeMeetingTimeout        = 4,
+    ///Host end meeting for another meeting
+    MobileRTCMeetingEndReason_HostEndForAnotherMeeting  = 6,
+    ///Meeting end by connection broken, such as network issue
+    MobileRTCMeetingEndReason_ConnectBroken             = 7,
+
+    ///Meeting end by unknown reason
+    MobileRTCMeetingEndReason_Unknown,
+}MobileRTCMeetingEndReason;
+
+/*!
+ @brief MobileRTCRemoteControlError An Enum which provide RemoteControl related action result in meeting.
+ */
+typedef enum {
+    ///Successed
+    MobileRTCRemoteControlError_Successed                = 0,
+    ///stop
+    MobileRTCRemoteControlError_Stop                     = 1,
+    ///Failed
+    MobileRTCRemoteControlError_Failed                   = 2,
+    ///PermissionDenied
+    MobileRTCRemoteControlError_PermissionDenied            = 3,
+}MobileRTCRemoteControlError;
+
+/*!
+ @brief MobileRTCAudioOutput An Enum which provide audio output description.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCAudioOutput) {
+    ///Unknown
+    MobileRTCAudioOutput_Unknown         = 0,
+    ///Receiver
+    MobileRTCAudioOutput_Receiver        = 1,
+    ///Speaker
+    MobileRTCAudioOutput_Speaker         = 2,
+    ///Headphones
+    MobileRTCAudioOutput_Headphones     = 3,
+    ///Bluetooth
+    MobileRTCAudioOutput_Bluetooth      = 4,
+};
+
+/*!
+ @brief MobileRTCWebinarAllowAttendeeChat An Enum which provide Webinar Meeting Attendee chat Privilegae description.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCChatAllowAttendeeChat) {
+    ///Disable Chat
+    MobileRTCChatAllowAttendeeChat_ChatWithNone              = 1,
+    ///Chat with All
+    MobileRTCChatAllowAttendeeChat_ChatWithAll               = 2,
+    ///Chat with Panelist
+    MobileRTCChatAllowAttendeeChat_ChatWithPanelist          = 3,
+};
+
+/*!
+ @brief MobileRTCWebinarPromoteorDepromoteError An Enum which provide Webinar Meeting Promote/Depromote Attendee and panelist error type description.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCWebinarPromoteorDepromoteError) {
+    ///Success
+    MobileRTCWebinarPromoteorDepromoteError_Success                                                  = 0,
+    ///Chat with All
+    MobileRTCWebinarPromoteorDepromoteError_Webinar_Panelist_Capacity_Exceed                         = 3035,
+    ///Chat with Panelist
+    MobileRTCWebinarPromoteorDepromoteError_Not_Found_Wwbinar_Attendee                               = 3029,
+};

@@ -36,6 +36,8 @@
 @property (retain, nonatomic) UITableViewCell *hintCell;
 @property (retain, nonatomic) UITableViewCell *waitingHUDCell;
 
+@property (retain, nonatomic) UITableViewCell *customMeetingCell;
+
 @property (retain, nonatomic) NSArray *itemArray;
 
 @end
@@ -53,37 +55,52 @@
     self.title = NSLocalizedString(@"Meeting Settings", @"");
     
     NSMutableArray *array = [NSMutableArray array];
-    [array addObject:@[[self autoConnectAudioCell], [self muteAudioCell], [self muteVideoCell]]];
     
-    NSMutableArray *ma = [NSMutableArray array];
-    [ma addObject:[self titleHiddenCell]];
-    [ma addObject:[self passwordHiddenCell]];
-    [ma addObject:[self leaveHiddenCell]];
-    [ma addObject:[self audioHiddenCell]];
-    [ma addObject:[self videoHiddenCell]];
-    [ma addObject:[self inviteHiddenCell]];
-    [ma addObject:[self participantHiddenCell]];
-    [ma addObject:[self moreHiddenCell]];
-    [ma addObject:[self shareHiddenCell]];
-    [ma addObject:[self topBarHiddenCell]];
-    [ma addObject:[self thumbnailCell]];
-    [ma addObject:[self hostLeaveCell]];
-    [ma addObject:[self hintCell]];
-    [ma addObject:[self waitingHUDCell]];
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
+    NSMutableArray *layoutArray = [NSMutableArray array];
+    if ([[MobileRTC sharedRTC] isSupportedCustomizeMeetingUI])
     {
-        [ma addObject:[self botBarHiddenCell]];
+        [layoutArray addObject:[self customMeetingCell]];
     }
-    [array addObject:ma];
-    
-    [array addObject:@[[self callInCell], [self callOutCell]]];
-    
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad)
-        [array addObject:@[[self driveModeCell]]];
+    [layoutArray addObject:[self thumbnailCell]];
+    [array addObject:layoutArray];
+
+    NSMutableArray *avArray = [NSMutableArray array];
+    [avArray addObject:[self autoConnectAudioCell]];
+    [avArray addObject:[self muteAudioCell]];
+    [avArray addObject:[self muteVideoCell]];
+    [array addObject:avArray];
+
+    NSMutableArray *disableArray = [NSMutableArray array];
+    [disableArray addObject:[self callInCell]];
+    [disableArray addObject:[self callOutCell]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+        [disableArray addObject:[self driveModeCell]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        [array addObject:@[[self enableKubiCell]]];
+        [disableArray addObject:[self enableKubiCell]];
+    [array addObject:disableArray];
+
+    NSMutableArray *hiddenArray = [NSMutableArray array];
+    [hiddenArray addObject:[self titleHiddenCell]];
+    [hiddenArray addObject:[self passwordHiddenCell]];
+    [hiddenArray addObject:[self leaveHiddenCell]];
+    [hiddenArray addObject:[self audioHiddenCell]];
+    [hiddenArray addObject:[self videoHiddenCell]];
+    [hiddenArray addObject:[self inviteHiddenCell]];
+    [hiddenArray addObject:[self participantHiddenCell]];
+    [hiddenArray addObject:[self moreHiddenCell]];
+    [hiddenArray addObject:[self shareHiddenCell]];
+    [hiddenArray addObject:[self topBarHiddenCell]];
+    [hiddenArray addObject:[self hostLeaveCell]];
+    [hiddenArray addObject:[self hintCell]];
+    [hiddenArray addObject:[self waitingHUDCell]];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+    {
+        [hiddenArray addObject:[self botBarHiddenCell]];
+    }
+    [array addObject:hiddenArray];
     
     self.itemArray = array;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -561,7 +578,7 @@
     {
         _thumbnailCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         _thumbnailCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        _thumbnailCell.textLabel.text = NSLocalizedString(@"Change Thumbnail Layout", @"");
+        _thumbnailCell.textLabel.text = NSLocalizedString(@"Change Thumbnail In Sharing", @"");
         
         UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
         [sv setOn:hidden animated:NO];
@@ -640,6 +657,28 @@
     
     return _waitingHUDCell;
 }
+
+- (UITableViewCell*)customMeetingCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL enableCustomMeeting = [settings enableCustomMeeting];
+    if (!_customMeetingCell)
+    {
+        _customMeetingCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _customMeetingCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _customMeetingCell.textLabel.text = NSLocalizedString(@"Custom Meeting", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:enableCustomMeeting animated:NO];
+        [sv addTarget:self action:@selector(onEnableCustomMeetingHint:) forControlEvents:UIControlEventValueChanged];
+        _customMeetingCell.accessoryView = sv;
+    }
+    return _customMeetingCell;
+}
+
 
 - (void)onAutoConnectAudio:(id)sender
 {
@@ -773,4 +812,9 @@
     [[MobileRTC sharedRTC] getMeetingSettings].waitingHUDHidden = sv.on;
 }
 
+- (void)onEnableCustomMeetingHint:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [[MobileRTC sharedRTC] getMeetingSettings].enableCustomMeeting = sv.on;
+}
 @end

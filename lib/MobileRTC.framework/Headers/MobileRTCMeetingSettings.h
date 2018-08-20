@@ -98,10 +98,24 @@
 @property (assign, nonatomic) BOOL waitingHUDHidden;
 
 /*!
+ @brief Show/Hide "Call out Room System" item in Invite h.323/SIP Room System.
+ */
+@property (assign, nonatomic) BOOL calloutRoomSystemHidden;
+
+/*!
  @brief Show/Hide "Enter Host Key to Claim Host" item in More Menu.
  */
 @property (assign, nonatomic) BOOL claimHostWithHostKeyHidden;
 
+/*!
+ @brief Show/Hide Close Caption in a meeting.
+ */
+@property (assign, nonatomic) BOOL closeCaptionHidden;
+
+/*!
+ @brief Enable Csutom In-Meeting UI in meeting.
+ */
+@property (assign, nonatomic) BOOL enableCustomMeeting;
 /*!
  @brief To check whether client join meeting with Internet audio or not.
  @return YES if auto connect internet audio, or return NO.

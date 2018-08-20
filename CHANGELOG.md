@@ -1,5 +1,31 @@
 # CHANGELOG
-## 2017-07-26
+## 2018-08-20
+
+* SDK Framework Interface Refactor, introduce MobileRTCMeetingService category cluster for specific Service Module:
+1. MobileRTCMeetingService+Audio: Audio Service
+2. MobileRTCMeetingService+Video: Video Service
+3. MobileRTCMeetingService+Chat: Chat Service
+4. MobileRTCMeetingService+User: User Service
+5. MobileRTCMeetingService+Webinar: Webinar Service
+
+* SDK Framework Delegate Refactor, introduce MobileRTCMeetingServiceDelegate cluster for event callback in the specific Service Module:
+1. MobileRTCAudioServiceDelegate: Audio Service Delegate
+2. MobileRTCVideoServiceDelegate: Video Service Delegate
+3. MobileRTCUserServiceDelegate: User Service Delegate
+4. MobileRTCShareServiceDelegate: Share Service Delegate
+5. MobileRTCWebinarServiceDelegate: Webinar Service Delegate
+6. MobileRTCCustomizedUIMeetingDelegate: Customized Meeting UI Delegate
+
+* Custom Meeting UI (support basic meeting function, except for Webinar and Breakout Session)
+1. Support Annotate for customized Meeting UI
+2. Support Remote Control for customized Meeting UI
+
+* Support In-meeting Chat related common feature
+* Fix Annotate crash issue on iOS 12
+* Support Webinar related common feature (do not support Q&A and Polling)
+* Bug fixes
+
+## 2018-07-26
 
 The start meeting logic for API users has changed. Please read below before upgrading to this version.
 

@@ -40,7 +40,7 @@
  @param username the display name for invite other by phone. If parameter "me" is YES, the param can be ignored.
  @return YES means call this method successfully.
  */
-- (BOOL)dialOut:(NSString*)phone isCallMe:(BOOL)me withName:(NSString*)username;
+- (BOOL)dialOut:(nonnull NSString*)phone isCallMe:(BOOL)me withName:(nullable NSString*)username;
 
 /*!
  @brief This method is used to cancel dial out.
@@ -71,32 +71,32 @@
  @brief This method will return an array of IP Addresses for Call in a room device.
  @return the array of ip address list; or return nil, if there does not exist any IP Address.
  */
-- (NSArray*)getIPAddressList;
+- (nullable NSArray*)getIPAddressList;
 
 /*!
  @brief This method will return a meeting password for call in a room device.
  @return meeting password for call H323 device; return nil means on password.
  */
-- (NSString*)getH323MeetingPassword;
+- (nullable NSString*)getH323MeetingPassword;
 
 /*!
  @brief This method will return an array of room devices for call out a room device.
  @return the array of room devices; or return nil, if there does not exist any room device.
  */
-- (NSArray*)getRoomDeviceList;
+- (nullable NSArray*)getRoomDeviceList;
 
 /*!
  @brief This method is used to call in a room device with pairing code.
  @param code the pairing code
  @return YES means call this method successfully.
  */
-- (BOOL)sendPairingCode:(NSString*)code;
+- (BOOL)sendPairingCode:(nonnull NSString*)code;
 
 /*!
  @brief This method is used to call out a room device.
  @param device the room device
  @return YES means call this method successfully.
  */
-- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device;
+- (BOOL)callRoomDevice:(nonnull MobileRTCRoomDevice*)device;
 
 @end

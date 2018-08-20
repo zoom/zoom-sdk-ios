@@ -23,7 +23,7 @@
  @brief This method is used to change the view of share content.
  @param view the view will be shared.
  */
-- (void)appShareWithView:(UIView*)view;
+- (void)appShareWithView:(nonnull UIView*)view;
 
 /*!
  @brief This method is used to share content with ReplayKit.
@@ -54,5 +54,11 @@
  @return YES if the client is viewing share.
  */
 - (BOOL)isViewingShare;
+
+/*!
+ @brief This method is used to tell the client if the annotation is available.
+ @return YES if the client is available.
+ */
+- (BOOL)isAnnotationOff;
 
 @end

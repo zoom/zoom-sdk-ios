@@ -56,7 +56,7 @@
 
 "Enable Kubi Device" = "啟用Kubi設備";
 
-"Change Thumbnail Layout" = "共享時變更小視頻布局";
+"Change Thumbnail In Sharing" = "變更觀看共享中的小視頻布局";
 
 "Host Hide Leave Meeting" = "隱藏主持人離會菜單";
 
@@ -156,3 +156,5 @@
 "Meeting Settings" = "會議設置";
 
 "Schedule Meeting" = "預約會議";
+
+"Custom Meeting" = "自定义会议";

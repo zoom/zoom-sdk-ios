@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MobileRTCConstants.h"
-
+#import "MobileRTCMeetingDelegate.h"
 
 /**
  * The key of dictionary for parameter of methods "startMeetingWithDictionary" and "joinMeetingWithDictionary".
@@ -58,19 +58,19 @@ extern NSString* kMeetingParam_VanityID;
 /*!
  @brief This property knows as participant ID.
  */
-@property (nonatomic, retain, readwrite) NSString * participantID;
+@property (nullable, nonatomic, retain, readwrite) NSString * participantID;
 /*!
  @brief This property knows as webinar token.
  */
-@property (nonatomic, retain, readwrite) NSString * webinarToken;
+@property (nullable, nonatomic, retain, readwrite) NSString * webinarToken;
 /*!
  @brief This property knows as vanity iD.
  */
-@property (nonatomic, retain, readwrite) NSString * vanityID;
+@property (nullable, nonatomic, retain, readwrite) NSString * vanityID;
 /*!
  @brief This property knows as meeting number.
  */
-@property (nonatomic, retain, readwrite) NSString * meetingNumber;
+@property (nullable, nonatomic, retain, readwrite) NSString * meetingNumber;
 @end
 
 /*!
@@ -92,7 +92,7 @@ extern NSString* kMeetingParam_VanityID;
 /*!
  @brief This property knows as user name.
  */
-@property (nonatomic, retain, readwrite) NSString * userName;
+@property (nonnull, nonatomic, retain, readwrite) NSString * userName;
 /*!
  @brief This property knows as user token.
  @waring userToken cannot be null
@@ -101,7 +101,7 @@ extern NSString* kMeetingParam_VanityID;
 /*!
  @brief This property knows as user id.
  */
-@property (nonatomic, retain, readwrite) NSString * userID;
+@property (nonnull, nonatomic, retain, readwrite) NSString * userID;
 /*!
  @brief This property knows as user zak.
  @waring zak cannot be null
@@ -123,7 +123,12 @@ extern NSString* kMeetingParam_VanityID;
 /*!
  @brief The object that acts as the delegate of the receiving meeting events.
  */
-@property (assign, nonatomic) id<MobileRTCMeetingServiceDelegate> delegate;
+@property (nullable, assign, nonatomic) id<MobileRTCMeetingServiceDelegate> delegate;
+
+/*!
+ @brief The object that acts as the delegate of the receiving meeting events.
+ */
+@property (nullable, assign, nonatomic) id<MobileRTCCustomizedUIMeetingDelegate> customizedUImeetingDelegate;
 
 /*!
  @brief This method is used to start a meeting with parameters in a dictionary.
@@ -134,7 +139,7 @@ extern NSString* kMeetingParam_VanityID;
  @return A MobileRTCMeetError to tell client whether the meeting started or not.
  @warning If start meeting with wrong parameter, this method will return MobileRTCMeetError_InvalidArguments
  */
-- (MobileRTCMeetError)startMeetingWithDictionary:(NSDictionary*)dict;
+- (MobileRTCMeetError)startMeetingWithDictionary:(nonnull NSDictionary*)dict;
 
 /*!
  @brief This method is used to start a meeting with MobileRTCMeetingStartParam param.
@@ -143,7 +148,7 @@ extern NSString* kMeetingParam_VanityID;
  @return A MobileRTCMeetError to tell client whether the meeting started or not.
  @warning If start meeting with wrong parameter, this method will return MobileRTCMeetError_InvalidArguments
  */
-- (MobileRTCMeetError)startMeetingWithStartParam:(MobileRTCMeetingStartParam*)param;
+- (MobileRTCMeetError)startMeetingWithStartParam:(nonnull MobileRTCMeetingStartParam*)param;
 
 /*!
  @brief This method is used to join a meeting with parameters in a dictionary.
@@ -151,7 +156,7 @@ extern NSString* kMeetingParam_VanityID;
  @return A MobileRTCMeetError to tell client whether can join the meeting or not.
  @warning If app is in callkit mode, set parameter:kMeetingParam_Username as empty
  */
-- (MobileRTCMeetError)joinMeetingWithDictionary:(NSDictionary*)dict;
+- (MobileRTCMeetError)joinMeetingWithDictionary:(nonnull NSDictionary*)dict;
 
 /*!
  @brief This method is used to join a meeting with parameters in a dictionary.
@@ -172,197 +177,3 @@ extern NSString* kMeetingParam_VanityID;
 - (UIView*)meetingView;
 
 @end
-
-/*!
- @protocol MobileRTCMeetingServiceDelegate
- @brief An Meeting Service will issue the following value when the meeting state changes
- */
-@protocol MobileRTCMeetingServiceDelegate <NSObject>
-
-@optional
-/*!
- @brief Designated for Meeting Response.
- @param error tell client related to this meeting event.
- @param internalError internal error code
- */
-- (void)onMeetingReturn:(MobileRTCMeetError)error internalError:(NSInteger)internalError;
-
-/*!
- @brief Designated for Meeting Error message.
- @param error internal error code.
- @param message the message for meeting error
- */
-- (void)onMeetingError:(NSInteger)error message:(NSString*)message;
-
-/*!
- @brief Designated for Meeting State Change.
- @param state tell client meeting state chagne.
- */
-- (void)onMeetingStateChange:(MobileRTCMeetingState)state;
-
-/*!
- @brief Designated for Meeting has been ready.
- */
-- (void)onMeetingReady;
-
-/*!
- @brief Designated for join a none-host meeting, Partner can show/hide a customized JBH waiting UI..
- @param cmd JBHCmd_Show or JBHCmd_Hide
- */
-- (void)onJBHWaitingWithCmd:(JBHCmd)cmd;
-
-#pragma mark - For Invite Delegate
-/*!
- @brief Designated for customize the Invite event.
- @param parentVC parent viewcontroller to present customize Invite UI.
- @param array add Customized InviteActionItem into Invite ActionSheet
- @return Condition that Customer handled this action, MobileRTC need not popup invite menu, return NO; Condition that add Customized InviteActionItem via MobileRTCMeetingInviteActionItem into Invite ActionSheet, return YES
- @waring - (void)onClickedInviteButton:(UIViewController*)parentVC has been deprecated, please use - (BOOL)onClickedInviteButton:(UIViewController*)parentVC addInviteActionItem:(NSMutableArray *)array instead.
- */
-- (BOOL)onClickedInviteButton:(UIViewController*)parentVC addInviteActionItem:(NSMutableArray *)array;
-
-#pragma mark - For Participant Delegate
-/*!
- @brief Designated for customize the Participants event.
- @param parentVC parent viewcontroller to present customize Participants UI.
- */
-- (BOOL)onClickedParticipantsButton:(UIViewController*)parentVC;
-
-#pragma mark - For AppShare Delegate
-/*!
- @brief Designated for App share has started with default splash.
- */
-- (void)onAppShareSplash;
-
-/*!
- @brief Designated for clicked the Share button in meeting.
- @return YES, customer handled this action, MobileRTC need not popup share menu; NO, customer ignored this action, MobileRTC take care this action and still popup share menu.
- @return Condition that Customer handled this action, MobileRTC need not popup share menu, return NO; Condition that add Customized Share Action Item via MobileRTCMeetingShareActionItem into Share ActionSheet, return YES
- @waring - (BOOL)onClickedShareButton has been deprecated, please use - (BOOL)onClickedShareButton:(UIViewController*)parentVC addShareActionItem:(NSMutableArray *)array instead.
- */
-- (BOOL)onClickedShareButton:(UIViewController*)parentVC addShareActionItem:(NSMutableArray *)array;
-
-/*!
- @brief Designated for notify that there does not exist ongoing share.
- */
-- (void)onOngoingShareStopped;
-
-#pragma mark - For DialOut Delegate
-/*!
- @brief Designated for customize Dial out.
- @param parentVC parent viewcontroller to present Dial Out UI.
- @param me if YES, means "Call Me"; if NO, means "Invite by Phone".
- */
-- (void)onClickedDialOut:(UIViewController*)parentVC isCallMe:(BOOL)me;
-
-/*!
- @brief Designated for Dial Out status change.
- @param status tell client the status of dial out.
- */
-- (void)onDialOutStatusChanged:(DialOutStatus)status;
-
-#pragma mark - For Call H.323/SIP Delegate
-/*!
- @brief Designated for Send pairing code state change.
- @param state if 0 means pairing success, or means that call in failed.
- */
-- (void)onSendPairingCodeStateChanged:(NSUInteger)state;
-
-/*!
- @brief Designated for Call Room Device state change.
- @param state tell client the status of calling Room Device.
- */
-- (void)onCallRoomDeviceStateChanged:(H323CallOutStatus)state;
-
-#pragma mark - For User State Delegate
-
-/*!
- @brief Designated for my audio state changed.
- */
-- (void)onMyAudioStateChange;
-
-/*!
- @brief Designated for my video state changed.
- */
-- (void)onMyVideoStateChange;
-
-/*!
- @brief Designated for my hand state changed (Hand raised/lowered).
- */
-- (void)onMyHandStateChange;
-
-/*!
- @brief Designated for audio output changed.
- */
-- (void)onAudioOutputChange;
-
-/*!
- @brief Designated for notify user state updated in meeting.
- */
-- (void)onInMeetingUserUpdated;
-
-/*!
- @brief Designated for notify that spotlight user video change.
- @param on if YES means spotlighted; if NO means unspotlighted.
- */
-- (void)onSpotlightVideoChange:(BOOL)on;
-
-/*!
- @brief Designated for notify that meeting host changed.
- @param hostId the host user id
- */
-- (void)onMeetingHostChange:(NSUInteger)hostId;
-
-/*!
- @brief Designated for notify that meeting co-host changed.
- @param hostId the co-host user id
- */
-- (void)onMeetingCoHostChange:(NSUInteger)cohostId;
-
-/*!
- @brief Designated for notify chat content in meeting.
- @param messageID the message id
- */
-- (void)onInMeetingChat:(NSString*)messageID;
-
-/*!
- @brief Designated for notify the meeting is E2E or not.
- @param key the meeting session key
- */
-- (void)onWaitExternalSessionKey:(NSData*)key;
-
-/*!
- @brief Designated for notify user Claim Host Result.
- */
-- (void)onClaimHostResult:(MobileRTCClaimHostError)error;
-
-#pragma mark - For Call-Kit Delegate
-
-/*!
- @brief Designated for notify user Create In-Coming Call UI View.
- */
-- (BOOL)onReportIncomingPushCall;
-
-#pragma mark - For Live Stream
-
-/*!
- @brief Designated for live stream status change.
- */
-- (void)onLiveStreamStatusChange:(MobileRTCLiveStreamStatus)liveStreamStatus;
-
-#pragma mark - For ZAK
-
-/*!
- @brief Designated for ZAK expired.
- */
-- (void)onZoomIdentityExpired;
-
-#pragma mark - For Replay kit Screen Share
-/*!
- @brief Designated for user click share screen item.
- @param parentVC parent viewcontroller to present Share Screen Usage Guide View.
- @waring App would present Share Screen Usage Guide here.
- */
-- (void)onClickShareScreen:(UIViewController*)parentVC;
-@end
-

@@ -61,7 +61,7 @@
  @return YES means call this method successfully.
  @warning this method is optional, if you do not have work email account with MobileRTC, just ignore it.
  */
-- (BOOL)loginWithEmail:(NSString*)email password:(NSString*)password;
+- (BOOL)loginWithEmail:(NSString*)email password:(NSString*)password remeberMe:(BOOL)remeberMe;
 
 /*!
  @brief Designated for login MobileRTC with SSO (Single-Sign-On).

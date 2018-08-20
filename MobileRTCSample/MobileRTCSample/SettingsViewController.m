@@ -229,7 +229,7 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 UITextField *email = alertController.textFields.firstObject;
                 UITextField *password = alertController.textFields.lastObject;
-                [[[MobileRTC sharedRTC] getAuthService] loginWithEmail:email.text password:password.text];
+                [[[MobileRTC sharedRTC] getAuthService] loginWithEmail:email.text password:password.text remeberMe:YES];
             }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
