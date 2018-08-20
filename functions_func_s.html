@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>iOS MobileRTC: Class Members - Functions</title>
+<title>MobileRTC: Class Members - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">iOS MobileRTC
+   <div id="projectname">MobileRTC
    </div>
   </td>
  </tr>
@@ -70,9 +70,17 @@ $(function() {
 <li>sdkAuth
 : <a class="el" href="interface_mobile_r_t_c_auth_service.html#a7f397858cd557dd434687d7ecb90915d">MobileRTCAuthService</a>
 </li>
+<li>sendChatToGroup:WithContent:
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a2c88034c69a70ede0a5a1ba8e4d057aa">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#a2c88034c69a70ede0a5a1ba8e4d057aa">MobileRTCMeetingService(Chat)</a>
+</li>
+<li>sendChatToUser:WithContent:
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#abf023c75c709989f3e848ee4eca510a2">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#abf023c75c709989f3e848ee4eca510a2">MobileRTCMeetingService(Chat)</a>
+</li>
 <li>sendPairingCode:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ab2ea9bd0e64dbd5b96e2a0e2710bc3e2">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#ab2ea9bd0e64dbd5b96e2a0e2710bc3e2">MobileRTCMeetingService(Customize)</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a742a16842afb9a9a837effd8f2099282">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a742a16842afb9a9a837effd8f2099282">MobileRTCMeetingService(Customize)</a>
 </li>
 <li>setAllowJoinBeforeHost:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#ab359d0ec50f4fcb3287b5eefe22196c6">&lt;MobileRTCMeetingItem &gt;</a>
@@ -131,14 +139,32 @@ $(function() {
 <li>setTimeZoneID:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#a228cfc5744725e85901e057d674f5153">&lt;MobileRTCMeetingItem &gt;</a>
 </li>
+<li>setToolColor:
+: <a class="el" href="interface_mobile_r_t_c_annotation_service.html#a70d28449ef9fc89ce39506888db1675e">MobileRTCAnnotationService</a>
+</li>
+<li>setToolType:
+: <a class="el" href="interface_mobile_r_t_c_annotation_service.html#a4638defbb5e5717fc551834f0eeb47b6">MobileRTCAnnotationService</a>
+</li>
+<li>setToolWidth:
+: <a class="el" href="interface_mobile_r_t_c_annotation_service.html#a110a2bac475f4c80e3146e19f3052981">MobileRTCAnnotationService</a>
+</li>
 <li>setUsePMIAsMeetingID:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#a7a4c2d8425b84de67d4cd1c87aed7e17">&lt;MobileRTCMeetingItem &gt;</a>
+</li>
+<li>setVideoAspect:
+: <a class="el" href="interface_mobile_r_t_c_video_view.html#ab1569a60d248cb5af34df70a2d08cc3e">MobileRTCVideoView</a>
 </li>
 <li>sharedInstance
 : <a class="el" href="interface_mobile_r_t_c_invite_helper.html#ab25db1f43d52d13189dc30e8c3ea272c">MobileRTCInviteHelper</a>
 </li>
 <li>sharedRTC
 : <a class="el" href="interface_mobile_r_t_c.html#ae4ff3498e0adc5791bd89fbeff812a40">MobileRTC</a>
+</li>
+<li>showActiveShareWithUserID:
+: <a class="el" href="interface_mobile_r_t_c_active_share_view.html#a2bfab66113e8647173eef13eb0fcdc1c">MobileRTCActiveShareView</a>
+</li>
+<li>showAttendeeVideoWithUserID:
+: <a class="el" href="interface_mobile_r_t_c_video_view.html#a47b6d0082cd1bce5133781f30ecf8cdf">MobileRTCVideoView</a>
 </li>
 <li>showMobileRTCMeeting:
 : <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ac8f3f24c74a2a8fba16e591cb4ee9926">MobileRTCMeetingService</a>
@@ -157,45 +183,60 @@ $(function() {
 : <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate_01-p.html#a92b8804cd49d9c95d698d7d6e601da63">&lt;MobileRTCPremeetingDelegate &gt;</a>
 </li>
 <li>spotlightVideo:withUser:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ad2670d61f8949a6ec3868ad58f0a3c3a">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ad2670d61f8949a6ec3868ad58f0a3c3a">MobileRTCMeetingService(InMeeting)</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a86afde213782bae95672d9504a463f6b">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_video_08.html#a86afde213782bae95672d9504a463f6b">MobileRTCMeetingService(Video)</a>
+</li>
+<li>startAnnotationWithSharedView:
+: <a class="el" href="interface_mobile_r_t_c_annotation_service.html#aca347a6c23d7fedf6006a96bf2973be5">MobileRTCAnnotationService</a>
 </li>
 <li>startAppShare
 : <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3ec52c807486db290cfe84ec2ea6b5ab">MobileRTCMeetingService</a>
 , <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a3ec52c807486db290cfe84ec2ea6b5ab">MobileRTCMeetingService(AppShare)</a>
 </li>
-<li>startLiveStreamWithSteamingURL:StreamingKey:BroadcastURL:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5bc0a2474912ee7fe4afed1e9a2230a2">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a5bc0a2474912ee7fe4afed1e9a2230a2">MobileRTCMeetingService(InMeeting)</a>
+<li>startLiveStreamWithStreamingURL:StreamingKey:BroadcastURL:
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3841de6b847e48c76518fc3ee177109c">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a3841de6b847e48c76518fc3ee177109c">MobileRTCMeetingService(InMeeting)</a>
 </li>
 <li>startMeetingWithDictionary:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a1051e2f55c4155c251c477f9eca1962b">MobileRTCMeetingService</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#afd4b41c2ef0a0e0ca98c52370d48255b">MobileRTCMeetingService</a>
 </li>
 <li>startMeetingWithStartParam:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5c38fcaed9063049db135d4ad5e0d1b2">MobileRTCMeetingService</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3b6768f785b4901c44a3fafa2a8b6d0c">MobileRTCMeetingService</a>
+</li>
+<li>startRemoteControlCallBack:
+: <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate_01-p.html#aa235de966019a166123d30103e976e4c">&lt;MobileRTCRemoteControlDelegate &gt;</a>
+</li>
+<li>stopActiveShare
+: <a class="el" href="interface_mobile_r_t_c_active_share_view.html#ac3b3abf8bdddbfdc72e34095e070b658">MobileRTCActiveShareView</a>
+</li>
+<li>stopAnnotation
+: <a class="el" href="interface_mobile_r_t_c_annotation_service.html#a18542a6bad2e51e455ad0c325cdedb09">MobileRTCAnnotationService</a>
 </li>
 <li>stopAppShare
 : <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3f80227745befdee476023729cd64812">MobileRTCMeetingService</a>
 , <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a3f80227745befdee476023729cd64812">MobileRTCMeetingService(AppShare)</a>
+</li>
+<li>stopAttendeeVideo
+: <a class="el" href="interface_mobile_r_t_c_video_view.html#a43294d05443e98011c0c415f31c16382">MobileRTCVideoView</a>
 </li>
 <li>stopLiveStream
 : <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3518bbaf4d3605cdd9a7df7995b3cd7f">MobileRTCMeetingService</a>
 , <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a3518bbaf4d3605cdd9a7df7995b3cd7f">MobileRTCMeetingService(InMeeting)</a>
 </li>
 <li>stopUserVideo:
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a2851b42e8073ba90a627a1f2b611619b">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a2851b42e8073ba90a627a1f2b611619b">MobileRTCMeetingService(InMeeting)</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aab328693e8dfba7af5071fe19af035f0">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_video_08.html#aab328693e8dfba7af5071fe19af035f0">MobileRTCMeetingService(Video)</a>
 </li>
 <li>supportedLanguages
 : <a class="el" href="interface_mobile_r_t_c.html#aedf1184e9cf9ef0c8d2ea20e71d428b5">MobileRTC</a>
 </li>
 <li>switchMyAudioSource
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7fc597b1f56b9dff24cb36d7d3f2080b">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a7fc597b1f56b9dff24cb36d7d3f2080b">MobileRTCMeetingService(InMeeting)</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a9f54b2109055ef8e9a4b622c7746afc2">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_audio_08.html#a9f54b2109055ef8e9a4b622c7746afc2">MobileRTCMeetingService(Audio)</a>
 </li>
 <li>switchMyCamera
-: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a38579eea24fd3dc6be0bbb01c310783e">MobileRTCMeetingService</a>
-, <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a38579eea24fd3dc6be0bbb01c310783e">MobileRTCMeetingService(InMeeting)</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a4bf18305f06f459085e3f1de10c1499a">MobileRTCMeetingService</a>
+, <a class="el" href="category_mobile_r_t_c_meeting_service_07_video_08.html#a4bf18305f06f459085e3f1de10c1499a">MobileRTCMeetingService(Video)</a>
 </li>
 </ul>
 </div><!-- contents -->
