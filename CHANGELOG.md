@@ -1,4 +1,9 @@
 # CHANGELOG
+## 2018-09-11
+
+* Schedule Meeting Feature Enhancement
+* Bug fixes
+
 ## 2018-08-20
 
 * SDK Framework Interface Refactor, introduce MobileRTCMeetingService category cluster for specific Service Module:

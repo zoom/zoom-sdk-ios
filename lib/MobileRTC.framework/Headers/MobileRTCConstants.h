@@ -457,3 +457,19 @@ typedef NS_ENUM(NSUInteger, MobileRTCWebinarPromoteorDepromoteError) {
     ///Chat with Panelist
     MobileRTCWebinarPromoteorDepromoteError_Not_Found_Wwbinar_Attendee                               = 3029,
 };
+
+/*!
+ @brief MobileRTCMeetingItemAudioType An Enum which provide audio type description in meeting item.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemAudioType) {
+    ///Unknown
+    MobileRTCMeetingItemAudioType_Unknown                    = 0,
+    ///Telephone Only
+    MobileRTCMeetingItemAudioType_TelephoneOnly              = 1,
+    ///Voip Only
+    MobileRTCMeetingItemAudioType_VoipOnly                   = 2,
+    ///Telephone And Voip
+    MobileRTCMeetingItemAudioType_TelephoneAndVoip           = 3,
+    ///3rd Party Audio
+    MobileRTCMeetingItemAudioType_3rdPartyAudio              = 4,
+};

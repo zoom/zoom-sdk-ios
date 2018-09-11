@@ -10,6 +10,8 @@
 #import "MobileRTCConstants.h"
 
 @protocol MobileRTCAuthDelegate;
+@class MobileRTCAccountInfo;
+@class MobileRTCAlternativeHost;
 
 /*!
  @brief MobileRTCAuthService provides support for authorizing MobileRTC.
@@ -20,19 +22,19 @@
 /*!
  @brief The property that acts as the delegate of the receiving auth/login events.
  */
-@property (assign, nonatomic) id<MobileRTCAuthDelegate> delegate;
+@property (nullable, assign, nonatomic) id<MobileRTCAuthDelegate> delegate;
 
 /*!
  @brief The key value is used during the authorization code grant. This key value is generated from MobileRTC Web site.
  @warning This value should be a secret. DO NOT publish this value.
  */
-@property (retain, nonatomic) NSString *clientKey;
+@property (nonnull, retain, nonatomic) NSString *clientKey;
 
 /*!
  @brief The secret value is used during the authorization code grant. This secret value is generated from MobileRTC Web site.
  @warning This value should be a secret. DO NOT publish this value.
  */
-@property (retain, nonatomic) NSString *clientSecret;
+@property (nonnull, retain, nonatomic) NSString *clientSecret;
 
 /*!
  @brief Designated authorizing MobileRTC.
@@ -61,7 +63,7 @@
  @return YES means call this method successfully.
  @warning this method is optional, if you do not have work email account with MobileRTC, just ignore it.
  */
-- (BOOL)loginWithEmail:(NSString*)email password:(NSString*)password remeberMe:(BOOL)remeberMe;
+- (BOOL)loginWithEmail:(nonnull NSString*)email password:(nonnull NSString*)password remeberMe:(BOOL)remeberMe;
 
 /*!
  @brief Designated for login MobileRTC with SSO (Single-Sign-On).
@@ -69,7 +71,7 @@
  @return YES means call this method successfully.
  @warning this method is optional, if you need not SSO login with MobileRTC, just ignore it.
  */
-- (BOOL)loginWithSSOToken:(NSString*)token;
+- (BOOL)loginWithSSOToken:(nonnull NSString*)token;
 
 /*!
  @brief Designated for logout MobileRTC.
@@ -78,7 +80,12 @@
  */
 - (BOOL)logoutRTC;
 
-
+/*!
+ @brief Designated for get Login User Profile Info.
+ @return MobileRTCAccountInfo instance is success.
+ @warning Get instance successfully only after login.
+ */
+- (nullable MobileRTCAccountInfo*)getAccountInfo;
 @end
 
 /*!
@@ -106,4 +113,76 @@
  */
 - (void)onMobileRTCLogoutReturn:(NSInteger)returnValue;
 
+@end
+
+/*!
+ @brief MobileRTCAccountInfo used to store the login user profile information.
+ */
+@interface MobileRTCAccountInfo : NSObject
+
+/*!
+ @brief This method is used to get account email address.
+ @return email address
+ */
+- (nullable NSString*)getEmailAddress;
+
+/*!
+ @brief This method is used to check whether Audio Type: Telephone Only is supported while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)isTelephoneOnlySupported;
+
+/*!
+ @brief This method is used to check whether Audio Type: Telephone And Voip is supported while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)isTelephoneAndVoipSupported;
+
+/*!
+ @brief This method is used to check whether Audio Type: 3rdParty Audio is supported while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)is3rdPartyAudioSupported;
+
+/*!
+ @brief This method is get 3rd Party Audio Info from user profile info.
+ @return send 3rd Party Audio Info.
+ */
+- (nullable NSString*)get3rdPartyAudioInfo;
+
+/*!
+ @brief This method is default Audio Type from user info from user profile info.
+ @return default audio type.
+ */
+- (MobileRTCMeetingItemAudioType)getDefaultAudioInfo;
+
+/*!
+ @brief This method is used to check whether only allow signed-in user join the meeting while schedule meeting.
+ @return Yes only allow signed-in user join the meeting.
+ */
+- (BOOL)onlyAllowSignedInUserJoinMeeting;
+
+/*!
+ @brief This method is used to get PMI Vanity URL from user profile info.
+ @return PMI Vanity URL.
+ */
+- (nullable NSString *)getPMIVanityURL;
+
+/*!
+ @brief This method is used to get alternative host list from user profile info.
+ @return array with MobileRTCAlternativeHost info.
+ */
+- (nullable NSArray*)getCanScheduleForUsersList;
+@end
+
+/*!
+ @brief MobileRTCAlternativeHost used to store alternative host information.
+ */
+@interface MobileRTCAlternativeHost : NSObject
+
+@property (nonatomic, retain, readonly) NSString* email;
+@property (nonatomic, retain, readonly) NSString* firstName;
+@property (nonatomic, retain, readonly) NSString* lastName;
+
+- (id)initWithEmailAddress:(nonnull NSString*)emailAddress firstname:(nonnull NSString*)firstName lastName:(nonnull NSString*)lastName;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ScheduleTableViewController.h"
+#import <MobileRTC/MobileRTC.h>
 
 #pragma mark - RTCDateInputTableViewCell
 @class RTCDateInputTableViewCell;
@@ -422,6 +423,12 @@
 @property (assign, nonatomic) BOOL                  voipOff;
 @property (assign, nonatomic) BOOL                  telephoneOff;
 
+@property (retain, nonatomic) UITableViewCell *scheduleForCell;
+@property (retain, nonatomic) NSArray * scheduleForList;
+@property (retain, nonatomic) MobileRTCAlternativeHost * scheduleForUser;
+
+@property (assign, nonatomic) BOOL                  onlyallowsignuserjoin;
+@property (retain, nonatomic) UITableViewCell *     onlyallowsignuserjoinCell;
 @end
 
 @implementation ScheduleTableViewController
@@ -464,15 +471,33 @@
     [item turnOffVideoForAttendee:!self.attendeeVideoOn];
     [item setUsePMIAsMeetingID:self.usePMI];
     [item setAllowJoinBeforeHost:self.jbh];
-    [item turnOffVOIP:self.voipOff];
-    [item turnOffTelephony:self.telephoneOff];
+    [item setOnlyAllowSignedInUserJoinMeeting:self.onlyallowsignuserjoin];
+    
+    if (!self.voipOff && !self.telephoneOff)
+    {
+        [item setAudioOption:MobileRTCMeetingItemAudioType_TelephoneAndVoip];
+    }
+    
+    else
+    {
+        if (!self.voipOff)
+        {
+            [item setAudioOption:MobileRTCMeetingItemAudioType_VoipOnly];
+        }
+        else if(!self.telephoneOff)
+        {
+            [item setAudioOption:MobileRTCMeetingItemAudioType_TelephoneOnly];
+        }
+    }
 
     NSString *password = self.pwdCell.textValue;
     if ([password length] > 0) {
         [item setMeetingPassword:password];
     }
     
-    if ([[[MobileRTC sharedRTC] getPreMeetingService] scheduleMeeting:item])
+    NSString * hostId = self.scheduleForUser!=nil ? [self.scheduleForUser hostID] : nil;
+    
+    if ([[[MobileRTC sharedRTC] getPreMeetingService] scheduleMeeting:item WithScheduleFor:hostId])
     {
         [[[MobileRTC sharedRTC] getPreMeetingService] deleteMeeting:item];
         
@@ -482,6 +507,18 @@
 
 - (void)initMeetingItems
 {
+    
+    MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
+    if (authService)
+    {
+        MobileRTCAccountInfo * account = [authService getAccountInfo];
+        if (account)
+        {
+            self.scheduleForList = [account getCanScheduleForUsersList];
+            self.onlyallowsignuserjoin = [account onlyAllowSignedInUserJoinMeeting];
+        }
+    }
+    
     self.startTime = [[NSDate date] timeIntervalSince1970];
     self.duration = 60;
     self.hostVideoOn = YES;
@@ -495,7 +532,13 @@
     
     [array addObject:@[[self hostVideoCell], [self attendeeVideoCell], [self usePMICell], [self jbhCell]]];
     
-    [array addObject:@[[self audioCell], [self pwdCell]]];
+    [array addObject:@[[self audioCell], [self pwdCell], [self onlyallowsignuserjoinCell]]];
+    
+    if (self.scheduleForList && [self.scheduleForList count] != 0)
+    {
+        [array addObject:@[[self scheduleForCell]]];
+    }
+    
     
     self.itemArray = array;
     
@@ -759,6 +802,43 @@
     return _audioCell;
 }
 
+
+- (UITableViewCell*)scheduleForCell
+{
+    if (!_scheduleForCell)
+    {
+        _scheduleForCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        _scheduleForCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _scheduleForCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        _scheduleForCell.textLabel.text = NSLocalizedString(@"Schedule For", @"");
+    }
+    
+    return _scheduleForCell;
+}
+
+- (UITableViewCell*)onlyallowsignuserjoinCell
+{
+    if (!_onlyallowsignuserjoinCell)
+    {
+        _onlyallowsignuserjoinCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _onlyallowsignuserjoinCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _onlyallowsignuserjoinCell.textLabel.text = NSLocalizedString(@"Only Sign-in User Can Join the Meeting", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:self.onlyallowsignuserjoin animated:NO];
+        [sv addTarget:self action:@selector(onOnlyAllowSignUserJoin:) forControlEvents:UIControlEventValueChanged];
+        _onlyallowsignuserjoinCell.accessoryView = sv;
+    }
+    
+    return _onlyallowsignuserjoinCell;
+}
+
+- (void)onOnlyAllowSignUserJoin:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    self.onlyallowsignuserjoin = sv.on;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -851,6 +931,31 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             }]];
             
+            UIPopoverPresentationController *popPresenter = [alertController popoverPresentationController];
+            popPresenter.sourceView = cell.detailTextLabel;
+            popPresenter.sourceRect = cell.detailTextLabel.bounds;
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        return;
+    }
+    
+    if (cell == _scheduleForCell)
+    {
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && self.scheduleForList && [self.scheduleForList count] != 0)
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                     message:nil
+                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            
+            for (MobileRTCAlternativeHost * host in self.scheduleForList)
+            {
+                [alertController addAction:[UIAlertAction actionWithTitle:[NSString stringWithFormat:@"%@ %@",[host firstName],[host lastName]] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    self.scheduleForCell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",[host firstName],[host lastName]];
+                    self.scheduleForUser = host;
+                }]];
+            }
+           
             UIPopoverPresentationController *popPresenter = [alertController popoverPresentationController];
             popPresenter.sourceView = cell.detailTextLabel;
             popPresenter.sourceRect = cell.detailTextLabel.bounds;

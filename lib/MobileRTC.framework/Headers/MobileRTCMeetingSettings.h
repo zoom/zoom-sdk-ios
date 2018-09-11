@@ -113,6 +113,11 @@
 @property (assign, nonatomic) BOOL closeCaptionHidden;
 
 /*!
+ @brief Enable/Disable Proximity Monitoring in a meeting.
+ */
+@property (assign, nonatomic) BOOL proximityMonitoringDisable;
+
+/*!
  @brief Enable Csutom In-Meeting UI in meeting.
  */
 @property (assign, nonatomic) BOOL enableCustomMeeting;
@@ -187,5 +192,4 @@
  @param disabled the option value.
  */
 - (void)disableCallOut:(BOOL)disabled;
-
 @end
