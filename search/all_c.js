@@ -28,6 +28,7 @@ var searchData=
   ['onjoinmeetingconfirmed',['onJoinMeetingConfirmed',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ad278dcd6b394bf294245bd30d012b78d',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onjoinmeetinginfo_3acompletion_3a',['onJoinMeetingInfo:completion:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#aac04d849656d9d763c58ea45f37751db',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onlivestreamstatuschange_3a',['onLiveStreamStatusChange:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a2d51c761d620e974bc8193b17f55044a',1,'MobileRTCMeetingServiceDelegate -p']]],
+  ['onlyallowsignedinuserjoinmeeting',['onlyAllowSignedInUserJoinMeeting',['../interface_mobile_r_t_c_account_info.html#a3452246424fabb12a4b16f6f6f253bca',1,'MobileRTCAccountInfo']]],
   ['onmeetingcohostchange_3a',['onMeetingCoHostChange:',['../protocol_mobile_r_t_c_user_service_delegate_01-p.html#abb4030227f8bb945bc58aceaaad27daf',1,'MobileRTCUserServiceDelegate -p']]],
   ['onmeetingendedreason_3a',['onMeetingEndedReason:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a9d06ca202304ca69a003cb87063baa3a',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onmeetingerror_3amessage_3a',['onMeetingError:message:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a1a822ae212902635380743f0376557e7',1,'MobileRTCMeetingServiceDelegate -p']]],
