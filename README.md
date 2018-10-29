@@ -5,7 +5,7 @@ This version is the device-only framework, you can download our Mobile RTC&trade
 Please download the framework @ https://github.com/zoom/zoom-sdk-ios/releases/latest
 Place the MobileRTC.framework inside lib folder, along with bundle. 
 
-Example App using Zoom iOS-RTC-Stack - https://developer.zoom.us/docs/ios/
+Example App using Zoom iOS-RTC-Stack - https://marketplace.zoom.us/docs/guides/zoom-sdks/ios
 
 ## Getting Started
 * [Sign up](https://zoom.us) for a free Zoom account
