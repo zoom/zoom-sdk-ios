@@ -18,6 +18,7 @@ var searchData=
   ['clear',['clear',['../interface_mobile_r_t_c_annotation_service.html#a40bb7dc8ef53566989592610818f7855',1,'MobileRTCAnnotationService']]],
   ['clientkey',['clientKey',['../interface_mobile_r_t_c_auth_service.html#a0384411440a95c4af89d94834c317b42',1,'MobileRTCAuthService']]],
   ['clientsecret',['clientSecret',['../interface_mobile_r_t_c_auth_service.html#af2c7de9aa9669cf50d29b2a939dcde70',1,'MobileRTCAuthService']]],
+  ['clonemeetingitem_3a',['cloneMeetingItem:',['../interface_mobile_r_t_c_premeeting_service.html#af8d702894a893a560f68a4ecd07b5a92',1,'MobileRTCPremeetingService']]],
   ['closecaptionhidden',['closeCaptionHidden',['../interface_mobile_r_t_c_meeting_settings.html#a14763d1bda0ef82dcb59dd374b74f1d3',1,'MobileRTCMeetingSettings']]],
   ['configdscpwithaudiovalue_3avideovalue_3a',['configDSCPWithAudioValue:VideoValue:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9176b2563d5e4240fe6f24dfe4798c0f',1,'MobileRTCMeetingService(InMeeting)::configDSCPWithAudioValue:VideoValue:()'],['../interface_mobile_r_t_c_meeting_service.html#a9176b2563d5e4240fe6f24dfe4798c0f',1,'MobileRTCMeetingService::configDSCPWithAudioValue:VideoValue:()']]],
   ['connectmyaudio_3a',['connectMyAudio:',['../category_mobile_r_t_c_meeting_service_07_audio_08.html#a04783e16aff5bfdda6ac067a08ad2a04',1,'MobileRTCMeetingService(Audio)::connectMyAudio:()'],['../interface_mobile_r_t_c_meeting_service.html#a04783e16aff5bfdda6ac067a08ad2a04',1,'MobileRTCMeetingService::connectMyAudio:()']]],

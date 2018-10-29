@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>mobilertc: MobileRTCMeetingService Class Reference</title>
+<title>API Doc: MobileRTCMeetingService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">mobilertc
+   <div id="projectname">API Doc
    </div>
   </td>
  </tr>
@@ -226,9 +226,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3ff18813df325c4ce2c762487964d2e2"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3ff18813df325c4ce2c762487964d2e2">getRoomDeviceList</a></td></tr>
 <tr class="memdesc:a3ff18813df325c4ce2c762487964d2e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will return an array of room devices for call out a room device.  <a href="#a3ff18813df325c4ce2c762487964d2e2">More...</a><br /></td></tr>
 <tr class="separator:a3ff18813df325c4ce2c762487964d2e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a742a16842afb9a9a837effd8f2099282"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a742a16842afb9a9a837effd8f2099282">sendPairingCode:</a></td></tr>
-<tr class="memdesc:a742a16842afb9a9a837effd8f2099282"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to call in a room device with pairing code.  <a href="#a742a16842afb9a9a837effd8f2099282">More...</a><br /></td></tr>
-<tr class="separator:a742a16842afb9a9a837effd8f2099282"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aed415c4af51425321eb5f99950cbc"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a00aed415c4af51425321eb5f99950cbc">sendPairingCode:WithMeetingNumber:</a></td></tr>
+<tr class="memdesc:a00aed415c4af51425321eb5f99950cbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to call in a room device with pairing code.  <a href="#a00aed415c4af51425321eb5f99950cbc">More...</a><br /></td></tr>
+<tr class="separator:a00aed415c4af51425321eb5f99950cbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cc407f10aa4fdbc19b3b27d71115caa"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7cc407f10aa4fdbc19b3b27d71115caa">callRoomDevice:</a></td></tr>
 <tr class="memdesc:a7cc407f10aa4fdbc19b3b27d71115caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to call out a room device.  <a href="#a7cc407f10aa4fdbc19b3b27d71115caa">More...</a><br /></td></tr>
 <tr class="separator:a7cc407f10aa4fdbc19b3b27d71115caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3327,8 +3327,8 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 
 </div>
 </div>
-<a id="a742a16842afb9a9a837effd8f2099282"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a742a16842afb9a9a837effd8f2099282">&#9670;&nbsp;</a></span>sendPairingCode:()</h2>
+<a id="a00aed415c4af51425321eb5f99950cbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00aed415c4af51425321eb5f99950cbc">&#9670;&nbsp;</a></span>sendPairingCode:WithMeetingNumber:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3338,7 +3338,17 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
           <td></td>
           <td class="paramtype">(nonnull NSString *)&#160;</td>
           <td class="paramname"><em>code</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">WithMeetingNumber:</td>
           <td></td>
+          <td class="paramtype">(unsigned long long)&#160;</td>
+          <td class="paramname"><em>meetingNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3347,12 +3357,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">code</td><td>the pairing code </td></tr>
+    <tr><td class="paramname">Meeting</td><td>Number </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES means call this method successfully. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>App can invite Room System while App is In-Meeting and Pre-Meeting. </dd></dl>
 
-<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a742a16842afb9a9a837effd8f2099282">MobileRTCMeetingService(Customize)</a>.</p>
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a00aed415c4af51425321eb5f99950cbc">MobileRTCMeetingService(Customize)</a>.</p>
 
 </div>
 </div>

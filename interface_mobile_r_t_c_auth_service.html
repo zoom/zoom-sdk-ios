@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>mobilertc: MobileRTCAuthService Class Reference</title>
+<title>API Doc: MobileRTCAuthService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">mobilertc
+   <div id="projectname">API Doc
    </div>
   </td>
  </tr>
@@ -97,9 +97,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a7a791961a7cf4e3d85b21852692ef9e6"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#a7a791961a7cf4e3d85b21852692ef9e6">loginWithEmail:password:remeberMe:</a></td></tr>
 <tr class="memdesc:a7a791961a7cf4e3d85b21852692ef9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for login <a class="el" href="interface_mobile_r_t_c.html" title="MobileRTC class is a class that exposes an API Rest Client.  Access to this class and all other compo...">MobileRTC</a> with work email account.  <a href="#a7a791961a7cf4e3d85b21852692ef9e6">More...</a><br /></td></tr>
 <tr class="separator:a7a791961a7cf4e3d85b21852692ef9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ecdce331ed0dd1b8cf5cd7b07291e89"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#a3ecdce331ed0dd1b8cf5cd7b07291e89">loginWithSSOToken:</a></td></tr>
-<tr class="memdesc:a3ecdce331ed0dd1b8cf5cd7b07291e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for login <a class="el" href="interface_mobile_r_t_c.html" title="MobileRTC class is a class that exposes an API Rest Client.  Access to this class and all other compo...">MobileRTC</a> with SSO (Single-Sign-On).  <a href="#a3ecdce331ed0dd1b8cf5cd7b07291e89">More...</a><br /></td></tr>
-<tr class="separator:a3ecdce331ed0dd1b8cf5cd7b07291e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e158dab18c0ef9edc2fc040b4957ead"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#a9e158dab18c0ef9edc2fc040b4957ead">loginWithSSOToken:remeberMe:</a></td></tr>
+<tr class="memdesc:a9e158dab18c0ef9edc2fc040b4957ead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for login <a class="el" href="interface_mobile_r_t_c.html" title="MobileRTC class is a class that exposes an API Rest Client.  Access to this class and all other compo...">MobileRTC</a> with SSO (Single-Sign-On).  <a href="#a9e158dab18c0ef9edc2fc040b4957ead">More...</a><br /></td></tr>
+<tr class="separator:a9e158dab18c0ef9edc2fc040b4957ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad65e646d10d87502817bc2438446fc58"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#ad65e646d10d87502817bc2438446fc58">logoutRTC</a></td></tr>
 <tr class="memdesc:ad65e646d10d87502817bc2438446fc58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for logout <a class="el" href="interface_mobile_r_t_c.html" title="MobileRTC class is a class that exposes an API Rest Client.  Access to this class and all other compo...">MobileRTC</a>.  <a href="#ad65e646d10d87502817bc2438446fc58">More...</a><br /></td></tr>
 <tr class="separator:ad65e646d10d87502817bc2438446fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -232,8 +232,8 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
 
 </div>
 </div>
-<a id="a3ecdce331ed0dd1b8cf5cd7b07291e89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ecdce331ed0dd1b8cf5cd7b07291e89">&#9670;&nbsp;</a></span>loginWithSSOToken:()</h2>
+<a id="a9e158dab18c0ef9edc2fc040b4957ead"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e158dab18c0ef9edc2fc040b4957ead">&#9670;&nbsp;</a></span>loginWithSSOToken:remeberMe:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -243,7 +243,17 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
           <td></td>
           <td class="paramtype">(nonnull NSString *)&#160;</td>
           <td class="paramname"><em>token</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">remeberMe:</td>
           <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>remeberMe</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

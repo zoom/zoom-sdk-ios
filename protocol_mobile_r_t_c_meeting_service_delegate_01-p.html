@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>mobilertc: &lt;MobileRTCMeetingServiceDelegate &gt; Protocol Reference</title>
+<title>API Doc: &lt;MobileRTCMeetingServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">mobilertc
+   <div id="projectname">API Doc
    </div>
   </td>
  </tr>
@@ -151,9 +151,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ab18c3f382f95fc1f66d653a0c5a1353b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ab18c3f382f95fc1f66d653a0c5a1353b">onDialOutStatusChanged:</a></td></tr>
 <tr class="memdesc:ab18c3f382f95fc1f66d653a0c5a1353b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for Dial Out status change.  <a href="#ab18c3f382f95fc1f66d653a0c5a1353b">More...</a><br /></td></tr>
 <tr class="separator:ab18c3f382f95fc1f66d653a0c5a1353b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad37ca5e649f5e2af6ea9431c2d838064"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ad37ca5e649f5e2af6ea9431c2d838064">onSendPairingCodeStateChanged:</a></td></tr>
-<tr class="memdesc:ad37ca5e649f5e2af6ea9431c2d838064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for Send pairing code state change.  <a href="#ad37ca5e649f5e2af6ea9431c2d838064">More...</a><br /></td></tr>
-<tr class="separator:ad37ca5e649f5e2af6ea9431c2d838064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66e658d4e25bf7d85078a2918972780c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a66e658d4e25bf7d85078a2918972780c">onSendPairingCodeStateChanged:MeetingNumber:</a></td></tr>
+<tr class="memdesc:a66e658d4e25bf7d85078a2918972780c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for Send pairing code state change.  <a href="#a66e658d4e25bf7d85078a2918972780c">More...</a><br /></td></tr>
+<tr class="separator:a66e658d4e25bf7d85078a2918972780c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1ffc8a59e233d9566ec2816fe715ea5"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ab1ffc8a59e233d9566ec2816fe715ea5">onCallRoomDeviceStateChanged:</a></td></tr>
 <tr class="memdesc:ab1ffc8a59e233d9566ec2816fe715ea5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for Call Room Device state change.  <a href="#ab1ffc8a59e233d9566ec2816fe715ea5">More...</a><br /></td></tr>
 <tr class="separator:ab1ffc8a59e233d9566ec2816fe715ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -892,8 +892,8 @@ Designated for Meeting Error message. </p><dl class="params"><dt>Parameters</dt>
 
 </div>
 </div>
-<a id="ad37ca5e649f5e2af6ea9431c2d838064"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad37ca5e649f5e2af6ea9431c2d838064">&#9670;&nbsp;</a></span>onSendPairingCodeStateChanged:()</h2>
+<a id="a66e658d4e25bf7d85078a2918972780c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e658d4e25bf7d85078a2918972780c">&#9670;&nbsp;</a></span>onSendPairingCodeStateChanged:MeetingNumber:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -904,9 +904,19 @@ Designated for Meeting Error message. </p><dl class="params"><dt>Parameters</dt>
         <tr>
           <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onSendPairingCodeStateChanged: </td>
           <td></td>
-          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramtype">(MobileRTCH323ParingStatus)&#160;</td>
           <td class="paramname"><em>state</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">MeetingNumber:</td>
           <td></td>
+          <td class="paramtype">(unsigned long long)&#160;</td>
+          <td class="paramname"><em>meetingNumber</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
