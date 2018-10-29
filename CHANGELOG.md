@@ -1,4 +1,17 @@
 # CHANGELOG
+## 2018-10-24
+
+* Added support with Xcode 10;
+* Added support for iPhone XS/XS MAX/XR;
+* Added support to schedule meeting for a specified user;
+* Added support to third party audio;
+* Added support to specified a domain;
+* Added support to only allow signed in user to join the meeting;
+* Enhanced Custom Meeting UI feature;
+* Enhanced meeting scheduling feature;
+* Fixed audio quality issue on iPad Pro, iPhone X series devices, and iPhone 8;
+* Fixed annotation crash on iOS 12;
+
 ## 2018-09-11
 
 * Schedule Meeting Feature Enhancement

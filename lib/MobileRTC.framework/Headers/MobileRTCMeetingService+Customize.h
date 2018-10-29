@@ -88,9 +88,11 @@
 /*!
  @brief This method is used to call in a room device with pairing code.
  @param code the pairing code
+ @param Meeting Number
  @return YES means call this method successfully.
+ @warning App can invite Room System while App is In-Meeting and Pre-Meeting.
  */
-- (BOOL)sendPairingCode:(nonnull NSString*)code;
+- (BOOL)sendPairingCode:(nonnull NSString*)code WithMeetingNumber:(unsigned long long)meetingNumber;
 
 /*!
  @brief This method is used to call out a room device.

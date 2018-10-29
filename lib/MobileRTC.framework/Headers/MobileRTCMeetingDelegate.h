@@ -173,7 +173,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @brief Designated for Send pairing code state change.
  @param state if 0 means pairing success, or means that call in failed.
  */
-- (void)onSendPairingCodeStateChanged:(NSUInteger)state;
+- (void)onSendPairingCodeStateChanged:(MobileRTCH323ParingStatus)state MeetingNumber:(unsigned long long)meetingNumber;
 
 /*!
  @brief Designated for Call Room Device state change.

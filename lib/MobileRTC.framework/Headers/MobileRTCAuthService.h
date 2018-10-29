@@ -71,7 +71,7 @@
  @return YES means call this method successfully.
  @warning this method is optional, if you need not SSO login with MobileRTC, just ignore it.
  */
-- (BOOL)loginWithSSOToken:(nonnull NSString*)token;
+- (BOOL)loginWithSSOToken:(nonnull NSString*)token remeberMe:(BOOL)remeberMe;
 
 /*!
  @brief Designated for logout MobileRTC.
@@ -127,6 +127,12 @@
 - (nullable NSString*)getEmailAddress;
 
 /*!
+ @brief This method is used to get PMI Vanity URL from user profile info.
+ @return PMI Vanity URL.
+ */
+- (nullable NSString *)getPMIVanityURL;
+
+/*!
  @brief This method is used to check whether Audio Type: Telephone Only is supported while schedule meeting.
  @return YES means supported
  */
@@ -163,16 +169,41 @@
 - (BOOL)onlyAllowSignedInUserJoinMeeting;
 
 /*!
- @brief This method is used to get PMI Vanity URL from user profile info.
- @return PMI Vanity URL.
- */
-- (nullable NSString *)getPMIVanityURL;
-
-/*!
  @brief This method is used to get alternative host list from user profile info.
  @return array with MobileRTCAlternativeHost info.
  */
 - (nullable NSArray*)getCanScheduleForUsersList;
+
+/*!
+ @brief This method is used to check whether local recording is supported while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)isLocalRecordingSupported;
+
+/*!
+ @brief This method is used to check whether cloud recording is supported while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)isCloudRecordingSupported;
+
+/*!
+ @brief This method is used to set default Meeting Auto Record Type from user info from user profile info.
+ @return default Meeting Auto Record Type.
+ */
+- (MobileRTCMeetingItemRecordType)getDefaultAutoRecordType;
+
+/*!
+ @brief This method is used to check whether only user in specified domain can join the meeting while schedule meeting.
+ @return YES means supported
+ */
+- (BOOL)isSpecifiedDomainCanJoinFeatureOn;
+
+/*!
+ @brief This method is used to get Specified domain from user profile info.
+ @return NSString type default Sepecified of domain array.
+ */
+- (nullable NSArray *)getDefaultCanJoinUserSpecifiedDomains;
+
 @end
 
 /*!
@@ -183,6 +214,7 @@
 @property (nonatomic, retain, readonly) NSString* email;
 @property (nonatomic, retain, readonly) NSString* firstName;
 @property (nonatomic, retain, readonly) NSString* lastName;
+@property (nonatomic, assign, readonly) unsigned long long PMINumber;
 
-- (id)initWithEmailAddress:(nonnull NSString*)emailAddress firstname:(nonnull NSString*)firstName lastName:(nonnull NSString*)lastName;
+- (id)initWithEmailAddress:(nonnull NSString*)emailAddress firstname:(nonnull NSString*)firstName lastName:(nonnull NSString*)lastName PMI:(unsigned long long)PMINumber;
 @end

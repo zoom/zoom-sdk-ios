@@ -429,6 +429,9 @@
 
 @property (assign, nonatomic) BOOL                  onlyallowsignuserjoin;
 @property (retain, nonatomic) UITableViewCell *     onlyallowsignuserjoinCell;
+
+@property (assign, nonatomic) MobileRTCMeetingItemRecordType defaultRecordType;
+@property (retain, nonatomic) UITableViewCell *     recordCell;
 @end
 
 @implementation ScheduleTableViewController
@@ -495,9 +498,22 @@
         [item setMeetingPassword:password];
     }
     
-    NSString * hostId = self.scheduleForUser!=nil ? [self.scheduleForUser hostID] : nil;
+    NSString * email = self.scheduleForUser!=nil ? [self.scheduleForUser email] : nil;
     
-    if ([[[MobileRTC sharedRTC] getPreMeetingService] scheduleMeeting:item WithScheduleFor:hostId])
+    [item setRecordType:self.defaultRecordType];
+    
+    MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
+    if (authService)
+    {
+        MobileRTCAccountInfo * account = [authService getAccountInfo];
+        
+        if (account)
+        {
+            [item setSpecifiedDomain:nil];
+        }
+    }
+    
+    if ([[[MobileRTC sharedRTC] getPreMeetingService] scheduleMeeting:item WithScheduleFor:email])
     {
         [[[MobileRTC sharedRTC] getPreMeetingService] deleteMeeting:item];
         
@@ -516,6 +532,18 @@
         {
             self.scheduleForList = [account getCanScheduleForUsersList];
             self.onlyallowsignuserjoin = [account onlyAllowSignedInUserJoinMeeting];
+            self.defaultRecordType = [account getDefaultAutoRecordType];
+            
+            if ([account isSpecifiedDomainCanJoinFeatureOn])
+            {
+                NSLog(@"isSpecifiedDomainCanJoinFeatureOn %d", [account isSpecifiedDomainCanJoinFeatureOn]);
+                
+                NSArray * array = [account getDefaultCanJoinUserSpecifiedDomains];
+                for (NSString * item in array)
+                {
+                    NSLog(@"%@", item);
+                }
+            }
         }
     }
     
@@ -539,6 +567,10 @@
         [array addObject:@[[self scheduleForCell]]];
     }
     
+    if (self.defaultRecordType != MobileRTCMeetingItemRecordType_AutoRecordDisabled)
+    {
+        [array addObject:@[[self recordCell]]];
+    }
     
     self.itemArray = array;
     
@@ -839,6 +871,34 @@
     self.onlyallowsignuserjoin = sv.on;
 }
 
+
+- (UITableViewCell*)recordCell
+{
+    if (!_recordCell)
+    {
+        _recordCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+        _recordCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _recordCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        _recordCell.textLabel.text = NSLocalizedString(@"Meeting Record", @"");
+        
+        if (self.defaultRecordType == MobileRTCMeetingItemRecordType_LocalRecord)
+        {
+            _recordCell.detailTextLabel.text = @"Local Record";
+        }
+        
+        else if(self.defaultRecordType == MobileRTCMeetingItemRecordType_CloudRecord)
+        {
+            _recordCell.detailTextLabel.text = @"Cloud Record";
+        }
+        
+        else if(self.defaultRecordType == MobileRTCMeetingItemRecordType_AutoRecordDisabled)
+        {
+            _recordCell.detailTextLabel.text = @"Do not Record";
+        }
+    }
+    
+    return _recordCell;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -955,6 +1015,9 @@
                     self.scheduleForUser = host;
                 }]];
             }
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            }]];
            
             UIPopoverPresentationController *popPresenter = [alertController popoverPresentationController];
             popPresenter.sourceView = cell.detailTextLabel;
@@ -963,6 +1026,57 @@
         }
         return;
     }
+    
+    if (cell == _recordCell)
+    {
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 && self.scheduleForList && [self.scheduleForList count] != 0)
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                     message:nil
+                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+            
+            
+            MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
+            if (authService)
+            {
+                MobileRTCAccountInfo * account = [authService getAccountInfo];
+                if (account)
+                {
+                    if ([account isCloudRecordingSupported])
+                    {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Cloud Record" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                            self.recordCell.detailTextLabel.text = @"Cloud Record";
+                            self.defaultRecordType = MobileRTCMeetingItemRecordType_CloudRecord;
+                        }]];
+                    }
+                    
+                    if ([account isLocalRecordingSupported])
+                    {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Local Record" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                            self.recordCell.detailTextLabel.text = @"Local Record";
+                            self.defaultRecordType = MobileRTCMeetingItemRecordType_LocalRecord;
+                        }]];
+                    }
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Do not Record" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        self.recordCell.detailTextLabel.text = @"Do not Record";
+                        self.defaultRecordType = MobileRTCMeetingItemRecordType_AutoRecordDisabled;
+                    }]];
+                    
+                }
+            }
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            }]];
+            
+            UIPopoverPresentationController *popPresenter = [alertController popoverPresentationController];
+            popPresenter.sourceView = cell.detailTextLabel;
+            popPresenter.sourceRect = cell.detailTextLabel.bounds;
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+        return;
+    }
+    
 }
 
 #pragma mark - Date Delegate

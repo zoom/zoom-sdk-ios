@@ -149,24 +149,54 @@
 #pragma mark - Premeeting Delegate
 
 
-- (void)sinkSchedultMeeting:(PreMeetingError)result meetingNumber:(unsigned long long)number
+- (void)sinkSchedultMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)UniquedID
 {
-    NSLog(@"sinkSchedultMeeting result: %zd, meetingNumber:%zd", result, number);
+    NSLog(@"sinkSchedultMeeting result: %d, UniquedID:%llu", result, UniquedID);
+    MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
+    if (service)
+    {
+        id<MobileRTCMeetingItem> info = [service getMeetingItemByUniquedID:UniquedID];
+        NSLog(@"sinkSchedultMeeting %@",[info getMeetingTopic]);
+    }
 }
 
-- (void)sinkEditMeeting:(PreMeetingError)result
+- (void)sinkEditMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)UniquedID
 {
-    NSLog(@"sinkEditMeeting result: %zd", result);
+    NSLog(@"sinkEditMeeting result: %d, UniquedID:%llu ", result,UniquedID);
+    
+    MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
+    if (service)
+    {
+        id<MobileRTCMeetingItem> item = [service getMeetingItemByUniquedID:UniquedID];
+        NSLog(@"sinkEditMeeting %@",[item getMeetingTopic]);
+    }
 }
 
 - (void)sinkDeleteMeeting:(PreMeetingError)result
 {
-    NSLog(@"sinkDeleteMeeting result: %zd", result);
+    NSLog(@"sinkDeleteMeeting result: %d", result);
 }
 
 - (void)sinkListMeeting:(PreMeetingError)result withMeetingItems:(NSArray*)array
 {
-    NSLog(@"sinkListMeeting result: %zd  items: %@", result, array);
+    NSLog(@"sinkListMeeting result: %d  items: %@", result, array);
+    
+#if 0
+    for (id<MobileRTCMeetingItem> item in array)
+    {
+        MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
+        if (service)
+        {
+            if ([[item getMeetingTopic] isEqualToString:@"test"] )
+            {
+                id<MobileRTCMeetingItem> cloneitem = [service cloneMeetingItem:item];
+                [cloneitem setUsePMIAsMeetingID:YES];
+                [service editMeeting:cloneitem];
+                [service destroyMeetingItem:cloneitem];
+            }
+        }
+    }
+#endif
 }
 
 @end

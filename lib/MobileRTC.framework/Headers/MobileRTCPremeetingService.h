@@ -71,6 +71,13 @@ typedef enum {
 - (nullable id<MobileRTCMeetingItem>)createMeetingItem;
 
 /*!
+ @brief Designated for clone a meeting item which is used to clone meeting.
+ @return an object of id<MobileRTCMeetingItem>.
+ @warning the clone meeting item should be destroyed by method destroyMeetingItem finally.
+ */
+- (nullable id<MobileRTCMeetingItem>)cloneMeetingItem:(nonnull id<MobileRTCMeetingItem>)item;
+
+/*!
  @brief Designated for deatroy a previous created meeting item.
  @param item the meeting item.
  */
@@ -81,7 +88,7 @@ typedef enum {
  @param meetingNumber the meeting number in unsigned integer.
  @return an object of id<MobileRTCMeetingItem>.
  */
-- (nullable id<MobileRTCMeetingItem>)getMeetingItemByNumber:(NSUInteger)meetingNumber;
+- (nullable id<MobileRTCMeetingItem>)getMeetingItemByUniquedID:(unsigned long long)meetingUniquedID;
 
 /*!
  @brief Designated for schudle a meeting with meeting item.
@@ -95,6 +102,7 @@ typedef enum {
  @brief Designated for edit a meeting with meeting item.
  @param meetingItem the meeting item
  @return YES means call this method successfully.
+ @warning App need to clone one meetingitem while edit the meeting, the clone meeting item should be destroyed by method destroyMeetingItem finally.
  */
 - (BOOL)editMeeting:(nonnull id<MobileRTCMeetingItem>)meetingItem;
 
@@ -117,6 +125,12 @@ typedef enum {
  @brief MobileRTCMeetingItem can be used to store the meeting information.
  */
 @protocol MobileRTCMeetingItem <NSObject>
+
+/*!
+ @brief Get Meeting Uniqued ID.
+ @return the meeting Uniqued ID in long long.
+ */
+- (unsigned long long)getMeetingUniquedID;
 
 /*!
  @brief Set Meeting Topic.
@@ -153,18 +167,6 @@ typedef enum {
  @return the meeting number in unsigned integer.
  */
 - (unsigned long long)getMeetingNumber;
-
-/*!
- @brief Set Original Meeting Number.
- @param number the meeting number in unsigned integer.
- */
-- (void)setOriginalMeetingNumber:(unsigned long long)number;
-
-/*!
- @brief Get Original Meeting Number.
- @return the meeting number in unsigned integer.
- */
-- (long long)getOriginalMeetingNumber;
 
 /*!
  @brief Set Meeting Password.
@@ -382,6 +384,33 @@ typedef enum {
  @return useremail of the meeting host.
  */
 - (nullable NSString *)getScheduleForUserEmail;
+
+/*!
+ @brief Set Meeting record Option.
+ @param automatic record the meeting.
+ @param MobileRTCMeetingItemRecordType record type.
+ @return YES means call this method successfully.
+ */
+- (BOOL)setRecordType:(MobileRTCMeetingItemRecordType)recordType;
+
+/*!
+ @brief  This method is get meeting record type.
+ @return MobileRTCMeetingItemRecordType record type.
+ */
+- (MobileRTCMeetingItemRecordType)getRecordType;
+
+/*!
+ @brief  This method is set specified domain which user can join this meeting when they sign in.
+ @param NSString type default Sepecified of domain array.
+ @return YES means call this method successfully.
+ */
+- (BOOL)setSpecifiedDomain:(nullable NSArray*)domain;
+
+/*!
+ @brief  This method is get specified domain which user can join this meeting when they sign in.
+ @return NSString type default Sepecified of domain array.
+ */
+- (nullable NSArray *)getSpecifiedDomain;
 @end
 
 /*!
@@ -395,13 +424,13 @@ typedef enum {
  @brief Designated for sink the event of schedule meeting.
  @param result the return result of schedule meeting, PreMeetingError_Success means success.
  */
-- (void)sinkSchedultMeeting:(PreMeetingError)result meetingNumber:(unsigned long long)number;
+- (void)sinkSchedultMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)uniquedID;
 
 /*!
  @brief Designated for sink the event of edit meeting.
  @param result the return result of edit meeting, PreMeetingError_Success means success.
  */
-- (void)sinkEditMeeting:(PreMeetingError)result;
+- (void)sinkEditMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)uniquedID;
 
 /*!
  @brief Designated for sink the event of delete meeting.

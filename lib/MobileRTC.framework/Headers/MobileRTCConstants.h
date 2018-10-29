@@ -220,6 +220,22 @@ typedef enum {
 }H323CallOutStatus;
 
 /*!
+ @brief MobileRTCH323ParingStatus An Enum which provide all of states for Paring H.323/SIP.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCH323ParingStatus) {
+    ///Success
+    MobileRTCH323ParingStatus_Success = 0,
+    ///Meeting Not Existed
+    MobileRTCH323ParingStatus_MeetingNotExisted,
+    ///No provilege
+    MobileRTCH323ParingStatus_PermissionDenied,
+    ///Paring Code Not Existed
+    MobileRTCH323ParingStatus_ParingcodeNotExisted,
+    ///Error
+    MobileRTCH323ParingStatus_Error,
+};
+
+/*!
  @brief MobileRTCComponentType An Enum which provide all of component types.
  */
 typedef enum {
@@ -472,4 +488,16 @@ typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemAudioType) {
     MobileRTCMeetingItemAudioType_TelephoneAndVoip           = 3,
     ///3rd Party Audio
     MobileRTCMeetingItemAudioType_3rdPartyAudio              = 4,
+};
+
+/*!
+ @brief MobileRTCMeetingItemRecordType An Enum which provide meeting record type description in meeting item.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemRecordType) {
+    ///Auto Record Disabled
+    MobileRTCMeetingItemRecordType_AutoRecordDisabled               = 0,
+    ///Local Record
+    MobileRTCMeetingItemRecordType_LocalRecord                      = 1,
+    ///Clound Record
+    MobileRTCMeetingItemRecordType_CloudRecord                      = 2,
 };

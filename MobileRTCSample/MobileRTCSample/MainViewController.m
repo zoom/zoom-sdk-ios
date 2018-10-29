@@ -835,7 +835,7 @@
 #pragma mark - H.323/SIP call state changed
 
 #if 0
-- (void)onSendPairingCodeStateChanged:(NSUInteger)state
+- (void)onSendPairingCodeStateChanged:(MobileRTCH323ParingStatus)state MeetingNumber:(unsigned long long)meetingNumber
 {
     NSLog(@"onSendPairingCodeStateChanged %zd", state);
 }
