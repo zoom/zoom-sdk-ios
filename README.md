@@ -16,7 +16,7 @@ The following instructions will get you a copy of the project up and running on 
 
 Before you try out our SDK, you would need the following to get started:
 
-* ** A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
+* **A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
   * Once you have your Zoom Account, sign up for a 60-days free trial at [https://developer.zoom.us](https://developer.zoom.us)
 * **An iOS device**
 
