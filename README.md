@@ -19,6 +19,7 @@ Before you try out our SDK, you would need the following to get started:
 * **A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
   * Once you have your Zoom Account, sign up for a 60-days free trial at [https://developer.zoom.us](https://developer.zoom.us)
 * **An iOS device**
+  * **Note**:The examples downloaded from here only works on real device. If you want to try it on iOS simulator, please use the version from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);
 
 ### Installing
 
