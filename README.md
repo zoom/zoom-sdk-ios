@@ -1,5 +1,7 @@
 # Zoom iOS Software Development Kit (SDK)
 
+> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions]() sections. Check it out!
+
 Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts up your applications with the power of Zoom.
 
 * **Easy to use**: Our SDK is built to be easy to use. Just import the libraries, call a few functions, and we will take care all video conferencing related stuffs for you.
@@ -64,7 +66,7 @@ For the versions available, see the [tags on this repository](https://github.com
 
 Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 
-## Common Questions
+## Frequently Asked Questions (FAQ)
 
 * :one: `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
   * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. Our latest SDK release ([v4.1.34076](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024)) has resolved this issue.
