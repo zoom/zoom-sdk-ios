@@ -1,6 +1,6 @@
 # Zoom iOS Software Development Kit (SDK)
 
-> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions]() sections. Check it out!
+> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://github.com/zoom/zoom-sdk-ios#frequently-asked-questions-faq) sections. Check it out!
 
 Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts up your applications with the power of Zoom.
 
