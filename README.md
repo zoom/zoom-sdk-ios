@@ -1,6 +1,8 @@
 # Zoom iOS Software Development Kit (SDK)
 
-> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://github.com/zoom/zoom-sdk-ios#frequently-asked-questions-faq) sections. Check it out!
+> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://github.com/zoom/zoom-sdk-ios#frequently-asked-questions-faq) sections.
+
+> Our brand new [Zoom Developer Community Forum](https://devforum.zoom.us/) is now online!!! Check it out! We are here to help! :D
 
 Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts up your applications with the power of Zoom.
 
@@ -76,6 +78,7 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
     * **Embedded Binaries**
 * :three: `d:undefined symbols for architecture x86_64`:
   * The examples downloaded from here only works on real device. If you want to try it on **iOS simulator**, or on all architectures (**x86_64, i386, etc.**) , please use the version (**ios-mobilertc-all-*.zip**) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);
+* Not finding what you want? We are here to help! Please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/) for further assistance.
 
 
 ## License
