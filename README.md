@@ -81,6 +81,10 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 * Not finding what you want? We are here to help! Please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/) for further assistance.
 
 
+## Support
+
+For any issues regarding our SDK, please visit our new Community Support Forum at https://devforum.zoom.us/.
+
 ## License
 
 Please refer to [LICENSE.md](LICENSE.md) file for details
