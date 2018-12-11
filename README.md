@@ -13,7 +13,7 @@ Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts 
 ## Getting Started
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-* For detailed instructions, please refer to our documentation website: [[https://marketplace.zoom.us/docs/guides/zoom-sdks/ios](https://marketplace.zoom.us/docs/guides/zoom-sdks/ios)];
+* For detailed instructions, please refer to our documentation website: [[https://marketplace.zoom.us/docs/sdk/iOS](https://marketplace.zoom.us/docs/sdk/iOS)];
 * If you need support or assistance, please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/);
 
 ### Prerequisites
@@ -58,7 +58,7 @@ Connect your iOS device to your computer and simply press "Run" on selected exam
 
 ## Documentation
 
-Please visit [[https://marketplace.zoom.us/docs/guides/zoom-sdks/ios](https://marketplace.zoom.us/docs/guides/zoom-sdks/ios)] for details of each features and functions.
+Please visit [[https://marketplace.zoom.us/docs/sdk/iOS](https://marketplace.zoom.us/docs/sdk/iOS)] for details of each features and functions.
 
 ## Versioning
 
