@@ -10,6 +10,10 @@ Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts 
 * **Localizable**: Our SDK naturally supports 7 major languages, and you can add more to grow your applications internationally.
 * **Custom Meeting UI**: If you want to add your own decorations to your Zoom meeting rooms, try our Custom UI feature to make your meeting room special.
 
+## Disclaimer
+
+**Please be aware that all hard-coded variables and constants shown in the documentation and in the demo, such as Zoom Token, Zoom Access, Token, etc., are ONLY FOR DEMO AND TESTING PURPOSES. We STRONGLY DISCOURAGE the way of HARDCODING any Zoom Credentials (username, password, API Keys & secrets, SDK keys & secrets, etc.) or any Personal Identifiable Information (PII) inside your application. WE DON’T MAKE ANY COMMITMENTS ABOUT ANY LOSS CAUSED BY HARD-CODING CREDENTIALS OR SENSITIVE INFORMATION INSIDE YOUR APP WHEN DEVELOPING WITH OUR SDK**.
+
 ## Getting Started
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -21,7 +25,7 @@ The following instructions will get you a copy of the project up and running on 
 Before you try out our SDK, you would need the following to get started:
 
 * **A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
-  * Once you have your Zoom Account, sign up for a 60-days free trial at [https://developer.zoom.us](https://developer.zoom.us)
+  * Once you have your Zoom Account, sign up for a 60-days free trial at [https://marketplace.zoom.us/](https://marketplace.zoom.us/)
 * **An iOS device**
   * **[Note]**:**The examples downloaded from here only works on real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.) , please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
 
@@ -95,4 +99,4 @@ Please refer to [LICENSE.md](LICENSE.md) file for details
 * If you need any support or assistance, we are here to help you: [Zoom Developer Community Forum](https://devforum.zoom.us/);
 
 ---
-Copyright ©2018 Zoom Video Communications, Inc. All rights reserved.
+Copyright ©2019 Zoom Video Communications, Inc. All rights reserved.
