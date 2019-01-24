@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>API Doc: &lt;MobileRTCPremeetingDelegate &gt; Protocol Reference</title>
+<title>ios API Doc: &lt;MobileRTCPremeetingDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">API Doc
+   <div id="projectname">ios API Doc
    </div>
   </td>
  </tr>
@@ -80,16 +80,16 @@ Inheritance diagram for &lt;MobileRTCPremeetingDelegate &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a0596bd6dd10f3ec6ab2a92f66a746a5f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate_01-p.html#a0596bd6dd10f3ec6ab2a92f66a746a5f">sinkSchedultMeeting:MeetingUniquedID:</a></td></tr>
-<tr class="memdesc:a0596bd6dd10f3ec6ab2a92f66a746a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for sink the event of schedule meeting.  <a href="#a0596bd6dd10f3ec6ab2a92f66a746a5f">More...</a><br /></td></tr>
+<tr class="memdesc:a0596bd6dd10f3ec6ab2a92f66a746a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sink the event of scheduling a meeting.  <a href="#a0596bd6dd10f3ec6ab2a92f66a746a5f">More...</a><br /></td></tr>
 <tr class="separator:a0596bd6dd10f3ec6ab2a92f66a746a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a376b8d2ab7a844eb77e65dabfdbb6a31"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate_01-p.html#a376b8d2ab7a844eb77e65dabfdbb6a31">sinkEditMeeting:MeetingUniquedID:</a></td></tr>
-<tr class="memdesc:a376b8d2ab7a844eb77e65dabfdbb6a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for sink the event of edit meeting.  <a href="#a376b8d2ab7a844eb77e65dabfdbb6a31">More...</a><br /></td></tr>
+<tr class="memdesc:a376b8d2ab7a844eb77e65dabfdbb6a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sink the event of editing a meeting.  <a href="#a376b8d2ab7a844eb77e65dabfdbb6a31">More...</a><br /></td></tr>
 <tr class="separator:a376b8d2ab7a844eb77e65dabfdbb6a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e96942b13ba4d6b8b3ed7810160d559"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate_01-p.html#a8e96942b13ba4d6b8b3ed7810160d559">sinkDeleteMeeting:</a></td></tr>
-<tr class="memdesc:a8e96942b13ba4d6b8b3ed7810160d559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for sink the event of delete meeting.  <a href="#a8e96942b13ba4d6b8b3ed7810160d559">More...</a><br /></td></tr>
+<tr class="memdesc:a8e96942b13ba4d6b8b3ed7810160d559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sink the event of deleting a meeting.  <a href="#a8e96942b13ba4d6b8b3ed7810160d559">More...</a><br /></td></tr>
 <tr class="separator:a8e96942b13ba4d6b8b3ed7810160d559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9287f21e4ca114ea6b2d32414e8477de"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate_01-p.html#a9287f21e4ca114ea6b2d32414e8477de">sinkListMeeting:withMeetingItems:</a></td></tr>
-<tr class="memdesc:a9287f21e4ca114ea6b2d32414e8477de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for sink the event of list meeting.  <a href="#a9287f21e4ca114ea6b2d32414e8477de">More...</a><br /></td></tr>
+<tr class="memdesc:a9287f21e4ca114ea6b2d32414e8477de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sink the event of listing meetings.  <a href="#a9287f21e4ca114ea6b2d32414e8477de">More...</a><br /></td></tr>
 <tr class="separator:a9287f21e4ca114ea6b2d32414e8477de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
@@ -109,10 +109,10 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for sink the event of delete meeting. </p>
+<p>Sink the event of deleting a meeting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">result</td><td>the return result of delete meeting, PreMeetingError_Success means success. </td></tr>
+    <tr><td class="paramname">result</td><td>The result of deleting a meeting. If the function succeeds, it will return PreMeetingError_Success. </td></tr>
   </table>
   </dd>
 </dl>
@@ -145,10 +145,10 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for sink the event of edit meeting. </p>
+<p>Sink the event of editing a meeting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">result</td><td>the return result of edit meeting, PreMeetingError_Success means success. </td></tr>
+    <tr><td class="paramname">result</td><td>The result of editing a meeting. If the function succeeds, it will return PreMeetingError_Success. </td></tr>
   </table>
   </dd>
 </dl>
@@ -181,11 +181,11 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for sink the event of list meeting. </p>
+<p>Sink the event of listing meetings. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">result</td><td>the return result of list meeting, PreMeetingError_Success means success </td></tr>
-    <tr><td class="paramname">array</td><td>the array of meeting items. </td></tr>
+    <tr><td class="paramname">result</td><td>The result of listing meetings. If the function succeeds, it will return PreMeetingError_Success. </td></tr>
+    <tr><td class="paramname">array</td><td>The array of meeting items. </td></tr>
   </table>
   </dd>
 </dl>
@@ -218,10 +218,10 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for sink the event of schedule meeting. </p>
+<p>Sink the event of scheduling a meeting. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">result</td><td>the return result of schedule meeting, PreMeetingError_Success means success. </td></tr>
+    <tr><td class="paramname">result</td><td>The result of scheduling a meeting. If the function succeeds, it will return PreMeetingError_Success. </td></tr>
   </table>
   </dd>
 </dl>

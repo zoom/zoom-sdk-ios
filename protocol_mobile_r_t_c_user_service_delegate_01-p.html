@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>API Doc: &lt;MobileRTCUserServiceDelegate &gt; Protocol Reference</title>
+<title>ios API Doc: &lt;MobileRTCUserServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">API Doc
+   <div id="projectname">ios API Doc
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ Inheritance diagram for &lt;MobileRTCUserServiceDelegate &gt;:</div>
  <div class="center">
   <img src="protocol_mobile_r_t_c_user_service_delegate_01-p.png" usemap="#_3CMobileRTCUserServiceDelegate_20_3E_map" alt=""/>
   <map id="_3CMobileRTCUserServiceDelegate_20_3E_map" name="_3CMobileRTCUserServiceDelegate_20_3E_map">
-<area href="protocol_mobile_r_t_c_meeting_service_delegate-p.html" title="An Meeting Service will issue the following value when the meeting state changes. ..." alt="&lt;MobileRTCMeetingServiceDelegate&gt;" shape="rect" coords="0,0,227,24"/>
+<area href="protocol_mobile_r_t_c_meeting_service_delegate-p.html" title="The Meeting Service will issue the following values when the meeting state changes. " alt="&lt;MobileRTCMeetingServiceDelegate&gt;" shape="rect" coords="0,0,227,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -82,29 +82,33 @@ Inheritance diagram for &lt;MobileRTCUserServiceDelegate &gt;:</div>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a765977b4a553f23d13ff09c5c5f23ae1"><td class="memItemLeft" align="right" valign="top"><a id="a765977b4a553f23d13ff09c5c5f23ae1"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a765977b4a553f23d13ff09c5c5f23ae1">onMyHandStateChange</a></td></tr>
-<tr class="memdesc:a765977b4a553f23d13ff09c5c5f23ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for my hand state changed (Hand raised/lowered). <br /></td></tr>
+<tr class="memdesc:a765977b4a553f23d13ff09c5c5f23ae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the current user's hand state changes. <br /></td></tr>
 <tr class="separator:a765977b4a553f23d13ff09c5c5f23ae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9782109998637720ffa5da589f0da0f3"><td class="memItemLeft" align="right" valign="top"><a id="a9782109998637720ffa5da589f0da0f3"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a9782109998637720ffa5da589f0da0f3">onInMeetingUserUpdated</a></td></tr>
-<tr class="memdesc:a9782109998637720ffa5da589f0da0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify user state updated in meeting. <br /></td></tr>
+<tr class="memdesc:a9782109998637720ffa5da589f0da0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the user state is updated in meeting. <br /></td></tr>
 <tr class="separator:a9782109998637720ffa5da589f0da0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3efb6f692bdeb37296c1d7c3920ad7ec"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a3efb6f692bdeb37296c1d7c3920ad7ec">onSinkMeetingUserJoin:</a></td></tr>
+<tr class="memdesc:a3efb6f692bdeb37296c1d7c3920ad7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once the user joins the meeting.  <a href="#a3efb6f692bdeb37296c1d7c3920ad7ec">More...</a><br /></td></tr>
 <tr class="separator:a3efb6f692bdeb37296c1d7c3920ad7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e05f88a533c255d2991b24ab2e9d78"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#ab3e05f88a533c255d2991b24ab2e9d78">onSinkMeetingUserLeft:</a></td></tr>
+<tr class="memdesc:ab3e05f88a533c255d2991b24ab2e9d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once the user leaves the meeting.  <a href="#ab3e05f88a533c255d2991b24ab2e9d78">More...</a><br /></td></tr>
 <tr class="separator:ab3e05f88a533c255d2991b24ab2e9d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff90d7b64d45bb090b2c26d76cc85458"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#aff90d7b64d45bb090b2c26d76cc85458">onSinkMeetingUserRaiseHand:</a></td></tr>
+<tr class="memdesc:aff90d7b64d45bb090b2c26d76cc85458"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once user raises hand.  <a href="#aff90d7b64d45bb090b2c26d76cc85458">More...</a><br /></td></tr>
 <tr class="separator:aff90d7b64d45bb090b2c26d76cc85458"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8be69b4467b55e74d5cfe437feb8c463"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a8be69b4467b55e74d5cfe437feb8c463">onSinkMeetingUserLowerHand:</a></td></tr>
+<tr class="memdesc:a8be69b4467b55e74d5cfe437feb8c463"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once user lowers hand.  <a href="#a8be69b4467b55e74d5cfe437feb8c463">More...</a><br /></td></tr>
 <tr class="separator:a8be69b4467b55e74d5cfe437feb8c463"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4fa4043aae0894839182257bd79f3e8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#ab4fa4043aae0894839182257bd79f3e8">onMeetingHostChange:</a></td></tr>
-<tr class="memdesc:ab4fa4043aae0894839182257bd79f3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify that spotlight user video change.  <a href="#ab4fa4043aae0894839182257bd79f3e8">More...</a><br /></td></tr>
+<tr class="memdesc:ab4fa4043aae0894839182257bd79f3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify user that meeting host changes.  <a href="#ab4fa4043aae0894839182257bd79f3e8">More...</a><br /></td></tr>
 <tr class="separator:ab4fa4043aae0894839182257bd79f3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb4030227f8bb945bc58aceaaad27daf"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#abb4030227f8bb945bc58aceaaad27daf">onMeetingCoHostChange:</a></td></tr>
-<tr class="memdesc:abb4030227f8bb945bc58aceaaad27daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify that cohost changed.  <a href="#abb4030227f8bb945bc58aceaaad27daf">More...</a><br /></td></tr>
+<tr class="memdesc:abb4030227f8bb945bc58aceaaad27daf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that co-host changes.  <a href="#abb4030227f8bb945bc58aceaaad27daf">More...</a><br /></td></tr>
 <tr class="separator:abb4030227f8bb945bc58aceaaad27daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0b26e7aa9420c8a5a96fdf7740da7a9"><td class="memItemLeft" align="right" valign="top"><a id="ae0b26e7aa9420c8a5a96fdf7740da7a9"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#ae0b26e7aa9420c8a5a96fdf7740da7a9">onClaimHostResult:</a></td></tr>
-<tr class="memdesc:ae0b26e7aa9420c8a5a96fdf7740da7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for notify user Claim Host Result. <br /></td></tr>
+<tr class="memdesc:ae0b26e7aa9420c8a5a96fdf7740da7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that user claims the host. <br /></td></tr>
 <tr class="separator:ae0b26e7aa9420c8a5a96fdf7740da7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
@@ -124,10 +128,10 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for notify that cohost changed. </p>
+<p>Callback event that co-host changes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cohostId</td><td>the cohost user id </td></tr>
+    <tr><td class="paramname">cohostId</td><td>The user ID of co-host. </td></tr>
   </table>
   </dd>
 </dl>
@@ -150,10 +154,10 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Designated for notify that spotlight user video change. </p>
+<p>Notify user that meeting host changes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">hostId</td><td>the host user id </td></tr>
+    <tr><td class="paramname">hostId</td><td>The user ID of host. </td></tr>
   </table>
   </dd>
 </dl>
@@ -175,7 +179,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when user join event arised. </p><dl class="section return"><dt>Returns</dt><dd>UserID which joined meeting. </dd></dl>
+
+<p>The function will be invoked once the user joins the meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ID of user who joins the meeting. </dd></dl>
 
 </div>
 </div>
@@ -194,7 +200,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when user left event arised. </p><dl class="section return"><dt>Returns</dt><dd>UserID which left meeting. </dd></dl>
+
+<p>The function will be invoked once the user leaves the meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ID of user who leaves the meeting. </dd></dl>
 
 </div>
 </div>
@@ -213,7 +221,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when user lower hand event arised. </p><dl class="section return"><dt>Returns</dt><dd>UserID which lower hand. </dd></dl>
+
+<p>The function will be invoked once user lowers hand. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ID of user who lowers hand. </dd></dl>
 
 </div>
 </div>
@@ -232,7 +242,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when user raise hand event arised. </p><dl class="section return"><dt>Returns</dt><dd>UserID which raise hand. </dd></dl>
+
+<p>The function will be invoked once user raises hand. </p>
+<dl class="section return"><dt>Returns</dt><dd>The ID of user who raises hand. </dd></dl>
 
 </div>
 </div>

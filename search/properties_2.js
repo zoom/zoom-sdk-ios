@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['date',['date',['../interface_mobile_r_t_c_meeting_chat.html#ac2b432c693ad7af23ec6cd3a953ced07',1,'MobileRTCMeetingChat']]],
-  ['delegate',['delegate',['../interface_mobile_r_t_c_auth_service.html#ae9357a9b8b97e91eb2a086a239a4ab0f',1,'MobileRTCAuthService::delegate()'],['../interface_mobile_r_t_c_meeting_service.html#a837dbd2477152bb6c2668d609f4ef8d8',1,'MobileRTCMeetingService::delegate()'],['../interface_mobile_r_t_c_premeeting_service.html#a4d9eeb796f228c8ba685d2bcae5989ee',1,'MobileRTCPremeetingService::delegate()'],['../interface_mobile_r_t_c_remote_control_service.html#ac23f64f2f44fafc583004cfe948f5f00',1,'MobileRTCRemoteControlService::delegate()']]],
-  ['disablecopyurl',['disableCopyURL',['../interface_mobile_r_t_c_invite_helper.html#acfaf24ac82938c156b89e0e9fc7fb300',1,'MobileRTCInviteHelper']]],
-  ['disableinviteemail',['disableInviteEmail',['../interface_mobile_r_t_c_invite_helper.html#a50d980f6487d30d6f528b666c2720757',1,'MobileRTCInviteHelper']]],
-  ['disableinvitesms',['disableInviteSMS',['../interface_mobile_r_t_c_invite_helper.html#a12b0f5e9bca704312c555d2beb464673',1,'MobileRTCInviteHelper']]]
+  ['calloutroomsystemhidden',['calloutRoomSystemHidden',['../interface_mobile_r_t_c_meeting_settings.html#afb2a81c0e1679a114dcf43bbe788d3c7',1,'MobileRTCMeetingSettings']]],
+  ['chatid',['chatId',['../interface_mobile_r_t_c_meeting_chat.html#ab5e58c327a4019e7349f35a6d35c2380',1,'MobileRTCMeetingChat']]],
+  ['claimhostwithhostkeyhidden',['claimHostWithHostKeyHidden',['../interface_mobile_r_t_c_meeting_settings.html#a446713e127af0d3cfec009193e83c041',1,'MobileRTCMeetingSettings']]],
+  ['clientkey',['clientKey',['../interface_mobile_r_t_c_auth_service.html#a0384411440a95c4af89d94834c317b42',1,'MobileRTCAuthService']]],
+  ['clientsecret',['clientSecret',['../interface_mobile_r_t_c_auth_service.html#af2c7de9aa9669cf50d29b2a939dcde70',1,'MobileRTCAuthService']]],
+  ['closecaptionhidden',['closeCaptionHidden',['../interface_mobile_r_t_c_meeting_settings.html#a14763d1bda0ef82dcb59dd374b74f1d3',1,'MobileRTCMeetingSettings']]],
+  ['content',['content',['../interface_mobile_r_t_c_meeting_chat.html#abe15bc8a1213dc6f9a3a1c64677b6fbb',1,'MobileRTCMeetingChat']]],
+  ['customizeduimeetingdelegate',['customizedUImeetingDelegate',['../interface_mobile_r_t_c_meeting_service.html#ab74b8faa9c07c3084fa466c28370cfa2',1,'MobileRTCMeetingService']]]
 ];

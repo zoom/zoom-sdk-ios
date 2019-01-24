@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>API Doc: &lt;MobileRTCRemoteControlDelegate &gt; Protocol Reference</title>
+<title>ios API Doc: &lt;MobileRTCRemoteControlDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">API Doc
+   <div id="projectname">ios API Doc
    </div>
   </td>
  </tr>
@@ -68,6 +68,11 @@ $(function() {
 <div class="title">&lt;MobileRTCRemoteControlDelegate &gt; Protocol Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Callback event of receiving remote control.  
+ <a href="protocol_mobile_r_t_c_remote_control_delegate_01-p.html#details">More...</a></p>
+
+<p><code>#import &lt;<a class="el" href="_mobile_r_t_c_remote_control_service_8h_source.html">MobileRTCRemoteControlService.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for &lt;MobileRTCRemoteControlDelegate &gt;:</div>
 <div class="dyncontent">
@@ -80,13 +85,15 @@ Inheritance diagram for &lt;MobileRTCRemoteControlDelegate &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:ab89d20811b63f13e8b1689c8e9942858"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate_01-p.html#ab89d20811b63f13e8b1689c8e9942858">remoteControlPrivilegeChanged:</a></td></tr>
-<tr class="memdesc:ab89d20811b63f13e8b1689c8e9942858"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> will issue the following value when privilege changed.  <a href="#ab89d20811b63f13e8b1689c8e9942858">More...</a><br /></td></tr>
+<tr class="memdesc:ab89d20811b63f13e8b1689c8e9942858"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event of the following values when the privilege of remote control changes.  <a href="#ab89d20811b63f13e8b1689c8e9942858">More...</a><br /></td></tr>
 <tr class="separator:ab89d20811b63f13e8b1689c8e9942858"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa235de966019a166123d30103e976e4c"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate_01-p.html#aa235de966019a166123d30103e976e4c">startRemoteControlCallBack:</a></td></tr>
-<tr class="memdesc:aa235de966019a166123d30103e976e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> will issue the following value when start remote control.  <a href="#aa235de966019a166123d30103e976e4c">More...</a><br /></td></tr>
+<tr class="memdesc:aa235de966019a166123d30103e976e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event of the following values when remote control starts.  <a href="#aa235de966019a166123d30103e976e4c">More...</a><br /></td></tr>
 <tr class="separator:aa235de966019a166123d30103e976e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Method Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Callback event of receiving remote control. </p>
+</div><h2 class="groupheader">Method Documentation</h2>
 <a id="ab89d20811b63f13e8b1689c8e9942858"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab89d20811b63f13e8b1689c8e9942858">&#9670;&nbsp;</a></span>remoteControlPrivilegeChanged:()</h2>
 
@@ -97,7 +104,7 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html">MobileRTCRemoteControlDelegate</a>) remoteControlPrivilegeChanged: </td>
+          <td class="memname">- (void MobileRTCRemoteControlDelegate) remoteControlPrivilegeChanged: </td>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
           <td class="paramname"><em>isMyControl</em></td>
@@ -111,10 +118,10 @@ Instance Methods</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> will issue the following value when privilege changed. </p>
+<p>Callback event of the following values when the privilege of remote control changes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">return</td><td>result of myControl or not. </td></tr>
+    <tr><td class="paramname">isMyControl</td><td>YES means that the current user got the remote control privilege. Otherwise not. </td></tr>
   </table>
   </dd>
 </dl>
@@ -131,7 +138,7 @@ Instance Methods</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html">MobileRTCRemoteControlDelegate</a>) startRemoteControlCallBack: </td>
+          <td class="memname">- (void MobileRTCRemoteControlDelegate) startRemoteControlCallBack: </td>
           <td></td>
           <td class="paramtype">(MobileRTCRemoteControlError)&#160;</td>
           <td class="paramname"><em>resultValue</em></td>
@@ -145,10 +152,10 @@ Instance Methods</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> will issue the following value when start remote control. </p>
+<p>Callback event of the following values when remote control starts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">return</td><td>result of a enum value of MobileRTCRemoteControlError. </td></tr>
+    <tr><td class="paramname">resultValue</td><td>A value of MobileRTCRemoteControlError enumeration. </td></tr>
   </table>
   </dd>
 </dl>

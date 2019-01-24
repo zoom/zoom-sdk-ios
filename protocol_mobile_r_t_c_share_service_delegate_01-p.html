@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>API Doc: &lt;MobileRTCShareServiceDelegate &gt; Protocol Reference</title>
+<title>ios API Doc: &lt;MobileRTCShareServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">API Doc
+   <div id="projectname">ios API Doc
    </div>
   </td>
  </tr>
@@ -74,7 +74,7 @@ Inheritance diagram for &lt;MobileRTCShareServiceDelegate &gt;:</div>
  <div class="center">
   <img src="protocol_mobile_r_t_c_share_service_delegate_01-p.png" usemap="#_3CMobileRTCShareServiceDelegate_20_3E_map" alt=""/>
   <map id="_3CMobileRTCShareServiceDelegate_20_3E_map" name="_3CMobileRTCShareServiceDelegate_20_3E_map">
-<area href="protocol_mobile_r_t_c_meeting_service_delegate-p.html" title="An Meeting Service will issue the following value when the meeting state changes. ..." alt="&lt;MobileRTCMeetingServiceDelegate&gt;" shape="rect" coords="0,0,227,24"/>
+<area href="protocol_mobile_r_t_c_meeting_service_delegate-p.html" title="The Meeting Service will issue the following values when the meeting state changes. " alt="&lt;MobileRTCMeetingServiceDelegate&gt;" shape="rect" coords="0,0,227,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -82,13 +82,17 @@ Inheritance diagram for &lt;MobileRTCShareServiceDelegate &gt;:</div>
 Instance Methods</h2></td></tr>
 <tr class="memitem:aa6da19c0be1f41e271ab0d2842e3a376"><td class="memItemLeft" align="right" valign="top"><a id="aa6da19c0be1f41e271ab0d2842e3a376"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#aa6da19c0be1f41e271ab0d2842e3a376">onAppShareSplash</a></td></tr>
-<tr class="memdesc:aa6da19c0be1f41e271ab0d2842e3a376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for App share has started with default splash. <br /></td></tr>
+<tr class="memdesc:aa6da19c0be1f41e271ab0d2842e3a376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event of starting a meeting by sharing. <br /></td></tr>
 <tr class="separator:aa6da19c0be1f41e271ab0d2842e3a376"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf99e0f17286c30211ec860a6543d792"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#acf99e0f17286c30211ec860a6543d792">onSinkMeetingActiveShare:</a></td></tr>
+<tr class="memdesc:acf99e0f17286c30211ec860a6543d792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event when the share starts.  <a href="#acf99e0f17286c30211ec860a6543d792">More...</a><br /></td></tr>
 <tr class="separator:acf99e0f17286c30211ec860a6543d792"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a409e073d4c4c4b99ab68e5ea37ff6e3e"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#a409e073d4c4c4b99ab68e5ea37ff6e3e">onSinkMeetingShareReceiving:</a></td></tr>
+<tr class="memdesc:a409e073d4c4c4b99ab68e5ea37ff6e3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event when the sharing content changes. <br />
+  <a href="#a409e073d4c4c4b99ab68e5ea37ff6e3e">More...</a><br /></td></tr>
 <tr class="separator:a409e073d4c4c4b99ab68e5ea37ff6e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3d73617877c6c72240ec56234d992c9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#af3d73617877c6c72240ec56234d992c9">onSinkShareSizeChange:</a></td></tr>
+<tr class="memdesc:af3d73617877c6c72240ec56234d992c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event when presenter resizes the sharing content.  <a href="#af3d73617877c6c72240ec56234d992c9">More...</a><br /></td></tr>
 <tr class="separator:af3d73617877c6c72240ec56234d992c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
@@ -107,7 +111,10 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when active share event arised. </p><dl class="section return"><dt>Returns</dt><dd>UserID which starting share. </dd></dl>
+
+<p>Callback event when the share starts. </p>
+<dl class="section return"><dt>Returns</dt><dd>The user ID of presenter. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>userID == 0, which means that the user stopped sharing. </dd></dl>
 
 </div>
 </div>
@@ -126,7 +133,10 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when active share content received event arised. </p><dl class="section return"><dt>Returns</dt><dd>Recevied share content of UserID which started share. </dd></dl>
+
+<p>Callback event when the sharing content changes. <br />
+ </p>
+<dl class="section return"><dt>Returns</dt><dd>The user ID of presenter. </dd></dl>
 
 </div>
 </div>
@@ -145,7 +155,9 @@ Instance Methods</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Invoked when active share content size change event arised. </p><dl class="section return"><dt>Returns</dt><dd>Shared content size change of UserID which started share. </dd></dl>
+
+<p>Callback event when presenter resizes the sharing content. </p>
+<dl class="section return"><dt>Returns</dt><dd>New size of the shared content and UserID </dd></dl>
 
 </div>
 </div>

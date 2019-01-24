@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>API Doc: MobileRTCRemoteControlService Class Reference</title>
+<title>ios API Doc: MobileRTCRemoteControlService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">API Doc
+   <div id="projectname">ios API Doc
    </div>
   </td>
  </tr>
@@ -70,7 +70,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> provides Remote Control Servcie.  
+<p>It provides Remote Control Service.  
  <a href="interface_mobile_r_t_c_remote_control_service.html#details">More...</a></p>
 
 <p><code>#import &lt;<a class="el" href="_mobile_r_t_c_remote_control_service_8h_source.html">MobileRTCRemoteControlService.h</a>&gt;</code></p>
@@ -86,51 +86,52 @@ Inheritance diagram for MobileRTCRemoteControlService:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:ac615db7e6336dcafb2a8a45c5dc92921"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#ac615db7e6336dcafb2a8a45c5dc92921">isRemoteController</a></td></tr>
-<tr class="memdesc:ac615db7e6336dcafb2a8a45c5dc92921"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to get can remote control or not.  <a href="#ac615db7e6336dcafb2a8a45c5dc92921">More...</a><br /></td></tr>
+<tr class="memdesc:ac615db7e6336dcafb2a8a45c5dc92921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the current user gets the remote control privilege.  <a href="#ac615db7e6336dcafb2a8a45c5dc92921">More...</a><br /></td></tr>
 <tr class="separator:ac615db7e6336dcafb2a8a45c5dc92921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b4b4a45a40472a0ad8ccf94117def9d"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a6b4b4a45a40472a0ad8ccf94117def9d">grabRemoteControl:</a></td></tr>
-<tr class="memdesc:a6b4b4a45a40472a0ad8ccf94117def9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to grab remote control.  <a href="#a6b4b4a45a40472a0ad8ccf94117def9d">More...</a><br /></td></tr>
+<tr class="memdesc:a6b4b4a45a40472a0ad8ccf94117def9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to enable remote control. User should tap the screen icon once received the privilege to control one's screen remotely. <br />
+  <a href="#a6b4b4a45a40472a0ad8ccf94117def9d">More...</a><br /></td></tr>
 <tr class="separator:a6b4b4a45a40472a0ad8ccf94117def9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe2d1a3f3bfa81933f849e456eb33e15"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#afe2d1a3f3bfa81933f849e456eb33e15">remoteControlSingleTap:</a></td></tr>
-<tr class="memdesc:afe2d1a3f3bfa81933f849e456eb33e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a single mouse click, such as tap the screen with one finger to click the mouse.  <a href="#afe2d1a3f3bfa81933f849e456eb33e15">More...</a><br /></td></tr>
+<tr class="memdesc:afe2d1a3f3bfa81933f849e456eb33e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse click with a finger clicking once on the screen.  <a href="#afe2d1a3f3bfa81933f849e456eb33e15">More...</a><br /></td></tr>
 <tr class="separator:afe2d1a3f3bfa81933f849e456eb33e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a7168e79dce566240c16a3c86572c51"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a9a7168e79dce566240c16a3c86572c51">remoteControlDoubleTap:</a></td></tr>
-<tr class="memdesc:a9a7168e79dce566240c16a3c86572c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a double mouse click, such as double tap with one finger to double click the mouse.  <a href="#a9a7168e79dce566240c16a3c86572c51">More...</a><br /></td></tr>
+<tr class="memdesc:a9a7168e79dce566240c16a3c86572c51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse double-click with a finger clicking twice successively on the screen.  <a href="#a9a7168e79dce566240c16a3c86572c51">More...</a><br /></td></tr>
 <tr class="separator:a9a7168e79dce566240c16a3c86572c51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae8c1f6a8d7e166de733e3e99da2d64ac"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#ae8c1f6a8d7e166de733e3e99da2d64ac">remoteControlLongPress:</a></td></tr>
-<tr class="memdesc:ae8c1f6a8d7e166de733e3e99da2d64ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a mouse right-click, such as press the screen with one finger to right-click the mouse.  <a href="#ae8c1f6a8d7e166de733e3e99da2d64ac">More...</a><br /></td></tr>
+<tr class="memdesc:ae8c1f6a8d7e166de733e3e99da2d64ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse right-click with a finger pressing phone screen for more than 3 seconds.  <a href="#ae8c1f6a8d7e166de733e3e99da2d64ac">More...</a><br /></td></tr>
 <tr class="separator:ae8c1f6a8d7e166de733e3e99da2d64ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af30b1faeac3fac9974b08896e9942d48"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#af30b1faeac3fac9974b08896e9942d48">remoteControlDoubleScroll:</a></td></tr>
-<tr class="memdesc:af30b1faeac3fac9974b08896e9942d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate the mouse scroll, such as swipe with two fingers to scroll up and down.  <a href="#af30b1faeac3fac9974b08896e9942d48">More...</a><br /></td></tr>
+<tr class="memdesc:af30b1faeac3fac9974b08896e9942d48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse scroll with two fingers scrolling up and down.  <a href="#af30b1faeac3fac9974b08896e9942d48">More...</a><br /></td></tr>
 <tr class="separator:af30b1faeac3fac9974b08896e9942d48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab467bc4502966a2e0edfd092d34438c1"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#ab467bc4502966a2e0edfd092d34438c1">remoteControlSingleMove:</a></td></tr>
-<tr class="memdesc:ab467bc4502966a2e0edfd092d34438c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate the mouse move, such as drag the mouse icon to move the remote mouse pointer.  <a href="#ab467bc4502966a2e0edfd092d34438c1">More...</a><br /></td></tr>
+<tr class="memdesc:ab467bc4502966a2e0edfd092d34438c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move remote cursor by dragging mouse icon on phone screen.  <a href="#ab467bc4502966a2e0edfd092d34438c1">More...</a><br /></td></tr>
 <tr class="separator:ab467bc4502966a2e0edfd092d34438c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec8345352a39c1e126cfaa80ae71c116"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#aec8345352a39c1e126cfaa80ae71c116">remoteControlMouseLeftDown:</a></td></tr>
-<tr class="memdesc:aec8345352a39c1e126cfaa80ae71c116"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a mouse left-click, such as long press on mouse icon.  <a href="#aec8345352a39c1e126cfaa80ae71c116">More...</a><br /></td></tr>
+<tr class="memdesc:aec8345352a39c1e126cfaa80ae71c116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse right-click with a finger pressing phone screen for more than 3 seconds. This method is used to simulate a mouse left-click, such as long press on mouse icon.  <a href="#aec8345352a39c1e126cfaa80ae71c116">More...</a><br /></td></tr>
 <tr class="separator:aec8345352a39c1e126cfaa80ae71c116"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b318f4eb9cfc577324f881c5ba59b79"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a6b318f4eb9cfc577324f881c5ba59b79">remoteControlMouseLeftUp:</a></td></tr>
-<tr class="memdesc:a6b318f4eb9cfc577324f881c5ba59b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a mouse left-click up, such as long press up on mouse icon.  <a href="#a6b318f4eb9cfc577324f881c5ba59b79">More...</a><br /></td></tr>
+<tr class="memdesc:a6b318f4eb9cfc577324f881c5ba59b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate release the left mouse button.  <a href="#a6b318f4eb9cfc577324f881c5ba59b79">More...</a><br /></td></tr>
 <tr class="separator:a6b318f4eb9cfc577324f881c5ba59b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e45c761892b3c926cc1f57d35763ba0"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a3e45c761892b3c926cc1f57d35763ba0">remoteControlMouseLeftDrag:</a></td></tr>
-<tr class="memdesc:a3e45c761892b3c926cc1f57d35763ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate a mouse left-click drag, such as long press up on mouse icon, then drag mouse icon.  <a href="#a3e45c761892b3c926cc1f57d35763ba0">More...</a><br /></td></tr>
+<tr class="memdesc:a3e45c761892b3c926cc1f57d35763ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a mouse left-click and drag. User clicks the mouse icon on the screen for 3s and drag it.  <a href="#a3e45c761892b3c926cc1f57d35763ba0">More...</a><br /></td></tr>
 <tr class="separator:a3e45c761892b3c926cc1f57d35763ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b9a726ebb957cb5bd7cbd269b5bae3"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a41b9a726ebb957cb5bd7cbd269b5bae3">remoteControlCharInput:</a></td></tr>
-<tr class="memdesc:a41b9a726ebb957cb5bd7cbd269b5bae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate keyboard input.  <a href="#a41b9a726ebb957cb5bd7cbd269b5bae3">More...</a><br /></td></tr>
+<tr class="memdesc:a41b9a726ebb957cb5bd7cbd269b5bae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate a keyboard to input text.  <a href="#a41b9a726ebb957cb5bd7cbd269b5bae3">More...</a><br /></td></tr>
 <tr class="separator:a41b9a726ebb957cb5bd7cbd269b5bae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fec2ba37c08565eb19d56e5f9233a04"><td class="memItemLeft" align="right" valign="top">(MobileRTCRemoteControlError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_remote_control_service.html#a5fec2ba37c08565eb19d56e5f9233a04">remoteControlKeyInput:</a></td></tr>
-<tr class="memdesc:a5fec2ba37c08565eb19d56e5f9233a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is used to simulate keyboard retrun key or delete key.  <a href="#a5fec2ba37c08565eb19d56e5f9233a04">More...</a><br /></td></tr>
+<tr class="memdesc:a5fec2ba37c08565eb19d56e5f9233a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simulate Enter key or delete key of the keyboard.  <a href="#a5fec2ba37c08565eb19d56e5f9233a04">More...</a><br /></td></tr>
 <tr class="separator:a5fec2ba37c08565eb19d56e5f9233a04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
 <tr class="memitem:ac23f64f2f44fafc583004cfe948f5f00"><td class="memItemLeft" align="right" valign="top"><a id="ac23f64f2f44fafc583004cfe948f5f00"></a>
-id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html">MobileRTCRemoteControlDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_remote_control_service.html#ac23f64f2f44fafc583004cfe948f5f00">delegate</a></td></tr>
-<tr class="memdesc:ac23f64f2f44fafc583004cfe948f5f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">The object that acts as the delegate of the receiving remote control events. <br /></td></tr>
+id&lt; MobileRTCRemoteControlDelegate &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_remote_control_service.html#ac23f64f2f44fafc583004cfe948f5f00">delegate</a></td></tr>
+<tr class="memdesc:ac23f64f2f44fafc583004cfe948f5f00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event of receiving remote control. <br /></td></tr>
 <tr class="separator:ac23f64f2f44fafc583004cfe948f5f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="interface_mobile_r_t_c_remote_control_service.html" title="MobileRTCRemoteControlService provides Remote Control Servcie. ">MobileRTCRemoteControlService</a> provides Remote Control Servcie. </p>
+<div class="textblock"><p>It provides Remote Control Service. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
 <a id="a6b4b4a45a40472a0ad8ccf94117def9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b4b4a45a40472a0ad8ccf94117def9d">&#9670;&nbsp;</a></span>grabRemoteControl:()</h2>
@@ -148,14 +149,15 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to grab remote control. </p>
+<p>Set to enable remote control. User should tap the screen icon once received the privilege to control one's screen remotely. <br />
+ </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>remote shared view. </td></tr>
+    <tr><td class="paramname">remoteShareView</td><td>The remote shared view. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Grab RemoteControl Result. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of grabbing the remote control. </dd></dl>
 
 </div>
 </div>
@@ -174,8 +176,8 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to get can remote control or not. </p>
-<dl class="section return"><dt>Returns</dt><dd>return can remote control or not. </dd></dl>
+<p>Query if the current user gets the remote control privilege. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means that the user got the remote control privilege. Otherwise not. </dd></dl>
 
 </div>
 </div>
@@ -195,14 +197,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate keyboard input. </p>
+<p>Simulate a keyboard to input text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>input string form keyboard. </td></tr>
+    <tr><td class="paramname">str</td><td>Input text from keyboard. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -222,14 +224,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate the mouse scroll, such as swipe with two fingers to scroll up and down. </p>
+<p>Simulate a mouse scroll with two fingers scrolling up and down. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">up</td><td>is CGPointMake(0, -1), down is CGPointMake(0, 1). </td></tr>
+    <tr><td class="paramname">point</td><td>It is recommended to pass the arguments: CGPointMake(0, -1) for scrolling up, It is recommended to pass the arguments: CGPointMake(0, 1) for scrolling down. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -249,14 +251,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a double mouse click, such as double tap with one finger to double click the mouse. </p>
+<p>Simulate a mouse double-click with a finger clicking twice successively on the screen. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>point that the screen clicks on. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -276,14 +278,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate keyboard retrun key or delete key. </p>
+<p>Simulate Enter key or delete key of the keyboard. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enum</td><td>value of MobileRTCRemoteControlInputType. </td></tr>
+    <tr><td class="paramname">key</td><td>A value of the enumeration of MobileRTCRemoteControlInputType. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -303,14 +305,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a mouse right-click, such as press the screen with one finger to right-click the mouse. </p>
+<p>Simulate a mouse right-click with a finger pressing phone screen for more than 3 seconds. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>point that the screen clicks on. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -330,14 +332,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a mouse left-click, such as long press on mouse icon. </p>
+<p>Simulate a mouse right-click with a finger pressing phone screen for more than 3 seconds. This method is used to simulate a mouse left-click, such as long press on mouse icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>point that the screen clicks on. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -357,14 +359,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a mouse left-click drag, such as long press up on mouse icon, then drag mouse icon. </p>
+<p>Simulate a mouse left-click and drag. User clicks the mouse icon on the screen for 3s and drag it. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>points that mouse icon trajectory. </td></tr>
+    <tr><td class="paramname">point</td><td>The trajectory of the simulated mouse. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -384,14 +386,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a mouse left-click up, such as long press up on mouse icon. </p>
+<p>Simulate release the left mouse button. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>point that the screen clicks on. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -411,14 +413,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate the mouse move, such as drag the mouse icon to move the remote mouse pointer. </p>
+<p>Move remote cursor by dragging mouse icon on phone screen. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>points that mouse icon trajectory. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
@@ -438,14 +440,14 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_remote_control_delegate-p.html"
       </table>
 </div><div class="memdoc">
 
-<p>This method is used to simulate a single mouse click, such as tap the screen with one finger to click the mouse. </p>
+<p>Simulate a mouse click with a finger clicking once on the screen. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td>point that the screen clicks on. </td></tr>
+    <tr><td class="paramname">point</td><td>The point where user clicks corresponds to the location of the content. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>result of this gesture. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the operation. </dd></dl>
 
 </div>
 </div>
