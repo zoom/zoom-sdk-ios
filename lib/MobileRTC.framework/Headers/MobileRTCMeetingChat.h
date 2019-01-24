@@ -3,51 +3,51 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 2017/9/15.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /*!
- @brief MobileRTCMeetingChat provides support for retrieve the meeting chat data.
- @warning This function is optional.
+ @brief Retrieve the meeting chat data.
+ @warning The function is optional.
  */
 @interface MobileRTCMeetingChat : NSObject
 
 /*!
- @brief This property knows as chat ID.
+ @brief The message ID.
  */
 @property (nonatomic, retain, readwrite) NSString *chatId;
 /*!
- @brief This property knows as sender ID.
+ @brief The ID of user who sends message.
  */
 @property (nonatomic, retain, readwrite) NSString *senderId;
 /*!
- @brief This property knows as sender name.
+ @brief The screen name of user who sends message.
  */
 @property (nonatomic, retain, readwrite) NSString *senderName;
 /*!
- @brief This property knows as receiver ID.
+ @brief The ID of user who receives message.
  */
 @property (nonatomic, retain, readwrite) NSString *receiverId;
 /*!
- @brief This property knows as receiver name.
+ @brief The screen name of user who receives message.
  */
 @property (nonatomic, retain, readwrite) NSString *receiverName;
 /*!
- @brief This property knows as chat content.
+ @brief The message content.
  */
 @property (nonatomic, retain, readwrite) NSString *content;
 /*!
- @brief This property knows as chat timestamp.
+ @brief The message timestamps.
  */
 @property (nonatomic, retain, readwrite) NSDate *date;
 /*!
- @brief This property knows as myself message.
+ @brief Whether the message is sent by the user himself or not.
  */
 @property (nonatomic, readwrite) BOOL isMyself;
 /*!
- @brief This property knows as private chat.
+ @brief Whether the message is private or not.
  */
 @property (nonatomic, readwrite) BOOL isPrivate;
 

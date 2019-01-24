@@ -11,6 +11,7 @@
 #import "MeetingSettingsViewController.h"
 #import "ScheduleTableViewController.h"
 #import <MobileRTC/MobileRTC.h>
+#import "SDKAuthPresenter.h"
 
 @interface SettingsViewController ()
 
@@ -21,6 +22,7 @@
 
 @property (retain, nonatomic) NSArray *itemArray;
 
+@property (retain, nonatomic) SDKAuthPresenter      *authPresenter;
 @end
 
 @implementation SettingsViewController
@@ -128,6 +130,15 @@
     return _scheduleCell;
 }
 
+- (SDKAuthPresenter *)authPresenter
+{
+    if (!_authPresenter)
+    {
+        _authPresenter = [[SDKAuthPresenter alloc] init];
+    }
+    
+    return _authPresenter;
+}
 
 #pragma mark - Table view data source
 
@@ -229,7 +240,7 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 UITextField *email = alertController.textFields.firstObject;
                 UITextField *password = alertController.textFields.lastObject;
-                [[[MobileRTC sharedRTC] getAuthService] loginWithEmail:email.text password:password.text remeberMe:YES];
+                [self.authPresenter loginWithEmail:email.text password:password.text remeberMe:YES];
             }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -256,7 +267,7 @@
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 UITextField *token = alertController.textFields.firstObject;
-                [[[MobileRTC sharedRTC] getAuthService] loginWithSSOToken:token.text];
+                [self.authPresenter loginWithSSOToken:token.text remeberMe:YES];
             }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

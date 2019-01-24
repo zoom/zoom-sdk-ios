@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 8/7/14.
-//  Copyright (c) 2016 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 //MobileRTC Base Domain
@@ -15,198 +15,198 @@
 #define kMobileRTCAuthKeyOrSecretWrong        3023
 //Account does not support SDK feature
 #define kMobileRTCAuthAccountNotSupport       3024
-//Account has not enabled SDK feature
+//Account did not enable SDK feature
 #define kMobileRTCAuthAccountNotEnableSDK     3025
 
 /*!
- @brief MobileRTCAuthError An Enum which provide all of SDK Auth Error state.
+ @brief An enumeration of SDK authentication.
  */
 typedef enum {
-    ///Auth Success
+    ///Authentication is successful
     MobileRTCAuthError_Success,
-    ///Key or Secret is empty
+    ///Key or secret is empty
     MobileRTCAuthError_KeyOrSecretEmpty,
-    ///Key or Secret is wrong
+    ///Key or secret is wrong
     MobileRTCAuthError_KeyOrSecretWrong,
-    ///Client Account does not support
+    ///Client account does not support
     MobileRTCAuthError_AccountNotSupport,
     ///Client account does not enable SDK
     MobileRTCAuthError_AccountNotEnableSDK,
-    ///Auth Unknown error
+    ///Unknown error
     MobileRTCAuthError_Unknown,
 }MobileRTCAuthError;
 
 /*!
- @brief MobileRTCMeetError An Enum which provide all of Meeting Error state.
+ @brief MobileRTCMeetError An enumeration of Meeting States.
  */
 typedef enum {
-    ///start/join meeting successfully
+    ///Start/Join meeting successfully.
     MobileRTCMeetError_Success                          = 0,
-    ///network issue, please check network connection
+    ///Network issue, please check the network connection.
     MobileRTCMeetError_NetworkError                     = 1,
-    ///failed to reconnect meeting
+    ///Failed to reconnect the meeting.
     MobileRTCMeetError_ReconnectError                   = 2,
-    ///mmr issue, please check mmr configuration
+    ///MMR issue, please check MMR configuration.
     MobileRTCMeetError_MMRError                         = 3,
-    ///meeting password incorrect
+    ///The meeting password is incorrect.
     MobileRTCMeetError_PasswordError                    = 4,
-    ///failed to create video and audio data connection with mmr
+    ///Failed to create video and audio data connection with MMR.
     MobileRTCMeetError_SessionError                     = 5,
-    ///the meeting is over
+    ///Meeting is over.
     MobileRTCMeetError_MeetingOver                      = 6,
-    ///the meeting does not start
+    ///Meeting is not started.
     MobileRTCMeetError_MeetingNotStart                  = 7,
-    ///the meeting does not exist
+    ///The meeting does not exist.
     MobileRTCMeetError_MeetingNotExist                  = 8,
-    ///the meeting has reached a maximum of participants
+    ///The amount of attendees reaches the upper limit.
     MobileRTCMeetError_MeetingUserFull                  = 9,
-    ///the mobilertc version is incompatible
+    ///The MobileRTC version is incompatible.
     MobileRTCMeetError_MeetingClientIncompatible        = 10,
-    ///there does not exist valid mmr
+    ///No MMR is valid.
     MobileRTCMeetError_NoMMR                            = 11,
-    ///the meeting was locked by host
+    ///The meeting is locked by the host.
     MobileRTCMeetError_MeetingLocked                    = 12,
-    ///the meeting was restricted
+    ///The meeting is restricted.
     MobileRTCMeetError_MeetingRestricted                = 13,   
-    ///the meeting was restricted join before host
+    ///The meeting is restricted to join before host.
     MobileRTCMeetError_MeetingRestrictedJBH             = 14,
-    ///failed to send creat meeting command to web server
+    ///Failed to request the web server.
     MobileRTCMeetError_CannotEmitWebRequest             = 15,
-    ///failed to start meeting with expired token
+    ///Failed to start meeting with expired token.
     MobileRTCMeetError_CannotStartTokenExpire           = 16,
-    ///the user video cannot work
+    ///The user's video does not work.
     MobileRTCMeetError_VideoError                       = 17,
-    ///the user audio cannot auto start
+    ///The user's audio cannot auto-start.
     MobileRTCMeetError_AudioAutoStartError              = 18,
-    ///webinar has reached its maximum
+    ///The amount of webinar attendees reaches the upper limit.
     MobileRTCMeetError_RegisterWebinarFull              = 19,
-    ///sign in to start the webinar
+    ///User needs to register a webinar account if he wants to start a webinar.
     MobileRTCMeetError_RegisterWebinarHostRegister      = 20,
-    ///join the webinar from the link
+    ///User needs to register an account if he wants to join the webinar by the link.
     MobileRTCMeetError_RegisterWebinarPanelistRegister  = 21,
-    ///host has denied your webinar registration
+    ///The host has denied your webinar registration.
     MobileRTCMeetError_RegisterWebinarDeniedEmail       = 22,
-    ///sign in with the specified account to join webinar
+    ///Sign in with the specified account to join webinar.
     MobileRTCMeetError_RegisterWebinarEnforceLogin      = 23,
-    ///the certificate of ZC has been changed
+    ///The certificate of ZC has been changed.
     MobileRTCMeetError_ZCCertificateChanged             = 24,
-    ///the vanity url does not exist
+    ///The vanity URL does not exist.
     MobileRTCMeetError_VanityNotExist                   = 27,
-    ///the email address has already been register in this webinar
+    ///The email address has already been registered in the current webinar.
     MobileRTCMeetError_JoinWebinarWithSameEmail         = 28,
-    ///failed to write config file
+    ///Failed to write configure file.
     MobileRTCMeetError_WriteConfigFile                  = 50,
-    ///Removed By host
+    ///Meeting is removed by the host.
     MobileRTCMeetError_RemovedByHost                    = 61,
-    ///Invalid Arguments
+    ///Invalid arguments.
     MobileRTCMeetError_InvalidArguments                 = MobileRTCMeetError_WriteConfigFile + 100,
-    ///Invalid User Type
+    ///Invalid user Type.
     MobileRTCMeetError_InvalidUserType,
-    ///Already In another ongoing meeting
+    ///The user joins already another ongoing meeting.
     MobileRTCMeetError_InAnotherMeeting,
-    ///Unknown error
+    ///Unknown error.
     MobileRTCMeetError_Unknown,
 
 }MobileRTCMeetError;
 
 /*!
- @brief MobileRTCMeetingState An Enum which provide all of Meeting state.
+ @brief MobileRTCMeetingState An enumeration of meeting states.
  */
 typedef enum {
-    ///Idle
+    ///No meeting is running.
     MobileRTCMeetingState_Idle              = 0,
-    ///Connecting
+    ///Connect to the meeting server status.
     MobileRTCMeetingState_Connecting        = 1,
-    ///In Meeting
+    ///Meeting is ready, in meeting status.
     MobileRTCMeetingState_InMeeting         = 2,
-    ///Webinar Meeting Promote
+    ///Upgrade the attendees to panelist in webinar.
     MobileRTCMeetingState_WebinarPromote    = 3,
-    ///Webinar Meeting DePromote
+    ///Demote the attendees from the panelist.
     MobileRTCMeetingState_WebinarDePromote  = 4,
 }MobileRTCMeetingState;
 
 /*!
- @brief MobileRTCUserType An Enum which provide all of User Type.
+ @brief MobileRTCUserType An enumeration of user types.
  */
 typedef enum {
-    ///Facebook user type
+    ///User logs in with Facebook account.
     MobileRTCUserType_Facebook    = 0,
-    ///Google OAuth
+    ///User logs in with Google authentication.
     MobileRTCUserType_GoogleOAuth = 2,
-    ///Device User
+    ///User logs in with device, like H.323, SIP, etc. 
     MobileRTCUserType_DeviceUser  = 97,
-    ///API user type
+    ///API user.
     MobileRTCUserType_APIUser     = 99,
-    ///Work email user type
+    ///User logs in with working email.
     MobileRTCUserType_ZoomUser    = 100,
-    ///Single-sign-on user type
+    ///Single-sign-on user.
     MobileRTCUserType_SSOUser     = 101,
-    ///Unknown
+    ///Unknown user type.
     MobileRTCUserType_Unknown     = 102,
 }MobileRTCUserType;
 
 /*!
- @brief LeaveMeetingCmd An Enum which provide command to leave meeting.
+ @brief LeaveMeetingCmd An enumeration of commands for leaving meeting.
  */
 typedef enum {
-    ///Leave meeting
+    ///Command of leaving meeting.
     LeaveMeetingCmd_Leave,
-    ///End Meeting
+    ///Command of ending Meeting.
     LeaveMeetingCmd_End,
 }LeaveMeetingCmd;
 
 /*!
- @brief JBHCmd An Enum which provide command to show waiting UI.
+ @brief JBHCmd An enumeration of waiting UI when JBH is disabled.
  */
 typedef enum {
-    ///Show JBH waiting
+    ///Show JBH waiting command.
     JBHCmd_Show,
-    ///Hide JBH waiting
+    ///Hide JBH waiting command.
     JBHCmd_Hide,
 }JBHCmd;
 
 /*!
- @brief DialOutStatus An Enum which provide all of states for Dial out.
+ @brief DialOutStatus An enumeration of outgoing call states.
  */
 typedef enum {
-    ///Unknown
+    ///Unknown outgoing call status.
     DialOutStatus_Unknown  = 0,
-    ///Calling
+    ///Calling in process.
     DialOutStatus_Calling,
-    ///Ringing
+    ///In process of ringing.
     DialOutStatus_Ringing,
-    ///Accepted
+    ///The call is accepted by the receiver.
     DialOutStatus_Accepted,
-    ///Busy
+    ///The telephone service is busy.
     DialOutStatus_Busy,
-    ///Not Available
+    ///The telephone is out of service.
     DialOutStatus_NotAvailable,
-    ///Hang Up
+    ///The phone is hung up.
     DialOutStatus_UserHangUp,
-    ///Other Fail Reason
+    ///Other reasons.
     DialOutStatus_OtherFail,
-    ///Join Success
+    ///Join meeting successfully.
     DialOutStatus_JoinSuccess,
-    ///For client not get response, maybe network reason
+    ///Outgoing call timeout.
     DialOutStatus_TimeOut,
-    ///Start Cancel Call
+    ///Start to cancel outgoing call. 
     DialOutStatus_ZoomStartCancelCall,
-    ///Call Canceled
+    ///The outgoing call is canceled.
     DialOutStatus_ZoomCallCanceled,
-    ///Cancel Call Fail
+    ///Failed to cancel outgoing call.
     DialOutStatus_ZoomCancelCallFail,
-    ///Indicate the phone ring but no-one answer
+    ///The call is not answered.
     DialOutStatus_NoAnswer,
-    ///JBH case, disable international callout before host join
+    ///Disable the function of international outgoing call before the host joins the meeting.
     DialOutStatus_BlockNoHost,
-    ///The price of callout phone number is too expensive which has been blocked by system
+    ///The call-out is blocked by the system due to high cost.
     DialOutStatus_BlockHighRate,
-    ///Invite by phone with pressONE required, but invitee frequently does NOT press one then timeout
+    ///All the invitees invited by the call should press the button one(1) to join the meeting. In case that many invitees do not press the button that leads to time out, the call invitation for this meeting shall be banned.
     DialOutStatus_BlockTooFrequent,
 }DialOutStatus;
 
 /*!
- @brief H323CallOutStatus An Enum which provide all of states for Call out H.323/SIP.
+ @brief H323CallOutStatus An enumeration of H.323/SIP outgoing call status.  
  */
 typedef enum {
     ///OK
@@ -220,222 +220,221 @@ typedef enum {
 }H323CallOutStatus;
 
 /*!
- @brief MobileRTCH323ParingStatus An Enum which provide all of states for Paring H.323/SIP.
+ @brief MobileRTCH323ParingStatus An enumeration of H.323/SIP pairing status.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCH323ParingStatus) {
     ///Success
     MobileRTCH323ParingStatus_Success = 0,
-    ///Meeting Not Existed
+    ///Meeting does not Exist
     MobileRTCH323ParingStatus_MeetingNotExisted,
-    ///No provilege
+    ///No permission
     MobileRTCH323ParingStatus_PermissionDenied,
-    ///Paring Code Not Existed
+    ///Paring Code is not existed
     MobileRTCH323ParingStatus_ParingcodeNotExisted,
     ///Error
     MobileRTCH323ParingStatus_Error,
 };
 
 /*!
- @brief MobileRTCComponentType An Enum which provide all of component types.
+ @brief MobileRTCComponentType An enumeration of all component types.
  */
 typedef enum {
-    ///Default
+    ///Default component type.
     MobileRTCComponentType_Def    = 0,
-    ///Chat Module
+    ///Chat.
     MobileRTCComponentType_Chat,
-    ///File Transfer Module
+    ///File Transfer.
     MobileRTCComponentType_FT,
-    ///Audio Module
+    ///Audio.
     MobileRTCComponentType_AUDIO,
-    ///Video Module
+    ///Video.
     MobileRTCComponentType_VIDEO,
-    ///Share Module
+    ///Share application.
     MobileRTCComponentType_AS,
 }MobileRTCComponentType;
 
 /*!
- @brief MobileRTCNetworkQuality An Enum which provide network quality in meeting.
+ @brief MobileRTCNetworkQuality Quality of session network.
  */
 typedef enum {
-    ///Unknown
+    ///Unknown connection status.
     MobileRTCNetworkQuality_Unknown     = -1,
-    ///Very Bad
+    ///The connection quality is very poor.
     MobileRTCNetworkQuality_VeryBad     = 0,
-    ///Bad
+    ///The connection quality is very poor.
     MobileRTCNetworkQuality_Bad         = 1,
-    ///Not Good
+    ///The connection quality is not good.
     MobileRTCNetworkQuality_NotGood     = 2,
-    ///Normal
+    ///The connection quality is normal.
     MobileRTCNetworkQuality_Normal      = 3,
-    ///Good
+    ///The connection quality is good.
     MobileRTCNetworkQuality_Good        = 4,
-    ///Excellent
+    ///The connection quality is excellent.
     MobileRTCNetworkQuality_Excellent   = 5,
 }MobileRTCNetworkQuality;
 
 /*!
- @brief MobileRTCAudioError An Enum which provide all of Audio related Action Error state.
+ @brief MobileRTCAudioError An enumeration of audio-related operational error states.
  */
 typedef enum {
     ///Success
     MobileRTCAudioError_Success                                   = 0,
-    ///AudioSessionRecordPermissionDenied
+    ///The application for Audio Session Recording is Denied
     MobileRTCAudioError_AudioPermissionDenied                     = 1,
-    ///Do not connect to audio session
+    ///Do not connect to audio session.
     MobileRTCAudioError_AudioNotConnected                         = 2,
-    ///Can not Unmute My Audio
+    ///User can not unmute his Audio.
     MobileRTCAudioError_CannotUnmuteMyAudio                       = 3,
 }MobileRTCAudioError;
 
 /*!
- @brief MobileRTCVideoError An Enum which provide all of Video related Action Error state.
+ @brief MobileRTCVideoError An enumeration of video-related operational error states.
  */
 typedef enum {
     ///Success
     MobileRTCVideoError_Success                                   = 0,
-    ///Camera PermissionDenied
+    ///Camera Permission is Denied
     MobileRTCVideoError_CameraPermissionDenied                    = 1,
-    ///Can not Unmute My Audio
+    ///User can not unmute his Audio.
     MobileRTCVideoError_CannotUnmuteMyVideo                       = 3,
 }MobileRTCVideoError;
 
 /*!
- @brief MobileRTCCameraError An Enum which provide all of Camera related Action Error state.
+ @brief MobileRTCCameraError An enumeration of camera-related operational error states.
  */
 typedef enum {
     ///Success
     MobileRTCCameraError_Success                                   = 0,
-    ///Camera PermissionDenied
+    ///The permission to enable the camera is denied
     MobileRTCCameraError_CameraPermissionDenied                    = 1,
-    ///Do not connect to video session
+    ///The camera can not connect to video session
     MobileRTCCameraError_VideoNotSending                           = 2,
 }MobileRTCCameraError;
 
 /*!
- @brief MobileRTCLiveStreamStatus An Enum which provide Live Stream status in meeting.
+ @brief MobileRTCLiveStreamStatus An enumeration of Live Stream status in meeting.
  */
 typedef enum {
-    ///Start Successed
+    ///Start live stream successfully.
     MobileRTCLiveStreamStatus_StartSuccessed               = 0,
-    ///Start Failed
+    ///Start live stream failed
     MobileRTCLiveStreamStatus_StartFailedOrEnded           = 1,
-    ///Start Timeout
+    ///Start live stream timeout
     MobileRTCLiveStreamStatus_StartTimeout                 = 2,
 }MobileRTCLiveStreamStatus;
 
 /*!
- @brief MobileRTCClaimHostError An Enum which provide claim host result in meeting.
+ @brief MobileRTCClaimHostError An enumeration of CLAIM HOST results in meeting.
  */
 typedef enum {
-    ///Successed
+    ///Claim host successfully.
     MobileRTCClaimHostError_Successed                = 0,
-    ///Host Key Error
+    ///Host Key Errors.
     MobileRTCClaimHostError_HostKeyError             = 1,
-    //Network Error
+    ///Network Errors.
     MobileRTCClaimHostError_NetWorkError             = 2,
 }MobileRTCClaimHostError;
 
 /*!
- @brief MobileRTCSendChatError An Enum which provide send chat result in meeting.
+ @brief MobileRTCSendChatError An enumeration of SENDING CHAT MESSAGE result in meeting.
  */
 typedef enum {
-    ///Successed
+    ///Send chat message successfully.
     MobileRTCSendChatError_Successed                = 0,
-    ///Call Failed
+    ///Send chat message failed.
     MobileRTCSendChatError_Failed                   = 1,
-    ///PermissionDenied
+    ///No permission.
     MobileRTCSendChatError_PermissionDenied         = 2,
 }MobileRTCSendChatError;
 
 /*!
- @brief MobileRTCAnnotationError An Enum which provide annotation related action result in meeting.
+ @brief MobileRTCAnnotationError An enumeration of annotation-related operational error states.
  */
 typedef enum {
-    ///Successed
+    ///Succeeded
     MobileRTCAnnotationError_Successed                = 0,
     ///Failed
     MobileRTCAnnotationError_Failed                   = 1,
-    ///PermissionDenied
+    ///No permission.
     MobileRTCAnnotationError_PermissionDenied         = 2,
 }MobileRTCAnnotationError;
 
 /*!
- @brief MobileRTCCMRError An Enum which provide CMR related result.
+ @brief MobileRTCCMRError An enumeration of CMR-related result error states.
  */
 typedef enum {
-    ///Successed
+    ///Succeeded
     MobileRTCCMRError_Successed                = 0,
     ///Failed
     MobileRTCCMRError_Failed                   = 1,
-    ///Storage Full
+    ///The storage is full
     MobileRTCCMRError_StorageFull              = 2,
 }MobileRTCCMRError;
 
 /*!
- @brief MobileRTCJoinMeetingInfo An Enum which need provide Join Meeting Info.
+ @brief MobileRTCJoinMeetingInfo An enumeration of information needed to Join Meeting.
  */
 typedef enum {
-    ///Need Display name
+    ///Display name is needed.
     MobileRTCJoinMeetingInfo_NeedName                = 0,
-    ///Need Meeting password
+    ///Meeting password is needed. 
     MobileRTCJoinMeetingInfo_NeedPassword            = 1,
-    ///Wrong Meeting password
+    ///Meeting password is wrong.
     MobileRTCJoinMeetingInfo_WrongPassword           = 2,
-    ///Need Display name and Meeting Password
+    ///Screen name and meeting Password are needed.
     MobileRTCJoinMeetingInfo_NeedNameAndPwd          = 3,
 }MobileRTCJoinMeetingInfo;
 
 /*!
- @brief MobileRTCAudioError An Enum of Audio Error.
+ @brief MobileRTCAudioError An enumeration of Audio Errors.
  */
 typedef enum {
-    ///microphone muted while speaking
+    ///Microphone is muted while speaking.
     MobileRTCMicrophoneError_MicMuted                = 0,
-    ///audio feedback detected just join into meeting
+    ///Audio feedback is detected when join meeting.
     MobileRTCMicrophoneError_FeedbackDetected        = 1,
-    ///microphone unavailable
+    ///Microphone is unavailable.
     MobileRTCMicrophoneError_MicUnavailable          = 2,
 }MobileRTCMicrophoneError;
 
 /*!
- @brief MobileRTCAudioError An Enum of Audio Error.
+ @brief MobileRTCAudioError An enumeration of Audio Errors.
  */
 typedef enum {
-    ///Leave meeting by myself
+    ///User leaves meeting.
     MobileRTCMeetingEndReason_SelfLeave                 = 0,
-    ///Remove from meeting by host
+    ///The user is removed from meeting by the host.
     MobileRTCMeetingEndReason_RemovedByHost             = 1,
-    ///meeting end by host
+    ///Host ends the meeting.
     MobileRTCMeetingEndReason_EndByHost                 = 2,
-    ///Join meeting before host timeout
+    ///Join the meeting before host (JBH) timeout.
     MobileRTCMeetingEndReason_JBHTimeout                = 3,
-    ///free meeting end by timeout
+    ///Meeting ends when the free service is over.
     MobileRTCMeetingEndReason_FreeMeetingTimeout        = 4,
-    ///Host end meeting for another meeting
+    ///Meeting ends by the host for he will start another meeting.
     MobileRTCMeetingEndReason_HostEndForAnotherMeeting  = 6,
-    ///Meeting end by connection broken, such as network issue
+    ///Meeting ends for SDK disconnects, such as network issue.
     MobileRTCMeetingEndReason_ConnectBroken             = 7,
-
-    ///Meeting end by unknown reason
+    ///Meeting ends by unknown reasons.
     MobileRTCMeetingEndReason_Unknown,
 }MobileRTCMeetingEndReason;
 
 /*!
- @brief MobileRTCRemoteControlError An Enum which provide RemoteControl related action result in meeting.
+ @brief MobileRTCRemoteControlError An enumeration of remote control-related operational result in meeting.
  */
 typedef enum {
-    ///Successed
+    ///Succeeded
     MobileRTCRemoteControlError_Successed                = 0,
     ///stop
     MobileRTCRemoteControlError_Stop                     = 1,
     ///Failed
     MobileRTCRemoteControlError_Failed                   = 2,
-    ///PermissionDenied
+    ///No Permission 
     MobileRTCRemoteControlError_PermissionDenied            = 3,
 }MobileRTCRemoteControlError;
 
 /*!
- @brief MobileRTCAudioOutput An Enum which provide audio output description.
+ @brief MobileRTCAudioOutput An enumeration of audio output description.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCAudioOutput) {
     ///Unknown
@@ -446,58 +445,58 @@ typedef NS_ENUM(NSUInteger, MobileRTCAudioOutput) {
     MobileRTCAudioOutput_Speaker         = 2,
     ///Headphones
     MobileRTCAudioOutput_Headphones     = 3,
-    ///Bluetooth
+    ///Blue-tooth
     MobileRTCAudioOutput_Bluetooth      = 4,
 };
 
 /*!
- @brief MobileRTCWebinarAllowAttendeeChat An Enum which provide Webinar Meeting Attendee chat Privilegae description.
+ @brief MobileRTCWebinarAllowAttendeeChat An enumeration of attendee chat permission in webinar.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCChatAllowAttendeeChat) {
-    ///Disable Chat
+    ///Chat is disabled
     MobileRTCChatAllowAttendeeChat_ChatWithNone              = 1,
-    ///Chat with All
+    ///Chat with all
     MobileRTCChatAllowAttendeeChat_ChatWithAll               = 2,
-    ///Chat with Panelist
+    ///Chat with panelist
     MobileRTCChatAllowAttendeeChat_ChatWithPanelist          = 3,
 };
 
 /*!
- @brief MobileRTCWebinarPromoteorDepromoteError An Enum which provide Webinar Meeting Promote/Depromote Attendee and panelist error type description.
+ @brief MobileRTCWebinarPromoteorDepromoteError An enumeration of promoting/demoting attendee and panelist errors in webinar.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCWebinarPromoteorDepromoteError) {
-    ///Success
+    ///Promote/demote successfully.
     MobileRTCWebinarPromoteorDepromoteError_Success                                                  = 0,
-    ///Chat with All
+    ///The amount of panelist in webinar reaches the upper limit. 
     MobileRTCWebinarPromoteorDepromoteError_Webinar_Panelist_Capacity_Exceed                         = 3035,
-    ///Chat with Panelist
-    MobileRTCWebinarPromoteorDepromoteError_Not_Found_Wwbinar_Attendee                               = 3029,
+    ///The attendees in webinar are not found.
+    MobileRTCWebinarPromoteorDepromoteError_Not_Found_Webinar_Attendee                               = 3029,
 };
 
 /*!
- @brief MobileRTCMeetingItemAudioType An Enum which provide audio type description in meeting item.
+ @brief MobileRTCMeetingItemAudioType An enumeration of audio types in meeting.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemAudioType) {
     ///Unknown
     MobileRTCMeetingItemAudioType_Unknown                    = 0,
     ///Telephone Only
     MobileRTCMeetingItemAudioType_TelephoneOnly              = 1,
-    ///Voip Only
+    ///VoIP Only
     MobileRTCMeetingItemAudioType_VoipOnly                   = 2,
-    ///Telephone And Voip
+    ///Telephone And VoIP
     MobileRTCMeetingItemAudioType_TelephoneAndVoip           = 3,
-    ///3rd Party Audio
+    ///The 3rd Party Audio
     MobileRTCMeetingItemAudioType_3rdPartyAudio              = 4,
 };
 
 /*!
- @brief MobileRTCMeetingItemRecordType An Enum which provide meeting record type description in meeting item.
+ @brief MobileRTCMeetingItemRecordType An enumeration of meeting recording types in meeting.
  */
 typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemRecordType) {
-    ///Auto Record Disabled
+    ///Automatic recording is disabled
     MobileRTCMeetingItemRecordType_AutoRecordDisabled               = 0,
-    ///Local Record
+    ///Local Recording
     MobileRTCMeetingItemRecordType_LocalRecord                      = 1,
-    ///Clound Record
+    ///Cloud Recording
     MobileRTCMeetingItemRecordType_CloudRecord                      = 2,
 };

@@ -3,61 +3,61 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 2017/2/27.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <MobileRTC/MobileRTC.h>
 
 /*!
- @brief Category AppShare is designed for an App Share meeting
+ @brief Starts an App share meeting.
  */
 @interface MobileRTCMeetingService (AppShare)
 
 /*!
- @brief This method is used to tell the client whether the meeting is an app share meeting.
- @return YES if the meeting is an app share meeting
+ @brief Query if the current meeting is enabled with App share. 
+ @return YES means that meeting starts by App share, otherwise not.
  */
 - (BOOL)isDirectAppShareMeeting;
 
 /*!
- @brief This method is used to change the view of share content.
- @param view the view will be shared.
+ @brief Share a content.
+ @param view The view shared.
  */
 - (void)appShareWithView:(nonnull UIView*)view;
 
 /*!
- @brief This method is used to share content with ReplayKit.
- @discussion This method will take effect in iOS 11 or new.
- @warning After this interface has been called, App UI content should update after about 0.25 second for ReplayKit cannot send out if UI content does not change.
+ @brief Share content with ReplayKit.
+ @warning Available only for iOS 11 version minimum.  
+ @warning Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change. 
  */
 - (void)appShareWithReplayKit;
 
 /*!
- @brief This method is used to start app share.
- @return YES means that start app share successfully.
+ @brief Set to enable App share.
+ @return YES means starting App share successfully, otherwise not.
  */
 - (BOOL)startAppShare;
 
 /*!
- @brief This method is used to stop app share.
+ @brief Set to stop App share.
  */
 - (void)stopAppShare;
 
 /*!
- @brief This method is used to tell the client is starting share or not.
- @return YES if the client is starting share.
+ @brief Notify the current user if he is sharing. 
+ @return YES means that the current user is sharing, otherwise not.
  */
 - (BOOL)isStartingShare;
 
 /*!
- @brief This method is used to tell the client is viewing share or not.
- @return YES if the client is viewing share.
+ @brief Notify the current user if he is viewing the share.
+ @return YES means that user is viewing the share, otherwise not.
  */
 - (BOOL)isViewingShare;
 
 /*!
- @brief This method is used to tell the client if the annotation is available.
- @return YES if the client is available.
+ @brief Notify the current user if he can annotate.
+ @return YES means able, otherwise not.
  */
 - (BOOL)isAnnotationOff;
 

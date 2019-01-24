@@ -2,17 +2,13 @@
 //  CustomMeetingViewController.m
 //  MobileRTCSample
 //
-//  Created by chaobai on 14/11/2017.
-//  Copyright © 2017 Zoom Video Communications, Inc. All rights reserved.
+//  Created by Murray Li on 2018/10/12.
+//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import "CustomMeetingViewController.h"
-#import "CustomMeetingViewController+MeetingDelegate.h"
 
-const CGFloat BOT_BTN_LEN = 60;
-const CGFloat TOP_BTN_LEN = 40;
-
-@interface CustomMeetingViewController () <AnnoFloatBarViewDelegate>
+@interface CustomMeetingViewController ()<UIGestureRecognizerDelegate, AnnoFloatBarViewDelegate>
 
 @end
 
@@ -27,71 +23,34 @@ const CGFloat TOP_BTN_LEN = 40;
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor blackColor];
 
+    self.isShowTopBottonPanel = YES;
+    
     [self initSubView];
     
     [self initGuestureRecognizer];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)dealloc
-{
-    self.panGesture = nil;
-    self.tapGesture = nil;
-    [self uninitSubView];
     
-    [super dealloc];
-}
-
-- (UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
-}
-
-- (BOOL)prefersStatusBarHidden
-{
-    return NO;
-}
-
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    
-    [self updatePanelFrame];
-    
-    [self layoutShrinkViewFrame];
-    
-    self.annoFloatBarView.frame = CGRectMake(0, self.view.frame.size.height-150,self.view.frame.size.width, 50);
+    [self disableGuestureRecognizer];
 }
 
 - (void)initSubView
 {
+    self.view.backgroundColor = [UIColor blackColor];
+    
     [self.view addSubview:self.baseView];
     
-    [self addChildViewController:self.galleryVC];
-    [self.baseView addSubview:self.galleryVC.view];
-    [self.galleryVC didMoveToParentViewController:self];
-    
-    self.galleryVC.view.frame = self.view.bounds;
-    
-    [self initPanel];
-    
     self.vcArray = [NSMutableArray array];
-    [self.vcArray addObject:self.galleryVC];
-    [self.vcArray addObject:self.wallVC];
+    [self.vcArray addObject:self.videoVC];
     [self.vcArray addObject:self.remoteShareVC];
     [self.vcArray addObject:self.localShareVC];
-    [self.vcArray addObject:self.shrinkVC];
+    [self showVideoView];
+    
+    [self.view addSubview:self.thumbView];
+    [self.view addSubview:self.topPanelView];
+    [self.view addSubview:self.bottomPanelView];
     
     [self.view addSubview:self.annoFloatBarView];
     self.annoFloatBarView.hidden = YES;
@@ -99,237 +58,104 @@ const CGFloat TOP_BTN_LEN = 40;
 
 - (void)uninitSubView
 {
-    self.topPanel = nil;
-    self.shrinkBtn = nil;
-    self.titleLbl = nil;
-    self.moreBtn = nil;
-    
-    self.bottomPanel = nil;
-    self.audioBtn = nil;
-    self.videoBtn = nil;
-    self.endBtn = nil;
+    self.baseView = nil;
+    self.topPanelView = nil;
+    self.bottomPanelView = nil;
+    self.thumbView = nil;
     
     self.annoFloatBarView = nil;
-    
     [self removeAllSubView];
-    self.galleryVC = nil;
-    self.wallVC = nil;
+    self.videoVC = nil;
     self.remoteShareVC = nil;
     self.localShareVC = nil;
-    self.shrinkVC = nil;
     
     [self.vcArray removeAllObjects];
     self.vcArray = nil;
 }
 
-#pragma mark - Top & Bottom Panel
-
-- (void)initPanel
-{
-    [self.view addSubview:self.topPanel];
+- (void)dealloc {
+    [self uninitSubView];
     
-    [self.topPanel addSubview:self.shrinkBtn];
-    [self.topPanel addSubview:self.titleLbl];
-    [self.topPanel addSubview:self.moreBtn];
+    self.panGesture = nil;
     
-    [self.view addSubview:self.bottomPanel];
+    self.actionPresenter = nil;
+    self.sharePresenter = nil;
     
-    [self.bottomPanel addSubview:self.audioBtn];
-    [self.bottomPanel addSubview:self.endBtn];
-    [self.bottomPanel addSubview:self.videoBtn];
+    [super dealloc];
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    self.isShowTopBottonPanel = YES;
+    [self.thumbView updateFrame];
+    [self.topPanelView updateFrame];
+    [self.bottomPanelView updateFrame];
+    [self layoutShrinkViewFrame];
     
-    [self.view setNeedsLayout];
+    UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+    BOOL landscape = UIInterfaceOrientationIsLandscape(orientation);
+    if (landscape)
+    {
+        self.annoFloatBarView.frame = CGRectMake(0, self.view.frame.size.height-Bottom_Height-100, 320, 100);
+    }
+    else
+    {
+        self.annoFloatBarView.frame = CGRectMake(0, self.view.frame.size.height-Bottom_Height-self.view.frame.size.width/4-BTN_HEIGHT-100, 320, 100);
+    }
 }
 
-- (void)updatePanelFrame
+- (void)onViewOnClick
 {
-    CGRect frame = self.view.bounds;
+    if (!self.isFullScreenMode) {
+        [self onShrikTaped];
+        return;
+    }
     
-    CGFloat paneWidth = frame.size.width;
-    CGFloat paneHeight = 60;
-    self.topPanel.frame = CGRectMake(0, 0, paneWidth, paneHeight);
+    if (self.isShowTopBottonPanel) {
+        [self.topPanelView hiddenTopPanelView];
+        [self.bottomPanelView hiddenBottomPanelView];
+        [self.thumbView hiddenThumbView];
+    } else {
+        [self.topPanelView showTopPanelView];
+        [self.bottomPanelView showBottomPanelView];
+        [self.thumbView showThumbView];
+    }
+    self.isShowTopBottonPanel = !self.isShowTopBottonPanel;
+}
+
+- (void)showAttendeeVideo:(MobileRTCVideoView*)videoView withUserID:(NSUInteger)userID
+{
+    [videoView showAttendeeVideoWithUserID:userID];
+    CGSize size = [[[MobileRTC sharedRTC] getMeetingService] getUserVideoSize:userID];
+    if (CGSizeEqualToSize(size, CGSizeZero))
+        return;
+    [videoView setVideoAspect:MobileRTCVideoAspect_PanAndScan];
+}
+
+- (void)updateVideoOrShare
+{
+    if (self.remoteShareVC.parentViewController)
+    {
+        [self.remoteShareVC updateShareView];
+    }
     
-    CGFloat topGap = 20;
-    self.shrinkBtn.frame = CGRectMake(0, topGap, TOP_BTN_LEN, TOP_BTN_LEN);
-    self.titleLbl.frame = CGRectMake(TOP_BTN_LEN, topGap, frame.size.width-2*TOP_BTN_LEN, TOP_BTN_LEN);
-    self.moreBtn.frame = CGRectMake(frame.size.width-TOP_BTN_LEN, topGap, TOP_BTN_LEN, TOP_BTN_LEN);
-    
-    paneWidth = 300;
-    CGFloat offsetX = (frame.size.width - paneWidth) / 2.;
-    CGFloat offsetY = frame.size.height - paneHeight - 10;
-    self.bottomPanel.frame = CGRectMake(offsetX, offsetY, paneWidth, paneHeight);
-    
-    CGFloat btnCount = 3;
-    CGFloat width = self.bottomPanel.frame.size.width / btnCount;
-    CGRect regionFrame = CGRectMake(0, 0, width, paneHeight);
-    
-    //Audio
-    self.audioBtn.center = CGPointMake(CGRectGetMidX(regionFrame), CGRectGetMidY(regionFrame));
-    regionFrame = CGRectOffset(regionFrame, regionFrame.size.width, 0);
-    
-    //Leave
-    self.endBtn.center = CGPointMake(CGRectGetMidX(regionFrame), CGRectGetMidY(regionFrame));
-    regionFrame = CGRectOffset(regionFrame, regionFrame.size.width, 0);
-
-    //Video
-    self.videoBtn.center = CGPointMake(CGRectGetMidX(regionFrame), CGRectGetMidY(regionFrame));
-    regionFrame = CGRectOffset(regionFrame, regionFrame.size.width, 0);
+    [self.thumbView updateThumbViewVideo];
 }
 
-- (UIView*)topPanel
+- (void)updateMyAudioStatus
 {
-    if (!_topPanel)
-    {
-        _topPanel = [[UIView alloc] initWithFrame:CGRectZero];
-    }
-    return _topPanel;
+    [self.bottomPanelView updateMyAudioStatus];
 }
 
-- (UIButton*)shrinkBtn
+- (void)updateMyVideoStatus
 {
-    if (!_shrinkBtn)
-    {
-        _shrinkBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, TOP_BTN_LEN, TOP_BTN_LEN)];
-        [_shrinkBtn setImage:[UIImage imageNamed:@"icon_avp_reduce_black"] forState:UIControlStateNormal];
-        [_shrinkBtn addTarget:self action:@selector(onShrinkButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        
-    }
-    return _shrinkBtn;
+    [self.bottomPanelView updateMyVideoStatus];
 }
 
-- (UILabel*)titleLbl
+- (void)updateMyShareStatus
 {
-    if (!_titleLbl)
-    {
-        _titleLbl = [[UILabel alloc] initWithFrame:CGRectZero];
-        _titleLbl.textAlignment = NSTextAlignmentCenter;
-        _titleLbl.textColor = [UIColor whiteColor];
-        _titleLbl.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:20];
-    }
-    return _titleLbl;
-}
-
-- (UIButton*)moreBtn
-{
-    if (!_moreBtn)
-    {
-        _moreBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 20, TOP_BTN_LEN, TOP_BTN_LEN)];
-        [_moreBtn setImage:[UIImage imageNamed:@"icon_meeting_more"] forState:UIControlStateNormal];
-        [_moreBtn addTarget:self action:@selector(onMoreButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _moreBtn;
-}
-
-- (UIView*)bottomPanel
-{
-    if (!_bottomPanel)
-    {
-        _bottomPanel = [[UIView alloc] initWithFrame:CGRectZero];
-    }
-    return _bottomPanel;
-}
-
-- (UIButton*)audioBtn
-{
-    if (!_audioBtn)
-    {
-        _audioBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BOT_BTN_LEN, BOT_BTN_LEN)];
-        _audioBtn.layer.cornerRadius = BOT_BTN_LEN / 2;
-        _audioBtn.layer.borderWidth = 1.;
-        _audioBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-        [_audioBtn setImage:[UIImage imageNamed:@"icon_meeting_audio"] forState:UIControlStateNormal];
-        [_audioBtn addTarget:self action:@selector(onAudioButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _audioBtn;
-}
-
-- (UIButton*)videoBtn
-{
-    if (!_videoBtn)
-    {
-        _videoBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BOT_BTN_LEN, BOT_BTN_LEN)];
-        _videoBtn.layer.cornerRadius = BOT_BTN_LEN / 2;
-        _videoBtn.layer.borderWidth = 1.;
-        _videoBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
-        [_videoBtn setImage:[UIImage imageNamed:@"icon_meeting_video"] forState:UIControlStateNormal];
-        [_videoBtn addTarget:self action:@selector(onVideoButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _videoBtn;
-}
-
-- (UIButton*)endBtn
-{
-    if (!_endBtn)
-    {
-        _endBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, BOT_BTN_LEN, BOT_BTN_LEN)];
-        _endBtn.layer.backgroundColor = [[UIColor redColor] CGColor];
-        _endBtn.layer.cornerRadius = BOT_BTN_LEN / 2;
-        [_endBtn setImage:[UIImage imageNamed:@"icon_end_meeting"] forState:UIControlStateNormal];
-        [_endBtn addTarget:self action:@selector(onEndButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _endBtn;
-}
-
-#pragma mark - Video & Share VC
-
-- (UIView*)baseView
-{
-    if (!_baseView)
-    {
-        _baseView = [[UIView alloc] initWithFrame:self.view.bounds];
-        _baseView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _baseView;
-}
-
-- (GalleryViewController*)galleryVC
-{
-    if (!_galleryVC)
-    {
-        _galleryVC = [[GalleryViewController alloc] init];
-        _galleryVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _galleryVC;
-}
-
-- (WallViewController*)wallVC
-{
-    if (!_wallVC)
-    {
-        _wallVC = [[WallViewController alloc] init];
-        _wallVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _wallVC;
-}
-
-- (RemoteShareViewController*)remoteShareVC
-{
-    if (!_remoteShareVC)
-    {
-        _remoteShareVC = [[RemoteShareViewController alloc] init];
-        _remoteShareVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _remoteShareVC;
-}
-
-- (LocalShareViewController*)localShareVC
-{
-    if (!_localShareVC)
-    {
-        _localShareVC = [[LocalShareViewController alloc]init];
-        _localShareVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _localShareVC;
-}
-
-- (ShrinkViewController*)shrinkVC
-{
-    if (!_shrinkVC)
-    {
-        _shrinkVC = [[ShrinkViewController alloc]init];
-        _shrinkVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
-    return _shrinkVC;
+    [self.bottomPanelView updateMyShareStatus];
 }
 
 - (void)removeAllSubView
@@ -351,37 +177,19 @@ const CGFloat TOP_BTN_LEN = 40;
     viewCtrl.view.frame = self.view.bounds;
 }
 
-- (void)showGalleryView
+- (void)showVideoView
 {
     [self removeAllSubView];
-    [self showSubView:self.galleryVC];
-}
-
-- (void)showWallView
-{
-    [self removeAllSubView];
-    [self showSubView:self.wallVC];
-}
-
-- (void)showRemoteShareView
-{
-    [self removeAllSubView];
-    [self showSubView:self.remoteShareVC];
-    [self disableGuestureRecognizer];
-    
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms && ![ms isAnnotationOff])
-    {
-        self.annoFloatBarView.hidden = NO;
-    }
+    [self showSubView:self.videoVC];
 }
 
 - (void)showLocalShareView
 {
     [self removeAllSubView];
     [self showSubView:self.localShareVC];
-    [[[MobileRTC sharedRTC] getMeetingService] appShareWithView:self.localShareVC.view];
-    [self disableGuestureRecognizer];
+//    [[[MobileRTC sharedRTC] getMeetingService] appShareWithView:self.localShareVC.view];
+    [self.sharePresenter appShareWithView:self.localShareVC.view];
+    
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     if (ms && ![ms isAnnotationOff])
     {
@@ -389,276 +197,145 @@ const CGFloat TOP_BTN_LEN = 40;
     }
 }
 
-- (void)showShrinkView
+- (void)showRemoteShareView
 {
     [self removeAllSubView];
-    [self showSubView:self.shrinkVC];
-}
-
-- (void)updateVideoOrShare
-{
-    if (self.galleryVC.parentViewController)
-    {
-        [self.galleryVC updateGalleryVideo];
-    }
-    
-    if (self.wallVC.parentViewController)
-    {
-        [self.wallVC updateWallVideo];
-    }
-    
-    if (self.remoteShareVC.parentViewController)
-    {
-        [self.remoteShareVC updateShareView];
-    }
-    
-    if (self.shrinkVC.parentViewController)
-    {
-        [self.shrinkVC updateShrinkVideo];
-    }
-}
-
-#pragma mark - Actions
-
-- (void)onAudioButtonClick:(id)sender
-{
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms)
-    {
-        MobileRTCAudioType audioType = [ms myAudioType];
-        switch (audioType)
-        {
-            case MobileRTCAudioType_VoIP: //voip
-            case MobileRTCAudioType_Telephony: //phone
-            {
-                if (![ms canUnmuteMyAudio])
-                {
-                    break;
-                }
-                BOOL isMuted = [ms isMyAudioMuted];
-                [ms muteMyAudio:!isMuted];
-                break;
-            }
-            case MobileRTCAudioType_None:
-            {
-                //Supported VOIP
-                if ([ms isSupportedVOIP])
-                {
-                    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8"))
-                    {
-                        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"To hear others\n please join audio", @"")
-                                                                                                 message:nil
-                                                                                          preferredStyle:UIAlertControllerStyleAlert];
-                        
-                        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Call via Internet", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                            //Join VOIP
-                            MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-                            if (ms)
-                            {
-                                [ms connectMyAudio:YES];
-                            }
-                        }]];
-                        
-                        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-                        }]];
-                        
-                        [self presentViewController:alertController animated:YES completion:nil];
-                    }
-                }
-                break;
-            }
-        }
-    }
-}
-
-- (void)onVideoButtonClick:(id)sender
-{
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms)
-    {
-        if (![ms canUnmuteMyVideo])
-        {
-            return;
-        }
-        BOOL mute = [ms isSendingMyVideo];
-        MobileRTCVideoError error = [ms muteMyVideo:mute];
-    }
-}
-
-- (void)onMoreButtonClick:(id)sender
-{
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
-                                                                             message:nil
-                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    if (nil == self.localShareVC.parentViewController)
-    {
-        [alertController addAction:[UIAlertAction actionWithTitle:@"Switch View"
-                                                            style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                                                                //if (nil != self.localShareVC.parentViewController) return;
-                                                                BOOL isViewSharing = [[[MobileRTC sharedRTC] getMeetingService] isViewingShare];
-                                                                BOOL inWallView = (nil != self.wallVC.parentViewController);
-                                                                BOOL inShareView = (nil != self.remoteShareVC.parentViewController);
-                                                                if (isViewSharing)
-                                                                {
-                                                                    if (inShareView) [self showWallView];
-                                                                    else [self showRemoteShareView];
-                                                                }
-                                                                else
-                                                                {
-                                                                    if (inWallView) [self showGalleryView];
-                                                                    else [self showWallView];
-                                                                }
-                                                            }]];
-    }
-    
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Participants List"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          [[[MobileRTC sharedRTC] getMeetingService] presentParticipantsViewController:self];
-    }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Pin My Video"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          NSInteger myUid = [[[MobileRTC sharedRTC] getMeetingService] myselfUserID];
-                                                          BOOL pinned = [[[MobileRTC sharedRTC] getMeetingService] isUserPinned:myUid];
-                                                          [[[MobileRTC sharedRTC] getMeetingService] pinVideo:!pinned withUser:myUid];
-                                                      }]];
-    
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Switch My Audio"
-                                                        style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction *action) {
-                                                          MobileRTCAudioError error = [[[MobileRTC sharedRTC] getMeetingService] switchMyAudioSource];
-                                                          NSLog(@"Switch My Audio error:%d...", error);
-                                                      }]];
-
-    
+    [self showSubView:self.remoteShareVC];
     
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    
-    if (ms)
+    if (ms && ![ms isAnnotationOff])
     {
-        if ( !([ms isStartingShare] && ![ms isViewingShare] ))
-        {
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Start Share"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  [[[MobileRTC sharedRTC] getMeetingService] startAppShare];
-                                                              }]];
-        }
-        else
-        {
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Stop Share"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  [[[MobileRTC sharedRTC] getMeetingService] stopAppShare];
-                                                              }]];
-        }
+        self.annoFloatBarView.hidden = NO;
+    }
+}
+
+- (UIView*)baseView
+{
+    if (!_baseView)
+    {
+        _baseView = [[UIView alloc] initWithFrame:self.view.bounds];
+        _baseView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    }
+    return _baseView;
+}
+
+- (TopPanelView *)topPanelView
+{
+    if (!_topPanelView)
+    {
+        _topPanelView = [[TopPanelView alloc] init];
+        _topPanelView.shrinkButtonClickBlock = ^(void) {
+            [self enableGuestureRecognizer];
+            self.isFullScreenMode = NO;
+            self.oriTransform = self.view.transform;
+            [self changeToPIPModeNeedAnimate:self.view];
+            [self initGuestureRecognizer];
+        };
     }
     
-    if (ms)
+    return _topPanelView;
+}
+
+- (BottomPanelView *)bottomPanelView
+{
+    if (!_bottomPanelView)
     {
-        MobileRTCAudioType audioType = [ms myAudioType];
-        if (audioType != MobileRTCAudioType_None)
-        {
-            [alertController addAction:[UIAlertAction actionWithTitle:@"Disconnect Audio"
-                                                                style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction *action) {
-                                                                  [[[MobileRTC sharedRTC] getMeetingService] connectMyAudio:NO];
-                                                              }]];
-        }
+        _bottomPanelView = [[BottomPanelView alloc] init];
+    }
+    
+    return _bottomPanelView;
+}
+
+- (ThumbView *)thumbView
+{
+    if (!_thumbView)
+    {
+        _thumbView = [[ThumbView alloc] init];
+    }
+    
+    return _thumbView;
+}
+
+- (VideoViewController*)videoVC
+{
+    if (!_videoVC)
+    {
+        _videoVC = [[VideoViewController alloc]init];
+        _videoVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onViewOnClick)];
+        [_videoVC.videoView addGestureRecognizer:tapGesture];
+    }
+    return _videoVC;
+}
+
+- (LocalShareViewController*)localShareVC
+{
+    if (!_localShareVC)
+    {
+        _localShareVC = [[LocalShareViewController alloc]init];
+        _localShareVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onViewOnClick)];
+        tapGesture.delegate = self;
+        [_localShareVC.webView addGestureRecognizer:tapGesture];
+    }
+    return _localShareVC;
+}
+
+- (RemoteShareViewController*)remoteShareVC
+{
+    if (!_remoteShareVC)
+    {
+        _remoteShareVC = [[RemoteShareViewController alloc] init];
+        _remoteShareVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onViewOnClick)];
+        [_remoteShareVC.shareView addGestureRecognizer:tapGesture];
+    }
+    return _remoteShareVC;
+}
+
+- (SDKActionPresenter *)actionPresenter
+{
+    if (!_actionPresenter)
+    {
+        _actionPresenter = [[SDKActionPresenter alloc] init];
+     
+    }
+    return _actionPresenter;
+}
+
+- (SDKSharePresenter *)sharePresenter
+{
+    if (!_sharePresenter)
+    {
+        _sharePresenter = [[SDKSharePresenter alloc] init];
         
-        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        }]];
     }
-    
-    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
-    if (popover)
-    {
-        UIButton *btn = (UIButton*)sender;
-        popover.sourceView = btn;
-        popover.sourceRect = btn.bounds;
-        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
-    }
-    [self presentViewController:alertController animated:YES completion:nil];
+    return _sharePresenter;
 }
 
-- (void)onEndButtonClick:(id)sender
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (!ms) return;
-    
-    BOOL isHost = [ms isMeetingHost];
-    LeaveMeetingCmd leaveCmd = isHost ? LeaveMeetingCmd_End : LeaveMeetingCmd_Leave;
-    [ms leaveMeetingWithCmd:leaveCmd];
+    return YES;
 }
 
-- (void)updateMyAudioStatus
-{
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (!ms) return;
-
-    MobileRTCAudioType audioType = [ms myAudioType];
-    if (audioType == MobileRTCAudioType_None)
-    {
-        [self.audioBtn setImage:[UIImage imageNamed:@"icon_meeting_noaudio"] forState:UIControlStateNormal];
-    }
-    else
-    {
-        if([ms isMyAudioMuted])
-        {
-            [self.audioBtn setImage:[UIImage imageNamed:@"icon_meeting_audio_mute"] forState:UIControlStateNormal];
-        }
-        else
-        {
-            [self.audioBtn setImage:[UIImage imageNamed:@"icon_meeting_audio"] forState:UIControlStateNormal];
-        }
-    }
-}
-
-- (void)updateMyVideoStatus
-{
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (!ms) return;
-    
-    BOOL mute = [ms isSendingMyVideo];
-    if(!mute)
-    {
-        [self.videoBtn setImage:[UIImage imageNamed:@"icon_meeting_video_mute"] forState:UIControlStateNormal];
-    }
-    else
-    {
-        [self.videoBtn setImage:[UIImage imageNamed:@"icon_meeting_video"] forState:UIControlStateNormal];
-    }
-}
 
 #pragma mark - Shrink & Delegate
 
 #define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
-#define SHRINKMODEWIDTH (IS_IPAD ? 240 : 140)
-#define SHRINKMODEHEIGHT (SHRINKMODEWIDTH*3/4)
+#define SHRINKMODEWIDTH (IS_IPAD ? 200 : 90)
+#define SHRINKMODEHEIGHT (SHRINKMODEWIDTH*4/3)
 
 - (void)layoutShrinkViewFrame
 {
     if ( (![self isFullScreenMode] && self.panGesture.state == UIGestureRecognizerStatePossible) )
     {
-        self.view.frame = CGRectMake(SCREEN_WIDTH - SHRINKMODEWIDTH, 0, SHRINKMODEWIDTH, SHRINKMODEHEIGHT);
+        self.view.frame = CGRectMake(SCREEN_WIDTH - SHRINKMODEWIDTH-10, 30, SHRINKMODEWIDTH, SHRINKMODEHEIGHT);
     }
 }
 
 - (void)initGuestureRecognizer
 {
-    if (!_tapGesture)
-    {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onViewTaped:)];
-        [self.view addGestureRecognizer:tap];
-        self.tapGesture = tap;
-        [tap release];
-    }
-
     if (!_panGesture)
     {
         UIPanGestureRecognizer *pan =[[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(onViewPan:)];
@@ -666,42 +343,37 @@ const CGFloat TOP_BTN_LEN = 40;
         [self.view addGestureRecognizer:pan];
         [pan release];
     }
-    
-    self.tapGesture.enabled = YES;
-    self.panGesture.enabled = YES;
-
 }
 
 - (void)disableGuestureRecognizer
 {
-    self.tapGesture.enabled = NO;
     self.panGesture.enabled = NO;
 }
 
-- (void)onShrinkButtonClick:(id)sender
+- (void)enableGuestureRecognizer
 {
-    self.isFullScreenMode = NO;
-    self.oriTransform = self.view.transform;
-    [self changeToPIPModeNeedAnimate:self.view];
+    self.panGesture.enabled = YES;
 }
 
 
 - (void)changeToPIPModeNeedAnimate:(UIView*)view
 {
-    CGFloat animateTime = 1.0;
+    self.thumbView.hidden = YES;
+    self.bottomPanelView.hidden = YES;
+    self.topPanelView.hidden = YES;
+    
+    CGFloat animateTime = 0.3;
     [UIView animateWithDuration:animateTime
                      animations:^{
                          view.transform = CGAffineTransformScale(view.transform, 0.2, 0.2);
-                         view.frame = CGRectMake(SCREEN_WIDTH - SHRINKMODEWIDTH, 10, SHRINKMODEWIDTH, SHRINKMODEHEIGHT);}
+                         view.frame = CGRectMake(SCREEN_WIDTH - SHRINKMODEWIDTH-10, 30, SHRINKMODEWIDTH, SHRINKMODEHEIGHT);
+                     }
                      completion:^(BOOL finished){
-                         [self showShrinkView];
-                         self.bottomPanel.hidden = YES;
-                         self.topPanel.hidden = YES;
                      }];
 }
 
 
-- (void) onViewTaped:(UITapGestureRecognizer*)recognizer
+- (void) onShrikTaped
 {
     if (self.isFullScreenMode)
     {
@@ -710,20 +382,21 @@ const CGFloat TOP_BTN_LEN = 40;
     
     self.isFullScreenMode = YES;
     [self changeToFullModelNeedAnimate:self.view];
+    [self disableGuestureRecognizer];
 }
 
 - (void)changeToFullModelNeedAnimate:(UIView*)view
 {
-    CGFloat animateTime = 1.0;
+    self.thumbView.hidden = NO;
+    self.bottomPanelView.hidden = NO;
+    self.topPanelView.hidden = NO;
+    CGFloat animateTime = 0.3;
     [UIView animateWithDuration:animateTime
                      animations:^{
                          view.transform = self.oriTransform;
                          view.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);}
                      completion:^(BOOL finished) {
                          [view setNeedsLayout];
-                         [self showGalleryView];
-                         self.bottomPanel.hidden = NO;
-                         self.topPanel.hidden = NO;
                      }];
 }
 
@@ -733,7 +406,6 @@ const CGFloat TOP_BTN_LEN = 40;
     {
         return;
     }
-    
     [self onPanView:recognizer];
 }
 
@@ -780,7 +452,7 @@ const CGFloat TOP_BTN_LEN = 40;
 {
     if (!_annoFloatBarView)
     {
-        _annoFloatBarView = [[AnnoFloatBarView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height-150,self.view.frame.size.width, 50)];
+        _annoFloatBarView = [[AnnoFloatBarView alloc]initWithFrame:CGRectZero];
         _annoFloatBarView.delegate = self;
     }
     
@@ -796,7 +468,7 @@ const CGFloat TOP_BTN_LEN = 40;
     {
         if ([ms isPresenter])
         {
-           ret = [ms startAnnotationWithSharedView:self.localShareVC.view];
+            ret = [ms startAnnotationWithSharedView:self.localShareVC.view];
         }
         else
         {
@@ -812,4 +484,15 @@ const CGFloat TOP_BTN_LEN = 40;
     MobileRTCAnnotationService *ms = [[MobileRTC sharedRTC] getAnnotationService];
     return [ms stopAnnotation];
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 @end

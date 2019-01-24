@@ -2,13 +2,13 @@
 //  CustomMeetingViewController+MeetingDelegate.h
 //  MobileRTCSample
 //
-//  Created by Robust on 2017/12/28.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Created by Murray Li on 2018/10/12.
+//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import "CustomMeetingViewController.h"
 
-@interface CustomMeetingViewController (MeetingDelegate) 
+@interface CustomMeetingViewController (MeetingDelegate)
 
 - (void)onSinkMeetingActiveVideo:(NSUInteger)userID;
 
@@ -31,4 +31,6 @@
 - (void)onWaitingRoomStatusChange:(BOOL)needWaiting;
 
 - (void)onSinkMeetingPreviewStopped;
+
 @end
+

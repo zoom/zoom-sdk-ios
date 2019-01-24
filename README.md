@@ -27,7 +27,7 @@ Before you try out our SDK, you would need the following to get started:
 * **A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
   * Once you have your Zoom Account, sign up for a 60-days free trial at [https://marketplace.zoom.us/](https://marketplace.zoom.us/)
 * **An iOS device**
-  * **[Note]**:**The examples downloaded from here only works on real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.) , please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
+  * **[Note]**:**The examples downloaded from here only works on real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.), please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
 
 ### Installing
 
@@ -75,7 +75,7 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 ## Frequently Asked Questions (FAQ)
 
 * :one: `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
-  * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. Our latest SDK release ([v4.1.34076](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024)) has resolved this issue.
+  * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. This issue has been resolved since release version [v4.1.34076.1024](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024).
 * :two: `dyld: Library not loaded: MobileRTC.framework/MobileRTC`:
   * Our **iOS SDK** is a dynamic library, please import the **MobileRTC.framework** into:
     * **Link Binary With Libraries**

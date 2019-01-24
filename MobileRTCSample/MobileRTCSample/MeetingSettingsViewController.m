@@ -7,6 +7,7 @@
 //
 
 #import "MeetingSettingsViewController.h"
+#import "SDKMeetingSettingPresenter.h"
 
 @interface MeetingSettingsViewController ()
 
@@ -40,6 +41,8 @@
 
 @property (retain, nonatomic) NSArray *itemArray;
 
+//SDK Presenter
+@property (retain, nonatomic) SDKMeetingSettingPresenter    *settingPresenter;
 @end
 
 @implementation MeetingSettingsViewController
@@ -679,142 +682,150 @@
     return _customMeetingCell;
 }
 
+- (SDKMeetingSettingPresenter *)settingPresenter
+{
+    if (!_settingPresenter) {
+        _settingPresenter = [[SDKMeetingSettingPresenter alloc] init];
+    }
+    return _settingPresenter;
+}
+
 
 - (void)onAutoConnectAudio:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] setAutoConnectInternetAudio:sv.on];
+    [self.settingPresenter setAutoConnectInternetAudio:sv.on];
 }
 
 - (void)onMuteAudio:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] setMuteAudioWhenJoinMeeting:sv.on];
+    [self.settingPresenter setMuteAudioWhenJoinMeeting:sv.on];
 }
 
 - (void)onMuteVideo:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] setMuteVideoWhenJoinMeeting:sv.on];
+    [self.settingPresenter setMuteVideoWhenJoinMeeting:sv.on];
 }
 
 - (void)onDisableDriveMode:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] disableDriveMode:sv.on];
+    [self.settingPresenter disableDriveMode:sv.on];
 }
 
 - (void)onDisableCallIn:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] disableCallIn:sv.on];
+    [self.settingPresenter disableCallIn:sv.on];
 }
 
 - (void)onDisableCallOut:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[[MobileRTC sharedRTC] getMeetingSettings] disableCallOut:sv.on];
+    [self.settingPresenter disableCallOut:sv.on];
 }
 
 - (void)onHideMeetingTitle:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingTitleHidden = sv.on;
+    [self.settingPresenter setMeetingTitleHidden:sv.on];
 }
 
 - (void)onHideMeetingPassword:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingPasswordHidden = sv.on;
+    [self.settingPresenter setMeetingPasswordHidden:sv.on];
 }
 
 - (void)onHideMeetingLeave:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingLeaveHidden = sv.on;
+    [self.settingPresenter setMeetingLeaveHidden:sv.on];
 }
 
 - (void)onHideMeetingAudio:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingAudioHidden = sv.on;
+    [self.settingPresenter setMeetingAudioHidden:sv.on];
 }
 
 - (void)onHideMeetingVideo:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingVideoHidden = sv.on;
+    [self.settingPresenter setMeetingVideoHidden:sv.on];
 }
 
 - (void)onHideMeetingInvite:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingInviteHidden = sv.on;
+    [self.settingPresenter setMeetingInviteHidden:sv.on];
 }
 
 - (void)onHideMeetingParticipant:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingParticipantHidden = sv.on;
+    [self.settingPresenter setMeetingParticipantHidden:sv.on];
 }
 
 - (void)onHideMeetingShare:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingShareHidden = sv.on;
+    [self.settingPresenter setMeetingShareHidden:sv.on];
 }
 
 - (void)onHideMeetingMore:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].meetingMoreHidden = sv.on;
+    [self.settingPresenter setMeetingMoreHidden:sv.on];
 }
 
 - (void)onHideMeetingTopBar:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].topBarHidden = sv.on;
+    [self.settingPresenter setTopBarHidden:sv.on];
 }
 
 - (void)onHideMeetingBotBar:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].bottomBarHidden = sv.on;
+    [self.settingPresenter setBottomBarHidden:sv.on];
 }
 
 - (void)onEnableKubi:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].enableKubi = sv.on;
+    [self.settingPresenter setEnableKubi:sv.on];
 }
 
 - (void)onHideThumbnail:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].thumbnailInShare = sv.on;
+    [self.settingPresenter setThumbnailInShare:sv.on];
 }
 
 - (void)onHideHostLeave:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].hostLeaveHidden = sv.on;
+    [self.settingPresenter setHostLeaveHidden:sv.on];
 }
 
 - (void)onHideHint:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].hintHidden = sv.on;
+    [self.settingPresenter setHintHidden:sv.on];
 }
 
 - (void)onHideWaitingHUD:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].waitingHUDHidden = sv.on;
+    [self.settingPresenter setWaitingHUDHidden:sv.on];
 }
 
 - (void)onEnableCustomMeetingHint:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
-    [[MobileRTC sharedRTC] getMeetingSettings].enableCustomMeeting = sv.on;
+    [self.settingPresenter setEnableCustomMeeting:sv.on];
 }
 @end

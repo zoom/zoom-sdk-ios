@@ -7,6 +7,7 @@
 //
 
 #import "ScheduleTableViewController.h"
+#import "SDKScheduleMeetingPresenter.h"
 #import <MobileRTC/MobileRTC.h>
 
 #pragma mark - RTCDateInputTableViewCell
@@ -432,6 +433,10 @@
 
 @property (assign, nonatomic) MobileRTCMeetingItemRecordType defaultRecordType;
 @property (retain, nonatomic) UITableViewCell *     recordCell;
+
+@property (retain, nonatomic) SDKScheduleMeetingPresenter *schedulePresenter;
+
+@property (retain, nonatomic) MobileRTCDialinCountry *dialInCounty;
 @end
 
 @implementation ScheduleTableViewController
@@ -480,7 +485,6 @@
     {
         [item setAudioOption:MobileRTCMeetingItemAudioType_TelephoneAndVoip];
     }
-    
     else
     {
         if (!self.voipOff)
@@ -492,6 +496,7 @@
             [item setAudioOption:MobileRTCMeetingItemAudioType_TelephoneOnly];
         }
     }
+    [item setAvailableDialinCountry:self.dialInCounty];
 
     NSString *password = self.pwdCell.textValue;
     if ([password length] > 0) {
@@ -513,16 +518,23 @@
         }
     }
     
-    if ([[[MobileRTC sharedRTC] getPreMeetingService] scheduleMeeting:item WithScheduleFor:email])
-    {
-        [[[MobileRTC sharedRTC] getPreMeetingService] deleteMeeting:item];
+    if ([self.schedulePresenter scheduleMeeting:item WithScheduleFor:email]) {
+        
+        [self.schedulePresenter deleteMeeting:item];
         
         [self.navigationController dismissViewControllerAnimated:YES completion:NULL];
     }
+    
+    [[[MobileRTC sharedRTC] getPreMeetingService] destroyMeetingItem:item];
 }
 
 - (void)initMeetingItems
 {
+    id<MobileRTCMeetingItem> item = [[[MobileRTC sharedRTC] getPreMeetingService] createMeetingItem];
+    if (item) {
+        self.dialInCounty = [item getAvailableDialInCountry];
+        [[[MobileRTC sharedRTC] getPreMeetingService] destroyMeetingItem:item];
+    }
     
     MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
     if (authService)
@@ -899,6 +911,14 @@
     
     return _recordCell;
 }
+
+- (SDKScheduleMeetingPresenter *)schedulePresenter
+{
+    if (!_schedulePresenter) {
+        _schedulePresenter = [[SDKScheduleMeetingPresenter alloc] init];
+    }
+    return _schedulePresenter;
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -977,6 +997,7 @@
                 self.voipOff = NO;
                 self.telephoneOff = NO;
                 [self audioCell];
+                [self dialInCountryAlertInView:cell];
             }]];
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Voip", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 self.voipOff = NO;
@@ -987,6 +1008,7 @@
                 self.voipOff = YES;
                 self.telephoneOff = NO;
                 [self audioCell];
+                [self dialInCountryAlertInView:cell];
             }]];
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             }]];
@@ -1077,6 +1099,33 @@
         return;
     }
     
+}
+
+- (void)dialInCountryAlertInView:(UIView *)sourceView {
+    if (self.dialInCounty.allCountries.count == 0) {
+        return;
+    }
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Call In Country"
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    for (NSString *countryStr in self.dialInCounty.allCountries) {
+        if ([self.dialInCounty.selectedCountries containsObject:countryStr]) {
+            [alertController addAction:[UIAlertAction actionWithTitle:[countryStr stringByAppendingString:@"✅"] style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [self.dialInCounty.selectedCountries removeObject:countryStr];
+            }]];
+        } else {
+            [alertController addAction:[UIAlertAction actionWithTitle:countryStr style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                [self.dialInCounty.selectedCountries addObject:countryStr];
+            }]];
+        }
+    }
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    UIPopoverPresentationController *popPresenter = [alertController popoverPresentationController];
+    popPresenter.sourceView = sourceView;
+    popPresenter.sourceRect = sourceView.bounds;
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - Date Delegate

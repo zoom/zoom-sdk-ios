@@ -80,13 +80,13 @@ typedef enum
 #define SCREEN_HEIGHT   ([UIScreen mainScreen].bounds.size.height)
 
 @interface CustomRemoteControl () <MobileRTCRemoteControlDelegate, RemoteControlBarDelegate, UITextViewDelegate>
-@property (retain, nonatomic) RemoteControlBar              *remoteContrlBar;
-@property (nonatomic, assign) MobileRTCActiveShareView      *remoteShareView;
-@property (retain, nonatomic) UIView                        *coverView;
-@property (retain, nonatomic) UIScrollView                  *scrollView;
-@property (retain, nonatomic) UIButton                      *mouseButton;
-@property (retain, nonatomic) UITextView                    *keyboardView;
-@property (retain, nonatomic) NSString                      *inputText;
+@property (strong, nonatomic) RemoteControlBar              *remoteContrlBar;
+@property (nonatomic, strong) MobileRTCActiveShareView      *remoteShareView;
+@property (strong, nonatomic) UIView                        *coverView;
+@property (strong, nonatomic) UIScrollView                  *scrollView;
+@property (strong, nonatomic) UIButton                      *mouseButton;
+@property (strong, nonatomic) UITextView                    *keyboardView;
+@property (strong, nonatomic) NSString                      *inputText;
 @end
 
 @implementation CustomRemoteControl

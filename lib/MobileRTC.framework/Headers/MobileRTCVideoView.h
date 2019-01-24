@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by Robust on 2017/11/15.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

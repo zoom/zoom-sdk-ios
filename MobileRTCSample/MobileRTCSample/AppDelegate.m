@@ -8,10 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-
-#define kSDKAppKey      @""
-#define kSDKAppSecret   @""
-#define kSDKDomain      @""
+#import "SDKAuthPresenter.h"
+#import "SDKInitPresenter.h"
 
 @implementation AppDelegate
 
@@ -32,19 +30,12 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    NSLog(@"MobileRTC Version: %@", [[MobileRTC sharedRTC] mobileRTCVersion]);
+    // SDK init
+    [[[SDKInitPresenter alloc] init] SDKInit:navVC];
     
-    //1. Set MobileRTC Domain
-    [[MobileRTC sharedRTC] setMobileRTCDomain:kSDKDomain];
-//    //2. Set MobileRTC Resource Bundle path
-//    //Note: This step is optional, If MobileRTCResources.bundle is included in other bundle/framework, use this method to set the path of MobileRTCResources.bundle, or just ignore this step
-//    NSString *bundlePath = [[NSBundle mainBundle] bundlePath];
-//    [[MobileRTC sharedRTC] setMobileRTCResPath:bundlePath];
-    //3. Set Root Navigation Controller
-    //Note: This step is optional, If app’s rootViewController is not a UINavigationController, just ignore this step.
-    [[MobileRTC sharedRTC] setMobileRTCRootController:navVC];
     //4. MobileRTC Authorize
-    [self sdkAuth];
+//    [self sdkAuth];
+    [[[SDKAuthPresenter alloc] init] SDKAuth];
     
     //5. Set AppGroup name
     //Note: This step is optional, Method is uesd for iOS Replaykit Screen share integration,if not,just ignore this step.
@@ -92,111 +83,26 @@
     return YES;
 }
 
-#pragma mark - Auth Delegate
-
-- (void)sdkAuth
+- (UIViewController *)topViewController
 {
-    MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
-    if (authService)
-    {
-        authService.delegate = self;
-        
-        authService.clientKey = kSDKAppKey;
-        authService.clientSecret = kSDKAppSecret;
-        
-        [authService sdkAuth];
+    UIViewController *resultVC;
+    resultVC = [self _topViewController:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    while (resultVC.presentedViewController) {
+        resultVC = [self _topViewController:resultVC.presentedViewController];
     }
+    return resultVC;
 }
 
-- (void)onMobileRTCAuthReturn:(MobileRTCAuthError)returnValue
+- (UIViewController *)_topViewController:(UIViewController *)vc
 {
-    NSLog(@"onMobileRTCAuthReturn %d", returnValue);
-    
-    if (returnValue != MobileRTCAuthError_Success)
-    {
-        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"SDK authentication failed, error code: %zd", @""), returnValue];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:message delegate:self cancelButtonTitle:NSLocalizedString(@"OK", @"") otherButtonTitles:NSLocalizedString(@"Retry", @""), nil];
-        [alert show];
+    if ([vc isKindOfClass:[UINavigationController class]]) {
+        return [self _topViewController:[(UINavigationController *)vc topViewController]];
+    } else if ([vc isKindOfClass:[UITabBarController class]]) {
+        return [self _topViewController:[(UITabBarController *)vc selectedViewController]];
+    } else {
+        return vc;
     }
-}
-
-- (void)onMobileRTCLoginReturn:(NSInteger)returnValue
-{
-    NSLog(@"onMobileRTCLoginReturn result=%zd", returnValue);
-    
-    MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
-    if (service)
-    {
-        service.delegate = self;
-    }
-}
-
-- (void)onMobileRTCLogoutReturn:(NSInteger)returnValue
-{
-    NSLog(@"onMobileRTCLogoutReturn result=%zd", returnValue);
-}
-
-#pragma mark - AlertView Delegate
-
-- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != alertView.cancelButtonIndex)
-    {
-        [self performSelector:@selector(sdkAuth) withObject:nil afterDelay:0.f];
-    }
-}
-
-#pragma mark - Premeeting Delegate
-
-
-- (void)sinkSchedultMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)UniquedID
-{
-    NSLog(@"sinkSchedultMeeting result: %d, UniquedID:%llu", result, UniquedID);
-    MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
-    if (service)
-    {
-        id<MobileRTCMeetingItem> info = [service getMeetingItemByUniquedID:UniquedID];
-        NSLog(@"sinkSchedultMeeting %@",[info getMeetingTopic]);
-    }
-}
-
-- (void)sinkEditMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)UniquedID
-{
-    NSLog(@"sinkEditMeeting result: %d, UniquedID:%llu ", result,UniquedID);
-    
-    MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
-    if (service)
-    {
-        id<MobileRTCMeetingItem> item = [service getMeetingItemByUniquedID:UniquedID];
-        NSLog(@"sinkEditMeeting %@",[item getMeetingTopic]);
-    }
-}
-
-- (void)sinkDeleteMeeting:(PreMeetingError)result
-{
-    NSLog(@"sinkDeleteMeeting result: %d", result);
-}
-
-- (void)sinkListMeeting:(PreMeetingError)result withMeetingItems:(NSArray*)array
-{
-    NSLog(@"sinkListMeeting result: %d  items: %@", result, array);
-    
-#if 0
-    for (id<MobileRTCMeetingItem> item in array)
-    {
-        MobileRTCPremeetingService *service = [[MobileRTC sharedRTC] getPreMeetingService];
-        if (service)
-        {
-            if ([[item getMeetingTopic] isEqualToString:@"test"] )
-            {
-                id<MobileRTCMeetingItem> cloneitem = [service cloneMeetingItem:item];
-                [cloneitem setUsePMIAsMeetingID:YES];
-                [service editMeeting:cloneitem];
-                [service destroyMeetingItem:cloneitem];
-            }
-        }
-    }
-#endif
+    return nil;
 }
 
 @end

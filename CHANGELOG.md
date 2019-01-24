@@ -1,4 +1,23 @@
 # CHANGELOG
+
+## 2019-01-23
+
+Added
+* New functional documentation.
+* A new refactorized demo project that provides clear instructions on how to implement major features.
+* New logging feature that stores logs with the maximum size of 5MB.
+* New option for customizing internationalization string files
+* A new method to join/start meeting directly via url, such as zoommtg://zoom.us/join?action=....
+* Support to select dial-in country while scheduling a meeting.
+
+Changed & Fixed
+* An issue that turning off sharing the web does not work
+* A case that some users’ avatars are not clear
+* An issue that causes isWebinarMeeting function always return NO.
+* Some performance issues with annotation feature
+* An issue that the userId returned by different functional modules is inconsistent.
+* Some issues that cause crashes
+
 ## 2018-10-24
 
 * Added support with Xcode 10;
@@ -82,7 +101,7 @@ MobileRTCMeetingStartParam4WithoutLoginUser * user = [[[MobileRTCMeetingStartPar
 
 MobileRTCMeetError ret = [ms startMeetingWithStartParam:param];
 
-Note that: User need to be clear about your own Usertype, 
+Note that: User need to be clear about your own Usertype,
 Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return the correct Usertype.
 ```
 
@@ -170,17 +189,17 @@ Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return 
 ## 2017-03-03
 
 ### Added
-1. Fix Signal SIGPIPE issue after losingWiFi connection; 
+1. Fix Signal SIGPIPE issue after losingWiFi connection;
 
 2. Add interfaces to get attendees in meeting
-(NSArray*)getInMeetingUserList; 
+(NSArray*)getInMeetingUserList;
 
 3. Add delegate to get attendee state change
 - (void)onMyAudioStateChange
 - (void)onMyVideoStateChange
 - (void)onMyHandStateChange
 - (void)onAudioOutputChange
-- (void)inMeetingUserUpdated 
+- (void)inMeetingUserUpdated
 
 4. Add interfaces for Raise Hand, Spotlight Video, Make Host and Remove User
 - (BOOL)raiseMyHand;
@@ -212,14 +231,14 @@ Example
 - [mslowerHand];
 - (BOOL)isUserVideoPinned:(NSUInteger)userId;
 - (BOOL)pinVideo:(BOOL)on withUser:(NSUInteger)userId;
-- (BOOL)makeHost:(NSUInteger)userId; 
+- (BOOL)makeHost:(NSUInteger)userId;
 
 5. Add interfaces to call room device directly
 - (BOOL)isCallingRoomDevice;
 - (BOOL)cancelCallRoomDevice;
 - (NSArray*)getRoomDeviceList;
 - (BOOL)sendPairingCode:(NSString*)code;
-- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device; 
+- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device;
 
 ## 2017-01-03
 
@@ -301,4 +320,3 @@ not localized.
 1. Support to enable/disable "Invite by Email";
 
 2. Support to customize the content and subject of "Invite by Email"
-

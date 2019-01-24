@@ -3,53 +3,53 @@
 //  MobileRTC
 //
 //  Created by Chao Bai on 2018/6/6.
-//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <MobileRTC/MobileRTC.h>
 
 typedef enum {
-    ///All
+    ///All the members in the group. 
     MobileRTCChatGroup_All                   = 0,
-    ///Panelists
+    ///Panelists.
     MobileRTCChatGroup_Panelists              = 1,
 }MobileRTCChatGroup;
 
 @interface MobileRTCMeetingService (Chat)
 
 /*!
- @brief This method is used to check chat is disabled in meeting or not.
- @return YES means that chat is disabled.
+ @brief Query if the chat is disabled in the meeting.
+ @return YES means disabled, otherwise not. 
  */
 - (BOOL)isChatDisabled;
 
 /*!
- @brief This method is used to check private chat is disabled in meeting or not.
- @return YES means that chat is disabled.
+ @brief Query if it is able to send private chat in the meeting. 
+ @return YES means disabled, otherwise not.
  */
 - (BOOL)isPrivateChatDisabled;
 
 /*!
- @brief This method is used to get chat content in meeting.
- @param messageID the message ID in meeting chat
- @return an instance of meeting chat.
+ @brief Get in-meeting chat message. 
+ @param messageID The ID of the message sent in the meeting.
+ @return The instance of in-meeting chat.
  @warning The method is optional.
  */
 - (nullable MobileRTCMeetingChat*)meetingChatByID:(nonnull NSString*)messageID;
 
 /*!
- @brief This method is used to send chat content to specified user in meeting.
- @param userID the userID ID in meeting.
- @param content the content to be sent.
- @return send chat result.
+ @brief Send chat message to the specified user in the meeting.
+ @param userID The ID of user who receives message in the meeting.
+ @param content The message to be sent.
+ @return The result of sending the message.
  */
 - (MobileRTCSendChatError)sendChatToUser:(NSUInteger)userID WithContent:(nonnull NSString*)content;
 
 /*!
- @brief This method is used to send chat content to group in meeting.
- @param group Group type in meeting.
- @param content the content to be sent.
- @return send chat result.
+ @brief Send message to group in the meeting.
+ @param group Group type in the meeting, see MobileRTCChatGroup.
+ @param content The message to be sent.
+ @return The result of sending the message.
  */
 - (MobileRTCSendChatError)sendChatToGroup:(MobileRTCChatGroup)group WithContent:(nonnull NSString*)content;
 

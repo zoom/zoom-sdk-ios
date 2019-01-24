@@ -19,13 +19,6 @@
 
 @interface AnnoFloatBarView : UIView
 
-@property (retain, nonatomic) UIButton * action;
-@property (retain, nonatomic) UIButton * pen;
-@property (retain, nonatomic) UIButton * spotlight;
-@property (retain, nonatomic) UIButton * erase;
-
-@property (assign, nonatomic) BOOL isAnnotate;
-
 @property (assign, nonatomic) id<AnnoFloatBarViewDelegate>  delegate;
 
 - (void)stopAnnotate;

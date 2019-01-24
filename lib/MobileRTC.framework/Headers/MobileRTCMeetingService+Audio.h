@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by Chao Bai on 2018/6/6.
-//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <MobileRTC/MobileRTC.h>
@@ -11,106 +11,106 @@
 @interface MobileRTCMeetingService (Audio)
 
 /*!
- @brief This method is used to get my audio type in meeting.
- @return my audio type
+ @brief Get the in-meeting audio type of the current user.
+ @return The audio type.
  */
 - (MobileRTCAudioType)myAudioType;
 
 /*!
- @brief This method is used to connect/disconnect my audio in the meeting.
- @param on if YES to connect audio; if NO to disconnect audio.
- @return YES means call this method successfully.
+ @brief Set whether to connect the audio in the meeting.
+ @param on YES means to connect, otherwise not.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)connectMyAudio:(BOOL)on;
 
 /*!
- @brief This method is used to retrieve my auido output.
- @return the dscription of audio output.
+ @brief Set to retrieve the audio output type of the current user.
+ @return The descriptions of audio output types.
  */
 - (MobileRTCAudioOutput)myAudioOutputDescription;
 
 /*!
- @brief This method is used to check my auido is muted or not.
- @return YES means that audio is muted.
+ @brief Query if the audio of the current user is muted.
+ @return YES means muted, otherwise not.
  */
 - (BOOL)isMyAudioMuted;
 
 /*!
- @brief This method is used to check user can unmute his auido or not.
- @return YES means that can unmute.
+ @brief Query if the user can unmute his audio.
+ @return YES means that he can unmute his audio, otherwise not.
  */
 - (BOOL)canUnmuteMyAudio;
 
 /*!
- @brief This method is used to check whether MuteOnEntry is on in the meeting.
- @return YES means that MuteOnEntry is on.
+ @brief Query if is enabled to mute attendees when they join the meeting. 
+ @return YES means enabled, otherwise not.
  */
 - (BOOL)isMuteOnEntryOn;
 
 /*!
- @brief This method is used to set MuteOnEntry n the meeting.
- @return YES means that set MuteOnEntry successfully.
- @warning only meeting host can run this function.
+ @brief Set if attendees join the meeting with audio muted. 
+ @return YES means muted, otherwise not.
+ @warning Only meeting host can run the function.
  */
 - (BOOL)muteOnEntry:(BOOL)on;
 
 /*!
- @brief This method is used to check the user audio is muted or not.
- @param userID the user id in meeting
- @return YES means audio muted.
+ @brief Query if the user's audio is muted.
+ @param userID The ID of user to be checked.
+ @return YES means muted, otherwise not.
  */
 - (BOOL)isUserAudioMuted:(NSUInteger)userID;
 
 /*!
- @brief This method is used to mute/numute user's audio.
- @param mute YES means mute; NO means unmute
- @param userID the user id in meeting
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
+ @brief Set whether to mute user's audio.
+ @param mute YES means to mute, otherwise not.
+ @param userID The ID of user.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host can run the function.
  */
 - (BOOL)muteUserAudio:(BOOL)mute withUID:(NSUInteger)userID;
 
 /*!
- @brief This method is used to mute all other users' audio.
- @param allowSelfUnmute YES means allow self unmute; NO means cannot self unmute
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
+ @brief Set to mute audio of all attendees.
+ @param allowSelfUnmute YES means that attendee can unmute the audio himself, otherwise not.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host can run the function.
  */
 - (BOOL)muteAllUserAudio:(BOOL)allowSelfUnmute;
 
 /*!
- @brief This method is used to unmute all other users' audio.
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
+ @brief Set to unmute audio of all attendees.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host can run the function.
  */
 - (BOOL)unmuteAllUserAudio;
 
 /*!
- @brief This method is used to check meeting support VOIP or not.
- @return YES means VOIP Supported.
+ @brief Query if the meeting supports VoIP.
+ @return YES means supported, otherwise not.
  */
 - (BOOL)isSupportedVOIP;
 
 /*!
- @brief This method is used to check PlayChime or not while user join/leave meeting.
- @return YES means that PlayChime is on.
+ @brief Query if chime is enabled when user joins/leaves meeting.
+ @return YES means enabled, otherwise not.
  */
 - (BOOL)isPlayChimeOn;
 
 /*!
- @brief This method is used to mute My Audio.
- @param mute: if YES means that mute my audio
- @return mute my audio result.
+ @brief Set to mute the audio of the current user.
+ @param mute YES means the audio is muted, otherwise not.
+ @return The result of operation, muted or not.
  */
 - (MobileRTCAudioError)muteMyAudio:(BOOL)mute;
 
 /*!
- @brief This method is used to Switch Audio Source.
+ @brief Set to switch audio source of the current user.
  */
 - (MobileRTCAudioError)switchMyAudioSource;
 
 /*!
- @brief This method is used to reset Meeting Audio Session, which include Category and Mode.
+ @brief Reset Meeting Audio Session including Category and Mode.
  */
 - (void)resetMeetingAudioSession;
 

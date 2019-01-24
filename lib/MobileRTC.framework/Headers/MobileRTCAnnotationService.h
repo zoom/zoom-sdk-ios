@@ -3,97 +3,135 @@
 //  MobileRTC
 //
 //  Created by Chao Bai on 2018/6/12.
-//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /*!
- @brief MobileRTCAnnoTool An Enum which provide annotation tool type supported in meeting.
+ @brief An enumeration of annotation tool types in meeting. 
  */
 typedef enum {
+	/*!
+	 White board.
+	 */
     MobileRTCAnnoTool_Whiteboard = 1,
+	/*!
+	 Laser pointer.
+	 */
     MobileRTCAnnoTool_Spotlight = 2,
+	/*!
+	 Pen.
+	 */
     MobileRTCAnnoTool_Pen = 3,
+	/*!
+	 Highlighter.
+	 */
     MobileRTCAnnoTool_Highligher = 4,
+	/*!
+	 A straight line changes automatically in pace with the mouse cursor.
+	 */
     MobileRTCAnnoTool_Line = 8,
+	/*!
+	 An arrow.
+	 */
     MobileRTCAnnoTool_Arrow = 9,
+	/*!
+	 An arrow changes automatically in pace with the mouse cursor.
+	 */
     MobileRTCAnnoTool_Arrow2 = 10,
+	/*!
+	 A rectangle.
+	 */
     MobileRTCAnnoTool_Rectangle = 11,
+	/*!
+	 A circle.  
+	 */
     MobileRTCAnnoTool_Ellipse = 12,
+	/*!
+	 Input text.
+	 */
     MobileRTCAnnoTool_Text = 13,
-    MobileRTCAnnoTool_Editing = 14,
+	/*!
+	 An eraser to clear annotations.
+	 */
     MobileRTCAnnoTool_Eraser = 15,
 } MobileRTCAnnoTool;
 
 /*!
- @brief MobileRTCAnnotationService provides Annotate Servcie.
- @warning If you are presenter & share local view, for screen Rotate case, APP need to stop annotation first, then re-start annotation.
+ @brief The method is used to provide annotate service. 
+ @warning User, as the presenter, should stop the current share before starting another share. 
  */
 
 @interface MobileRTCAnnotationService : NSObject
 
 /*!
- @brief This method is used to start annotation.
- @param view the shared view.
- @return Start Annotate Result.
+ @brief Set to start annotations on the shared view. 
+ @param view The shared view. 
+ @return The result of operation.
  */
 - (MobileRTCAnnotationError)startAnnotationWithSharedView:(UIView*)view;
 
 /*!
- @brief This method is used to stop annotation.
- @return Stop Annotate Result.
+ @brief Set to stop annotations.
+ @return The result of operation. 
  */
 - (BOOL)stopAnnotation;
 
 /*!
- @brief This method is used to set all Anno Tool Color.
- @return Set Color Result.
+ @brief Set the colors of annotation tools.
+ @return The result of setting the colors.
  */
-- (MobileRTCAnnotationError)setToolColor:(NSUInteger)color;
+- (MobileRTCAnnotationError)setToolColor:(UIColor *)toolColor;
 
 /*!
- @brief This method is used to set Anno Tool Type.
- @return Set Anno Tool Result.
- @waring Use interface getSupportedToolType to check supported tool firstly
+ @brief This method is used to get current Anno Tool Color.
+ @return Get Color by tool type.
+ */
+- (UIColor *)getToolColor:(MobileRTCAnnoTool)tooltype;
+
+/*!
+ @brief Set the types of annotation tools.  
+ @return The result of operation.  
+ @warning Check firstly if the tool is supported via getSupportedToolType. 
  */
 - (MobileRTCAnnotationError)setToolType:(MobileRTCAnnoTool)type;
 
 /*!
- @brief This method is used to set Anno Tool Width.
- @return Set Anno Width Result.
+ @brief Set the line width of annotation tools.  
+ @return The result of operation.
  */
 - (MobileRTCAnnotationError)setToolWidth:(NSUInteger)width;
 
 /*!
- @brief This method is used to clear.
- @return Clear Result.
- @waring Use interface getSupportedToolType to check supported tool firstly
+ @brief Set to clear the annotations.  
+ @return The result of operation.
+ @warning Check firstly if the tool is supported via getSupportedToolType.
  */
 - (MobileRTCAnnotationError)clear;
 
 /*!
- @brief This method is used to undo.
- @return Undo Result.
- @waring Use interface getSupportedToolType to check supported tool firstly
+ @brief Undo the last annotation.  
+ @return The result of undoing the annotations.
+ @warning Check firstly if the tool is supported via getSupportedToolType.
  */
 - (MobileRTCAnnotationError)undo;
 
 /*!
- @brief This method is used to redo.
- @return Redo Result.
- @waring Use interface getSupportedToolType to check supported tool firstly
+ @brief Redo the last annotation.
+ @return The result of redoing the annotations. 
+ @warning Check firstly if the tool is supported via getSupportedToolType.
  */
 - (MobileRTCAnnotationError)redo;
 
 /*!
- @brief This method is used to get supported tool type.
+ @brief Get the supported tool types.
  @return tool type array, each tool is a NSNumber object, value corresponding to enum MobileRTCAnnoTool.
  */
 - (NSArray *)getSupportedToolType;
 
 /*!
- @brief This method is used to check wether is presenter.
+ @brief Check if the current user is the presenter.
  @return Yes if be presenter.
  */
 - (BOOL)isPresenter;

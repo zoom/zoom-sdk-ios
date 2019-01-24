@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 8/8/14.
-//  Copyright (c) 2016 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -14,200 +14,200 @@
 @class MobileRTCAlternativeHost;
 
 /*!
- @brief MobileRTCAuthService provides support for authorizing MobileRTC.
- @warning Before using MobileRTC, the client should authorize the MobileRTC at first. or the functions in MobileRTC cannot work correctly.
+ @brief The method provides support for authorizing MobileRTC.
+ @warning Users should authorize MobileRTC before using it to avoid invalid functions in MobileRTC.
  */
 @interface MobileRTCAuthService : NSObject
 
 /*!
- @brief The property that acts as the delegate of the receiving auth/login events.
+ @brief The property to receive authentication/login events. 
  */
 @property (nullable, assign, nonatomic) id<MobileRTCAuthDelegate> delegate;
 
 /*!
- @brief The key value is used during the authorization code grant. This key value is generated from MobileRTC Web site.
- @warning This value should be a secret. DO NOT publish this value.
+ @brief APP Key got from zoom.us.
+ @warning Keep the value as a secret. DO NOT publish it.
  */
 @property (nonnull, retain, nonatomic) NSString *clientKey;
 
 /*!
- @brief The secret value is used during the authorization code grant. This secret value is generated from MobileRTC Web site.
- @warning This value should be a secret. DO NOT publish this value.
+ @brief APP secret got from zoom.us.
+ @warning Keep the value as a secret. DO NOT publish it.
  */
 @property (nonnull, retain, nonatomic) NSString *clientSecret;
 
 /*!
- @brief Designated authorizing MobileRTC.
- @warning If the client key or secret is empty, user will get error:MobileRTCAuthError_KeyOrSecretEmpty in method onMobileRTCAuthReturn from MobileRTCAuthDelegate
+ @brief Authenticate SDK.
+ @warning If the key or secret of client is blank, user will get error:MobileRTCAuthError_KeyOrSecretEmpty via onMobileRTCAuthReturn defined in MobileRTCAuthDelegate.
  */
 - (void)sdkAuth;
 
 /*!
- @brief Designated for check whether mobileRTC logged in or not.
- @return YES means logged in.
- @warning this method is optional, if you do not log in with work email or SSO, just ignore it.
+ @brief Check whether mobileRTC is logged-in or not.
+ @return YES indicates logged-in. Otherwise not.
+ @warning The method is optional, ignore it if you do not log in with working email or SSO.
  */
 - (BOOL)isLoggedIn;
 
 /*!
- @brief Designated for check the user type.
- @return user type.
- @warning this method is optional, the default user type is MobileRTCUserType_APIUser. If login with work email in MobileRTC, the user type is MobileRTCUserType_ZoomUser; if login with SSO in MobileRTC, the user type is MobileRTCUserType_SSOUser.
+ @brief Get user type.
+ @return One of the user types listed in MobileRTCUserType.
+ @warning The method is optional. The default user type is MobileRTCUserType_APIUser. User who logs in MobileRTC with working email is MobileRTCUserType_ZoomUser; User who logs in MobileRTC with SSO is MobileRTCUserType_SSOUser.
  */
 - (MobileRTCUserType)getUserType;
 
 /*!
- @brief Designated for login MobileRTC with work email account.
- @param email the email address for login
- @param password the password for login
- @return YES means call this method successfully.
- @warning this method is optional, if you do not have work email account with MobileRTC, just ignore it.
+ @brief Specify to login MobileRTC with working email.
+ @param email Login email address.
+ @param password Login password.
+ @return YES indicates to call the method successfully. Otherwise not.
+ @warning The method is optional, ignore it if you do not have a working email for MobileRTC.
  */
 - (BOOL)loginWithEmail:(nonnull NSString*)email password:(nonnull NSString*)password remeberMe:(BOOL)remeberMe;
 
 /*!
- @brief Designated for login MobileRTC with SSO (Single-Sign-On).
- @param token the user token information
- @return YES means call this method successfully.
- @warning this method is optional, if you need not SSO login with MobileRTC, just ignore it.
+ @brief Specify to login MobileRTC with SSO (Single-Sign-On).
+ @param token User's token information.
+ @return YES indicates to call the method successfully. Otherwise not.
+ @warning The method is optional, ignore it if you do not login MobileRTC with SSO.
  */
 - (BOOL)loginWithSSOToken:(nonnull NSString*)token remeberMe:(BOOL)remeberMe;
 
 /*!
- @brief Designated for logout MobileRTC.
- @return YES means call this method successfully.
- @warning this method is optional, if you did not log in, just ignore it.
+ @brief Specify to logout MobileRTC.
+ @return YES indicates to call the method successfully. Otherwise not.
+ @warning The method is optional, ignore it if you do not login MobileRTC.
  */
 - (BOOL)logoutRTC;
 
 /*!
- @brief Designated for get Login User Profile Info.
- @return MobileRTCAccountInfo instance is success.
- @warning Get instance successfully only after login.
+ @brief Specify to get the profile information of logged-in user.
+ @return The profile information of logged-in user. 
+ @warning You can only get the instance successfully of logged-in user.
  */
 - (nullable MobileRTCAccountInfo*)getAccountInfo;
 @end
 
 /*!
- @brief An Auth Service will issue the following value when the authorization state changes.
+ @brief An authentication service will issue the following values when the authorization state changes.
  */
 @protocol MobileRTCAuthDelegate <NSObject>
 
 @required
-/*!
- @brief Designated for MobileRTC Auth response.
- @param returnValue tell user when the auth state changed.
+/*! 
+ @brief Specify to get the response of MobileRTC authorization.
+ @param returnValue Notify the user that the authorization status changes.
  */
 - (void)onMobileRTCAuthReturn:(MobileRTCAuthError)returnValue;
 
 @optional
 /*!
- @brief Designated for MobileRTC Login response.
- @param returnValue tell user when the login state changed.
+ @brief Specify to get the response of MobileRTC logs in.
+ @param returnValue Notify the user when the login state has changed.
  */
 - (void)onMobileRTCLoginReturn:(NSInteger)returnValue;
 
 /*!
- @brief Designated for MobileRTC Logout response.
- @param returnValue tell user whether the logout success or not.
+ @brief Specify to get the response of MobileRTC logs out.
+ @param returnValue Notify that the user has logged-out successfully.
  */
 - (void)onMobileRTCLogoutReturn:(NSInteger)returnValue;
 
 @end
 
 /*!
- @brief MobileRTCAccountInfo used to store the login user profile information.
+ @brief It is used to store the profile information of logged-in user.
  */
 @interface MobileRTCAccountInfo : NSObject
 
 /*!
- @brief This method is used to get account email address.
- @return email address
+ @brief Get the working email address.
+ @return The working email address.
  */
 - (nullable NSString*)getEmailAddress;
 
 /*!
- @brief This method is used to get PMI Vanity URL from user profile info.
+ @brief Get PMI Vanity URL from user profile information. 
  @return PMI Vanity URL.
  */
 - (nullable NSString *)getPMIVanityURL;
 
 /*!
- @brief This method is used to check whether Audio Type: Telephone Only is supported while schedule meeting.
- @return YES means supported
+ @brief Check if Audio Type(Telephone Only) is supported while scheduling a meeting.
+ @return YES means support. Otherwise not.
  */
 - (BOOL)isTelephoneOnlySupported;
 
 /*!
- @brief This method is used to check whether Audio Type: Telephone And Voip is supported while schedule meeting.
- @return YES means supported
+ @brief Check if Audio Type(Telephone And VoIP) is supported while scheduling a meeting.
+ @return YES means support. Otherwise not.
  */
 - (BOOL)isTelephoneAndVoipSupported;
 
 /*!
- @brief This method is used to check whether Audio Type: 3rdParty Audio is supported while schedule meeting.
- @return YES means supported
+ @brief Check if Audio Type (3rdParty Audio) is supported while scheduling a meeting.
+ @return YES means support. Otherwise not.
  */
 - (BOOL)is3rdPartyAudioSupported;
 
 /*!
- @brief This method is get 3rd Party Audio Info from user profile info.
- @return send 3rd Party Audio Info.
+ @brief Get the 3rd Party Audio Info from user profile.
+ @return The 3rd Party Audio Info.
  */
 - (nullable NSString*)get3rdPartyAudioInfo;
 
 /*!
- @brief This method is default Audio Type from user info from user profile info.
- @return default audio type.
+ @brief Get the default Audio Type from user profile.
+ @return The default Audio Type.
  */
 - (MobileRTCMeetingItemAudioType)getDefaultAudioInfo;
 
 /*!
- @brief This method is used to check whether only allow signed-in user join the meeting while schedule meeting.
- @return Yes only allow signed-in user join the meeting.
+ @brief Check if only signed-in user can join the meeting while scheduling a meeting.
+ @return YES means that only signed-in user is allowed to join the meeting. Otherwise not.
  */
 - (BOOL)onlyAllowSignedInUserJoinMeeting;
 
 /*!
- @brief This method is used to get alternative host list from user profile info.
- @return array with MobileRTCAlternativeHost info.
+ @brief Get alternative host list from user profile information.
+ @return An array with MobileRTCAlternativeHost information.
  */
 - (nullable NSArray*)getCanScheduleForUsersList;
 
 /*!
- @brief This method is used to check whether local recording is supported while schedule meeting.
- @return YES means supported
+ @brief Check if local recording is supported while scheduling a meeting.
+ @return YES means supported. Otherwise not.
  */
 - (BOOL)isLocalRecordingSupported;
 
 /*!
- @brief This method is used to check whether cloud recording is supported while schedule meeting.
- @return YES means supported
+ @brief Check if cloud recording is supported while scheduling a meeting.
+ @return YES means supported. Otherwise not.
  */
 - (BOOL)isCloudRecordingSupported;
 
 /*!
- @brief This method is used to set default Meeting Auto Record Type from user info from user profile info.
- @return default Meeting Auto Record Type.
+ @brief Get the default Meeting Auto Recording Types from user profile.
+ @return The default Meeting Auto Recording Type.
  */
 - (MobileRTCMeetingItemRecordType)getDefaultAutoRecordType;
 
 /*!
- @brief This method is used to check whether only user in specified domain can join the meeting while schedule meeting.
- @return YES means supported
+ @brief Check if only user in specified domain can join the meeting while scheduling a meeting.
+ @return YES means that only user in specified domain can join the meeting. Otherwise not.
  */
 - (BOOL)isSpecifiedDomainCanJoinFeatureOn;
 
 /*!
- @brief This method is used to get Specified domain from user profile info.
- @return NSString type default Sepecified of domain array.
+ @brief Get specified domain from user profile.
+ @return The data in domain array is NSString type.
  */
 - (nullable NSArray *)getDefaultCanJoinUserSpecifiedDomains;
 
 @end
 
 /*!
- @brief MobileRTCAlternativeHost used to store alternative host information.
+ @brief It is used to store the information of the alternative host.
  */
 @interface MobileRTCAlternativeHost : NSObject
 

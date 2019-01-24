@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by Chao Bai on 2018/6/6.
-//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <MobileRTC/MobileRTC.h>
@@ -11,95 +11,95 @@
 @interface MobileRTCMeetingService (Video)
 
 /*!
- @brief This method is used to check user is sending his video or not.
- @return YES means that video is sending.
+ @brief Query if the user is sending video.  
+ @return YES means sending, otherwise not.
  */
 - (BOOL)isSendingMyVideo;
 
 /*!
- @brief This method is used to check user can unmute his video or not.
- @return YES means that can unmute.
+ @brief Query if user can unmute his video himself.
+ @return YES means able, otherwise not.
  */
 - (BOOL)canUnmuteMyVideo;
 
 /*!
- @brief This method is used to mute My Video.
- @param mute: if YES means that mute my video
- @return mute my video result.
+ @brief Set to mute video of the current user.
+ @param mute YES means to mute video of the current user, otherwise not.
+ @return The result of operation.
  */
 - (MobileRTCVideoError)muteMyVideo:(BOOL)mute;
 
 /*!
- @brief This method is used to check the user's video spotlighted or not.
- @param userId user's ID in meeting.
- @return YES means the user's video is spotlighted.
+ @brief Query if user's video is spotlighted. Once the user's video is spotlighted, it will show only the specified video in the meeting instead of active user's.  
+ @param userId The ID of user in meeting.
+ @return YES means spotlighted, otherwise not.
  */
 - (BOOL)isUserSpotlighted:(NSUInteger)userId;
 
 /*!
- @brief This method is used to spotlight the user's video or not.
- @param on if YES to spotlight user's video; if NO to cancel spotlight user's video.
- @param userId the user id in meeting.
- @return YES means call this method successfully.
- @warning only meeting host can run this function, and userId should not be myself.
+ @brief Set whether to spotlight user's video.
+ @param on YES means to spotlight user's video; NO means that spotlight user's video will be canceled.
+ @param userId The ID of user whose video will be spotlighted in the meeting.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host can run the function, and user spotlighted should not be the host himself.
  */
 - (BOOL)spotlightVideo:(BOOL)on withUser:(NSUInteger)userId;
 
 /*!
- @brief This method is used to check the user's video pinned or not.
- @param userId user's ID in meeting.
- @return YES means the user's video is pinned.
+ @brief Query if the user's video is pinned. 
+ @param userId The ID of user whose video will be pinned in the meeting.
+ @return YES means that the user's video is pinned, otherwise not.
  */
 - (BOOL)isUserPinned:(NSUInteger)userId;
 
 /*!
- @brief This method is used to pin the user's video or not.
- @param on if YES to pin user's video; if NO to cancel pin user's video.
- @param userId the user id in meeting.
- @return YES means call this method successfully.
+ @brief Set whether to pin user's video or not. 
+ @param on YES means to pin user's video, otherwise not. 
+ @param userId The ID of user whose video will be pinned.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)pinVideo:(BOOL)on withUser:(NSUInteger)userId;
 
 /*!
- @brief This method is used to check the user video is sending or not.
- @param userID the user id in meeting
- @return YES means video is sending.
+ @brief Query if user's video is being sent.
+ @param userID The ID of user whose video will be sent in meeting
+ @return YES means that the video is being sent, otherwise not.
  */
 - (BOOL)isUserVideoSending:(NSUInteger)userID;
 
 /*!
- @brief This method is used to stop user's video.
- @param userID the user id in meeting, the userID should not be host himself
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
+ @brief Set to stop user's video.
+ @param userID The ID of other users except the host in the meeting. 
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only host can run the function in the meeting.
  */
 - (BOOL)stopUserVideo:(NSUInteger)userID;
 
 /*!
- @brief This method is used to ask to start user's video.
- @param userID the user id in meeting, the userID should not be host himself
- @return YES means call this method successfully.
- @warning only meeting host can run this function.
+ @brief Host can use this function to demand user to start video.
+ @param userID The ID of user who needs to turn on video in meeting.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only host can run the function in the meeting.
  */
 - (BOOL)askUserStartVideo:(NSUInteger)userID;
 
 /*!
- @brief This method is used to retrieve user video's size.
- @param userID the user id in meeting
- @return the size of user video.
+ @brief Get the size of user's video.
+ @param userID The ID of user in the meeting
+ @return The size of user's video.
  */
 - (CGSize)getUserVideoSize:(NSUInteger)userID;
 
 #pragma mark Camera Related
 /*!
- @brief This method is used to check user is using back camera or not.
- @return YES means that Back camera is using.
+ @brief Query if user is using back camera.
+ @return YES means using Back camera, otherwise not.
  */
 - (BOOL)isBackCamera;
 
 /*!
- @brief This method is used to Switch Local Device Video Camera Source.
- @return switch my camera result.
+ @brief Set to Switch the camera of the current user in local device.
+ @return The result of operation. 
  */
 - (MobileRTCCameraError)switchMyCamera;
 @end

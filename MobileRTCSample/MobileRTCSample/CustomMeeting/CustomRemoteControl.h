@@ -15,7 +15,7 @@
 @end
 
 @interface RemoteControlBar : UIView
-@property (retain, nonatomic) UIButton             * action;
+@property (strong, nonatomic) UIButton             * action;
 @property (assign, nonatomic) id<RemoteControlBarDelegate>  delegate;
 @end
 

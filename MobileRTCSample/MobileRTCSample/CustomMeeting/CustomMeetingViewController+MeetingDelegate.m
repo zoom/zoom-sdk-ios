@@ -2,8 +2,8 @@
 //  CustomMeetingViewController+MeetingDelegate.m
 //  MobileRTCSample
 //
-//  Created by Robust on 2017/12/28.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Created by Murray Li on 2018/10/12.
+//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import "CustomMeetingViewController+MeetingDelegate.h"
@@ -12,37 +12,32 @@
 
 - (void)onSinkMeetingActiveVideo:(NSUInteger)userID
 {
-    self.galleryVC.activeVideoID = userID;
-    self.shrinkVC.activeVideoID = userID;
+//    self.shrinkVC.activeVideoID = userID;
     [self updateVideoOrShare];
 }
 
 - (void)onSinkMeetingPreviewStopped
 {
-    if (self.galleryVC.parentViewController)
-    {
-        [self.galleryVC removePreviewVideoView];
-    }
 }
 
 - (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID
 {
     [self updateMyAudioStatus];
-    
+
     [self updateVideoOrShare];
 }
 
 - (void)onSinkMeetingVideoStatusChange:(NSUInteger)userID
 {
     [self updateMyVideoStatus];
-    
+
     [self updateVideoOrShare];
 }
 
 - (void)onMyVideoStateChange
 {
     [self updateMyVideoStatus];
-    
+
     [self updateVideoOrShare];
 }
 
@@ -58,10 +53,11 @@
 
 - (void)onSinkMeetingActiveShare:(NSUInteger)userID
 {
+    [self updateMyShareStatus];
     BOOL sharing = (0 != userID);
     if (sharing)
     {
-        self.shrinkBtn.hidden = YES;
+//        self.topPanelView.shrinkBtn.hidden = YES;
         MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
         //Local Side Share
         if ([ms isSameUser:[ms myselfUserID] compareTo:userID])
@@ -77,10 +73,10 @@
     }
     else
     {
-        self.shrinkBtn.hidden = NO;
-        [self initGuestureRecognizer];
+//        self.topPanelView.shrinkBtn.hidden = NO;
+        self.annoFloatBarView.hidden = YES;
         [self.annoFloatBarView stopAnnotate];
-        [self showGalleryView];
+        [self showVideoView];
     }
 }
 
@@ -96,7 +92,7 @@
 {
     if (!self.remoteShareVC.parentViewController)
         return;
-    
+
     [self.remoteShareVC.shareView changeShareScaleWithUserID:userID];
 }
 
@@ -120,5 +116,10 @@
     {
         [self dismissViewControllerAnimated:YES completion:NULL];
     }
+}
+
+- (void)onEndButtonClick:(id)sender
+{
+    [self.actionPresenter leaveMeetingWithCmd];
 }
 @end

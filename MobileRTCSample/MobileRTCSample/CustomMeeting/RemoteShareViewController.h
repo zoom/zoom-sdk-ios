@@ -12,7 +12,7 @@
 
 @property (assign, nonatomic) NSUInteger activeShareID;
 
-@property (retain, nonatomic) MobileRTCActiveShareView* shareView;
+@property (strong, nonatomic) MobileRTCActiveShareView* shareView;
 
 - (void)updateShareView;
 

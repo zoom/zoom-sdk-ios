@@ -2,7 +2,7 @@
 //  LocalShareViewController.m
 //  MobileRTCSample
 //
-//  Created by chaobai on 09/01/2018.
+//  Created by Murray Li on 2018/10/16.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -12,8 +12,7 @@
 
 @interface LocalShareViewController () <UITextFieldDelegate>
 
-@property (retain, nonatomic) WKWebView *   webView;
-@property (retain, nonatomic) UITextField * textField;
+@property (strong, nonatomic) UITextField * textField;
 @end
 
 @implementation LocalShareViewController
@@ -52,7 +51,7 @@
     [super viewDidLayoutSubviews];
     
     CGRect webViewFrame = self.webView.frame;
-    webViewFrame.size.height = self.view.bounds.size.height-TEXT_FIELD_HEIGHT-60;
+    webViewFrame.size.height = self.view.bounds.size.height-TEXT_FIELD_HEIGHT-80-60;
     webViewFrame.size.width = self.view.bounds.size.width;
     self.webView.frame = webViewFrame;
     
@@ -78,7 +77,7 @@
 {
     if (!_webView)
     {
-        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 60+TEXT_FIELD_HEIGHT, self.view.bounds.size.width, self.view.bounds.size.height-TEXT_FIELD_HEIGHT-60)];
+        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 80+TEXT_FIELD_HEIGHT, self.view.bounds.size.width, self.view.bounds.size.height-TEXT_FIELD_HEIGHT-80-60)];
         [_webView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight];
         [_webView setNavigationDelegate:self];
     }
@@ -88,11 +87,11 @@
 
 - (void)webView:(WKWebView*)webView decidePolicyForNavigationAction:(WKNavigationAction*)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
-//    NSString * URL = [navigationAction.request.URL absoluteString];
-//    if (![URL isEqualToString:@"about:blank"])
-//    {
-//        [self.textField setText:URL];
-//    }
+    //    NSString * URL = [navigationAction.request.URL absoluteString];
+    //    if (![URL isEqualToString:@"about:blank"])
+    //    {
+    //        [self.textField setText:URL];
+    //    }
     decisionHandler(WKNavigationActionPolicyAllow);
 }
 
@@ -101,7 +100,7 @@
 {
     if (!_textField)
     {
-        _textField = [[UITextField alloc]initWithFrame:CGRectMake(0,60,self.view.bounds.size.width,TEXT_FIELD_HEIGHT)];
+        _textField = [[UITextField alloc]initWithFrame:CGRectMake(0,80,self.view.bounds.size.width,TEXT_FIELD_HEIGHT)];
         _textField.backgroundColor = [UIColor grayColor];
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _textField.keyboardType = UIKeyboardTypeURL;

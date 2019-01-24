@@ -3,13 +3,13 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 2017/2/27.
-//  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /*!
- @brief MobileRTCDeviceType An Enum for all of H.323/SIP type.
+ @brief MobileRTCDeviceType An enumeration of room device types. 
  */
 typedef enum {
     ///H.323 Device
@@ -21,14 +21,14 @@ typedef enum {
 }MobileRTCDeviceType;
 
 /*!
- @brief MobileRTCDeviceEncryptType An Enum for H.323/SIP encrypt type.
+ @brief MobileRTCDeviceEncryptType An Enumeration of H.323/SIP encryption types.
  */
 typedef enum {
-    ///None
+    ///Meeting room system is not encrypted.
     MobileRTCDeviceEncryptType_None   = 0,
-    ///Encrypt
+    ///Meeting room system is encrypted.
     MobileRTCDeviceEncryptType_Encrypt,
-    ///Auto
+    ///Meeting room system is encrypted automatically.
     MobileRTCDeviceEncryptType_Auto,
 }MobileRTCDeviceEncryptType;
 

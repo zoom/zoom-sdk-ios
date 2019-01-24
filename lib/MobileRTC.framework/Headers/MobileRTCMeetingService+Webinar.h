@@ -3,7 +3,7 @@
 //  MobileRTC
 //
 //  Created by chaobai admin on 07/08/2018.
-//  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <MobileRTC/MobileRTC.h>
@@ -11,118 +11,118 @@
 @interface MobileRTCMeetingService (Webinar)
 
 /*!
- @brief This method is used to check user has Prompt and DePrompt Privilige in Webinar Meeting.
- @return YES means user can Prompt and DePrompt user.
+ @brief Query if the user has the privilege to prompt or demote users in the webinar. 
+ @return YES means that user owns the privilege, otherwise not.
  */
 - (BOOL)hasPromptAndDePromptPrivilige;
 
 /*!
- @brief This method is used to prompt Attendee to Panelist in Webinar Meeting.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Prompt Attendee to Panelist in Webinar.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)promptAttendee2Panelist:(NSUInteger)userID;
 
 /*!
- @brief This method is used to deprompt Panelist to attendee in Webinar Meeting.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Demote the panelist to attendee. 
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)dePromptPanelist2Attendee:(NSUInteger)userID;
 
 /*!
- @brief This method is used to set Attendee chat privilige in Webinar Meeting.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow attendee to chat.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowAttendeeChat:(MobileRTCChatAllowAttendeeChat)privilegeType;
 
 /*!
- @brief This method is used to check Attendee is allowed to talk in Webinar Meeting.
- @param userId user's ID in meeting.
- @return YES means attendee allowed to talk.
- @warning only meeting host/cohost can run this function.
+ @brief Query if attendee is allowed to talk in Webinar Meeting.
+ @param userId The ID of user to be allowed. 
+ @return YES means allowed, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)isAllowAttendeeTalk:(NSUInteger)userID;
 
 /*!
- @brief This method is used to allow Attendee talk in Webinar Meeting.
- @param userId user's ID in meeting.
- @param Enable enable/Disable User talk
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow attendee to talk in webinar.
+ @param userId The ID of user to be allowed
+ @param enable Enable/Disable to talk
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowAttenddeTalk:(NSUInteger)userID allow:(BOOL)enable;
 
 /*!
- @brief This method is used to check Panelist is allowed to start video in Webinar Meeting.
- @return YES means Panelist allowed to start video.
+ @brief Query if Panelist can start video in Webinar Meeting.
+ @return YES means able, otherwise not.
  */
 - (BOOL)isAllowPanelistStartVideo;
 
 
 #pragma mark Q&A relate Action in Webinar Meeting
 /*!
- @brief This method is used to allow Panelist start video in Webinar Meeting.
- @param Enable enable/Disable Panelist start video.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow Panelist to start video in Webinar.
+ @param enable Enable/Disable Panelist to start video.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowPanelistStartVideo:(BOOL)enable;
 
 /*!
- @brief This method is used to check is allowed to ask question anonymously.
- @return YES means allowed to ask question anonymously.
+ @brief Query if it is allowed to ask question anonymously in webinar.
+ @return YES means allowed, otherwise not.
  */
 - (BOOL)isAllowAskQuestionAnonymously;
 
 /*!
- @brief This method is used to allow ask question anonymously.
- @param Enable enable/Disable allow ask question anonymously.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Set if it is enabled to ask questions anonymously.
+ @param Enable Enable/Disable to ask questions anonymously.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run this function.
  */
 - (BOOL)allowAskQuestionAnonymously:(BOOL)enable;
 
 /*!
- @brief This method is used to check is allowed attendee to view all question.
- @return YES means allowed attendee to view all question.
+ @brief Query if attendee is allowed to view all question.
+ @return YES means allowed, otherwise not.
  */
 - (BOOL)isAllowAttendeeViewAllQuestion;
 
 /*!
- @brief This method is used to allow attendee to view all question.
- @param Enable enable/Disable allow attendee to view all question.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow attendee to view all question.
+ @param Enable Enable/Disable attendee to view all questions.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run this function.
  */
 - (BOOL)allowAttendeeViewAllQuestion:(BOOL)enable;
 
 /*!
- @brief This method is used to check is allowed attendee to upVote question.
- @return YES means allowed attendee to UpVote question.
+ @brief Query if attendee is allowed to submit questions. 
+ @return YES means allowed, otherwise not.
  */
 - (BOOL)isAllowAttendeeUpVoteQuestion;
 
 /*!
- @brief This method is used to allow attendee to upVote question.
- @param Enable enable/Disable allow attendee to upVote question.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow attendee to submit questions.
+ @param Enable Allow/Disallow attendee to submit question.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowAttendeeUpVoteQuestion:(BOOL)enable;
 
 /*!
- @brief This method is used to check is allowed attendee to answer question.
- @return YES means allowed attendee to answer question.
+ @brief Query if attendee is allowed to answer questions.
+ @return YES means allowed, otherwise not.
  */
 - (BOOL)isAllowAttendeeAnswerQuestion;
 
 /*!
- @brief This method is used to allow attendee to answer question.
- @param Enable enable/Disable allow attendee to answer question.
- @return YES means call this method successfully.
- @warning only meeting host/cohost can run this function.
+ @brief Allow attendee to answer question.
+ @param Enable Allow/Disallow attendee to answer question.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable;
 @end

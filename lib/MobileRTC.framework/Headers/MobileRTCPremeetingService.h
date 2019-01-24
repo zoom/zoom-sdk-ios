@@ -3,113 +3,114 @@
 //  MobileRTC
 //
 //  Created by Robust Hu on 16/8/3.
-//  Copyright © 2016年 Zoom Video Communications, Inc. All rights reserved.
+//  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "MobileRTCConstants.h"
+#import "MobileRTCDialinCountry.h"
 
 @protocol MobileRTCMeetingItem;
 @protocol MobileRTCPremeetingDelegate;
 
 /*!
- @brief MeetingFrequency An Enum which provide recurence meeting frequency type.
+ @brief MeetingRepeat An Enumeration of meeting recurring types..
  */
 typedef enum {
-    ///None
+    ///Not recurring.
     MeetingRepeat_None = 0,
-    ///Every Day
+    ///Recurring daily.
     MeetingRepeat_EveryDay,
-    ///Every Week
+    ///Recurring weekly.
     MeetingRepeat_EveryWeek,
-    ///Every 2 Weeks
+    ///Recurring biweekly.
     MeetingRepeat_Every2Weeks,
-    ///Every Month
+    ///Recurring monthly.
     MeetingRepeat_EveryMonth,
-    ///Every Year
+    ///Recurring annually.
     MeetingRepeat_EveryYear,
 }MeetingRepeat;
 
 /*!
- @brief PreMeetingError An Enum which provide error code for Pre-meeting.
+ @brief PreMeetingError Pre-meeting Error codes.
  */
 typedef enum {
-    ///Unknown
+    ///Unknown error.
     PreMeetingError_Unknown                         = -1,
-    ///Success
+    ///Calls API successfully.
     PreMeetingError_Success                         = 0,
-    ///Error Domain
+    ///Incorrect domain.  
     PreMeetingError_ErrorDomain                     = 1,
-    ///Error Service
+    ///Service is wrong.    
     PreMeetingError_ErrorService                    = 2,
-    ///Input Validation Error
+    ///The information input by user is incorrect. 
     PreMeetingError_ErrorInputValidation            = 300,
-    ///Http Response Error
+    ///The resource requested does not exist.  
     PreMeetingError_ErrorHttpResponse               = 404,
-    ///Error No Meeting Number
+    ///No meeting number.
     PreMeetingError_ErrorNoMeetingNumber            = 3009,
-    ///Error Time out
+    ///Timeout.
     PreMeetingError_ErrorTimeOut                    = 5003,
 }PreMeetingError;
 
 /*!
- @brief MobileRTCPremeetingService provides support for schedule/edit/delete meeting MobileRTC once login with work email or login with SSO.
- @warning Before using MobileRTCPremeetingService, the MobileRTC should be logged in.
+ @brief It provides support for scheduling/editing/deleting meeting once logged in MobileRTC with working email or with SSO.
+ @warning User should login MobileRTC before calling the method.
  */
 @interface MobileRTCPremeetingService : NSObject
 
 /*!
- @brief The object that acts as the delegate of the receiving schedule/edit/delete meeting events.
+ @brief Callback event of receiving the scheduled/edited/deleted meeting.
  */
 @property (nullable, assign, nonatomic) id<MobileRTCPremeetingDelegate> delegate;
 
 /*!
- @brief Designated for creating a meeting item which is used to edit meeting.
- @return an object of id<MobileRTCMeetingItem>.
- @warning the created meeting item should be destroyed by method destroyMeetingItem finally.
+ @brief A meeting item is created to edit meeting.
+ @return An object of id<MobileRTCMeetingItem>.
+ @warning The created meeting item should be destroyed finally via destroyMeetingItem.
  */
 - (nullable id<MobileRTCMeetingItem>)createMeetingItem;
 
 /*!
- @brief Designated for clone a meeting item which is used to clone meeting.
- @return an object of id<MobileRTCMeetingItem>.
- @warning the clone meeting item should be destroyed by method destroyMeetingItem finally.
+ @brief A meeting item is created to clone meeting.
+ @return An object of id<MobileRTCMeetingItem>.
+ @warning The clonal meeting item should be destroyed finally via destroyMeetingItem.
  */
 - (nullable id<MobileRTCMeetingItem>)cloneMeetingItem:(nonnull id<MobileRTCMeetingItem>)item;
 
 /*!
- @brief Designated for deatroy a previous created meeting item.
- @param item the meeting item.
+ @brief Destroy a previously created meeting item.
+ @param item The meeting item to be destroyed.
  */
 - (void)destroyMeetingItem:(nonnull id<MobileRTCMeetingItem>)item;
 
 /*!
- @brief Designated for get a meeting item by a meeting number.
- @param meetingNumber the meeting number in unsigned integer.
- @return an object of id<MobileRTCMeetingItem>.
+ @brief Get a meeting item by a meeting number.
+ @param meetingNumber The meeting number in unsigned integer.
+ @return An object of id<MobileRTCMeetingItem>.
  */
 - (nullable id<MobileRTCMeetingItem>)getMeetingItemByUniquedID:(unsigned long long)meetingUniquedID;
 
 /*!
- @brief Designated for schudle a meeting with meeting item.
- @param meetingItem the meeting item
- @param useremail: user's email thar meeting is scheduled for, if schedule for yourself, pass nil or yourself email.
- @return YES means call this method successfully.
+ @brief Schedule a meeting with meeting item.
+ @param meetingItem The meeting item to schedule a meeting.
+ @param useremail Set the email of user who will be the host of the scheduled meeting. If the meeting is scheduled for user himself, it will pass nil or the email of user himself.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)scheduleMeeting:(nonnull id<MobileRTCMeetingItem>)meetingItem WithScheduleFor:(nullable NSString *)userEmail;
 
 /*!
- @brief Designated for edit a meeting with meeting item.
- @param meetingItem the meeting item
- @return YES means call this method successfully.
- @warning App need to clone one meetingitem while edit the meeting, the clone meeting item should be destroyed by method destroyMeetingItem finally.
+ @brief Edit a meeting with meeting item.
+ @param meetingItem The meeting item to edit a meeting.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning App needs to clone the meetingitem while editing the meeting, the clonal meeting item should be destroyed finally via destroyMeetingItem.
  */
 - (BOOL)editMeeting:(nonnull id<MobileRTCMeetingItem>)meetingItem;
 
 /*!
- @brief Designated for delete a meeting with meeting item.
- @param meetingItem the meeting item
- @return YES means call this method successfully.
+ @brief Delete a meeting with meeting item.
+ @param meetingItem The meeting item to delete a meeting.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)deleteMeeting:(nonnull id<MobileRTCMeetingItem>)meetingItem;
 
@@ -122,176 +123,176 @@ typedef enum {
 @end
 
 /*!
- @brief MobileRTCMeetingItem can be used to store the meeting information.
+ @brief Store meeting information.
  */
 @protocol MobileRTCMeetingItem <NSObject>
 
 /*!
- @brief Get Meeting Uniqued ID.
- @return the meeting Uniqued ID in long long.
+ @brief Get Meeting Unique ID.
+ @return The meeting Unique ID. 
  */
 - (unsigned long long)getMeetingUniquedID;
 
 /*!
- @brief Set Meeting Topic.
- @param topic the meeting topic
+ @brief Set the topic of the meeting.
+ @param topic The topic of the meeting.
  */
 - (void)setMeetingTopic:(nonnull NSString*)topic;
 
 /*!
- @brief Get Meeting Topic.
- @return the meeting topic
+ @brief Get the topic of the meeting.
+ @return The topic of the meeting.
  */
 - (nullable NSString*)getMeetingTopic;
 
 /*!
  @brief Set Meeting ID.
- @param mid the meeting ID
+ @param mid The ID of the meeting.
  */
 - (void)setMeetingID:(nonnull NSString*)mid;
 
 /*!
  @brief Get Meeting ID.
- @return the meeting ID
+ @return The ID of the meeting.
  */
 - (nullable NSString*)getMeetingID;
 
 /*!
  @brief Set Meeting Number.
- @param number the meeting number in unsigned integer.
+ @param number The meeting number in unsigned integer.
  */
 - (void)setMeetingNumber:(unsigned long long)number;
 
 /*!
- @brief Get Meeting Number.
- @return the meeting number in unsigned integer.
+ @brief Get meeting number.
+ @return The meeting number in unsigned integer
  */
 - (unsigned long long)getMeetingNumber;
 
 /*!
- @brief Set Meeting Password.
- @param password meeting password
+ @brief Set the meeting password.
+ @param password The password of the meeting.
  */
 - (void)setMeetingPassword:(nonnull NSString*)password;
 
 /*!
- @brief Get Meeting Password.
- @return meeting password
+ @brief Get the meeting password.
+ @return The password of the meeting.
  */
 - (nullable NSString*)getMeetingPassword;
 
 /*!
  @brief Set Timezone ID.
- @param tzID the timezone ID.
+ @param tzID The timezone ID.
  */
 - (void)setTimeZoneID:(nonnull NSString*)tzID;
 
 /*!
  @brief Get Timezone ID.
- @return the timezone ID.
+ @return The timezone ID.
  */
 - (nullable NSString*)getTimeZoneID;
 
 /*!
- @brief Set Meeting Start Time.
- @param startTime the start time of meeting
+ @brief Set meeting start time.
+ @param startTime The start time of meeting.
  */
 - (void)setStartTime:(nonnull NSDate*)startTime;
 
 /*!
- @brief Get Meeting Start Time.
- @return the start time of meeting
+ @brief Get meeting start time.
+ @return The meeting start time.
  */
 - (nullable NSDate*)getStartTime;
 
 /*!
- @brief Set Meeting Duration in minutes.
- @param duration the duration of meeting
+ @brief Set the meeting duration, calculated in minutes.
+ @param duration The duration of meeting.
  */
 - (void)setDurationInMinutes:(NSUInteger)duration;
 
 /*!
- @brief Get Meeting Duration in minutes.
- @return the duration of meeting
+ @brief Get the meeting duration, calculated in minutes.
+ @return The duration of meeting.
  */
 - (NSUInteger)getDurationInMinutes;
 
 /*!
- @brief Get Recurring Meeting.
- @return YES means recurring
+ @brief Query if the meeting is a recurring one. 
+ @return YES means recurring, otherwise not.
  */
 - (BOOL)isRecurringMeeting;
 
 /*!
- @brief Set Recurring Meeting Repeat.
- @param repeat the type of recurring Repeat
+ @brief Set meeting recurring types.
+ @param repeat Meeting recurring types.
  */
 - (void)setMeetingRepeat:(MeetingRepeat)repeat;
 
 /*!
- @brief Get Recurring Meeting Repeat.
- @return the type of recurring Repeat
+ @brief Get meeting recurring types.
+ @return The recurring type of meeting.
  */
 - (MeetingRepeat)getMeetingRepeat;
 
 /*!
- @brief Set Recurring Meeting Repeat End Date.
- @param endDate, the end date should be later the meeting start time.
- @warning If not set this method, the recurring meeting can be repeated for ever.
+ @brief Set the end date of the recurring meeting.
+ @param endDate The end date. It should be later than the meeting Start Time.
+ @warning If it is not set, the meeting will recurring forever.
  */
 - (void)setRepeatEndDate:(nonnull NSDate*)endDate;
 
 /*!
- @brief Get Recurring Meeting Repeat End Date.
- @return the date of ending recurring Repeat
+ @brief Get the end time of the recurring meeting.
+ @return The end date of the recurring meeting. 
  */
 - (nullable NSDate*)getRepeatEndDate;
 
 /*!
- @brief Set Turn off host video.
- @param turnOff YES means turn off host's video
+ @brief Turn off host's video.
+ @param turnOff YES means to turn off host's video, otherwise not.
  */
 - (void)turnOffVideoForHost:(BOOL)turnOff;
 
 /*!
- @brief Get Turn off host video.
- @return YES means turn off host's video
+ @brief Query if the host video is turned off.
+ @return YES means the host's video is turned off, otherwise not.
  */
 - (BOOL)isHostVideoOff;
 
 /*!
- @brief Set Turn off attendee video while joining meeting.
- @param turnOff YES means turn off attendee's video
+ @brief Turn off attendee's video automatically when he joins the meeting.
+ @param turnOff YES means to turn off the attendee's video, otherwise not.
  */
 - (void)turnOffVideoForAttendee:(BOOL)turnOff;
 
 /*!
- @brief Get Turn off attendee video while joining meeting.
- @return YES means turn off attendee's video
+ @brief Query if attendee's video is turned off when he joins the meeting.
+ @return YES means the attendee's video is turned off, otherwise not.
  */
 - (BOOL)isAttendeeVideoOff;
 
 /*!
- @brief Set Allow to join a meeting before host.
- @param allow YES means allow
+ @brief Enable to join meeting before host(JBH).
+ @param allow YES means enabled, otherwise not.
  */
 - (void)setAllowJoinBeforeHost:(BOOL)allow;
 
 /*!
- @brief Get Allow to join a meeting before host.
- @return YES means allow
+ @brief Query if attendee can join the meeting before host.
+ @return YES means able, otherwise not.
  */
 - (BOOL)canJoinBeforeHost;
 
 /*!
- @brief Set Use Personal Meeting ID.
- @param usePMI YES means use PMI
+ @brief Set to use personal meeting ID(PMI) to start meeting.
+ @param usePMI YES means to use PMI to start meeting.
  */
 - (void)setUsePMIAsMeetingID:(BOOL)usePMI;
 
 /*!
- @brief Get Use Personal Meeting ID.
- @return YES means use PMI
+ @brief Query if the user starts the meeting with personal meeting ID.
+ @return YES means that user uses PMI as the meeting number.
  */
 - (BOOL)isUsePMIAsMeetingID;
 
@@ -324,124 +325,136 @@ typedef enum {
 //- (BOOL)isTelephonyOff;
 
 /*!
- @brief Set Meeting Audio Option.
- @param MobileRTCMeetingItemAudioType audioOption
- @return YES means call this method successfully.
+ @brief Set audio options in the meeting.
+ @param MobileRTCMeetingItemAudioType The audio options in the meeting.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)setAudioOption:(MobileRTCMeetingItemAudioType)audioOption;
 
 /*!
- @brief Get Meeting Audio Option.
- @return MobileRTCMeetingItemAudioType audioOption
+ @brief Get audio options in the meeting.
+ @return MobileRTCMeetingItemAudioType The audio options in the meeting.
  */
 - (MobileRTCMeetingItemAudioType)getAduioOption;
 
 /*!
- @brief The meeting is a personal meeting.
- @return YES means Personal Meeting.
+ @brief Query if the meeting is a personal one.
+ @return YES means that the meeting is personal, otherwise not.
  */
 - (BOOL)isPersonalMeeting;
 
 /*!
- @brief The meeting is a Webinar meeting.
- @return YES means Webinar meeting.
+ @brief Query if the meeting is a Webinar.
+ @return YES means that the meeting is a Webinar, otherwise not.
  */
 - (BOOL)isWebinarMeeting;
 
 /*!
- @brief To get the content of invite email.
- @return the content of invite email.
+ @brief Get the content of email invitation.
+ @return The content of email invitation.
  */
 - (nullable NSString*)getInviteEmailContent;
 
 /*!
- @brief Turn on or off only allow signed-in user join meeting.
- @param off YES means only allow signed-in user join meeting
+ @brief Set if enable the feature ONLY SINGED-IN USER CAN JOIN MEETING.
+ @param off YES means enabled, otherwise not.
 */
 - (BOOL)setOnlyAllowSignedInUserJoinMeeting:(BOOL)on;
 
 /*!
- @brief Get only allow signed-in user join meeting is on or off.
- @return YES means only allow signed-in user join meeting
+ @brief Set available diain countries object.
+ @param diain country object.
+ @return YES means set success, otherwise the sign in status not right or diain object of dialinCountry not available.
+ */
+- (BOOL)setAvailableDialinCountry:(nonnull MobileRTCDialinCountry *)dialinCountry;
+
+/*!
+ @brief return available dial in country object.
+ @return available means get success, otherwise will be nil.
+ */
+- (nullable MobileRTCDialinCountry *)getAvailableDialInCountry;
+
+/*!
+ @brief Query if the feature ONLY SINGED-IN USER CAN JOIN MEETING is enabled.
+ @return YES means enabled, otherwise not.
 */
 - (BOOL)isOnlyAllowSignedInUserJoinMeeting;
 
 /*!
- @brief This method is set 3rd Party Audio Info.
- @param description 3rd Party Audio Info
- @return YES means call this method successfully.
+ @brief Set the 3rd Party Audio Information.
+ @param description The 3rd Party Audio Information.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)set3rdPartyAudioInfo:(nonnull NSString *)description;
 
 /*!
- @brief This method is get 3rd Party Audio Info.
- @return send 3rd Party Audio Info.
+ @brief Get 3rd Party Audio Information.
+ @return The 3rd Party Audio Information.
  */
 - (nullable NSString *)get3rdPartyAudioInfo;
 
 /*!
- @brief This method is get useremail of the meeting host.
- @return useremail of the meeting host.
+ @brief Get the email of the meeting host.
+ @return useremail The email of the meeting host.
  */
 - (nullable NSString *)getScheduleForUserEmail;
 
 /*!
- @brief Set Meeting record Option.
- @param automatic record the meeting.
- @param MobileRTCMeetingItemRecordType record type.
- @return YES means call this method successfully.
+ @brief Set meeting recording options.
+ @param recordType Recording type.
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)setRecordType:(MobileRTCMeetingItemRecordType)recordType;
 
 /*!
- @brief  This method is get meeting record type.
- @return MobileRTCMeetingItemRecordType record type.
+ @brief Get meeting recording type.
+ @return Meeting recording type.
  */
 - (MobileRTCMeetingItemRecordType)getRecordType;
 
 /*!
- @brief  This method is set specified domain which user can join this meeting when they sign in.
- @param NSString type default Sepecified of domain array.
- @return YES means call this method successfully.
+ @brief Set specified domains in which users can join the current meeting once they signed in.
+ @param domain NSString type of domain array. 
+ @return YES means that the method is called successfully, otherwise not.
  */
 - (BOOL)setSpecifiedDomain:(nullable NSArray*)domain;
 
 /*!
- @brief  This method is get specified domain which user can join this meeting when they sign in.
- @return NSString type default Sepecified of domain array.
+ @brief Get specified domains in which users can join the current meeting once they signed in.
+ @return The specified domains.
  */
 - (nullable NSArray *)getSpecifiedDomain;
 @end
 
 /*!
  @protocol MobileRTCPremeetingDelegate
- @brief MobileRTCPremeetingDelegate can be used to sink the event of schedule/edit/eidt/list meeting.
- @discussion the result of the following methods means schedule/edit/delete/list meeting success or not.
+ @brief Sink the event of scheduling/editing/deleting/listing a meeting.
+ @warning the result of the following methods means schedule/edit/delete/list meeting success or not.
  */
 @protocol MobileRTCPremeetingDelegate <NSObject>
 
 /*!
- @brief Designated for sink the event of schedule meeting.
- @param result the return result of schedule meeting, PreMeetingError_Success means success.
+ @brief Sink the event of scheduling a meeting.
+ @param result The result of scheduling a meeting. If the function succeeds, it will return PreMeetingError_Success.
  */
 - (void)sinkSchedultMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)uniquedID;
 
 /*!
- @brief Designated for sink the event of edit meeting.
- @param result the return result of edit meeting, PreMeetingError_Success means success.
+ @brief Sink the event of editing a meeting.
+ @param result The result of editing a meeting. If the function succeeds, it will return PreMeetingError_Success.
  */
 - (void)sinkEditMeeting:(PreMeetingError)result MeetingUniquedID:(unsigned long long)uniquedID;
 
 /*!
- @brief Designated for sink the event of delete meeting.
- @param result the return result of delete meeting, PreMeetingError_Success means success.
+ @brief Sink the event of deleting a meeting.
+ @param result The result of deleting a meeting. If the function succeeds, it will return PreMeetingError_Success.
  */
 - (void)sinkDeleteMeeting:(PreMeetingError)result;
 
 /*!
- @brief Designated for sink the event of list meeting.
- @param result the return result of list meeting, PreMeetingError_Success means success
- @param array the array of meeting items.
+ @brief Sink the event of listing meetings.
+ @param result The result of listing meetings. If the function succeeds, it will return PreMeetingError_Success.
+ @param array The array of meeting items.
  */
 - (void)sinkListMeeting:(PreMeetingError)result withMeetingItems:(nonnull NSArray*)array;
 
