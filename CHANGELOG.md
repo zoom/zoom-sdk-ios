@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2019-01-23
+## 2019-01-23 @ [v4.3.30728.0118](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.30728.0118)
 
 Added
 * New functional documentation.
@@ -18,7 +18,7 @@ Changed & Fixed
 * An issue that the userId returned by different functional modules is inconsistent.
 * Some issues that cause crashes
 
-## 2018-10-24
+## 2018-10-24 @ [v4.1.34076.1024](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024)
 
 * Added support with Xcode 10;
 * Added support for iPhone XS/XS MAX/XR;
@@ -31,12 +31,12 @@ Changed & Fixed
 * Fixed audio quality issue on iPad Pro, iPhone X series devices, and iPhone 8;
 * Fixed annotation crash on iOS 12;
 
-## 2018-09-11
+## 2018-09-11 @ [v4.1.32183.0910](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.32183.0910)
 
 * Schedule Meeting Feature Enhancement
 * Bug fixes
 
-## 2018-08-20
+## 2018-08-20 @ [v4.1.30420.0817](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.30420.0817)
 
 * SDK Framework Interface Refactor, introduce MobileRTCMeetingService category cluster for specific Service Module:
 1. MobileRTCMeetingService+Audio: Audio Service
@@ -62,7 +62,7 @@ Changed & Fixed
 * Support Webinar related common feature (do not support Q&A and Polling)
 * Bug fixes
 
-## 2018-07-26
+## 2018-07-26 @ [v4.1.28989.0727](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.28989.0727)
 
 The start meeting logic for API users has changed. Please read below before upgrading to this version.
 
@@ -101,7 +101,7 @@ MobileRTCMeetingStartParam4WithoutLoginUser * user = [[[MobileRTCMeetingStartPar
 
 MobileRTCMeetError ret = [ms startMeetingWithStartParam:param];
 
-Note that: User need to be clear about your own Usertype,
+Note that: User need to be clear about your own Usertype, 
 Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return the correct Usertype.
 ```
 
@@ -119,7 +119,7 @@ Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return 
 
 8. Bug fixes
 
-## 2018-05-28
+## 2018-05-28 @ [v4.1.25402.0528](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.25402.0528)
 
 ### Added
 
@@ -189,17 +189,17 @@ Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return 
 ## 2017-03-03
 
 ### Added
-1. Fix Signal SIGPIPE issue after losingWiFi connection;
+1. Fix Signal SIGPIPE issue after losingWiFi connection; 
 
 2. Add interfaces to get attendees in meeting
-(NSArray*)getInMeetingUserList;
+(NSArray*)getInMeetingUserList; 
 
 3. Add delegate to get attendee state change
 - (void)onMyAudioStateChange
 - (void)onMyVideoStateChange
 - (void)onMyHandStateChange
 - (void)onAudioOutputChange
-- (void)inMeetingUserUpdated
+- (void)inMeetingUserUpdated 
 
 4. Add interfaces for Raise Hand, Spotlight Video, Make Host and Remove User
 - (BOOL)raiseMyHand;
@@ -231,14 +231,14 @@ Example
 - [mslowerHand];
 - (BOOL)isUserVideoPinned:(NSUInteger)userId;
 - (BOOL)pinVideo:(BOOL)on withUser:(NSUInteger)userId;
-- (BOOL)makeHost:(NSUInteger)userId;
+- (BOOL)makeHost:(NSUInteger)userId; 
 
 5. Add interfaces to call room device directly
 - (BOOL)isCallingRoomDevice;
 - (BOOL)cancelCallRoomDevice;
 - (NSArray*)getRoomDeviceList;
 - (BOOL)sendPairingCode:(NSString*)code;
-- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device;
+- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device; 
 
 ## 2017-01-03
 
