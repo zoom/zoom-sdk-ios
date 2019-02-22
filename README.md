@@ -1,6 +1,6 @@
 # Zoom iOS Software Development Kit (SDK)
 
-> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://github.com/zoom/zoom-sdk-ios#frequently-asked-questions-faq) sections.
+> Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/get-help/faq#frequently-asked-questions) sections.
 
 > Our brand new [Zoom Developer Community Forum](https://devforum.zoom.us/) is now online!!! Check it out! We are here to help! :D
 
@@ -17,7 +17,7 @@ Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts 
 ## Getting Started
 
 The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-* For detailed instructions, please refer to our documentation website: [[https://marketplace.zoom.us/docs/sdk/iOS](https://marketplace.zoom.us/docs/sdk/iOS)];
+* For detailed instructions, please refer to our documentation website: [[https://marketplace.zoom.us/docs/sdk/native-sdks/iOS](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS)];
 * If you need support or assistance, please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/);
 
 ### Prerequisites
@@ -62,7 +62,7 @@ Connect your iOS device to your computer and simply press "Run" on selected exam
 
 ## Documentation
 
-Please visit [[https://marketplace.zoom.us/docs/sdk/iOS](https://marketplace.zoom.us/docs/sdk/iOS)] for details of each features and functions.
+Please visit [[https://marketplace.zoom.us/docs/sdk/native-sdks/iOS](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS)] for details of each features and functions.
 
 ## Versioning
 
