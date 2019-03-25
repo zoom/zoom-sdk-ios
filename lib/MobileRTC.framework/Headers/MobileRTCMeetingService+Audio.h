@@ -114,4 +114,9 @@
  */
 - (void)resetMeetingAudioSession;
 
+/*!
+ @brief Reset Meeting Audio Session including Category and Mode. When the call comes in or goes out, click hold or swap in the dial-up UI to restore the zoom sound.
+ */
+- (void)resetMeetingAudioForCallKitHeld;
+
 @end

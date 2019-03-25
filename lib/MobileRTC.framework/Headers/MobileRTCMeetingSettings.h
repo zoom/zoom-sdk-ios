@@ -98,6 +98,11 @@
 @property (assign, nonatomic) BOOL waitingHUDHidden;
 
 /*!
+ @brief Show/Hide "Call in Room System" item in Invite h.323/SIP Room System.
+ */
+@property (assign, nonatomic) BOOL callinRoomSystemHidden;
+
+/*!
  @brief Show/Hide "Call out Room System" item in Invite h.323/SIP Room System.
  */
 @property (assign, nonatomic) BOOL calloutRoomSystemHidden;

@@ -101,7 +101,7 @@
         }
         
         BOOL ret = [ms startAppShare];
-        NSLog(@"Start App Share... ret:%zd", ret);
+        NSLog(@"Start App Share... ret:%a", @(ret));
     }
     
     //    [self startClockTimer];
@@ -165,7 +165,7 @@
     if (completion && splashctrl)
     {
         BOOL ret = completion(splashctrl);
-        NSLog(@"%zd",ret);
+        NSLog(@"%@",@(ret));
     }
 }
 
@@ -243,7 +243,7 @@
     
     NSString *callName = me ? nil : @"Dialer";
     BOOL ret = [ms dialOut:@"+866004" isCallMe:me withName:callName];
-    NSLog(@"Dial out result: %zd", ret);
+    NSLog(@"Dial out result: %@", @(ret));
 }
 
 #pragma mark - Handle Session Key
@@ -277,7 +277,7 @@
     
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     BOOL ret = [ms handleE2EMeetingKey:@[mkChat, mkAudio, mkVideo, mkShare, mkFile] withLeaveMeeting:NO];
-    NSLog(@"handleE2EMeetingKey ret:%zd", ret);
+    NSLog(@"handleE2EMeetingKey ret:%@", @(ret));
 }
 
 

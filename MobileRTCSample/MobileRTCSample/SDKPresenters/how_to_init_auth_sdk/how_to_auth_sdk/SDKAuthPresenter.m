@@ -19,8 +19,8 @@
     {
         authService.delegate = self;
         
-        authService.clientKey = kSDKAppKey;
-        authService.clientSecret = kSDKAppSecret;
+        authService.clientKey = kSDKKey;
+        authService.clientSecret = kSDKSecret;
         
         [authService sdkAuth];
     }

@@ -10,8 +10,6 @@
 
 @implementation SDKStartJoinMeetingPresenter (JoinMeetingOnly)
 
-#warning TODO 添加注释 区分loginuser
-
 - (void)joinMeeting:(NSString*)meetingNo withPassword:(NSString*)pwd
 {
     if (![meetingNo length])

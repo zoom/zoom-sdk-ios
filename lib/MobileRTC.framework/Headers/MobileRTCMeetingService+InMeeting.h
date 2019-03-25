@@ -219,4 +219,10 @@
  */
 - (BOOL)presentQAViewController:(nonnull UIViewController*)parentVC;
 
+/*!
+ @brief If you add a full-screen view to our zoom meeting UI, you can display the control bar by this method when the control bar is hidden
+ @warning The zoom meeting UI is only valid, the customized UI is invalid.
+ */
+- (void)showMeetingControlBar;
+
 @end

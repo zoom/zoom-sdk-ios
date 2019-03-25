@@ -48,5 +48,6 @@
 - (void)showVideoView;
 - (void)showRemoteShareView;
 - (void)showLocalShareView;
+- (void)hideAnnotationView;
 @end
 

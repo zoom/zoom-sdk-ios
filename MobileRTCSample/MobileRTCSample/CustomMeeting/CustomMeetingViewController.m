@@ -8,7 +8,7 @@
 
 #import "CustomMeetingViewController.h"
 
-@interface CustomMeetingViewController ()<UIGestureRecognizerDelegate, AnnoFloatBarViewDelegate>
+@interface CustomMeetingViewController ()<UIGestureRecognizerDelegate, AnnoFloatBarViewDelegate, MobileRTCAnnotationServiceDelegate, MobileRTCWaitingRoomServiceDelegate>
 
 @end
 
@@ -34,6 +34,11 @@
     [self initGuestureRecognizer];
     
     [self disableGuestureRecognizer];
+    
+    MobileRTCAnnotationService *as = [[MobileRTC sharedRTC] getAnnotationService];
+    MobileRTCWaitingRoomService *ws = [[MobileRTC sharedRTC] getWaitingRoomService];
+    as.delegate = self;
+    ws.delegate = self;
 }
 
 - (void)initSubView
@@ -74,6 +79,11 @@
 }
 
 - (void)dealloc {
+    MobileRTCAnnotationService *as = [[MobileRTC sharedRTC] getAnnotationService];
+    MobileRTCWaitingRoomService *ws = [[MobileRTC sharedRTC] getWaitingRoomService];
+    as.delegate = nil;
+    ws.delegate = nil;
+    
     [self uninitSubView];
     
     self.panGesture = nil;
@@ -190,11 +200,7 @@
 //    [[[MobileRTC sharedRTC] getMeetingService] appShareWithView:self.localShareVC.view];
     [self.sharePresenter appShareWithView:self.localShareVC.view];
     
-    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms && ![ms isAnnotationOff])
-    {
-        self.annoFloatBarView.hidden = NO;
-    }
+    [self showAnnotationView];
 }
 
 - (void)showRemoteShareView
@@ -202,11 +208,21 @@
     [self removeAllSubView];
     [self showSubView:self.remoteShareVC];
     
+    [self showAnnotationView];
+}
+
+- (void)showAnnotationView {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (ms && ![ms isAnnotationOff])
+    MobileRTCAnnotationService *as = [[MobileRTC sharedRTC] getAnnotationService];
+    if (ms && ![ms isAnnotationOff] && [as canDoAnnotation])
     {
         self.annoFloatBarView.hidden = NO;
     }
+}
+
+- (void)hideAnnotationView {
+    self.annoFloatBarView.hidden = YES;
+    [self.annoFloatBarView stopAnnotate];
 }
 
 - (UIView*)baseView
@@ -447,6 +463,35 @@
                      completion:nil];
 }
 
+#pragma mark - waiting room service delegate -
+- (void)onWaitingRoomUserJoin:(NSUInteger)userId {
+    MobileRTCWaitingRoomService *ws = [[MobileRTC sharedRTC] getWaitingRoomService];
+    NSArray *arr = [ws waitingRoomList];
+    MobileRTCMeetingUserInfo *userInfo = [ws waitingRoomUserInfoByID:userId];
+    NSLog(@"Waiting Room: %@", arr);
+    NSLog(@"userInfo: %@", userInfo);
+    [ws admitToMeeting:userId];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [ws putInWaitingRoom:userId];
+    });
+}
+
+- (void)onWaitingRoomUserLeft:(NSUInteger)userId {
+    MobileRTCWaitingRoomService *ws = [[MobileRTC sharedRTC] getWaitingRoomService];
+    MobileRTCMeetingUserInfo *userInfo = [ws waitingRoomUserInfoByID:userId];
+    NSLog(@"userInfo: %@", userInfo);
+}
+
+#pragma mark - Annotation service delegate -
+- (void)onAnnotationService:(MobileRTCAnnotationService *)service supportStatusChanged:(BOOL)support; {
+    if (support) {
+        [self showAnnotationView];
+    } else {
+        [self hideAnnotationView];
+    }
+}
+
 #pragma mark - AnnoFloatBarView
 - (AnnoFloatBarView*)annoFloatBarView
 {
@@ -461,18 +506,19 @@
 
 - (BOOL)onClickStartAnnotate
 {
-    MobileRTCAnnotationService *ms = [[MobileRTC sharedRTC] getAnnotationService];
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    MobileRTCAnnotationService *as = [[MobileRTC sharedRTC] getAnnotationService];
     
     MobileRTCAnnotationError ret = MobileRTCAnnotationError_Failed;
-    if (ms)
+    if (ms && as && ![ms isAnnotationOff] && [as canDoAnnotation])
     {
-        if ([ms isPresenter])
+        if ([as isPresenter])
         {
-            ret = [ms startAnnotationWithSharedView:self.localShareVC.view];
+            ret = [as startAnnotationWithSharedView:self.localShareVC.view];
         }
         else
         {
-            ret = [ms startAnnotationWithSharedView:self.remoteShareVC.shareView];
+            ret = [as startAnnotationWithSharedView:self.remoteShareVC.shareView];
         }
     }
     

@@ -530,11 +530,7 @@
 
 - (void)initMeetingItems
 {
-    id<MobileRTCMeetingItem> item = [[[MobileRTC sharedRTC] getPreMeetingService] createMeetingItem];
-    if (item) {
-        self.dialInCounty = [item getAvailableDialInCountry];
-        [[[MobileRTC sharedRTC] getPreMeetingService] destroyMeetingItem:item];
-    }
+    self.dialInCounty = [[[MobileRTC sharedRTC] getPreMeetingService] getAvailableDialInCountry];
     
     MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
     if (authService)

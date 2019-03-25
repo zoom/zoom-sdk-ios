@@ -87,6 +87,62 @@
     //    }
 }
 
+- (BOOL)onClickedAudioButton:(UIViewController*)parentVC {
+    
+    return NO; // will show the default SDK UI
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    if (!ms) {
+        return NO;
+    }
+    
+    MobileRTCAudioType audioType = [ms myAudioType];
+    switch (audioType)
+    {
+        case MobileRTCAudioType_VoIP: //voip
+        case MobileRTCAudioType_Telephony: //phone
+        {
+            if (![ms canUnmuteMyAudio])
+            {
+                break;
+            }
+            BOOL isMuted = [ms isMyAudioMuted];
+            [ms muteMyAudio:!isMuted];
+            break;
+        }
+        case MobileRTCAudioType_None:
+        {
+            //Supported VOIP
+            if ([ms isSupportedVOIP])
+            {
+                if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8"))
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"To hear others\n please join audio", @"")
+                                                                                             message:nil
+                                                                                      preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Call via Internet", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        //Join VOIP
+                        MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+                        if (ms)
+                        {
+                            [ms connectMyAudio:YES];
+                        }
+                    }]];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                    }]];
+                    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                    [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
+                }
+            }
+            break;
+        }
+    }
+    
+    return YES;
+}
+
+
 #if 0
 - (void)onMeetingEndedReason:(MobileRTCMeetingEndReason)reason
 {

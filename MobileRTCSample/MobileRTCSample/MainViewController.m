@@ -136,6 +136,29 @@
 }
 
 #pragma mark - Sub Views
+- (void)showIntroView
+{
+    IntroViewController *vc = [IntroViewController new];
+    self.introVC = vc;
+    
+    [self addChildViewController:self.introVC];
+    [self.view insertSubview:self.introVC.view atIndex:0];
+    [self.introVC didMoveToParentViewController:self];
+    
+    self.introVC.view.frame = self.view.bounds;
+}
+
+- (void)showSplashView
+{
+    SplashViewController *vc = [SplashViewController new];
+    self.splashVC = vc;
+    
+    [self addChildViewController:self.splashVC];
+    [self.view insertSubview:self.splashVC.view atIndex:0];
+    [self.splashVC didMoveToParentViewController:self];
+    
+    self.splashVC.view.frame = self.view.bounds;
+}
 
 - (UIButton*)meetButton
 {
@@ -163,30 +186,6 @@
     }
     
     return _joinButton;
-}
-
-- (void)showIntroView
-{
-    IntroViewController *vc = [IntroViewController new];
-    self.introVC = vc;
-    
-    [self addChildViewController:self.introVC];
-    [self.view insertSubview:self.introVC.view atIndex:0];
-    [self.introVC didMoveToParentViewController:self];
-    
-    self.introVC.view.frame = self.view.bounds;
-}
-
-- (void)showSplashView
-{
-    SplashViewController *vc = [SplashViewController new];
-    self.splashVC = vc;
-    
-    [self addChildViewController:self.splashVC];
-    [self.view insertSubview:self.splashVC.view atIndex:0];
-    [self.splashVC didMoveToParentViewController:self];
-    
-    self.splashVC.view.frame = self.view.bounds;
 }
 
 - (UIButton*)shareButton
@@ -229,6 +228,7 @@
     return _settingButton;
 }
 
+#pragma mark - action -
 - (void)onMeetNow:(id)sender
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
@@ -435,7 +435,7 @@
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     MobileRTCNetworkQuality sendQuality = [ms queryNetworkQuality:MobileRTCComponentType_VIDEO withDataFlow:YES];
     MobileRTCNetworkQuality receiveQuality = [ms queryNetworkQuality:MobileRTCComponentType_VIDEO withDataFlow:NO];
-    NSLog(@"Query Network Data [sending: %zd, receiving: %zd]...", sendQuality, receiveQuality);
+    NSLog(@"Query Network Data [sending: %@, receiving: %@]...", @(sendQuality), @(receiveQuality));
 }
 
 @end

@@ -14,7 +14,7 @@
 
 #define kSDKUserID      @""
 #define kSDKUserName    @""
-#define kSDKUserToken @""
+#define kSDKUserToken   @""
 #define kSDKMeetNumber  @""
 #define kZAK @""
 //the following parameters are optional, just for login user

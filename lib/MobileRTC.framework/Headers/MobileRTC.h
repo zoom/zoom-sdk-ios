@@ -30,6 +30,7 @@
 #import <MobileRTC/MobileRTCMeetingActionItem.h>
 #import <MobileRTC/MobileRTCAnnotationService.h>
 #import <MobileRTC/MobileRTCRemoteControlService.h>
+#import <MobileRTC/MobileRTCWaitingRoomService.h>
 /*!
  @class MobileRTC
  @brief Initialize the class to acquire all the services. 
@@ -41,15 +42,16 @@
     NSString               *_mobileRTCDomain;
     NSString               *_mobileRTCResPath;
     NSString               *_mobileRTCCustomLocalizableName;
-    MobileRTCMeetingService  *_meetingService;
-    MobileRTCMeetingSettings *_meetingSettings;
+    MobileRTCMeetingService         *_meetingService;
+    MobileRTCMeetingSettings        *_meetingSettings;
     
-    MobileRTCAuthService     *_authService;
-    MobileRTCPremeetingService *_premeetingService;
+    MobileRTCAuthService            *_authService;
+    MobileRTCPremeetingService      *_premeetingService;
     
-    MobileRTCAnnotationService *_annotationService;
+    MobileRTCAnnotationService      *_annotationService;
     
-    MobileRTCRemoteControlService *_remoteControlService;
+    MobileRTCRemoteControlService   *_remoteControlService;
+    MobileRTCWaitingRoomService     *_waitingRoomService;
 }
 
 /*!
@@ -71,9 +73,19 @@
  @brief Call the function to initialize MobileRTC.
  @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
  @param domain The domain is used to start/join a ZOOM meeting.
- @param enableLog Set MobileRTC log enable or not.
+ @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
  */
 + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog;
+
+/*!
+ @brief Call the function to initialize MobileRTC.
+ @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
+ @warning This method is optional, if the MobileRTCResources.bundle is located in main bundle, please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog to initialize MobileRTC; otherwise it is necessary to use the method for initialize MobileRTC.
+ @param domain The domain is used to start/join a ZOOM meeting.
+ @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
+ @param bundleResPath Set the path of MobileRTC resource bundle.
+ */
++ (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath;
 
 /*!
  @brief Call the function to get the MobileRTC client.
@@ -91,11 +103,13 @@
 - (void)setMobileRTCDomain:(NSString*)domain;
 
 /*!
+ @deprecated This method is deprecated starting in version 4.3
+ @note Please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath;
  @brief Set the path of MobileRTC resource bundle.
  @warning This method is optional, the MobileRTCResources.bundle is located in main bundle if the function is not called; otherwise it is necessary to set the MobileRTC Resources path while initializing MobileRTC. 
  @param path The path of MobileRTC Resources bundle.
  */
-- (void)setMobileRTCResPath:(NSString *)path;
+- (void)setMobileRTCResPath:(NSString *)path DEPRECATED_MSG_ATTRIBUTE("use [+ (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath] instead");
 
 /*!
  @brief Set the name of Localizable file for MobileRTC.
@@ -173,6 +187,12 @@
  @return The preconfigured remote control service. 
  */
 - (MobileRTCRemoteControlService*)getRemoteControlService;
+
+/*!
+ @brief Get the default MobileRTC waiting room service.
+ @return The MobileRTC waiting room service.
+ */
+- (MobileRTCWaitingRoomService *)getWaitingRoomService;
 
 /*!
  @brief Get the languages supported by MobileRTC.   

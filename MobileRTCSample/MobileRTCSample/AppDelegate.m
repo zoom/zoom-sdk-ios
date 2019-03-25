@@ -34,7 +34,6 @@
     [[[SDKInitPresenter alloc] init] SDKInit:navVC];
     
     //4. MobileRTC Authorize
-//    [self sdkAuth];
     [[[SDKAuthPresenter alloc] init] SDKAuth];
     
     //5. Set AppGroup name

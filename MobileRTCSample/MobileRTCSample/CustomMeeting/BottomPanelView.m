@@ -301,6 +301,39 @@
                                                                           [self.actionPresenter lockShare];
                                                                       }]];
                 }
+                
+                MobileRTCAnnotationService *as = [[MobileRTC sharedRTC] getAnnotationService];
+                if ([as canDisableViewerAnnoataion]) {
+                    if ([as isViewerAnnoataionDisabled]) {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Allow Viewer Annotation"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction *action) {
+                                                                              [as disableViewerAnnoataion:NO];
+                                                                          }]];
+                    } else {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Disable Viewer Annotation"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction *action) {
+                                                                              [as disableViewerAnnoataion:YES];
+                                                                          }]];
+                    }
+                }
+                MobileRTCWaitingRoomService *ws = [[MobileRTC sharedRTC] getWaitingRoomService];
+                if ([ws isSupportWaitingRoom]) {
+                    if ([ws isWaitingRoomOnEntryFlagOn]) {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Disable Waiting Room On Entry"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction *action) {
+                                                                              [ws enableWaitingRoomOnEntry:NO];
+                                                                          }]];
+                    } else {
+                        [alertController addAction:[UIAlertAction actionWithTitle:@"Enable Waiting Room On Entry"
+                                                                            style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction *action) {
+                                                                              [ws enableWaitingRoomOnEntry:YES];
+                                                                          }]];
+                    }
+                }
             }
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

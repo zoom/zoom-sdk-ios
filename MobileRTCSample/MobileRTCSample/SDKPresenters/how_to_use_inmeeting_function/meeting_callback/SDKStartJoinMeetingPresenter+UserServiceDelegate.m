@@ -23,6 +23,9 @@
 
 - (void)onSinkMeetingUserLeft:(NSUInteger)userID
 {
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    MobileRTCMeetingUserInfo *leftUser = [ms userInfoByID:userID];
+    NSLog(@"User Left : %@", leftUser);
     if (self.customMeetingVC)
     {
         [self.customMeetingVC onSinkMeetingUserLeft:userID];

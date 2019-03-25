@@ -1,8 +1,33 @@
 # CHANGELOG
 
+## 2019-03-25 @ [v4.3.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.47201.0322)
+
+**Added**
+* Introduce new Zoom meeting UI
+* Start supporting Virtual Background feature
+* Start supporting CallKit
+* Start supporting minimize meeting
+* Add new interfaces to control “disable viewer’s annotate” on the share sender site
+* Add new interfaces to customize the sub-tab pages in H323 invite page and customize all tab pages in the invite dialog
+* Add new interfaces for waiting room feature
+
+**Changed & Fixed**
+
+* Fix some issues that occasionally causes sharing failure
+* Fix some issues that occasionally causes UI freezes
+* Fix an issue that the onSinkMeetingUserLeft method does not call back
+* Fix an issue that the local video data not shown when frequently start and stop meeting
+* Improve the performance of screen sharing
+* Fix an issue that the call-me prompts only heard in English
+* Fix an issue that the participant list is not reflecting camera and microphone options
+
+**Deprecated**
+
+* - (void)setMobileRTCResPath:(NSString *)path;
+
 ## 2019-01-23 @ [v4.3.30728.0118](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.30728.0118)
 
-Added
+**Added**
 * New functional documentation.
 * A new refactorized demo project that provides clear instructions on how to implement major features.
 * New logging feature that stores logs with the maximum size of 5MB.
@@ -10,7 +35,7 @@ Added
 * A new method to join/start meeting directly via url, such as zoommtg://zoom.us/join?action=....
 * Support to select dial-in country while scheduling a meeting.
 
-Changed & Fixed
+**Changed & Fixed**
 * An issue that turning off sharing the web does not work
 * A case that some users’ avatars are not clear
 * An issue that causes isWebinarMeeting function always return NO.
@@ -101,7 +126,7 @@ MobileRTCMeetingStartParam4WithoutLoginUser * user = [[[MobileRTCMeetingStartPar
 
 MobileRTCMeetError ret = [ms startMeetingWithStartParam:param];
 
-Note that: User need to be clear about your own Usertype, 
+Note that: User need to be clear about your own Usertype,
 Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return the correct Usertype.
 ```
 
@@ -189,17 +214,17 @@ Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return 
 ## 2017-03-03
 
 ### Added
-1. Fix Signal SIGPIPE issue after losingWiFi connection; 
+1. Fix Signal SIGPIPE issue after losingWiFi connection;
 
 2. Add interfaces to get attendees in meeting
-(NSArray*)getInMeetingUserList; 
+(NSArray*)getInMeetingUserList;
 
 3. Add delegate to get attendee state change
 - (void)onMyAudioStateChange
 - (void)onMyVideoStateChange
 - (void)onMyHandStateChange
 - (void)onAudioOutputChange
-- (void)inMeetingUserUpdated 
+- (void)inMeetingUserUpdated
 
 4. Add interfaces for Raise Hand, Spotlight Video, Make Host and Remove User
 - (BOOL)raiseMyHand;
@@ -231,14 +256,14 @@ Example
 - [mslowerHand];
 - (BOOL)isUserVideoPinned:(NSUInteger)userId;
 - (BOOL)pinVideo:(BOOL)on withUser:(NSUInteger)userId;
-- (BOOL)makeHost:(NSUInteger)userId; 
+- (BOOL)makeHost:(NSUInteger)userId;
 
 5. Add interfaces to call room device directly
 - (BOOL)isCallingRoomDevice;
 - (BOOL)cancelCallRoomDevice;
 - (NSArray*)getRoomDeviceList;
 - (BOOL)sendPairingCode:(NSString*)code;
-- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device; 
+- (BOOL)callRoomDevice:(MobileRTCRoomDevice*)device;
 
 ## 2017-01-03
 

@@ -231,10 +231,12 @@
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
                 textField.placeholder = NSLocalizedString(@"Work Email", @"");
                 textField.keyboardType = UIKeyboardTypeEmailAddress;
+                textField.text = @"";
             }];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
                 textField.placeholder = NSLocalizedString(@"Password", @"");
                 textField.secureTextEntry = YES;
+                textField.text = @"";
             }];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {

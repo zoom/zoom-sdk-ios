@@ -74,8 +74,7 @@
     else
     {
 //        self.topPanelView.shrinkBtn.hidden = NO;
-        self.annoFloatBarView.hidden = YES;
-        [self.annoFloatBarView stopAnnotate];
+        [self hideAnnotationView];
         [self showVideoView];
     }
 }
@@ -120,6 +119,6 @@
 
 - (void)onEndButtonClick:(id)sender
 {
-    [self.actionPresenter leaveMeetingWithCmd];
+    [self.actionPresenter leaveMeeting];
 }
 @end
