@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ios API Doc: &lt;MobileRTCMeetingServiceDelegate &gt; Protocol Reference</title>
+<title>iOS API Doc: &lt;MobileRTCMeetingServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ios API Doc
+   <div id="projectname">iOS API Doc
    </div>
   </td>
  </tr>
@@ -137,6 +137,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a1064c622db574902cb9649e53764c6ee"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a1064c622db574902cb9649e53764c6ee">onClickedInviteButton:addInviteActionItem:</a></td></tr>
 <tr class="memdesc:a1064c622db574902cb9649e53764c6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Customize the invitation event.  <a href="#a1064c622db574902cb9649e53764c6ee">More...</a><br /></td></tr>
 <tr class="separator:a1064c622db574902cb9649e53764c6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a574f52f5bfbf3ca87f939209bec7824a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a574f52f5bfbf3ca87f939209bec7824a">onClickedAudioButton:</a></td></tr>
+<tr class="memdesc:a574f52f5bfbf3ca87f939209bec7824a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Customize the audio button clicked event.  <a href="#a574f52f5bfbf3ca87f939209bec7824a">More...</a><br /></td></tr>
+<tr class="separator:a574f52f5bfbf3ca87f939209bec7824a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb57a8c392e7c768403ca281091324e8"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#afb57a8c392e7c768403ca281091324e8">onClickedParticipantsButton:</a></td></tr>
 <tr class="memdesc:afb57a8c392e7c768403ca281091324e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom the UI of Participants management.  <a href="#afb57a8c392e7c768403ca281091324e8">More...</a><br /></td></tr>
 <tr class="separator:afb57a8c392e7c768403ca281091324e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -290,6 +293,41 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
+<a id="a574f52f5bfbf3ca87f939209bec7824a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a574f52f5bfbf3ca87f939209bec7824a">&#9670;&nbsp;</a></span>onClickedAudioButton:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onClickedAudioButton: </td>
+          <td></td>
+          <td class="paramtype">(UIViewController *)&#160;</td>
+          <td class="paramname"><em>parentVC</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Customize the audio button clicked event. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parentVC</td><td>Parent viewcontroller to present custom Invite UI. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES if user wants to custom the audio button clicked event, Otherwise NO, will use the default method. </dd></dl>
+
+</div>
+</div>
 <a id="a2f4027cdc7f14eb0c864b155eee393da"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f4027cdc7f14eb0c864b155eee393da">&#9670;&nbsp;</a></span>onClickedDialOut:isCallMe:()</h2>
 
@@ -377,7 +415,7 @@ Instance Methods</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Input NO if user wants to custom the invite items, add items to Invite ActionSheet via <a class="el" href="interface_mobile_r_t_c_meeting_invite_action_item.html" title="Add custom invitation action items to the meeting.   ">MobileRTCMeetingInviteActionItem</a>. Otherwise YES, user will use the default UI. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>NO if user wants to custom the invite items, add items to Invite ActionSheet via <a class="el" href="interface_mobile_r_t_c_meeting_invite_action_item.html" title="Add custom invitation action items to the meeting.   ">MobileRTCMeetingInviteActionItem</a>. Otherwise YES, user will use the default UI. </dd></dl>
 
 </div>
 </div>

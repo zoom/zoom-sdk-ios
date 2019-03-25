@@ -6,6 +6,8 @@ var searchData=
   ['mobilertcactivevideoview',['MobileRTCActiveVideoView',['../interface_mobile_r_t_c_active_video_view.html',1,'']]],
   ['mobilertcalternativehost',['MobileRTCAlternativeHost',['../interface_mobile_r_t_c_alternative_host.html',1,'']]],
   ['mobilertcannotationservice',['MobileRTCAnnotationService',['../interface_mobile_r_t_c_annotation_service.html',1,'']]],
+  ['mobilertcannotationservicedelegate',['MobileRTCAnnotationServiceDelegate',['../class_mobile_r_t_c_annotation_service_delegate.html',1,'']]],
+  ['mobilertcannotationservicedelegate_20_2dp',['MobileRTCAnnotationServiceDelegate -p',['../protocol_mobile_r_t_c_annotation_service_delegate_01-p.html',1,'']]],
   ['mobilertcaudioservicedelegate_20_2dp',['MobileRTCAudioServiceDelegate -p',['../protocol_mobile_r_t_c_audio_service_delegate_01-p.html',1,'']]],
   ['mobilertcaudioservicedelegate_2dp',['MobileRTCAudioServiceDelegate-p',['../protocol_mobile_r_t_c_audio_service_delegate-p.html',1,'']]],
   ['mobilertcaudiostatus',['MobileRTCAudioStatus',['../interface_mobile_r_t_c_audio_status.html',1,'']]],
@@ -53,6 +55,9 @@ var searchData=
   ['mobilertcvideoservicedelegate_2dp',['MobileRTCVideoServiceDelegate-p',['../protocol_mobile_r_t_c_video_service_delegate-p.html',1,'']]],
   ['mobilertcvideostatus',['MobileRTCVideoStatus',['../interface_mobile_r_t_c_video_status.html',1,'']]],
   ['mobilertcvideoview',['MobileRTCVideoView',['../interface_mobile_r_t_c_video_view.html',1,'']]],
+  ['mobilertcwaitingroomservice',['MobileRTCWaitingRoomService',['../interface_mobile_r_t_c_waiting_room_service.html',1,'']]],
+  ['mobilertcwaitingroomservicedelegate',['MobileRTCWaitingRoomServiceDelegate',['../class_mobile_r_t_c_waiting_room_service_delegate.html',1,'']]],
+  ['mobilertcwaitingroomservicedelegate_20_2dp',['MobileRTCWaitingRoomServiceDelegate -p',['../protocol_mobile_r_t_c_waiting_room_service_delegate_01-p.html',1,'']]],
   ['mobilertcwebinarservicedelegate_20_2dp',['MobileRTCWebinarServiceDelegate -p',['../protocol_mobile_r_t_c_webinar_service_delegate_01-p.html',1,'']]],
   ['mobilertcwebinarservicedelegate_2dp',['MobileRTCWebinarServiceDelegate-p',['../protocol_mobile_r_t_c_webinar_service_delegate-p.html',1,'']]]
 ];

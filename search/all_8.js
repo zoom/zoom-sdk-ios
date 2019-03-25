@@ -1,6 +1,7 @@
 var searchData=
 [
   ['initializewithdomain_3aenablelog_3a',['initializeWithDomain:enableLog:',['../interface_mobile_r_t_c.html#a6b27e8505750973d8d56c3d13618bccf',1,'MobileRTC']]],
+  ['initializewithdomain_3aenablelog_3abundlerespath_3a',['initializeWithDomain:enableLog:bundleResPath:',['../interface_mobile_r_t_c.html#a09a8b74b9c6d4dda192403bcd404e97a',1,'MobileRTC']]],
   ['insilentmode',['inSilentMode',['../interface_mobile_r_t_c_meeting_user_info.html#ae9ea7f32e4ea7bd4665a33758616468e',1,'MobileRTCMeetingUserInfo']]],
   ['invitecopyurl',['inviteCopyURL',['../interface_mobile_r_t_c_invite_helper.html#a3276dc7e912f1c29f80e2d9c65c65b69',1,'MobileRTCInviteHelper']]],
   ['inviteemailcontent',['inviteEmailContent',['../interface_mobile_r_t_c_invite_helper.html#a66c77e16634f7966f18efd54159e11b9',1,'MobileRTCInviteHelper']]],
@@ -66,6 +67,7 @@ var searchData=
   ['isstartingshare',['isStartingShare',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html#adb1405749adb250318f9dd6628250aff',1,'MobileRTCMeetingService(AppShare)::isStartingShare()'],['../interface_mobile_r_t_c_meeting_service.html#adb1405749adb250318f9dd6628250aff',1,'MobileRTCMeetingService::isStartingShare()']]],
   ['issupportedcustomizemeetingui',['isSupportedCustomizeMeetingUI',['../interface_mobile_r_t_c.html#a15123fa71d1a329f8f980f8e7ab4a1ac',1,'MobileRTC']]],
   ['issupportedvoip',['isSupportedVOIP',['../category_mobile_r_t_c_meeting_service_07_audio_08.html#a0b7ad633e09783103d22124da7e5b40a',1,'MobileRTCMeetingService(Audio)::isSupportedVOIP()'],['../interface_mobile_r_t_c_meeting_service.html#a0b7ad633e09783103d22124da7e5b40a',1,'MobileRTCMeetingService::isSupportedVOIP()']]],
+  ['issupportwaitingroom',['isSupportWaitingRoom',['../interface_mobile_r_t_c_waiting_room_service.html#a47316762d4e6b070ba2b90650929d7e7',1,'MobileRTCWaitingRoomService']]],
   ['istalking',['isTalking',['../interface_mobile_r_t_c_audio_status.html#a104df0a689f34645cd4dbb638c0b0587',1,'MobileRTCAudioStatus']]],
   ['istelephoneandvoipsupported',['isTelephoneAndVoipSupported',['../interface_mobile_r_t_c_account_info.html#a0abed7a1682f9b904c74d7e127b2c9f4',1,'MobileRTCAccountInfo']]],
   ['istelephoneonlysupported',['isTelephoneOnlySupported',['../interface_mobile_r_t_c_account_info.html#aeec73120554dd9ecf416355613670d17',1,'MobileRTCAccountInfo']]],
@@ -74,6 +76,8 @@ var searchData=
   ['isuserpinned_3a',['isUserPinned:',['../category_mobile_r_t_c_meeting_service_07_video_08.html#a59e3ed58e85d3df8aad2fffb18e3f56f',1,'MobileRTCMeetingService(Video)::isUserPinned:()'],['../interface_mobile_r_t_c_meeting_service.html#a59e3ed58e85d3df8aad2fffb18e3f56f',1,'MobileRTCMeetingService::isUserPinned:()']]],
   ['isuserspotlighted_3a',['isUserSpotlighted:',['../category_mobile_r_t_c_meeting_service_07_video_08.html#a58bd34fd851716a593859943fdb26f9e',1,'MobileRTCMeetingService(Video)::isUserSpotlighted:()'],['../interface_mobile_r_t_c_meeting_service.html#a58bd34fd851716a593859943fdb26f9e',1,'MobileRTCMeetingService::isUserSpotlighted:()']]],
   ['isuservideosending_3a',['isUserVideoSending:',['../category_mobile_r_t_c_meeting_service_07_video_08.html#ae3a635d82e4c0f54b37f54b3cdd3ae83',1,'MobileRTCMeetingService(Video)::isUserVideoSending:()'],['../interface_mobile_r_t_c_meeting_service.html#ae3a635d82e4c0f54b37f54b3cdd3ae83',1,'MobileRTCMeetingService::isUserVideoSending:()']]],
+  ['isviewerannoataiondisabled',['isViewerAnnoataionDisabled',['../interface_mobile_r_t_c_annotation_service.html#af053fcdfd87057e42bd62551ec1a923d',1,'MobileRTCAnnotationService']]],
   ['isviewingshare',['isViewingShare',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html#ad2dbf5434205f31e4563419ae8b7067b',1,'MobileRTCMeetingService(AppShare)::isViewingShare()'],['../interface_mobile_r_t_c_meeting_service.html#ad2dbf5434205f31e4563419ae8b7067b',1,'MobileRTCMeetingService::isViewingShare()']]],
+  ['iswaitingroomonentryflagon',['isWaitingRoomOnEntryFlagOn',['../interface_mobile_r_t_c_waiting_room_service.html#ac042fac91b45768a87a252085b78bc2c',1,'MobileRTCWaitingRoomService']]],
   ['iswebinarmeeting',['isWebinarMeeting',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9e79ea9745d6dde7037ca8c3e6747c5a',1,'MobileRTCMeetingService(InMeeting)::isWebinarMeeting()'],['../protocol_mobile_r_t_c_meeting_item_01-p.html#a0ea193fd413d07c336e7835a8f507270',1,'MobileRTCMeetingItem -p::isWebinarMeeting()'],['../interface_mobile_r_t_c_meeting_service.html#a9e79ea9745d6dde7037ca8c3e6747c5a',1,'MobileRTCMeetingService::isWebinarMeeting()']]]
 ];

@@ -7,6 +7,7 @@ var searchData=
   ['oncameranoprivilege',['onCameraNoPrivilege',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#af02c3557a3a3ffd926c769b7e8c2dee3',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['oncheckcmrprivilege_3a',['onCheckCMRPrivilege:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a240c3d3999538afa49a8c57594c19ba3',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclaimhostresult_3a',['onClaimHostResult:',['../protocol_mobile_r_t_c_user_service_delegate_01-p.html#ae0b26e7aa9420c8a5a96fdf7740da7a9',1,'MobileRTCUserServiceDelegate -p']]],
+  ['onclickedaudiobutton_3a',['onClickedAudioButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a574f52f5bfbf3ca87f939209bec7824a',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickeddialout_3aiscallme_3a',['onClickedDialOut:isCallMe:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a2f4027cdc7f14eb0c864b155eee393da',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedinvitebutton_3aaddinviteactionitem_3a',['onClickedInviteButton:addInviteActionItem:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a1064c622db574902cb9649e53764c6ee',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedparticipantsbutton_3a',['onClickedParticipantsButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#afb57a8c392e7c768403ca281091324e8',1,'MobileRTCMeetingServiceDelegate -p']]],

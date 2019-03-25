@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ios API Doc: MobileRTCPremeetingService Class Reference</title>
+<title>iOS API Doc: MobileRTCPremeetingService Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">ios API Doc
+   <div id="projectname">iOS API Doc
    </div>
   </td>
  </tr>
@@ -109,6 +109,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3d1db18aff501f3ef878c7ede89cd146"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_premeeting_service.html#a3d1db18aff501f3ef878c7ede89cd146">listMeeting</a></td></tr>
 <tr class="memdesc:a3d1db18aff501f3ef878c7ede89cd146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for list all of meetings which belong to the logged in user.  <a href="#a3d1db18aff501f3ef878c7ede89cd146">More...</a><br /></td></tr>
 <tr class="separator:a3d1db18aff501f3ef878c7ede89cd146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af262a13a5c10991cb43a9641a9345fc9"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_mobile_r_t_c_dialin_country.html">MobileRTCDialinCountry</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_premeeting_service.html#af262a13a5c10991cb43a9641a9345fc9">getAvailableDialInCountry</a></td></tr>
+<tr class="memdesc:af262a13a5c10991cb43a9641a9345fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">return available dial in country object before meeting item create, you can use the ‘allCountries’ for list all the availble country for user select.  <a href="#af262a13a5c10991cb43a9641a9345fc9">More...</a><br /></td></tr>
+<tr class="separator:af262a13a5c10991cb43a9641a9345fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -242,6 +245,26 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate-p.html">Mob
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES means that the method is called successfully, otherwise not. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>App needs to clone the meetingitem while editing the meeting, the clonal meeting item should be destroyed finally via destroyMeetingItem. </dd></dl>
+
+</div>
+</div>
+<a id="af262a13a5c10991cb43a9641a9345fc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af262a13a5c10991cb43a9641a9345fc9">&#9670;&nbsp;</a></span>getAvailableDialInCountry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable <a class="el" href="interface_mobile_r_t_c_dialin_country.html">MobileRTCDialinCountry</a> *) getAvailableDialInCountry </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>return available dial in country object before meeting item create, you can use the ‘allCountries’ for list all the availble country for user select. </p>
+<dl class="section return"><dt>Returns</dt><dd>available means get success, otherwise will be nil. </dd></dl>
 
 </div>
 </div>
