@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2019-03-25 @ [v4.3.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.47201.0322)
+## 2019-03-25 @ [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322)
 
 **Added**
 * Introduce new Zoom meeting UI
@@ -25,7 +25,7 @@
 
 * - (void)setMobileRTCResPath:(NSString *)path;
 
-## 2019-01-23 @ [v4.3.30728.0118](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.30728.0118)
+## 2019-01-23 @ [v4.3.0.30728.0118](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.0.30728.0118)
 
 **Added**
 * New functional documentation.
