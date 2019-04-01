@@ -12,10 +12,10 @@
 ## Full Documentation && Community Support
 You can find the full Zoom iOS SDK documentation and the community support forum here:
 <div align="center">
-   <a href="https://marketplace.zoom.us/docs/sdk/native-sdks/iOS" style="text-decoration:none">
+   <a target="_blank" href="https://marketplace.zoom.us/docs/sdk/native-sdks/iOS" style="text-decoration:none">
    <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Doc-button.png" width="350px" max-height="350px" style="margin:1vh 1vw;"/>
    </a>
-   <a href="https://devforum.zoom.us/c/mobile-sdk" style="text-decoration:none">
+   <a target="_blank" href="https://devforum.zoom.us/c/mobile-sdk" style="text-decoration:none">
    <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Forum-button.png" width="350px" max-height="350px" style="margin:1vh 1vw;"/>
    </a>
 </div>
