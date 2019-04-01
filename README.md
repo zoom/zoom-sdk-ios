@@ -13,10 +13,10 @@
 You can find the full Zoom iOS SDK documentation and the community support forum here:
 <div align="center">
    <a href="https://marketplace.zoom.us/docs/sdk/native-sdks/iOS" style="margin:1vh 1vw;">
-   <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Doc-button.png" max-width="400px"/>
+   <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Doc-button.png" style="max-width:400px !important;"/>
    </a>
    <a href="https://devforum.zoom.us/c/mobile-sdk" style="margin:1vh 1vw;">
-   <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Forum-button.png" max-width="400px"/>
+   <img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/Forum-button.png" style="max-width:400px !important;"/>
    </a>
 </div>
 
