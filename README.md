@@ -103,6 +103,7 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 * :four: `Unsupported Architecture. Your executable contains unsupported architecture '[x86_64, i386]`
   * As the answer on StackOverflow([https://stackoverflow.com/questions/42641806/check-and-remove-unsupported-architecture-x86-64-i386-in-ipa-archive](https://stackoverflow.com/questions/42641806/check-and-remove-unsupported-architecture-x86-64-i386-in-ipa-archive)) says:
 > Apple has started complaining if app contains simulator architectures during distribution.
+
   So if you are going to publish your application through App Store, please use the **device-only** version(which is the version in the master branch of our Github repo or the one you downloaded from our SDK documentation).
 * Not finding what you want? We are here to help! Please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/) for further assistance.
 
