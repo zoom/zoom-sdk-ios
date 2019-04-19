@@ -105,6 +105,12 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 > Apple has started complaining if app contains simulator architectures during distribution.
 
   So if you are going to publish your application through App Store, please use the **device-only** version(which is the version in the master branch of our Github repo or the one you downloaded from our SDK documentation).
+* :five: App Crashed and log shows the crash point at `TermSBPTUIModule(Cmm::ICmmMessageQueueClient*)`
+   * This error appears becuase the instance of the `MobileRTCMeetingServiceDelegate` was not set to `nil` after you finish using our Zoom services. We defined the delegate as `assign` property, which needs to be set to `nil` manually.
+```
+@property (nullable, assign, nonatomic) id<MobileRTCMeetingServiceDelegate> delegate;
+```
+   Setting the delegate to nil should fix this crash.
 * Not finding what you want? We are here to help! Please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/) for further assistance.
 
 
