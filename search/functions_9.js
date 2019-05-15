@@ -3,6 +3,7 @@ var searchData=
   ['makehost_3a',['makeHost:',['../category_mobile_r_t_c_meeting_service_07_user_08.html#a5cb3e951bb7a40dd93988456b6e5d3cd',1,'MobileRTCMeetingService(User)::makeHost:()'],['../interface_mobile_r_t_c_meeting_service.html#a5cb3e951bb7a40dd93988456b6e5d3cd',1,'MobileRTCMeetingService::makeHost:()']]],
   ['meetingchatbyid_3a',['meetingChatByID:',['../category_mobile_r_t_c_meeting_service_07_chat_08.html#a9074a5f9214c4b55fbfe006e43571599',1,'MobileRTCMeetingService(Chat)::meetingChatByID:()'],['../interface_mobile_r_t_c_meeting_service.html#a9074a5f9214c4b55fbfe006e43571599',1,'MobileRTCMeetingService::meetingChatByID:()']]],
   ['meetingview',['meetingView',['../interface_mobile_r_t_c_meeting_service.html#ab19618cb7ba2a777ad8c2216eac2ad44',1,'MobileRTCMeetingService']]],
+  ['minimizemeetingdisabled',['minimizeMeetingDisabled',['../interface_mobile_r_t_c_meeting_settings.html#adc4779233714c27cf22babd3aecfa032',1,'MobileRTCMeetingSettings']]],
   ['mobilertcrootcontroller',['mobileRTCRootController',['../interface_mobile_r_t_c.html#a55fe56e9f8af6ce70d94a87723486098',1,'MobileRTC']]],
   ['mobilertcversion',['mobileRTCVersion',['../interface_mobile_r_t_c.html#a19d1dd040a0fe3b3b0011faed50800dd',1,'MobileRTC']]],
   ['mutealluseraudio_3a',['muteAllUserAudio:',['../category_mobile_r_t_c_meeting_service_07_audio_08.html#a0609ab2e53f927b7842d3e98b9669375',1,'MobileRTCMeetingService(Audio)::muteAllUserAudio:()'],['../interface_mobile_r_t_c_meeting_service.html#a0609ab2e53f927b7842d3e98b9669375',1,'MobileRTCMeetingService::muteAllUserAudio:()']]],

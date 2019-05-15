@@ -7,6 +7,7 @@ var searchData=
   ['disablecallin_3a',['disableCallIn:',['../interface_mobile_r_t_c_meeting_settings.html#ad24f37722aa491c5e74b3564b1a957fa',1,'MobileRTCMeetingSettings']]],
   ['disablecallout_3a',['disableCallOut:',['../interface_mobile_r_t_c_meeting_settings.html#a36066e879c6834d6fd09d8e21ccb6134',1,'MobileRTCMeetingSettings']]],
   ['disabledrivemode_3a',['disableDriveMode:',['../interface_mobile_r_t_c_meeting_settings.html#a39ff7d165e66afd702a0df768b68b944',1,'MobileRTCMeetingSettings']]],
+  ['disableminimizemeeting_3a',['disableMinimizeMeeting:',['../interface_mobile_r_t_c_meeting_settings.html#a47f99281a86573e80b1be58a273d1658',1,'MobileRTCMeetingSettings']]],
   ['disableviewerannoataion_3a',['disableViewerAnnoataion:',['../interface_mobile_r_t_c_annotation_service.html#a912ba3c53f19e056dca6bd0ada5d7c37',1,'MobileRTCAnnotationService']]],
   ['drivemodedisabled',['driveModeDisabled',['../interface_mobile_r_t_c_meeting_settings.html#ab80eb108ad909bd832eef97e46124865',1,'MobileRTCMeetingSettings']]]
 ];

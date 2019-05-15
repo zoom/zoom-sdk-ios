@@ -16,6 +16,7 @@ var searchData=
   ['meetingtitlehidden',['meetingTitleHidden',['../interface_mobile_r_t_c_meeting_settings.html#a22e7951e826ca913b3e1dc5427db2e1c',1,'MobileRTCMeetingSettings']]],
   ['meetingvideohidden',['meetingVideoHidden',['../interface_mobile_r_t_c_meeting_settings.html#a9f01801d8fd66d392a576632aaaaa0d1',1,'MobileRTCMeetingSettings']]],
   ['meetingview',['meetingView',['../interface_mobile_r_t_c_meeting_service.html#ab19618cb7ba2a777ad8c2216eac2ad44',1,'MobileRTCMeetingService']]],
+  ['minimizemeetingdisabled',['minimizeMeetingDisabled',['../interface_mobile_r_t_c_meeting_settings.html#adc4779233714c27cf22babd3aecfa032',1,'MobileRTCMeetingSettings']]],
   ['mobilertc',['MobileRTC',['../interface_mobile_r_t_c.html',1,'']]],
   ['mobilertcaccountinfo',['MobileRTCAccountInfo',['../interface_mobile_r_t_c_account_info.html',1,'']]],
   ['mobilertcactiveshareview',['MobileRTCActiveShareView',['../interface_mobile_r_t_c_active_share_view.html',1,'']]],

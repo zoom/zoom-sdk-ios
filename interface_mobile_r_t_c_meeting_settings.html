@@ -73,7 +73,7 @@ $(function() {
 <p>Set to modify the configurations of the meeting.  
  <a href="interface_mobile_r_t_c_meeting_settings.html#details">More...</a></p>
 
-<p><code>#import &lt;<a class="el" href="interface_mobile_r_t_c_meeting_settings_8h_source.html">MobileRTCMeetingSettings.h</a>&gt;</code></p>
+<p><code>#import &lt;<a class="el" href="_mobile_r_t_c_meeting_settings_8h_source.html">MobileRTCMeetingSettings.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for MobileRTCMeetingSettings:</div>
 <div class="dyncontent">
@@ -121,6 +121,12 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a36066e879c6834d6fd09d8e21ccb6134"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a36066e879c6834d6fd09d8e21ccb6134">disableCallOut:</a></td></tr>
 <tr class="memdesc:a36066e879c6834d6fd09d8e21ccb6134"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to disable the outgoing calls.  <a href="#a36066e879c6834d6fd09d8e21ccb6134">More...</a><br /></td></tr>
 <tr class="separator:a36066e879c6834d6fd09d8e21ccb6134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc4779233714c27cf22babd3aecfa032"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#adc4779233714c27cf22babd3aecfa032">minimizeMeetingDisabled</a></td></tr>
+<tr class="memdesc:adc4779233714c27cf22babd3aecfa032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if it is disabled to Minimize Meeting.  <a href="#adc4779233714c27cf22babd3aecfa032">More...</a><br /></td></tr>
+<tr class="separator:adc4779233714c27cf22babd3aecfa032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f99281a86573e80b1be58a273d1658"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a47f99281a86573e80b1be58a273d1658">disableMinimizeMeeting:</a></td></tr>
+<tr class="memdesc:a47f99281a86573e80b1be58a273d1658"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to disable the Minimize Meeting.  <a href="#a47f99281a86573e80b1be58a273d1658">More...</a><br /></td></tr>
+<tr class="separator:a47f99281a86573e80b1be58a273d1658"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -351,6 +357,32 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 </div>
 </div>
+<a id="a47f99281a86573e80b1be58a273d1658"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47f99281a86573e80b1be58a273d1658">&#9670;&nbsp;</a></span>disableMinimizeMeeting:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) disableMinimizeMeeting: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>disabled</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set to disable the Minimize Meeting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disabled</td><td>The option value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab80eb108ad909bd832eef97e46124865"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab80eb108ad909bd832eef97e46124865">&#9670;&nbsp;</a></span>driveModeDisabled()</h2>
 
@@ -368,6 +400,26 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 <p>Query if driving mode is disabled. </p>
 <dl class="section return"><dt>Returns</dt><dd>YES means muted, otherwise not. </dd></dl>
+
+</div>
+</div>
+<a id="adc4779233714c27cf22babd3aecfa032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc4779233714c27cf22babd3aecfa032">&#9670;&nbsp;</a></span>minimizeMeetingDisabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) minimizeMeetingDisabled </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if it is disabled to Minimize Meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means disabled, otherwise not. </dd></dl>
 
 </div>
 </div>
@@ -566,7 +618,7 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="interface_mobile_r_t_c_meeting_settings_8h_source.html">MobileRTCMeetingSettings.h</a></li>
+<li><a class="el" href="_mobile_r_t_c_meeting_settings_8h_source.html">MobileRTCMeetingSettings.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

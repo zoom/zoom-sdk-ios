@@ -13,6 +13,7 @@ var searchData=
   ['disabledrivemode_3a',['disableDriveMode:',['../interface_mobile_r_t_c_meeting_settings.html#a39ff7d165e66afd702a0df768b68b944',1,'MobileRTCMeetingSettings']]],
   ['disableinviteemail',['disableInviteEmail',['../interface_mobile_r_t_c_invite_helper.html#a50d980f6487d30d6f528b666c2720757',1,'MobileRTCInviteHelper']]],
   ['disableinvitesms',['disableInviteSMS',['../interface_mobile_r_t_c_invite_helper.html#a12b0f5e9bca704312c555d2beb464673',1,'MobileRTCInviteHelper']]],
+  ['disableminimizemeeting_3a',['disableMinimizeMeeting:',['../interface_mobile_r_t_c_meeting_settings.html#a47f99281a86573e80b1be58a273d1658',1,'MobileRTCMeetingSettings']]],
   ['disableviewerannoataion_3a',['disableViewerAnnoataion:',['../interface_mobile_r_t_c_annotation_service.html#a912ba3c53f19e056dca6bd0ada5d7c37',1,'MobileRTCAnnotationService']]],
   ['drivemodedisabled',['driveModeDisabled',['../interface_mobile_r_t_c_meeting_settings.html#ab80eb108ad909bd832eef97e46124865',1,'MobileRTCMeetingSettings']]]
 ];
