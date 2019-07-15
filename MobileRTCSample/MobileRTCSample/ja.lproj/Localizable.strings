@@ -32,6 +32,10 @@
 
 "Disable Call Out" = "Disable Call Out";
 
+"Disable Minimize Meeting" = "Disable Minimize Meeting";
+
+"Face Beauty Enable" = "Touch Up My Appearance";
+
 "Please join meeting with ID: %@" = "Please join meeting with ID: %@";
 
 "Meeting URL: %@" = "Meeting URL: %@";
@@ -119,7 +123,7 @@
 
 "Photos Location Services" = "MobileRTC からあなたの写真の場所にアクセスできません。ロケーション サービスでアクセスを有効にしてください。";
 
-"Dial Telephone Alert Message" = "ミーティングに自動的にダイヤルしますか?\n\n、ミーティングにダイヤルした後は MobileRTC に戻ってください。";
+"Dial Telephone Alert Message" = "ミーティングに自動的にダイヤルしますか?\n\n、ミーティングにダイヤルした後は MobileRTCSample に戻ってください。";
 
 "Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC では、このサーバー ID を確認できません。続行しますか?";
 

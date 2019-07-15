@@ -50,6 +50,10 @@
                             }
                         }]];
                         
+                        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Dial in", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                            [self dialIn];
+                        }]];
+                        
                         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
                         }]];
                         AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
@@ -60,6 +64,37 @@
             }
         }
     }
+}
+
+- (void)dialIn
+{
+    NSLog(@"MeetingNumber=%@",[[MobileRTCInviteHelper sharedInstance] ongoingMeetingNumber]);
+    NSLog(@"participantID=%@",@([[[MobileRTC sharedRTC] getMeetingService] getParticipantID]));
+    
+    MobileRTCCallCountryCode *currentCountryCode = [[[MobileRTC sharedRTC] getMeetingService] getDialInCurrentCountryCode];
+    
+    NSArray *countryCodes = [[[MobileRTC sharedRTC] getMeetingService] getDialInCallCodesWithCountryId:currentCountryCode.countryId];
+
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:currentCountryCode.countryName
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    for (MobileRTCCallCountryCode *countrgCode in countryCodes) {
+        
+        NSString *description = countrgCode.tollFree?[NSString stringWithFormat:@" (%@)", NSLocalizedString(@"Toll Free", @"")]:@"";
+        NSString *displayCountryNumber = [NSString stringWithFormat:@"%@%@", countrgCode.countryNumber, description];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:displayCountryNumber style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+             [[[MobileRTC sharedRTC] getMeetingService] dialInCall:countrgCode.countryNumber];
+        }]];
+    }
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 - (void)switchMyAudioSource

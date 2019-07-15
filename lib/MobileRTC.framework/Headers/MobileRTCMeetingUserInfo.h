@@ -159,6 +159,14 @@ typedef enum {
  */
 @property (nonatomic, assign) BOOL             isHost;
 /*!
+ @brief Query if the current user is h323 user.
+ */
+@property (nonatomic, assign) BOOL             isH323User;
+/*!
+ @brief Query if the current user is Telephone user.
+ */
+@property (nonatomic, assign) BOOL             isPureCallInUser;
+/*!
  @brief Query if the user is sharing only the sounds of computer.
  */
 @property (nonatomic, assign) BOOL             isSharingPureComputerAudio;

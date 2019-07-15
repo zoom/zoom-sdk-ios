@@ -22,6 +22,10 @@
 
 - (void)disableCallOut:(BOOL)disabled;
 
+- (void)disableMinimizeMeeting:(BOOL)disabled;
+
+- (void)faceBeautyEnable:(BOOL)enable;
+
 - (void)setMeetingTitleHidden:(BOOL)hidden;
 
 - (void)setMeetingPasswordHidden:(BOOL)hidden;

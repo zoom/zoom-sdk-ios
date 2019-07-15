@@ -30,6 +30,18 @@ typedef enum {
 - (BOOL)isPrivateChatDisabled;
 
 /*!
+ @brief set Attendee Chat Priviledge when in-meeting
+ @return YES means sucessfull, otherwise not.
+ */
+- (BOOL)changeAttendeeChatPriviledge:(MobileRTCMeetingChatPriviledgeType)type;
+
+/*!
+ @brief get Attendee Chat Priviledge when in-meeting
+ @return the result of attendee chat priviledge;
+ */
+- (MobileRTCMeetingChatPriviledgeType)getAttendeeChatPriviledge;
+
+/*!
  @brief Get in-meeting chat message. 
  @param messageID The ID of the message sent in the meeting.
  @return The instance of in-meeting chat.

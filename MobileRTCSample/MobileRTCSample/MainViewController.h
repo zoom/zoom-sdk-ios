@@ -11,6 +11,7 @@
 #import "IntroViewController.h"
 #import "InviteViewController.h"
 #import "SplashViewController.h"
+#import "WebViewController.h"
 
 #define kSDKUserID      @""
 #define kSDKUserName    @""
@@ -32,8 +33,9 @@
 
 @property (retain, nonatomic) IntroViewController  *introVC;
 @property (retain, nonatomic) SplashViewController *splashVC;
+@property (retain, nonatomic) WebViewController    *webVC;
 
-@property (assign, nonatomic) BOOL isSharing;
+@property (assign, nonatomic) BOOL isSharingWebView;
 
 @property (copy, nonatomic) RTCJoinMeetingActionBlock  joinMeetingBlock;
 

@@ -17,6 +17,9 @@
 @property (retain, nonatomic) UITableViewCell *driveModeCell;
 @property (retain, nonatomic) UITableViewCell *callInCell;
 @property (retain, nonatomic) UITableViewCell *callOutCell;
+@property (retain, nonatomic) UITableViewCell *minimizeMeetingCell;
+
+@property (retain, nonatomic) UITableViewCell *faceBeautyCell;
 
 @property (retain, nonatomic) UITableViewCell *titleHiddenCell;
 @property (retain, nonatomic) UITableViewCell *passwordHiddenCell;
@@ -76,11 +79,16 @@
     NSMutableArray *disableArray = [NSMutableArray array];
     [disableArray addObject:[self callInCell]];
     [disableArray addObject:[self callOutCell]];
+    [disableArray addObject:[self minimizeMeetingCell]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
         [disableArray addObject:[self driveModeCell]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [disableArray addObject:[self enableKubiCell]];
     [array addObject:disableArray];
+    
+    NSMutableArray *faceBeautyArray = [NSMutableArray array];
+    [faceBeautyArray addObject:[self faceBeautyCell]];
+    [array addObject:faceBeautyArray];
 
     NSMutableArray *hiddenArray = [NSMutableArray array];
     [hiddenArray addObject:[self titleHiddenCell]];
@@ -292,6 +300,53 @@
     
     return _callOutCell;
 }
+
+- (UITableViewCell*)minimizeMeetingCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL disabled = [settings minimizeMeetingDisabled];
+    
+    if (!_minimizeMeetingCell)
+    {
+        _minimizeMeetingCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _minimizeMeetingCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _minimizeMeetingCell.textLabel.text = NSLocalizedString(@"Disable Minimize Meeting", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:disabled animated:NO];
+        [sv addTarget:self action:@selector(onDisableMinimizeMeeting:) forControlEvents:UIControlEventValueChanged];
+        _minimizeMeetingCell.accessoryView = sv;
+    }
+    
+    return _minimizeMeetingCell;
+}
+
+- (UITableViewCell*)faceBeautyCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL isfaceBeautyEnabled = [settings faceBeautyEnabled];
+    
+    if (!_faceBeautyCell)
+    {
+        _faceBeautyCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _faceBeautyCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _faceBeautyCell.textLabel.text = NSLocalizedString(@"Face Beauty Enable", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:isfaceBeautyEnabled animated:NO];
+        [sv addTarget:self action:@selector(onFaceBeautyEnable:) forControlEvents:UIControlEventValueChanged];
+        _faceBeautyCell.accessoryView = sv;
+    }
+    
+    return _faceBeautyCell;
+}
+
 
 - (UITableViewCell*)titleHiddenCell
 {
@@ -725,6 +780,18 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter disableCallOut:sv.on];
+}
+
+- (void)onDisableMinimizeMeeting:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter disableMinimizeMeeting:sv.on];
+}
+
+- (void)onFaceBeautyEnable:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter faceBeautyEnable:sv.on];
 }
 
 - (void)onHideMeetingTitle:(id)sender

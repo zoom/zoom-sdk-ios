@@ -30,8 +30,19 @@
 - (void)onMeetingStateChange:(MobileRTCMeetingState)state;
 {
     NSLog(@"onMeetingStateChange:%d", state);
-    
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+
+    if (state == MobileRTCMeetingState_Idle) {
+        [self.view insertSubview:self.webVC.view aboveSubview:self.splashVC.view];
+        [self.view insertSubview:self.introVC.view aboveSubview:self.webVC.view];
+        
+        [self.view bringSubviewToFront:self.meetButton];
+        [self.view bringSubviewToFront:self.joinButton];
+        [self.view bringSubviewToFront:self.expandButton];
+        [self.view bringSubviewToFront:self.shareButton];
+        [self.view bringSubviewToFront:self.settingButton];
+    }
+    
     BOOL inAppShare = [ms isDirectAppShareMeeting] && (state == MobileRTCMeetingState_InMeeting);
     self.expandButton.hidden = !inAppShare;
     self.shareButton.hidden = !inAppShare;
@@ -40,7 +51,7 @@
     
     if (state != MobileRTCMeetingState_InMeeting)
     {
-        self.isSharing = NO;
+        self.isSharingWebView = NO;
     }
     
 #if 1
@@ -112,16 +123,9 @@
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     if (ms)
     {
-        /*!
-         @warning "appShareWithView:" This function can only share the specified view. CAN NOT share the view pushed or presented base on this vc.
-         If you want to share whole app view, please use “appShareWithReplayKit”
-         @warning Must called "startAppShare" before this function.
-         */
-
         [ms appShareWithView:self.splashVC.view];
-//        [ms appShareWithReplayKit];
         [self.shareButton setImage:[UIImage imageNamed:@"icon_resume"] forState:UIControlStateNormal];
-        self.isSharing = NO;
+        self.isSharingWebView = NO;
     }
 }
 
@@ -130,14 +134,20 @@
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     if (ms && [ms isDirectAppShareMeeting])
     {
-        if ([ms isStartingShare] || [ms isViewingShare])
-        {
-            NSLog(@"There exist an ongoing share");
-            return YES;
-        }
+//        if ([ms isStartingShare] || [ms isViewingShare])
+//        {
+//            NSLog(@"There exist an ongoing share");
+//            return YES;
+//        }
+//
+//        [ms hideMobileRTCMeeting:^(void){
+//            [ms startAppShare];
+//        }];
         
         [ms hideMobileRTCMeeting:^(void){
-            [ms startAppShare];
+            if (![ms isStartingShare] && ![ms isViewingShare]) {
+                [ms startAppShare];
+            }
         }];
         
         return YES;
@@ -225,6 +235,49 @@
     nav.modalPresentationStyle = UIModalPresentationFormSheet;
     
     [parentVC presentViewController:nav animated:YES completion:NULL];
+    
+    return YES;
+}
+
+- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton
+{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    
+
+    
+    
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    
+    if (ms) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Leave Meeting"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [ms leaveMeetingWithCmd:LeaveMeetingCmd_Leave];
+                                                          }]];
+        if ([ms isMeetingHost]) {
+            [alertController addAction:[UIAlertAction actionWithTitle:@"End Meeting"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                                  [ms leaveMeetingWithCmd:LeaveMeetingCmd_End];
+                                                              }]];
+        }
+    }
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+    if (popover)
+    {
+        popover.sourceView = endButton;
+        popover.sourceRect = endButton.bounds;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
     
     return YES;
 }

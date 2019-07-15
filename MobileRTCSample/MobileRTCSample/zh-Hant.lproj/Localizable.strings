@@ -32,6 +32,10 @@
 
 "Disable Call Out" = "禁用電話呼出";
 
+"Disable Minimize Meeting" = "禁用最小化會議";
+
+"Face Beauty Enable" = "美顏";
+
 "Please join meeting with ID: %@" = "請通過會議ID: %@ 加入會議";
 
 "Meeting URL: %@" = "會議鏈接: %@";
@@ -123,7 +127,7 @@
 
 "Photos Location Services" = "請在設備的“設置”-“隱私”-“定位服務”中允許MobileRTC訪問您的定位服務";
 
-"Dial Telephone Alert Message" = "您想要自動撥號加入會議嗎？\n\n於撥號進入會議後, 請返回MobileRTC畫面";
+"Dial Telephone Alert Message" = "您想要自動撥號加入會議嗎？\n\n於撥號進入會議後, 請返回MobileRTCSample畫面";
 
 "Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC無法驗證此伺服器身份，請問您是否還是要繼續？";
 

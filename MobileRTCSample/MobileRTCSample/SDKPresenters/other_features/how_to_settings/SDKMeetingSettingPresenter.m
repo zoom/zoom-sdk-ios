@@ -40,6 +40,16 @@
     [[[MobileRTC sharedRTC] getMeetingSettings] disableCallOut:disabled];
 }
 
+- (void)disableMinimizeMeeting:(BOOL)disabled
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] disableMinimizeMeeting:disabled];
+}
+
+- (void)faceBeautyEnable:(BOOL)enable
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] setFaceBeautyEnabled:enable];
+}
+
 - (void)setMeetingTitleHidden:(BOOL)hidden
 {
     [[MobileRTC sharedRTC] getMeetingSettings].meetingTitleHidden = hidden;

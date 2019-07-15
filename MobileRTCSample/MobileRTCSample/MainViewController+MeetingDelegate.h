@@ -27,6 +27,8 @@
 
 - (BOOL)onClickedParticipantsButton:(UIViewController*)parentVC;
 
+- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton;
+
 - (void)onClickedDialOut:(UIViewController*)parentVC isCallMe:(BOOL)me;
 
 - (void)onWaitExternalSessionKey:(NSData*)key;

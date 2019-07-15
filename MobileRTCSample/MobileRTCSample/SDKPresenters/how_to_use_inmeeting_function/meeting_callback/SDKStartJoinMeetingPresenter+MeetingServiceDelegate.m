@@ -181,6 +181,13 @@
 #endif
 
 #if 0
+- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton
+{
+    return [self.mainVC onClickedEndButton:parentVC endButton:endButton];
+}
+#endif
+
+#if 0
 - (void)onClickedDialOut:(UIViewController*)parentVC isCallMe:(BOOL)me
 {
     if (self.mainVC) {

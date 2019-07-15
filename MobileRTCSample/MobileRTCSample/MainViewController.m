@@ -19,6 +19,9 @@
 @end
 
 @implementation MainViewController
+{
+    UIView *snapshotView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +52,7 @@
     
     [self showIntroView];
     [self showSplashView];
+    [self showWebView];
     
     [self.view addSubview:self.expandButton];
     self.expandButton.hidden = YES;
@@ -158,6 +162,18 @@
     [self.splashVC didMoveToParentViewController:self];
     
     self.splashVC.view.frame = self.view.bounds;
+}
+
+- (void)showWebView
+{
+    WebViewController *vc = [WebViewController new];
+    self.webVC = vc;
+    
+    [self addChildViewController:self.webVC];
+    [self.view insertSubview:self.webVC.view atIndex:0];
+    [self.webVC didMoveToParentViewController:self];
+    
+    self.webVC.view.frame = self.view.bounds;
 }
 
 - (UIButton*)meetButton
@@ -312,21 +328,25 @@
 
 - (void)onShareBtn:(id)sender
 {
-    _isSharing = !_isSharing;
-    
-    UIView *shareView = _isSharing ? self.introVC.view : self.splashVC.view;
+    _isSharingWebView = !_isSharingWebView;
+ 
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"11") && _isSharing)
+    if (_isSharingWebView)
     {
-        [ms appShareWithReplayKit];
+        if ([ms isDirectAppShareMeeting]) {
+            [self.view insertSubview:self.webVC.view aboveSubview:self.introVC.view];
+            
+            [ms appShareWithView:self.webVC.webView];
+        }
     }
     else
     {
-        [ms appShareWithView:shareView];
+        [self.view insertSubview:self.introVC.view aboveSubview:self.webVC.view];
+        [ms appShareWithView:self.splashVC.view];
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        UIImage *image = [UIImage imageNamed:_isSharing?@"icon_pause":@"icon_resume"];
+        UIImage *image = [UIImage imageNamed:_isSharingWebView?@"icon_pause":@"icon_resume"];
         [self.shareButton setImage:image forState:UIControlStateNormal];
     });
 }

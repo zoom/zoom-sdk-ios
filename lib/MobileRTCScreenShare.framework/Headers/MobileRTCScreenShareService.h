@@ -32,5 +32,4 @@
 
 - (void)processSampleBuffer:(CMSampleBufferRef)sampleBuffer withType:(RPSampleBufferType)sampleBufferType;
 
-- (void)MobileRTCScreenShareServiceFinishBroadcastWithError:(NSError *)error;
 @end

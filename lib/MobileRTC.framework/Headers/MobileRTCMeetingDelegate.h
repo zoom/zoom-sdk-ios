@@ -157,6 +157,12 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
 - (BOOL)onClickedShareButton:(UIViewController*)parentVC addShareActionItem:(NSMutableArray *)array;
 
 /*!
+ @brief Custom the UI of Leave Meeting Alert.
+ @param parentVC Parent viewcontroller to present custom Participants UI.
+ */
+- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton;
+
+/*!
  @brief Notify users that there is no sharing for the moment.
  */
 - (void)onOngoingShareStopped;

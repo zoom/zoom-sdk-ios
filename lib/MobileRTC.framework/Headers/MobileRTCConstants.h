@@ -9,15 +9,6 @@
 //MobileRTC Base Domain
 #define kMobileRTCBaseDomain @"zoom.us"
 
-//Client Key or Secret is empty
-#define kMobileRTCAuthKeyOrSecretEmpty        300
-//Client Key or Secret is wrong
-#define kMobileRTCAuthKeyOrSecretWrong        3023
-//Account does not support SDK feature
-#define kMobileRTCAuthAccountNotSupport       3024
-//Account did not enable SDK feature
-#define kMobileRTCAuthAccountNotEnableSDK     3025
-
 /*!
  @brief An enumeration of SDK authentication.
  */
@@ -499,4 +490,20 @@ typedef NS_ENUM(NSUInteger, MobileRTCMeetingItemRecordType) {
     MobileRTCMeetingItemRecordType_LocalRecord                      = 1,
     ///Cloud Recording
     MobileRTCMeetingItemRecordType_CloudRecord                      = 2,
+};
+
+/*!
+ @brief MobileRTCMeetingChatPriviledgeType An enumeration of meeting chat types in meeting.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCMeetingChatPriviledgeType) {
+    /// Unknown type
+    MobileRTCMeetingChatPriviledge_Unknown = 0,
+    /// allow attendee to chat with everyone
+    MobileRTCMeetingChatPriviledge_Everyone_Publicly_And_Privately,
+    /// allow attendee to chat with host only
+    MobileRTCMeetingChatPriviledge_Host_Only,
+    /// allow attendee to chat with no one
+    MobileRTCMeetingChatPriviledge_No_One,
+    /// allow attendee to chat with host and public
+    MobileRTCMeetingChatPriviledge_Everyone_Publicly,
 };

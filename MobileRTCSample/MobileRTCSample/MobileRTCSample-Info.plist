@@ -46,6 +46,8 @@
 	<string>bluetoothDecription</string>
 	<key>NSCameraUsageDescription</key>
 	<string>cameraDesciption</string>
+	<key>NSContactsUsageDescription</key>
+	<string>contactsUsageDescription</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>microphoneDesciption</string>
 	<key>NSPhotoLibraryUsageDescription</key>

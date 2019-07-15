@@ -32,6 +32,10 @@
 
 "Disable Call Out" = "Disable Call Out";
 
+"Disable Minimize Meeting" = "Disable Minimize Meeting";
+
+"Face Beauty Enable" = "Touch Up My Appearance";
+
 "Please join meeting with ID: %@" = "Please join meeting with ID: %@";
 
 "Meeting URL: %@" = "Meeting URL: %@";
@@ -123,7 +127,7 @@
 
 "Photos Location Services" = "Allow MobileRTC to access your photos location from device menu: \"Settings\" - \"Privacy\" - \"Location Services\".";
 
-"Dial Telephone Alert Message" = "Would you like to dial into the meeting automatically?\n\nAfter dialing into the meeting, please return to MobileRTC";
+"Dial Telephone Alert Message" = "Would you like to dial into the meeting automatically?\n\nAfter dialing into the meeting, please return to MobileRTCSample";
 
 "Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC cannot verify this server identity. Would you like to continue anyway?";
 

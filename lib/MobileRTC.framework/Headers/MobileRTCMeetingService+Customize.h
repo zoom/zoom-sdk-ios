@@ -8,6 +8,7 @@
 
 #import <MobileRTC/MobileRTC.h>
 #import <MobileRTC/MobileRTCRoomDevice.h>
+#import <MobileRTC/MobileRTCCallCountryCode.h>
 
 /*!
  @brief Provide interfaces for outgoing calls and Call Room Device.
@@ -100,5 +101,37 @@
  @return YES means the method is called successfully, otherwise not.
  */
 - (BOOL)callRoomDevice:(nonnull MobileRTCRoomDevice*)device;
+
+/*!
+ @brief Get Participant ID.
+ @return The Participant ID.
+ */
+- (NSUInteger)getParticipantID;
+
+/*!
+ @brief Get countrycode for the current user's locale.
+ @return The object of MobileRTCCallCountryCode for user's locale.
+ */
+- (nullable MobileRTCCallCountryCode *)getDialInCurrentCountryCode;
+
+/*!
+ @brief Get all countrycodes
+ @return The array of all countrycode.
+ */
+
+- (nullable NSArray *)getDialInAllCountryCodes;
+
+/*!
+ @brief Get to the countrycode specified by countryId
+ @return The array of countrycode.
+ */
+
+- (nullable NSArray *)getDialInCallCodesWithCountryId:(nullable NSString *)countryId;
+
+/*!
+ @brief Make a phone call to access your voice
+ @return YES means the method is called successfully, otherwise not.
+ */
+- (BOOL)dialInCall:(nullable NSString *)countryNumber;
 
 @end

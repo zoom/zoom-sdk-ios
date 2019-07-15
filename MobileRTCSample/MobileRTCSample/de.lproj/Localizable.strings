@@ -32,6 +32,10 @@
 
 "Disable Call Out" = "Disable Call Out";
 
+"Disable Minimize Meeting" = "Disable Minimize Meeting";
+
+"Face Beauty Enable" = "Touch Up My Appearance";
+
 "Please join meeting with ID: %@" = "Please join meeting with ID: %@";
 
 "Meeting URL: %@" = "Meeting URL: %@";
@@ -119,7 +123,7 @@
 
 "Photos Location Services" = "MobileRTC hat keinen Zugriff auf Ihren Foto-Speicher. Bitte aktivieren Sie in Lokalisierungsdiente den Zugriff.";
 
-"Dial Telephone Alert Message" = "Möchten Sie sich automatisch in die Meeting einwählen?\n\nNachdem Sie sich in die Meeting eingewählt haben, kehren Sie bitte zu MobileRTC zurück.";
+"Dial Telephone Alert Message" = "Möchten Sie sich automatisch in die Meeting einwählen?\n\nNachdem Sie sich in die Meeting eingewählt haben, kehren Sie bitte zu MobileRTCSample zurück.";
 
 "Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC die Identität dieses Servers nicht überprüfen. Möchten Sie trotzdem fortfahren?";
 

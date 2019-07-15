@@ -334,6 +334,15 @@
                                                                           }]];
                     }
                 }
+                
+                if ([ms isMeetingHost] || [ms isMeetingCoHost]) {
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Change Chat Priviledge"
+                                                                        style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction *action) {
+                                                                          [self changeChatPriviledge:sender];
+                                                                      }]];
+                }
+                
             }
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -354,6 +363,71 @@
         default:
             break;
     }
+}
+
+- (void)changeChatPriviledge:(UIButton *)sender
+{
+    MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+    MobileRTCMeetingChatPriviledgeType priviledgeType  = [ms getAttendeeChatPriviledge];
+    NSString *title = @"";
+    switch (priviledgeType) {
+        case MobileRTCMeetingChatPriviledge_No_One:
+            title = [NSString stringWithFormat:@"Allow Participants to Chat with: %@", @"No one"];
+            break;
+        case MobileRTCMeetingChatPriviledge_Host_Only:
+            title = [NSString stringWithFormat:@"Allow Participants to Chat with: %@", @"Host Only"];
+            break;
+        case MobileRTCMeetingChatPriviledge_Everyone_Publicly:
+            title = [NSString stringWithFormat:@"Allow Participants to Chat with: %@", @"Everyone Publicly"];
+            break;
+        case MobileRTCMeetingChatPriviledge_Everyone_Publicly_And_Privately:
+            title = [NSString stringWithFormat:@"Allow Participants to Chat with: %@", @"Everyone Publicly And Privately"];
+            break;
+        default:
+            break;
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"No one"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [ms changeAttendeeChatPriviledge:MobileRTCMeetingChatPriviledge_No_One];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Host Only"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [ms changeAttendeeChatPriviledge:MobileRTCMeetingChatPriviledge_Host_Only];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Everyone Publicly"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction *action) {
+                                                          [ms changeAttendeeChatPriviledge:MobileRTCMeetingChatPriviledge_Everyone_Publicly];
+                                                      }]];
+    if (![ms isPrivateChatDisabled]) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Everyone Publicly And Privately"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                              [ms changeAttendeeChatPriviledge:MobileRTCMeetingChatPriviledge_Everyone_Publicly_And_Privately];
+                                                          }]];
+    }
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+    if (popover)
+    {
+        popover.sourceView = sender;
+        popover.sourceRect = sender.bounds;
+        popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
+
 }
 
 - (void)updateMyAudioStatus
@@ -377,8 +451,13 @@
         }
         else
         {
-            [self.audioButton setImage:[UIImage imageNamed:@"icon_meeting_audio"] forState:UIControlStateNormal];
-            [self.audioButton setTitle:@"Mute" forState:UIControlStateNormal];
+            if (audioType == MobileRTCAudioType_Telephony) {
+                [self.audioButton setImage:[UIImage imageNamed:@"icon_meeting_audio_phone"] forState:UIControlStateNormal];
+                [self.audioButton setTitle:@"Mute" forState:UIControlStateNormal];
+            } else {
+                [self.audioButton setImage:[UIImage imageNamed:@"icon_meeting_audio"] forState:UIControlStateNormal];
+                [self.audioButton setTitle:@"Mute" forState:UIControlStateNormal];
+            }
 
         }
     }
