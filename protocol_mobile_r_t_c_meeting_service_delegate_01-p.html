@@ -146,6 +146,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ae70c211cacbcb4b8b0426c1bad8c676d"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ae70c211cacbcb4b8b0426c1bad8c676d">onClickedShareButton:addShareActionItem:</a></td></tr>
 <tr class="memdesc:ae70c211cacbcb4b8b0426c1bad8c676d"><td class="mdescLeft">&#160;</td><td class="mdescRight">User needs to click the SHARE button in meeting.  <a href="#ae70c211cacbcb4b8b0426c1bad8c676d">More...</a><br /></td></tr>
 <tr class="separator:ae70c211cacbcb4b8b0426c1bad8c676d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c672a816b0d5e491bec4fe05c11193"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a93c672a816b0d5e491bec4fe05c11193">onClickedEndButton:endButton:</a></td></tr>
+<tr class="memdesc:a93c672a816b0d5e491bec4fe05c11193"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom the UI of Leave Meeting Alert.  <a href="#a93c672a816b0d5e491bec4fe05c11193">More...</a><br /></td></tr>
+<tr class="separator:a93c672a816b0d5e491bec4fe05c11193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac4683de599c316c6d297e874f332209"><td class="memItemLeft" align="right" valign="top"><a id="aac4683de599c316c6d297e874f332209"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#aac4683de599c316c6d297e874f332209">onOngoingShareStopped</a></td></tr>
 <tr class="memdesc:aac4683de599c316c6d297e874f332209"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify users that there is no sharing for the moment. <br /></td></tr>
@@ -367,6 +370,50 @@ Instance Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">parentVC</td><td>Parent viewcontroller to present outgoing call UI. </td></tr>
     <tr><td class="paramname">me</td><td>YES means to CALL ME; NO means INVITE BY PHONE. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a93c672a816b0d5e491bec4fe05c11193"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c672a816b0d5e491bec4fe05c11193">&#9670;&nbsp;</a></span>onClickedEndButton:endButton:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onClickedEndButton: </td>
+          <td></td>
+          <td class="paramtype">(UIViewController *)&#160;</td>
+          <td class="paramname"><em>parentVC</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">endButton:</td>
+          <td></td>
+          <td class="paramtype">(UIButton *)&#160;</td>
+          <td class="paramname"><em>endButton</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Custom the UI of Leave Meeting Alert. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parentVC</td><td>Parent viewcontroller to present custom Participants UI. </td></tr>
   </table>
   </dd>
 </dl>

@@ -9,6 +9,7 @@ var searchData=
   ['onclaimhostresult_3a',['onClaimHostResult:',['../protocol_mobile_r_t_c_user_service_delegate_01-p.html#ae0b26e7aa9420c8a5a96fdf7740da7a9',1,'MobileRTCUserServiceDelegate -p']]],
   ['onclickedaudiobutton_3a',['onClickedAudioButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a574f52f5bfbf3ca87f939209bec7824a',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickeddialout_3aiscallme_3a',['onClickedDialOut:isCallMe:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a2f4027cdc7f14eb0c864b155eee393da',1,'MobileRTCMeetingServiceDelegate -p']]],
+  ['onclickedendbutton_3aendbutton_3a',['onClickedEndButton:endButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a93c672a816b0d5e491bec4fe05c11193',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedinvitebutton_3aaddinviteactionitem_3a',['onClickedInviteButton:addInviteActionItem:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a1064c622db574902cb9649e53764c6ee',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedparticipantsbutton_3a',['onClickedParticipantsButton:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#afb57a8c392e7c768403ca281091324e8',1,'MobileRTCMeetingServiceDelegate -p']]],
   ['onclickedsharebutton_3aaddshareactionitem_3a',['onClickedShareButton:addShareActionItem:',['../protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ae70c211cacbcb4b8b0426c1bad8c676d',1,'MobileRTCMeetingServiceDelegate -p']]],

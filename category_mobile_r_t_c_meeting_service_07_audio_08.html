@@ -110,6 +110,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a76ee70b9f06dd050c89228850232eeca"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_audio_08.html#a76ee70b9f06dd050c89228850232eeca">isPlayChimeOn</a></td></tr>
 <tr class="memdesc:a76ee70b9f06dd050c89228850232eeca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if chime is enabled when user joins/leaves meeting.  <a href="#a76ee70b9f06dd050c89228850232eeca">More...</a><br /></td></tr>
 <tr class="separator:a76ee70b9f06dd050c89228850232eeca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c68f6fe893a813253e26bda6dd408aa"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_audio_08.html#a3c68f6fe893a813253e26bda6dd408aa">playChime:</a></td></tr>
+<tr class="memdesc:a3c68f6fe893a813253e26bda6dd408aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether chime are enabled when the user joins/leaves meeting.  <a href="#a3c68f6fe893a813253e26bda6dd408aa">More...</a><br /></td></tr>
+<tr class="separator:a3c68f6fe893a813253e26bda6dd408aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe5b3b9a9339a7afd798d0e1e5265d69"><td class="memItemLeft" align="right" valign="top">(MobileRTCAudioError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_audio_08.html#afe5b3b9a9339a7afd798d0e1e5265d69">muteMyAudio:</a></td></tr>
 <tr class="memdesc:afe5b3b9a9339a7afd798d0e1e5265d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to mute the audio of the current user.  <a href="#afe5b3b9a9339a7afd798d0e1e5265d69">More...</a><br /></td></tr>
 <tr class="separator:afe5b3b9a9339a7afd798d0e1e5265d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -460,6 +463,30 @@ Instance Methods</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The audio type. </dd></dl>
 
 <p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aaf77b16d4652ca31d7ba36d5f4b2f7f1">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
+<a id="a3c68f6fe893a813253e26bda6dd408aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c68f6fe893a813253e26bda6dd408aa">&#9670;&nbsp;</a></span>playChime:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) playChime: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>on</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set whether chime are enabled when the user joins/leaves meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means enabled, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/cohost can run the function when in meeting. </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3c68f6fe893a813253e26bda6dd408aa">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>

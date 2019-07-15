@@ -103,6 +103,12 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:aac09a8ae317c1fdb0d947517fe4c7f29"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#aac09a8ae317c1fdb0d947517fe4c7f29">setMuteVideoWhenJoinMeeting:</a></td></tr>
 <tr class="memdesc:aac09a8ae317c1fdb0d947517fe4c7f29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to mute user's video when he joins the meeting.  <a href="#aac09a8ae317c1fdb0d947517fe4c7f29">More...</a><br /></td></tr>
 <tr class="separator:aac09a8ae317c1fdb0d947517fe4c7f29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22d7d18283f310d35a7e66834fe9fa79"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a22d7d18283f310d35a7e66834fe9fa79">faceBeautyEnabled</a></td></tr>
+<tr class="memdesc:a22d7d18283f310d35a7e66834fe9fa79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query Touch up my appearance enable or not.  <a href="#a22d7d18283f310d35a7e66834fe9fa79">More...</a><br /></td></tr>
+<tr class="separator:a22d7d18283f310d35a7e66834fe9fa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8383b98c023e5a30b7f1d8f910b84e43"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a8383b98c023e5a30b7f1d8f910b84e43">setFaceBeautyEnabled:</a></td></tr>
+<tr class="memdesc:a8383b98c023e5a30b7f1d8f910b84e43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Touch up my appearance enable or not.  <a href="#a8383b98c023e5a30b7f1d8f910b84e43">More...</a><br /></td></tr>
+<tr class="separator:a8383b98c023e5a30b7f1d8f910b84e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab80eb108ad909bd832eef97e46124865"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#ab80eb108ad909bd832eef97e46124865">driveModeDisabled</a></td></tr>
 <tr class="memdesc:ab80eb108ad909bd832eef97e46124865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if driving mode is disabled.  <a href="#ab80eb108ad909bd832eef97e46124865">More...</a><br /></td></tr>
 <tr class="separator:ab80eb108ad909bd832eef97e46124865"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -403,6 +409,31 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 </div>
 </div>
+<a id="a22d7d18283f310d35a7e66834fe9fa79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d7d18283f310d35a7e66834fe9fa79">&#9670;&nbsp;</a></span>faceBeautyEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) faceBeautyEnabled </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query Touch up my appearance enable or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">muted</td><td>YES means enable, otherwise not. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adc4779233714c27cf22babd3aecfa032"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc4779233714c27cf22babd3aecfa032">&#9670;&nbsp;</a></span>minimizeMeetingDisabled()</h2>
 
@@ -483,6 +514,32 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connected</td><td>The option value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8383b98c023e5a30b7f1d8f910b84e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8383b98c023e5a30b7f1d8f910b84e43">&#9670;&nbsp;</a></span>setFaceBeautyEnabled:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setFaceBeautyEnabled: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>enable</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set Touch up my appearance enable or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">muted</td><td>YES means successful, otherwise not. </td></tr>
   </table>
   </dd>
 </dl>

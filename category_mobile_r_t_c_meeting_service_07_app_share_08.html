@@ -79,9 +79,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a5fd51fd890c5950c91bb550ade406642"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a5fd51fd890c5950c91bb550ade406642">isDirectAppShareMeeting</a></td></tr>
 <tr class="memdesc:a5fd51fd890c5950c91bb550ade406642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the current meeting is enabled with App share.  <a href="#a5fd51fd890c5950c91bb550ade406642">More...</a><br /></td></tr>
 <tr class="separator:a5fd51fd890c5950c91bb550ade406642"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51c7a532819b00d604cf050ae65e37e2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a51c7a532819b00d604cf050ae65e37e2">appShareWithView:</a></td></tr>
-<tr class="memdesc:a51c7a532819b00d604cf050ae65e37e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share a content.  <a href="#a51c7a532819b00d604cf050ae65e37e2">More...</a><br /></td></tr>
-<tr class="separator:a51c7a532819b00d604cf050ae65e37e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc919808a032a6c904a00d7f1975dc4"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a9cc919808a032a6c904a00d7f1975dc4">appShareWithView:</a></td></tr>
+<tr class="memdesc:a9cc919808a032a6c904a00d7f1975dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share a content.  <a href="#a9cc919808a032a6c904a00d7f1975dc4">More...</a><br /></td></tr>
+<tr class="separator:a9cc919808a032a6c904a00d7f1975dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ced339638300079ad77604eba904114"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a5ced339638300079ad77604eba904114">appShareWithReplayKit</a></td></tr>
 <tr class="memdesc:a5ced339638300079ad77604eba904114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share content with ReplayKit.  <a href="#a5ced339638300079ad77604eba904114">More...</a><br /></td></tr>
 <tr class="separator:a5ced339638300079ad77604eba904114"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -101,6 +101,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ab53d1d6ed9cedba45796aebb5cb0fc00"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#ab53d1d6ed9cedba45796aebb5cb0fc00">isAnnotationOff</a></td></tr>
 <tr class="memdesc:ab53d1d6ed9cedba45796aebb5cb0fc00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the current user if he can annotate.  <a href="#ab53d1d6ed9cedba45796aebb5cb0fc00">More...</a><br /></td></tr>
 <tr class="separator:ab53d1d6ed9cedba45796aebb5cb0fc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50ab8c9d27d11783baf02d068ad074e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#af50ab8c9d27d11783baf02d068ad074e">suspendSharing:</a></td></tr>
+<tr class="memdesc:af50ab8c9d27d11783baf02d068ad074e"><td class="mdescLeft">&#160;</td><td class="mdescRight">suspend sharing.  <a href="#af50ab8c9d27d11783baf02d068ad074e">More...</a><br /></td></tr>
+<tr class="separator:af50ab8c9d27d11783baf02d068ad074e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Starts an App share meeting. </p>
@@ -130,8 +133,8 @@ Once the interface has been called, the view will be updated 2.5s later than the
 
 </div>
 </div>
-<a id="a51c7a532819b00d604cf050ae65e37e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51c7a532819b00d604cf050ae65e37e2">&#9670;&nbsp;</a></span>appShareWithView:()</h2>
+<a id="a9cc919808a032a6c904a00d7f1975dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc919808a032a6c904a00d7f1975dc4">&#9670;&nbsp;</a></span>appShareWithView:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -139,7 +142,7 @@ Once the interface has been called, the view will be updated 2.5s later than the
         <tr>
           <td class="memname">- (void) appShareWithView: </td>
           <td></td>
-          <td class="paramtype">(nonnull UIView *)&#160;</td>
+          <td class="paramtype">(nonnull id)&#160;</td>
           <td class="paramname"><em>view</em></td>
           <td></td>
         </tr>
@@ -153,8 +156,11 @@ Once the interface has been called, the view will be updated 2.5s later than the
   </table>
   </dd>
 </dl>
+<dl class="section warning"><dt>Warning</dt><dd>view, recommend to pass a single UIView's object, such as UIView, UIImageView or WKWebView. </dd>
+<dd>
+It is not recommended to pass UIView after add subview WKWebView or UIImageView. </dd></dl>
 
-<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a51c7a532819b00d604cf050ae65e37e2">MobileRTCMeetingService</a>.</p>
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a9cc919808a032a6c904a00d7f1975dc4">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>
@@ -265,6 +271,30 @@ Once the interface has been called, the view will be updated 2.5s later than the
 <dl class="section return"><dt>Returns</dt><dd>YES means starting App share successfully, otherwise not. </dd></dl>
 
 <p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3ec52c807486db290cfe84ec2ea6b5ab">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
+<a id="af50ab8c9d27d11783baf02d068ad074e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50ab8c9d27d11783baf02d068ad074e">&#9670;&nbsp;</a></span>suspendSharing:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) suspendSharing: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>suspend</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>suspend sharing. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means sucessful, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>When the customer goes to share a content, consider the pressure of device performance, and use this method to pause share when UI changes, and resume share when UI changes stop, see WebViewController.m in sample project. </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#af50ab8c9d27d11783baf02d068ad074e">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>

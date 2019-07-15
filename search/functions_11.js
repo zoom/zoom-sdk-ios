@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['waitingroomlist',['waitingRoomList',['../interface_mobile_r_t_c_waiting_room_service.html#a39ca2b6808a6d2257077a14ee2ed1375',1,'MobileRTCWaitingRoomService']]],
-  ['waitingroomuserinfobyid_3a',['waitingRoomUserInfoByID:',['../interface_mobile_r_t_c_waiting_room_service.html#a6c73f66b5292aab3582241b601148867',1,'MobileRTCWaitingRoomService']]]
+  ['undo',['undo',['../interface_mobile_r_t_c_annotation_service.html#af6ec1bc1ad9042acfc81419d3bc7fc53',1,'MobileRTCAnnotationService']]],
+  ['unmutealluseraudio',['unmuteAllUserAudio',['../category_mobile_r_t_c_meeting_service_07_audio_08.html#a08cfa98a089b00202892ce2eaf82be87',1,'MobileRTCMeetingService(Audio)::unmuteAllUserAudio()'],['../interface_mobile_r_t_c_meeting_service.html#a08cfa98a089b00202892ce2eaf82be87',1,'MobileRTCMeetingService::unmuteAllUserAudio()']]],
+  ['userinfobyid_3a',['userInfoByID:',['../category_mobile_r_t_c_meeting_service_07_user_08.html#acb60d7f17ce841a42fae4e531ca3eb3a',1,'MobileRTCMeetingService(User)::userInfoByID:()'],['../interface_mobile_r_t_c_meeting_service.html#acb60d7f17ce841a42fae4e531ca3eb3a',1,'MobileRTCMeetingService::userInfoByID:()']]]
 ];

@@ -15,6 +15,7 @@ var searchData=
   ['setautoconnectinternetaudio_3a',['setAutoConnectInternetAudio:',['../interface_mobile_r_t_c_meeting_settings.html#acb5761f2dd7a4204e4e2c9556a647029',1,'MobileRTCMeetingSettings']]],
   ['setavailabledialincountry_3a',['setAvailableDialinCountry:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#aa2aa2ada1fb0bdab05b2045a3e9a19af',1,'MobileRTCMeetingItem -p']]],
   ['setdurationinminutes_3a',['setDurationInMinutes:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#ad79726dabb067c9b67e44fd850620668',1,'MobileRTCMeetingItem -p']]],
+  ['setfacebeautyenabled_3a',['setFaceBeautyEnabled:',['../interface_mobile_r_t_c_meeting_settings.html#a8383b98c023e5a30b7f1d8f910b84e43',1,'MobileRTCMeetingSettings']]],
   ['setlanguage_3a',['setLanguage:',['../interface_mobile_r_t_c.html#a4a711c716f05350c5fbe06b4f30a988f',1,'MobileRTC']]],
   ['setmeetingid_3a',['setMeetingID:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#ac9d7cc7e4947eef6917ac56a28fd98f5',1,'MobileRTCMeetingItem -p']]],
   ['setmeetingnumber_3a',['setMeetingNumber:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#a1f49f081438350e7f69c75aa76fbf02b',1,'MobileRTCMeetingItem -p']]],
@@ -62,6 +63,7 @@ var searchData=
   ['stoplivestream',['stopLiveStream',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a3518bbaf4d3605cdd9a7df7995b3cd7f',1,'MobileRTCMeetingService(InMeeting)::stopLiveStream()'],['../interface_mobile_r_t_c_meeting_service.html#a3518bbaf4d3605cdd9a7df7995b3cd7f',1,'MobileRTCMeetingService::stopLiveStream()']]],
   ['stopuservideo_3a',['stopUserVideo:',['../category_mobile_r_t_c_meeting_service_07_video_08.html#aab328693e8dfba7af5071fe19af035f0',1,'MobileRTCMeetingService(Video)::stopUserVideo:()'],['../interface_mobile_r_t_c_meeting_service.html#aab328693e8dfba7af5071fe19af035f0',1,'MobileRTCMeetingService::stopUserVideo:()']]],
   ['supportedlanguages',['supportedLanguages',['../interface_mobile_r_t_c.html#aedf1184e9cf9ef0c8d2ea20e71d428b5',1,'MobileRTC']]],
+  ['suspendsharing_3a',['suspendSharing:',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html#af50ab8c9d27d11783baf02d068ad074e',1,'MobileRTCMeetingService(AppShare)::suspendSharing:()'],['../interface_mobile_r_t_c_meeting_service.html#af50ab8c9d27d11783baf02d068ad074e',1,'MobileRTCMeetingService::suspendSharing:()']]],
   ['switchmyaudiosource',['switchMyAudioSource',['../category_mobile_r_t_c_meeting_service_07_audio_08.html#a9f54b2109055ef8e9a4b622c7746afc2',1,'MobileRTCMeetingService(Audio)::switchMyAudioSource()'],['../interface_mobile_r_t_c_meeting_service.html#a9f54b2109055ef8e9a4b622c7746afc2',1,'MobileRTCMeetingService::switchMyAudioSource()']]],
   ['switchmycamera',['switchMyCamera',['../category_mobile_r_t_c_meeting_service_07_video_08.html#a4bf18305f06f459085e3f1de10c1499a',1,'MobileRTCMeetingService(Video)::switchMyCamera()'],['../interface_mobile_r_t_c_meeting_service.html#a4bf18305f06f459085e3f1de10c1499a',1,'MobileRTCMeetingService::switchMyCamera()']]]
 ];

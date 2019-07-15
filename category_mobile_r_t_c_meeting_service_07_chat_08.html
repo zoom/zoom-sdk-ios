@@ -77,6 +77,12 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a75c775224392f00bb6c41cc750b52197"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#a75c775224392f00bb6c41cc750b52197">isPrivateChatDisabled</a></td></tr>
 <tr class="memdesc:a75c775224392f00bb6c41cc750b52197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if it is able to send private chat in the meeting.  <a href="#a75c775224392f00bb6c41cc750b52197">More...</a><br /></td></tr>
 <tr class="separator:a75c775224392f00bb6c41cc750b52197"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0582c60fbe1872fd20405be5c8a28013"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#a0582c60fbe1872fd20405be5c8a28013">changeAttendeeChatPriviledge:</a></td></tr>
+<tr class="memdesc:a0582c60fbe1872fd20405be5c8a28013"><td class="mdescLeft">&#160;</td><td class="mdescRight">set Attendee Chat Priviledge when in-meeting  <a href="#a0582c60fbe1872fd20405be5c8a28013">More...</a><br /></td></tr>
+<tr class="separator:a0582c60fbe1872fd20405be5c8a28013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73fdda799d5dffb101bd5f7316547fd"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetingChatPriviledgeType)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#ae73fdda799d5dffb101bd5f7316547fd">getAttendeeChatPriviledge</a></td></tr>
+<tr class="memdesc:ae73fdda799d5dffb101bd5f7316547fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">get Attendee Chat Priviledge when in-meeting  <a href="#ae73fdda799d5dffb101bd5f7316547fd">More...</a><br /></td></tr>
+<tr class="separator:ae73fdda799d5dffb101bd5f7316547fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9074a5f9214c4b55fbfe006e43571599"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_mobile_r_t_c_meeting_chat.html">MobileRTCMeetingChat</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#a9074a5f9214c4b55fbfe006e43571599">meetingChatByID:</a></td></tr>
 <tr class="memdesc:a9074a5f9214c4b55fbfe006e43571599"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get in-meeting chat message.  <a href="#a9074a5f9214c4b55fbfe006e43571599">More...</a><br /></td></tr>
 <tr class="separator:a9074a5f9214c4b55fbfe006e43571599"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -88,6 +94,51 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a2c88034c69a70ede0a5a1ba8e4d057aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
+<a id="a0582c60fbe1872fd20405be5c8a28013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0582c60fbe1872fd20405be5c8a28013">&#9670;&nbsp;</a></span>changeAttendeeChatPriviledge:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) changeAttendeeChatPriviledge: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCMeetingChatPriviledgeType)&#160;</td>
+          <td class="paramname"><em>type</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set Attendee Chat Priviledge when in-meeting </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means sucessfull, otherwise not. </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a0582c60fbe1872fd20405be5c8a28013">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
+<a id="ae73fdda799d5dffb101bd5f7316547fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73fdda799d5dffb101bd5f7316547fd">&#9670;&nbsp;</a></span>getAttendeeChatPriviledge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetingChatPriviledgeType) getAttendeeChatPriviledge </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get Attendee Chat Priviledge when in-meeting </p>
+<dl class="section return"><dt>Returns</dt><dd>the result of attendee chat priviledge; </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ae73fdda799d5dffb101bd5f7316547fd">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
 <a id="a317dc82401bc01ff2f5c61b11bf45eff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a317dc82401bc01ff2f5c61b11bf45eff">&#9670;&nbsp;</a></span>isChatDisabled()</h2>
 
