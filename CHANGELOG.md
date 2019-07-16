@@ -1,5 +1,48 @@
 # CHANGELOG
 
+## 2019-07-15 @ [v4.4.55130.0712](https://github.com/zoom/zoom-sdk-ios/releases/tag/4.4.55130.0712)
+
+**Added**
+
+* Add new interfaces for using the dial-in feature with custom UI
+  * `- (NSUInteger)getParticipantID;`
+  * `- (nullable MobileRTCCallCountryCode *)getDialInCurrentCountryCode;`
+  * `- (nullable NSArray *)getDialInAllCountryCodes;`
+  * `- (nullable NSArray *)getDialInCallCodesWithCountryId:(nullable NSString *)countryId;`
+  * `- (BOOL)dialInCall:(nullable NSString *)countryNumber;`
+* Add a new interface to customize the end meeting pop-over window
+  * `- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton;`
+* Add a new interface to enable/disable playing chime sound while joining/leaving a meeting
+  * `- (BOOL)playChime:(BOOL)on;`
+* Add a new interface to enable/disable “touch up my appearance” feature
+  * `- (BOOL)faceBeautyEnabled;`
+  *  `- (void)setFaceBeautyEnabled:(BOOL)enable;`
+* Add a new interface to change the chat privilege of an attendee while in the meeting
+  * `- (BOOL)changeAttendeeChatPriviledge:(MobileRTCMeetingChatPriviledgeType)type;`
+  * `- (MobileRTCMeetingChatPriviledgeType)getAttendeeChatPriviledge;`
+* Add a new interface to distinguish H.323 user and telephone user
+  * `@property (nonatomic, assign) BOOL             isH323User;`
+  * `@property (nonatomic, assign) BOOL             isPureCallInUser;`
+* Add a new interface to enable/disable the “minimize meeting” feature
+  * `- (BOOL)minimizeMeetingDisabled;`
+  * `- (void)disableMinimizeMeeting:(BOOL)disabled;`
+* Add audio sharing option in screen sharing, now you will be able to share the device audio in sharing your screen. Such as music, audio in a video, etc. (Not supported in Customize UI)
+
+
+**Changed & Fixed**
+
+* Improved the performance of UIView sharing
+* Optimized the performance of sharing web view
+* Changed the virtual background settings to follow the settings on the web portal
+* Hide the “Invite your contacts to join this meeting” tip when the invite button is set to be hidden
+* Fixed an issue that the “Invite by phone” shows no contact information
+* Fixed an issue that the PMI number is not correctly fetched after scheduling a meeting for others
+* Fixed an issue that the iOS status bar is blocking the shared content on iPad
+* Fixed an issue that the screen share tip view is hidden while screen sharing
+* Fixed an issue that the top bar is hidden while screen sharing
+* Fixed an issue that the app crashes occasionally when setting domain
+* Fixed an issue that switching between the gallery view and the speaker view will cause the app freeze on iPad
+
 ## 2019-03-25 @ [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322)
 
 **Added**
