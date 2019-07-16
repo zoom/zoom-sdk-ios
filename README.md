@@ -3,6 +3,8 @@
 <img src="https://s3.amazonaws.com/user-content.stoplight.io/8987/1541013063688" width="400px" max-height="400px" style="margin:auto;"/>
 </div>
 
+> **The version in this repo is a device-only version. If you would like to use the version that supports both device and simulator, you can download the version (**ios-mobilertc-all-*.zip**) from the release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases)**
+
 ## Latest SDK Notifications
 1. **Variable Name Changes**: Since [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322), we have renamed the term "APP" to "SDK" in our demo to avoid confusion between the term "API" and "APP".
 2. Please be aware that some of our interfaces are deprecated in the latest release, please check out our [CHANGELOG](https://github.com/zoom/zoom-sdk-ios/blob/master/CHANGELOG.md) for more detail
