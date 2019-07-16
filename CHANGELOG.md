@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2019-07-15 @ [v4.4.55130.0712](https://github.com/zoom/zoom-sdk-ios/releases/tag/4.4.55130.0712)
+## 2019-07-15 @ [v4.4.55130.0712](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55130.0712)
 
 **Added**
 
