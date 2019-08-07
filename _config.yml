@@ -1,0 +1,7 @@
+# This config file is meant for settings that affect our SDK API doc site
+# For more information about configuration options,
+# please see: https://jekyllrb.com/docs/configuration/#global-configuration
+ 
+# Handling Reading
+include             : ["*.html"]
+keep_files          : [".git", ".svn"]
