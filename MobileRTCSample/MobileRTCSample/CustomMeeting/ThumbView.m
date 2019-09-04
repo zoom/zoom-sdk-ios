@@ -318,7 +318,9 @@
         indexPath = [NSIndexPath indexPathForRow: indexPath.row+1 inSection: 0];
     }
     
-    [self.thumbTableView scrollToRowAtIndexPath: indexPath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    if (indexPath.row < [[[[MobileRTC sharedRTC] getMeetingService] getInMeetingUserList] count]) {
+        [self.thumbTableView scrollToRowAtIndexPath: indexPath atScrollPosition: UITableViewScrollPositionTop animated: YES];
+    }
 }
 
 - (void)showAttendeeVideo:(MobileRTCVideoView*)videoView withUserID:(NSUInteger)userID

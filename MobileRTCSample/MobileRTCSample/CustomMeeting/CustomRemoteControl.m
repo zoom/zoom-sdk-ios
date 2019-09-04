@@ -76,9 +76,6 @@ typedef enum
     DragMode_End,
 }DragModeStatus;
 
-#define SCREEN_WIDTH    ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT   ([UIScreen mainScreen].bounds.size.height)
-
 @interface CustomRemoteControl () <MobileRTCRemoteControlDelegate, RemoteControlBarDelegate, UITextViewDelegate>
 @property (strong, nonatomic) RemoteControlBar              *remoteContrlBar;
 @property (nonatomic, strong) MobileRTCActiveShareView      *remoteShareView;

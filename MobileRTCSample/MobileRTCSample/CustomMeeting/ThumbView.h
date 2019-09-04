@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-const CGFloat SAFE_ZOOM_INSETS = 34;
 const CGFloat BTN_HEIGHT = 24;
 
 @interface ThumbView : UIView

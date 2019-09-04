@@ -16,6 +16,11 @@
     #import <MobileRTC/MobileRTC.h>
     #import "AppDelegate.h"
 
+typedef enum : NSUInteger {
+    DisplayMode_LetterBox,
+    DisplayMode_PanAndScan,
+} DisplayMode;
+
 //for iOS version check
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define IsIphoneX  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125,2436), [[UIScreen mainScreen] currentMode].size) : NO)
@@ -37,5 +42,24 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define BUTTON_FONT [UIFont fontWithName:@"HelveticaNeue-Bold" size:18.0]
 
 #define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+
+#define SAFE_ZOOM_INSETS  34
+
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define Width(v)                CGRectGetWidth((v).frame)
+#define Height(v)               CGRectGetHeight((v).frame)
+
+#define MinX(v)            CGRectGetMinX((v).frame)
+#define MinY(v)            CGRectGetMinY((v).frame)
+
+#define MidX(v)            CGRectGetMidX((v).frame)
+#define MidY(v)            CGRectGetMidY((v).frame)
+
+#define MaxX(v)            CGRectGetMaxX((v).frame)
+#define MaxY(v)            CGRectGetMaxY((v).frame)
+
+#define RGBCOLOR(r, g, b)   [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 
 #endif

@@ -10,7 +10,6 @@
 
 @implementation SDKScheduleMeetingPresenter
 
-#warning  TODO edit meeting
 
 - (BOOL)scheduleMeeting:(nonnull id<MobileRTCMeetingItem>)meetingItem WithScheduleFor:(nullable NSString *)userEmail
 {

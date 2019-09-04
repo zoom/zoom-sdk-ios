@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MobileRTCVideoRawData.h"
+#import "MobileRTCAudioRawData.h"
 
 typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
 
@@ -259,6 +261,11 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @brief Callback event that the audio state of the current user changes.
  */
 - (void)onMyAudioStateChange;
+
+/*!
+ @brief Callback event that the host require meeting attendants to enable microphone.
+ */
+- (void)onSinkMeetingAudioRequestUnmuteByHost;
 @end
 
 #pragma mark - MobileRTCVideoServiceDelegate
@@ -514,5 +521,65 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
 
 @end
 
+#pragma mark - MobileRTCVideoRawDataDelegate
+@class MobileRTCRenderer;
+/*!
+ @protocol MobileRTCVideoRawDataDelegate
+ @brief This class is used to receive video raw data.
+ @discussion The MobileRTCVideoRawDataDelegate protocol is required in the custom meeting UI view.
+ */
+@protocol MobileRTCVideoRawDataDelegate <NSObject>
 
+@optional
+
+/*!
+ @brief This method is used to receive video's NV12 data(CVPixelBufferRef).
+ @param pixelBuffer Video's CVPixelBufferRef data.
+ @param renderer The MobileRTCRenderer’s object.
+ */
+- (void)onMobileRTCRender:(MobileRTCRenderer *_Nonnull)renderer
+        framePixelBuffer:(CVPixelBufferRef _Nullable )pixelBuffer
+                rotation:(MobileRTCVideoRawDataRotation)rotation;
+
+/*!
+ @brief This method is used to receive video's YUV420 data.
+ @param rawData Video's YUV420 data.
+ @param renderer The MobileRTCRenderer’s object.
+ */
+- (void)onMobileRTCRender:(MobileRTCRenderer *_Nonnull)renderer
+            frameRawData:(MobileRTCVideoRawData *_Nonnull)rawData;
+
+/*!
+ @brief Callback event when the sender stop/start to sending raw data.
+ @param renderer The MobileRTCRenderer’s object.
+ @param on Raw data is sending or not.
+ */
+- (void)onMobileRTCRender:(MobileRTCRenderer *_Nonnull)renderer
+          rawDataSending:(BOOL)on;
+
+@end
+
+#pragma mark - MobileRTCAudioRawDataDelegate
+@class MobileRTCRenderer;
+/*!
+ @protocol MobileRTCAudioRawDataDelegate
+ @brief This class is used to receive audio raw data.
+ @discussion The MobileRTCAudioRawDataDelegate protocol is required in the custom meeting UI view.
+ */
+@protocol MobileRTCAudioRawDataDelegate <NSObject>
+
+@optional
+
+/*!
+ @brief This method is used to receive audio mixed raw data.
+ @param rawData Audio's raw data.
+ */
+- (void)onMobileRTCMixedAudioRawData:(MobileRTCAudioRawData *_Nonnull)rawData;
+
+/*!
+ @brief This method is used to receive each road user audio raw data.
+ @param rawData Audio's raw data.
+ */
+- (void)onMobileRTCOneWayAudioAudioRawData:(MobileRTCAudioRawData *_Nonnull)rawData userId:(NSUInteger)userId;
+@end
 

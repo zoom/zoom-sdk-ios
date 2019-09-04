@@ -7,22 +7,33 @@
 //
 
 #import "SDKStartJoinMeetingPresenter+CustomizedUIMeetingDelegate.h"
+#import "OpenGLViewController.h"
+#import "MeetingSettingsViewController.h"
 
 @implementation SDKStartJoinMeetingPresenter (CustomizedUIMeetingDelegate)
 
 - (void)onInitMeetingView
 {
     NSLog(@"onInitMeetingView....");
+    BOOL enbleRawdataUI = [[NSUserDefaults standardUserDefaults] boolForKey:Raw_Data_UI_Enable];
     
-    CustomMeetingViewController *vc = [[CustomMeetingViewController alloc] init];
-    self.customMeetingVC = vc;
-    [vc release];
-    
-    [self.rootVC addChildViewController:self.customMeetingVC];
-    [self.rootVC.view addSubview:self.customMeetingVC.view];
-    [self.customMeetingVC didMoveToParentViewController:self.rootVC];
-    
-    self.customMeetingVC.view.frame = self.rootVC.view.bounds;
+    if (!enbleRawdataUI) {
+        CustomMeetingViewController *vc = [[CustomMeetingViewController alloc] init];
+        self.customMeetingVC = vc;
+        [vc release];
+        
+        [self.rootVC addChildViewController:self.customMeetingVC];
+        [self.rootVC.view addSubview:self.customMeetingVC.view];
+        [self.customMeetingVC didMoveToParentViewController:self.rootVC];
+        
+        self.customMeetingVC.view.frame = self.rootVC.view.bounds;
+    } else { // RawData for Custom UI
+        // Set raw data memory mode, The default is MobileRTCRawDataMemoryModeStack
+//        [[MobileRTC sharedRTC] setVideoRawDataMemoryMode:MobileRTCRawDataMemoryModeHeap];
+        
+        OpenGLViewController * roomVC = [[OpenGLViewController alloc] init];
+        [self.rootVC presentViewController:roomVC animated:YES completion:nil];
+    }
 }
 
 - (void)onDestroyMeetingView

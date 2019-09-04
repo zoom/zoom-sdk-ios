@@ -30,6 +30,11 @@
     [[[MobileRTC sharedRTC] getMeetingSettings] disableDriveMode:disabled];
 }
 
+- (void)disableGalleryView:(BOOL)disabled
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] disableGalleryView:disabled];
+}
+
 - (void)disableCallIn:(BOOL)disabled
 {
     [[[MobileRTC sharedRTC] getMeetingSettings] disableCallIn:disabled];
@@ -78,6 +83,11 @@
 - (void)setMeetingInviteHidden:(BOOL)hidden
 {
     [[MobileRTC sharedRTC] getMeetingSettings].meetingInviteHidden = hidden;
+}
+
+- (void)setMeetingChatHidden:(BOOL)hidden
+{
+    [[MobileRTC sharedRTC] getMeetingSettings].meetingChatHidden = hidden;
 }
 
 - (void)setMeetingParticipantHidden:(BOOL)hidden

@@ -134,14 +134,14 @@
     self.isShowTopBottonPanel = !self.isShowTopBottonPanel;
 }
 
-- (void)showAttendeeVideo:(MobileRTCVideoView*)videoView withUserID:(NSUInteger)userID
-{
-    [videoView showAttendeeVideoWithUserID:userID];
-    CGSize size = [[[MobileRTC sharedRTC] getMeetingService] getUserVideoSize:userID];
-    if (CGSizeEqualToSize(size, CGSizeZero))
-        return;
-    [videoView setVideoAspect:MobileRTCVideoAspect_PanAndScan];
-}
+//- (void)showAttendeeVideo:(MobileRTCVideoView*)videoView withUserID:(NSUInteger)userID
+//{
+//    [videoView showAttendeeVideoWithUserID:userID];
+//    CGSize size = [[[MobileRTC sharedRTC] getMeetingService] getUserVideoSize:userID];
+//    if (CGSizeEqualToSize(size, CGSizeZero))
+//        return;
+//    [videoView setVideoAspect:MobileRTCVideoAspect_PanAndScan];
+//}
 
 - (void)updateVideoOrShare
 {
@@ -337,8 +337,6 @@
 
 #pragma mark - Shrink & Delegate
 
-#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
-#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
 #define SHRINKMODEWIDTH (IS_IPAD ? 200 : 90)
 #define SHRINKMODEHEIGHT (SHRINKMODEWIDTH*4/3)
 

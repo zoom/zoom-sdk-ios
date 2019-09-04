@@ -24,6 +24,8 @@
 
 "Disable Driving Mode" = "Disable Driving Mode";
 
+"Disable Gallery View" = "Disable Gallery View";
+
 "Driving Mode Setting" = "Driving Mode turns on speaker, stops video and mutes microphone";
 
 "Invite Participant" = "Invite Participant";
@@ -49,6 +51,8 @@
 "Hide Meeting Video" = "Hide Meeting Video";
 
 "Hide Meeting Invite" = "Hide Meeting Invite";
+
+"Hide Meeting Chat" = "Hide Meeting Chat";
 
 "Hide Meeting Participant" = "Hide Meeting Participant";
 

@@ -15,6 +15,8 @@
 @property (retain, nonatomic) UITableViewCell *muteAudioCell;
 @property (retain, nonatomic) UITableViewCell *muteVideoCell;
 @property (retain, nonatomic) UITableViewCell *driveModeCell;
+@property (retain, nonatomic) UITableViewCell *galleryViewCell;
+
 @property (retain, nonatomic) UITableViewCell *callInCell;
 @property (retain, nonatomic) UITableViewCell *callOutCell;
 @property (retain, nonatomic) UITableViewCell *minimizeMeetingCell;
@@ -25,6 +27,7 @@
 @property (retain, nonatomic) UITableViewCell *passwordHiddenCell;
 @property (retain, nonatomic) UITableViewCell *leaveHiddenCell;
 @property (retain, nonatomic) UITableViewCell *inviteHiddenCell;
+@property (retain, nonatomic) UITableViewCell *chatHiddenCell;
 @property (retain, nonatomic) UITableViewCell *shareHiddenCell;
 @property (retain, nonatomic) UITableViewCell *audioHiddenCell;
 @property (retain, nonatomic) UITableViewCell *videoHiddenCell;
@@ -41,6 +44,7 @@
 @property (retain, nonatomic) UITableViewCell *waitingHUDCell;
 
 @property (retain, nonatomic) UITableViewCell *customMeetingCell;
+@property (retain, nonatomic) UITableViewCell *rawdataUICell;
 
 @property (retain, nonatomic) NSArray *itemArray;
 
@@ -66,6 +70,12 @@
     if ([[MobileRTC sharedRTC] isSupportedCustomizeMeetingUI])
     {
         [layoutArray addObject:[self customMeetingCell]];
+        
+        BOOL enableCustomMeeting = [[[MobileRTC sharedRTC] getMeetingSettings] enableCustomMeeting];
+        BOOL hasRawDataLicense = [[MobileRTC sharedRTC] hasRawDataLicense];
+        if (enableCustomMeeting && hasRawDataLicense) {
+            [layoutArray addObject:[self rawdataUICell]];
+        }
     }
     [layoutArray addObject:[self thumbnailCell]];
     [array addObject:layoutArray];
@@ -84,6 +94,7 @@
         [disableArray addObject:[self driveModeCell]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [disableArray addObject:[self enableKubiCell]];
+    [disableArray addObject:[self galleryViewCell]];
     [array addObject:disableArray];
     
     NSMutableArray *faceBeautyArray = [NSMutableArray array];
@@ -97,6 +108,7 @@
     [hiddenArray addObject:[self audioHiddenCell]];
     [hiddenArray addObject:[self videoHiddenCell]];
     [hiddenArray addObject:[self inviteHiddenCell]];
+    [hiddenArray addObject:[self chatHiddenCell]];
     [hiddenArray addObject:[self participantHiddenCell]];
     [hiddenArray addObject:[self moreHiddenCell]];
     [hiddenArray addObject:[self shareHiddenCell]];
@@ -253,6 +265,29 @@
     }
     
     return _driveModeCell;
+}
+
+- (UITableViewCell*)galleryViewCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL disabled = [settings galleryViewDisabled];
+    
+    if (!_galleryViewCell)
+    {
+        _galleryViewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _galleryViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _galleryViewCell.textLabel.text = NSLocalizedString(@"Disable Gallery View", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:disabled animated:NO];
+        [sv addTarget:self action:@selector(onDisableGalleryView:) forControlEvents:UIControlEventValueChanged];
+        _galleryViewCell.accessoryView = sv;
+    }
+    
+    return _galleryViewCell;
 }
 
 - (UITableViewCell*)callInCell
@@ -484,6 +519,29 @@
     }
     
     return _inviteHiddenCell;
+}
+
+- (UITableViewCell*)chatHiddenCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL hidden = [settings meetingChatHidden];
+    
+    if (!_chatHiddenCell)
+    {
+        _chatHiddenCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _chatHiddenCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _chatHiddenCell.textLabel.text = NSLocalizedString(@"Hide Meeting Chat", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:hidden animated:NO];
+        [sv addTarget:self action:@selector(onHideMeetingChat:) forControlEvents:UIControlEventValueChanged];
+        _chatHiddenCell.accessoryView = sv;
+    }
+    
+    return _chatHiddenCell;
 }
 
 - (UITableViewCell*)participantHiddenCell
@@ -728,13 +786,32 @@
         _customMeetingCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
         _customMeetingCell.selectionStyle = UITableViewCellSelectionStyleNone;
         _customMeetingCell.textLabel.text = NSLocalizedString(@"Custom Meeting", @"");
-        
+        _customMeetingCell.tag = Custom_Meeting_Cell_Tag;
         UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
         [sv setOn:enableCustomMeeting animated:NO];
         [sv addTarget:self action:@selector(onEnableCustomMeetingHint:) forControlEvents:UIControlEventValueChanged];
         _customMeetingCell.accessoryView = sv;
     }
     return _customMeetingCell;
+}
+
+- (UITableViewCell*)rawdataUICell
+{
+    if (!_rawdataUICell)
+    {
+        _rawdataUICell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _rawdataUICell.tag = Raw_Data_Cell_Tag;
+        _rawdataUICell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _rawdataUICell.textLabel.text = @"Rawdata UI";
+        
+        BOOL enbleRawdataUI = [[NSUserDefaults standardUserDefaults] boolForKey:Raw_Data_UI_Enable];
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:enbleRawdataUI animated:NO];
+        [sv addTarget:self action:@selector(onEnableRawdataUIHint:) forControlEvents:UIControlEventValueChanged];
+        _rawdataUICell.accessoryView = sv;
+    }
+    return _rawdataUICell;
 }
 
 - (SDKMeetingSettingPresenter *)settingPresenter
@@ -769,6 +846,13 @@
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter disableDriveMode:sv.on];
 }
+
+- (void)onDisableGalleryView:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter disableGalleryView:sv.on];
+}
+
 
 - (void)onDisableCallIn:(id)sender
 {
@@ -829,6 +913,13 @@
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter setMeetingInviteHidden:sv.on];
 }
+
+- (void)onHideMeetingChat:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter setMeetingChatHidden:sv.on];
+}
+
 
 - (void)onHideMeetingParticipant:(id)sender
 {
@@ -894,5 +985,41 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter setEnableCustomMeeting:sv.on];
+    
+    if (sv.on) {
+        for (int i = 0; i < self.itemArray.count; i++) {
+            NSMutableArray *sectionArray = self.itemArray[i];
+            for (int j = 0; j < sectionArray.count; j++) {
+                UITableViewCell *cell = sectionArray[j];
+                if (Custom_Meeting_Cell_Tag == cell.tag) {
+                    [sectionArray insertObject:[self rawdataUICell] atIndex:j+1];
+                    [self.tableView reloadData];
+                    return;
+                }
+            }
+        }
+    } else {
+        for (int i = 0; i < self.itemArray.count; i++) {
+            NSMutableArray *sectionArray = self.itemArray[i];
+            for (int j = 0; j < sectionArray.count; j++) {
+                UITableViewCell *cell = sectionArray[j];
+                if (Raw_Data_Cell_Tag == cell.tag) {
+                    [sectionArray removeObjectAtIndex:j];
+                    [self.tableView reloadData];
+                    
+                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:Raw_Data_UI_Enable];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+                    return;
+                }
+            }
+        }
+    }
+}
+
+- (void)onEnableRawdataUIHint:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [[NSUserDefaults standardUserDefaults] setBool:sv.on forKey:Raw_Data_UI_Enable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

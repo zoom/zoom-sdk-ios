@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## 2019-09-04 @ [v4.4.55968.0904](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55968.0904)
+
+## Added
+* Add iOS 13 and iPad OS support (Based on iOS beta versions)
+* Add a new interface to hide the "Chat" button in Zoom UI
+* `- (void)setMeetingChatHidden:(BOOL)hidden;`
+* Add a new interface to disable "Gallery View" in the meeting
+* `- (void)disableGalleryView:(BOOL)disabled;`
+* Add a new callback for notifying the host when the host requires attendants to unmute microphone
+*  `- (void)onSinkMeetingAudioRequestUnmuteByHost; `
+* Add a new parameter to `presentMeetingChatViewController` to allow passing userId and specify the person to chat with
+* `- (BOOL)presentMeetingChatViewController:(nonnull UIViewController*)parentVC userId:(NSInteger)userId;`
+* Add a new interface that allows users to modify default values to use handset mode
+* `-(BOOL)speakerOffWhenInMeeting`
+* `-(void)setSpeakerOffWhenInMeeting:(BOOL)speakerOff`
+
+## Changed & Fixed
+* Fixed an issue that sharing an invalid web URL will show black screen while in the meeting
+* Fixed an issue that sending the pairing code will lead to error
+* Fixed an issue that the video is turned off by default when starting a meeting with ZAK
+* Fixed an issue that the "Minimize Meeting" button is not shown in Zoom UI for non-login users
+* Improved the performance for sharing web pages in a meeting
+
 ## 2019-07-15 @ [v4.4.55130.0712](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55130.0712)
 
 **Added**

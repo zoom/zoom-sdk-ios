@@ -31,6 +31,9 @@
 #import <MobileRTC/MobileRTCAnnotationService.h>
 #import <MobileRTC/MobileRTCRemoteControlService.h>
 #import <MobileRTC/MobileRTCWaitingRoomService.h>
+#import <MobileRTC/MobileRTCRenderer.h>
+#import "MobileRTC/MobileRTCAudioRawDataHelper.h"
+
 /*!
  @class MobileRTC
  @brief Initialize the class to acquire all the services. 
@@ -237,5 +240,37 @@
  @warning It is necessary to call the method in AppDelegate "- (void)applicationWillTerminate:(UIApplication *)application".
  */
 - (void)appWillTerminate;
+
+/*!
+ @brief Gets whether you have permission to use raw data.
+ @warning It is necessary to call the method after auth success.
+ */
+- (BOOL)hasRawDataLicense;
+
+/*!
+ @brief Call the function to set video rawdata memory mode.
+ @warning This method works only with rawdata in a custom UI.
+ @warning need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId
+ videoType:(MobileRTCVideoType)type;].
+ @warning The method is optional.
+ */
+- (void)setVideoRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
+
+/*!
+ @brief Call the function to set share rawdata memory mode.
+ @warning This method works only with rawdata in a custom UI.
+ @warning need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId
+ videoType:(MobileRTCVideoType)type;].
+ @warning The method is optional.
+ */
+- (void)setShareRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
+
+/*!
+ @brief Call the function to set audio rawdata memory mode.
+ @warning This method works only with rawdata in a custom UI.
+ @warning Need call before call [-(MobileRTCRawDataError)subscribe;].
+ @warning The method is optional.
+ */
+- (void)setAudioRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
 
 @end

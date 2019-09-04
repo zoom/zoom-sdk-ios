@@ -133,10 +133,12 @@
 
 /*!
  @brief Set to present Zoom original Meeting Chat ViewController.
- @param parentVC which use to present ViewController
+ @param parentVC which use to present ViewController.
+ @param userId userId of the user you would like to chat.
  @return YES means that the method is called successfully, otherwise not.
+ @warning If userId = 0 or nil, it will send to everyone.
  */
-- (BOOL)presentMeetingChatViewController:(nonnull UIViewController*)parentVC;
+- (BOOL)presentMeetingChatViewController:(nonnull UIViewController*)parentVC userId:(NSInteger)userId;
 
 /*!
  @brief Set to present Zoom original Participants ViewController.

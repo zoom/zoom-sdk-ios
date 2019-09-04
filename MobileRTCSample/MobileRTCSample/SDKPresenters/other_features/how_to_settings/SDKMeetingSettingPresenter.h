@@ -18,6 +18,8 @@
 
 - (void)disableDriveMode:(BOOL)disabled;
 
+- (void)disableGalleryView:(BOOL)disabled;
+
 - (void)disableCallIn:(BOOL)disabled;
 
 - (void)disableCallOut:(BOOL)disabled;
@@ -37,6 +39,8 @@
 - (void)setMeetingVideoHidden:(BOOL)hidden;
 
 - (void)setMeetingInviteHidden:(BOOL)hidden;
+
+- (void)setMeetingChatHidden:(BOOL)hidden;
 
 - (void)setMeetingParticipantHidden:(BOOL)hidden;
 

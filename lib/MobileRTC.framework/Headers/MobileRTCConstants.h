@@ -507,3 +507,81 @@ typedef NS_ENUM(NSUInteger, MobileRTCMeetingChatPriviledgeType) {
     /// allow attendee to chat with host and public
     MobileRTCMeetingChatPriviledge_Everyone_Publicly,
 };
+
+typedef NS_ENUM(NSUInteger, MobileRTCVideoType) {
+    ///Video Camera Data
+    MobileRTCVideoType_VideoData  = 1,
+    ///Share Data
+    MobileRTCVideoType_ShareData,
+};
+
+/*!
+ @brief MobileRTCVideoResolution An enumeration of video raw data resolution.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCVideoResolution) {
+    /// video resolution 90
+    MobileRTCVideoResolution_90,
+    /// video resolution 180
+    MobileRTCVideoResolution_180,
+    /// video resolution 360
+    MobileRTCVideoResolution_360,
+    /// video resolution 720
+    MobileRTCVideoResolution_720,
+};
+
+/*!
+ @brief MobileRTCVideoResolution An enumeration of video raw data format.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCVideoRawDataFormat) {
+    MobileRTCVideoRawDataFormatI420            = 1,
+    MobileRTCVideoRawDataFormatI420_Limit,
+};
+
+/*!
+ @brief MobileRTCVideoResolution The direction of video.
+ */
+typedef NS_ENUM(NSInteger, MobileRTCVideoRawDataRotation) {
+    /// video direction 0
+    MobileRTCVideoRawDataRotationNone      = 1,
+    /// video direction 90
+    MobileRTCVideoRawDataRotation90,
+    /// video direction 180
+    MobileRTCVideoRawDataRotation180,
+    /// video direction 270
+    MobileRTCVideoRawDataRotation270,
+};
+
+/*!
+ @brief MobileRTCRawDataError An enumeration of raw data.
+ */
+typedef NS_ENUM(NSUInteger,MobileRTCRawDataError)
+{
+    MobileRTCRawData_Success,
+    MobileRTCRawData_Uninitialized,
+    MobileRTCRawData_Malloc_Failed,
+    MobileRTCRawData_Wrongusage,
+    MobileRTCRawData_Invalid_Param,
+    MobileRTCRawData_Not_In_Meeting,
+    MobileRTCRawData_No_License,
+    
+    MobileRTCRawData_Video_Module_Not_Ready,
+    MobileRTCRawData_Video_Module_Error,
+    MobileRTCRawData_Video_device_error,
+    MobileRTCRawData_No_Video_Data,
+    
+    MobileRTCRawData_Share_Module_Not_Ready,
+    MobileRTCRawData_Hare_Module_Error,
+    MobileRTCRawData_No_Share_Data,
+    
+    MobileRTCRawData_Audio_Module_Not_Ready,
+    MobileRTCRawData_Audio_Module_Error,
+    MobileRTCRawData_No_Audio_Data,
+};
+
+/*!
+ @brief Rawdata memory mode.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCRawDataMemoryMode) {
+    MobileRTCRawDataMemoryModeStack,
+    MobileRTCRawDataMemoryModeHeap
+};

@@ -20,7 +20,7 @@
 @property (assign, nonatomic) BOOL meetingTitleHidden;
 
 /*!
- @brief Show/Hide meeting title in the meeting bar. 
+ @brief Show/Hide meeting title in the meeting bar.
  */
 @property (assign, nonatomic) BOOL meetingPasswordHidden;
 
@@ -43,6 +43,11 @@
  @brief Show/Hide INVITE button in the meeting bar.
  */
 @property (assign, nonatomic) BOOL meetingInviteHidden;
+
+/*!
+ @brief Show/Hide Chat in the meeting bar.
+ */
+@property (assign, nonatomic) BOOL meetingChatHidden;
 
 /*!
  @brief Show/Hide PARTICIPANT button in the meeting bar.
@@ -187,6 +192,18 @@
 - (void)disableDriveMode:(BOOL)disabled;
 
 /*!
+ @brief Query if Gallery View is disabled.
+ @return YES means muted, otherwise not.
+ */
+- (BOOL)galleryViewDisabled;
+
+/*!
+ @brief Set to disable the Gallery View in the meeting.
+ @param disabled YES means disabled, otherwise not.
+ */
+- (void)disableGalleryView:(BOOL)disabled;
+
+/*!
  @brief Query if it is disabled to call in.
  @return YES means disabled, otherwise not.
  */
@@ -221,4 +238,16 @@
  @param disabled The option value.
  */
 - (void)disableMinimizeMeeting:(BOOL)disabled;
+
+/*!
+ @brief Query Meeting setting of speaker off when present meeting.
+ @return YES means speaker off, otherwise not.
+ */
+- (BOOL)speakerOffWhenInMeeting;
+
+/*!
+ @brief Set speaker off.  Default value is No, Need set to NO when not used.
+ @param YES means speaker off, otherwise not
+ */
+- (void)setSpeakerOffWhenInMeeting:(BOOL)speakerOff;
 @end

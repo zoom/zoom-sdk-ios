@@ -10,6 +10,7 @@
 #import "SettingsViewController.h"
 #import <MobileRTC/MobileRTC.h>
 #import "SDKStartJoinMeetingPresenter.h"
+#import "MeetingSettingsViewController.h"
 
 @interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate,MobileRTCMeetingShareActionItemDelegate>
 
@@ -261,14 +262,24 @@
         
         if ([[[MobileRTC sharedRTC] getMeetingSettings] enableCustomMeeting])
         {
-            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Custom Meeting", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-//                MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-//                if (ms)
-//                {
-//                    ms.customizedUImeetingDelegate = self;
-//                }
-                [self startMeeting:NO];
-            }]];
+            BOOL enbleRawdataUI = [[NSUserDefaults standardUserDefaults] boolForKey:Raw_Data_UI_Enable];
+            
+            if (!enbleRawdataUI) {
+                [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Custom Meeting", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    //                MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
+                    //                if (ms)
+                    //                {
+                    //                    ms.customizedUImeetingDelegate = self;
+                    //                }
+                    [self startMeeting:NO];
+                }]];
+            } else {
+                if (enbleRawdataUI) {
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Rawdata UI" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        [self startMeeting:NO];
+                    }]];
+                }
+            }
         }
         else
         {

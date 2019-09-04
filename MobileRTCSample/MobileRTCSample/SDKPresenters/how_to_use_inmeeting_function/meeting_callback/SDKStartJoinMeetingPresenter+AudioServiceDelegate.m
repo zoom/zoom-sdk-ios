@@ -29,4 +29,11 @@
     }
 }
 
+#if 0
+- (void)onSinkMeetingAudioRequestUnmuteByHost
+{
+    NSLog(@"the host require meeting attendants to enable microphone");
+}
+#endif
+
 @end

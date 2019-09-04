@@ -12,13 +12,17 @@
 #import "ScheduleTableViewController.h"
 #import <MobileRTC/MobileRTC.h>
 #import "SDKAuthPresenter.h"
+#import <MessageUI/MessageUI.h>
+#import "SSZipArchive.h"
 
-@interface SettingsViewController ()
+@interface SettingsViewController () <MFMailComposeViewControllerDelegate>
 
 @property (retain, nonatomic) UITableViewCell *meetingCell;
 @property (retain, nonatomic) UITableViewCell *languageCell;
 @property (retain, nonatomic) UITableViewCell *loginCell;
 @property (retain, nonatomic) UITableViewCell *scheduleCell;
+@property (retain, nonatomic) UITableViewCell *cleanLogCell;
+@property (retain, nonatomic) UITableViewCell *sendLogCell;
 
 @property (retain, nonatomic) NSArray *itemArray;
 
@@ -63,6 +67,8 @@
         [array addObject:@[[self scheduleCell]]];
     }
     
+    [array addObject:@[[self sendLogCell], [self cleanLogCell]]];
+    
     [array addObject:@[[self loginCell]]];
     
     self.itemArray = array;
@@ -96,6 +102,30 @@
     }
     
     return _languageCell;
+}
+
+- (UITableViewCell *)sendLogCell {
+    if (!_sendLogCell)
+    {
+        _sendLogCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _sendLogCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _sendLogCell.textLabel.text = NSLocalizedString(@"Send Logs By Email", @"");
+        _sendLogCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return _sendLogCell;
+}
+
+- (UITableViewCell *)cleanLogCell {
+    if (!_cleanLogCell)
+    {
+        _cleanLogCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _cleanLogCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _cleanLogCell.textLabel.text = NSLocalizedString(@"Clean all Logs", @"");
+        _cleanLogCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return _cleanLogCell;
 }
 
 - (UITableViewCell*)loginCell
@@ -162,7 +192,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = self.itemArray[indexPath.section][indexPath.row];
-    if (cell == _languageCell)
+    if ([cell isEqual:_languageCell])
     {
         LanguaguePickerViewController * vc = [[LanguaguePickerViewController alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
@@ -170,15 +200,25 @@
         return;
     }
     
-    if (cell == _meetingCell)
+    if ([cell isEqual:_meetingCell])
     {
         MeetingSettingsViewController * vc = [[MeetingSettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
         [self.navigationController pushViewController:vc animated:YES];
         [vc release];
         return;
     }
+    
+    if ([cell isEqual:_sendLogCell]) {
+        [self sendByEmail];
+        return;
+    }
+    
+    if ([cell isEqual:_cleanLogCell]) {
+        [self clearLog];
+        return;
+    }
 
-    if (cell == _loginCell)
+    if ([cell isEqual:_loginCell])
     {
         if ([[[MobileRTC sharedRTC] getAuthService] isLoggedIn])
         {
@@ -210,13 +250,20 @@
         return;
     }
     
-    if (cell == _scheduleCell)
+    if ([cell isEqual:_scheduleCell])
     {
         ScheduleTableViewController *vc = [[ScheduleTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
         [self.navigationController pushViewController:vc animated:YES];
         [vc release];
         return;
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+    if ([[self.itemArray[section] firstObject] isEqual:_sendLogCell]) {
+        return @"Send email need configure email account in iphone first.";
+    }
+    return nil;
 }
 
 - (void)loginWithEmail
@@ -280,5 +327,91 @@
         }
     }];
 }
+
+- (void)sendByEmail {
+    if ([MFMailComposeViewController canSendMail]) {
+        
+        NSString *fileName;
+        NSString *sourcePath = NSTemporaryDirectory();
+        NSMutableArray *matches = [NSMutableArray array];
+        NSDirectoryEnumerator *dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:sourcePath];
+        while ((fileName = [dirEnum nextObject]))
+        {
+            if ([[fileName pathExtension] isEqualToString:@"log"]) {
+                [matches addObject:[sourcePath stringByAppendingPathComponent:fileName]];
+            }
+        }
+        
+        void (^actionBlock)(NSString*) = ^(NSString* zipFilePath){
+            __block typeof(self) weakSelf = self;
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+                [picker setModalPresentationStyle:UIModalPresentationFormSheet];
+                picker.mailComposeDelegate = weakSelf;
+                [picker setSubject:@"Troubleshooting log file"];
+                
+                NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+                
+                NSString *emailBody = [NSString stringWithFormat:@"App name: %@\nApp versio: %@(%@)\nSDK Version: %@\nSDK Domain: %@\niOS: %@\nDevice: %@\r\n",[infoDictionary objectForKey:@"CFBundleDisplayName"], [infoDictionary objectForKey:@"CFBundleShortVersionString"], [infoDictionary objectForKey:@"CFBundleVersion"], [[MobileRTC sharedRTC] mobileRTCVersion], [[MobileRTC sharedRTC] mobileRTCDomain], [[UIDevice currentDevice] systemVersion], [[UIDevice currentDevice] localizedModel]];
+                [picker setMessageBody:emailBody isHTML:NO];
+                NSData *data = [NSData dataWithContentsOfMappedFile:zipFilePath];
+                [picker addAttachmentData:data mimeType:@"application/zip" fileName:@"troubleshooting.zip"];
+                [self retain];
+                UINavigationController *navController = weakSelf.navigationController;
+                if (navController.presentedViewController) [navController dismissViewControllerAnimated:NO completion:NULL];
+                [navController presentViewController:picker animated:YES completion:NULL];
+                [picker release];
+            });
+        };
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *zipFilePath = [sourcePath stringByAppendingPathComponent:@"troubleshooting.zip"];
+            [SSZipArchive createZipFileAtPath:zipFilePath withFilesAtPaths:matches];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                actionBlock(zipFilePath);
+            });
+        });
+        
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Zoom", nil)
+                                                        message:NSLocalizedString(@"Troubleshooting log failed to send. Please set up the mail account in Mail app first.", nil)
+                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
+    if (result == MFMailComposeResultFailed) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Zoom", nil)
+                                                        message:NSLocalizedString(@"Troubleshooting log failed to send. Please try again.", nil)
+                                                       delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+    NSString *sourcePath = NSTemporaryDirectory();
+    NSString *zipFilePath = [sourcePath stringByAppendingPathComponent:@"troubleshooting.zip"];
+    [[NSFileManager defaultManager] removeItemAtPath:zipFilePath error:NULL];
+}
+
+- (void)clearLog
+{
+    NSArray* tmpDirectory = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:NSTemporaryDirectory() error:NULL];
+    for (NSString *file in tmpDirectory) {
+        [[NSFileManager defaultManager] removeItemAtPath:[NSString stringWithFormat:@"%@%@", NSTemporaryDirectory(), file] error:NULL];
+    }
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                             message:NSLocalizedString(@"All log has been clear.", @"")
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Done", @"") style:UIAlertActionStyleCancel handler:nil]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
 
 @end

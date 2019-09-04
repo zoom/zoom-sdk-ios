@@ -24,6 +24,8 @@
 
 "Disable Driving Mode" = "禁用駕駛模式";
 
+"Disable Gallery View" = "禁用畫廊模式";
+
 "Driving Mode Setting" = "駕駛模式下，揚聲器開啟，視頻關閉，麥克風靜音";
 
 "Invite Participant" = "邀請與會人";
@@ -49,6 +51,8 @@
 "Hide Meeting Video" = "隱藏會議視頻功能";
 
 "Hide Meeting Invite" = "隱藏會議邀請功能";
+
+"Hide Meeting Chat" = "隱藏會議聊天功能";
 
 "Hide Meeting Participant" = "隱藏會議參會人功能";
 
