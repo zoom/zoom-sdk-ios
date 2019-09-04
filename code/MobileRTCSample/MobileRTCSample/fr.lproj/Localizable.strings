@@ -1,0 +1,162 @@
+/* 
+  Localizable.strings
+  MobileRTCSample
+
+  Created by Xiaojian Hu on 8/6/14.
+  Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
+*/
+
+"Hello MobileRTC" = "Hello, MobileRTC";
+
+"Settings" = "Settings";
+
+"Auto Connect Internet Audio" = "Auto Connect Audio";
+
+"Auto Connect Internet Audio Setting" = "Automatically connect audio using internet when joining a meeting";
+
+"Always Mute My Microphone" = "Always Mute My Microphone";
+
+"Always mute my microphone when joining others' meeting" = "Always mute my microphone when joining a meeting";
+
+"Always Mute My Video" = "Always Turn Off My Video";
+
+"Always mute my video when joining others' meeting" = "Always turn off my video when joining a meeting";
+
+"Disable Driving Mode" = "Disable Driving Mode";
+
+"Disable Gallery View" = "Disable Gallery View";
+
+"Driving Mode Setting" = "Driving Mode turns on speaker, stops video and mutes microphone";
+
+"Invite Participant" = "Invite Participant";
+
+"Disable Call in" = "Disable Call in";
+
+"Disable Call Out" = "Disable Call Out";
+
+"Disable Minimize Meeting" = "Disable Minimize Meeting";
+
+"Face Beauty Enable" = "Touch Up My Appearance";
+
+"Please join meeting with ID: %@" = "Please join meeting with ID: %@";
+
+"Meeting URL: %@" = "Meeting URL: %@";
+
+"Hide Meeting Title" = "Hide Meeting Title";
+
+"Hide Meeting Leave" = "Hide Meeting Leave";
+
+"Hide Meeting Audio" = "Hide Meeting Audio";
+
+"Hide Meeting Video" = "Hide Meeting Video";
+
+"Hide Meeting Invite" = "Hide Meeting Invite";
+
+"Hide Meeting Chat" = "Hide Meeting Chat";
+
+"Hide Meeting Participant" = "Hide Meeting Participant";
+
+"Hide Meeting Share" = "Hide Meeting Share";
+
+"Hide Meeting TopBar" = "Hide Meeting TopBar";
+
+"Hide Meeting BottomBar" = "Hide Meeting BottomBar";
+
+"Enable Kubi Device" = "Enable Kubi Device";
+
+"Change Thumbnail Layout" = "Change Thumbnail Layout";
+
+"Host Hide Leave Meeting" = "Host Hide Leave Meeting";
+
+"Hide Hint in Meeting" = "Hide Hint in Meeting";
+
+"Hide Meeting More" = "Hide Meeting More";
+
+"SDK authentication failed, error code: %zd" = "SDK authentication failed, error code: %zd";
+
+"OK" = "OK";
+
+"Retry" = "Retry";
+
+"Cancel" = "Cancel";
+
+"Pause/Resume" = "Pause/Resume";
+
+"Meet Now" = "Meet Now";
+
+"Join a Meeting" = "Join a Meeting";
+
+"Please input the meeting number" = "Please input the meeting number";
+
+"Start a Meeting" = "Start a Meeting";
+
+"Start or join a video meeting on the go" = "Start or join a video meeting on the go";
+
+"Share Your Content" = "Share Your Content";
+
+"They see what you see" = "They see what you see";
+
+"Message Your Team" = "Message Your Team";
+
+"Send texts, voice messages, files and images" = "Send texts, voice messages, files and images";
+
+"Get Meeting!" = "Get Meeting!";
+
+"Work anywhere, with anyone, on any device" = "Work anywhere, with anyone, on any device";
+
+"Select Language" = "Select Language";
+
+"Waiting..." = "Sample Waiting...";
+
+"Leave" = "Exit";
+
+"Leave Meeting" = "Exit Meeting";
+
+"Select Meeting Type" = "Please Select Meeting Type";
+
+"App Share Meeting" = "App Share Meeting";
+
+"Zoom Meeting" = "Zoom Meeting";
+
+//For Strings included with Zoom
+"Zoom" = "MobileRTC";
+
+"Please join Zoom meeting in progress" = "Veuillez vous joindre à une réunion MobileRTC en cours";
+
+"Photos Privacy Settings" = "MobileRTC n’a pas accès à vos photos. Veuillez donner accès dans Paramètres photo.";
+
+"Photos Location Services" = "MobileRTC n’a pas accès à l’emplacement de vos photos. Veuillez activer cet accès dans Services de localisation.";
+
+"Dial Telephone Alert Message" = "Souhaitez-vous appeler la réunion automatiquement ?\n\nAprès avoir appelé la réunion, revenez à MobileRTCSample";
+
+"Zoom cannot verify this server identity. Would you like to continue anyway?" = "MobileRTC ne peut pas vérifier l’identité de ce serveur. Voulez-vous continuer quand même?";
+
+"Zoom cannot verify this server identity. Please try again later." = "MobileRTC ne peut vérifier l’identité de ce serveur Veuillez réessayer plus tard";
+
+"Mic Privacy Settings" = "Cette appli n’a pas accès à votre micro et les autres ne peuvent pas entendre votre voix. Vous pouvez activer l’accès dans les Paramètres de confidentialité.";
+
+"Camera Privacy Settings" = "Cette application n’a pas accès à votre caméra. Vous pouvez activer l’accès dans les Paramètres de confidentialité.";
+
+"Contacts Privacy Settings" = "MobileRTC n’a pas accès à vos contacts. Veuillez activer cet accès dans les Paramètres de confidentialité.";
+
+"Failed to connect to Zoom video conferencing server" = "Impossible de se connecter au serveur MobileRTC de vidéo conférence. Si vous êtes derrière un pare-feu, demandez à votre administrateur informatique d’autoriser « *. Zoom.us ».  Pour plus d’informations (en anglais), veuillez visiter https://support.zoom.us/hc/en-us/articles/201362683";;
+
+"Attendee Free Meeting Reminder" = "Cette rencontre gratuite prendra fin dans 10 minutes. Merci d’avoir choisi MobileRTC!";
+
+"User unsupport annotation join tip" = "Comme l’annotation est désactivée, vos participants doivent passer à la dernière version de MobileRTC pour partager leur écran";
+
+"Zoom will display closed captioning on main video when available" = "Lorsque le sous-titrage est disponible, MobileRTC l'affichera sur la vidéo principale";
+
+"Sign in with the specified account to join webinar" = "Vous devez être connecté avec le compte MobileRTC spécifié pour rejoindre ce webinaire. Veuillez contacter l’animateur pour plus d’informations.";
+
+"Search for Zoom Rooms" = "Recherchez des salles MobileRTC";
+
+"No Zoom Rooms" = "Aucune salle MobileRTC";
+
+"Select Zoom Rooms" = "Sélectionner les salles MobileRTC";
+
+"Invite Zoom Rooms" = "Inviter des salles MobileRTC";
+
+"Meeting Settings" = "Meeting Settings";
+
+"Schedule Meeting" = "Schedule Meeting";
