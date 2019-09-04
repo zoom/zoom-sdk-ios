@@ -2,6 +2,7 @@ var searchData=
 [
   ['initializewithdomain_3aenablelog_3a',['initializeWithDomain:enableLog:',['../interface_mobile_r_t_c.html#a6b27e8505750973d8d56c3d13618bccf',1,'MobileRTC']]],
   ['initializewithdomain_3aenablelog_3abundlerespath_3a',['initializeWithDomain:enableLog:bundleResPath:',['../interface_mobile_r_t_c.html#a09a8b74b9c6d4dda192403bcd404e97a',1,'MobileRTC']]],
+  ['initwithdelegate_3a',['initWithDelegate:',['../interface_mobile_r_t_c_audio_raw_data_helper.html#a23493a02ab6462e0a4651cb6a703f32c',1,'MobileRTCAudioRawDataHelper::initWithDelegate:()'],['../interface_mobile_r_t_c_renderer.html#a7aa8021d5cd9e1f82001d3d9604a1899',1,'MobileRTCRenderer::initWithDelegate:()']]],
   ['insilentmode',['inSilentMode',['../interface_mobile_r_t_c_meeting_user_info.html#ae9ea7f32e4ea7bd4665a33758616468e',1,'MobileRTCMeetingUserInfo']]],
   ['invitecopyurl',['inviteCopyURL',['../interface_mobile_r_t_c_invite_helper.html#a3276dc7e912f1c29f80e2d9c65c65b69',1,'MobileRTCInviteHelper']]],
   ['inviteemailcontent',['inviteEmailContent',['../interface_mobile_r_t_c_invite_helper.html#a66c77e16634f7966f18efd54159e11b9',1,'MobileRTCInviteHelper']]],

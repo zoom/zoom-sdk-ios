@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['galleryviewdisabled',['galleryViewDisabled',['../interface_mobile_r_t_c_meeting_settings.html#a31bbc20f262a5967f173e86db1ade043',1,'MobileRTCMeetingSettings']]],
   ['get3rdpartyaudioinfo',['get3rdPartyAudioInfo',['../interface_mobile_r_t_c_account_info.html#aae8bec3f8beb8ef0087457a0452b68cc',1,'MobileRTCAccountInfo::get3rdPartyAudioInfo()'],['../protocol_mobile_r_t_c_meeting_item_01-p.html#a65268576ccd194a42f8dd8f531b0452f',1,'MobileRTCMeetingItem -p::get3rdPartyAudioInfo()']]],
   ['getaccountinfo',['getAccountInfo',['../interface_mobile_r_t_c_auth_service.html#abff93a1ca1d75872bcbacbe74862fb6e',1,'MobileRTCAuthService']]],
   ['getaduiooption',['getAduioOption',['../protocol_mobile_r_t_c_meeting_item_01-p.html#ab16f5ce83bf5b9cc4690bdf7e39d3657',1,'MobileRTCMeetingItem -p']]],

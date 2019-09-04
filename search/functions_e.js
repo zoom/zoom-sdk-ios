@@ -2,6 +2,7 @@ var searchData=
 [
   ['raisemyhand',['raiseMyHand',['../category_mobile_r_t_c_meeting_service_07_user_08.html#a7f08903412155adacff30e41c148dc58',1,'MobileRTCMeetingService(User)::raiseMyHand()'],['../interface_mobile_r_t_c_meeting_service.html#a7f08903412155adacff30e41c148dc58',1,'MobileRTCMeetingService::raiseMyHand()']]],
   ['redo',['redo',['../interface_mobile_r_t_c_annotation_service.html#a55339f027044aa6a93292e735e1691de',1,'MobileRTCAnnotationService']]],
+  ['releaseref',['releaseRef',['../interface_mobile_r_t_c_audio_raw_data.html#afd31f70aa7bc777360f39320e0c0ebe5',1,'MobileRTCAudioRawData::releaseRef()'],['../interface_mobile_r_t_c_video_raw_data.html#a25edf1ba59149a096a44cafeb31da084',1,'MobileRTCVideoRawData::releaseRef()']]],
   ['remotecontrolcharinput_3a',['remoteControlCharInput:',['../interface_mobile_r_t_c_remote_control_service.html#a41b9a726ebb957cb5bd7cbd269b5bae3',1,'MobileRTCRemoteControlService']]],
   ['remotecontroldoublescroll_3a',['remoteControlDoubleScroll:',['../interface_mobile_r_t_c_remote_control_service.html#af30b1faeac3fac9974b08896e9942d48',1,'MobileRTCRemoteControlService']]],
   ['remotecontroldoubletap_3a',['remoteControlDoubleTap:',['../interface_mobile_r_t_c_remote_control_service.html#a9a7168e79dce566240c16a3c86572c51',1,'MobileRTCRemoteControlService']]],

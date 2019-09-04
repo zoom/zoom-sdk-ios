@@ -12,6 +12,7 @@ var searchData=
   ['disablecallout_3a',['disableCallOut:',['../interface_mobile_r_t_c_meeting_settings.html#a36066e879c6834d6fd09d8e21ccb6134',1,'MobileRTCMeetingSettings']]],
   ['disablecopyurl',['disableCopyURL',['../interface_mobile_r_t_c_invite_helper.html#acfaf24ac82938c156b89e0e9fc7fb300',1,'MobileRTCInviteHelper']]],
   ['disabledrivemode_3a',['disableDriveMode:',['../interface_mobile_r_t_c_meeting_settings.html#a39ff7d165e66afd702a0df768b68b944',1,'MobileRTCMeetingSettings']]],
+  ['disablegalleryview_3a',['disableGalleryView:',['../interface_mobile_r_t_c_meeting_settings.html#a2a0e32998c84bf5b7862cfb1ee7bc0e3',1,'MobileRTCMeetingSettings']]],
   ['disableinviteemail',['disableInviteEmail',['../interface_mobile_r_t_c_invite_helper.html#a50d980f6487d30d6f528b666c2720757',1,'MobileRTCInviteHelper']]],
   ['disableinvitesms',['disableInviteSMS',['../interface_mobile_r_t_c_invite_helper.html#a12b0f5e9bca704312c555d2beb464673',1,'MobileRTCInviteHelper']]],
   ['disableminimizemeeting_3a',['disableMinimizeMeeting:',['../interface_mobile_r_t_c_meeting_settings.html#a47f99281a86573e80b1be58a273d1658',1,'MobileRTCMeetingSettings']]],

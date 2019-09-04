@@ -161,6 +161,15 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a030f613034d4c1b03975dd84d04a86e2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a030f613034d4c1b03975dd84d04a86e2">appWillTerminate</a></td></tr>
 <tr class="memdesc:a030f613034d4c1b03975dd84d04a86e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify common layer that application will terminate. Call the appWillTerminate via applicationWillTerminate.  <a href="#a030f613034d4c1b03975dd84d04a86e2">More...</a><br /></td></tr>
 <tr class="separator:a030f613034d4c1b03975dd84d04a86e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfccf88b9ebc458b2584da4b2a172b0f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#acfccf88b9ebc458b2584da4b2a172b0f">setVideoRawDataMemoryMode:</a></td></tr>
+<tr class="memdesc:acfccf88b9ebc458b2584da4b2a172b0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to set video rawdata memory mode.  <a href="#acfccf88b9ebc458b2584da4b2a172b0f">More...</a><br /></td></tr>
+<tr class="separator:acfccf88b9ebc458b2584da4b2a172b0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1a9e36ed7c74ab347458882e49133d"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a3f1a9e36ed7c74ab347458882e49133d">setShareRawDataMemoryMode:</a></td></tr>
+<tr class="memdesc:a3f1a9e36ed7c74ab347458882e49133d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to set share rawdata memory mode.  <a href="#a3f1a9e36ed7c74ab347458882e49133d">More...</a><br /></td></tr>
+<tr class="separator:a3f1a9e36ed7c74ab347458882e49133d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9748d206f8cd575391f29abc06d0584"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#ad9748d206f8cd575391f29abc06d0584">setAudioRawDataMemoryMode:</a></td></tr>
+<tr class="memdesc:ad9748d206f8cd575391f29abc06d0584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to set audio rawdata memory mode.  <a href="#ad9748d206f8cd575391f29abc06d0584">More...</a><br /></td></tr>
+<tr class="separator:ad9748d206f8cd575391f29abc06d0584"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Class Methods</h2></td></tr>
@@ -644,6 +653,31 @@ This method is optional, if the MobileRTCResources.bundle is located in main bun
 
 </div>
 </div>
+<a id="ad9748d206f8cd575391f29abc06d0584"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9748d206f8cd575391f29abc06d0584">&#9670;&nbsp;</a></span>setAudioRawDataMemoryMode:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setAudioRawDataMemoryMode: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCRawDataMemoryMode)&#160;</td>
+          <td class="paramname"><em>mode</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call the function to set audio rawdata memory mode. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method works only with rawdata in a custom UI. </dd>
+<dd>
+Need call before call [-(MobileRTCRawDataError)subscribe;]. </dd>
+<dd>
+The method is optional. </dd></dl>
+
+</div>
+</div>
 <a id="a4a711c716f05350c5fbe06b4f30a988f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a711c716f05350c5fbe06b4f30a988f">&#9670;&nbsp;</a></span>setLanguage:()</h2>
 
@@ -781,6 +815,56 @@ This method is optional, if the MobileRTCResources.bundle is located in main bun
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3f1a9e36ed7c74ab347458882e49133d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f1a9e36ed7c74ab347458882e49133d">&#9670;&nbsp;</a></span>setShareRawDataMemoryMode:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setShareRawDataMemoryMode: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCRawDataMemoryMode)&#160;</td>
+          <td class="paramname"><em>mode</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call the function to set share rawdata memory mode. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method works only with rawdata in a custom UI. </dd>
+<dd>
+need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId videoType:(MobileRTCVideoType)type;]. </dd>
+<dd>
+The method is optional. </dd></dl>
+
+</div>
+</div>
+<a id="acfccf88b9ebc458b2584da4b2a172b0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfccf88b9ebc458b2584da4b2a172b0f">&#9670;&nbsp;</a></span>setVideoRawDataMemoryMode:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) setVideoRawDataMemoryMode: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCRawDataMemoryMode)&#160;</td>
+          <td class="paramname"><em>mode</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call the function to set video rawdata memory mode. </p>
+<dl class="section warning"><dt>Warning</dt><dd>This method works only with rawdata in a custom UI. </dd>
+<dd>
+need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId videoType:(MobileRTCVideoType)type;]. </dd>
+<dd>
+The method is optional. </dd></dl>
 
 </div>
 </div>

@@ -127,9 +127,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a8432837ba0ffdf57cc98444891cd9e81"><td class="memItemLeft" align="right" valign="top">(MobileRTCNetworkQuality)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a8432837ba0ffdf57cc98444891cd9e81">queryNetworkQuality:withDataFlow:</a></td></tr>
 <tr class="memdesc:a8432837ba0ffdf57cc98444891cd9e81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check in-meeting network status.  <a href="#a8432837ba0ffdf57cc98444891cd9e81">More...</a><br /></td></tr>
 <tr class="separator:a8432837ba0ffdf57cc98444891cd9e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d78ae0f641461d821766f81f362bfa"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ad0d78ae0f641461d821766f81f362bfa">presentMeetingChatViewController:</a></td></tr>
-<tr class="memdesc:ad0d78ae0f641461d821766f81f362bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to present Zoom original Meeting Chat ViewController.  <a href="#ad0d78ae0f641461d821766f81f362bfa">More...</a><br /></td></tr>
-<tr class="separator:ad0d78ae0f641461d821766f81f362bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33c5b0a9eb2afc66e8010aa0b57782e7"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a33c5b0a9eb2afc66e8010aa0b57782e7">presentMeetingChatViewController:userId:</a></td></tr>
+<tr class="memdesc:a33c5b0a9eb2afc66e8010aa0b57782e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to present Zoom original Meeting Chat ViewController.  <a href="#a33c5b0a9eb2afc66e8010aa0b57782e7">More...</a><br /></td></tr>
+<tr class="separator:a33c5b0a9eb2afc66e8010aa0b57782e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d7eb3280d211de045a31d210fd9da7c"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a4d7eb3280d211de045a31d210fd9da7c">presentParticipantsViewController:</a></td></tr>
 <tr class="memdesc:a4d7eb3280d211de045a31d210fd9da7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to present Zoom original Participants ViewController.  <a href="#a4d7eb3280d211de045a31d210fd9da7c">More...</a><br /></td></tr>
 <tr class="separator:a4d7eb3280d211de045a31d210fd9da7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -648,8 +648,8 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="ad0d78ae0f641461d821766f81f362bfa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0d78ae0f641461d821766f81f362bfa">&#9670;&nbsp;</a></span>presentMeetingChatViewController:()</h2>
+<a id="a33c5b0a9eb2afc66e8010aa0b57782e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33c5b0a9eb2afc66e8010aa0b57782e7">&#9670;&nbsp;</a></span>presentMeetingChatViewController:userId:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -659,7 +659,17 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(nonnull UIViewController *)&#160;</td>
           <td class="paramname"><em>parentVC</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userId:</td>
           <td></td>
+          <td class="paramtype">(NSInteger)&#160;</td>
+          <td class="paramname"><em>userId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -667,13 +677,15 @@ Instance Methods</h2></td></tr>
 <p>Set to present Zoom original Meeting Chat ViewController. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parentVC</td><td>which use to present ViewController </td></tr>
+    <tr><td class="paramname">parentVC</td><td>which use to present ViewController. </td></tr>
+    <tr><td class="paramname">userId</td><td>userId of the user you would like to chat. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES means that the method is called successfully, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If userId = 0 or nil, it will send to everyone. </dd></dl>
 
-<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ad0d78ae0f641461d821766f81f362bfa">MobileRTCMeetingService</a>.</p>
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a33c5b0a9eb2afc66e8010aa0b57782e7">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>
