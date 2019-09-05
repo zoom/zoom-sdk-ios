@@ -3,7 +3,7 @@
 ## 2019-09-04 @ [v4.4.55968.0904](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55968.0904)
 
 ## Added
-* Add iOS 13 and iPad OS support (Based on iOS beta versions)
+* Add iOS 13 and iPad OS support (Based on iOS beta 7, the latest beta version that the time we published this release)
 * Add a new interface to hide the "Chat" button in Zoom UI
 * `- (void)setMeetingChatHidden:(BOOL)hidden;`
 * Add a new interface to disable "Gallery View" in the meeting
