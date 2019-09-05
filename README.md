@@ -6,10 +6,11 @@
 > **The version in this repo is a device-only version. If you would like to use the version that supports both device and simulator, you can download the version (**ios-mobilertc-all-*.zip**) from the release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases)**
 
 ## Latest SDK Notifications
-1. **Variable Name Changes**: Since [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322), we have renamed the term "APP" to "SDK" in our demo to avoid confusion between the term "API" and "APP".
-2. Please be aware that some of our interfaces are deprecated in the latest release, please check out our [CHANGELOG](https://github.com/zoom/zoom-sdk-ios/blob/master/CHANGELOG.md) for more detail
-3. Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/get-help/faq#frequently-asked-questions) sections.
-4. Our brand new [Zoom Developer Community Forum](https://devforum.zoom.us/) is now online!!! Check it out! We are here to help! :D
+1. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
+2. **Variable Name Changes**: Since [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322), we have renamed the term "APP" to "SDK" in our demo to avoid confusion between the term "API" and "APP".
+3. Please be aware that some of our interfaces are deprecated in the latest release, please check out our [CHANGELOG](https://github.com/zoom/zoom-sdk-ios/blob/master/CHANGELOG.md) for more detail
+4. Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/get-help/faq#frequently-asked-questions) sections.
+5. Our brand new [Zoom Developer Community Forum](https://devforum.zoom.us/) is now online!!! Check it out! We are here to help! :D
 
 ## Full Documentation && Community Support
 You can find the full Zoom iOS SDK documentation and the community support forum here:
