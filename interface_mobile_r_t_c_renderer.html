@@ -80,13 +80,13 @@ Inheritance diagram for MobileRTCRenderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
-<tr class="memitem:a7aa8021d5cd9e1f82001d3d9604a1899"><td class="memItemLeft" align="right" valign="top">(instancetype)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_renderer.html#a7aa8021d5cd9e1f82001d3d9604a1899">initWithDelegate:</a></td></tr>
-<tr class="memdesc:a7aa8021d5cd9e1f82001d3d9604a1899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to initialize <a class="el" href="interface_mobile_r_t_c_renderer.html">MobileRTCRenderer</a>.  <a href="#a7aa8021d5cd9e1f82001d3d9604a1899">More...</a><br /></td></tr>
-<tr class="separator:a7aa8021d5cd9e1f82001d3d9604a1899"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9427b2c91b939403543fc3e6d4d51996"><td class="memItemLeft" align="right" valign="top"><a id="a9427b2c91b939403543fc3e6d4d51996"></a>
-(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_renderer.html#a9427b2c91b939403543fc3e6d4d51996">setRawDataResolution:</a></td></tr>
-<tr class="memdesc:a9427b2c91b939403543fc3e6d4d51996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to set video resolution. <br /></td></tr>
-<tr class="separator:a9427b2c91b939403543fc3e6d4d51996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda8a493f4a1c7c2b4acc2c104d441f1"><td class="memItemLeft" align="right" valign="top">(instancetype _Nonnull)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_renderer.html#aeda8a493f4a1c7c2b4acc2c104d441f1">initWithDelegate:</a></td></tr>
+<tr class="memdesc:aeda8a493f4a1c7c2b4acc2c104d441f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to initialize <a class="el" href="interface_mobile_r_t_c_renderer.html">MobileRTCRenderer</a>.  <a href="#aeda8a493f4a1c7c2b4acc2c104d441f1">More...</a><br /></td></tr>
+<tr class="separator:aeda8a493f4a1c7c2b4acc2c104d441f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace499d278eb73b8a35c0bb67bb8da6e4"><td class="memItemLeft" align="right" valign="top"><a id="ace499d278eb73b8a35c0bb67bb8da6e4"></a>
+(MobileRTCRawDataError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_renderer.html#ace499d278eb73b8a35c0bb67bb8da6e4">setRawDataResolution:</a></td></tr>
+<tr class="memdesc:ace499d278eb73b8a35c0bb67bb8da6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to set video resolution. <br /></td></tr>
+<tr class="separator:ace499d278eb73b8a35c0bb67bb8da6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a17dd479d60dd996e3fe9b616680600"><td class="memItemLeft" align="right" valign="top">(MobileRTCRawDataError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_renderer.html#a7a17dd479d60dd996e3fe9b616680600">subscribe:videoType:</a></td></tr>
 <tr class="memdesc:a7a17dd479d60dd996e3fe9b616680600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to subscribe video raw data. Before entering the meeting, you can subscribe your preview video data with userid=0, If you are already in the meeting, you can subscribe your own video data using the real userid or userid=0.  <a href="#a7a17dd479d60dd996e3fe9b616680600">More...</a><br /></td></tr>
 <tr class="separator:a7a17dd479d60dd996e3fe9b616680600"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,16 +110,16 @@ MobileRTCVideoResolution&#160;</td><td class="memItemRight" valign="bottom"><a c
 <tr class="separator:a3a2ed1246e0315640122d2de4066647a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
-<a id="a7aa8021d5cd9e1f82001d3d9604a1899"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7aa8021d5cd9e1f82001d3d9604a1899">&#9670;&nbsp;</a></span>initWithDelegate:()</h2>
+<a id="aeda8a493f4a1c7c2b4acc2c104d441f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda8a493f4a1c7c2b4acc2c104d441f1">&#9670;&nbsp;</a></span>initWithDelegate:()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (instancetype) initWithDelegate: </td>
+          <td class="memname">- (instancetype _Nonnull) initWithDelegate: </td>
           <td></td>
-          <td class="paramtype">(id&lt; <a class="el" href="protocol_mobile_r_t_c_video_raw_data_delegate-p.html">MobileRTCVideoRawDataDelegate</a> &gt;)&#160;</td>
+          <td class="paramtype">(id&lt; <a class="el" href="protocol_mobile_r_t_c_video_raw_data_delegate-p.html">MobileRTCVideoRawDataDelegate</a> &gt;_Nonnull)&#160;</td>
           <td class="paramname"><em>delegate</em></td>
           <td></td>
         </tr>
