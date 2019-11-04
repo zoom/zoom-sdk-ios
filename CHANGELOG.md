@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## 2019-11-04 @ [v4.4.56624.1028](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.56624.1028)
+
+## Added:
+* Add a new interface to hide the "Disconnect Audio" button
+* Add a new interface for SDK initialization
+* Add a new interface to hide the Q&A button and the POLL button
+* Add a new parameter in `presentMeetingChatViewController` to allow setting the chat as public or private
+
+## Changed & Fixed:
+* Updated all interfaces that involves `UIWebView` and removed `UIWebView` in SDK since Apple is deprecating `UIWebView`
+* Fixed an issue that the SDK will crash by chance when doing a screen share
+* Fixed some compatibility issues with iOS 13
+* Fixed an issue that the Xcode is warning for `nullable` or `nonnull` in SDK
+* Fixed an issue that the crash file was created when the app is being killed by the system
+* Fixed an issue that the UI freeze when sharing a photo in landscape mode
+* Fixed an issue that some users is not able to join the meeting when the `RootViewController` is not configured
+* Fixed an issue that the host sees an error message when plugging SDK app into projector while in an active meeting
+* Fixed an issue that some users see navigationBar in the default meeting UI
+
+## Deprecated
+* `(void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog;`
+* `(void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog bundleResPath:(NSString *_Nullable)bundleResPath;`
+* `(void)setMobileRTCDomain:(NSString * _Nonnull)domain;`
+* `(void)setMobileRTCResPath:(NSString * _Nullable)path;`
+* `(void)setAppGroupsName:(NSString * _Nullable)appGroupId;`
+
 ## 2019-09-04 @ [v4.4.55968.0904](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55968.0904)
 
 ## Added
