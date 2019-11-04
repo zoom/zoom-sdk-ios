@@ -12,11 +12,21 @@
 #import "SDKStartJoinMeetingPresenter.h"
 #import "MeetingSettingsViewController.h"
 
-@interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate,MobileRTCMeetingShareActionItemDelegate>
+//#define kEnableSMSService
+
+@interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate,MobileRTCMeetingShareActionItemDelegate
+#if kEnableSMSService
+, MobileRTCSMSServiceDelegate
+#endif
+>
 
 @property (assign, nonatomic) NSTimer  *clockTimer;
 
 @property (retain, nonatomic) SDKStartJoinMeetingPresenter *presenter;
+
+#if kEnableSMSService
+@property (retain, nonatomic) MobileRTCVerifySMSHandler *verifyHandler;
+#endif
 @end
 
 @implementation MainViewController
@@ -417,6 +427,21 @@
         self.joinMeetingBlock = nil;
         return;
     }
+#if kEnableSMSService
+    if (alertView.tag == 10023)
+    {
+        NSString *verifyCode = [alertView textFieldAtIndex:0].text;
+        BOOL cancel = (buttonIndex == alertView.cancelButtonIndex);
+        if (!cancel && verifyCode.length > 0) {
+            if (![self.verifyHandler verify:@"" phoneNumber:@"" andVerifyCode:@""]) {
+                // retry to get verify handle again
+            }
+        } else {
+            [self.verifyHandler cancelAndLeaveMeeting];
+        }
+        return;
+    }
+#endif
     
     if (buttonIndex != alertView.cancelButtonIndex)
     {
@@ -469,6 +494,41 @@
     NSLog(@"Query Network Data [sending: %@, receiving: %@]...", @(sendQuality), @(receiveQuality));
 }
 
+#if kEnableSMSService
+#pragma mark - sms service notification -
+- (void)onNeedRealNameAuth:(NSString *)bindPhoneUrl signupUrl:(NSString *)signupUrl
+{
+    NSLog(@"bindPhoneUrl:%@, signupUrl: %@", bindPhoneUrl, signupUrl);
+}
+
+- (void)onNeedRealNameAuth:(NSArray<MobileRTCRealNameCountryInfo *> *)supportCountryList privacyURL:(NSString *)privacyUrl retrieveHandle:(MobileRTCRetrieveSMSHandler *)handle
+{
+    NSLog(@"Country List:%@, privacyUrl: %@, sendSMSHandle: %@", supportCountryList, privacyUrl, handle);
+    if (![handle retrieve:@"" andPhoneNumber:@""]) {
+        // retry to get retrieve handle again
+    }
+}
+
+- (void)onRetrieveSMSVerificationCodeResultNotification:(MobileRTCSMSServiceErr)result verifyHandle:(MobileRTCVerifySMSHandler *)handler
+{
+    NSLog(@"send SMS cmd result %@, verify handle %@", @(result), handler);
+    self.verifyHandler = handler;
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:NSLocalizedString(@"Please input verify code", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", @"") otherButtonTitles:NSLocalizedString(@"OK", @""), nil];
+        
+        alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+        alert.tag = 10023;
+        [alert show];
+        [alert release];
+    });
+}
+
+- (void)onVerifySMSVerificationCodeResultNotification:(MobileRTCSMSServiceErr)result
+{
+    NSLog(@"verify sms result %@", @(result));
+}
+#endif
 @end
 
 

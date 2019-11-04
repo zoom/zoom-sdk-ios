@@ -21,18 +21,18 @@ typedef NS_ENUM(NSUInteger, AudioOptionType)
 /*!
  @brief the user select countries.
  */
-@property (nonatomic, retain) NSMutableArray *selectedCountries;
+@property (nonatomic, retain) NSMutableArray * _Nonnull selectedCountries;
 
 /*!
  @brief all available countries config in web server.
  */
-@property (nonatomic, retain) NSMutableArray *allCountries;
+@property (nonatomic, retain) NSMutableArray * _Nonnull allCountries;
 
 /*!
  @brief specify the dialin number include toll free phone number.
  */
 @property (nonatomic, assign) BOOL           isIncludedTollfree;
 
-@property (nonatomic, retain) NSString       *hash;
+@property (nonatomic, retain) NSString       * _Nonnull hash;
 
 @end

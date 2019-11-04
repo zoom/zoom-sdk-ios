@@ -1,6 +1,5 @@
 //
 //  ControlBar.h
-//  ZoomLiteSample
 //
 //  Created by Zoom Video Communications on 2019/5/27.
 //  Copyright © 2019 Zoom. All rights reserved.

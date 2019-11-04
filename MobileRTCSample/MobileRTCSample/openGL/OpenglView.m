@@ -1,5 +1,9 @@
 
 #import "OpenglView.h"
+#include <pthread.h>
+
+#define kEmojiTag           10002
+#define kBackgroudTag       10003
 
 enum AttribEnum
 {
@@ -29,6 +33,7 @@ enum TextureType
     
     CGSize                  _boundSize;
     DisplayMode             _displayMode;
+    pthread_mutex_t         _lock;
     
 #ifdef DEBUG
     struct timeval          _time;
@@ -42,6 +47,7 @@ enum TextureType
 
 - (BOOL)doInit{
 
+    self.backgroundColor = [UIColor blackColor];
     CAEAGLLayer *eaglLayer = (CAEAGLLayer*) self.layer;
     eaglLayer.opaque = YES;
     eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -78,6 +84,8 @@ enum TextureType
     glUniform1i(textureUniformY, 0);
     glUniform1i(textureUniformU, 1);
     glUniform1i(textureUniformV, 2);
+    
+    pthread_mutex_init(&_lock, NULL);
     
     return YES;
 }
@@ -250,15 +258,26 @@ TexCoordOut = TexCoordIn;\
 }
 
 -(void)layoutSubviews{
-     _boundSize = self.frame.size;
+     [super layoutSubviews];
+    _boundSize = self.frame.size;
     dispatch_async(dispatch_get_main_queue(), ^{
-        @synchronized (self) {
-            [EAGLContext setCurrentContext:_glContext];
-            [self destoryFrameAndRenderBuffer];
-            [self createFrameAndRenderBuffer];
-        }
+        pthread_mutex_lock(&_lock);
+        [EAGLContext setCurrentContext:_glContext];
+        [self destoryFrameAndRenderBuffer];
+        [self createFrameAndRenderBuffer];
+        pthread_mutex_unlock(&_lock);
         glViewport(1, 1, self.bounds.size.width*_viewScale - 2, self.bounds.size.height*_viewScale - 2);
     });
+    
+    for (UIView *subView in self.subviews) {
+        if (subView.tag == kBackgroudTag) {
+            subView.frame = self.bounds;
+        }
+        
+        if (subView.tag == kEmojiTag) {
+            subView.frame = CGRectMake(self.bounds.size.width * 0.25, self.bounds.size.height * 0.25, self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
+        }
+    }
 }
 
 #pragma mark - opengl setting -
@@ -313,14 +332,16 @@ TexCoordOut = TexCoordIn;\
     free(blackData);
 }
 
--(void)clearFrame{
+- (void)clearFrame{
     if ([self window])
     {
+        pthread_mutex_lock(&_lock);
         [EAGLContext setCurrentContext:_glContext];
         glClearColor(0.0, 0.0, 0.0, 1.0);
         glClear(GL_COLOR_BUFFER_BIT);
         glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
         [_glContext presentRenderbuffer:GL_RENDERBUFFER];
+        pthread_mutex_unlock(&_lock);
     }
 }
 
@@ -329,7 +350,7 @@ TexCoordOut = TexCoordIn;\
     int w = (int)rawData.size.width;
     int h = (int)rawData.size.height;
 
-    @synchronized (self) {
+    pthread_mutex_lock(&_lock);
         if (w != _videoW || h != _videoH) {
             [self setVideoWidth:(GLuint)w height:(GLuint)h];
         }
@@ -350,7 +371,7 @@ TexCoordOut = TexCoordIn;\
         glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, (GLsizei)(w + 1)/2, (GLsizei)(h + 1)/2, GL_RED_EXT, GL_UNSIGNED_BYTE, rawData.vBuffer);
         
         [self renderWithRotate:rawData.rotation size:rawData.size andMode:mode];
-    }
+    pthread_mutex_unlock(&_lock);
 
 #ifdef DEBUG
     
@@ -491,6 +512,37 @@ TexCoordOut = TexCoordIn;\
     [self clearFrame];
 //    _glContext = nil;
     [self destoryFrameAndRenderBuffer];
+    
+    pthread_mutex_destroy(&_lock);
+}
+
+- (void)addAvatar {
+    UIView *bgView = [[UIView alloc] initWithFrame:self.bounds];
+    bgView.backgroundColor = RGBCOLOR(0x23, 0x23, 0x23);
+    bgView.tag = kBackgroudTag;
+    [self addSubview:bgView];
+    [self sendSubviewToBack:bgView];
+    
+    NSString *imageName = [NSString stringWithFormat:@"default_avatar"];
+    UIImage *image = [UIImage imageNamed:imageName];
+    UIImageView *view = [[UIImageView alloc] initWithImage:image];
+    view.frame = CGRectMake(self.bounds.size.width * 0.25, self.bounds.size.height * 0.25, self.bounds.size.width * 0.5, self.bounds.size.height * 0.5);
+    view.contentMode = UIViewContentModeScaleAspectFit;
+    view.tag = kEmojiTag;
+    [self addSubview:view];
+}
+
+- (void)removeAvatar {
+    NSMutableArray *needRemove = [NSMutableArray new];
+    for (UIView *view in [self subviews]) {
+        if (view.tag == kEmojiTag) {
+            [needRemove addObject:view];
+        }
+        if (view.tag == kBackgroudTag) {
+            [needRemove addObject:view];
+        }
+    }
+    [needRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
 @end

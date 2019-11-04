@@ -30,7 +30,7 @@
  @brief Call the function to initialize MobileRTCRenderer.
  @return The MobileRTCRenderer object.
  */
-- (instancetype)initWithDelegate:(id<MobileRTCVideoRawDataDelegate>) delegate;
+- (instancetype _Nonnull)initWithDelegate:(id<MobileRTCVideoRawDataDelegate>_Nonnull) delegate;
 
 /*!
  @brief Call the function to set video resolution.

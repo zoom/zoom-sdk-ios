@@ -160,7 +160,7 @@
  @brief Get the 3rd Party Audio Info from user profile.
  @return The 3rd Party Audio Info.
  */
-- (nullable NSString*)get3rdPartyAudioInfo;
+- (nullable NSString *)get3rdPartyAudioInfo;
 
 /*!
  @brief Get the default Audio Type from user profile.
@@ -217,10 +217,10 @@
  */
 @interface MobileRTCAlternativeHost : NSObject
 
-@property (nonatomic, retain, readonly) NSString* email;
-@property (nonatomic, retain, readonly) NSString* firstName;
-@property (nonatomic, retain, readonly) NSString* lastName;
+@property (nonatomic, retain, readonly) NSString * _Nullable email;
+@property (nonatomic, retain, readonly) NSString * _Nullable firstName;
+@property (nonatomic, retain, readonly) NSString * _Nullable lastName;
 @property (nonatomic, assign, readonly) unsigned long long PMINumber;
 
-- (id)initWithEmailAddress:(nonnull NSString*)emailAddress firstname:(nonnull NSString*)firstName lastName:(nonnull NSString*)lastName PMI:(unsigned long long)PMINumber;
+- (id _Nonnull)initWithEmailAddress:(NSString * _Nonnull)emailAddress firstname:(NSString * _Nonnull)firstName lastName:(NSString * _Nonnull)lastName PMI:(unsigned long long)PMINumber;
 @end

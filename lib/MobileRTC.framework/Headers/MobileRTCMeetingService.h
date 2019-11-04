@@ -26,18 +26,18 @@
  * @key kMeetingParam_NoVideo The key is optional, user will join meeting without video if it is set to @(YES).
  * @key kMeetingParam_VanityID Meeting vanity ID, what is personal link name. 
 */
-extern NSString* kMeetingParam_UserID;
-extern NSString* kMeetingParam_UserToken;
-extern NSString* kMeetingParam_UserType;
-extern NSString* kMeetingParam_Username;
-extern NSString* kMeetingParam_MeetingNumber;
-extern NSString* kMeetingParam_MeetingPassword;
-extern NSString* kMeetingParam_ParticipantID;
-extern NSString* kMeetingParam_IsAppShare;
-extern NSString* kMeetingParam_WebinarToken;
-extern NSString* kMeetingParam_NoAudio;
-extern NSString* kMeetingParam_NoVideo;
-extern NSString* kMeetingParam_VanityID;
+extern NSString* _Nonnull kMeetingParam_UserID;
+extern NSString* _Nonnull kMeetingParam_UserToken;
+extern NSString* _Nonnull kMeetingParam_UserType;
+extern NSString* _Nonnull kMeetingParam_Username;
+extern NSString* _Nonnull kMeetingParam_MeetingNumber;
+extern NSString* _Nonnull kMeetingParam_MeetingPassword;
+extern NSString* _Nonnull kMeetingParam_ParticipantID;
+extern NSString* _Nonnull kMeetingParam_IsAppShare;
+extern NSString* _Nonnull kMeetingParam_WebinarToken;
+extern NSString* _Nonnull kMeetingParam_NoAudio;
+extern NSString* _Nonnull kMeetingParam_NoVideo;
+extern NSString* _Nonnull kMeetingParam_VanityID;
 
 /*!
  @brief The method provides parameters for starting meeting.
@@ -176,6 +176,6 @@ extern NSString* kMeetingParam_VanityID;
  @return The view of current meeting; if there is no ongoing meeting, it will return nil.
  @warning Only valid in non-custom UI(Only valid in ZOOM meeting UI).
  */
-- (UIView*)meetingView;
+- (UIView * _Nullable)meetingView;
 
 @end

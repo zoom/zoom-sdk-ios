@@ -13,4 +13,6 @@
 
 - (void)clearFrame;
 
+- (void)addAvatar;
+- (void)removeAvatar;
 @end

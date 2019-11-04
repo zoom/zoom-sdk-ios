@@ -585,3 +585,27 @@ typedef NS_ENUM(NSUInteger, MobileRTCRawDataMemoryMode) {
     MobileRTCRawDataMemoryModeStack,
     MobileRTCRawDataMemoryModeHeap
 };
+
+/*!
+ @brief Locale fo Customer.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTC_ZoomLocale) {
+    MobileRTC_ZoomLocale_Default,
+    MobileRTC_ZoomLocale_CN
+};
+
+/*!
+ @brief for SMS service usage.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCSMSServiceErr) {
+    Unknown,
+    Success,
+    Retrieve_SendSMSFailed,
+    Retrieve_InvalidPhoneNum,
+    Retrieve_PhoneNumAlreadyBound,
+    Retrieve_PhoneNumSendTooFrequent,
+    Verify_CodeIncorrect,
+    Verify_CodeExpired,
+    Verify_UnknownError,
+};
+

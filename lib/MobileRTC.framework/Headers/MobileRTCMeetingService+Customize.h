@@ -20,7 +20,7 @@
  @param title The topic/title of the meeting.
  @warning User should call the method before starting or joining the meeting if he wants to reset the title/topic of the meeting.
  */
-- (void)customizeMeetingTitle:(NSString*)title;
+- (void)customizeMeetingTitle:(NSString * _Nullable)title;
 
 /*!
  @brief Query if user can dial out in the meeting.

@@ -21,10 +21,10 @@
 /*!
  @brief Meeting session key.
  */
-@property (nonatomic, retain, readwrite) NSData *meetingKey;
+@property (nonatomic, retain, readwrite) NSData * _Nonnull meetingKey;
 /*!
  @brief Meeting session extra information.
  */
-@property (nonatomic, retain, readwrite) NSData *meetingIv;
+@property (nonatomic, retain, readwrite) NSData * _Nonnull meetingIv;
 
 @end

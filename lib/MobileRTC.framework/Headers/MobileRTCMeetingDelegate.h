@@ -10,8 +10,6 @@
 #import "MobileRTCVideoRawData.h"
 #import "MobileRTCAudioRawData.h"
 
-typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
-
 #pragma mark - MobileRTCMeetingServiceDelegate
 /*!
  @protocol MobileRTCMeetingServiceDelegate
@@ -33,7 +31,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param error Internal error code.
  @param message The message for meeting errors.
  */
-- (void)onMeetingError:(MobileRTCMeetError)error message:(NSString*)message;
+- (void)onMeetingError:(MobileRTCMeetError)error message:(NSString * _Nullable)message;
 
 /*!
  @brief Notify the user that the meeting status changes. 
@@ -87,7 +85,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param cancel Once the user cancels to provide screen name or meeting password, it is canceled to join the meeting.
  */
 - (void)onJoinMeetingInfo:(MobileRTCJoinMeetingInfo)info
-               completion:(void (^)(NSString *displayName, NSString *password, BOOL cancel))completion;
+               completion:(void (^_Nonnull)(NSString * _Nonnull displayName, NSString * _Nonnull password, BOOL cancel))completion;
 
 /*!
  @brief Set to ask user to provide proxy information: username and password.
@@ -95,15 +93,15 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param port Proxy port.
  @param completion SDK will ask user to input proxy information once it detects the information changes. 
  */
-- (void)onProxyAuth:(NSString*)host
+- (void)onProxyAuth:(NSString*_Nonnull)host
                port:(NSUInteger)port
-         completion:(void (^)(NSString *host, NSUInteger port, NSString *username, NSString *password, BOOL cancel))completion;
+         completion:(void (^_Nonnull)(NSString * _Nonnull host, NSUInteger port, NSString *_Nonnull username, NSString * _Nonnull password, BOOL cancel))completion;
 
 /*!
  @brief Set if user needs to end another ongoing meeting.
  @param completion Ask user to end another ongoing meeting or not.
  */
-- (void)onAskToEndOtherMeeting:(void (^)(BOOL cancel))completion;
+- (void)onAskToEndOtherMeeting:(void (^_Nonnull)(BOOL cancel))completion;
 
 /*!
  @brief Notify user that microphone access permission is denied.  
@@ -123,7 +121,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  */
 - (void)onFreeMeetingReminder:(BOOL)host
                canFreeUpgrade:(BOOL)freeUpgrade
-                   completion:(void (^)(BOOL upgrade))completion;
+                   completion:(void (^_Nonnull)(BOOL upgrade))completion;
 
 /*!
  @brief The result of upgrading free meeting.
@@ -137,32 +135,32 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param array Add custom InviteActionItem to Invite ActionSheet.
  @return NO if user wants to custom the invite items, add items to Invite ActionSheet via MobileRTCMeetingInviteActionItem. Otherwise YES, user will use the default UI.
  */
-- (BOOL)onClickedInviteButton:(UIViewController*)parentVC addInviteActionItem:(NSMutableArray *)array;
+- (BOOL)onClickedInviteButton:(UIViewController * _Nonnull)parentVC addInviteActionItem:(NSMutableArray * _Nonnull)array;
 
 /*!
  @brief Customize the audio button clicked event.
  @param parentVC Parent viewcontroller to present custom Invite UI.
  @return YES if user wants to custom the audio button clicked event, Otherwise NO, will use the default method.
  */
-- (BOOL)onClickedAudioButton:(UIViewController*)parentVC;
+- (BOOL)onClickedAudioButton:(UIViewController * _Nonnull)parentVC;
 
 /*!
  @brief Custom the UI of Participants management.
  @param parentVC Parent viewcontroller to present custom Participants UI. 
  */
-- (BOOL)onClickedParticipantsButton:(UIViewController*)parentVC;
+- (BOOL)onClickedParticipantsButton:(UIViewController * _Nonnull)parentVC;
 
 /*!
  @brief User needs to click the SHARE button in meeting.
  @return NO if user wants to custom Share Action Item, add items to Share ActionSheet via MobileRTCMeetingShareActionItem. Otherwise YES, user will use the default UI.
  */
-- (BOOL)onClickedShareButton:(UIViewController*)parentVC addShareActionItem:(NSMutableArray *)array;
+- (BOOL)onClickedShareButton:(UIViewController * _Nonnull)parentVC addShareActionItem:(NSMutableArray * _Nonnull)array;
 
 /*!
  @brief Custom the UI of Leave Meeting Alert.
  @param parentVC Parent viewcontroller to present custom Participants UI.
  */
-- (BOOL)onClickedEndButton:(UIViewController*)parentVC endButton:(UIButton *)endButton;
+- (BOOL)onClickedEndButton:(UIViewController * _Nonnull)parentVC endButton:(UIButton * _Nonnull)endButton;
 
 /*!
  @brief Notify users that there is no sharing for the moment.
@@ -174,7 +172,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param parentVC Parent viewcontroller to present outgoing call UI.
  @param me YES means to CALL ME; NO means INVITE BY PHONE.
  */
-- (void)onClickedDialOut:(UIViewController*)parentVC isCallMe:(BOOL)me;
+- (void)onClickedDialOut:(UIViewController * _Nonnull)parentVC isCallMe:(BOOL)me;
 
 /*!
  @brief Callback event that outgoing call status changes.  
@@ -198,13 +196,13 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @brief Callback event of new message.
  @param messageID The message ID.
  */
-- (void)onInMeetingChat:(NSString*)messageID;
+- (void)onInMeetingChat:(NSString * _Nonnull)messageID;
 
 /*!
  @brief Notify user if the meeting is end to end. 
  @param key The meeting session key.
  */
-- (void)onWaitExternalSessionKey:(NSData*)key;
+- (void)onWaitExternalSessionKey:(NSData * _Nonnull)key;
 
 /*!
  @brief Callback event that live stream status changes. 
@@ -221,12 +219,12 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param parentVC Parent viewcontroller to present the view of Sharing Screen Usage Guide.
  @waring Application will present Share Screen Usage Guide.
  */
-- (void)onClickShareScreen:(UIViewController*)parentVC;
+- (void)onClickShareScreen:(UIViewController * _Nonnull)parentVC;
 
 /*!
  @brief Callback event that user receives the Closed Caption.
  */
-- (void)onClosedCaptionReceived:(NSString*)message;
+- (void)onClosedCaptionReceived:(NSString * _Nonnull)message;
 
 /*!
  @brief Callback event that waiting room status changes. 
@@ -319,7 +317,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
 /*!
  @brief Callback event that host requests to unmute the user's video. 
  */
-- (void)onSinkMeetingVideoRequestUnmuteByHost:(void (^)(BOOL Accept))completion;
+- (void)onSinkMeetingVideoRequestUnmuteByHost:(void (^_Nonnull)(BOOL Accept))completion;
 @end
 
 #pragma mark - MobileRTCUserServiceDelegate
@@ -466,7 +464,7 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @brief Callback event that user joins a webinar which requires manual approval.
  @param registerURL The register URL.
  */
-- (void)onSinkWebinarNeedRegister:(NSString *)registerURL;
+- (void)onSinkWebinarNeedRegister:(NSString * _Nonnull)registerURL;
 
 /*!
  @brief Callback event that user joins a webinar which requires username and email.
@@ -560,7 +558,6 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
 @end
 
 #pragma mark - MobileRTCAudioRawDataDelegate
-@class MobileRTCRenderer;
 /*!
  @protocol MobileRTCAudioRawDataDelegate
  @brief This class is used to receive audio raw data.
@@ -581,5 +578,38 @@ typedef void (^RTCJoinMeetingActionBlock)(NSString *, NSString *, BOOL);
  @param rawData Audio's raw data.
  */
 - (void)onMobileRTCOneWayAudioAudioRawData:(MobileRTCAudioRawData *_Nonnull)rawData userId:(NSUInteger)userId;
+@end
+
+#pragma mark - MobileRTCAudioRawDataDelegate
+
+@class MobileRTCRealNameCountryInfo;
+@class MobileRTCRetrieveSMSHandler;
+@class MobileRTCVerifySMSHandler;
+
+/*!
+ @protocol MobileRTCSMSServiceDelegate
+ @brief This class is use to retrive and verify SMS.
+ */
+@protocol MobileRTCSMSServiceDelegate <NSObject>
+@optional
+
+/*!
+ @brief This method will notify support country list for send SMS, privacy url, send SMS handle.
+ @param supportCountryList, privacyUrl, retrieveHandle
+ */
+- (void)onNeedRealNameAuth:(NSArray<MobileRTCRealNameCountryInfo *> * _Nonnull)supportCountryList privacyURL:(NSString * _Nonnull)privacyUrl retrieveHandle:(MobileRTCRetrieveSMSHandler * _Nonnull)handle;
+
+/*!
+ @brief This method will notify the result of send SMS, and verify SMS handle.
+ @param result, verifyHandle
+ */
+- (void)onRetrieveSMSVerificationCodeResultNotification:(MobileRTCSMSServiceErr)result verifyHandle:(MobileRTCVerifySMSHandler * _Nonnull)handler;
+
+/*!
+ @brief This method will notify the result verify SMS.
+ @param result of verify SMS.
+ */
+- (void)onVerifySMSVerificationCodeResultNotification:(MobileRTCSMSServiceErr)result;
+
 @end
 

@@ -50,19 +50,20 @@
 - (void)onSinkQAConnectStarted
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    NSLog(@"onSinkQAConnectStarted QA Enable:%d...", [ms isQAEnabled]);
+    NSLog(@"Webinar Q&A--onSinkQAConnectStarted QA Enable:%d...", [ms isQAEnabled]);
 }
 
 - (void)onSinkQAConnected:(BOOL)connected
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
-    NSLog(@"onSinkQAConnected %d, QA Enable:%d...", connected, [ms isQAEnabled]);
+    NSLog(@"Webinar Q&A--onSinkQAConnected %d, QA Enable:%d...", connected, [ms isQAEnabled]);
 }
 
 - (void)onSinkQAOpenQuestionChanged:(NSInteger)count
 {
-    NSLog(@"onSinkQAOpenQuestionChanged %zd...", count);
+    NSLog(@"Webinar Q&A--onSinkQAOpenQuestionChanged %zd...", count);
 }
+
 #endif
 
 @end

@@ -18,25 +18,25 @@
  @brief Get current meeting number in format such as 123456789.
  @warning The method should be called during an ongoing meeting, otherwise the value is invalid.
  */
-@property (retain, nonatomic, readonly) NSString *ongoingMeetingNumber;
+@property (retain, nonatomic, readonly) NSString * _Nonnull ongoingMeetingNumber;
 
 /*!
  @brief Get unique ID of current meeting in format such as DVLObefSZizM0xQLhtrCQ==.
  @warning The method should be called during an ongoing meeting, otherwise the value is invalid.
  */
-@property (retain, nonatomic, readonly) NSString *ongoingMeetingID;
+@property (retain, nonatomic, readonly) NSString * _Nonnull ongoingMeetingID;
 
 /*!
  @brief Get the current meeting topic.
  @warning The method should be called during an ongoing meeting, otherwise the value is invalid.
  */
-@property (retain, nonatomic, readonly) NSString *ongoingMeetingTopic;
+@property (retain, nonatomic, readonly) NSString * _Nonnull ongoingMeetingTopic;
 
 /*!
  @brief Get the current meeting start time
  @warning The method should be called during an ongoing meeting, otherwise the value is invalid.
  */
-@property (retain, nonatomic, readonly) NSDate *ongoingMeetingStartTime;
+@property (retain, nonatomic, readonly) NSDate * _Nonnull ongoingMeetingStartTime;
 
 /*!
  @brief Query if the current meeting is a recurring meeting.
@@ -47,27 +47,27 @@
 /*!
  @brief Get the join URL of current meeting
  */
-@property (retain, nonatomic, readonly) NSString *joinMeetingURL;
+@property (retain, nonatomic, readonly) NSString * _Nonnull joinMeetingURL;
 
 /*!
  @brief Get the meeting password.
  */
-@property (retain, nonatomic, readonly) NSString *meetingPassword;
+@property (retain, nonatomic, readonly) NSString * _Nonnull meetingPassword;
 
 /*!
  @brief Get the original meeting password.
  */
-@property (retain, nonatomic, readonly) NSString *rawMeetingPassword;
+@property (retain, nonatomic, readonly) NSString * _Nonnull rawMeetingPassword;
 
 /*!
  @brief Get the phone number of a toll call.
  */
-@property (retain, nonatomic, readonly) NSString *tollCallInNumber;
+@property (retain, nonatomic, readonly) NSString * _Nonnull tollCallInNumber;
 
 /*!
  @brief Get the phone number of a toll free call.
  */
-@property (retain, nonatomic, readonly) NSString *tollFreeCallInNumber;
+@property (retain, nonatomic, readonly) NSString * _Nonnull tollFreeCallInNumber;
 
 /*!
  @brief Enable the invitation by message.
@@ -78,7 +78,7 @@
 /*!
  @brief Custom the SMS invitation content.
  */
-@property (retain, nonatomic) NSString *inviteSMS;
+@property (retain, nonatomic) NSString * _Nonnull inviteSMS;
 
 /*!
  @brief Enable Copy URL.
@@ -89,7 +89,7 @@
 /*!
  @brief Custom the content of Copy URL.
  */
-@property (retain, nonatomic) NSString *inviteCopyURL;
+@property (retain, nonatomic) NSString * _Nonnull inviteCopyURL;
 
 /*!
  @brief Enable the invitation by Email.
@@ -100,16 +100,16 @@
 /*!
  @brief Custom the subject of the invitation by Email
  */
-@property (retain, nonatomic) NSString *inviteEmailSubject;
+@property (retain, nonatomic) NSString * _Nonnull inviteEmailSubject;
 
 /*!
  @brief Custom the content of the invitation by Email
  */
-@property (retain, nonatomic) NSString *inviteEmailContent;
+@property (retain, nonatomic) NSString * _Nonnull inviteEmailContent;
 
 /*!
  @brief Get the instance of MobileRTCInviteHelper.
  */
-+ (MobileRTCInviteHelper*)sharedInstance;
++ (MobileRTCInviteHelper * _Nonnull)sharedInstance;
 
 @end
