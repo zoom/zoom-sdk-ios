@@ -13,6 +13,8 @@
 #import "SplashViewController.h"
 #import "WebViewController.h"
 
+typedef void (^RTCJoinMeetingActionBlock)(NSString * _Nullable, NSString * _Nullable, BOOL);
+
 #define kSDKUserID      @""
 #define kSDKUserName    @""
 #define kSDKUserToken   @""

@@ -32,7 +32,46 @@
 #import <MobileRTC/MobileRTCRemoteControlService.h>
 #import <MobileRTC/MobileRTCWaitingRoomService.h>
 #import <MobileRTC/MobileRTCRenderer.h>
-#import "MobileRTC/MobileRTCAudioRawDataHelper.h"
+#import <MobileRTC/MobileRTCAudioRawDataHelper.h>
+#import <MobileRTC/MobileRTCSMSService.h>
+
+/*!
+ @brief MobileRTCSDKInitContext.
+ */
+@interface MobileRTCSDKInitContext : NSObject
+/*!
+ @brief [Required] domain The domain is used to start/join a ZOOM meeting.
+ */
+@property (nonatomic, copy)   NSString                      * _Nullable domain;
+/*!
+ @brief [Optional] enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
+ */
+@property (nonatomic, assign) BOOL                          enableLog;
+/*!
+ @brief [Optional] bundleResPath Set the path of MobileRTC resource bundle.
+ */
+@property (nonatomic, copy) NSString                        * _Nullable bundleResPath;
+/*!
+ @brief [Optional] Locale fo Customer.
+ */
+@property (nonatomic, assign) MobileRTC_ZoomLocale          locale;
+/*!
+ @brief [Optional] The video rawdata memory mode. Default is MobileRTCRawDataMemoryModeStack, only for rawdataUI.
+ */
+@property (nonatomic, assign) MobileRTCRawDataMemoryMode    videoRawdataMemoryMode;
+/*!
+ @brief [Optional] The share rawdata memory mode. Default is MobileRTCRawDataMemoryModeStack, only for rawdataUI.
+ */
+@property (nonatomic, assign) MobileRTCRawDataMemoryMode    shareRawdataMemoryMode;
+/*!
+ @brief [Optional] The audio rawdata memory mode. Default is MobileRTCRawDataMemoryModeStack, only for rawdataUI.
+ */
+@property (nonatomic, assign) MobileRTCRawDataMemoryMode    audioRawdataMemoryMode;
+/*!
+ @brief [Optional] If you use screen share, you need create group id in your apple developer account, and setup here.
+ */
+@property (nonatomic, copy) NSString                        * _Nullable appGroupId;
+@end
 
 /*!
  @class MobileRTC
@@ -55,32 +94,50 @@
     
     MobileRTCRemoteControlService   *_remoteControlService;
     MobileRTCWaitingRoomService     *_waitingRoomService;
+    
+    MobileRTCSMSService             *_smsService;
 }
 
 /*!
  @brief MobileRTC domain, read-only.  
  */
-@property (retain, nonatomic, readonly) NSString *mobileRTCDomain;
+@property (retain, nonatomic, readonly) NSString * _Nullable mobileRTCDomain;
 
 /*!
  @brief The path of MobileRTC Resources Bundle, read-only. 
  */
-@property (retain, nonatomic, readonly) NSString *mobileRTCResPath;
+@property (retain, nonatomic, readonly) NSString * _Nullable mobileRTCResPath;
 
 /*!
  @brief The name of APP Localizable file for MobileRTC, read-only.
  */
-@property (retain, nonatomic, readonly) NSString *mobileRTCCustomLocalizableName;
+@property (retain, nonatomic, readonly) NSString * _Nullable mobileRTCCustomLocalizableName;
 
 /*!
+ @brief Call the function to get the MobileRTC client.
+ @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
+ @return A preconfigured MobileRTC client.
+ */
++ (MobileRTC * _Nonnull)sharedRTC;
+
+/*!
+ @brief Call the function to initialize MobileRTC.
+ @warning The instance will be instantiated only once over the lifespan of the application.
+ @param context Initialize the parameter configuration of the SDK, please See [MobileRTCSDKInitContext]
+ */
+- (BOOL)initialize:(MobileRTCSDKInitContext * _Nonnull)context;
+
+/*!
+ @deprecated This method will be deleted in next release.
  @brief Call the function to initialize MobileRTC.
  @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
  @param domain The domain is used to start/join a ZOOM meeting.
  @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
  */
-+ (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog;
++ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
+ @deprecated This method will be deleted in next release.
  @brief Call the function to initialize MobileRTC.
  @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
  @warning This method is optional, if the MobileRTCResources.bundle is located in main bundle, please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog to initialize MobileRTC; otherwise it is necessary to use the method for initialize MobileRTC.
@@ -88,58 +145,52 @@
  @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
  @param bundleResPath Set the path of MobileRTC resource bundle.
  */
-+ (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath;
++ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog bundleResPath:(NSString * _Nullable)bundleResPath DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
- @brief Call the function to get the MobileRTC client.
- @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
- @return A preconfigured MobileRTC client. 
- */
-+ (MobileRTC*)sharedRTC;
-
-/*!
+ @deprecated This method will be deleted in next release.
  @brief Set MobileRTC client domain.
  @warning Set the domain while initializing MobileRTC. 
  @param domain The domain is used to start/join a ZOOM meeting.
  @warning It is necessary to call the function once the application starts. 
  */
-- (void)setMobileRTCDomain:(NSString*)domain;
+- (void)setMobileRTCDomain:(NSString * _Nonnull)domain DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
- @deprecated This method is deprecated starting in version 4.3
+ @deprecated This method will be deleted in next release.
  @note Please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath;
  @brief Set the path of MobileRTC resource bundle.
  @warning This method is optional, the MobileRTCResources.bundle is located in main bundle if the function is not called; otherwise it is necessary to set the MobileRTC Resources path while initializing MobileRTC. 
  @param path The path of MobileRTC Resources bundle.
  */
-- (void)setMobileRTCResPath:(NSString *)path DEPRECATED_MSG_ATTRIBUTE("use [+ (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath] instead");
+- (void)setMobileRTCResPath:(NSString * _Nullable)path DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
  @brief Set the name of Localizable file for MobileRTC.
  @warning This method is optional, MobileRTC will read Custom Localizable file from App’s main bundle first.
  @param localizableName The name of APP Localizable file for MobileRTC.
  */
-- (void)setMobileRTCCustomLocalizableName:(NSString *)localizableName;
+- (void)setMobileRTCCustomLocalizableName:(NSString * _Nullable)localizableName;
 
 /*!
  @brief Get the root navigation controller of MobileRTC client.  
  @warning This method is for internal use, the user generally won't call the method. 
  @return The root navigation controller.
  */
-- (UINavigationController*)mobileRTCRootController;
+- (UINavigationController * _Nullable)mobileRTCRootController;
 
 /*!
  @brief Set the MobileRTC client root navigation controller.   
  @warning This method is optional, call the method if the window's rootViewController of the application is the UINavigationController, or just ignore it.
  @param navController The root navigation controller for pushing MobileRTC meeting UI. 
  */
-- (void)setMobileRTCRootController:(UINavigationController*)navController;
+- (void)setMobileRTCRootController:(UINavigationController * _Nullable)navController;
 
 /*!
  @brief Check the MobileRTC version.  
  @return The version of MobileRTC.
  */
-- (NSString*)mobileRTCVersion;
+- (NSString * _Nullable)mobileRTCVersion;
 
 /*!
  @brief Query if the MobileRTC is authorized successfully or not. 
@@ -158,64 +209,71 @@
  @warning The MobileRTC can not be called unless the authentication service is called successfully. 
  @return The preconfigured authentication service. 
  */
-- (MobileRTCAuthService*)getAuthService;
+- (MobileRTCAuthService * _Nullable)getAuthService;
 
 /*!
  @brief Get the default pre-meeting service. 
  @warning Pre-meeting Service will be called once the user logged in with a work email, it is used to schedule/edit/list/delete a meeting.
  @return The preconfigured pre-meeting service.
  */
-- (MobileRTCPremeetingService*)getPreMeetingService;
+- (MobileRTCPremeetingService * _Nullable)getPreMeetingService;
 
 /*!
  @brief Get the default meeting service.  
  @return The default meeting service.  
  */
-- (MobileRTCMeetingService*)getMeetingService;
+- (MobileRTCMeetingService * _Nullable)getMeetingService;
 
 /*!
  @brief Get the MobileRTC default meeting settings. 
  @return The MobileRTC default meeting settings. 
  */
-- (MobileRTCMeetingSettings*)getMeetingSettings;
+- (MobileRTCMeetingSettings * _Nullable)getMeetingSettings;
 
 /*!
  @brief Get the MobileRTC default annotation service.   
  @return The preconfigured annotation service.  
  */
-- (MobileRTCAnnotationService*)getAnnotationService;
+- (MobileRTCAnnotationService * _Nullable)getAnnotationService;
 
 /*!
  @brief Get the default MobileRTC remote control service.   
  @return The preconfigured remote control service. 
  */
-- (MobileRTCRemoteControlService*)getRemoteControlService;
+- (MobileRTCRemoteControlService * _Nullable)getRemoteControlService;
 
 /*!
  @brief Get the default MobileRTC waiting room service.
  @return The MobileRTC waiting room service.
  */
-- (MobileRTCWaitingRoomService *)getWaitingRoomService;
+- (MobileRTCWaitingRoomService * _Nullable)getWaitingRoomService;
+
+/*!
+ @brief Get the default MobileRTC sms service.
+ @return The MobileRTC sms service.
+ */
+- (MobileRTCSMSService * _Nullable)getSMSService;
 
 /*!
  @brief Get the languages supported by MobileRTC.   
  @warning The languages supported by MobileRTC are English, German, Spanish, Japanese, French, Simplified Chinese, Traditional Chinese.
  @return An array of languages supported by MobileRTC.
  */
-- (NSArray *)supportedLanguages;
+- (NSArray * _Nonnull)supportedLanguages;
 
 /*!
  @brief Set the MobileRTC language.
  @warning Choose one of the languages supported by MobileRTC.  
  @param lang The specified language.  
  */
-- (void)setLanguage:(NSString *)lang;
+- (void)setLanguage:(NSString * _Nullable)lang;
 
 /*!
+ @deprecated This method will be deleted in next release.
  @brief Set the AppGroup ID of the application. 
  @warning The Method is used for iOS Replaykit Screen share integration and should be called after SDK initiation.
  */
-- (void)setAppGroupsName:(NSString*)appGroupId;
+- (void)setAppGroupsName:(NSString * _Nullable)appGroupId DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
  @brief Notify common layer that application will resign active. Call the systematical method and then call the appWillResignActive via applicationWillResignActive.
@@ -246,31 +304,5 @@
  @warning It is necessary to call the method after auth success.
  */
 - (BOOL)hasRawDataLicense;
-
-/*!
- @brief Call the function to set video rawdata memory mode.
- @warning This method works only with rawdata in a custom UI.
- @warning need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId
- videoType:(MobileRTCVideoType)type;].
- @warning The method is optional.
- */
-- (void)setVideoRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
-
-/*!
- @brief Call the function to set share rawdata memory mode.
- @warning This method works only with rawdata in a custom UI.
- @warning need call before call [- (MobileRTCRawDataError)subscribe:(NSUInteger)userId
- videoType:(MobileRTCVideoType)type;].
- @warning The method is optional.
- */
-- (void)setShareRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
-
-/*!
- @brief Call the function to set audio rawdata memory mode.
- @warning This method works only with rawdata in a custom UI.
- @warning Need call before call [-(MobileRTCRawDataError)subscribe;].
- @warning The method is optional.
- */
-- (void)setAudioRawDataMemoryMode:(MobileRTCRawDataMemoryMode)mode;
 
 @end

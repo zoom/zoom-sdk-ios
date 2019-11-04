@@ -18,10 +18,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    self.webView = [[WKWebView alloc] initWithFrame:self.view.bounds];
     self.webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.webView.scrollView.delegate = self;
-    self.webView.scalesPageToFit = YES;
     NSURL *url = [NSURL URLWithString:@"https://zoom.us"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:req];

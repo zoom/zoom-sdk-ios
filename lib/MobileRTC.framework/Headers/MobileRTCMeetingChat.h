@@ -17,31 +17,31 @@
 /*!
  @brief The message ID.
  */
-@property (nonatomic, retain, readwrite) NSString *chatId;
+@property (nonatomic, retain, readwrite) NSString * _Nullable chatId;
 /*!
  @brief The ID of user who sends message.
  */
-@property (nonatomic, retain, readwrite) NSString *senderId;
+@property (nonatomic, retain, readwrite) NSString * _Nullable senderId;
 /*!
  @brief The screen name of user who sends message.
  */
-@property (nonatomic, retain, readwrite) NSString *senderName;
+@property (nonatomic, retain, readwrite) NSString * _Nullable senderName;
 /*!
  @brief The ID of user who receives message.
  */
-@property (nonatomic, retain, readwrite) NSString *receiverId;
+@property (nonatomic, retain, readwrite) NSString * _Nullable receiverId;
 /*!
  @brief The screen name of user who receives message.
  */
-@property (nonatomic, retain, readwrite) NSString *receiverName;
+@property (nonatomic, retain, readwrite) NSString * _Nullable receiverName;
 /*!
  @brief The message content.
  */
-@property (nonatomic, retain, readwrite) NSString *content;
+@property (nonatomic, retain, readwrite) NSString * _Nullable content;
 /*!
  @brief The message timestamps.
  */
-@property (nonatomic, retain, readwrite) NSDate *date;
+@property (nonatomic, retain, readwrite) NSDate *_Nullable date;
 /*!
  @brief Whether the message is sent by the user himself or not.
  */

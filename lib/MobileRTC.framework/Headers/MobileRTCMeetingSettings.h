@@ -76,6 +76,11 @@
 @property (assign, nonatomic) BOOL bottomBarHidden;
 
 /*!
+ @brief Show/Hide disconnect audio button
+ */
+@property (assign, nonatomic) BOOL disconnectAudioHidden;
+
+/*!
  @brief Enable/Disable Kubi Device in the meeting.
  @warning The option is available only on iPad if you want to use Kubi device. 
  */
@@ -121,6 +126,11 @@
  @brief Show/Hide CLOSE CAPTION in a meeting.
  */
 @property (assign, nonatomic) BOOL closeCaptionHidden;
+
+/*!
+ @brief Show/Hide Q&A button in webinar meeting.
+ */
+@property (assign, nonatomic) BOOL qaButtonHidden;
 
 /*!
  @brief Enable/Disable Proximity Sensors Monitoring in a meeting. 

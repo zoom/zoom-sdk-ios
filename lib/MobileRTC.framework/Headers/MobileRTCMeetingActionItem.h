@@ -18,13 +18,13 @@ typedef void (^MobileRTCMeetingInviteActionItemBlock)(void);
 /*!
  @brief The title of the custom invitation items.
  */
-@property (nonatomic, retain, readwrite) NSString * actionTitle;
+@property (nonatomic, retain, readwrite) NSString * _Nonnull actionTitle;
 /*!
  @brief Callback event of clicking the invitation item.
  */
-@property (nonatomic, copy, readwrite) MobileRTCMeetingInviteActionItemBlock actionHandler;
+@property (nonatomic, copy, readwrite) MobileRTCMeetingInviteActionItemBlock _Nonnull actionHandler;
 
-+(id)itemWithTitle:(NSString *)inTitle Action:(MobileRTCMeetingInviteActionItemBlock)actionHandler;
++(id _Nonnull )itemWithTitle:(NSString * _Nonnull )inTitle Action:(MobileRTCMeetingInviteActionItemBlock _Nonnull )actionHandler;
 
 @end
 
@@ -34,14 +34,14 @@ typedef void (^MobileRTCMeetingInviteActionItemBlock)(void);
  */
 @protocol MobileRTCMeetingShareActionItemDelegate <NSObject>
 @required
-- (void)onShareItemClicked:(NSUInteger)tag completion:(BOOL(^)(UIViewController * shareView))completion;
+- (void)onShareItemClicked:(NSUInteger)tag completion:(BOOL(^_Nonnull)(UIViewController * _Nonnull shareView))completion;
 @end
 
 @interface MobileRTCMeetingShareActionItem : NSObject
 /*!
  @brief The title of the custom content to share, like screen, application, photos, etc. 
  */ 
-@property (nonatomic, retain, readwrite) NSString * actionTitle;
+@property (nonatomic, retain, readwrite) NSString * _Nonnull actionTitle;
 
 /*!
  @brief The tag of MobileRTCMeetingShareActionItem.
@@ -50,7 +50,7 @@ typedef void (^MobileRTCMeetingInviteActionItemBlock)(void);
 /*!
  @brief Enable the share via MobileRTCMeetingShareActionItemDelegate.
  */
-@property (nonatomic, assign, readwrite) id<MobileRTCMeetingShareActionItemDelegate> delegate;
+@property (nonatomic, assign, readwrite) id<MobileRTCMeetingShareActionItemDelegate> _Nonnull delegate;
 
-+(id)itemWithTitle:(NSString *)inTitle Tag:(NSUInteger)tag;
++(id _Nonnull )itemWithTitle:(NSString * _Nonnull)inTitle Tag:(NSUInteger)tag;
 @end

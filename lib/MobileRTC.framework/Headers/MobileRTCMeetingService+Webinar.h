@@ -113,16 +113,17 @@
 - (BOOL)allowAttendeeUpVoteQuestion:(BOOL)enable;
 
 /*!
- @brief Query if attendee is allowed to answer questions.
+ @brief Query if attendee is allowed to comment questions.
  @return YES means allowed, otherwise not.
  */
 - (BOOL)isAllowAttendeeAnswerQuestion;
 
 /*!
- @brief Allow attendee to answer question.
- @param Enable Allow/Disallow attendee to answer question.
+ @brief Allow attendee to comment question.
+ @param Enable Allow/Disallow attendee to comment question.
  @return YES means that the method is called successfully, otherwise not.
  @warning Only meeting host/co-host can run the function.
  */
 - (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable;
+
 @end

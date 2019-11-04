@@ -27,7 +27,7 @@ typedef enum
 /*!
  @brief Callback event of receiving remote control. 
  */
-@property (assign, nonatomic) id<MobileRTCRemoteControlDelegate> delegate;
+@property (assign, nonatomic) id<MobileRTCRemoteControlDelegate> _Nonnull delegate;
 
 /*!
  @brief Query if the current user gets the remote control privilege.
@@ -40,7 +40,7 @@ typedef enum
  @param remoteShareView The remote shared view.
  @return The result of grabbing the remote control.
  */
-- (MobileRTCRemoteControlError)grabRemoteControl:(UIView*)remoteShareView;
+- (MobileRTCRemoteControlError)grabRemoteControl:(UIView * _Nonnull)remoteShareView;
 
 /*!
  @brief Simulate a mouse click with a finger clicking once on the screen.
@@ -104,7 +104,7 @@ typedef enum
  @param str Input text from keyboard.
  @return The result of the operation.
  */
-- (MobileRTCRemoteControlError)remoteControlCharInput:(NSString*)str;
+- (MobileRTCRemoteControlError)remoteControlCharInput:(NSString * _Nonnull)str;
 
 /*!
  @brief Simulate Enter key or delete key of the keyboard.

@@ -1,10 +1,4 @@
-//
-//  ZipArchive.h
-//  ZipArchive
-//
-//  Created by Serhii Mumriak on 12/1/15.
-//  Copyright © 2015 smumryak. All rights reserved.
-//
+
 
 #import <Foundation/Foundation.h>
 

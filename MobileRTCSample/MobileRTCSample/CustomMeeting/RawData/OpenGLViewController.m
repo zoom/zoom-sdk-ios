@@ -79,16 +79,18 @@
 }
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (BOOL)prefersStatusBarHidden {
-    return NO;
+    return YES;
 }
 
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
+    self.fullView.frame = self.view.bounds;
+    
     [self.topBar setNeedsLayout];
     [self.controlBarView setNeedsLayout];
     [self.bottomView setNeedsLayout];

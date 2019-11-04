@@ -14,7 +14,7 @@
  @param delegate Specify the delegate to receive the callback.
  @return The MobileRTCAudioRawDataHelper object.
  */
-- (instancetype)initWithDelegate:(id<MobileRTCAudioRawDataDelegate>) delegate;
+- (instancetype _Nonnull)initWithDelegate:(id<MobileRTCAudioRawDataDelegate>_Nonnull) delegate;
 
 /*!
  @brief Call the function to start audio rawdata.
