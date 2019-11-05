@@ -12,6 +12,7 @@
 * Updated all interfaces that involves `UIWebView` and removed `UIWebView` in SDK since Apple is deprecating `UIWebView`
 * Fixed an issue that the SDK will crash by chance when doing a screen share
 * Fixed some compatibility issues with iOS 13
+* Fixed an issue that the `onSinkMeetingActiveVideo` is not called for the 3rd user onwards
 * Fixed an issue that the Xcode is warning for `nullable` or `nonnull` in SDK
 * Fixed an issue that the crash file was created when the app is being killed by the system
 * Fixed an issue that the UI freeze when sharing a photo in landscape mode
