@@ -6,11 +6,11 @@
 * Add a new interface to hide the "Disconnect Audio" button
 * Add a new interface for SDK initialization
 * Add a new interface to hide the Q&A button and the POLL button
-* Add a new parameter in `presentMeetingChatViewController` to allow setting the chat as public or private
 
 ## Changed & Fixed:
 * Updated all interfaces that involves `UIWebView` and removed `UIWebView` in SDK since Apple is deprecating `UIWebView`
 * Fixed an issue that the SDK will crash by chance when doing a screen share
+* Fixed an issue that the `presentMeetingChatViewController` is not reflecting the "disable private chat" setting in Custom UI
 * Fixed some compatibility issues with iOS 13
 * Fixed an issue that the `onSinkMeetingActiveVideo` is not called for the 3rd user onwards
 * Fixed an issue that the Xcode is warning for `nullable` or `nonnull` in SDK
