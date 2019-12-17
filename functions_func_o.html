@@ -115,8 +115,8 @@ $(function() {
 <li>onDialOutStatusChanged:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ab18c3f382f95fc1f66d653a0c5a1353b">&lt;MobileRTCMeetingServiceDelegate &gt;</a>
 </li>
-<li>onFreeMeetingReminder:canFreeUpgrade:completion:
-: <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a9d237641e1e501c72411ea503510f4c3">&lt;MobileRTCMeetingServiceDelegate &gt;</a>
+<li>onFreeMeetingReminder:canFreeUpgrade:isFirstGift:completion:
+: <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a04cdd214749fc8ac41d05bfba58bd036">&lt;MobileRTCMeetingServiceDelegate &gt;</a>
 </li>
 <li>onInitMeetingView
 : <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate_01-p.html#ab81664b9d227282949114e95243b2dc6">&lt;MobileRTCCustomizedUIMeetingDelegate &gt;</a>
@@ -166,6 +166,9 @@ $(function() {
 <li>onMicrophoneStatusError:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ac07bd40876372559e467bc2ac0e597bf">&lt;MobileRTCMeetingServiceDelegate &gt;</a>
 </li>
+<li>onMobileRTCAuthExpired
+: <a class="el" href="protocol_mobile_r_t_c_auth_delegate_01-p.html#a7cad2c94b0412d96929cca9272525fc2">&lt;MobileRTCAuthDelegate &gt;</a>
+</li>
 <li>onMobileRTCAuthReturn:
 : <a class="el" href="protocol_mobile_r_t_c_auth_delegate_01-p.html#a357545d6b0135f76baf1ea6545bb4dbb">&lt;MobileRTCAuthDelegate &gt;</a>
 </li>
@@ -211,6 +214,9 @@ $(function() {
 <li>onProxyAuth:port:completion:
 : <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a8c4847ea7defeabceb51a23973d3f43d">&lt;MobileRTCMeetingServiceDelegate &gt;</a>
 </li>
+<li>OnRefreshQAData
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a409915b1917d6404096a286273eec206">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
 <li>onRetrieveSMSVerificationCodeResultNotification:verifyHandle:
 : <a class="el" href="protocol_mobile_r_t_c_s_m_s_service_delegate_01-p.html#a1214fee7c7462b01ae3f2dd6aae3b19b">&lt;MobileRTCSMSServiceDelegate &gt;</a>
 </li>
@@ -250,6 +256,9 @@ $(function() {
 <li>onSinkMeetingShareReceiving:
 : <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#a409e073d4c4c4b99ab68e5ea37ff6e3e">&lt;MobileRTCShareServiceDelegate &gt;</a>
 </li>
+<li>onSinkMeetingShowMinimizeMeetingOrBackZoomUI:
+: <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a2a7f32f381859984452b417679a2c41a">&lt;MobileRTCVideoServiceDelegate &gt;</a>
+</li>
 <li>onSinkMeetingUserJoin:
 : <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a3efb6f692bdeb37296c1d7c3920ad7ec">&lt;MobileRTCUserServiceDelegate &gt;</a>
 </li>
@@ -277,6 +286,12 @@ $(function() {
 <li>onSinkPromptAttendee2PanelistResult:
 : <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#ac77555ad26d6165aea9fdac325dc805b">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
 </li>
+<li>onSinkQAAddAnswer:success:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a228ad9c96f1b495719be7fcb2704f851">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkQAAddQuestion:success:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a1c1b3136122c7be6310c67c8e23c2ea1">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
 <li>onSinkQAAllowAskQuestionAnonymouslyNotification:
 : <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a60c0ed47604359d0054aabeb2087356e">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
 </li>
@@ -298,8 +313,32 @@ $(function() {
 <li>onSinkQAOpenQuestionChanged:
 : <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#ab08b24b3f98a4528892b02bf504dc4f5">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
 </li>
+<li>onSinkQuestionMarkedAsDismissed:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a30403450ecd92db2cdd3e1e4fadaae1f">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkReceiveAnswer:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a715f5cecbb04f73ec36050a06190c9e7">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkReceiveQuestion:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a1eb04c37b170afc3c5431c90d7e3bc4c">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkReopenQuestion:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a4efb307f7ec43d841669b937a8d3c000">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkRevokeVoteupQuestion:orderChanged:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#ae4b73452e2c577e40531dbf1a81aad7e">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
 <li>onSinkShareSizeChange:
 : <a class="el" href="protocol_mobile_r_t_c_share_service_delegate_01-p.html#af3d73617877c6c72240ec56234d992c9">&lt;MobileRTCShareServiceDelegate &gt;</a>
+</li>
+<li>onSinkUserEndLiving:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a108d76e3f7050178e38c2e6a487d4a0d">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkUserLivingReply:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a947239cfcaf70a13c085b25aa095ac63">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
+</li>
+<li>onSinkVoteupQuestion:orderChanged:
+: <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a47fc85b775a348b414dd636fb77b072a">&lt;MobileRTCWebinarServiceDelegate &gt;</a>
 </li>
 <li>onSinkWebinarNeedRegister:
 : <a class="el" href="protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#aefc29ab68d5f4e3f8768f874cfacceff">&lt;MobileRTCWebinarServiceDelegate &gt;</a>

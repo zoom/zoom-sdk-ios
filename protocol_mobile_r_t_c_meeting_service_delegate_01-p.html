@@ -128,9 +128,9 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#af02c3557a3a3ffd926c769b7e8c2dee3">onCameraNoPrivilege</a></td></tr>
 <tr class="memdesc:af02c3557a3a3ffd926c769b7e8c2dee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify user that camera access permission is denied. <br /></td></tr>
 <tr class="separator:af02c3557a3a3ffd926c769b7e8c2dee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d237641e1e501c72411ea503510f4c3"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a9d237641e1e501c72411ea503510f4c3">onFreeMeetingReminder:canFreeUpgrade:completion:</a></td></tr>
-<tr class="memdesc:a9d237641e1e501c72411ea503510f4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform user that free meeting will be ended in 10 minutes.  <a href="#a9d237641e1e501c72411ea503510f4c3">More...</a><br /></td></tr>
-<tr class="separator:a9d237641e1e501c72411ea503510f4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04cdd214749fc8ac41d05bfba58bd036"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a04cdd214749fc8ac41d05bfba58bd036">onFreeMeetingReminder:canFreeUpgrade:isFirstGift:completion:</a></td></tr>
+<tr class="memdesc:a04cdd214749fc8ac41d05bfba58bd036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inform user that free meeting will be ended in 10 minutes.  <a href="#a04cdd214749fc8ac41d05bfba58bd036">More...</a><br /></td></tr>
+<tr class="separator:a04cdd214749fc8ac41d05bfba58bd036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d9bce81d3ee817391d4c47eb496d781"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a1d9bce81d3ee817391d4c47eb496d781">onUpgradeFreeMeetingResult:</a></td></tr>
 <tr class="memdesc:a1d9bce81d3ee817391d4c47eb496d781"><td class="mdescLeft">&#160;</td><td class="mdescRight">The result of upgrading free meeting.  <a href="#a1d9bce81d3ee817391d4c47eb496d781">More...</a><br /></td></tr>
 <tr class="separator:a1d9bce81d3ee817391d4c47eb496d781"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -608,8 +608,8 @@ Instance Methods</h2></td></tr>
 
 </div>
 </div>
-<a id="a9d237641e1e501c72411ea503510f4c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9d237641e1e501c72411ea503510f4c3">&#9670;&nbsp;</a></span>onFreeMeetingReminder:canFreeUpgrade:completion:()</h2>
+<a id="a04cdd214749fc8ac41d05bfba58bd036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04cdd214749fc8ac41d05bfba58bd036">&#9670;&nbsp;</a></span>onFreeMeetingReminder:canFreeUpgrade:isFirstGift:completion:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -628,6 +628,12 @@ Instance Methods</h2></td></tr>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
           <td class="paramname"><em>freeUpgrade</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">isFirstGift:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>first</em></td>
         </tr>
         <tr>
           <td class="paramkey">completion:</td>
@@ -653,6 +659,7 @@ Instance Methods</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">host</td><td>YES means the original host of the current meeting, otherwise not. </td></tr>
     <tr><td class="paramname">freeUpgrade</td><td>YES means the current free meeting will be upgraded. Once upgraded, the current meeting can last for more than 40 minutes. </td></tr>
+    <tr><td class="paramname">first</td><td>and second time, meeting is no limit, from third time, will end meeting at 40 mins. </td></tr>
     <tr><td class="paramname">completion</td><td><a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> will call the module to upgrade the current meeting once the parameter UPGRADE is YES. </td></tr>
   </table>
   </dd>

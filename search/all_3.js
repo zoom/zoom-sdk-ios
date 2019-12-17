@@ -18,6 +18,7 @@ var searchData=
   ['disableminimizemeeting_3a',['disableMinimizeMeeting:',['../interface_mobile_r_t_c_meeting_settings.html#a47f99281a86573e80b1be58a273d1658',1,'MobileRTCMeetingSettings']]],
   ['disableviewerannoataion_3a',['disableViewerAnnoataion:',['../interface_mobile_r_t_c_annotation_service.html#a912ba3c53f19e056dca6bd0ada5d7c37',1,'MobileRTCAnnotationService']]],
   ['disconnectaudiohidden',['disconnectAudioHidden',['../interface_mobile_r_t_c_meeting_settings.html#a22ccc6f7647c09af77299f94427f5a6f',1,'MobileRTCMeetingSettings']]],
+  ['dismissquestion_3a',['dismissQuestion:',['../category_mobile_r_t_c_meeting_service_07_webinar_08.html#aa3f95c450c69b63545105dec36f98537',1,'MobileRTCMeetingService(Webinar)::dismissQuestion:()'],['../interface_mobile_r_t_c_meeting_service.html#aa3f95c450c69b63545105dec36f98537',1,'MobileRTCMeetingService::dismissQuestion:()']]],
   ['domain',['domain',['../interface_mobile_r_t_c_s_d_k_init_context.html#a0b475c012aacb08cd67de1ff57cbee62',1,'MobileRTCSDKInitContext']]],
   ['drivemodedisabled',['driveModeDisabled',['../interface_mobile_r_t_c_meeting_settings.html#ab80eb108ad909bd832eef97e46124865',1,'MobileRTCMeetingSettings']]]
 ];

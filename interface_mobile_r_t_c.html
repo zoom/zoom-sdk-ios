@@ -90,6 +90,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a37a55bd4619dbeeb413c82ff4aa70699"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a37a55bd4619dbeeb413c82ff4aa70699">initialize:</a></td></tr>
 <tr class="memdesc:a37a55bd4619dbeeb413c82ff4aa70699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to initialize <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a>.  <a href="#a37a55bd4619dbeeb413c82ff4aa70699">More...</a><br /></td></tr>
 <tr class="separator:a37a55bd4619dbeeb413c82ff4aa70699"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8e6e5b5e5b6716f2a24c8316a99dd45"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#aa8e6e5b5e5b6716f2a24c8316a99dd45">switchDomain:force:</a></td></tr>
+<tr class="memdesc:aa8e6e5b5e5b6716f2a24c8316a99dd45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Call the function to switch <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> domain.  <a href="#aa8e6e5b5e5b6716f2a24c8316a99dd45">More...</a><br /></td></tr>
+<tr class="separator:aa8e6e5b5e5b6716f2a24c8316a99dd45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac827b194ffc09cdd24a303b757bbfeb"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#aac827b194ffc09cdd24a303b757bbfeb">setMobileRTCDomain:</a></td></tr>
 <tr class="memdesc:aac827b194ffc09cdd24a303b757bbfeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> client domain.  <a href="#aac827b194ffc09cdd24a303b757bbfeb">More...</a><br /></td></tr>
 <tr class="separator:aac827b194ffc09cdd24a303b757bbfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -907,6 +910,43 @@ This method is optional, if the MobileRTCResources.bundle is located in main bun
  </p>
 <dl class="section warning"><dt>Warning</dt><dd>The languages supported by <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> are English, German, Spanish, Japanese, French, Simplified Chinese, Traditional Chinese. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>An array of languages supported by <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aa8e6e5b5e5b6716f2a24c8316a99dd45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8e6e5b5e5b6716f2a24c8316a99dd45">&#9670;&nbsp;</a></span>switchDomain:force:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) switchDomain: </td>
+          <td></td>
+          <td class="paramtype">(NSString *_Nonnull)&#160;</td>
+          <td class="paramname"><em>newDomain</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">force:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>force</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Call the function to switch <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> domain. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newDomain</td><td>The new domain. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES indicates successfully. Otherwise not. </dd></dl>
 
 </div>
 </div>

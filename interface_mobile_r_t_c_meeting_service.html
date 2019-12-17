@@ -63,6 +63,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Instance Methods</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="interface_mobile_r_t_c_meeting_service-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -273,6 +274,12 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a4ca4c0f2ae79aa31f1ad49f3ee82a5ac"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a4ca4c0f2ae79aa31f1ad49f3ee82a5ac">isMeetingCoHost</a></td></tr>
 <tr class="memdesc:a4ca4c0f2ae79aa31f1ad49f3ee82a5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the current user is the co-host of the meeting.  <a href="#a4ca4c0f2ae79aa31f1ad49f3ee82a5ac">More...</a><br /></td></tr>
 <tr class="separator:a4ca4c0f2ae79aa31f1ad49f3ee82a5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71a8aa5af60ac05d123fec3b8d98f0e6"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a71a8aa5af60ac05d123fec3b8d98f0e6">isWebinarAttendee</a></td></tr>
+<tr class="memdesc:a71a8aa5af60ac05d123fec3b8d98f0e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the current user is the webinar attendee of the meeting.  <a href="#a71a8aa5af60ac05d123fec3b8d98f0e6">More...</a><br /></td></tr>
+<tr class="separator:a71a8aa5af60ac05d123fec3b8d98f0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac520f585320b0cba581063a86dc4be14"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ac520f585320b0cba581063a86dc4be14">isWebinarPanelist</a></td></tr>
+<tr class="memdesc:ac520f585320b0cba581063a86dc4be14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the current user is the webinar panelist of the meeting.  <a href="#ac520f585320b0cba581063a86dc4be14">More...</a><br /></td></tr>
+<tr class="separator:ac520f585320b0cba581063a86dc4be14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac32beb17334a56193b39aa050825ee2a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ac32beb17334a56193b39aa050825ee2a">isMeetingLocked</a></td></tr>
 <tr class="memdesc:ac32beb17334a56193b39aa050825ee2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify if the meeting is locked by host. Once the meeting is locked, other users out of the meeting can no longer join it.  <a href="#ac32beb17334a56193b39aa050825ee2a">More...</a><br /></td></tr>
 <tr class="separator:ac32beb17334a56193b39aa050825ee2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -354,6 +361,15 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ab2c82009ac06107c6944fbfda3761a85"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ab2c82009ac06107c6944fbfda3761a85">presentQAViewController:</a></td></tr>
 <tr class="memdesc:ab2c82009ac06107c6944fbfda3761a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to present Zoom original Q&amp;A ViewController.  <a href="#ab2c82009ac06107c6944fbfda3761a85">More...</a><br /></td></tr>
 <tr class="separator:ab2c82009ac06107c6944fbfda3761a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa1810832f4d35f94c384ab63102d75f"><td class="memItemLeft" align="right" valign="top">(NSString *_Nullable)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#afa1810832f4d35f94c384ab63102d75f">getMeetingPassword</a></td></tr>
+<tr class="memdesc:afa1810832f4d35f94c384ab63102d75f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current meeting's password.  <a href="#afa1810832f4d35f94c384ab63102d75f">More...</a><br /></td></tr>
+<tr class="separator:afa1810832f4d35f94c384ab63102d75f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25de310a3d56ef5a9aa83f9d41d45413"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a25de310a3d56ef5a9aa83f9d41d45413">showMinimizeMeetingFromZoomUIMeeting</a></td></tr>
+<tr class="memdesc:a25de310a3d56ef5a9aa83f9d41d45413"><td class="mdescLeft">&#160;</td><td class="mdescRight">call the method to show Minimize meeting when in Zoom UI meeting.  <a href="#a25de310a3d56ef5a9aa83f9d41d45413">More...</a><br /></td></tr>
+<tr class="separator:a25de310a3d56ef5a9aa83f9d41d45413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a072c636b21c28cb75f0c1ea0f3909287"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a072c636b21c28cb75f0c1ea0f3909287">backZoomUIMeetingFromMinimizeMeeting</a></td></tr>
+<tr class="memdesc:a072c636b21c28cb75f0c1ea0f3909287"><td class="mdescLeft">&#160;</td><td class="mdescRight">call the methond to back Zoom UI meeting when in minimize meeting.  <a href="#a072c636b21c28cb75f0c1ea0f3909287">More...</a><br /></td></tr>
+<tr class="separator:a072c636b21c28cb75f0c1ea0f3909287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf553cd2675f0bd6e74f29497ebd8076"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#abf553cd2675f0bd6e74f29497ebd8076">changeName:withUserID:</a></td></tr>
 <tr class="memdesc:abf553cd2675f0bd6e74f29497ebd8076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to change user's screen name in meeting.  <a href="#abf553cd2675f0bd6e74f29497ebd8076">More...</a><br /></td></tr>
 <tr class="separator:abf553cd2675f0bd6e74f29497ebd8076"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -456,6 +472,39 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a4bf18305f06f459085e3f1de10c1499a"><td class="memItemLeft" align="right" valign="top">(MobileRTCCameraError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a4bf18305f06f459085e3f1de10c1499a">switchMyCamera</a></td></tr>
 <tr class="memdesc:a4bf18305f06f459085e3f1de10c1499a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to Switch the camera of the current user in local device.  <a href="#a4bf18305f06f459085e3f1de10c1499a">More...</a><br /></td></tr>
 <tr class="separator:a4bf18305f06f459085e3f1de10c1499a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a165d431accb57f3e14b5e0b1721ab933"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a165d431accb57f3e14b5e0b1721ab933">startPreviewWithFrame:</a></td></tr>
+<tr class="memdesc:a165d431accb57f3e14b5e0b1721ab933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start preview for inspect the virtual background effect.  <a href="#a165d431accb57f3e14b5e0b1721ab933">More...</a><br /></td></tr>
+<tr class="separator:a165d431accb57f3e14b5e0b1721ab933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d73057cb5c054b6c493c5e68a6dae97"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a1d73057cb5c054b6c493c5e68a6dae97">isSupportVirtualBG</a></td></tr>
+<tr class="memdesc:a1d73057cb5c054b6c493c5e68a6dae97"><td class="mdescLeft">&#160;</td><td class="mdescRight">is support virtual background.  <a href="#a1d73057cb5c054b6c493c5e68a6dae97">More...</a><br /></td></tr>
+<tr class="separator:a1d73057cb5c054b6c493c5e68a6dae97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a561b9bd53bfa6fd748f779f4f8680dd2"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a561b9bd53bfa6fd748f779f4f8680dd2">isSupportSmartVirtualBG</a></td></tr>
+<tr class="memdesc:a561b9bd53bfa6fd748f779f4f8680dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">is Support smart virtual background.  <a href="#a561b9bd53bfa6fd748f779f4f8680dd2">More...</a><br /></td></tr>
+<tr class="separator:a561b9bd53bfa6fd748f779f4f8680dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58f3352679752381f698bd3d8c9b5131"><td class="memItemLeft" align="right" valign="top">(NSArray *_Nonnull)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a58f3352679752381f698bd3d8c9b5131">getBGImageList</a></td></tr>
+<tr class="memdesc:a58f3352679752381f698bd3d8c9b5131"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the virtual background list.  <a href="#a58f3352679752381f698bd3d8c9b5131">More...</a><br /></td></tr>
+<tr class="separator:a58f3352679752381f698bd3d8c9b5131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd5eb368f77a0fd8dcb4e685aceafe1a"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#afd5eb368f77a0fd8dcb4e685aceafe1a">addBGImage:</a></td></tr>
+<tr class="memdesc:afd5eb368f77a0fd8dcb4e685aceafe1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">add and use the image for virtual background.  <a href="#afd5eb368f77a0fd8dcb4e685aceafe1a">More...</a><br /></td></tr>
+<tr class="separator:afd5eb368f77a0fd8dcb4e685aceafe1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1099cd0cec57f1bb9c57fcb14180055c"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a1099cd0cec57f1bb9c57fcb14180055c">removeBGImage:</a></td></tr>
+<tr class="memdesc:a1099cd0cec57f1bb9c57fcb14180055c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove image item form image list.  <a href="#a1099cd0cec57f1bb9c57fcb14180055c">More...</a><br /></td></tr>
+<tr class="separator:a1099cd0cec57f1bb9c57fcb14180055c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b90512568779356ff7cd591cf9e76b3"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a0b90512568779356ff7cd591cf9e76b3">useBGImage:</a></td></tr>
+<tr class="memdesc:a0b90512568779356ff7cd591cf9e76b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">use the specify image item for virtual background.  <a href="#a0b90512568779356ff7cd591cf9e76b3">More...</a><br /></td></tr>
+<tr class="separator:a0b90512568779356ff7cd591cf9e76b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f88bc4bbaf3ef36e840a16ff1472f5"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aa3f88bc4bbaf3ef36e840a16ff1472f5">useNoneImage</a></td></tr>
+<tr class="memdesc:aa3f88bc4bbaf3ef36e840a16ff1472f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the virtrual background, same as use a none image item.  <a href="#aa3f88bc4bbaf3ef36e840a16ff1472f5">More...</a><br /></td></tr>
+<tr class="separator:aa3f88bc4bbaf3ef36e840a16ff1472f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fcbb118487ff3a75a9f398ace0f4df5"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a3fcbb118487ff3a75a9f398ace0f4df5">isUsingGreenVB</a></td></tr>
+<tr class="memdesc:a3fcbb118487ff3a75a9f398ace0f4df5"><td class="mdescLeft">&#160;</td><td class="mdescRight">is using green virtual background.  <a href="#a3fcbb118487ff3a75a9f398ace0f4df5">More...</a><br /></td></tr>
+<tr class="separator:a3fcbb118487ff3a75a9f398ace0f4df5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ae01597a6c4113378e8b88e59f1bb6"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ad2ae01597a6c4113378e8b88e59f1bb6">enableGreenVB:</a></td></tr>
+<tr class="memdesc:ad2ae01597a6c4113378e8b88e59f1bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable green virtual background mode.  <a href="#ad2ae01597a6c4113378e8b88e59f1bb6">More...</a><br /></td></tr>
+<tr class="separator:ad2ae01597a6c4113378e8b88e59f1bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc7ad895a2c179b7dbadb6523e89dd60"><td class="memItemLeft" align="right" valign="top">(MobileRTCMeetError)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#adc7ad895a2c179b7dbadb6523e89dd60">selectGreenVBPoint:</a></td></tr>
+<tr class="memdesc:adc7ad895a2c179b7dbadb6523e89dd60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select the point that regard as background.  <a href="#adc7ad895a2c179b7dbadb6523e89dd60">More...</a><br /></td></tr>
+<tr class="separator:adc7ad895a2c179b7dbadb6523e89dd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e410fc88a44d223b646c5d6a2d3dd1a"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a2e410fc88a44d223b646c5d6a2d3dd1a">hasPromptAndDePromptPrivilige</a></td></tr>
 <tr class="memdesc:a2e410fc88a44d223b646c5d6a2d3dd1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the user has the privilege to prompt or demote users in the webinar.  <a href="#a2e410fc88a44d223b646c5d6a2d3dd1a">More...</a><br /></td></tr>
 <tr class="separator:a2e410fc88a44d223b646c5d6a2d3dd1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -498,12 +547,87 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a05494d16756c9be1c4f7333fa3d5b713"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a05494d16756c9be1c4f7333fa3d5b713">allowAttendeeUpVoteQuestion:</a></td></tr>
 <tr class="memdesc:a05494d16756c9be1c4f7333fa3d5b713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow attendee to submit questions.  <a href="#a05494d16756c9be1c4f7333fa3d5b713">More...</a><br /></td></tr>
 <tr class="separator:a05494d16756c9be1c4f7333fa3d5b713"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0b3e209f8a6df4b4c31084cd5963262"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aa0b3e209f8a6df4b4c31084cd5963262">isAllowAttendeeAnswerQuestion</a></td></tr>
-<tr class="memdesc:aa0b3e209f8a6df4b4c31084cd5963262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if attendee is allowed to comment questions.  <a href="#aa0b3e209f8a6df4b4c31084cd5963262">More...</a><br /></td></tr>
-<tr class="separator:aa0b3e209f8a6df4b4c31084cd5963262"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af264956e846ad604792e5e41059413ff"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#af264956e846ad604792e5e41059413ff">allowAttendeeAnswerQuestion:</a></td></tr>
-<tr class="memdesc:af264956e846ad604792e5e41059413ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow attendee to comment question.  <a href="#af264956e846ad604792e5e41059413ff">More...</a><br /></td></tr>
-<tr class="separator:af264956e846ad604792e5e41059413ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbb1ee4ca3c1c904e0c57fc3ad43459"><td class="memItemLeft" align="right" valign="top">(&quot;Had deprecated. Please use - (BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a0dbb1ee4ca3c1c904e0c57fc3ad43459">isAllowCommentQuestion</a></td></tr>
+<tr class="memdesc:a0dbb1ee4ca3c1c904e0c57fc3ad43459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if attendee is allowed to comment questions.  <a href="#a0dbb1ee4ca3c1c904e0c57fc3ad43459">More...</a><br /></td></tr>
+<tr class="separator:a0dbb1ee4ca3c1c904e0c57fc3ad43459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3b9b05d01a0ea72a9cf1e007c0bbd67"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ac3b9b05d01a0ea72a9cf1e007c0bbd67">isAllowCommentQuestion</a></td></tr>
+<tr class="memdesc:ac3b9b05d01a0ea72a9cf1e007c0bbd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if attendee is allowed to comment questions.  <a href="#ac3b9b05d01a0ea72a9cf1e007c0bbd67">More...</a><br /></td></tr>
+<tr class="separator:ac3b9b05d01a0ea72a9cf1e007c0bbd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d2582d2629ed90ee16a35db98fbe790"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a0d2582d2629ed90ee16a35db98fbe790">allowAttendeeAnswerQuestion:</a></td></tr>
+<tr class="memdesc:a0d2582d2629ed90ee16a35db98fbe790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow attendee to comment question.  <a href="#a0d2582d2629ed90ee16a35db98fbe790">More...</a><br /></td></tr>
+<tr class="separator:a0d2582d2629ed90ee16a35db98fbe790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cd03c1b2f012cc21e8aeec1197c855"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a87cd03c1b2f012cc21e8aeec1197c855">allowCommentQuestion:</a></td></tr>
+<tr class="memdesc:a87cd03c1b2f012cc21e8aeec1197c855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow attendee to comment question.  <a href="#a87cd03c1b2f012cc21e8aeec1197c855">More...</a><br /></td></tr>
+<tr class="separator:a87cd03c1b2f012cc21e8aeec1197c855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3c6181db26b323c39dded7b322bb29"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a9b3c6181db26b323c39dded7b322bb29">getAllQuestionList</a></td></tr>
+<tr class="memdesc:a9b3c6181db26b323c39dded7b322bb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all questions.  <a href="#a9b3c6181db26b323c39dded7b322bb29">More...</a><br /></td></tr>
+<tr class="separator:a9b3c6181db26b323c39dded7b322bb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a802dd747c81253476a7783ccdfd6aeab"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a802dd747c81253476a7783ccdfd6aeab">getMyQuestionList</a></td></tr>
+<tr class="memdesc:a802dd747c81253476a7783ccdfd6aeab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get My questions.  <a href="#a802dd747c81253476a7783ccdfd6aeab">More...</a><br /></td></tr>
+<tr class="separator:a802dd747c81253476a7783ccdfd6aeab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f032a48f7c94ccf7ffbf73af3ffb59c"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a6f032a48f7c94ccf7ffbf73af3ffb59c">getOpenQuestionList</a></td></tr>
+<tr class="memdesc:a6f032a48f7c94ccf7ffbf73af3ffb59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Open questions.  <a href="#a6f032a48f7c94ccf7ffbf73af3ffb59c">More...</a><br /></td></tr>
+<tr class="separator:a6f032a48f7c94ccf7ffbf73af3ffb59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a19008a9fabf8d76547f118ffd5da5a"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a4a19008a9fabf8d76547f118ffd5da5a">getDismissedQuestionList</a></td></tr>
+<tr class="memdesc:a4a19008a9fabf8d76547f118ffd5da5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Dismissed questions.  <a href="#a4a19008a9fabf8d76547f118ffd5da5a">More...</a><br /></td></tr>
+<tr class="separator:a4a19008a9fabf8d76547f118ffd5da5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af003aa7caaf893f7818f2ebfc5bda3b2"><td class="memItemLeft" align="right" valign="top">(nullable NSArray *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#af003aa7caaf893f7818f2ebfc5bda3b2">getAnsweredQuestionList</a></td></tr>
+<tr class="memdesc:af003aa7caaf893f7818f2ebfc5bda3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Answered questions.  <a href="#af003aa7caaf893f7818f2ebfc5bda3b2">More...</a><br /></td></tr>
+<tr class="separator:af003aa7caaf893f7818f2ebfc5bda3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f1156888ea22e1a3a7e1f2a231fda2b"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7f1156888ea22e1a3a7e1f2a231fda2b">getALLQuestionCount</a></td></tr>
+<tr class="memdesc:a7f1156888ea22e1a3a7e1f2a231fda2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of all questions.  <a href="#a7f1156888ea22e1a3a7e1f2a231fda2b">More...</a><br /></td></tr>
+<tr class="separator:a7f1156888ea22e1a3a7e1f2a231fda2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fca1604288c858586beaf54ffb159e2"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7fca1604288c858586beaf54ffb159e2">getMyQuestionCount</a></td></tr>
+<tr class="memdesc:a7fca1604288c858586beaf54ffb159e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of my questions.  <a href="#a7fca1604288c858586beaf54ffb159e2">More...</a><br /></td></tr>
+<tr class="separator:a7fca1604288c858586beaf54ffb159e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e6811b5b4373b9ed1afef984d1a237"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a39e6811b5b4373b9ed1afef984d1a237">getOpenQuestionCount</a></td></tr>
+<tr class="memdesc:a39e6811b5b4373b9ed1afef984d1a237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of Open questions.  <a href="#a39e6811b5b4373b9ed1afef984d1a237">More...</a><br /></td></tr>
+<tr class="separator:a39e6811b5b4373b9ed1afef984d1a237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d865a80bd4b1fd0edfc9012a18b4d88"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5d865a80bd4b1fd0edfc9012a18b4d88">getDismissedQuestionCount</a></td></tr>
+<tr class="memdesc:a5d865a80bd4b1fd0edfc9012a18b4d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of dissmissed questions.  <a href="#a5d865a80bd4b1fd0edfc9012a18b4d88">More...</a><br /></td></tr>
+<tr class="separator:a5d865a80bd4b1fd0edfc9012a18b4d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86b2782d19b96d0b7fb095b10c9238c5"><td class="memItemLeft" align="right" valign="top">(int)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a86b2782d19b96d0b7fb095b10c9238c5">getAnsweredQuestionCount</a></td></tr>
+<tr class="memdesc:a86b2782d19b96d0b7fb095b10c9238c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of answered questions.  <a href="#a86b2782d19b96d0b7fb095b10c9238c5">More...</a><br /></td></tr>
+<tr class="separator:a86b2782d19b96d0b7fb095b10c9238c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0169cc030cd416a20cda648c75de3527"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_mobile_r_t_c_q_a_item.html">MobileRTCQAItem</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a0169cc030cd416a20cda648c75de3527">getQuestion:</a></td></tr>
+<tr class="memdesc:a0169cc030cd416a20cda648c75de3527"><td class="mdescLeft">&#160;</td><td class="mdescRight">get question item by questionID.  <a href="#a0169cc030cd416a20cda648c75de3527">More...</a><br /></td></tr>
+<tr class="separator:a0169cc030cd416a20cda648c75de3527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc581e25d89b84f1268c3f82d0e2f0bf"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_mobile_r_t_c_q_a_answer_item.html">MobileRTCQAAnswerItem</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#abc581e25d89b84f1268c3f82d0e2f0bf">getAnswer:</a></td></tr>
+<tr class="memdesc:abc581e25d89b84f1268c3f82d0e2f0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">get answer item by questionID.  <a href="#abc581e25d89b84f1268c3f82d0e2f0bf">More...</a><br /></td></tr>
+<tr class="separator:abc581e25d89b84f1268c3f82d0e2f0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e58d3e496eeeecd798368986cb20b78"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a8e58d3e496eeeecd798368986cb20b78">addQuestion:anonymous:</a></td></tr>
+<tr class="memdesc:a8e58d3e496eeeecd798368986cb20b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add Quesion.  <a href="#a8e58d3e496eeeecd798368986cb20b78">More...</a><br /></td></tr>
+<tr class="separator:a8e58d3e496eeeecd798368986cb20b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9b7354b8675cdbde62141e75faa7c7e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#ad9b7354b8675cdbde62141e75faa7c7e">answerQuestionPrivate:answerContent:</a></td></tr>
+<tr class="memdesc:ad9b7354b8675cdbde62141e75faa7c7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Answer quesion in private.  <a href="#ad9b7354b8675cdbde62141e75faa7c7e">More...</a><br /></td></tr>
+<tr class="separator:ad9b7354b8675cdbde62141e75faa7c7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89340400321a8d16ffa10b64862814f0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a89340400321a8d16ffa10b64862814f0">answerQuestionPublic:answerContent:</a></td></tr>
+<tr class="memdesc:a89340400321a8d16ffa10b64862814f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Answer Quesion.  <a href="#a89340400321a8d16ffa10b64862814f0">More...</a><br /></td></tr>
+<tr class="separator:a89340400321a8d16ffa10b64862814f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6a375241a0a3c57e61590771d7ceb1e"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#af6a375241a0a3c57e61590771d7ceb1e">commentQuestion:commentContent:</a></td></tr>
+<tr class="memdesc:af6a375241a0a3c57e61590771d7ceb1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attendee comment Quesion.  <a href="#af6a375241a0a3c57e61590771d7ceb1e">More...</a><br /></td></tr>
+<tr class="separator:af6a375241a0a3c57e61590771d7ceb1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f95c450c69b63545105dec36f98537"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aa3f95c450c69b63545105dec36f98537">dismissQuestion:</a></td></tr>
+<tr class="memdesc:aa3f95c450c69b63545105dec36f98537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dismiss Quesion.  <a href="#aa3f95c450c69b63545105dec36f98537">More...</a><br /></td></tr>
+<tr class="separator:aa3f95c450c69b63545105dec36f98537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4cd9bf6d9e6f16bbf10fb5d3b24fb21"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#aa4cd9bf6d9e6f16bbf10fb5d3b24fb21">reopenQuestion:</a></td></tr>
+<tr class="memdesc:aa4cd9bf6d9e6f16bbf10fb5d3b24fb21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reopen Quesion.  <a href="#aa4cd9bf6d9e6f16bbf10fb5d3b24fb21">More...</a><br /></td></tr>
+<tr class="separator:aa4cd9bf6d9e6f16bbf10fb5d3b24fb21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a36903bd2916038c2c0ba740fbd5b39"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a7a36903bd2916038c2c0ba740fbd5b39">voteupQuestion:voteup:</a></td></tr>
+<tr class="memdesc:a7a36903bd2916038c2c0ba740fbd5b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vote up Quesion.  <a href="#a7a36903bd2916038c2c0ba740fbd5b39">More...</a><br /></td></tr>
+<tr class="separator:a7a36903bd2916038c2c0ba740fbd5b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc12495795c7e41e1e9f25294bf139d7"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#afc12495795c7e41e1e9f25294bf139d7">startLiving:</a></td></tr>
+<tr class="memdesc:afc12495795c7e41e1e9f25294bf139d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">startLiving Quesion.  <a href="#afc12495795c7e41e1e9f25294bf139d7">More...</a><br /></td></tr>
+<tr class="separator:afc12495795c7e41e1e9f25294bf139d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c128e7595b8a14952961e772c57c15"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a24c128e7595b8a14952961e772c57c15">endLiving:</a></td></tr>
+<tr class="memdesc:a24c128e7595b8a14952961e772c57c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">endLiving Quesion.  <a href="#a24c128e7595b8a14952961e772c57c15">More...</a><br /></td></tr>
+<tr class="separator:a24c128e7595b8a14952961e772c57c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aefa28ce95581e698c86183702d02b524"><td class="memItemLeft" align="right" valign="top"><a id="aefa28ce95581e698c86183702d02b524"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>instead</b></td></tr>
+<tr class="separator:aefa28ce95581e698c86183702d02b524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -516,6 +640,10 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html
 id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate-p.html">MobileRTCCustomizedUIMeetingDelegate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_meeting_service.html#ab74b8faa9c07c3084fa466c28370cfa2">customizedUImeetingDelegate</a></td></tr>
 <tr class="memdesc:ab74b8faa9c07c3084fa466c28370cfa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback of receiving meeting events for custom UI. <br /></td></tr>
 <tr class="separator:ab74b8faa9c07c3084fa466c28370cfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a376d72987e719c337cb78f1ea29f202d"><td class="memItemLeft" align="right" valign="top"><a id="a376d72987e719c337cb78f1ea29f202d"></a>
+UIView *_Nullable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_meeting_service.html#a376d72987e719c337cb78f1ea29f202d">previewView</a></td></tr>
+<tr class="memdesc:a376d72987e719c337cb78f1ea29f202d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The preview for inspect the virtual background effect. <br /></td></tr>
+<tr class="separator:a376d72987e719c337cb78f1ea29f202d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The method is an implementation for client to start/join a meeting. </p>
@@ -562,6 +690,70 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 <dl class="section return"><dt>Returns</dt><dd>Active user ID. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#a6c163721d526d69f1ff3736326fa16d2">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="afd5eb368f77a0fd8dcb4e685aceafe1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd5eb368f77a0fd8dcb4e685aceafe1a">&#9670;&nbsp;</a></span>addBGImage:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) addBGImage: </td>
+          <td></td>
+          <td class="paramtype">(UIImage *_Nonnull)&#160;</td>
+          <td class="paramname"><em>image</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>add and use the image for virtual background. </p>
+<dl class="section return"><dt>Returns</dt><dd>Add and use virtual background result. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#afd5eb368f77a0fd8dcb4e685aceafe1a">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
+<a id="a8e58d3e496eeeecd798368986cb20b78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e58d3e496eeeecd798368986cb20b78">&#9670;&nbsp;</a></span>addQuestion:anonymous:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) addQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>content</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">anonymous:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>anonymous</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">content</td><td>question content. </td></tr>
+    <tr><td class="paramname">anonymous</td><td>if true anonymously. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only attendee can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a8e58d3e496eeeecd798368986cb20b78">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -636,8 +828,8 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 
 </div>
 </div>
-<a id="af264956e846ad604792e5e41059413ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af264956e846ad604792e5e41059413ff">&#9670;&nbsp;</a></span>allowAttendeeAnswerQuestion:()</h2>
+<a id="a0d2582d2629ed90ee16a35db98fbe790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d2582d2629ed90ee16a35db98fbe790">&#9670;&nbsp;</a></span>allowAttendeeAnswerQuestion:()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,8 +837,8 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
         <tr>
           <td class="memname">- (BOOL) allowAttendeeAnswerQuestion: </td>
           <td></td>
-          <td class="paramtype">(BOOL)&#160;</td>
-          <td class="paramname"><em>enable</em></td>
+          <td class="paramtype">(&quot;Had deprecated. Please use -(BOOL)<a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a87cd03c1b2f012cc21e8aeec1197c855">allowCommentQuestion:</a>(BOOL)enable; instead&quot;)&#160;</td>
+          <td class="paramname"><em>DEPRECATED_MSG_ATTRIBUTE</em></td>
           <td></td>
         </tr>
       </table>
@@ -662,7 +854,7 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 <dl class="section return"><dt>Returns</dt><dd>YES means that the method is called successfully, otherwise not. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host can run the function. </dd></dl>
 
-<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#af264956e846ad604792e5e41059413ff">MobileRTCMeetingService(Webinar)</a>.</p>
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a0d2582d2629ed90ee16a35db98fbe790">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -750,6 +942,36 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 
 </div>
 </div>
+<a id="a87cd03c1b2f012cc21e8aeec1197c855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87cd03c1b2f012cc21e8aeec1197c855">&#9670;&nbsp;</a></span>allowCommentQuestion:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) allowCommentQuestion: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>enable</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Allow attendee to comment question. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Enable</td><td>Allow/Disallow attendee to comment question. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means that the method is called successfully, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a87cd03c1b2f012cc21e8aeec1197c855">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
 <a id="ad65364345ea0631725f045e6b39ac688"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad65364345ea0631725f045e6b39ac688">&#9670;&nbsp;</a></span>allowPanelistStartVideo:()</h2>
 
@@ -777,6 +999,89 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_customized_u_i_meeting_delegate
 <dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host can run the function. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#ad65364345ea0631725f045e6b39ac688">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="ad9b7354b8675cdbde62141e75faa7c7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9b7354b8675cdbde62141e75faa7c7e">&#9670;&nbsp;</a></span>answerQuestionPrivate:answerContent:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) answerQuestionPrivate: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">answerContent:</td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>answerContent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Answer quesion in private. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+    <tr><td class="paramname">content</td><td>question content. </td></tr>
+    <tr><td class="paramname">destUserID</td><td>destination userId. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#ad9b7354b8675cdbde62141e75faa7c7e">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a89340400321a8d16ffa10b64862814f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89340400321a8d16ffa10b64862814f0">&#9670;&nbsp;</a></span>answerQuestionPublic:answerContent:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) answerQuestionPublic: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">answerContent:</td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>answerContent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Answer Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+    <tr><td class="paramname">content</td><td>question content. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a89340400321a8d16ffa10b64862814f0">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -916,6 +1221,28 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>attendee info, a <a class="el" href="interface_mobile_r_t_c_meeting_webinar_attendee_info.html" title="The information of user in the webinar. ">MobileRTCMeetingWebinarAttendeeInfo</a> object. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#a83b25f4bb47679facf93635975b3cec3">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="a072c636b21c28cb75f0c1ea0f3909287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a072c636b21c28cb75f0c1ea0f3909287">&#9670;&nbsp;</a></span>backZoomUIMeetingFromMinimizeMeeting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) backZoomUIMeetingFromMinimizeMeeting </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>call the methond to back Zoom UI meeting when in minimize meeting. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The method only for Zoom UI </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a072c636b21c28cb75f0c1ea0f3909287">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -1084,6 +1411,7 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 <p>set Attendee Chat Priviledge when in-meeting </p>
 <dl class="section return"><dt>Returns</dt><dd>YES means sucessfull, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host can run the function. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#a0582c60fbe1872fd20405be5c8a28013">MobileRTCMeetingService(Chat)</a>.</p>
 
@@ -1156,6 +1484,47 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>YES means that the method is called successfully, otherwise not. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#a1a999888e79866d626b85c305cad1b3a">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="af6a375241a0a3c57e61590771d7ceb1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6a375241a0a3c57e61590771d7ceb1e">&#9670;&nbsp;</a></span>commentQuestion:commentContent:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) commentQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">commentContent:</td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>commentContent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Attendee comment Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+    <tr><td class="paramname">commentContent</td><td>comment content. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting attendee can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#af6a375241a0a3c57e61590771d7ceb1e">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -1352,6 +1721,213 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="aa3f95c450c69b63545105dec36f98537"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f95c450c69b63545105dec36f98537">&#9670;&nbsp;</a></span>dismissQuestion:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) dismissQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dismiss Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#aa3f95c450c69b63545105dec36f98537">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="ad2ae01597a6c4113378e8b88e59f1bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2ae01597a6c4113378e8b88e59f1bb6">&#9670;&nbsp;</a></span>enableGreenVB:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) enableGreenVB: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>enable</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable green virtual background mode. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>or disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result of enable green virtual background. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#ad2ae01597a6c4113378e8b88e59f1bb6">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
+<a id="a24c128e7595b8a14952961e772c57c15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24c128e7595b8a14952961e772c57c15">&#9670;&nbsp;</a></span>endLiving:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) endLiving: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>endLiving Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a24c128e7595b8a14952961e772c57c15">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a7f1156888ea22e1a3a7e1f2a231fda2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f1156888ea22e1a3a7e1f2a231fda2b">&#9670;&nbsp;</a></span>getALLQuestionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getALLQuestionCount </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the amount of all questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of all questions. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a7f1156888ea22e1a3a7e1f2a231fda2b">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a9b3c6181db26b323c39dded7b322bb29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b3c6181db26b323c39dded7b322bb29">&#9670;&nbsp;</a></span>getAllQuestionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable NSArray *) getAllQuestionList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get all questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>All questions list. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a9b3c6181db26b323c39dded7b322bb29">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="abc581e25d89b84f1268c3f82d0e2f0bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc581e25d89b84f1268c3f82d0e2f0bf">&#9670;&nbsp;</a></span>getAnswer:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable <a class="el" href="interface_mobile_r_t_c_q_a_answer_item.html">MobileRTCQAAnswerItem</a> *) getAnswer: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>answerID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get answer item by questionID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">answerID</td><td>answer id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the answer item. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#abc581e25d89b84f1268c3f82d0e2f0bf">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a86b2782d19b96d0b7fb095b10c9238c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b2782d19b96d0b7fb095b10c9238c5">&#9670;&nbsp;</a></span>getAnsweredQuestionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getAnsweredQuestionCount </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the amount of answered questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of open-ended questions. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a86b2782d19b96d0b7fb095b10c9238c5">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="af003aa7caaf893f7818f2ebfc5bda3b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af003aa7caaf893f7818f2ebfc5bda3b2">&#9670;&nbsp;</a></span>getAnsweredQuestionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable NSArray *) getAnsweredQuestionList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Answered questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Answered questions list. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#af003aa7caaf893f7818f2ebfc5bda3b2">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
 <a id="ae73fdda799d5dffb101bd5f7316547fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae73fdda799d5dffb101bd5f7316547fd">&#9670;&nbsp;</a></span>getAttendeeChatPriviledge()</h2>
 
@@ -1371,6 +1947,28 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>the result of attendee chat priviledge; </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_chat_08.html#ae73fdda799d5dffb101bd5f7316547fd">MobileRTCMeetingService(Chat)</a>.</p>
+
+</div>
+</div>
+<a id="a58f3352679752381f698bd3d8c9b5131"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58f3352679752381f698bd3d8c9b5131">&#9670;&nbsp;</a></span>getBGImageList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSArray * _Nonnull) getBGImageList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the virtual background list. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return Narray of the items which include the None item. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a58f3352679752381f698bd3d8c9b5131">MobileRTCMeetingService(VirtualBackground)</a>.</p>
 
 </div>
 </div>
@@ -1438,6 +2036,51 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>The object of <a class="el" href="interface_mobile_r_t_c_call_country_code.html">MobileRTCCallCountryCode</a> for user's locale. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#ab809b26b8ad4a607261c94dcc97908ac">MobileRTCMeetingService(Customize)</a>.</p>
+
+</div>
+</div>
+<a id="a5d865a80bd4b1fd0edfc9012a18b4d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d865a80bd4b1fd0edfc9012a18b4d88">&#9670;&nbsp;</a></span>getDismissedQuestionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getDismissedQuestionCount </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the amount of dissmissed questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of open-ended questions. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a5d865a80bd4b1fd0edfc9012a18b4d88">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a4a19008a9fabf8d76547f118ffd5da5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a19008a9fabf8d76547f118ffd5da5a">&#9670;&nbsp;</a></span>getDismissedQuestionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable NSArray *) getDismissedQuestionList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Dismissed questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Dismissed questions list. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a4a19008a9fabf8d76547f118ffd5da5a">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -1531,6 +2174,28 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="afa1810832f4d35f94c384ab63102d75f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa1810832f4d35f94c384ab63102d75f">&#9670;&nbsp;</a></span>getMeetingPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString *_Nullable) getMeetingPassword </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get current meeting's password. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current meeting's password </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#afa1810832f4d35f94c384ab63102d75f">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
 <a id="a099d05b57a33d7d051bf8192b2ff1905"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a099d05b57a33d7d051bf8192b2ff1905">&#9670;&nbsp;</a></span>getMeetingState()</h2>
 
@@ -1549,6 +2214,96 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <p>Get the current meeting state. <br />
  </p>
 <dl class="section return"><dt>Returns</dt><dd>Current meeting state. </dd></dl>
+
+</div>
+</div>
+<a id="a7fca1604288c858586beaf54ffb159e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fca1604288c858586beaf54ffb159e2">&#9670;&nbsp;</a></span>getMyQuestionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getMyQuestionCount </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the amount of my questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of open-ended questions. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a7fca1604288c858586beaf54ffb159e2">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a802dd747c81253476a7783ccdfd6aeab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a802dd747c81253476a7783ccdfd6aeab">&#9670;&nbsp;</a></span>getMyQuestionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable NSArray *) getMyQuestionList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get My questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>My questions list. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only attendee can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a802dd747c81253476a7783ccdfd6aeab">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a39e6811b5b4373b9ed1afef984d1a237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e6811b5b4373b9ed1afef984d1a237">&#9670;&nbsp;</a></span>getOpenQuestionCount()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (int) getOpenQuestionCount </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the amount of Open questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Amount of open-ended questions. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a39e6811b5b4373b9ed1afef984d1a237">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a6f032a48f7c94ccf7ffbf73af3ffb59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f032a48f7c94ccf7ffbf73af3ffb59c">&#9670;&nbsp;</a></span>getOpenQuestionList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable NSArray *) getOpenQuestionList </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get Open questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>Open questions list. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a6f032a48f7c94ccf7ffbf73af3ffb59c">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -1571,6 +2326,35 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>The Participant ID. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#aaa404ebc98807aad9d4bd4685181d6b9">MobileRTCMeetingService(Customize)</a>.</p>
+
+</div>
+</div>
+<a id="a0169cc030cd416a20cda648c75de3527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0169cc030cd416a20cda648c75de3527">&#9670;&nbsp;</a></span>getQuestion:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (nullable <a class="el" href="interface_mobile_r_t_c_q_a_item.html">MobileRTCQAItem</a> *) getQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get question item by questionID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the question item. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a0169cc030cd416a20cda648c75de3527">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -1819,28 +2603,6 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
-<a id="aa0b3e209f8a6df4b4c31084cd5963262"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa0b3e209f8a6df4b4c31084cd5963262">&#9670;&nbsp;</a></span>isAllowAttendeeAnswerQuestion()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) isAllowAttendeeAnswerQuestion </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Query if attendee is allowed to comment questions. </p>
-<dl class="section return"><dt>Returns</dt><dd>YES means allowed, otherwise not. </dd></dl>
-
-<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#aa0b3e209f8a6df4b4c31084cd5963262">MobileRTCMeetingService(Webinar)</a>.</p>
-
-</div>
-</div>
 <a id="a8c2a1e944dbbc53345282264ab4338d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c2a1e944dbbc53345282264ab4338d9">&#9670;&nbsp;</a></span>isAllowAttendeeTalk:()</h2>
 
@@ -1912,6 +2674,50 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>YES means allowed, otherwise not. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a128ceb822869230880e62af3e5896cf9">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="a0dbb1ee4ca3c1c904e0c57fc3ad43459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbb1ee4ca3c1c904e0c57fc3ad43459">&#9670;&nbsp;</a></span>isAllowCommentQuestion() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (&quot;Had deprecated. Please use - (BOOL) isAllowCommentQuestion </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if attendee is allowed to comment questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means allowed, otherwise not. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a0dbb1ee4ca3c1c904e0c57fc3ad43459">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
+<a id="ac3b9b05d01a0ea72a9cf1e007c0bbd67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b9b05d01a0ea72a9cf1e007c0bbd67">&#9670;&nbsp;</a></span>isAllowCommentQuestion() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isAllowCommentQuestion </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if attendee is allowed to comment questions. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means allowed, otherwise not. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#ac3b9b05d01a0ea72a9cf1e007c0bbd67">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -2612,6 +3418,50 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="a561b9bd53bfa6fd748f779f4f8680dd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a561b9bd53bfa6fd748f779f4f8680dd2">&#9670;&nbsp;</a></span>isSupportSmartVirtualBG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isSupportSmartVirtualBG </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>is Support smart virtual background. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES mean support, you can use it. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a561b9bd53bfa6fd748f779f4f8680dd2">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
+<a id="a1d73057cb5c054b6c493c5e68a6dae97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d73057cb5c054b6c493c5e68a6dae97">&#9670;&nbsp;</a></span>isSupportVirtualBG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isSupportVirtualBG </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>is support virtual background. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES mean support, you can use it. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a1d73057cb5c054b6c493c5e68a6dae97">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
 <a id="a9068902d8da08a43af339663d7b2b7c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9068902d8da08a43af339663d7b2b7c0">&#9670;&nbsp;</a></span>isUserAudioMuted:()</h2>
 
@@ -2729,6 +3579,28 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="a3fcbb118487ff3a75a9f398ace0f4df5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fcbb118487ff3a75a9f398ace0f4df5">&#9670;&nbsp;</a></span>isUsingGreenVB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isUsingGreenVB </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>is using green virtual background. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return yes if using green virtual background. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a3fcbb118487ff3a75a9f398ace0f4df5">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
 <a id="ad2dbf5434205f31e4563419ae8b7067b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad2dbf5434205f31e4563419ae8b7067b">&#9670;&nbsp;</a></span>isViewingShare()</h2>
 
@@ -2748,6 +3620,29 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>YES means that user is viewing the share, otherwise not. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#ad2dbf5434205f31e4563419ae8b7067b">MobileRTCMeetingService(AppShare)</a>.</p>
+
+</div>
+</div>
+<a id="a71a8aa5af60ac05d123fec3b8d98f0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a8aa5af60ac05d123fec3b8d98f0e6">&#9670;&nbsp;</a></span>isWebinarAttendee()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isWebinarAttendee </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if the current user is the webinar attendee of the meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means that the current user is the webinar attendee of the meeting, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only for webinar meeting. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a71a8aa5af60ac05d123fec3b8d98f0e6">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -2771,6 +3666,29 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section warning"><dt>Warning</dt><dd>It will return NO as MobileRTCMeetingState is not equal to MobileRTCMeetingState_InMeeting. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a9e79ea9745d6dde7037ca8c3e6747c5a">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
+<a id="ac520f585320b0cba581063a86dc4be14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac520f585320b0cba581063a86dc4be14">&#9670;&nbsp;</a></span>isWebinarPanelist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isWebinarPanelist </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if the current user is the webinar panelist of the meeting. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means that the current user is the webinar panelist of the meeting, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only for webinar meeting. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#ac520f585320b0cba581063a86dc4be14">MobileRTCMeetingService(InMeeting)</a>.</p>
 
 </div>
 </div>
@@ -3472,6 +4390,29 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="a1099cd0cec57f1bb9c57fcb14180055c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1099cd0cec57f1bb9c57fcb14180055c">&#9670;&nbsp;</a></span>removeBGImage:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) removeBGImage: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_zoom_s_d_k_virtual_b_g_image_info.html">ZoomSDKVirtualBGImageInfo</a> *_Nonnull)&#160;</td>
+          <td class="paramname"><em>bgImageInfo</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove image item form image list. </p>
+<p>Will use the previous one for virtual background. </p><dl class="section return"><dt>Returns</dt><dd>Remove result. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a1099cd0cec57f1bb9c57fcb14180055c">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
 <a id="a22e8fcd0ad92426b8abdf1001561d145"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a22e8fcd0ad92426b8abdf1001561d145">&#9670;&nbsp;</a></span>removeUser:()</h2>
 
@@ -3499,6 +4440,36 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section warning"><dt>Warning</dt><dd>The method is available only for the host, and the host can not remove himself. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#a22e8fcd0ad92426b8abdf1001561d145">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="aa4cd9bf6d9e6f16bbf10fb5d3b24fb21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4cd9bf6d9e6f16bbf10fb5d3b24fb21">&#9670;&nbsp;</a></span>reopenQuestion:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) reopenQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reopen Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#aa4cd9bf6d9e6f16bbf10fb5d3b24fb21">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>
@@ -3545,6 +4516,35 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section warning"><dt>Warning</dt><dd>Only meeting host can run the function. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#a07c6cf0ae5e0522907d0498085f60e71">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="adc7ad895a2c179b7dbadb6523e89dd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc7ad895a2c179b7dbadb6523e89dd60">&#9670;&nbsp;</a></span>selectGreenVBPoint:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) selectGreenVBPoint: </td>
+          <td></td>
+          <td class="paramtype">(CGPoint)&#160;</td>
+          <td class="paramname"><em>point</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Select the point that regard as background. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">point</td><td>in preview view. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>result of set background point action. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#adc7ad895a2c179b7dbadb6523e89dd60">MobileRTCMeetingService(VirtualBackground)</a>.</p>
 
 </div>
 </div>
@@ -3691,6 +4691,28 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="a25de310a3d56ef5a9aa83f9d41d45413"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25de310a3d56ef5a9aa83f9d41d45413">&#9670;&nbsp;</a></span>showMinimizeMeetingFromZoomUIMeeting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) showMinimizeMeetingFromZoomUIMeeting </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>call the method to show Minimize meeting when in Zoom UI meeting. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The method only for Zoom UI. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a25de310a3d56ef5a9aa83f9d41d45413">MobileRTCMeetingService(InMeeting)</a>.</p>
+
+</div>
+</div>
 <a id="a68d13a2a06c67c129fe056e636e9c05e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68d13a2a06c67c129fe056e636e9c05e">&#9670;&nbsp;</a></span>showMobileRTCMeeting:()</h2>
 
@@ -3832,6 +4854,36 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="afc12495795c7e41e1e9f25294bf139d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc12495795c7e41e1e9f25294bf139d7">&#9670;&nbsp;</a></span>startLiving:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) startLiving: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>startLiving Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#afc12495795c7e41e1e9f25294bf139d7">MobileRTCMeetingService(Webinar)</a>.</p>
+
+</div>
+</div>
 <a id="afd4b41c2ef0a0e0ca98c52370d48255b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd4b41c2ef0a0e0ca98c52370d48255b">&#9670;&nbsp;</a></span>startMeetingWithDictionary:()</h2>
 
@@ -3887,6 +4939,29 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The state of the meeting, started or failed. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>If you start a meeting with wrong parameters, it will return MobileRTCMeetError_InvalidArguments. </dd></dl>
+
+</div>
+</div>
+<a id="a165d431accb57f3e14b5e0b1721ab933"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165d431accb57f3e14b5e0b1721ab933">&#9670;&nbsp;</a></span>startPreviewWithFrame:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) startPreviewWithFrame: </td>
+          <td></td>
+          <td class="paramtype">(CGRect)&#160;</td>
+          <td class="paramname"><em>frame</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Start preview for inspect the virtual background effect. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES mean preview is ready. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a165d431accb57f3e14b5e0b1721ab933">MobileRTCMeetingService(VirtualBackground)</a>.</p>
 
 </div>
 </div>
@@ -4040,6 +5115,51 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 
 </div>
 </div>
+<a id="a0b90512568779356ff7cd591cf9e76b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b90512568779356ff7cd591cf9e76b3">&#9670;&nbsp;</a></span>useBGImage:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) useBGImage: </td>
+          <td></td>
+          <td class="paramtype">(<a class="el" href="interface_zoom_s_d_k_virtual_b_g_image_info.html">ZoomSDKVirtualBGImageInfo</a> *_Nonnull)&#160;</td>
+          <td class="paramname"><em>bgImage</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>use the specify image item for virtual background. </p>
+<dl class="section return"><dt>Returns</dt><dd>The result of use image item. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a0b90512568779356ff7cd591cf9e76b3">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
+<a id="aa3f88bc4bbaf3ef36e840a16ff1472f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f88bc4bbaf3ef36e840a16ff1472f5">&#9670;&nbsp;</a></span>useNoneImage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (MobileRTCMeetError) useNoneImage </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Disable the virtrual background, same as use a none image item. </p>
+<dl class="section return"><dt>Returns</dt><dd>The result of disable virtual background. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#aa3f88bc4bbaf3ef36e840a16ff1472f5">MobileRTCMeetingService(VirtualBackground)</a>.</p>
+
+</div>
+</div>
 <a id="acb60d7f17ce841a42fae4e531ca3eb3a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acb60d7f17ce841a42fae4e531ca3eb3a">&#9670;&nbsp;</a></span>userInfoByID:()</h2>
 
@@ -4066,6 +5186,46 @@ It is not recommended to pass UIView after add subview WKWebView or UIImageView.
 <dl class="section return"><dt>Returns</dt><dd>User information. </dd></dl>
 
 <p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_user_08.html#acb60d7f17ce841a42fae4e531ca3eb3a">MobileRTCMeetingService(User)</a>.</p>
+
+</div>
+</div>
+<a id="a7a36903bd2916038c2c0ba740fbd5b39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a36903bd2916038c2c0ba740fbd5b39">&#9670;&nbsp;</a></span>voteupQuestion:voteup:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) voteupQuestion: </td>
+          <td></td>
+          <td class="paramtype">(nonnull NSString *)&#160;</td>
+          <td class="paramname"><em>questionID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">voteup:</td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>voteup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vote up Quesion. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">questionID</td><td>question id. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>successs or not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Only meeting host/co-host/panelist can run the function. </dd></dl>
+
+<p>Provided by category <a class="el" href="category_mobile_r_t_c_meeting_service_07_webinar_08.html#a7a36903bd2916038c2c0ba740fbd5b39">MobileRTCMeetingService(Webinar)</a>.</p>
 
 </div>
 </div>

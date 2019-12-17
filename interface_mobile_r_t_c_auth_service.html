@@ -119,6 +119,9 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
 <tr class="memitem:af2c7de9aa9669cf50d29b2a939dcde70"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_auth_service.html#af2c7de9aa9669cf50d29b2a939dcde70">clientSecret</a></td></tr>
 <tr class="memdesc:af2c7de9aa9669cf50d29b2a939dcde70"><td class="mdescLeft">&#160;</td><td class="mdescRight">APP secret got from zoom.us.  <a href="#af2c7de9aa9669cf50d29b2a939dcde70">More...</a><br /></td></tr>
 <tr class="separator:af2c7de9aa9669cf50d29b2a939dcde70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4145fe3c7cd4e39e5d77941345f3a1"><td class="memItemLeft" align="right" valign="top">NSString *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_auth_service.html#aec4145fe3c7cd4e39e5d77941345f3a1">jwtToken</a></td></tr>
+<tr class="memdesc:aec4145fe3c7cd4e39e5d77941345f3a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">jwt auth token.  <a href="#aec4145fe3c7cd4e39e5d77941345f3a1">More...</a><br /></td></tr>
+<tr class="separator:aec4145fe3c7cd4e39e5d77941345f3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The method provides support for authorizing <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a>. </p>
@@ -307,7 +310,9 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
 </div><div class="memdoc">
 
 <p>Authenticate SDK. </p>
-<dl class="section warning"><dt>Warning</dt><dd>If the key or secret of client is blank, user will get error:MobileRTCAuthError_KeyOrSecretEmpty via onMobileRTCAuthReturn defined in MobileRTCAuthDelegate. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>if you want to auth with jwt token, please fill the token property. Otherwise, please fill the client key and client secret property. </dd>
+<dd>
+If the key or secret of client is blank, user will get error:MobileRTCAuthError_KeyOrSecretEmpty via onMobileRTCAuthReturn defined in MobileRTCAuthDelegate. </dd></dl>
 
 </div>
 </div>
@@ -359,6 +364,31 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
 
 <p>APP secret got from zoom.us. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Keep the value as a secret. DO NOT publish it. </dd></dl>
+
+</div>
+</div>
+<a id="aec4145fe3c7cd4e39e5d77941345f3a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4145fe3c7cd4e39e5d77941345f3a1">&#9670;&nbsp;</a></span>jwtToken</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (NSString*) jwtToken</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">retain</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>jwt auth token. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Keep the value as a secret. DO NOT publish it. If jwtToken is nil or empty,We will user your appKey and appSecret to Auth, We recommend using JWT Token, and generate JWT Token on your web backend. </dd></dl>
 
 </div>
 </div>

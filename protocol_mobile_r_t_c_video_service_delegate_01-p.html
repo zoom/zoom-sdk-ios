@@ -107,6 +107,9 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a3ee8a82b437c207a9a2919ce0e80fdb9">onSinkMeetingVideoRequestUnmuteByHost:</a></td></tr>
 <tr class="memdesc:a3ee8a82b437c207a9a2919ce0e80fdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that host requests to unmute the user's video. <br /></td></tr>
 <tr class="separator:a3ee8a82b437c207a9a2919ce0e80fdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7f32f381859984452b417679a2c41a"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a2a7f32f381859984452b417679a2c41a">onSinkMeetingShowMinimizeMeetingOrBackZoomUI:</a></td></tr>
+<tr class="memdesc:a2a7f32f381859984452b417679a2c41a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that show minimize meeting or back zoom UI.  <a href="#a2a7f32f381859984452b417679a2c41a">More...</a><br /></td></tr>
+<tr class="separator:a2a7f32f381859984452b417679a2c41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a id="a337971664212d20e1f263ff6c4b3402e"></a>
@@ -148,6 +151,33 @@ Instance Methods</h2></td></tr>
 
 <p>Callback event of active video changes when there is a new speaker. </p>
 <dl class="section return"><dt>Returns</dt><dd>UserID of new speaker. </dd></dl>
+
+</div>
+</div>
+<a id="a2a7f32f381859984452b417679a2c41a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7f32f381859984452b417679a2c41a">&#9670;&nbsp;</a></span>onSinkMeetingShowMinimizeMeetingOrBackZoomUI:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_video_service_delegate-p.html">MobileRTCVideoServiceDelegate</a>) onSinkMeetingShowMinimizeMeetingOrBackZoomUI: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCMinimizeMeetingState)&#160;</td>
+          <td class="paramname"><em>state</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback event that show minimize meeting or back zoom UI. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>The state of minimizeMeeting or ZoomUIMeeting. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>The call back only for ZoomUI, Custom UI will not be executed. </dd></dl>
 
 </div>
 </div>

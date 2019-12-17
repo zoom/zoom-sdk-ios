@@ -97,6 +97,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3640ae38cc08a3c9ec31544a45e1de3a"><td class="memItemLeft" align="right" valign="top">(NSArray *_Nullable)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_s_m_s_service.html#a3640ae38cc08a3c9ec31544a45e1de3a">getSupportPhoneNumberCountryList</a></td></tr>
 <tr class="memdesc:a3640ae38cc08a3c9ec31544a45e1de3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">getSupportPhoneNumberCountryList.  <a href="#a3640ae38cc08a3c9ec31544a45e1de3a">More...</a><br /></td></tr>
 <tr class="separator:a3640ae38cc08a3c9ec31544a45e1de3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83cf77e50d23c46166d61946af419fb5"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_s_m_s_service.html#a83cf77e50d23c46166d61946af419fb5">setDefaultCellPhoneInfo:phoneNum:</a></td></tr>
+<tr class="memdesc:a83cf77e50d23c46166d61946af419fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">set default cellphone for signed account.  <a href="#a83cf77e50d23c46166d61946af419fb5">More...</a><br /></td></tr>
+<tr class="separator:a83cf77e50d23c46166d61946af419fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -198,6 +201,44 @@ if failed, please try to get retrieve handle 60s later, and go to step 3. </dd>
 
 <p>getSupportPhoneNumberCountryList. </p>
 <dl class="section warning"><dt>Warning</dt><dd>get country code iist after call join meeting or start meeting interface. </dd></dl>
+
+</div>
+</div>
+<a id="a83cf77e50d23c46166d61946af419fb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83cf77e50d23c46166d61946af419fb5">&#9670;&nbsp;</a></span>setDefaultCellPhoneInfo:phoneNum:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setDefaultCellPhoneInfo: </td>
+          <td></td>
+          <td class="paramtype">(NSString *_Nullable)&#160;</td>
+          <td class="paramname"><em>countryCode</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">phoneNum:</td>
+          <td></td>
+          <td class="paramtype">(NSString *_Nullable)&#160;</td>
+          <td class="paramname"><em>phoneNum</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set default cellphone for signed account. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">countryCode,the</td><td>user account's country code. </td></tr>
+    <tr><td class="paramname">phoneNum,default</td><td>phoen number. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>yes, for set success. </dd></dl>
 
 </div>
 </div>
