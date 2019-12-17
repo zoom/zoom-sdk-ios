@@ -53,6 +53,8 @@
 		D000E97D219BF1AC00FC9275 /* arrow_right_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D000E96C219BF1AC00FC9275 /* arrow_right_normal@3x.png */; };
 		D000E97E219BF1AC00FC9275 /* arrow_left_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D000E96D219BF1AC00FC9275 /* arrow_left_normal@2x.png */; };
 		D012776922C21BC000024227 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D012776722C21BC000024227 /* WebViewController.m */; };
+		D020DAF02371819900E9D748 /* QAListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D020DAEC2371819700E9D748 /* QAListViewController.m */; };
+		D020DAF12371819900E9D748 /* QAListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D020DAEE2371819800E9D748 /* QAListTableViewCell.m */; };
 		D031005C21E301DC002CD293 /* Custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = D031005E21E301DC002CD293 /* Custom.strings */; };
 		D0400EA422CDC4D5008F7989 /* icon_meeting_audio_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0400E9F22CDC4D5008F7989 /* icon_meeting_audio_phone@2x.png */; };
 		D0400EA522CDC4D5008F7989 /* icon_meeting_audio_phone@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0400EA222CDC4D5008F7989 /* icon_meeting_audio_phone@3x.png */; };
@@ -296,6 +298,10 @@
 		D000E96D219BF1AC00FC9275 /* arrow_left_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left_normal@2x.png"; sourceTree = "<group>"; };
 		D012776422C21BC000024227 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D012776722C21BC000024227 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D020DAEC2371819700E9D748 /* QAListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAListViewController.m; sourceTree = "<group>"; };
+		D020DAED2371819700E9D748 /* QAListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAListViewController.h; sourceTree = "<group>"; };
+		D020DAEE2371819800E9D748 /* QAListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAListTableViewCell.m; sourceTree = "<group>"; };
+		D020DAEF2371819800E9D748 /* QAListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAListTableViewCell.h; sourceTree = "<group>"; };
 		D031005D21E301DC002CD293 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Custom.strings; sourceTree = "<group>"; };
 		D031005F21E301DF002CD293 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Custom.strings"; sourceTree = "<group>"; };
 		D0400E9F22CDC4D5008F7989 /* icon_meeting_audio_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_meeting_audio_phone@2x.png"; sourceTree = "<group>"; };
@@ -720,6 +726,10 @@
 				F70F8ACE20E4B4B400659FC4 /* CustomRemoteControl.m */,
 				D99540B920CFC313007AA8B2 /* AnnoFloatBarView.h */,
 				D99540BA20CFC313007AA8B2 /* AnnoFloatBarView.m */,
+				D020DAEF2371819800E9D748 /* QAListTableViewCell.h */,
+				D020DAEE2371819800E9D748 /* QAListTableViewCell.m */,
+				D020DAED2371819700E9D748 /* QAListViewController.h */,
+				D020DAEC2371819700E9D748 /* QAListViewController.m */,
 			);
 			path = CustomMeeting;
 			sourceTree = "<group>";
@@ -1226,6 +1236,7 @@
 				D057546921B7F53800FD95DA /* SDKStartJoinMeetingPresenter+VideoServiceDelegate.m in Sources */,
 				D0ECCE5521CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m in Sources */,
 				D05BBB5421A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m in Sources */,
+				D020DAF02371819900E9D748 /* QAListViewController.m in Sources */,
 				D05BBB3921A2B33000CD4A56 /* SDKInitPresenter.m in Sources */,
 				F75FDB761D6C370B004DC2FA /* LanguaguePickerViewController.m in Sources */,
 				D993152C1F553C6C005972DC /* ScheduleTableViewController.m in Sources */,
@@ -1244,6 +1255,7 @@
 				D0BAD47621A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m in Sources */,
 				917D169A22D4AEF900895DFF /* SSZipArchive.m in Sources */,
 				C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */,
+				D020DAF12371819900E9D748 /* QAListTableViewCell.m in Sources */,
 				D0ABEA5821A54AB900353F5D /* SDKActionPresenter.m in Sources */,
 				D000E93D219BF0B500FC9275 /* CustomMeetingViewController+MeetingDelegate.m in Sources */,
 				917D169622D4AEF900895DFF /* unzip.c in Sources */,

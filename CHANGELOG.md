@@ -1,18 +1,46 @@
 # CHANGELOG
 
+## 2019-12-16 @ [v4.4.57220.1211](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.57220.1211)
+
+## Added:
+* Add new interfaces for SDK initialization with JWT token.
+  * `@property (nullable, retain, nonatomic) NSString *jwtToken`
+* Add new interfaces to access the virtual background.
+  * The interfaces in `MobileRTCMeetingService+VirtualBackground.h`.
+* Add new interfaces and callbacks for minimizing/resuming meeting.
+  * `- (BOOL)showMinimizeMeetingFromZoomUIMeeting;`
+  *  `- (BOOL)backZoomUIMeetingFromMinimizeMeeting;`
+  * `- (void)onSinkMeetingShowMinimizeMeetingOrBackZoomUI:(MobileRTCMinimizeMeetingState)state;`
+* Add new interfaces for the Q&A feature in the webinar.
+  * The interfaces in `MobileRTCMeetingService+Webinar.h`
+* Add a new interface to show/hide the "My Connected Time".
+  * `- (BOOL)showMyMeetingElapseTime;`
+  * `- (void)enableShowMyMeetingElapseTime:(BOOL)enable;`
+* Add a new interface for users to get the meeting password while in the meeting.
+  * `- (NSString *_Nullable)getMeetingPassword;`
+* Add a callback to remind the user that free meeting will be ended in 10 minutes.
+  * ` - (void)onFreeMeetingReminder:
+       (BOOL)host
+       canFreeUpgrade:(BOOL)freeUpgrade
+       isFirstGift:(BOOL)first
+       completion:(void (^_Nonnull)(BOOL upgrade))completion;`
+
+## Changed & Fixed:
+* Fixed an issue that the attendee cannot get the chat privilege.
+* Fixed an issue that the meeting restarts for a few times after pressing the end meeting button.
+
 ## 2019-11-04 @ [v4.4.56624.1028](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.56624.1028)
 
 ## Added:
 * Add a new interface to hide the "Disconnect Audio" button
 * Add a new interface for SDK initialization
 * Add a new interface to hide the Q&A button and the POLL button
+* Add a new parameter in `presentMeetingChatViewController` to allow setting the chat as public or private
 
 ## Changed & Fixed:
 * Updated all interfaces that involves `UIWebView` and removed `UIWebView` in SDK since Apple is deprecating `UIWebView`
 * Fixed an issue that the SDK will crash by chance when doing a screen share
-* Fixed an issue that the `presentMeetingChatViewController` is not reflecting the "disable private chat" setting in Custom UI
 * Fixed some compatibility issues with iOS 13
-* Fixed an issue that the `onSinkMeetingActiveVideo` is not called for the 3rd user onwards
 * Fixed an issue that the Xcode is warning for `nullable` or `nonnull` in SDK
 * Fixed an issue that the crash file was created when the app is being killed by the system
 * Fixed an issue that the UI freeze when sharing a photo in landscape mode

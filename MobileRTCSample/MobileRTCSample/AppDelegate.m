@@ -34,7 +34,7 @@
     [[[SDKInitPresenter alloc] init] SDKInit:navVC];
     
     //4. MobileRTC Authorize
-    [[[SDKAuthPresenter alloc] init] SDKAuth];
+    [[[SDKAuthPresenter alloc] init] SDKAuth:kSDKKey clientSecret:kSDKSecret];
     
     return YES;
 }

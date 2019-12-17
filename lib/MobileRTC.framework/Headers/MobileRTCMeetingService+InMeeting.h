@@ -28,6 +28,20 @@
 - (BOOL)isMeetingCoHost;
 
 /*!
+ @brief Query if the current user is the webinar attendee of the meeting.
+ @return YES means that the current user is the webinar attendee of the meeting, otherwise not.
+ @warning only for webinar meeting.
+ */
+- (BOOL)isWebinarAttendee;
+
+/*!
+ @brief Query if the current user is the webinar panelist of the meeting.
+ @return YES means that the current user is the webinar panelist of the meeting, otherwise not.
+ @warning only for webinar meeting.
+ */
+- (BOOL)isWebinarPanelist;
+
+/*!
  @brief Notify if the meeting is locked by host. Once the meeting is locked, other users out of the meeting can no longer join it.
  @return YES means that the meeting is locked by host, otherwise not.
  */
@@ -227,6 +241,22 @@
  */
 - (BOOL)presentQAViewController:(nonnull UIViewController*)parentVC;
 
+/*!
+ @brief Get current meeting's password
+ @return The current meeting's password
+ */
+- (NSString *_Nullable)getMeetingPassword;
 
+/*!
+ @brief call the method to show Minimize meeting when in Zoom UI meeting.
+ @warning The method only for Zoom UI.
+ */
+- (BOOL)showMinimizeMeetingFromZoomUIMeeting;
+
+/*!
+ @brief call the methond to back Zoom UI meeting when in minimize meeting.
+ @warning The method only for Zoom UI
+ */
+- (BOOL)backZoomUIMeetingFromMinimizeMeeting;
 
 @end

@@ -219,16 +219,14 @@
 {
     if (MobileRTCMeetingState_InMeeting == state) {
         
+        [self addThumberViewWithArr];
+        
         [[[MobileRTC sharedRTC] getMeetingService] connectMyAudio:YES];
         
         [self.view addSubview:self.controlBarView];
         
         [self.audioRawdataHelper subscribe];
     }
-}
-
-- (void)onSinkMeetingActiveVideo:(NSUInteger)userID {
-    [self addThumberViewWithArr];
 }
 
 - (void)onSinkMeetingUserJoin:(NSUInteger)userID {

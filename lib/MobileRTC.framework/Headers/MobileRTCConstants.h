@@ -95,6 +95,19 @@ typedef enum {
     MobileRTCMeetError_InvalidUserType,
     ///The user joins already another ongoing meeting.
     MobileRTCMeetError_InAnotherMeeting,
+    ///The virtual background error base
+    MobileRTCMeetError_VBBase                           = 200,
+    ///Set image for virtual background error
+    MobileRTCMeetError_VBSetError                       = MobileRTCMeetError_VBBase,
+    ///Virtual background image reach to max capacity
+    MobileRTCMeetError_VBMaximumNum,
+    ///Virtual background save the image error
+    MobileRTCMeetError_VBSaveImage,
+    ///Virtual background save the image error
+    MobileRTCMeetError_VBRemoveNone,
+    ///Virtual background not support
+    MobileRTCMeetError_VBNoSupport,
+    
     ///Unknown error.
     MobileRTCMeetError_Unknown,
 
@@ -609,3 +622,10 @@ typedef NS_ENUM(NSUInteger, MobileRTCSMSServiceErr) {
     Verify_UnknownError,
 };
 
+/*!
+ @brief Minimize Meeting state in Zoom UI.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCMinimizeMeetingState) {
+    MobileRTCMinimizeMeeting_ShowMinimizeMeeting,
+    MobileRTCMinimizeMeeting_BackFullScreenMeeting
+};

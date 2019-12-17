@@ -22,7 +22,6 @@
     }
 }
 
-
 - (void)onMobileRTCLoginReturn:(NSInteger)returnValue
 {
     NSLog(@"onMobileRTCLoginReturn result=%zd", returnValue);

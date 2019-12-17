@@ -142,6 +142,10 @@
     return YES;
 }
 
+- (void)onSinkMeetingShowMinimizeMeetingOrBackZoomUI:(MobileRTCMinimizeMeetingState)state
+{
+    NSLog(@"onSinkMeetingShowMinimizeMeetingOrBackZoomUI %@",@(state));
+}
 
 #if 0
 - (void)onMeetingEndedReason:(MobileRTCMeetingEndReason)reason

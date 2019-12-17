@@ -11,6 +11,7 @@
 #import "SDKVideoPresenter.h"
 #import "SDKSharePresenter.h"
 #import "SDKActionPresenter.h"
+#import "QAListViewController.h"
 
 @interface BottomPanelView ()
 @property (strong, nonatomic)  CAGradientLayer      *gradientLayer;
@@ -264,6 +265,18 @@
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
                                                                                      message:nil
                                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+            if ([[[MobileRTC sharedRTC] getMeetingService] isQAEnabled]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:@"QA"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+                                                                      QAListViewController *VC = [[QAListViewController alloc] init];
+                                                                      UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
+                                                                      nav.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                      [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];
+                                                                  }]];
+            }
             
             
             [alertController addAction:[UIAlertAction actionWithTitle:@"Switch My Audio"

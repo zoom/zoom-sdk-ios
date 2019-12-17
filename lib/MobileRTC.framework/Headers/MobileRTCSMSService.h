@@ -98,4 +98,12 @@
  */
 - (NSArray * _Nullable)getSupportPhoneNumberCountryList;
 
+/*!
+ @brief set default cellphone for signed account.
+ @param countryCode, the user account's country code.
+ @param phoneNum, default phoen number.
+ @return yes, for set success.
+ */
+- (BOOL)setDefaultCellPhoneInfo:(NSString * _Nullable)countryCode phoneNum:(NSString * _Nullable)phoneNum;
+
 @end

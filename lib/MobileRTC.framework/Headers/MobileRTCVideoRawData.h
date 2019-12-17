@@ -43,7 +43,7 @@
 /*!
  @brief Can add reference count or not
  */
-- (NSInteger)canAddRef;
+- (BOOL)canAddRef;
 
 /*!
  @brief Add reference count
@@ -53,7 +53,7 @@
 /*!
  @brief Minus reference count
  */
-- (BOOL)releaseRef;
+- (NSInteger)releaseRef;
 
 @end
 

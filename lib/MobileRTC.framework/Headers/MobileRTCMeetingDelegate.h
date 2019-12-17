@@ -117,10 +117,12 @@
  @brief Inform user that free meeting will be ended in 10 minutes.
  @param host YES means the original host of the current meeting, otherwise not.
  @param freeUpgrade YES means the current free meeting will be upgraded. Once upgraded, the current meeting can last for more than 40 minutes.
+ @param first and second time, meeting is no limit, from third time, will end meeting at 40 mins.
  @param completion MobileRTC will call the module to upgrade the current meeting once the parameter UPGRADE is YES.
  */
 - (void)onFreeMeetingReminder:(BOOL)host
                canFreeUpgrade:(BOOL)freeUpgrade
+                  isFirstGift:(BOOL)first
                    completion:(void (^_Nonnull)(BOOL upgrade))completion;
 
 /*!
@@ -318,6 +320,13 @@
  @brief Callback event that host requests to unmute the user's video. 
  */
 - (void)onSinkMeetingVideoRequestUnmuteByHost:(void (^_Nonnull)(BOOL Accept))completion;
+
+/*!
+ @brief Callback event that show minimize meeting or back zoom UI.
+ @param state The state of minimizeMeeting or ZoomUIMeeting.
+ @warning The call back only for ZoomUI, Custom UI will not be executed.
+ */
+- (void)onSinkMeetingShowMinimizeMeetingOrBackZoomUI:(MobileRTCMinimizeMeetingState)state;
 @end
 
 #pragma mark - MobileRTCUserServiceDelegate
@@ -431,10 +440,80 @@
 - (void)onSinkQAConnected:(BOOL)connected;
 
 /*!
+ @brief Callback event when Q&A refresh Data
+ @warning The callback notifies the user that the QA data has been reloaded after the meeting is reconnected.
+ */
+- (void)OnRefreshQAData;
+
+/*!
  @brief Callback event when the open-ended question changes.
  @param count The amount of open-ended questions.
  */
 - (void)onSinkQAOpenQuestionChanged:(NSInteger)count;
+
+/*!
+ @brief Callback event when add a new question.
+ @param questionID question id.
+ @param success success or not.
+ */
+- (void)onSinkQAAddQuestion:(NSString *_Nonnull)questionID success:(BOOL)success;
+
+/*!
+ @brief Callback event when add a new answer.
+ @param answerID answer user id.
+ @param success success or not.
+ */
+- (void)onSinkQAAddAnswer:(NSString *_Nonnull)answerID success:(BOOL)success;
+
+/*!
+ @brief Callback event when the new question is marked as dismissed.
+ @param questionID The question ID.
+ */
+- (void)onSinkQuestionMarkedAsDismissed:(NSString *_Nonnull)questionID;
+
+/*!
+ @brief Callback event when the question is opened.
+ @param questionID The question ID.
+ */
+- (void)onSinkReopenQuestion:(NSString *_Nonnull)questionID;
+
+/*!
+ @brief Callback event when a new question is received.
+ @param questionID The question ID.
+ */
+- (void)onSinkReceiveQuestion:(NSString *_Nonnull)questionID;
+
+/*!
+ @brief Callback event when a new answer is received.
+ @param questionID The question ID.
+ */
+- (void)onSinkReceiveAnswer:(NSString *_Nonnull)answerID;
+
+/*!
+ @brief Callback event when the question is living reply.
+ @param questionID The question ID.
+ */
+- (void)onSinkUserLivingReply:(NSString *_Nonnull)questionID;
+
+/*!
+ @brief Callback event when the question end living reply.
+ @param questionID The question ID.
+ */
+- (void)onSinkUserEndLiving:(NSString *_Nonnull)questionID;
+
+/*!
+ @brief Callback event when the question is upvote.
+ @param questionID The question ID.
+ @param order_changed order change
+ */
+- (void)onSinkVoteupQuestion:(NSString *_Nonnull)questionID orderChanged:(BOOL)orderChanged;
+
+/*!
+ @brief Callback event when the question is revoke upvote.
+ @param questionID The question ID.
+ @param order_changed order change
+ */
+- (void)onSinkRevokeVoteupQuestion:(NSString *_Nonnull)questionID orderChanged:(BOOL)orderChanged;
 
 /*!
  @brief Callback event of the permission that user is allowed to ask questions anonymously is changed.

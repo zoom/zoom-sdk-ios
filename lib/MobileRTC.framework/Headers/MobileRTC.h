@@ -18,6 +18,7 @@
 #import <MobileRTC/MobileRTCMeetingService+User.h>
 #import <MobileRTC/MobileRTCMeetingService+Chat.h>
 #import <MobileRTC/MobileRTCMeetingService+Webinar.h>
+#import <MobileRTC/MobileRTCMeetingService+VirtualBackground.h>
 #import <MobileRTC/MobileRTCMeetingSettings.h>
 #import <MobileRTC/MobileRTCInviteHelper.h>
 #import <MobileRTC/MobileRTCPremeetingService.h>
@@ -126,6 +127,13 @@
  @param context Initialize the parameter configuration of the SDK, please See [MobileRTCSDKInitContext]
  */
 - (BOOL)initialize:(MobileRTCSDKInitContext * _Nonnull)context;
+
+/*!
+ @brief Call the function to switch MobileRTC domain.
+ @param newDomain The new domain.
+ @return YES indicates successfully. Otherwise not.
+ */
+- (BOOL)switchDomain:(NSString * _Nonnull)newDomain force:(BOOL)force;
 
 /*!
  @deprecated This method will be deleted in next release.

@@ -28,16 +28,23 @@
  @brief APP Key got from zoom.us.
  @warning Keep the value as a secret. DO NOT publish it.
  */
-@property (nonnull, retain, nonatomic) NSString *clientKey;
+@property (nullable, retain, nonatomic) NSString *clientKey;
 
 /*!
  @brief APP secret got from zoom.us.
  @warning Keep the value as a secret. DO NOT publish it.
  */
-@property (nonnull, retain, nonatomic) NSString *clientSecret;
+@property (nullable, retain, nonatomic) NSString *clientSecret;
+
+/*!
+ @brief jwt auth token.
+ @warning Keep the value as a secret. DO NOT publish it. If jwtToken is nil or empty,We will user your appKey and appSecret to Auth, We recommend using JWT Token,  and generate JWT Token on your web backend.
+ */
+@property (nullable, retain, nonatomic) NSString *jwtToken;
 
 /*!
  @brief Authenticate SDK.
+ @warning if you want to auth with jwt token, please fill the token property. Otherwise, please fill the client key and client secret property.
  @warning If the key or secret of client is blank, user will get error:MobileRTCAuthError_KeyOrSecretEmpty via onMobileRTCAuthReturn defined in MobileRTCAuthDelegate.
  */
 - (void)sdkAuth;
@@ -101,6 +108,11 @@
 - (void)onMobileRTCAuthReturn:(MobileRTCAuthError)returnValue;
 
 @optional
+/*!
+ @brief Specify the token expired.
+ */
+- (void)onMobileRTCAuthExpired;
+
 /*!
  @brief Specify to get the response of MobileRTC logs in.
  @param returnValue Notify the user when the login state has changed.

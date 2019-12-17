@@ -7,6 +7,7 @@
 //
 
 #import <MobileRTC/MobileRTC.h>
+#import "MobileRTCQAItem.h"
 
 @interface MobileRTCMeetingService (Webinar)
 
@@ -116,7 +117,7 @@
  @brief Query if attendee is allowed to comment questions.
  @return YES means allowed, otherwise not.
  */
-- (BOOL)isAllowAttendeeAnswerQuestion;
+- (BOOL)isAllowAttendeeAnswerQuestion DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)isAllowCommentQuestion; instead");
 
 /*!
  @brief Allow attendee to comment question.
@@ -124,6 +125,175 @@
  @return YES means that the method is called successfully, otherwise not.
  @warning Only meeting host/co-host can run the function.
  */
-- (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable;
+- (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)allowCommentQuestion:(BOOL)enable; instead");
+
+/*!
+ @brief Query if attendee is allowed to comment questions.
+ @return YES means allowed, otherwise not.
+ */
+- (BOOL)isAllowCommentQuestion;
+
+/*!
+ @brief Allow attendee to comment question.
+ @param Enable Allow/Disallow attendee to comment question.
+ @return YES means that the method is called successfully, otherwise not.
+ @warning Only meeting host/co-host can run the function.
+ */
+- (BOOL)allowCommentQuestion:(BOOL)enable;
+
+/*!
+ @brief Get all questions.
+ @return All questions list.
+ */
+- (nullable NSArray *)getAllQuestionList;
+
+/*!
+ @brief Get My questions.
+ @return My questions list.
+ @warning Only attendee can run the function.
+ */
+- (nullable NSArray *)getMyQuestionList;
+
+/*!
+ @brief Get Open questions.
+ @return Open questions list.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (nullable NSArray *)getOpenQuestionList;
+
+/*!
+ @brief Get Dismissed questions.
+ @return Dismissed questions list.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (nullable NSArray *)getDismissedQuestionList;
+
+/*!
+ @brief Get Answered questions.
+ @return Answered questions list.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (nullable NSArray *)getAnsweredQuestionList;
+
+/*!
+ @brief Get the amount of all questions.
+ @return Amount of all questions.
+ */
+- (int)getALLQuestionCount;
+
+/*!
+ @brief Get the amount of my questions.
+ @return Amount of open-ended questions.
+ */
+- (int)getMyQuestionCount;
+
+/*!
+ @brief Get the amount of Open questions.
+ @return Amount of open-ended questions.
+ */
+- (int)getOpenQuestionCount;
+
+/*!
+ @brief Get the amount of dissmissed questions.
+ @return Amount of open-ended questions.
+ */
+- (int)getDismissedQuestionCount;
+
+/*!
+ @brief Get the amount of answered questions.
+ @return Amount of open-ended questions.
+ */
+- (int)getAnsweredQuestionCount;
+
+/*!
+ @brief get question item by questionID.
+ @param questionID question id.
+ @return the question item.
+ */
+- (nullable MobileRTCQAItem *)getQuestion:(nonnull NSString *)questionID;
+
+/*!
+ @brief get answer item by questionID.
+ @param answerID answer id.
+ @return the answer item.
+ */
+- (nullable MobileRTCQAAnswerItem *)getAnswer:(nonnull NSString *)answerID;
+
+/*!
+ @brief Add Quesion.
+ @param content question content.
+ @param anonymous if true anonymously.
+ @return successs or not.
+ @warning Only attendee can run the function.
+ */
+- (BOOL)addQuestion:(nonnull NSString *)content anonymous:(BOOL)anonymous;
+
+/*!
+ @brief Answer quesion in private.
+ @param questionID question id.
+ @param content question content.
+ @param destUserID destination userId.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)answerQuestionPrivate:(nonnull NSString *)questionID answerContent:(nonnull NSString *)answerContent;
+
+/*!
+ @brief Answer Quesion.
+ @param questionID question id.
+ @param content question content.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)answerQuestionPublic:(nonnull NSString *)questionID answerContent:(nonnull NSString *)answerContent;
+
+/*!
+ @brief Attendee comment Quesion.
+ @param questionID question id.
+ @param commentContent comment content.
+ @return successs or not.
+ @warning Only meeting attendee can run the function.
+ */
+- (BOOL)commentQuestion:(nonnull NSString *)questionID commentContent:(nonnull NSString *)commentContent;
+
+/*!
+ @brief Dismiss Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)dismissQuestion:(nonnull NSString *)questionID;
+
+/*!
+ @brief Reopen Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)reopenQuestion:(nonnull NSString *)questionID;
+
+/*!
+ @brief Vote up Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)voteupQuestion:(nonnull NSString *)questionID voteup:(BOOL)voteup;
+
+/*!
+ @brief startLiving Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)startLiving:(nonnull NSString *)questionID;
+
+/*!
+ @brief endLiving Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)endLiving:(nonnull NSString *)questionID;
 
 @end

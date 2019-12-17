@@ -260,4 +260,17 @@
  @param YES means speaker off, otherwise not
  */
 - (void)setSpeakerOffWhenInMeeting:(BOOL)speakerOff;
+
+/*!
+ @brief Query show meeting elapse time.
+ @return YES means show meeting elapse time, otherwise not.
+ */
+- (BOOL)showMyMeetingElapseTime;
+
+/*!
+ @brief Enable show meeting elapse time.
+ @param enable YES means show meeting elapse time, otherwise not.
+ */
+- (void)enableShowMyMeetingElapseTime:(BOOL)enable;
+
 @end

@@ -45,7 +45,7 @@
     NSLog(@"onSinkDePromptPanelist2AttendeeResult %zd",errorCode);
 }
 
-#if 0
+#if 1
 #pragma mark - Webinar Q&A
 - (void)onSinkQAConnectStarted
 {

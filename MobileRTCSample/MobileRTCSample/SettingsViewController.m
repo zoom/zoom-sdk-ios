@@ -23,6 +23,7 @@
 @property (retain, nonatomic) UITableViewCell *scheduleCell;
 @property (retain, nonatomic) UITableViewCell *cleanLogCell;
 @property (retain, nonatomic) UITableViewCell *sendLogCell;
+@property (retain, nonatomic) UITableViewCell *swtichDomainCell;
 
 @property (retain, nonatomic) NSArray *itemArray;
 
@@ -68,6 +69,8 @@
     }
     
     [array addObject:@[[self sendLogCell], [self cleanLogCell]]];
+    
+    [array addObject:@[[self swtichDomainCell]]];
     
     [array addObject:@[[self loginCell]]];
     
@@ -126,6 +129,18 @@
     }
     
     return _cleanLogCell;
+}
+
+- (UITableViewCell *)swtichDomainCell {
+    if (!_swtichDomainCell)
+    {
+        _swtichDomainCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _swtichDomainCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _swtichDomainCell.textLabel.text = NSLocalizedString(@"Switch Domain and Auth Again", @"");
+        _swtichDomainCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return _swtichDomainCell;
 }
 
 - (UITableViewCell*)loginCell
@@ -217,6 +232,11 @@
         [self clearLog];
         return;
     }
+    
+    if ([cell isEqual:_swtichDomainCell]) {
+        [self switchDomainAndAuthAgain];
+        return;
+    }
 
     if ([cell isEqual:_loginCell])
     {
@@ -264,6 +284,36 @@
         return @"Send email need configure email account in iphone first.";
     }
     return nil;
+}
+
+- (void)switchDomainAndAuthAgain {
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Switch domain and auth again", @"")
+                                                                                 message:nil
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField){
+            textField.placeholder = NSLocalizedString(@"New Domain", @"");
+            textField.text = @"";
+        }];
+        
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            UITextField *newDomain = alertController.textFields.firstObject;
+          
+            BOOL ret = [[MobileRTC sharedRTC] switchDomain:newDomain.text force:YES];
+            NSLog(@"switchDomain-ret ===> %d", ret);
+            
+            [[[SDKAuthPresenter alloc] init] SDKAuth:@"New SDK Key" clientSecret:@"New SDK Secret"];
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        }]];
+        
+        UIViewController *rootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+        [rootVC presentViewController:alertController animated:YES completion:nil];
+    }];
 }
 
 - (void)loginWithEmail

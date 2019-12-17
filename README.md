@@ -85,6 +85,11 @@ Connect your iOS device to your computer and simply press "Run" on selected exam
 
 Please visit [[https://marketplace.zoom.us/docs/sdk/native-sdks/iOS](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS)] for details of each features and functions.
 
+## SDK Reference
+
+You may find the SDK interface reference at [https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/sdk-reference](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/sdk-reference).
+If you would like to get a local copy of the SDK reference, you may [download it here](https://github.com/zoom/zoom-sdk-ios/archive/gh-pages.zip).
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/zoom/zoom-sdk-ios/tags).
