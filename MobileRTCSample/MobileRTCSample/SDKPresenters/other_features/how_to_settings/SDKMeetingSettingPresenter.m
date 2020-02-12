@@ -145,4 +145,10 @@
     [[MobileRTC sharedRTC] getMeetingSettings].enableCustomMeeting = enableCustomMeeting;
 }
 
+- (void)enableShowMyMeetingElapseTime:(BOOL)enable;
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] enableShowMyMeetingElapseTime:enable];
+}
+
+
 @end

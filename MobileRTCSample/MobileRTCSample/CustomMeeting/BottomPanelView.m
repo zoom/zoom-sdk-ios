@@ -100,7 +100,6 @@
 
 
 - (void)dealloc {
-    [super dealloc];
     self.gradientLayer = nil;
     self.audioButton = nil;
     self.videoButton = nil;
@@ -112,6 +111,7 @@
     self.videoPresenter = nil;
     self.sharePresenter = nil;
     self.actionPresenter = nil;
+    [super dealloc];
 }
 
 

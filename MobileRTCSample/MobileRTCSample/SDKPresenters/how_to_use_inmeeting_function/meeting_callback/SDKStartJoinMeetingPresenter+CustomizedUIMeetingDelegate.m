@@ -43,6 +43,7 @@
     [self.customMeetingVC willMoveToParentViewController:nil];
     [self.customMeetingVC.view removeFromSuperview];
     [self.customMeetingVC removeFromParentViewController];
+    [self.customMeetingVC release];
     self.customMeetingVC = nil;
 }
 

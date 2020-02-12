@@ -38,7 +38,6 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
     self.switchBtn = nil;
     self.audioBtn = nil;
     self.videoBtn = nil;
@@ -46,6 +45,7 @@
     self.audioPresenter = nil;
     self.videoPresenter = nil;
     self.actionPresenter = nil;
+    [super dealloc];
 }
 
 - (void)layoutSubviews {

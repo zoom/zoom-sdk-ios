@@ -560,12 +560,14 @@
 /*!
  @brief The function will be invoked once the amount of the attendee is promoted successfully from attendee to panelist.
  @return errorCode Promotion successful or error type.
+ @warning Only meeting host/co-host can get the callback.
  */
 - (void)onSinkPromptAttendee2PanelistResult:(MobileRTCWebinarPromoteorDepromoteError)errorCode;
 
 /*!
  @brief The function will be invoked when panelist is demoted successfully from panelist to attendee.
  @return errorCode Demotion successful or error type.
+ @warning Only meeting host/co-host can get the callback.
  */
 - (void)onSinkDePromptPanelist2AttendeeResult:(MobileRTCWebinarPromoteorDepromoteError)errorCode;
 

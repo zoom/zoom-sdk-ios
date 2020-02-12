@@ -142,8 +142,8 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
     self.thumbTableView = nil;
+    [super dealloc];
 }
 
 - (HorizontalTableView*)thumbTableView

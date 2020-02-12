@@ -8,6 +8,10 @@
 #include <sys/time.h>
 
 @interface OpenglView : UIView
+typedef enum : NSUInteger {
+    DisplayMode_LetterBox,
+    DisplayMode_PanAndScan,
+} DisplayMode;
 
 - (void)displayYUV:(MobileRTCVideoRawData *)rawData mode:(DisplayMode)mode;
 

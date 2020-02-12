@@ -69,13 +69,13 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
     self.fullView = nil;
     
     [self.audioRawdataHelper unSubscribe];
     self.audioRawdataHelper = nil;
     
     self.audioRawDataSaveSandboxHelper = nil;
+    [super dealloc];
 }
 
 - (BOOL)shouldAutorotate {

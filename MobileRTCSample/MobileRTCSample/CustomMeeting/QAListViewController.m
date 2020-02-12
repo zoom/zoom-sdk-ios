@@ -407,5 +407,13 @@ typedef NS_ENUM(NSInteger, ZoomSampleQAListType) {
     [self updateData];
 }
 
+- (void)onMeetingStateChange:(MobileRTCMeetingState)state
+{
+    if(state == MobileRTCMeetingState_WebinarPromote || state == MobileRTCMeetingState_WebinarDePromote)
+    {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 @end
 

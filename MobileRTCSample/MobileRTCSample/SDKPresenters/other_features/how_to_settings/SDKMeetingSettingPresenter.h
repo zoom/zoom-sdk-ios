@@ -64,4 +64,6 @@
 
 - (void)setEnableCustomMeeting:(BOOL)enableCustomMeeting;
 
+- (void)enableShowMyMeetingElapseTime:(BOOL)enable;
+
 @end

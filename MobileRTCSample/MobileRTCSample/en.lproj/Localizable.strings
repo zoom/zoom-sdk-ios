@@ -76,6 +76,8 @@
 
 "Hide Meeting Password" = "Hide Meeting Password";
 
+"Show My Elapse Time" = "Show My Connected Time";
+
 "SDK authentication failed, error code: %zd" = "SDK authentication failed, error code: %zd";
 
 "OK" = "OK";

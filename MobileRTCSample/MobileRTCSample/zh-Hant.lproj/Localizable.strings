@@ -76,6 +76,8 @@
 
 "Hide Meeting Password" = "隱藏會議密碼";
 
+"Show My Elapse Time" = "顯示我在會議裏的連接時間";
+
 "SDK authentication failed, error code: %zd" = "SDK授權失敗，錯誤碼: %zd";
 
 "OK" = "確定";

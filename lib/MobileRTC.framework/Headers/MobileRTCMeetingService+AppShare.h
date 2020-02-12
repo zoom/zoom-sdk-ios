@@ -32,7 +32,7 @@
  @warning Available only for iOS 11 version minimum.  
  @warning Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change. 
  */
-- (void)appShareWithReplayKit;
+- (void)appShareWithReplayKit DEPRECATED_ATTRIBUTE;
 
 /*!
  @brief Set to enable App share.

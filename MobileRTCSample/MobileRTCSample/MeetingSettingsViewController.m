@@ -46,6 +46,8 @@
 @property (retain, nonatomic) UITableViewCell *customMeetingCell;
 @property (retain, nonatomic) UITableViewCell *rawdataUICell;
 
+@property (retain, nonatomic) UITableViewCell *showMyMeetingElapseTimeCell;
+
 @property (retain, nonatomic) NSArray *itemArray;
 
 //SDK Presenter
@@ -121,6 +123,10 @@
         [hiddenArray addObject:[self botBarHiddenCell]];
     }
     [array addObject:hiddenArray];
+    
+    NSMutableArray *showArray = [NSMutableArray array];
+    [showArray addObject:[self showMyMeetingElapseTimeCell]];
+    [array addObject:showArray];
     
     self.itemArray = array;
     [self.tableView reloadData];
@@ -814,6 +820,28 @@
     return _rawdataUICell;
 }
 
+- (UITableViewCell*)showMyMeetingElapseTimeCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL hidden = [settings showMyMeetingElapseTime];
+    
+    if (!_showMyMeetingElapseTimeCell)
+    {
+        _showMyMeetingElapseTimeCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _showMyMeetingElapseTimeCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _showMyMeetingElapseTimeCell.textLabel.text = NSLocalizedString(@"Show My Elapse Time", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:hidden animated:NO];
+        [sv addTarget:self action:@selector(onEnableShowMyMeetingElapseTime:) forControlEvents:UIControlEventValueChanged];
+        _showMyMeetingElapseTimeCell.accessoryView = sv;
+    }
+    return _showMyMeetingElapseTimeCell;
+}
+
 - (SDKMeetingSettingPresenter *)settingPresenter
 {
     if (!_settingPresenter) {
@@ -1021,5 +1049,11 @@
     UISwitch *sv = (UISwitch*)sender;
     [[NSUserDefaults standardUserDefaults] setBool:sv.on forKey:Raw_Data_UI_Enable];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (void)onEnableShowMyMeetingElapseTime:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter enableShowMyMeetingElapseTime:sv.on];
 }
 @end

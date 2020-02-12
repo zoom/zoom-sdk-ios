@@ -73,8 +73,8 @@
 
 - (void)dealloc
 {
-    [super dealloc];
     self.webView = nil;
+    [super dealloc];
 }
 
 /*

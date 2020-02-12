@@ -76,7 +76,6 @@ const CGFloat TOP_BTN_LEN = 40;
 }
 
 - (void)dealloc {
-    [super dealloc];
     self.gradientLayer = nil;
     self.shrinkBtn = nil;
     self.cameraSwitchBtn = nil;
@@ -85,6 +84,7 @@ const CGFloat TOP_BTN_LEN = 40;
     
     self.actionPresenter = nil;
     self.videoPresenter = nil;
+    [super dealloc];
 }
 
 
