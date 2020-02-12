@@ -25,6 +25,7 @@
 
 
 ## Changed & Fixed:
+* Enhanced security and upgraded OpenSSL to 1.0.2u.
 * Optimized the screen share frame rate while in the meeting.
 * Fixed an issue that the `-(void)onInMeetingChat` method gets triggered twice.
 * Fixed an issue that the app sometimes crashes when clicking the participant list and then select a user on iPad.
