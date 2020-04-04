@@ -29,6 +29,7 @@
 /*!
  @brief Get all the attendees in the webinar.
  @return user id array, each Attendee id is a NSNumber object.
+ @warning Only webinar meeting host/co-host/panelist can run the function.
  */
 - (nullable NSArray*)getWebinarAttendeeList;
 /*!
@@ -42,6 +43,7 @@
  @brief Get attendees' information in the webinar.
  @param userId attendee's ID in meeting.
  @return attendee info, a MobileRTCMeetingWebinarAttendeeInfo object.
+ @warning Only webinar meeting host/co-host/panelist can run the function.
  */
 - (nullable MobileRTCMeetingWebinarAttendeeInfo*)attendeeInfoByID:(NSUInteger)userId;
 

@@ -32,6 +32,7 @@
 //        [[MobileRTC sharedRTC] setVideoRawDataMemoryMode:MobileRTCRawDataMemoryModeHeap];
         
         OpenGLViewController * roomVC = [[OpenGLViewController alloc] init];
+        roomVC.modalPresentationStyle = UIModalPresentationFullScreen;
         [self.rootVC presentViewController:roomVC animated:YES completion:nil];
     }
 }

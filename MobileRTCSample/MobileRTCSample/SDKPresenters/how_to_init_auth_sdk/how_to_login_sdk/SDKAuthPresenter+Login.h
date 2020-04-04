@@ -10,8 +10,8 @@
 
 @interface SDKAuthPresenter (Login)
 
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password remeberMe:(BOOL)remeberMe;
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password rememberMe:(BOOL)rememberMe;
 
-- (void)loginWithSSOToken:(NSString *)ssoToken remeberMe:(BOOL)remeberMe;
+- (void)loginWithSSOToken:(NSString *)ssoToken rememberMe:(BOOL)rememberMe;
 
 @end

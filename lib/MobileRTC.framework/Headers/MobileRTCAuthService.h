@@ -70,7 +70,7 @@
  @return YES indicates to call the method successfully. Otherwise not.
  @warning The method is optional, ignore it if you do not have a working email for MobileRTC.
  */
-- (BOOL)loginWithEmail:(nonnull NSString*)email password:(nonnull NSString*)password remeberMe:(BOOL)remeberMe;
+- (BOOL)loginWithEmail:(nonnull NSString*)email password:(nonnull NSString*)password rememberMe:(BOOL)rememberMe;
 
 /*!
  @brief Specify to login MobileRTC with SSO (Single-Sign-On).
@@ -78,7 +78,7 @@
  @return YES indicates to call the method successfully. Otherwise not.
  @warning The method is optional, ignore it if you do not login MobileRTC with SSO.
  */
-- (BOOL)loginWithSSOToken:(nonnull NSString*)token remeberMe:(BOOL)remeberMe;
+- (BOOL)loginWithSSOToken:(nonnull NSString*)token rememberMe:(BOOL)rememberMe;
 
 /*!
  @brief Specify to logout MobileRTC.

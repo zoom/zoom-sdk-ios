@@ -302,6 +302,55 @@ typedef enum {
  */
 - (BOOL)isUsePMIAsMeetingID;
 
+/*!
+ @brief Set to enable waiting room.
+ @param enable YES means to enable waiting room..
+ */
+- (void)enableWaitingRoom:(BOOL)enable;
+
+/*!
+ @brief Query if the user starts the meeting with enable waiting room.
+ @return YES means that user enable waiting room.
+ */
+- (BOOL)isWaitingRoomEnabled;
+
+/*!
+ @brief Set to enable list in the public event list.
+ @param enable YES means to enable list in the public event list.
+ */
+- (void)enableMeetingToPublic:(BOOL)enable;
+
+/*!
+ @brief Query if the user starts the meeting with list in the public event list.
+ @return YES means that user list in the public event list.
+ */
+- (BOOL)isMeetingToPublicEnabled;
+
+/*!
+ @brief Set to enable language interpretation.
+ @param enable YES means to enable language interpretation.
+ @warning Only non-pmi meetings can be used.
+ */
+- (void)enableLanguageInterpretation:(BOOL)enable;
+
+/*!
+ @brief Query if the user starts the meeting with enable language interpretation.
+ @return YES means that user enable language interpretation.
+ */
+- (BOOL)isLanguageInterpretationEnabled;
+
+/*!
+ @brief Set alternative host.
+ @param hostList NSArray that contai MobileRTCAlternativeHostInfo object.
+ */
+- (void)setAlternativeHostList:(NSArray *_Nonnull)hostList;
+
+/*!
+ @brief Get alternative host list.
+ @param enable YES means to enable language interpretation.
+ */
+- (NSArray *_Nullable)getAlternativeHostInfoList;
+
 ///*!
 // @brief Turn on or off Viop.
 // @param off YES means disable Voip
@@ -432,6 +481,15 @@ typedef enum {
  @return The specified domains.
  */
 - (nullable NSArray *)getSpecifiedDomain;
+@end
+
+/*!
+ @brief MobileRTCAlternativeHostInfo, It's used to schedule meetings and add alternate hosts.
+ */
+@interface MobileRTCAlternativeHostInfo : NSObject
+
+@property (nonatomic, retain) NSString * _Nullable email;
+
 @end
 
 /*!

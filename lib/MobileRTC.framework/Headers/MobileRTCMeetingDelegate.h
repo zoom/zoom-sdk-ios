@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MobileRTCVideoRawData.h"
 #import "MobileRTCAudioRawData.h"
+#import "MobileRTCBORole.h"
 
 #pragma mark - MobileRTCMeetingServiceDelegate
 /*!
@@ -232,6 +233,13 @@
  @brief Callback event that waiting room status changes. 
  */
 - (void)onWaitingRoomStatusChange:(BOOL)needWaiting;
+
+/*!
+@brief The function will be invoked when the chat privilege of attendees changes.
+@return currentPrivilege The chat privilege of the current attendee.
+@warning only normal meeting(non webinar meeting) can get the callback.
+*/
+- (void)onSinkAttendeeChatPriviledgeChanged:(MobileRTCMeetingChatPriviledgeType)currentPrivilege;
 @end
 
 #pragma mark - MobileRTCAudioServiceDelegate
@@ -429,7 +437,7 @@
 @protocol MobileRTCWebinarServiceDelegate <MobileRTCMeetingServiceDelegate>
 
 /*!
- @brief Callback event when Question and Answer(Q&A) conneAnswerction starts.【【【可能要XX】】】
+ @brief Callback event when Question and Answer(Q&A) conneAnswerction starts.
  */
 - (void)onSinkQAConnectStarted;
 
@@ -574,6 +582,7 @@
 /*!
  @brief The function will be invoked when the chat privilege of attendees changes.
  @return currentPrivilege The chat privilege of the current attendee.
+ @warning only webinar meeting can get the callback.
  */
 - (void)onSinkAllowAttendeeChatNotification:(MobileRTCChatAllowAttendeeChat)currentPrivilege;
 @end
@@ -694,3 +703,72 @@
 
 @end
 
+#pragma mark - MobileRTCBOServiceDelegate
+@protocol MobileRTCBOServiceDelegate <MobileRTCMeetingServiceDelegate>
+
+@optional
+/*!
+@brief This method will notify the creator role gived.
+*/
+- (void)onHasCreatorRightsNotification:(MobileRTCBOCreator *_Nonnull)creator;
+
+/*!
+@brief This method will notify the admin role gived.
+*/
+- (void)onHasAdminRightsNotification:(MobileRTCBOAdmin * _Nonnull)admin;
+
+/*!
+@brief This method will notify the assistent role gived.
+*/
+- (void)onHasAssistantRightsNotification:(MobileRTCBOAssistant * _Nonnull)assistant;
+
+/*!
+@brief This method will notify the attendee role gived.
+*/
+- (void)onHasAttendeeRightsNotification:(MobileRTCBOAttendee * _Nonnull)attendee;
+
+/*!
+@brief This method will notify the data helper role gived.
+*/
+- (void)onHasDataHelperRightsNotification:(MobileRTCBOData * _Nonnull)dataHelper;
+
+/*!
+@brief This method will notify that lost creator role.
+*/
+- (void)onLostCreatorRightsNotification;
+
+/*!
+@brief This method will notify that lost admin role.
+*/
+- (void)onLostAdminRightsNotification;
+
+/*!
+@brief This method will notify that lost assistant role.
+*/
+- (void)onLostAssistantRightsNotification;
+
+/*!
+@brief This method will notify that lost attendee role.
+*/
+- (void)onLostAttendeeRightsNotification;
+
+/*!
+@brief This method will notify that lost data helper role.
+*/
+- (void)onLostDataHelperRightsNotification;
+
+@end
+
+#pragma mark - MobileRTCBOServiceDelegate
+@protocol MobileRTCBODataDelegate <MobileRTCMeetingServiceDelegate>
+/*!
+@brief The bo meeting information updated.
+*/
+- (void)onBOInfoUpdated:(NSString *_Nullable)boId;
+
+/*!
+@brief The un-assigned user update.
+*/
+- (void)onUnAssignedUserUpdated;
+
+@end

@@ -184,16 +184,14 @@ typedef enum {
 /*!
  @brief The ID of user.
  */
-@property (nonatomic, assign, readonly) NSUInteger userID;
+@property (nonatomic, assign) NSUInteger userID;
 /*!
  @brief The screen name of user.
  */
-@property (nonatomic, retain, readonly) NSString * _Nullable userName;
+@property (nonatomic, retain) NSString * _Nullable userName;
 /*!
  @brief The email address to sing in webinar.
  */
-@property (nonatomic, retain, readonly) NSString * _Nullable emailAddress;
-
-- (id _Nonnull)initWithUserID:(NSUInteger)userID username:(NSString * _Nonnull)userName emailAddress:(NSString * _Nonnull)emailAddress;
+@property (nonatomic, retain) NSString * _Nullable emailAddress;
 
 @end

@@ -1,5 +1,73 @@
 # CHANGELOG
 
+## 2020-04-04 @ [v4.6.15805.0403](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.6.15805.0403)
+
+## Added:
+ * Add new interfaces for customizing [breakout room](https://support.zoom.us/hc/en-us/articles/206476093-Getting-Started-with-Breakout-Rooms)
+  * `MobileRTCMeetingService.h`:
+    * `- (MobileRTCBOCreator * _Nullable)getCreatorHelper;`
+    * `- (MobileRTCBOAdmin * _Nullable)getAdminHelper;`
+    * `- (MobileRTCBOAssistant * _Nullable)getAssistantHelper;`
+    * `- (MobileRTCBOAttendee * _Nullable)getAttedeeHelper;`
+    * `- (MobileRTCBOData * _Nullable)getDataHelper;`
+    * `- (BOOL)isMasterMeetingHost;`
+    * `- (BOOL)isBOMeetingStarted;`
+    * `- (BOOL)isBOMeetingEnabled;`
+    * `- (BOOL)isInBOMeeting;`
+  * ` MobileRTCMeetingDelegate.h`:
+    * `- (void)onBOInfoUpdated:(NSString *_Nullable)boId;`
+    * `- (void)onUnAssignedUserUpdated;`
+  * `MobileRTCBORole.h`:
+    * `MobileRTCBOUser`:
+      * `- (NSString * _Nullable)getUserId;`
+      * `- (NSString * _Nullable)getUserName;`
+      * `- (MobileRTCBOUserStatus)getUserStatus;`
+    * `MobileRTCBOMeeting`:
+      * `- (NSString * _Nullable)getBOMeetingId;`
+      * `- (NSString * _Nullable)getBOMeetingName;`
+      * `- (NSArray * _Nullable)getBOMeetingUserList;`
+    * `MobileRTCBOCreator`:
+      * `- (NSString * _Nullable)createBO:(NSString * _Nullable)boName;`
+      * `- (BOOL)updateBO:(NSString * _Nullable)boId name:(NSString *_Nullable)boName;`
+      * `- (BOOL)removeBO:(NSString * _Nullable)boId;`
+      * `- (BOOL)assignUser:(NSString * _Nullable)boUserId toBO:(NSString * _Nullable)boId;`
+      * `- (BOOL)removeUser:(NSString * _Nullable)boUserId fromBO:(NSString * _Nullable)boId;`
+    * `MobileRTCBOAdmin`:
+      * `- (BOOL)startBO;`
+      * `- (BOOL)stopBO;`
+      * `- (BOOL)assignNewUser:(NSString * _Nullable)boUserId toRunningBO:(NSString * _Nullable)boId;`
+      * `- (BOOL)switchUser:(NSString * _Nullable)boUserId toRunningBO:(NSString * _Nullable)boId;`
+      * `- (BOOL)canStartBO;`
+    * `MobileRTCBOAssistant`:
+      * `- (BOOL)joinBO:(NSString * _Nullable)boId;`
+      * `- (BOOL)leaveBO;`
+    * `MobileRTCBOAttendee`:
+      * `- (BOOL)joinBO;`
+      * `- (BOOL)leaveBO;`
+      * `- (NSString * _Nullable)getBOName;`
+    * `MobileRTCBOData`:
+      * `- (NSArray * _Nullable)getUnassignedUserList;`
+      * `- (NSArray * _Nullable)getBOMeetingIDList;`
+      * `- (MobileRTCBOUser * _Nullable)getBOUserByUserID:(NSString * _Nullable)userId;`
+      * `- (MobileRTCBOMeeting * _Nullable)getBOMeetingByID:(NSString * _Nullable)boId;`
+
+* Add new interfaces and options for schedule meeting
+   * New interfaces can be found in `MobileRTCPremeetingService.h`
+
+* Add an interface to allow webinar participants to pre-enter the registration information, and skip the pop-up
+   * `- (void)prePopulateWebinarRegistrationInfo:(nonnull NSString *)email username:(nonnull NSString *)username;`
+
+* Add new callbacks to get notified on the chat privilege change events
+   * `- (void)onSinkAllowAttendeeChatNotification:(MobileRTCChatAllowAttendeeChat)currentPrivilege;`
+
+
+## Changed & Fixed:
+* Fixed an issue that the SDK was not able to connect to audio if the app has configured the Category in `AVAudioSession`
+* Fixed an issue that the app occasionally crashes when someone is sharing the screen on iPad and then an attendee joins the meeting
+* Fixed an issue that unable to end a meeting on iPad
+* Fixed an issue that the interface `showMinimizeMeeting` was not working on iPad
+* Fixed an issue that the app crashes when an attendee has been promoted to a panelist in a webinar and then start streaming
+
 ## 2020-02-10 @ [v4.6.15084.0206](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.6.15084.0206)
 
 ## Added:

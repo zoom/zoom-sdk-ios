@@ -19,6 +19,7 @@
 #import <MobileRTC/MobileRTCMeetingService+Chat.h>
 #import <MobileRTC/MobileRTCMeetingService+Webinar.h>
 #import <MobileRTC/MobileRTCMeetingService+VirtualBackground.h>
+#import <MobileRTC/MobileRTCMeetingService+BO.h>
 #import <MobileRTC/MobileRTCMeetingSettings.h>
 #import <MobileRTC/MobileRTCInviteHelper.h>
 #import <MobileRTC/MobileRTCPremeetingService.h>

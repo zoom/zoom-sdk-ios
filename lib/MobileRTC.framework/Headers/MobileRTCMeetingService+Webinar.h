@@ -35,6 +35,7 @@
  @brief Allow attendee to chat.
  @return YES means that the method is called successfully, otherwise not.
  @warning Only meeting host/co-host can run the function.
+ @warning only webinar meeting can run the function.
  */
 - (BOOL)allowAttendeeChat:(MobileRTCChatAllowAttendeeChat)privilegeType;
 

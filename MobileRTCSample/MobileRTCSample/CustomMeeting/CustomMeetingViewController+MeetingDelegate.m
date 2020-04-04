@@ -107,7 +107,7 @@
         [vc.navigationItem setRightBarButtonItem:leaveItem];
         
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        nav.modalPresentationStyle = UIModalPresentationFormSheet;
+        nav.modalPresentationStyle = UIModalPresentationFullScreen;
         [self presentViewController:nav animated:YES completion:NULL];
         
     }

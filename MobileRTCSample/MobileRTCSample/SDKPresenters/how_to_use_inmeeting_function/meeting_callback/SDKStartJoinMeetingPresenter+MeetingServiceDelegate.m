@@ -147,6 +147,11 @@
     NSLog(@"onSinkMeetingShowMinimizeMeetingOrBackZoomUI %@",@(state));
 }
 
+- (void)onSinkAttendeeChatPriviledgeChanged:(MobileRTCMeetingChatPriviledgeType)currentPrivilege
+{
+    NSLog(@"onSinkAttendeeChatPriviledgeChanged %@",@(currentPrivilege));
+}
+
 #if 0
 - (void)onMeetingEndedReason:(MobileRTCMeetingEndReason)reason
 {

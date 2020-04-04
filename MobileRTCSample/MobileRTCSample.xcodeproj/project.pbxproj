@@ -21,6 +21,7 @@
 		917D16A122D4AEF900895DFF /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168F22D4AEF900895DFF /* pwd2key.c */; };
 		917D16A222D4AEF900895DFF /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D169022D4AEF900895DFF /* aestab.c */; };
 		917D16A322D4AEF900895DFF /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D169322D4AEF900895DFF /* entropy.c */; };
+		9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197851323F4EACD0099BDDB /* BOMeetingViewController.m */; };
 		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
 		C123332D18D6D43100894EED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C123332C18D6D43100894EED /* main.m */; };
 		C123333118D6D43100894EED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C123333018D6D43100894EED /* AppDelegate.m */; };
@@ -250,6 +251,8 @@
 		917D169122D4AEF900895DFF /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
 		917D169222D4AEF900895DFF /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
 		917D169322D4AEF900895DFF /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
+		9197851223F4EACD0099BDDB /* BOMeetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOMeetingViewController.h; sourceTree = "<group>"; };
+		9197851323F4EACD0099BDDB /* BOMeetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOMeetingViewController.m; sourceTree = "<group>"; };
 		C123331D18D6D43100894EED /* MobileRTCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileRTCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C123332818D6D43100894EED /* MobileRTCSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileRTCSample-Info.plist"; sourceTree = "<group>"; };
 		C123332A18D6D43100894EED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -730,6 +733,8 @@
 				D020DAEE2371819800E9D748 /* QAListTableViewCell.m */,
 				D020DAED2371819700E9D748 /* QAListViewController.h */,
 				D020DAEC2371819700E9D748 /* QAListViewController.m */,
+				9197851223F4EACD0099BDDB /* BOMeetingViewController.h */,
+				9197851323F4EACD0099BDDB /* BOMeetingViewController.m */,
 			);
 			path = CustomMeeting;
 			sourceTree = "<group>";
@@ -1261,6 +1266,7 @@
 				917D169622D4AEF900895DFF /* unzip.c in Sources */,
 				D000E944219BF0B500FC9275 /* ThumbView.m in Sources */,
 				917D169722D4AEF900895DFF /* zip.c in Sources */,
+				9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */,
 				C123335218D6D4E900894EED /* MainViewController.m in Sources */,
 				D0438AE32313F7FC002D7AB7 /* BottomBarView.m in Sources */,
 				917D169B22D4AEF900895DFF /* aeskey.c in Sources */,

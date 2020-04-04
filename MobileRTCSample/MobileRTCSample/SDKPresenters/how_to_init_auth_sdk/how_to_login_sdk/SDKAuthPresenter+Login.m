@@ -10,14 +10,14 @@
 
 @implementation SDKAuthPresenter (Login)
 
-- (void)loginWithEmail:(NSString *)email password:(NSString *)password remeberMe:(BOOL)remeberMe
+- (void)loginWithEmail:(NSString *)email password:(NSString *)password rememberMe:(BOOL)rememberMe
 {
-    [[[MobileRTC sharedRTC] getAuthService] loginWithEmail:email password:password remeberMe:YES];
+    [[[MobileRTC sharedRTC] getAuthService] loginWithEmail:email password:password rememberMe:YES];
 }
 
-- (void)loginWithSSOToken:(NSString *)ssoToken remeberMe:(BOOL)remeberMe
+- (void)loginWithSSOToken:(NSString *)ssoToken rememberMe:(BOOL)rememberMe
 {
-    [[[MobileRTC sharedRTC] getAuthService] loginWithSSOToken:ssoToken remeberMe:YES];
+    [[[MobileRTC sharedRTC] getAuthService] loginWithSSOToken:ssoToken rememberMe:YES];
 }
 
 @end

@@ -409,6 +409,9 @@
 @property (retain, nonatomic) UITableViewCell *hostVideoCell;
 @property (retain, nonatomic) UITableViewCell *attendeeVideoCell;
 @property (retain, nonatomic) UITableViewCell *jbhCell;
+@property (retain, nonatomic) UITableViewCell *waitingRoomCell;
+@property (retain, nonatomic) UITableViewCell *publicListCell;
+
 @property (retain, nonatomic) RTCTextFieldTableViewCell *pwdCell;
 @property (retain, nonatomic) UITableViewCell *audioCell;
 
@@ -421,6 +424,10 @@
 @property (assign, nonatomic) BOOL                  attendeeVideoOn;
 @property (assign, nonatomic) BOOL                  usePMI;
 @property (assign, nonatomic) BOOL                  jbh;
+@property (assign, nonatomic) BOOL                  waitingRoom;
+@property (assign, nonatomic) BOOL                  publicList;
+
+
 @property (assign, nonatomic) BOOL                  voipOff;
 @property (assign, nonatomic) BOOL                  telephoneOff;
 
@@ -479,7 +486,18 @@
     [item turnOffVideoForAttendee:!self.attendeeVideoOn];
     [item setUsePMIAsMeetingID:self.usePMI];
     [item setAllowJoinBeforeHost:self.jbh];
+    [item enableWaitingRoom:self.waitingRoom];
+    [item enableMeetingToPublic:self.publicList];
     [item setOnlyAllowSignedInUserJoinMeeting:self.onlyallowsignuserjoin];
+    
+//    [item enableLanguageInterpretation:YES]; // the setting only for the meeting that's not a pmi meeting
+
+//    MobileRTCAlternativeHostInfo *aternativeHost1 = [[MobileRTCAlternativeHostInfo alloc] init];
+//    aternativeHost1.email = @"";
+//    MobileRTCAlternativeHostInfo *aternativeHost2 = [[MobileRTCAlternativeHostInfo alloc] init];
+//    aternativeHost2.email = @"";
+//    NSArray *array = @[aternativeHost1, aternativeHost2];
+//    [item setAlternativeHostList:array];
     
     if (!self.voipOff && !self.telephoneOff)
     {
@@ -566,7 +584,7 @@
 
     [array addObject:@[[self startTimeCell], [self durationCell], [self timezoneCell], [self repeatCell]]];
     
-    [array addObject:@[[self hostVideoCell], [self attendeeVideoCell], [self usePMICell], [self jbhCell]]];
+    [array addObject:@[[self hostVideoCell], [self attendeeVideoCell], [self usePMICell], [self jbhCell], [self waitingRoomCell], [self publicListCell]]];
     
     [array addObject:@[[self audioCell], [self pwdCell], [self onlyallowsignuserjoinCell]]];
     
@@ -799,6 +817,52 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     self.jbh = sv.on;
+}
+
+- (UITableViewCell*)waitingRoomCell
+{
+    if (!_waitingRoomCell)
+    {
+        _waitingRoomCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _waitingRoomCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _waitingRoomCell.textLabel.text = NSLocalizedString(@"Enable Waiting Room", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:self.waitingRoom animated:NO];
+        [sv addTarget:self action:@selector(onWaitingRoomEnable:) forControlEvents:UIControlEventValueChanged];
+        _waitingRoomCell.accessoryView = sv;
+    }
+    
+    return _waitingRoomCell;
+}
+
+- (void)onWaitingRoomEnable:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    self.waitingRoom = sv.on;
+}
+
+- (UITableViewCell*)publicListCell
+{
+    if (!_publicListCell)
+    {
+        _publicListCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _publicListCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _publicListCell.textLabel.text = NSLocalizedString(@"List in the Public Event List", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:self.publicList animated:NO];
+        [sv addTarget:self action:@selector(onPublicListEnable:) forControlEvents:UIControlEventValueChanged];
+        _publicListCell.accessoryView = sv;
+    }
+    
+    return _publicListCell;
+}
+
+- (void)onPublicListEnable:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    self.publicList = sv.on;
 }
 
 - (RTCTextFieldTableViewCell*)pwdCell

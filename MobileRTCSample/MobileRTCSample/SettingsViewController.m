@@ -339,7 +339,7 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 UITextField *email = alertController.textFields.firstObject;
                 UITextField *password = alertController.textFields.lastObject;
-                [self.authPresenter loginWithEmail:email.text password:password.text remeberMe:YES];
+                [self.authPresenter loginWithEmail:email.text password:password.text rememberMe:YES];
             }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -366,7 +366,7 @@
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 UITextField *token = alertController.textFields.firstObject;
-                [self.authPresenter loginWithSSOToken:token.text remeberMe:YES];
+                [self.authPresenter loginWithSSOToken:token.text rememberMe:YES];
             }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

@@ -273,4 +273,10 @@
  */
 - (void)enableShowMyMeetingElapseTime:(BOOL)enable;
 
+/*!
+@brief pre populate webinar registration info.
+@param email registration email address.
+@param username registration username.
+*/
+- (void)prePopulateWebinarRegistrationInfo:(nonnull NSString *)email username:(nonnull NSString *)username;
 @end
