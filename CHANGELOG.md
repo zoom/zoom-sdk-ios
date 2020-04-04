@@ -68,7 +68,7 @@
 * Fixed an issue that the interface `showMinimizeMeeting` was not working on iPad
 * Fixed an issue that the app crashes when an attendee has been promoted to a panelist in a webinar and then start streaming
 
-## 2020-02-10 @ [v4.6.15084.0206](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.6.15084.0206)
+## 2020-02-10 @ v4.6.15084.0206
 
 ## Added:
 * Add new features in Zoom default UI
@@ -99,7 +99,7 @@
 * Fixed an issue that the app sometimes crashes when clicking the participant list and then select a user on iPad.
 * Fixed an issue that the video direction is incorrect while in the waiting room under customized UI mode.
 
-## 2019-12-16 @ [v4.4.57220.1211](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.57220.1211)
+## 2019-12-16 @ v4.4.57220.1211
 
 ## Added:
 * Add new interfaces for SDK initialization with JWT token.
@@ -128,7 +128,7 @@
 * Fixed an issue that the attendee cannot get the chat privilege.
 * Fixed an issue that the meeting restarts for a few times after pressing the end meeting button.
 
-## 2019-11-04 @ [v4.4.56624.1028](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.56624.1028)
+## 2019-11-04 @ v4.4.56624.1028
 
 ## Added:
 * Add a new interface to hide the "Disconnect Audio" button
@@ -154,7 +154,7 @@
 * `(void)setMobileRTCResPath:(NSString * _Nullable)path;`
 * `(void)setAppGroupsName:(NSString * _Nullable)appGroupId;`
 
-## 2019-09-04 @ [v4.4.55968.0904](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55968.0904)
+## 2019-09-04 @ v4.4.55968.0904
 
 ## Added
 * Add iOS 13 and iPad OS support (Based on iOS beta 7, the latest beta version available at the time we published this release)
@@ -177,7 +177,7 @@
 * Fixed an issue that the "Minimize Meeting" button is not shown in Zoom UI for non-login users
 * Improved the performance for sharing web pages in a meeting
 
-## 2019-07-15 @ [v4.4.55130.0712](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.4.55130.0712)
+## 2019-07-15 @ v4.4.55130.0712
 
 **Added**
 
@@ -220,7 +220,7 @@
 * Fixed an issue that the app crashes occasionally when setting domain
 * Fixed an issue that switching between the gallery view and the speaker view will cause the app freeze on iPad
 
-## 2019-03-25 @ [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322)
+## 2019-03-25 @ v4.3.1.47201.0322
 
 **Added**
 * Introduce new Zoom meeting UI
@@ -245,7 +245,7 @@
 
 * - (void)setMobileRTCResPath:(NSString *)path;
 
-## 2019-01-23 @ [v4.3.0.30728.0118](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.0.30728.0118)
+## 2019-01-23 @ v4.3.0.30728.0118
 
 **Added**
 * New functional documentation.
@@ -263,7 +263,7 @@
 * An issue that the userId returned by different functional modules is inconsistent.
 * Some issues that cause crashes
 
-## 2018-10-24 @ [v4.1.34076.1024](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024)
+## 2018-10-24 @ v4.1.34076.1024
 
 * Added support with Xcode 10;
 * Added support for iPhone XS/XS MAX/XR;
@@ -276,12 +276,12 @@
 * Fixed audio quality issue on iPad Pro, iPhone X series devices, and iPhone 8;
 * Fixed annotation crash on iOS 12;
 
-## 2018-09-11 @ [v4.1.32183.0910](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.32183.0910)
+## 2018-09-11 @ v4.1.32183.0910
 
 * Schedule Meeting Feature Enhancement
 * Bug fixes
 
-## 2018-08-20 @ [v4.1.30420.0817](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.30420.0817)
+## 2018-08-20 @ v4.1.30420.0817
 
 * SDK Framework Interface Refactor, introduce MobileRTCMeetingService category cluster for specific Service Module:
 1. MobileRTCMeetingService+Audio: Audio Service
@@ -307,7 +307,7 @@
 * Support Webinar related common feature (do not support Q&A and Polling)
 * Bug fixes
 
-## 2018-07-26 @ [v4.1.28989.0727](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.28989.0727)
+## 2018-07-26 @ v4.1.28989.0727
 
 The start meeting logic for API users has changed. Please read below before upgrading to this version.
 
@@ -364,7 +364,7 @@ Interface [[[MobileRTC sharedRTC] getAuthService] getUserType] would not return 
 
 8. Bug fixes
 
-## 2018-05-28 @ [v4.1.25402.0528](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.25402.0528)
+## 2018-05-28 @ v4.1.25402.0528
 
 ### Added
 

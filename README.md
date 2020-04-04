@@ -7,7 +7,7 @@
 
 ## Latest SDK Notifications
 1. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
-2. **Variable Name Changes**: Since [v4.3.1.47201.0322](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.3.1.47201.0322), we have renamed the term "APP" to "SDK" in our demo to avoid confusion between the term "API" and "APP".
+2. **Variable Name Changes**: Since v4.3.1.47201.0322, we have renamed the term "APP" to "SDK" in our demo to avoid confusion between the term "API" and "APP".
 3. Please be aware that some of our interfaces are deprecated in the latest release, please check out our [CHANGELOG](https://github.com/zoom/zoom-sdk-ios/blob/master/CHANGELOG.md) for more detail
 4. Encounter with issues? The answer might be waiting for you at [Frequently Asked Questions](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/get-help/faq#frequently-asked-questions) sections.
 5. Our brand new [Zoom Developer Community Forum](https://devforum.zoom.us/) is now online!!! Check it out! We are here to help! :D
@@ -101,7 +101,7 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 ## Frequently Asked Questions (FAQ)
 
 * :one: `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
-  * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. This issue has been resolved since release version [v4.1.34076.1024](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.1.34076.1024).
+  * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. This issue has been resolved since release version v4.1.34076.1024.
 * :two: `dyld: Library not loaded: MobileRTC.framework/MobileRTC`:
   * Our **iOS SDK** is a **dynamic library**, please import the **MobileRTC.framework** into:
     * **Link Binary With Libraries**
