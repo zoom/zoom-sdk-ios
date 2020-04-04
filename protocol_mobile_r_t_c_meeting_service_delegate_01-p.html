@@ -191,6 +191,9 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ae3977f77e64d531942047d9626a0e00f">onWaitingRoomStatusChange:</a></td></tr>
 <tr class="memdesc:ae3977f77e64d531942047d9626a0e00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that waiting room status changes. <br /></td></tr>
 <tr class="separator:ae3977f77e64d531942047d9626a0e00f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e8c0b597af65bd25c5db8b243252635"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a2e8c0b597af65bd25c5db8b243252635">onSinkAttendeeChatPriviledgeChanged:</a></td></tr>
+<tr class="memdesc:a2e8c0b597af65bd25c5db8b243252635"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked when the chat privilege of attendees changes.  <a href="#a2e8c0b597af65bd25c5db8b243252635">More...</a><br /></td></tr>
+<tr class="separator:a2e8c0b597af65bd25c5db8b243252635"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a id="abf6a7568c81ea3b623a5f1e071282d1d"></a>
@@ -1029,6 +1032,36 @@ Specified Meeting Errors. </p><dl class="params"><dt>Parameters</dt><dd>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a2e8c0b597af65bd25c5db8b243252635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e8c0b597af65bd25c5db8b243252635">&#9670;&nbsp;</a></span>onSinkAttendeeChatPriviledgeChanged:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onSinkAttendeeChatPriviledgeChanged: </td>
+          <td></td>
+          <td class="paramtype">(MobileRTCMeetingChatPriviledgeType)&#160;</td>
+          <td class="paramname"><em>currentPrivilege</em></td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The function will be invoked when the chat privilege of attendees changes. </p>
+<dl class="section return"><dt>Returns</dt><dd>currentPrivilege The chat privilege of the current attendee. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>only normal meeting(non webinar meeting) can get the callback. </dd></dl>
 
 </div>
 </div>
