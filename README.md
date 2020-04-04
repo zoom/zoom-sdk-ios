@@ -136,4 +136,4 @@ Please refer to [LICENSE.md](LICENSE.md) file for details
 * If you need any support or assistance, we are here to help you: [Zoom Developer Community Forum](https://devforum.zoom.us/);
 
 ---
-Copyright ©2019 Zoom Video Communications, Inc. All rights reserved.
+Copyright ©2020 Zoom Video Communications, Inc. All rights reserved.
