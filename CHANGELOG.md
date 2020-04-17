@@ -62,7 +62,6 @@
 
 
 ## Changed & Fixed:
-* Fixed the UNC link issue
 * Fixed an issue that the SDK was not able to connect to audio if the app has configured the Category in `AVAudioSession`
 * Fixed an issue that the app occasionally crashes when someone is sharing the screen on iPad and then an attendee joins the meeting
 * Fixed an issue that unable to end a meeting on iPad
