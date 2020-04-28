@@ -37,7 +37,6 @@
 @property (retain, nonatomic) UITableViewCell *topBarHiddenCell;
 @property (retain, nonatomic) UITableViewCell *botBarHiddenCell;
 
-@property (retain, nonatomic) UITableViewCell *enableKubiCell;
 @property (retain, nonatomic) UITableViewCell *thumbnailCell;
 @property (retain, nonatomic) UITableViewCell *hostLeaveCell;
 @property (retain, nonatomic) UITableViewCell *hintCell;
@@ -94,8 +93,6 @@
     [disableArray addObject:[self minimizeMeetingCell]];
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
         [disableArray addObject:[self driveModeCell]];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-        [disableArray addObject:[self enableKubiCell]];
     [disableArray addObject:[self galleryViewCell]];
     [array addObject:disableArray];
     
@@ -665,29 +662,6 @@
     return _botBarHiddenCell;
 }
 
-- (UITableViewCell*)enableKubiCell
-{
-    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
-    if (!settings)
-        return nil;
-    
-    BOOL hidden = [settings enableKubi];
-    
-    if (!_enableKubiCell)
-    {
-        _enableKubiCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-        _enableKubiCell.selectionStyle = UITableViewCellSelectionStyleNone;
-        _enableKubiCell.textLabel.text = NSLocalizedString(@"Enable Kubi Device", @"");
-        
-        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
-        [sv setOn:hidden animated:NO];
-        [sv addTarget:self action:@selector(onEnableKubi:) forControlEvents:UIControlEventValueChanged];
-        _enableKubiCell.accessoryView = sv;
-    }
-    
-    return _enableKubiCell;
-}
-
 - (UITableViewCell*)thumbnailCell
 {
     MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
@@ -977,12 +951,6 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter setBottomBarHidden:sv.on];
-}
-
-- (void)onEnableKubi:(id)sender
-{
-    UISwitch *sv = (UISwitch*)sender;
-    [self.settingPresenter setEnableKubi:sv.on];
 }
 
 - (void)onHideThumbnail:(id)sender

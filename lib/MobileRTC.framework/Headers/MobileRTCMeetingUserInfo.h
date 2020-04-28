@@ -123,10 +123,6 @@ typedef enum {
  */
 @property (nonatomic, retain) NSString* _Nonnull        userName;
 /*!
- @brief The email address to sing in.
- */
-@property (nonatomic, retain) NSString* _Nonnull       emailAddress;
-/*!
  @brief The path to store the head portrait.
  */
 @property (nonatomic, retain) NSString* _Nonnull       avatarPath;
@@ -189,9 +185,5 @@ typedef enum {
  @brief The screen name of user.
  */
 @property (nonatomic, retain) NSString * _Nullable userName;
-/*!
- @brief The email address to sing in webinar.
- */
-@property (nonatomic, retain) NSString * _Nullable emailAddress;
 
 @end

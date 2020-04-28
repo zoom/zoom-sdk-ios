@@ -115,11 +115,6 @@
     [[MobileRTC sharedRTC] getMeetingSettings].bottomBarHidden = hidden;
 }
 
-- (void)setEnableKubi:(BOOL)enabled
-{
-    [[MobileRTC sharedRTC] getMeetingSettings].enableKubi = enabled;
-}
-
 - (void)setThumbnailInShare:(BOOL)changed
 {
     [[MobileRTC sharedRTC] getMeetingSettings].thumbnailInShare = changed;

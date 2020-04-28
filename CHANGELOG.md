@@ -1,6 +1,22 @@
 # CHANGELOG
 
-## 2020-04-04 @ [v4.6.15805.0403](https://github.com/zoom/zoom-sdk-ios/releases/tag/v4.6.15805.0403)
+## 2020-04-27 @ v4.6.21666.0427
+
+## Added:
+* Added support for AES 256-bit GCM encryption.
+  * **Please plan to upgrade your SDK accordingly. See the announcement in [README](https://github.com/zoom/zoom-sdk-ios)  for more information**
+* Added a new interface to hide Reaction emoji
+  * `-(void)hideReactionsOnMeetingUIBOOL)hidden;` in `MobileRTCMeetingSettings.h`
+
+## Changed & Fixed:
+* Upgraded OpenSSL to version 1.1.1e
+* Fixed an issue that the screen sharing is not working properly when using Custom UI
+* Fixed an issue that the chat button is still visible in the "More" menu when the chat is disabled
+
+## Deprecated
+* Deprecated the interface to get user's email: `MobileRTCMeetingUserInfo.emailAddress`
+
+## 2020-04-04 @ v4.6.15805.0403
 
 ## Added:
  * Add new interfaces for customizing [breakout room](https://support.zoom.us/hc/en-us/articles/206476093-Getting-Started-with-Breakout-Rooms)

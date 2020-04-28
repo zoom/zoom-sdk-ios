@@ -13,6 +13,7 @@
 #import "SDKActionPresenter.h"
 #import "QAListViewController.h"
 #import "BOMeetingViewController.h"
+#import "VBViewController.h"
 
 @interface BottomPanelView ()
 @property (strong, nonatomic)  CAGradientLayer      *gradientLayer;
@@ -286,6 +287,19 @@
                                                                       AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
 
                                                                       BOMeetingViewController *VC = [[BOMeetingViewController alloc] init];
+                                                                      UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
+                                                                      nav.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                      [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];
+                                                                  }]];
+            }
+            
+            if ([[[MobileRTC sharedRTC] getMeetingService] isSupportVirtualBG]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Virtual Background"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                                                                      AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                                                                      
+                                                                      VBViewController *VC = [[VBViewController alloc] init];
                                                                       UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
                                                                       nav.modalPresentationStyle = UIModalPresentationFullScreen;
                                                                       [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];

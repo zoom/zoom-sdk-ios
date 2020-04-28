@@ -21,7 +21,7 @@
     alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
     alert.tag = 10022;
     [alert textFieldAtIndex:0].placeholder = @"#########";
-    [alert textFieldAtIndex:0].keyboardType = UIKeyboardTypeNumberPad;
+    [alert textFieldAtIndex:0].keyboardType = UIKeyboardTypeDefault;
 
     [alert show];
     [alert release];

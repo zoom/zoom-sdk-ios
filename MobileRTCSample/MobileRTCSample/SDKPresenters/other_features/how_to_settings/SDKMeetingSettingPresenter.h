@@ -52,8 +52,6 @@
 
 - (void)setBottomBarHidden:(BOOL)hidden;
 
-- (void)setEnableKubi:(BOOL)enabled;
-
 - (void)setThumbnailInShare:(BOOL)changed;
 
 - (void)setHostLeaveHidden:(BOOL)hidden;
