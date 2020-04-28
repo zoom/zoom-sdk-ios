@@ -151,6 +151,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a57a550905067f0bc768de75c6212ec57"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a57a550905067f0bc768de75c6212ec57">enableShowMyMeetingElapseTime:</a></td></tr>
 <tr class="memdesc:a57a550905067f0bc768de75c6212ec57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable show meeting elapse time.  <a href="#a57a550905067f0bc768de75c6212ec57">More...</a><br /></td></tr>
 <tr class="separator:a57a550905067f0bc768de75c6212ec57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0cb5fa24cc7517f93ad359dc2b38aa8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#ae0cb5fa24cc7517f93ad359dc2b38aa8">hideReactionsOnMeetingUI:</a></td></tr>
+<tr class="memdesc:ae0cb5fa24cc7517f93ad359dc2b38aa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visibility of reaction on meeting UI. Default is displaying.  <a href="#ae0cb5fa24cc7517f93ad359dc2b38aa8">More...</a><br /></td></tr>
+<tr class="separator:ae0cb5fa24cc7517f93ad359dc2b38aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9029d33783203618a53f19fdf5dc818"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#aa9029d33783203618a53f19fdf5dc818">prePopulateWebinarRegistrationInfo:username:</a></td></tr>
 <tr class="memdesc:aa9029d33783203618a53f19fdf5dc818"><td class="mdescLeft">&#160;</td><td class="mdescRight">pre populate webinar registration info.  <a href="#aa9029d33783203618a53f19fdf5dc818">More...</a><br /></td></tr>
 <tr class="separator:aa9029d33783203618a53f19fdf5dc818"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -208,9 +211,6 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a22ccc6f7647c09af77299f94427f5a6f">disconnectAudioHidden</a></td></tr>
 <tr class="memdesc:a22ccc6f7647c09af77299f94427f5a6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show/Hide disconnect audio button. <br /></td></tr>
 <tr class="separator:a22ccc6f7647c09af77299f94427f5a6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaf6e97a22eb1f84038abba501231656"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_meeting_settings.html#aaaf6e97a22eb1f84038abba501231656">enableKubi</a></td></tr>
-<tr class="memdesc:aaaf6e97a22eb1f84038abba501231656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable/Disable Kubi Device in the meeting.  <a href="#aaaf6e97a22eb1f84038abba501231656">More...</a><br /></td></tr>
-<tr class="separator:aaaf6e97a22eb1f84038abba501231656"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c2387813b17ad7428ee75001ff0b124"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a6c2387813b17ad7428ee75001ff0b124">thumbnailInShare</a></td></tr>
 <tr class="memdesc:a6c2387813b17ad7428ee75001ff0b124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change thumbnail video layout while viewing a share in the meeting.  <a href="#a6c2387813b17ad7428ee75001ff0b124">More...</a><br /></td></tr>
 <tr class="separator:a6c2387813b17ad7428ee75001ff0b124"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -539,6 +539,32 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 </div>
 </div>
+<a id="ae0cb5fa24cc7517f93ad359dc2b38aa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0cb5fa24cc7517f93ad359dc2b38aa8">&#9670;&nbsp;</a></span>hideReactionsOnMeetingUI:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) hideReactionsOnMeetingUI: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>hidden</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the visibility of reaction on meeting UI. Default is displaying. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hidden</td><td>YES means hide reaction emotion. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="adc4779233714c27cf22babd3aecfa032"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc4779233714c27cf22babd3aecfa032">&#9670;&nbsp;</a></span>minimizeMeetingDisabled()</h2>
 
@@ -829,31 +855,6 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 <p>Show/Hide BAR at the bottom of the view in the meeting. </p>
 <dl class="section warning"><dt>Warning</dt><dd>The BAR at the bottom of the view is available on iPhone. </dd></dl>
-
-</div>
-</div>
-<a id="aaaf6e97a22eb1f84038abba501231656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaf6e97a22eb1f84038abba501231656">&#9670;&nbsp;</a></span>enableKubi</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (BOOL) enableKubi</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enable/Disable Kubi Device in the meeting. </p>
-<dl class="section warning"><dt>Warning</dt><dd>The option is available only on iPad if you want to use Kubi device. </dd></dl>
 
 </div>
 </div>

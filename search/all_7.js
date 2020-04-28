@@ -7,6 +7,7 @@ var searchData=
   ['hasrawdatalicense',['hasRawDataLicense',['../interface_mobile_r_t_c.html#a0858ec002a7ca79d8b1a03c9521f1871',1,'MobileRTC']]],
   ['hidefullphonenumberforpurecallinuser_3a',['hideFullPhoneNumberForPureCallInUser:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a37871d80dec3dd1207595bcf5021e699',1,'MobileRTCMeetingService(InMeeting)::hideFullPhoneNumberForPureCallInUser:()'],['../interface_mobile_r_t_c_meeting_service.html#a37871d80dec3dd1207595bcf5021e699',1,'MobileRTCMeetingService::hideFullPhoneNumberForPureCallInUser:()']]],
   ['hidemobilertcmeeting_3a',['hideMobileRTCMeeting:',['../category_mobile_r_t_c_meeting_service_07_in_meeting_08.html#a2ad7e698405d99c727fb8fef5f9c2b21',1,'MobileRTCMeetingService(InMeeting)::hideMobileRTCMeeting:()'],['../interface_mobile_r_t_c_meeting_service.html#a2ad7e698405d99c727fb8fef5f9c2b21',1,'MobileRTCMeetingService::hideMobileRTCMeeting:()']]],
+  ['hidereactionsonmeetingui_3a',['hideReactionsOnMeetingUI:',['../interface_mobile_r_t_c_meeting_settings.html#ae0cb5fa24cc7517f93ad359dc2b38aa8',1,'MobileRTCMeetingSettings']]],
   ['hinthidden',['hintHidden',['../interface_mobile_r_t_c_meeting_settings.html#af47af19ac4a505d2dcd7ceeb6e973a61',1,'MobileRTCMeetingSettings']]],
   ['hostleavehidden',['hostLeaveHidden',['../interface_mobile_r_t_c_meeting_settings.html#afeddc786b19e833c6e84f3dd19af97ac',1,'MobileRTCMeetingSettings']]]
 ];
