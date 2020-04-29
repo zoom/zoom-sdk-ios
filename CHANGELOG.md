@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## 2020-04-27 @ v4.6.21666.0427
+## 2020-04-28 @ v4.6.21666.0428
 
 ## Added:
 * Added support for AES 256-bit GCM encryption.

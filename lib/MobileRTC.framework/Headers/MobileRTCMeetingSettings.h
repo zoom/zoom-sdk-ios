@@ -81,6 +81,12 @@
 @property (assign, nonatomic) BOOL disconnectAudioHidden;
 
 /*!
+ @brief Enable/Disable Kubi Device in the meeting.
+ @warning The option is available only on iPad if you want to use Kubi device. 
+ */
+@property (assign, nonatomic) BOOL enableKubi;
+
+/*!
  @brief Change thumbnail video layout while viewing a share in the meeting.
  @warning If you set it to YES, the video of attendees will be placed at right of the Landscape(the device screen is oriented horizontally) or the bottom of Portrait(the device screen is oriented vertically) apart from the shared content, which means the video won't cover the content; if you set to NO, it will show only the video of active speaker and the video will be placed in the bottom right of the screen.
  */
