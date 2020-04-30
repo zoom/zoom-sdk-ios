@@ -8,6 +8,11 @@
 ## :rotating_light: Announcement :rotating_light:
 The Client SDK hereby introduced the **AES 256-bit GCM encryption** as addressed in our [90-Day Security Plan](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) to **our SDK version 4.6.21666.0428**. Please note that: This AES 256-bit GCM encryption is **backward INCOMPATIBLE, which means the older version of SDK will NOT be able to join a meeting with GCM encryption enabled,** and as mentioned in the [90-Day Security Plan](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/), **the system-wide account enablement of AES 256-bit GCM encryption will take place on May 30, 2020**. Please plan to upgrade your SDK accordingly, and we will soon take away the older version of SDK that are not compatible with GCM encryption. Thank you!
 
+> If you would like to test the latest SDK with AES 256-bit GCM encryption meeting before 05/30, you may:
+1. Download the latest version of Zoom client: https://zoom.us/download
+2. Visit https://zoom.us/testgcm and launch a GCM enabled meeting with your Zoom client, you will see a Green Shield icon that indicates the GCM encryption is enabled
+3. Use SDK to join this meeting
+
 
 ## Latest SDK Notifications
 1. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
