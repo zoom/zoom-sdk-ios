@@ -7,20 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		917D169622D4AEF900895DFF /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D167222D4AEF900895DFF /* unzip.c */; };
-		917D169722D4AEF900895DFF /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D167322D4AEF900895DFF /* zip.c */; };
-		917D169822D4AEF900895DFF /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D167422D4AEF900895DFF /* ioapi.c */; };
-		917D169922D4AEF900895DFF /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D167522D4AEF900895DFF /* mztools.c */; };
-		917D169A22D4AEF900895DFF /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D167D22D4AEF900895DFF /* SSZipArchive.m */; };
-		917D169B22D4AEF900895DFF /* aeskey.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168022D4AEF900895DFF /* aeskey.c */; };
-		917D169C22D4AEF900895DFF /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168122D4AEF900895DFF /* hmac.c */; };
-		917D169D22D4AEF900895DFF /* aescrypt.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168422D4AEF900895DFF /* aescrypt.c */; };
-		917D169E22D4AEF900895DFF /* fileenc.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168522D4AEF900895DFF /* fileenc.c */; };
-		917D169F22D4AEF900895DFF /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168822D4AEF900895DFF /* sha1.c */; };
-		917D16A022D4AEF900895DFF /* prng.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168D22D4AEF900895DFF /* prng.c */; };
-		917D16A122D4AEF900895DFF /* pwd2key.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D168F22D4AEF900895DFF /* pwd2key.c */; };
-		917D16A222D4AEF900895DFF /* aestab.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D169022D4AEF900895DFF /* aestab.c */; };
-		917D16A322D4AEF900895DFF /* entropy.c in Sources */ = {isa = PBXBuildFile; fileRef = 917D169322D4AEF900895DFF /* entropy.c */; };
 		9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197851323F4EACD0099BDDB /* BOMeetingViewController.m */; };
 		91A9BE8B243C53D000D94794 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9BE8A243C53D000D94794 /* VBViewController.m */; };
 		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
@@ -218,40 +204,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		917D167022D4AEF900895DFF /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
-		917D167222D4AEF900895DFF /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
-		917D167322D4AEF900895DFF /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
-		917D167422D4AEF900895DFF /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
-		917D167522D4AEF900895DFF /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
-		917D167622D4AEF900895DFF /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
-		917D167722D4AEF900895DFF /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
-		917D167822D4AEF900895DFF /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
-		917D167922D4AEF900895DFF /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
-		917D167A22D4AEF900895DFF /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
-		917D167B22D4AEF900895DFF /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
-		917D167C22D4AEF900895DFF /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		917D167D22D4AEF900895DFF /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
-		917D167F22D4AEF900895DFF /* prng.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prng.h; sourceTree = "<group>"; };
-		917D168022D4AEF900895DFF /* aeskey.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aeskey.c; sourceTree = "<group>"; };
-		917D168122D4AEF900895DFF /* hmac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = hmac.c; sourceTree = "<group>"; };
-		917D168222D4AEF900895DFF /* aestab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aestab.h; sourceTree = "<group>"; };
-		917D168322D4AEF900895DFF /* pwd2key.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pwd2key.h; sourceTree = "<group>"; };
-		917D168422D4AEF900895DFF /* aescrypt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aescrypt.c; sourceTree = "<group>"; };
-		917D168522D4AEF900895DFF /* fileenc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fileenc.c; sourceTree = "<group>"; };
-		917D168622D4AEF900895DFF /* aesopt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aesopt.h; sourceTree = "<group>"; };
-		917D168722D4AEF900895DFF /* aes_via_ace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes_via_ace.h; sourceTree = "<group>"; };
-		917D168822D4AEF900895DFF /* sha1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sha1.c; sourceTree = "<group>"; };
-		917D168922D4AEF900895DFF /* brg_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_types.h; sourceTree = "<group>"; };
-		917D168A22D4AEF900895DFF /* entropy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = entropy.h; sourceTree = "<group>"; };
-		917D168B22D4AEF900895DFF /* hmac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hmac.h; sourceTree = "<group>"; };
-		917D168C22D4AEF900895DFF /* brg_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = brg_endian.h; sourceTree = "<group>"; };
-		917D168D22D4AEF900895DFF /* prng.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = prng.c; sourceTree = "<group>"; };
-		917D168E22D4AEF900895DFF /* aes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		917D168F22D4AEF900895DFF /* pwd2key.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pwd2key.c; sourceTree = "<group>"; };
-		917D169022D4AEF900895DFF /* aestab.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = aestab.c; sourceTree = "<group>"; };
-		917D169122D4AEF900895DFF /* sha1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha1.h; sourceTree = "<group>"; };
-		917D169222D4AEF900895DFF /* fileenc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileenc.h; sourceTree = "<group>"; };
-		917D169322D4AEF900895DFF /* entropy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = entropy.c; sourceTree = "<group>"; };
 		9197851223F4EACD0099BDDB /* BOMeetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOMeetingViewController.h; sourceTree = "<group>"; };
 		9197851323F4EACD0099BDDB /* BOMeetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOMeetingViewController.m; sourceTree = "<group>"; };
 		91A9BE89243C53D000D94794 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
@@ -486,63 +438,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		917D166F22D4AEF900895DFF /* SSZipArchive */ = {
-			isa = PBXGroup;
-			children = (
-				917D167022D4AEF900895DFF /* ZipArchive.h */,
-				917D167122D4AEF900895DFF /* minizip */,
-				917D167B22D4AEF900895DFF /* SSZipArchive.h */,
-				917D167C22D4AEF900895DFF /* Common.h */,
-				917D167D22D4AEF900895DFF /* SSZipArchive.m */,
-				917D167E22D4AEF900895DFF /* aes */,
-			);
-			path = SSZipArchive;
-			sourceTree = "<group>";
-		};
-		917D167122D4AEF900895DFF /* minizip */ = {
-			isa = PBXGroup;
-			children = (
-				917D167222D4AEF900895DFF /* unzip.c */,
-				917D167322D4AEF900895DFF /* zip.c */,
-				917D167422D4AEF900895DFF /* ioapi.c */,
-				917D167522D4AEF900895DFF /* mztools.c */,
-				917D167622D4AEF900895DFF /* crypt.h */,
-				917D167722D4AEF900895DFF /* zip.h */,
-				917D167822D4AEF900895DFF /* unzip.h */,
-				917D167922D4AEF900895DFF /* mztools.h */,
-				917D167A22D4AEF900895DFF /* ioapi.h */,
-			);
-			path = minizip;
-			sourceTree = "<group>";
-		};
-		917D167E22D4AEF900895DFF /* aes */ = {
-			isa = PBXGroup;
-			children = (
-				917D167F22D4AEF900895DFF /* prng.h */,
-				917D168022D4AEF900895DFF /* aeskey.c */,
-				917D168122D4AEF900895DFF /* hmac.c */,
-				917D168222D4AEF900895DFF /* aestab.h */,
-				917D168322D4AEF900895DFF /* pwd2key.h */,
-				917D168422D4AEF900895DFF /* aescrypt.c */,
-				917D168522D4AEF900895DFF /* fileenc.c */,
-				917D168622D4AEF900895DFF /* aesopt.h */,
-				917D168722D4AEF900895DFF /* aes_via_ace.h */,
-				917D168822D4AEF900895DFF /* sha1.c */,
-				917D168922D4AEF900895DFF /* brg_types.h */,
-				917D168A22D4AEF900895DFF /* entropy.h */,
-				917D168B22D4AEF900895DFF /* hmac.h */,
-				917D168C22D4AEF900895DFF /* brg_endian.h */,
-				917D168D22D4AEF900895DFF /* prng.c */,
-				917D168E22D4AEF900895DFF /* aes.h */,
-				917D168F22D4AEF900895DFF /* pwd2key.c */,
-				917D169022D4AEF900895DFF /* aestab.c */,
-				917D169122D4AEF900895DFF /* sha1.h */,
-				917D169222D4AEF900895DFF /* fileenc.h */,
-				917D169322D4AEF900895DFF /* entropy.c */,
-			);
-			path = aes;
-			sourceTree = "<group>";
-		};
 		C123331418D6D43100894EED = {
 			isa = PBXGroup;
 			children = (
@@ -581,7 +476,6 @@
 		C123332618D6D43100894EED /* MobileRTCSample */ = {
 			isa = PBXGroup;
 			children = (
-				917D166F22D4AEF900895DFF /* SSZipArchive */,
 				D907614620A5700F008FA1DB /* MobileRTCSample.entitlements */,
 				C123332F18D6D43100894EED /* AppDelegate.h */,
 				C123333018D6D43100894EED /* AppDelegate.m */,
@@ -1048,7 +942,7 @@
 				TargetAttributes = {
 					C123331C18D6D43100894EED = {
 						DevelopmentTeam = BJ4HAAB9B3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -1229,7 +1123,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D012776922C21BC000024227 /* WebViewController.m in Sources */,
-				917D16A222D4AEF900895DFF /* aestab.c in Sources */,
 				D996D2481C99478B00C284F0 /* InviteViewController.m in Sources */,
 				C123333118D6D43100894EED /* AppDelegate.m in Sources */,
 				F7150A7E200F25CF00148CAA /* RemoteShareViewController.m in Sources */,
@@ -1242,7 +1135,6 @@
 				D058CCA422FABF8A004E6379 /* AudioRawDataSaveSandboxHelper.m in Sources */,
 				D0F85EFA21B1201E00D04358 /* SDKStartJoinMeetingPresenter+UserServiceDelegate.m in Sources */,
 				D99540BB20CFC313007AA8B2 /* AnnoFloatBarView.m in Sources */,
-				917D169F22D4AEF900895DFF /* sha1.c in Sources */,
 				D057546921B7F53800FD95DA /* SDKStartJoinMeetingPresenter+VideoServiceDelegate.m in Sources */,
 				D0ECCE5521CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m in Sources */,
 				D05BBB5421A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m in Sources */,
@@ -1257,45 +1149,33 @@
 				D057546F21B7F57C00FD95DA /* SDKStartJoinMeetingPresenter+WebinarServiceDelegate.m in Sources */,
 				D0BAD45521A3E137004AE4B1 /* SDKVideoPresenter.m in Sources */,
 				D000E941219BF0B500FC9275 /* BottomPanelView.m in Sources */,
-				917D169C22D4AEF900895DFF /* hmac.c in Sources */,
 				D0438AE02313F3AB002D7AB7 /* ControlBar.m in Sources */,
-				917D169822D4AEF900895DFF /* ioapi.c in Sources */,
 				D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */,
 				D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */,
 				D0BAD47621A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m in Sources */,
-				917D169A22D4AEF900895DFF /* SSZipArchive.m in Sources */,
 				C123335618D6D87B00894EED /* UIImage+Additions.m in Sources */,
 				D020DAF12371819900E9D748 /* QAListTableViewCell.m in Sources */,
 				D0ABEA5821A54AB900353F5D /* SDKActionPresenter.m in Sources */,
 				D000E93D219BF0B500FC9275 /* CustomMeetingViewController+MeetingDelegate.m in Sources */,
-				917D169622D4AEF900895DFF /* unzip.c in Sources */,
 				D000E944219BF0B500FC9275 /* ThumbView.m in Sources */,
-				917D169722D4AEF900895DFF /* zip.c in Sources */,
 				9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */,
 				C123335218D6D4E900894EED /* MainViewController.m in Sources */,
 				D0438AE32313F7FC002D7AB7 /* BottomBarView.m in Sources */,
-				917D169B22D4AEF900895DFF /* aeskey.c in Sources */,
 				D057547521B7FD8000FD95DA /* MainViewController+MeetingDelegate.m in Sources */,
 				D0BAD47A21A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m in Sources */,
 				D058CC7622F9878E004E6379 /* TopBar.m in Sources */,
-				917D169E22D4AEF900895DFF /* fileenc.c in Sources */,
-				917D16A022D4AEF900895DFF /* prng.c in Sources */,
 				D057547221B7F59000FD95DA /* SDKStartJoinMeetingPresenter+CustomizedUIMeetingDelegate.m in Sources */,
 				D0BAD40921A3D3F2004AE4B1 /* SDKStartJoinMeetingPresenter+JoinMeetingOnly.m in Sources */,
 				C123332D18D6D43100894EED /* main.m in Sources */,
 				91A9BE8B243C53D000D94794 /* VBViewController.m in Sources */,
 				D000E940219BF0B500FC9275 /* CustomMeetingViewController.m in Sources */,
-				917D169922D4AEF900895DFF /* mztools.c in Sources */,
 				F70F8ACF20E4B4B400659FC4 /* CustomRemoteControl.m in Sources */,
 				D996D24A1C99478B00C284F0 /* SettingsViewController.m in Sources */,
 				D07D7FAA22F923CD0092C28A /* OpenGLViewController.m in Sources */,
 				D000E942219BF0B500FC9275 /* ThumbTableViewCell.m in Sources */,
-				917D169D22D4AEF900895DFF /* aescrypt.c in Sources */,
 				D000E93F219BF0B500FC9275 /* VideoViewController.m in Sources */,
 				D0FFE11D219D1D8700CD02A0 /* SDKStartJoinMeetingPresenter.m in Sources */,
 				D0ECCE3B21CA50C000CFC386 /* SDKAuthPresenter+Login.m in Sources */,
-				917D16A322D4AEF900895DFF /* entropy.c in Sources */,
-				917D16A122D4AEF900895DFF /* pwd2key.c in Sources */,
 				F7150A7C200F25CF00148CAA /* HorizontalTableView.m in Sources */,
 				D057546C21B7F56D00FD95DA /* SDKStartJoinMeetingPresenter+ShareServiceDelegate.m in Sources */,
 				D000E943219BF0B500FC9275 /* TopPanelView.m in Sources */,
@@ -1446,10 +1326,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BJ4HAAB9B3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1462,9 +1342,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.MobileRTCSample;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.sdk.MobileRTCSample;
 				PRODUCT_NAME = MobileRTCSample;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = MobileRTCSample;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1481,10 +1361,10 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = BJ4HAAB9B3;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1497,9 +1377,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.MobileRTCSample;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.sdk.MobileRTCSample;
 				PRODUCT_NAME = MobileRTCSample;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = MobileRTCSample;
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
