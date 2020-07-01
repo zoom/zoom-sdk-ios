@@ -2,7 +2,7 @@
 //  MobileRTCMeetingService+Customize.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 2017/2/27.
+//  Created by Zoom Video Communications on 2017/2/27.
 //  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -16,11 +16,19 @@
 @interface MobileRTCMeetingService (Customize)
 
 /*!
- @brief Set to customize the meeting title/topic which will be displayed in the meeting bar. 
+ @brief Set to customize the meeting title which will be displayed in the meeting bar. 
  @param title The topic/title of the meeting.
  @warning User should call the method before starting or joining the meeting if he wants to reset the title/topic of the meeting.
  */
 - (void)customizeMeetingTitle:(NSString * _Nullable)title;
+
+/*!
+@brief Set to customize the meeting topic which will be displayed in the meeting info view.
+@param topic The topic of the meeting.
+@warning only meeting original host can call the function.
+@warning only in-meeting can call the function.
+*/
+- (BOOL)setMeetingTopic:(NSString *_Nonnull)meetingTopic;
 
 /*!
  @brief Query if user can dial out in the meeting.

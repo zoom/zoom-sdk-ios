@@ -2,7 +2,7 @@
 //  SDKStartJoinMeetingPresenter+UserServiceDelegate.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/30.
+//  Created by Zoom Video Communications on 2018/11/30.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -44,6 +44,11 @@
 {
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
     NSLog(@"In Meeting Chat:%@ content:%@", messageID, [ms meetingChatByID:messageID]);
+}
+
+- (void)onSinkUserNameChanged:(NSUInteger)userID userName:(NSString *_Nonnull)userName
+{
+    NSLog(@"onSinkUserNameChanged:%@ userName:%@", @(userID), userName);
 }
 
 @end

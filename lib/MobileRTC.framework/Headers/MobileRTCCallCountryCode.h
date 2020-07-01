@@ -2,7 +2,7 @@
 //  MobileRTCCallCountryCode.h
 //  MobileRTC
 //
-//  Created by Murray Li on 2019/7/3.
+//  Created by Zoom Video Communications on 2019/7/3.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

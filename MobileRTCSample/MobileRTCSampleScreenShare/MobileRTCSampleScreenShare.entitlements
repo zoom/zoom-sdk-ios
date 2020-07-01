@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.us.zoom</string>
+		<string>group.zoom.us.MobileRTCSampleExtensionReplayKit</string>
 	</array>
 </dict>
 </plist>

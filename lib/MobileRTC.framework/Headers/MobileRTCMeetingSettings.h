@@ -2,7 +2,7 @@
 //  MobileRTCMeetingSettings.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 7/2/15.
+//  Created by Zoom Video Communications on 7/2/15.
 //  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -131,6 +131,18 @@
  @brief Show/Hide Q&A button in webinar meeting.
  */
 @property (assign, nonatomic) BOOL qaButtonHidden;
+
+/*!
+ @brief Show/Hide "Promote to Panelist" in webinar meeting.
+ @warning Only host/co-host can see the option in webinar meeting‘s participants.
+ */
+@property (assign, nonatomic) BOOL promoteToPanelistHidden;
+
+/*!
+@brief Show/Hide "Change to Attendee" in webinar meeting.
+@warning Only host/co-host can see the option in webinar meeting‘s participants.
+*/
+@property (assign, nonatomic) BOOL changeToAttendeeHidden;
 
 /*!
  @brief Enable/Disable Proximity Sensors Monitoring in a meeting. 
@@ -274,10 +286,34 @@
 - (void)enableShowMyMeetingElapseTime:(BOOL)enable;
 
 /*!
+@brief Query mic original input enable or not.
+@return YES means mic original input enable, otherwise not.
+*/
+- (BOOL)micOriginalInputEnabled;
+
+/*!
+ @brief Enable mic original input.
+ @param enable YES means enable mic original input, otherwise not.
+ */
+- (void)enableMicOriginalInput:(BOOL)enable;
+
+/*!
 @brief Set the visibility of reaction on meeting UI. Default is displaying.
 @param hidden YES means hide reaction emotion.
 */
 - (void)hideReactionsOnMeetingUI:(BOOL)hidden;
+
+/*!
+@brief Query if it is disabled to show video preview when join meeting.
+@return YES means disabled, otherwise not.
+*/
+- (BOOL)showVideoPreviewWhenJoinMeetingDisabled;
+
+/*!
+@brief Set to disable show video preview when join meeting.
+@param disabled The option value.
+*/
+- (void)disableShowVideoPreviewWhenJoinMeeting:(BOOL)disabled;
 
 /*!
 @brief pre populate webinar registration info.

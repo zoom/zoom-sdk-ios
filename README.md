@@ -7,8 +7,7 @@
 > **The version in this repo is a device-only version. If you would like to use the version that supports both device and simulator, you can download the version (**ios-mobilertc-all-*.zip**) from the release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases)**
 
 ## Table of Contents  
-- [:rotating_light: Announcement :rotating_light:](#rotating_light-announcement-rotating_light)   
-- [Latest SDK Notifications](#latest-sdk-notifications)   
+- [Latest SDK News](#latest-sdk-news)   
 - [Full Documentation && Community Support](#full-documentation-community-support)   
 - [What is Zoom iOS SDK?](#what-is-zoom-ios-sdk)   
 - [Disclaimer](#disclaimer)   
@@ -26,17 +25,11 @@
 - [License](#license)   
 - [Acknowledgments](#acknowledgments)   
 
-
-## :rotating_light: Announcement :rotating_light:
-To align with Zoom’s [recent announcement](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) pertaining to our security initiative, Zoom Client SDKs have added **AES 256-bit GCM encryption** support, which provides more protection for meeting data and greater resistance to tampering. **The system-wide account enablement of AES 256-bit GCM encryption will take place on June 01, 2020.** You are **strongly recommended** to start the required upgrade to this latest version 4.6.21666.0428 at your earliest convenience. Please note that any Client SDK versions below 4.6.21666.0428 will **no longer be operational** from June 01.
-
-> If you would like to test the latest SDK with AES 256-bit GCM encryption meeting before 05/30, you may:
-> 1. Download the latest version of Zoom client: https://zoom.us/download
-> 2. Visit https://zoom.us/testgcm and launch a GCM enabled meeting with your Zoom client, you will see a Green Shield icon that indicates the GCM encryption is enabled
-> 3. Use SDK to join this meeting
-
-## Latest SDK Notifications
-1. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
+## Latest SDK News
+1. Starting from Client SDK 5.0, if you are using tokens to start a meeting, you will only need to retrieve ZAK from Zoom API. The user token has been deprecated. 
+2. To follow with Zoom client's recent changes, Zoom SDK has temporary remove the "Unmute All" interface in Client SDK 5.0.
+3. To align with Zoom’s [recent announcement](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) pertaining to our security initiative, Zoom Client SDKs have added **AES 256-bit GCM encryption** support, which provides more protection for meeting data and greater resistance to tampering. **The system-wide account enablement of AES 256-bit GCM encryption will take place on June 01, 2020.** You are **strongly recommended** to start the required upgrade to this latest version 4.6.21666.0428 at your earliest convenience. Please note that any Client SDK versions below 4.6.21666.0428 will **no longer be operational** from June 01.
+4. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
 
 ## Full Documentation && Community Support
 You can find the full Zoom iOS SDK documentation and the community support forum here:

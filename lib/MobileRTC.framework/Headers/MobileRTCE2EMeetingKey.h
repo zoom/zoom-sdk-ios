@@ -2,7 +2,7 @@
 //  MobileRTCE2EMeetingKey.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 2017/9/18.
+//  Created by Zoom Video Communications on 2017/9/18.
 //  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 

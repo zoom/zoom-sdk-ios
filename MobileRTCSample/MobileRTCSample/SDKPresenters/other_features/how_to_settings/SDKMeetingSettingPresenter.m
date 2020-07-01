@@ -2,7 +2,7 @@
 //  SDKMeetingSettingPresenter.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/27.
+//  Created by Zoom Video Communications on 2018/11/27.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -35,6 +35,11 @@
     [[[MobileRTC sharedRTC] getMeetingSettings] disableGalleryView:disabled];
 }
 
+- (void)onDisableVideoPreview:(BOOL)disabled
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] disableShowVideoPreviewWhenJoinMeeting:disabled];
+}
+
 - (void)disableCallIn:(BOOL)disabled
 {
     [[[MobileRTC sharedRTC] getMeetingSettings] disableCallIn:disabled];
@@ -53,6 +58,11 @@
 - (void)faceBeautyEnable:(BOOL)enable
 {
     [[[MobileRTC sharedRTC] getMeetingSettings] setFaceBeautyEnabled:enable];
+}
+
+- (void)enableMicOriginalInput:(BOOL)enable
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] enableMicOriginalInput:enable];
 }
 
 - (void)setMeetingTitleHidden:(BOOL)hidden

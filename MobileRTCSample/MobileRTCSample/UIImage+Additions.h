@@ -2,7 +2,7 @@
 //  UIImage+Additions.h
 //  MobileRTCSample
 //
-//  Created by Xiaojian Hu on 3/17/14.
+//  Created by Zoom Video Communications on 3/17/14.
 //  Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
 //
 

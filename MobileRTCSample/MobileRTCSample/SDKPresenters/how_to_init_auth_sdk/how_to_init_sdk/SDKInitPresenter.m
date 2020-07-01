@@ -2,7 +2,7 @@
 //  SDKInitPresenter.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/19.
+//  Created by Zoom Video Communications on 2018/11/19.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -22,7 +22,7 @@
     context.locale = MobileRTC_ZoomLocale_Default;
 
     //Note: This step is optional, Method is uesd for iOS Replaykit Screen share integration,if not,just ignore this step.
-    context.appGroupId = @"";
+    context.appGroupId = @"group.zoom.us.MobileRTCSampleExtensionReplayKit";
     BOOL initializeSuc = [[MobileRTC sharedRTC] initialize:context];
     NSLog(@"initializeSuccessful======>%@",@(initializeSuc));
     

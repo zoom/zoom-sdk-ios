@@ -2,7 +2,7 @@
 //  SDKStartJoinMeetingPresenter+AudioServiceDelegate.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/12/5.
+//  Created by Zoom Video Communications on 2018/12/5.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -18,6 +18,14 @@
     if (self.customMeetingVC)
     {
         [self.customMeetingVC onSinkMeetingAudioStatusChange:userID];
+    }
+}
+
+- (void)onSinkMeetingMyAudioTypeChange
+{
+    if (self.customMeetingVC)
+    {
+        [self.customMeetingVC onSinkMeetingMyAudioTypeChange];
     }
 }
 

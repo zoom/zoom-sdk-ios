@@ -2,7 +2,7 @@
 //  MobileRTCMeetingService+VirtualBackground.h
 //  MobileRTC
 //
-//  Created by Jackie Chen on 2019/10/22.
+//  Created by Zoom Video Communications on 2019/10/22.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

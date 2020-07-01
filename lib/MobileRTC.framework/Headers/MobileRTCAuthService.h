@@ -2,7 +2,7 @@
 //  MobileRTCAuthService.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 8/8/14.
+//  Created by Zoom Video Communications on 8/8/14.
 //  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -79,6 +79,13 @@
  @warning The method is optional, ignore it if you do not login MobileRTC with SSO.
  */
 - (BOOL)loginWithSSOToken:(nonnull NSString*)token rememberMe:(BOOL)rememberMe;
+
+/*!
+ @brief Query if it is enabled to login with email.
+ @return YES means enable, otherwise not.
+ @warning You need call the function after auth successfull.
+ */
+- (BOOL)isEmailLoginEnabled;
 
 /*!
  @brief Specify to logout MobileRTC.

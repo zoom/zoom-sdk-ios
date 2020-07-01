@@ -2,7 +2,7 @@
 //  BOMeetingViewController.m
 //  MobileRTCSample
 //
-//  Created by Jackie Chen on 2020/2/13.
+//  Created by Zoom Video Communications on 2020/2/13.
 //  Copyright © 2020 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -60,10 +60,8 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     [self.navigationItem setLeftBarButtonItem:closeItem];
     [self.navigationItem.leftBarButtonItem setTintColor:RGBCOLOR(0x2D, 0x8C, 0xFF)];
     
-    
-    [[MobileRTC sharedRTC] getMeetingService].delegate = self;
-    
     self.dataSource = [NSMutableArray array];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:@"BO_Update" object:nil];
     [self initDataSource];
     [self initTableView];
 }
@@ -78,6 +76,7 @@ typedef NS_ENUM(NSUInteger, BOActions) {
 
 - (void)onDone:(id)sender
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -165,76 +164,11 @@ typedef NS_ENUM(NSUInteger, BOActions) {
 }
 
 #pragma mark - MobileRTCMeetingServiceDelegate
-- (void)onHasCreatorRightsNotification:(MobileRTCBOCreator *_Nonnull)creator
-{
-    NSLog(@"---BO--- Own Creator");
+
+- (void)updateTable {
     [self initDataSource];
     [self.tableView reloadData];
 }
-
-- (void)onHasAdminRightsNotification:(MobileRTCBOAdmin * _Nonnull)admin
-{
-    NSLog(@"---BO--- Own Admin");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onHasAssistantRightsNotification:(MobileRTCBOAssistant * _Nonnull)assistant
-{
-    NSLog(@"---BO--- Own Assistant");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onHasAttendeeRightsNotification:(MobileRTCBOAttendee * _Nonnull)attendee
-{
-    NSLog(@"---BO--- Own Attendee");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onHasDataHelperRightsNotification:(MobileRTCBOData * _Nonnull)dataHelper
-{
-    NSLog(@"---BO--- Own Data Helper");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onLostCreatorRightsNotification
-{
-    NSLog(@"---BO--- Lost Creator");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onLostAdminRightsNotification;
-{
-    NSLog(@"---BO--- Lost Admin");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onLostAssistantRightsNotification;
-{
-    NSLog(@"---BO--- Lost Assistant");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onLostAttendeeRightsNotification;
-{
-    NSLog(@"---BO--- Lost Attendee");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
-- (void)onLostDataHelperRightsNotification;
-{
-    NSLog(@"---BO--- Lost DataHelper");
-    [self initDataSource];
-    [self.tableView reloadData];
-}
-
 
 #pragma mark - Table view data source
 
@@ -657,11 +591,19 @@ typedef NS_ENUM(NSUInteger, BOActions) {
                 }
                 
                 NSArray *arr = [dataHelper getBOMeetingIDList];
+                
+                NSString *meetingInfo = @"";
+                for (NSString *meetingID in arr) {
+                    MobileRTCBOMeeting *meeting = [dataHelper getBOMeetingByID:meetingID];
+                    meetingInfo = [meetingInfo stringByAppendingFormat:@"ID:%@, Name:%@\n", meeting.getBOMeetingId, meeting.getBOMeetingName];
+                }
+                
+                
                 NSLog(@"datahelper get bo meeting list: %@", [arr description]);
                 alertController = [UIAlertController alertControllerWithTitle:@"BODataHelper_BOMeetingIDList"
-                                                                                         message:[arr description]
+                                                                                         message:meetingInfo
                                                                                   preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                [alertController addAction:[UIAlertAction actionWithTitle:@"OK"
                                                                     style:UIAlertActionStyleCancel
                                                                   handler:nil]];
             }

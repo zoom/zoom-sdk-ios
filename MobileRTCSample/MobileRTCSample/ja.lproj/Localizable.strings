@@ -2,7 +2,7 @@
   Localizable.strings
   MobileRTCSample
 
-  Created by Xiaojian Hu on 8/6/14.
+  Created by Zoom Video Communications on 8/6/14.
   Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
 */
 
@@ -26,6 +26,8 @@
 
 "Disable Gallery View" = "Disable Gallery View";
 
+"Disable Show Video Preview" = "Disable Show Video Preview";
+
 "Driving Mode Setting" = "Driving Mode turns on speaker, stops video and mutes microphone";
 
 "Invite Participant" = "Invite Participant";
@@ -37,6 +39,8 @@
 "Disable Minimize Meeting" = "Disable Minimize Meeting";
 
 "Face Beauty Enable" = "Touch Up My Appearance";
+
+"Use Original Sound" = "Use Original Sound";
 
 "Please join meeting with ID: %@" = "Please join meeting with ID: %@";
 
@@ -166,3 +170,6 @@
 "Enable Waiting Room" = "Enable Waiting Room";
 
 "List in the Public Event List" = "List in the Public Event List";
+
+"Meeting List" = "Meeting List";
+

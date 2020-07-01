@@ -2,7 +2,7 @@
 //  MobileRTCConstants.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 8/7/14.
+//  Created by Zoom Video Communications on 8/7/14.
 //  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -25,6 +25,17 @@ typedef enum {
     MobileRTCAuthError_AccountNotEnableSDK,
     ///Unknown error
     MobileRTCAuthError_Unknown,
+    ///Service is busy
+    MobileRTCAuthError_ServiceBusy,
+    ///<Initial status.
+    MobileRTCAuthError_None,
+    ///Request over time
+    MobileRTCAuthError_OverTime,
+    ///<Network issues.
+    MobileRTCAuthError_NetworkIssue,
+    ///Account does not support this SDK version
+    MobileRTCAuthError_ClientIncompatible,
+
 }MobileRTCAuthError;
 
 /*!
@@ -137,8 +148,6 @@ typedef enum {
     MobileRTCUserType_Facebook    = 0,
     ///User logs in with Google authentication.
     MobileRTCUserType_GoogleOAuth = 2,
-    ///User logs in with device, like H.323, SIP, etc. 
-    MobileRTCUserType_DeviceUser  = 97,
     ///API user.
     MobileRTCUserType_APIUser     = 99,
     ///User logs in with working email.
@@ -214,11 +223,15 @@ typedef enum {
  */
 typedef enum {
     ///OK
-    H323CallOutStatus_OK        = 0,
-    ///Calling
-    H323CallOutStatus_Calling,
+    H323CallOutStatus_Success        = 0,
+    ///Ring
+    H323CallOutStatus_Ring,
+    ///Timeout
+    H323CallOutStatus_Timeout,
     ///Busy
     H323CallOutStatus_Busy,
+    ///Decline
+    H323CallOutStatus_Decline,
     ///Failed
     H323CallOutStatus_Failed,
 }H323CallOutStatus;

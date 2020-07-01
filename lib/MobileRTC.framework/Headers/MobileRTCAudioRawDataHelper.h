@@ -2,7 +2,7 @@
 //  MobileRTCAudioRawDataHelper.h
 //  MobileRTC
 //
-//  Created by Murray Li on 2019/8/8.
+//  Created by Zoom Video Communications on 2019/8/8.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  MobileRTCQAMessage.h
 //  MobileRTC
 //
-//  Created by Murray Li on 2019/10/11.
+//  Created by Zoom Video Communications on 2019/10/11.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

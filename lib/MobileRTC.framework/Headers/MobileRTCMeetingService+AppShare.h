@@ -2,7 +2,7 @@
 //  MobileRTCMeetingService+AppShare.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 2017/2/27.
+//  Created by Zoom Video Communications on 2017/2/27.
 //  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -29,8 +29,8 @@
 
 /*!
  @brief Share content with ReplayKit.
- @warning Available only for iOS 11 version minimum.  
- @warning Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change. 
+ @warning Available only for iOS 11 version minimum.
+ @warning Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change.
  */
 - (void)appShareWithReplayKit DEPRECATED_ATTRIBUTE;
 

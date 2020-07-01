@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		917D135524910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D135424910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m */; };
 		9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197851323F4EACD0099BDDB /* BOMeetingViewController.m */; };
 		91A9BE8B243C53D000D94794 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9BE8A243C53D000D94794 /* VBViewController.m */; };
 		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
@@ -71,6 +72,7 @@
 		D0BAD47321A3E7EE004AE4B1 /* SDKSharePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47221A3E7EE004AE4B1 /* SDKSharePresenter.m */; };
 		D0BAD47621A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47521A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m */; };
 		D0BAD47A21A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47921A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m */; };
+		D0E03CCB24639F120004CDF3 /* MobileRTCSampleScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D91E333920A7D50300F64928 /* MobileRTCSampleScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D0ECCE3B21CA50C000CFC386 /* SDKAuthPresenter+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ECCE3A21CA50C000CFC386 /* SDKAuthPresenter+Login.m */; };
 		D0ECCE5521CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ECCE5421CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m */; };
 		D0F85EFA21B1201E00D04358 /* SDKStartJoinMeetingPresenter+UserServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0F85EF921B1201E00D04358 /* SDKStartJoinMeetingPresenter+UserServiceDelegate.m */; };
@@ -145,6 +147,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D0E03CCC24639F120004CDF3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C123331518D6D43100894EED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D91E333820A7D50300F64928;
+			remoteInfo = MobileRTCSampleScreenShare;
+		};
 		D907611220A56F1B008FA1DB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D98403A01DC44D6900085DBF /* MobileRTC.xcodeproj */;
@@ -190,6 +199,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D0E03CCE24639F120004CDF3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D0E03CCB24639F120004CDF3 /* MobileRTCSampleScreenShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F7A1C0F5205907E300D12B22 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +224,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		917D135324910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKStartJoinMeetingPresenter+BOServiceDelegate.h"; sourceTree = "<group>"; };
+		917D135424910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKStartJoinMeetingPresenter+BOServiceDelegate.m"; sourceTree = "<group>"; };
 		9197851223F4EACD0099BDDB /* BOMeetingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BOMeetingViewController.h; sourceTree = "<group>"; };
 		9197851323F4EACD0099BDDB /* BOMeetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOMeetingViewController.m; sourceTree = "<group>"; };
 		91A9BE89243C53D000D94794 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
@@ -655,6 +677,8 @@
 				D057546E21B7F57C00FD95DA /* SDKStartJoinMeetingPresenter+WebinarServiceDelegate.m */,
 				D057547021B7F59000FD95DA /* SDKStartJoinMeetingPresenter+CustomizedUIMeetingDelegate.h */,
 				D057547121B7F59000FD95DA /* SDKStartJoinMeetingPresenter+CustomizedUIMeetingDelegate.m */,
+				917D135324910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.h */,
+				917D135424910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m */,
 			);
 			path = meeting_callback;
 			sourceTree = "<group>";
@@ -902,12 +926,14 @@
 				C123331A18D6D43100894EED /* Frameworks */,
 				C123331B18D6D43100894EED /* Resources */,
 				F7A1C0F5205907E300D12B22 /* Embed Frameworks */,
+				D0E03CCE24639F120004CDF3 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				F7A1C15820590FC400D12B22 /* PBXTargetDependency */,
 				D98403E91DC44D9500085DBF /* PBXTargetDependency */,
+				D0E03CCD24639F120004CDF3 /* PBXTargetDependency */,
 			);
 			name = MobileRTCSample;
 			productName = ZoomSDKSample;
@@ -1168,6 +1194,7 @@
 				D0BAD40921A3D3F2004AE4B1 /* SDKStartJoinMeetingPresenter+JoinMeetingOnly.m in Sources */,
 				C123332D18D6D43100894EED /* main.m in Sources */,
 				91A9BE8B243C53D000D94794 /* VBViewController.m in Sources */,
+				917D135524910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m in Sources */,
 				D000E940219BF0B500FC9275 /* CustomMeetingViewController.m in Sources */,
 				F70F8ACF20E4B4B400659FC4 /* CustomRemoteControl.m in Sources */,
 				D996D24A1C99478B00C284F0 /* SettingsViewController.m in Sources */,
@@ -1193,6 +1220,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D0E03CCD24639F120004CDF3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D91E333820A7D50300F64928 /* MobileRTCSampleScreenShare */;
+			targetProxy = D0E03CCC24639F120004CDF3 /* PBXContainerItemProxy */;
+		};
 		D98403E91DC44D9500085DBF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MobileRTCResources;
@@ -1324,6 +1356,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = MobileRTCSample/MobileRTCSample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1359,6 +1392,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_ENTITLEMENTS = MobileRTCSample/MobileRTCSample.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -1404,6 +1438,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MobileRTCSampleScreenShare/MobileRTCSampleScreenShare.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1419,10 +1454,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.videomeetings.ExtensionReplayKit;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.sdk.MobileRTCSample.ExtensionReplayKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3eb831d9-378d-4326-af1a-da93f7959824";
-				PROVISIONING_PROFILE_SPECIFIER = ZoomMeetingExtensionReplayKitDevelop;
+				PROVISIONING_PROFILE_SPECIFIER = MobileRTCSampleExtensionReplayKit;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1447,6 +1482,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = MobileRTCSampleScreenShare/MobileRTCSampleScreenShare.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
@@ -1462,10 +1498,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.videomeetings.ExtensionReplayKit;
+				PRODUCT_BUNDLE_IDENTIFIER = us.zoom.sdk.MobileRTCSample.ExtensionReplayKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3eb831d9-378d-4326-af1a-da93f7959824";
-				PROVISIONING_PROFILE_SPECIFIER = ZoomMeetingExtensionReplayKitDevelop;
+				PROVISIONING_PROFILE_SPECIFIER = MobileRTCSampleExtensionReplayKit;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

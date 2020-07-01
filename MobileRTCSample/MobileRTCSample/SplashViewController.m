@@ -2,7 +2,7 @@
 //  SplashViewController.m
 //  IntroTest
 //
-//  Created by Robust on 15/12/2.
+//  Created by Zoom Video Communications on 15/12/2.
 //  Copyright © 2015年 Robust. All rights reserved.
 //
 

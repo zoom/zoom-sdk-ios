@@ -2,7 +2,7 @@
 //  SDKStartJoinMeetingPresenter+JoinMeetingOnly.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/20.
+//  Created by Zoom Video Communications on 2018/11/20.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -24,25 +24,20 @@
 #endif
         
         //For Join a meeting with password
-        NSDictionary *paramDict = @{
-                                    kMeetingParam_Username:kSDKUserName,
-                                    kMeetingParam_MeetingNumber:meetingNo,
-                                    kMeetingParam_MeetingPassword:pwd,
-                                    //kMeetingParam_ParticipantID:kParticipantID,
-                                    //kMeetingParam_WebinarToken:kWebinarToken,
-                                    //kMeetingParam_NoAudio:@(YES),
-                                    //kMeetingParam_NoVideo:@(YES),
-                                    };
-        //            //For Join a meeting
-        //            NSDictionary *paramDict = @{
-        //                                        kMeetingParam_Username:kSDKUserName,
-        //                                        kMeetingParam_MeetingNumber:meetingNo,
-        //                                        kMeetingParam_MeetingPassword:pwd,
-        //                                        };
+        MobileRTCMeetingJoinParam * joinParam = [[[MobileRTCMeetingJoinParam alloc]init]autorelease];
+        joinParam.userName = kSDKUserName;
+        joinParam.meetingNumber = meetingNo;
+        joinParam.password = pwd;
+//        joinParam.zak = kZAK;
+//        joinParam.participantID = kParticipantID;
+//        joinParam.webinarToken = kWebinarToken;
+//        joinParam.noAudio = YES;
+//        joinParam.noVideo = YES;
         
-        MobileRTCMeetError ret = [ms joinMeetingWithDictionary:paramDict];
+        MobileRTCMeetError ret = [ms joinMeetingWithJoinParam:joinParam];
         
         NSLog(@"onJoinaMeeting ret:%d", ret);
+
     }
 }
 

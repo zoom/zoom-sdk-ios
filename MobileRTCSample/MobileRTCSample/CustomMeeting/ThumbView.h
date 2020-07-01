@@ -2,7 +2,7 @@
 //  ThumbView.h
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/10/15.
+//  Created by Zoom Video Communications on 2018/10/15.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 

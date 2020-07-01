@@ -2,7 +2,7 @@
 //  MobileRTCScreenShareService.h
 //  MobileRTCScreenShare
 //
-//  Created by Chao Bai on 2018/5/24.
+//  Created by Zoom Video Communications on 2018/5/24.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 

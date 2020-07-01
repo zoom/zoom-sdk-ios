@@ -2,7 +2,7 @@
 //  SDKStartJoinMeetingPresenter.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/15.
+//  Created by Zoom Video Communications on 2018/11/15.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //E
 

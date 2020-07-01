@@ -2,7 +2,7 @@
 //  MobileRTCInviteHelper.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 7/29/15.
+//  Created by Zoom Video Communications on 7/29/15.
 //  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

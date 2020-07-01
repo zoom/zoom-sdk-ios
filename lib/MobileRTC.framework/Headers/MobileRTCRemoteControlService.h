@@ -2,7 +2,7 @@
 //  MobileRTCRemoteControlService.h
 //  MobileRTC
 //
-//  Created by Murray Li on 2018/6/22.
+//  Created by Zoom Video Communications on 2018/6/22.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

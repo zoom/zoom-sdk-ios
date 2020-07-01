@@ -2,7 +2,7 @@
 //  MobileRTCMeetingChat.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 2017/9/15.
+//  Created by Zoom Video Communications on 2017/9/15.
 //  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -50,5 +50,16 @@
  @brief Whether the message is private or not.
  */
 @property (nonatomic, readwrite) BOOL isPrivate;
-
+/*!
+ @brief Whether the message is send to all or not.
+ */
+@property (nonatomic, readwrite) BOOL isChatToAll;
+/*!
+ @brief Whether the message is send to all panelist or not.
+ */
+@property (nonatomic, readwrite) BOOL isChatToAllPanelist;
+/*!
+ @brief Whether the message is send to waiting room or not.
+ */
+@property (nonatomic, readwrite) BOOL isChatToWaitingroom;
 @end

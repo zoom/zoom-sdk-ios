@@ -2,7 +2,7 @@
 //  MobileRTCMeetingService+Audio.h
 //  MobileRTC
 //
-//  Created by Chao Bai on 2018/6/6.
+//  Created by Zoom Video Communications on 2018/6/6.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -77,13 +77,6 @@
  @warning Only meeting host can run the function.
  */
 - (BOOL)muteAllUserAudio:(BOOL)allowSelfUnmute;
-
-/*!
- @brief Set to unmute audio of all attendees.
- @return YES means that the method is called successfully, otherwise not.
- @warning Only meeting host can run the function.
- */
-- (BOOL)unmuteAllUserAudio;
 
 /*!
  @brief Query if the meeting supports VoIP.

@@ -1,5 +1,67 @@
 # CHANGELOG
 
+## 2020-06-30 @ v5.0.24433.0616
+
+## Added:
+
+* Upgraded Zoom default UI to match Zoom client 5.0.
+* Added a new interface to modify the 'meeting topic' in the 'meeting information' page.
+  * The interface in `MobileRTCPremeetingService.h`:
+    * `- (BOOL)setMeetingTopic:(NSString *_Nonnull)meetingTopic;`
+* Added a new callback for the event when the username has changed
+  * The interface in `MobileRTCMeetingDelegate.h`:
+    * `- (void)onSinkUserNameChanged:(NSUInteger)userID userName:(NSString *_Nonnull)userName;`
+* Added new interfaces related to setting 'Always show video preview when joining a video meeting' feature.
+  * The interface in `MobileRTCMeetingSettings.h:`
+    * `- (BOOL)showVideoPreviewWhenJoinMeetingDisabled;`
+    * `- (void)disableShowVideoPreviewWhenJoinMeeting:(BOOL)disabled;`
+* Added a new interface to start meeting.
+   * The interface in `MobileRTCMeetingService.h`:
+    * `- (MobileRTCMeetError)startMeetingWithStartParam:(nonnull MobileRTCMeetingStartParam*)param;`
+* Added new interfaces for the "Use Original Sound" option in the meeting settings.
+   * The interface in `MobileRTCMeetingSettings.h`:
+    * `- (BOOL)micOriginalInputEnabled;`
+    * `- (void)enableMicOriginalInput:(BOOL)enable;`
+* Added new interfaces to check whether the PMI option is enabled on the account.
+   * The interface in `MobileRTCPremeetingService.h`:
+    * `- (BOOL)isDisabledPMI;`
+    * `- (BOOL)setUsePMIAsMeetingID:(BOOL)usePMI;`
+* Redefined the start/join meeting interface.
+   * The interface in `MobileRTCMeetingService.h`:
+    * `- (MobileRTCMeetError)startMeetingWithStartParam:(nonnull MobileRTCMeetingStartParam*)param;`
+    * `- (MobileRTCMeetError)joinMeetingWithJoinParam:(nonnull MobileRTCMeetingJoinParam*)param;`
+* Added new interfaces to hide the "Promote to Panelist" and "Change to Attendee” options.
+    * The interface in `MobileRTCMeetingSettings.h`
+     * `@property (assign, nonatomic) BOOL promoteToPanelistHidden;`
+     * `@property (assign, nonatomic) BOOL changeToAttendeeHidden;`
+* Optimized the status of H.323 call out.
+
+## Changed & Fixed:
+
+* Fixed an issue that the strings in the camera permission request prompt are failed to be translated.
+* Fixed an issue that the audio status is not shown correctly when joining a meeting that is sharing.
+* Fixed an issue that the app on the attendee side of a webinar crashes when the host changes the view to gallery view.
+* Fixed an issue that uploading the MobileRTCScreenShare.frameworks to App Store or TestFlight will result in errors.
+* Fixed an issue that the user ID returns in the audio status callback and the waiting room callback is incorrect.
+* Fixed an issue that the app crashes when using annotation in Custom UI mode.
+* Fixed an issue that the webinar host cannot change the attendee's display name.
+* Fixed an issue that the attendee cannot receive messages sent by the host while in the waiting room.
+* Temporary remove the "Unmute all" interfaces.
+
+## Deprecated:
+
+* `- (MobileRTCMeetError)startMeetingWithDictionary:(nonnull NSDictionary*)dict;`
+* `- (MobileRTCMeetError)joinMeetingWithDictionary:(nonnull NSDictionary*)dict;`
+
+## Removed:
+
+* `+ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog;`
+* `+ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog bundleResPath:(NSString * _Nullable)bundleResPath;`
+* `- (void)setMobileRTCDomain:(NSString * _Nonnull)domain;`
+* `- (void)setMobileRTCResPath:(NSString * _Nullable)path;`
+* `- (void)setAppGroupsName:(NSString * _Nullable)appGroupId;`
+* `- (BOOL)unmuteAllUserAudio;`
+
 ## 2020-04-28 @ v4.6.21666.0428
 
 ## Added:

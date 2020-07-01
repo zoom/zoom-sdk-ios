@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  MobileRTCSample
 //
-//  Created by Robust Hu on 3/17/14.
+//  Created by Zoom Video Communications on 3/17/14.
 //  Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -34,7 +34,7 @@
     [[[SDKInitPresenter alloc] init] SDKInit:navVC];
     
     //4. MobileRTC Authorize
-    [[[SDKAuthPresenter alloc] init] SDKAuth:kSDKKey clientSecret:kSDKSecret];
+    [[[SDKAuthPresenter alloc] init] SDKAuth];
     
     return YES;
 }

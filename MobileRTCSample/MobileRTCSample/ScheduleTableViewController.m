@@ -2,7 +2,7 @@
 //  ScheduleTableViewController.m
 //  MobileRTCSample
 //
-//  Created by Robust Hu on 2017/8/21.
+//  Created by Zoom Video Communications on 2017/8/21.
 //  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -484,7 +484,9 @@
     [item setMeetingRepeat:self.repeat];
     [item turnOffVideoForHost:!self.hostVideoOn];
     [item turnOffVideoForAttendee:!self.attendeeVideoOn];
-    [item setUsePMIAsMeetingID:self.usePMI];
+    BOOL ret = [item setUsePMIAsMeetingID:self.usePMI];
+    BOOL ret2 = [[[MobileRTC sharedRTC] getPreMeetingService] isDisabledPMI];
+    NSLog(@"isDisabledPMI : %@, set use BMI return: %@", @(ret2), @(ret));
     [item setAllowJoinBeforeHost:self.jbh];
     [item enableWaitingRoom:self.waitingRoom];
     [item enableMeetingToPublic:self.publicList];

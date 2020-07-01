@@ -2,7 +2,7 @@
   Localizable.strings
   MobileRTCSample
 
-  Created by Xiaojian Hu on 8/6/14.
+  Created by Zoom Video Communications on 8/6/14.
   Copyright (c) 2014 Zoom Video Communications, Inc. All rights reserved.
 */
 
@@ -26,6 +26,8 @@
 
 "Disable Gallery View" = "禁用画廊模式";
 
+"Disable Show Video Preview" = "禁用视频预览";
+
 "Driving Mode Setting" = "驾驶模式下，扬声器开启，视频关闭，麦克风静音";
 
 "Invite Participant" = "邀请与会人";
@@ -37,6 +39,8 @@
 "Disable Minimize Meeting" = "禁用最小化会议";
 
 "Face Beauty Enable" = "美颜";
+
+"Use Original Sound" = "使用原声";
 
 "Please join meeting with ID: %@" = "请通过会议ID: %@ 加入会议";
 
@@ -173,3 +177,4 @@
 
 "List in the Public Event List" = "在公共会议列表中列出";
 
+"Meeting List" = "会议列表";

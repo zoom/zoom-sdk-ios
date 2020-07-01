@@ -2,7 +2,7 @@
 //  WebViewController.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2019/6/21.
+//  Created by Zoom Video Communications on 2019/6/21.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

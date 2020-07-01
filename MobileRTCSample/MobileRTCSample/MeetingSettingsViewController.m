@@ -2,7 +2,7 @@
 //  MeetingSettingsViewController.m
 //  MobileRTCSample
 //
-//  Created by Robust Hu on 2017/8/18.
+//  Created by Zoom Video Communications on 2017/8/18.
 //  Copyright © 2017年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -16,12 +16,14 @@
 @property (retain, nonatomic) UITableViewCell *muteVideoCell;
 @property (retain, nonatomic) UITableViewCell *driveModeCell;
 @property (retain, nonatomic) UITableViewCell *galleryViewCell;
+@property (retain, nonatomic) UITableViewCell *videoPreviewCell;
 
 @property (retain, nonatomic) UITableViewCell *callInCell;
 @property (retain, nonatomic) UITableViewCell *callOutCell;
 @property (retain, nonatomic) UITableViewCell *minimizeMeetingCell;
 
 @property (retain, nonatomic) UITableViewCell *faceBeautyCell;
+@property (retain, nonatomic) UITableViewCell *micOriginalInputCell;
 
 @property (retain, nonatomic) UITableViewCell *titleHiddenCell;
 @property (retain, nonatomic) UITableViewCell *passwordHiddenCell;
@@ -97,11 +99,13 @@
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
         [disableArray addObject:[self enableKubiCell]];
     [disableArray addObject:[self galleryViewCell]];
+    [disableArray addObject:[self videoPreviewCell]];
     [array addObject:disableArray];
     
-    NSMutableArray *faceBeautyArray = [NSMutableArray array];
-    [faceBeautyArray addObject:[self faceBeautyCell]];
-    [array addObject:faceBeautyArray];
+    NSMutableArray *enableArray = [NSMutableArray array];
+    [enableArray addObject:[self faceBeautyCell]];
+    [enableArray addObject:[self micOriginalInputCell]];
+    [array addObject:enableArray];
 
     NSMutableArray *hiddenArray = [NSMutableArray array];
     [hiddenArray addObject:[self titleHiddenCell]];
@@ -296,6 +300,29 @@
     return _galleryViewCell;
 }
 
+- (UITableViewCell*)videoPreviewCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL disabled = [settings showVideoPreviewWhenJoinMeetingDisabled];
+    
+    if (!_videoPreviewCell)
+    {
+        _videoPreviewCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _videoPreviewCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _videoPreviewCell.textLabel.text = NSLocalizedString(@"Disable Show Video Preview", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:disabled animated:NO];
+        [sv addTarget:self action:@selector(onDisableVideoPreview:) forControlEvents:UIControlEventValueChanged];
+        _videoPreviewCell.accessoryView = sv;
+    }
+    
+    return _videoPreviewCell;
+}
+
 - (UITableViewCell*)callInCell
 {
     MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
@@ -388,6 +415,28 @@
     return _faceBeautyCell;
 }
 
+- (UITableViewCell*)micOriginalInputCell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL micOriginalInputEnabled = [settings micOriginalInputEnabled];
+    
+    if (!_micOriginalInputCell)
+    {
+        _micOriginalInputCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _micOriginalInputCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _micOriginalInputCell.textLabel.text = NSLocalizedString(@"Use Original Sound", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:micOriginalInputEnabled animated:NO];
+        [sv addTarget:self action:@selector(onMicOriginalInputEnable:) forControlEvents:UIControlEventValueChanged];
+        _micOriginalInputCell.accessoryView = sv;
+    }
+    
+    return _micOriginalInputCell;
+}
 
 - (UITableViewCell*)titleHiddenCell
 {
@@ -881,6 +930,11 @@
     [self.settingPresenter disableGalleryView:sv.on];
 }
 
+- (void)onDisableVideoPreview:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter onDisableVideoPreview:sv.on];
+}
 
 - (void)onDisableCallIn:(id)sender
 {
@@ -904,6 +958,12 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter faceBeautyEnable:sv.on];
+}
+
+- (void)onMicOriginalInputEnable:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter enableMicOriginalInput:sv.on];
 }
 
 - (void)onHideMeetingTitle:(id)sender

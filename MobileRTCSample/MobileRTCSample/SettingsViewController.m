@@ -2,7 +2,7 @@
 //  SettingsViewController.m
 //  MobileRTCSample
 //
-//  Created by Robust Hu on 7/6/15.
+//  Created by Zoom Video Communications on 7/6/15.
 //  Copyright (c) 2015 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -20,6 +20,7 @@
 @property (retain, nonatomic) UITableViewCell *languageCell;
 @property (retain, nonatomic) UITableViewCell *loginCell;
 @property (retain, nonatomic) UITableViewCell *scheduleCell;
+@property (retain, nonatomic) UITableViewCell *listMeetingCell;
 @property (retain, nonatomic) UITableViewCell *swtichDomainCell;
 
 @property (retain, nonatomic) NSArray *itemArray;
@@ -52,6 +53,21 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(listMeetingForStart:)
+                                                 name:@"kListMeetings"
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)initSettingItems
 {
     NSMutableArray *array = [NSMutableArray array];
@@ -62,7 +78,7 @@
     
     if ([[[MobileRTC sharedRTC] getAuthService] isLoggedIn])
     {
-        [array addObject:@[[self scheduleCell]]];
+        [array addObject:@[[self scheduleCell], [self listMeetingCell]]];
     }
     
     [array addObject:@[[self swtichDomainCell]]];
@@ -146,6 +162,19 @@
     return _scheduleCell;
 }
 
+- (UITableViewCell*)listMeetingCell
+{
+    if (!_listMeetingCell)
+    {
+        _listMeetingCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _listMeetingCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _listMeetingCell.textLabel.text = NSLocalizedString(@"Meeting List", @"");
+        _listMeetingCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return _listMeetingCell;
+}
+
 - (SDKAuthPresenter *)authPresenter
 {
     if (!_authPresenter)
@@ -154,6 +183,36 @@
     }
     
     return _authPresenter;
+}
+
+- (void)listMeetingForStart:(NSNotification*)notification
+{
+    NSArray *meetingList = [[notification userInfo] objectForKey:@"array"];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Meeting List", @"")
+                                                                             message:nil
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    
+    NSUInteger count = [meetingList count];
+    for (int i = 0; i < count; i++ ) {
+        
+        id<MobileRTCMeetingItem> item = meetingList[i];
+        long long meetingNum = [item getMeetingNumber];
+        NSString *topic = [item getMeetingTopic];
+        
+         [alertController addAction:[UIAlertAction actionWithTitle:topic style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                MobileRTCMeetingStartParam4LoginlUser * param = [[[MobileRTCMeetingStartParam4LoginlUser alloc]init]autorelease];
+                param.meetingNumber = [NSString stringWithFormat:@"%@",@(meetingNum)];
+                param.isAppShare = NO;
+                [[[MobileRTC sharedRTC] getMeetingService] startMeetingWithStartParam:param];
+           }]];
+    }
+
+    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 #pragma mark - Table view data source
@@ -185,21 +244,19 @@
         [vc release];
         return;
     }
-    
-    if ([cell isEqual:_meetingCell])
+    else if ([cell isEqual:_meetingCell])
     {
         MeetingSettingsViewController * vc = [[MeetingSettingsViewController alloc] initWithStyle:UITableViewStyleGrouped];
         [self.navigationController pushViewController:vc animated:YES];
         [vc release];
         return;
     }
-    
+
     if ([cell isEqual:_swtichDomainCell]) {
         [self switchDomainAndAuthAgain];
         return;
     }
-
-    if ([cell isEqual:_loginCell])
+    else if ([cell isEqual:_loginCell])
     {
         if ([[[MobileRTC sharedRTC] getAuthService] isLoggedIn])
         {
@@ -214,10 +271,12 @@
                 UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Select Login Type", @"")
                                                                                          message:nil
                                                                                   preferredStyle:UIAlertControllerStyleAlert];
+                if ([[[MobileRTC sharedRTC] getAuthService] isEmailLoginEnabled]) {
+                    [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Login with Email", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        [self loginWithEmail];
+                    }]];
+                }
                 
-                [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Login with Email", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                    [self loginWithEmail];
-                }]];
                 [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Login with SSO", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                     [self loginWithSSO];
                 }]];
@@ -230,13 +289,16 @@
         }
         return;
     }
-    
-    if ([cell isEqual:_scheduleCell])
+    else if ([cell isEqual:_scheduleCell])
     {
         ScheduleTableViewController *vc = [[ScheduleTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
         [self.navigationController pushViewController:vc animated:YES];
         [vc release];
         return;
+    }
+    else if ([cell isEqual:self.listMeetingCell])
+    {
+        [[[MobileRTC sharedRTC] getPreMeetingService] listMeeting];
     }
 }
 

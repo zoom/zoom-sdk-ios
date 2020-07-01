@@ -2,7 +2,7 @@
 //  SampleHandler.m
 //  ExtensionReplayKit
 //
-//  Created by Chao Bai on 2018/5/11.
+//  Created by Zoom Video Communications on 2018/5/11.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -25,7 +25,7 @@
     {
         MobileRTCScreenShareService * service = [[MobileRTCScreenShareService alloc]init];
         self.screenShareService = service;
-        self.screenShareService.appGroup = @"";
+        self.screenShareService.appGroup = @"group.zoom.us.MobileRTCSampleExtensionReplayKit";
         self.screenShareService.delegate = self;
         [service release];
     }

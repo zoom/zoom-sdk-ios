@@ -2,7 +2,7 @@
 //  MobileRTCPremeetingService.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 16/8/3.
+//  Created by Zoom Video Communications on 16/8/3.
 //  Copyright © 2019年 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -119,6 +119,12 @@ typedef enum {
  @return YES means call this method successfully.
  */
 - (BOOL)listMeeting;
+
+/*!
+@brief Detect the PMI Meeting is disabled or not in web backend.
+@return YES means PMI meeting has disabled, can't setUsePMIAsMeetingID with Meeting Item.
+*/
+- (BOOL)isDisabledPMI;
 
 /*!
  @brief return available dial in country object before meeting item create, you can use the ‘allCountries’ for list all the availble country for user select.
@@ -293,8 +299,9 @@ typedef enum {
 /*!
  @brief Set to use personal meeting ID(PMI) to start meeting.
  @param usePMI YES means to use PMI to start meeting.
+ @return YES means success to use the PMI as meeting ID, false means can't use PMI as meeting ID, please check interface 'isDisabledPMI'
  */
-- (void)setUsePMIAsMeetingID:(BOOL)usePMI;
+- (BOOL)setUsePMIAsMeetingID:(BOOL)usePMI;
 
 /*!
  @brief Query if the user starts the meeting with personal meeting ID.

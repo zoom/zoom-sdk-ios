@@ -2,7 +2,7 @@
 //  VBViewController.h
 //  MobileRTCSample
 //
-//  Created by Zoom Video on 2020/4/7.
+//  Created by Zoom Video Communications on 2020/4/7.
 //  Copyright © 2020 Zoom Video Communications, Inc. All rights reserved.
 //
 

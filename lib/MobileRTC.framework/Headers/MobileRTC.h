@@ -2,7 +2,7 @@
 //  MobileRTC.h
 //  MobileRTC
 //
-//  Created by Robust Hu on 8/7/14.
+//  Created by Zoom Video Communications on 8/7/14.
 //  Copyright (c) 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 #import <UIKit/UIKit.h>
@@ -137,44 +137,6 @@
 - (BOOL)switchDomain:(NSString * _Nonnull)newDomain force:(BOOL)force;
 
 /*!
- @deprecated This method will be deleted in next release.
- @brief Call the function to initialize MobileRTC.
- @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
- @param domain The domain is used to start/join a ZOOM meeting.
- @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
- */
-+ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
-
-/*!
- @deprecated This method will be deleted in next release.
- @brief Call the function to initialize MobileRTC.
- @warning The sharedSDK will be instantiated only once over the lifespan of the application. Configure the client with the specified key and secret.
- @warning This method is optional, if the MobileRTCResources.bundle is located in main bundle, please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog to initialize MobileRTC; otherwise it is necessary to use the method for initialize MobileRTC.
- @param domain The domain is used to start/join a ZOOM meeting.
- @param enableLog Set MobileRTC log enable or not. The path of Log: Sandbox/AppData/tmp/
- @param bundleResPath Set the path of MobileRTC resource bundle.
- */
-+ (void)initializeWithDomain:(NSString * _Nonnull)domain enableLog:(BOOL)enableLog bundleResPath:(NSString * _Nullable)bundleResPath DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
-
-/*!
- @deprecated This method will be deleted in next release.
- @brief Set MobileRTC client domain.
- @warning Set the domain while initializing MobileRTC. 
- @param domain The domain is used to start/join a ZOOM meeting.
- @warning It is necessary to call the function once the application starts. 
- */
-- (void)setMobileRTCDomain:(NSString * _Nonnull)domain DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
-
-/*!
- @deprecated This method will be deleted in next release.
- @note Please use + (void)initializeWithDomain:(NSString*)domain enableLog:(BOOL)enableLog bundleResPath:(NSString*)bundleResPath;
- @brief Set the path of MobileRTC resource bundle.
- @warning This method is optional, the MobileRTCResources.bundle is located in main bundle if the function is not called; otherwise it is necessary to set the MobileRTC Resources path while initializing MobileRTC. 
- @param path The path of MobileRTC Resources bundle.
- */
-- (void)setMobileRTCResPath:(NSString * _Nullable)path DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
-
-/*!
  @brief Set the name of Localizable file for MobileRTC.
  @warning This method is optional, MobileRTC will read Custom Localizable file from App’s main bundle first.
  @param localizableName The name of APP Localizable file for MobileRTC.
@@ -276,13 +238,6 @@
  @param lang The specified language.  
  */
 - (void)setLanguage:(NSString * _Nullable)lang;
-
-/*!
- @deprecated This method will be deleted in next release.
- @brief Set the AppGroup ID of the application. 
- @warning The Method is used for iOS Replaykit Screen share integration and should be called after SDK initiation.
- */
-- (void)setAppGroupsName:(NSString * _Nullable)appGroupId DEPRECATED_MSG_ATTRIBUTE("Will be deleted in the next release. Please use [[MobileRTC sharedRTC] initialize:context] instead");
 
 /*!
  @brief Notify common layer that application will resign active. Call the systematical method and then call the appWillResignActive via applicationWillResignActive.

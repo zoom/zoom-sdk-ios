@@ -2,7 +2,7 @@
 //  MobileRTCAnnotationService.h
 //  MobileRTC
 //
-//  Created by Chao Bai on 2018/6/12.
+//  Created by Zoom Video Communications on 2018/6/12.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

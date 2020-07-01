@@ -162,6 +162,7 @@
 /*!
  @brief Custom the UI of Leave Meeting Alert.
  @param parentVC Parent viewcontroller to present custom Participants UI.
+ @param endButton The endButton.
  */
 - (BOOL)onClickedEndButton:(UIViewController * _Nonnull)parentVC endButton:(UIButton * _Nonnull)endButton;
 
@@ -186,6 +187,7 @@
 /*!
  @brief Callback event while calling H.323 device, and you should input the pairing code.
  @param state ZERO(0) means pairing successfully, otherwise failed.
+ @param meetingNumber The meetng number
  */
 - (void)onSendPairingCodeStateChanged:(MobileRTCH323ParingStatus)state MeetingNumber:(unsigned long long)meetingNumber;
 
@@ -236,7 +238,7 @@
 
 /*!
 @brief The function will be invoked when the chat privilege of attendees changes.
-@return currentPrivilege The chat privilege of the current attendee.
+@param currentPrivilege The chat privilege of the current attendee.
 @warning only normal meeting(non webinar meeting) can get the callback.
 */
 - (void)onSinkAttendeeChatPriviledgeChanged:(MobileRTCMeetingChatPriviledgeType)currentPrivilege;
@@ -251,7 +253,7 @@
 
 /*!
  @brief Callback event that the participant's audio status changes. 
- @return UserID The ID of user whose audio status changes.
+ @param UserID The ID of user whose audio status changes.
  */
 - (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID;
 
@@ -285,13 +287,13 @@
 
 /*!
  @brief The function will be invoked once the active video status changes. 
- @return The ID of user whose video is active at present.  
+ @param userID The ID of user whose video is active at present.
  */
 - (void)onSinkMeetingActiveVideo:(NSUInteger)userID;
 
 /*!
  @brief The function will be invoked once the participant's video status changes.
- @return The ID of user whose video status changes.
+ @param userID The ID of user whose video status changes.
  */
 - (void)onSinkMeetingVideoStatusChange:(NSUInteger)userID;
 
@@ -314,13 +316,14 @@
 
 /*!
  @brief Callback event of active video changes when there is a new speaker. 
- @return UserID of new speaker.
+ @param userID UserID of new speaker.
  */
 - (void)onSinkMeetingActiveVideoForDeck:(NSUInteger)userID;
 
 /*!
  @brief Notify that user's video quality changes.
- @return The quality of the Video and the UserID.
+ @param qality The quality of the Video and the UserID.
+ @param userID The ID of user whose video is active at present.
  */
 - (void)onSinkMeetingVideoQualityChanged:(MobileRTCNetworkQuality)qality userID:(NSUInteger)userID;
 
@@ -356,27 +359,34 @@
 
 /*!
  @brief The function will be invoked once the user joins the meeting.
- @return The ID of user who joins the meeting.
+ @param userID The ID of user who joins the meeting.
  */
 - (void)onSinkMeetingUserJoin:(NSUInteger)userID;
 
 /*!
  @brief The function will be invoked once the user leaves the meeting.
- @return The ID of user who leaves the meeting.
+ @param userID The ID of user who leaves the meeting.
  */
 - (void)onSinkMeetingUserLeft:(NSUInteger)userID;
 
 /*!
  @brief The function will be invoked once user raises hand.
- @return The ID of user who raises hand.
+ @param userID The ID of user who raises hand.
  */
 - (void)onSinkMeetingUserRaiseHand:(NSUInteger)userID;
 
 /*!
  @brief The function will be invoked once user lowers hand.
- @return The ID of user who lowers hand.
+ @param userID The ID of user who lowers hand.
  */
 - (void)onSinkMeetingUserLowerHand:(NSUInteger)userID;
+
+/*!
+ @brief The function will be invoked once user change the screen name.
+ @param userID Specify the user ID whose status changes.
+ @param userName New screen name displayed.
+ */
+- (void)onSinkUserNameChanged:(NSUInteger)userID userName:(NSString *_Nonnull)userName;
 
 /*!
  @brief Notify user that meeting host changes.
@@ -410,20 +420,20 @@
 
 /*!
  @brief Callback event when the share starts.
- @return The user ID of presenter. 
+ @param userID The user ID of presenter.
  @warning userID == 0, which means that the user stopped sharing.
  */
 - (void)onSinkMeetingActiveShare:(NSUInteger)userID;
 
 /*!
  @brief Callback event when the sharing content changes.  
- @return The user ID of presenter. 
+ @param userID The user ID of presenter.
  */
 - (void)onSinkMeetingShareReceiving:(NSUInteger)userID;
 
 /*!
  @brief Callback event when presenter resizes the sharing content. 
- @return New size of the shared content and UserID
+ @param userID New size of the shared content and UserID
  */
 - (void)onSinkShareSizeChange:(NSUInteger)userID;
 
@@ -525,25 +535,25 @@
 
 /*!
  @brief Callback event of the permission that user is allowed to ask questions anonymously is changed.
- @return YES means that user can ask question anonymously, otherwise not.
+ @param beAllowed YES means that user can ask question anonymously, otherwise not.
  */
 - (void)onSinkQAAllowAskQuestionAnonymouslyNotification:(BOOL)beAllowed;
 
 /*!
  @brief Callback event of the permission that attendee is allowed to view all questions is changed.
- @return YES means that user can view all questions, otherwise not.
+ @param beAllowed YES means that user can view all questions, otherwise not.
  */
 - (void)onSinkQAAllowAttendeeViewAllQuestionNotification:(BOOL)beAllowed;
 
 /*!
  @brief Callback event of the permission that attendee is allowed to submit questions is changed.
- @return YES means that the user can submit questions, otherwise not.
+ @param beAllowed YES means that the user can submit questions, otherwise not.
  */
 - (void)onSinkQAAllowAttendeeUpVoteQuestionNotification:(BOOL)beAllowed;
 
 /*!
  @brief Callback event of the permission that user is allowed to answer questions is changed.
- @return YES means that user can answer question, otherwise not.
+ @param beAllowed YES means that user can answer question, otherwise not.
  */
 - (void)onSinkQAAllowAttendeeAnswerQuestionNotification:(BOOL)beAllowed;
 
@@ -567,21 +577,21 @@
 
 /*!
  @brief The function will be invoked once the amount of the attendee is promoted successfully from attendee to panelist.
- @return errorCode Promotion successful or error type.
+ @param errorCode Promotion successful or error type.
  @warning Only meeting host/co-host can get the callback.
  */
 - (void)onSinkPromptAttendee2PanelistResult:(MobileRTCWebinarPromoteorDepromoteError)errorCode;
 
 /*!
  @brief The function will be invoked when panelist is demoted successfully from panelist to attendee.
- @return errorCode Demotion successful or error type.
+ @param errorCode Demotion successful or error type.
  @warning Only meeting host/co-host can get the callback.
  */
 - (void)onSinkDePromptPanelist2AttendeeResult:(MobileRTCWebinarPromoteorDepromoteError)errorCode;
 
 /*!
  @brief The function will be invoked when the chat privilege of attendees changes.
- @return currentPrivilege The chat privilege of the current attendee.
+ @param currentPrivilege The chat privilege of the current attendee.
  @warning only webinar meeting can get the callback.
  */
 - (void)onSinkAllowAttendeeChatNotification:(MobileRTCChatAllowAttendeeChat)currentPrivilege;

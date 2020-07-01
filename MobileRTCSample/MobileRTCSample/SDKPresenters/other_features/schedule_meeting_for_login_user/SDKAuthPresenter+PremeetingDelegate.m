@@ -2,7 +2,7 @@
 //  SDKAuthPresenter+PremeetingDelegate.m
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/12/19.
+//  Created by Zoom Video Communications on 2018/12/19.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -43,6 +43,12 @@
 - (void)sinkListMeeting:(PreMeetingError)result withMeetingItems:(NSArray*)array
 {
     NSLog(@"sinkListMeeting result: %d  items: %@", result, array);
+    
+    NSDictionary *dict = @{@"result":   @(result),
+                           @"array":    array
+    };
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"kListMeetings" object:nil userInfo:dict];
     
 #if 0
     for (id<MobileRTCMeetingItem> item in array)

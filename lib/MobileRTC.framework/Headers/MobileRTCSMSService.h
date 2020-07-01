@@ -2,7 +2,7 @@
 //  MobileRTCSMSService.h
 //  MobileRTC
 //
-//  Created by Jackie Chen on 2019/9/23.
+//  Created by Zoom Video Communications on 2019/9/23.
 //  Copyright © 2019 Zoom Video Communications, Inc. All rights reserved.
 //
 

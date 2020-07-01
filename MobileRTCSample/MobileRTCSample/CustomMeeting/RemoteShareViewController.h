@@ -2,7 +2,7 @@
 //  RemoteShareViewController.h
 //  MobileRTCSample
 //
-//  Created by chaobai on 27/11/2017.
+//  Created by Zoom Video Communications on 27/11/2017.
 //  Copyright © 2017 Zoom Video Communications, Inc. All rights reserved.
 //
 

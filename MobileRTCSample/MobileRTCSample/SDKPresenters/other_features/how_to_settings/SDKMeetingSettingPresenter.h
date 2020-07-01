@@ -2,7 +2,7 @@
 //  SDKMeetingSettingPresenter.h
 //  MobileRTCSample
 //
-//  Created by Murray Li on 2018/11/27.
+//  Created by Zoom Video Communications on 2018/11/27.
 //  Copyright © 2018 Zoom Video Communications, Inc. All rights reserved.
 //
 
@@ -27,6 +27,8 @@
 - (void)disableMinimizeMeeting:(BOOL)disabled;
 
 - (void)faceBeautyEnable:(BOOL)enable;
+
+- (void)enableMicOriginalInput:(BOOL)enable;
 
 - (void)setMeetingTitleHidden:(BOOL)hidden;
 
