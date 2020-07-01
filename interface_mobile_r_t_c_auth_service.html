@@ -100,6 +100,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a063f9891f8b1bc93bcbf1f77382a66ea"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#a063f9891f8b1bc93bcbf1f77382a66ea">loginWithSSOToken:rememberMe:</a></td></tr>
 <tr class="memdesc:a063f9891f8b1bc93bcbf1f77382a66ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify to login <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> with SSO (Single-Sign-On).  <a href="#a063f9891f8b1bc93bcbf1f77382a66ea">More...</a><br /></td></tr>
 <tr class="separator:a063f9891f8b1bc93bcbf1f77382a66ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c3c2e1a704347215305b23cc51c1c2"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#a72c3c2e1a704347215305b23cc51c1c2">isEmailLoginEnabled</a></td></tr>
+<tr class="memdesc:a72c3c2e1a704347215305b23cc51c1c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if it is enabled to login with email.  <a href="#a72c3c2e1a704347215305b23cc51c1c2">More...</a><br /></td></tr>
+<tr class="separator:a72c3c2e1a704347215305b23cc51c1c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad65e646d10d87502817bc2438446fc58"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_auth_service.html#ad65e646d10d87502817bc2438446fc58">logoutRTC</a></td></tr>
 <tr class="memdesc:ad65e646d10d87502817bc2438446fc58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specify to logout <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a>.  <a href="#ad65e646d10d87502817bc2438446fc58">More...</a><br /></td></tr>
 <tr class="separator:ad65e646d10d87502817bc2438446fc58"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,6 +169,27 @@ id&lt; MobileRTCAuthDelegate &gt;&#160;</td><td class="memItemRight" valign="bot
 <p>Get user type. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the user types listed in MobileRTCUserType. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The method is optional. The default user type is MobileRTCUserType_APIUser. User who logs in <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> with working email is MobileRTCUserType_ZoomUser; User who logs in <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> with SSO is MobileRTCUserType_SSOUser. </dd></dl>
+
+</div>
+</div>
+<a id="a72c3c2e1a704347215305b23cc51c1c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c3c2e1a704347215305b23cc51c1c2">&#9670;&nbsp;</a></span>isEmailLoginEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isEmailLoginEnabled </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if it is enabled to login with email. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means enable, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>You need call the function after auth successfull. </dd></dl>
 
 </div>
 </div>

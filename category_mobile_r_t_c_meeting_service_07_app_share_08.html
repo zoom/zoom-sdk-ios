@@ -82,9 +82,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a9cc919808a032a6c904a00d7f1975dc4"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a9cc919808a032a6c904a00d7f1975dc4">appShareWithView:</a></td></tr>
 <tr class="memdesc:a9cc919808a032a6c904a00d7f1975dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share a content.  <a href="#a9cc919808a032a6c904a00d7f1975dc4">More...</a><br /></td></tr>
 <tr class="separator:a9cc919808a032a6c904a00d7f1975dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5597e66fd1e3879400fee7a447673ec8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a5597e66fd1e3879400fee7a447673ec8">DEPRECATED_ATTRIBUTE</a></td></tr>
-<tr class="memdesc:a5597e66fd1e3879400fee7a447673ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share content with ReplayKit.  <a href="#a5597e66fd1e3879400fee7a447673ec8">More...</a><br /></td></tr>
-<tr class="separator:a5597e66fd1e3879400fee7a447673ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ced339638300079ad77604eba904114"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a5ced339638300079ad77604eba904114">appShareWithReplayKit</a></td></tr>
+<tr class="memdesc:a5ced339638300079ad77604eba904114"><td class="mdescLeft">&#160;</td><td class="mdescRight">Share content with ReplayKit.  <a href="#a5ced339638300079ad77604eba904114">More...</a><br /></td></tr>
+<tr class="separator:a5ced339638300079ad77604eba904114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ec52c807486db290cfe84ec2ea6b5ab"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_app_share_08.html#a3ec52c807486db290cfe84ec2ea6b5ab">startAppShare</a></td></tr>
 <tr class="memdesc:a3ec52c807486db290cfe84ec2ea6b5ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to enable App share.  <a href="#a3ec52c807486db290cfe84ec2ea6b5ab">More...</a><br /></td></tr>
 <tr class="separator:a3ec52c807486db290cfe84ec2ea6b5ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -108,6 +108,30 @@ Instance Methods</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Starts an App share meeting. </p>
 </div><h2 class="groupheader">Method Documentation</h2>
+<a id="a5ced339638300079ad77604eba904114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ced339638300079ad77604eba904114">&#9670;&nbsp;</a></span>appShareWithReplayKit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) appShareWithReplayKit </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Share content with ReplayKit. </p>
+<dl class="section warning"><dt>Warning</dt><dd>Available only for iOS 11 version minimum. </dd>
+<dd>
+Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change. </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5ced339638300079ad77604eba904114">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
 <a id="a9cc919808a032a6c904a00d7f1975dc4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cc919808a032a6c904a00d7f1975dc4">&#9670;&nbsp;</a></span>appShareWithView:()</h2>
 
@@ -136,31 +160,6 @@ Instance Methods</h2></td></tr>
 It is not recommended to pass UIView after add subview WKWebView or UIImageView. </dd></dl>
 
 <p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a9cc919808a032a6c904a00d7f1975dc4">MobileRTCMeetingService</a>.</p>
-
-</div>
-</div>
-<a id="a5597e66fd1e3879400fee7a447673ec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5597e66fd1e3879400fee7a447673ec8">&#9670;&nbsp;</a></span>DEPRECATED_ATTRIBUTE()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (void) DEPRECATED_ATTRIBUTE </td>
-          <td></td>
-          <td class="paramname"></td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Share content with ReplayKit. </p>
-<dl class="section warning"><dt>Warning</dt><dd>Available only for iOS 11 version minimum. <br />
-</dd>
-<dd>
-Once the interface has been called, the view will be updated 2.5s later than the operation. ReplayKit won't send the view out if the UI content does not change. </dd></dl>
-
-<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a5597e66fd1e3879400fee7a447673ec8">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>

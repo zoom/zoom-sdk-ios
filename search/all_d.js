@@ -108,6 +108,7 @@ var searchData=
   ['onsinksharesizechange_3a',['onSinkShareSizeChange:',['../protocol_mobile_r_t_c_share_service_delegate_01-p.html#af3d73617877c6c72240ec56234d992c9',1,'MobileRTCShareServiceDelegate -p']]],
   ['onsinkuserendliving_3a',['onSinkUserEndLiving:',['../protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a108d76e3f7050178e38c2e6a487d4a0d',1,'MobileRTCWebinarServiceDelegate -p']]],
   ['onsinkuserlivingreply_3a',['onSinkUserLivingReply:',['../protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a947239cfcaf70a13c085b25aa095ac63',1,'MobileRTCWebinarServiceDelegate -p']]],
+  ['onsinkusernamechanged_3ausername_3a',['onSinkUserNameChanged:userName:',['../protocol_mobile_r_t_c_user_service_delegate_01-p.html#a121d8b86f041c39ea5d02eb871328a56',1,'MobileRTCUserServiceDelegate -p']]],
   ['onsinkvoteupquestion_3aorderchanged_3a',['onSinkVoteupQuestion:orderChanged:',['../protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#a47fc85b775a348b414dd636fb77b072a',1,'MobileRTCWebinarServiceDelegate -p']]],
   ['onsinkwebinarneedregister_3a',['onSinkWebinarNeedRegister:',['../protocol_mobile_r_t_c_webinar_service_delegate_01-p.html#aefc29ab68d5f4e3f8768f874cfacceff',1,'MobileRTCWebinarServiceDelegate -p']]],
   ['onspotlightvideochange_3a',['onSpotlightVideoChange:',['../protocol_mobile_r_t_c_video_service_delegate_01-p.html#a4fca9a37f9ec772ebe7dcee2b8a09010',1,'MobileRTCVideoServiceDelegate -p']]],

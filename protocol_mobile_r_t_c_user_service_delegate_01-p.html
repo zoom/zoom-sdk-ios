@@ -100,6 +100,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a8be69b4467b55e74d5cfe437feb8c463"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a8be69b4467b55e74d5cfe437feb8c463">onSinkMeetingUserLowerHand:</a></td></tr>
 <tr class="memdesc:a8be69b4467b55e74d5cfe437feb8c463"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once user lowers hand.  <a href="#a8be69b4467b55e74d5cfe437feb8c463">More...</a><br /></td></tr>
 <tr class="separator:a8be69b4467b55e74d5cfe437feb8c463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a121d8b86f041c39ea5d02eb871328a56"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#a121d8b86f041c39ea5d02eb871328a56">onSinkUserNameChanged:userName:</a></td></tr>
+<tr class="memdesc:a121d8b86f041c39ea5d02eb871328a56"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once user change the screen name.  <a href="#a121d8b86f041c39ea5d02eb871328a56">More...</a><br /></td></tr>
+<tr class="separator:a121d8b86f041c39ea5d02eb871328a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4fa4043aae0894839182257bd79f3e8"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_user_service_delegate_01-p.html#ab4fa4043aae0894839182257bd79f3e8">onMeetingHostChange:</a></td></tr>
 <tr class="memdesc:ab4fa4043aae0894839182257bd79f3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify user that meeting host changes.  <a href="#ab4fa4043aae0894839182257bd79f3e8">More...</a><br /></td></tr>
 <tr class="separator:ab4fa4043aae0894839182257bd79f3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,7 +184,12 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The function will be invoked once the user joins the meeting. </p>
-<dl class="section return"><dt>Returns</dt><dd>The ID of user who joins the meeting. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>The ID of user who joins the meeting. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -202,7 +210,12 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The function will be invoked once the user leaves the meeting. </p>
-<dl class="section return"><dt>Returns</dt><dd>The ID of user who leaves the meeting. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>The ID of user who leaves the meeting. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -223,7 +236,12 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The function will be invoked once user lowers hand. </p>
-<dl class="section return"><dt>Returns</dt><dd>The ID of user who lowers hand. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>The ID of user who lowers hand. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -244,7 +262,49 @@ Instance Methods</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The function will be invoked once user raises hand. </p>
-<dl class="section return"><dt>Returns</dt><dd>The ID of user who raises hand. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>The ID of user who raises hand. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a121d8b86f041c39ea5d02eb871328a56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a121d8b86f041c39ea5d02eb871328a56">&#9670;&nbsp;</a></span>onSinkUserNameChanged:userName:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_user_service_delegate-p.html">MobileRTCUserServiceDelegate</a>) onSinkUserNameChanged: </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userName:</td>
+          <td></td>
+          <td class="paramtype">(NSString *_Nonnull)&#160;</td>
+          <td class="paramname"><em>userName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function will be invoked once user change the screen name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>Specify the user ID whose status changes. </td></tr>
+    <tr><td class="paramname">userName</td><td>New screen name displayed. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

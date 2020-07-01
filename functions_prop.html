@@ -115,6 +115,9 @@ $(function() {
 <li>calloutRoomSystemHidden
 : <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#afb2a81c0e1679a114dcf43bbe788d3c7">MobileRTCMeetingSettings</a>
 </li>
+<li>changeToAttendeeHidden
+: <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#aeedca58bfba373ceb1b0a534675f2927">MobileRTCMeetingSettings</a>
+</li>
 <li>channelNum
 : <a class="el" href="interface_mobile_r_t_c_audio_raw_data.html#aa9f7c809d152009aa18eed99dcd457e5">MobileRTCAudioRawData</a>
 </li>
@@ -243,6 +246,15 @@ $(function() {
 <li>isAppShare
 : <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#ad1a14dc556cd20cd9a6832b50a0f5116">MobileRTCMeetingStartParam</a>
 </li>
+<li>isChatToAll
+: <a class="el" href="interface_mobile_r_t_c_meeting_chat.html#a2021e71e1107bc2bb8372f8eece4b654">MobileRTCMeetingChat</a>
+</li>
+<li>isChatToAllPanelist
+: <a class="el" href="interface_mobile_r_t_c_meeting_chat.html#a0267e883c6ff145bdf146d4236c03a36">MobileRTCMeetingChat</a>
+</li>
+<li>isChatToWaitingroom
+: <a class="el" href="interface_mobile_r_t_c_meeting_chat.html#aafb383c758d3684cf45be135077b2684">MobileRTCMeetingChat</a>
+</li>
 <li>isCohost
 : <a class="el" href="interface_mobile_r_t_c_meeting_user_info.html#a56c3eed74ce0ab91cd066f96a4ebf148">MobileRTCMeetingUserInfo</a>
 </li>
@@ -331,7 +343,8 @@ $(function() {
 : <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a752d9b538dd522baa8e1719038c896e3">MobileRTCMeetingSettings</a>
 </li>
 <li>meetingNumber
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a9465d24d22abb2afa2b49e657f6e14d3">MobileRTCMeetingStartParam</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#aef8a6ec0c25d1429ddf3c30a5ebc43b3">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a9465d24d22abb2afa2b49e657f6e14d3">MobileRTCMeetingStartParam</a>
 </li>
 <li>meetingParticipantHidden
 : <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a0d344bdd2b444f43d233b31a61b18179">MobileRTCMeetingSettings</a>
@@ -365,10 +378,12 @@ $(function() {
 
 <h3><a id="index_n"></a>- n -</h3><ul>
 <li>noAudio
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a0e4b52dcf28112e2b1ecce53a4a1775b">MobileRTCMeetingStartParam</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a063e7e38c49097228b8d174cbc2cc2e3">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a0e4b52dcf28112e2b1ecce53a4a1775b">MobileRTCMeetingStartParam</a>
 </li>
 <li>noVideo
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a2316d56265200f4a9d5c22e0956164dd">MobileRTCMeetingStartParam</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a9c6e0ae46feb47ad4251f3619d4672f3">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#a2316d56265200f4a9d5c22e0956164dd">MobileRTCMeetingStartParam</a>
 </li>
 </ul>
 
@@ -394,11 +409,18 @@ $(function() {
 
 <h3><a id="index_p"></a>- p -</h3><ul>
 <li>participantID
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#ae18ae4c7256f0a682a6425dbe0a0ee1e">MobileRTCMeetingStartParam</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#abcaacb4b9c31699f2fdd21a5f2b08c7b">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#ae18ae4c7256f0a682a6425dbe0a0ee1e">MobileRTCMeetingStartParam</a>
+</li>
+<li>password
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a70d5ad536a75c20748d3a9c083e90265">MobileRTCMeetingJoinParam</a>
 </li>
 <li>previewView
 : <a class="el" href="category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#a376d72987e719c337cb78f1ea29f202d">MobileRTCMeetingService(VirtualBackground)</a>
 , <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a376d72987e719c337cb78f1ea29f202d">MobileRTCMeetingService</a>
+</li>
+<li>promoteToPanelistHidden
+: <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#af2b5e4c6dd5a88992ec3ea7591c191a4">MobileRTCMeetingSettings</a>
 </li>
 <li>proximityMonitoringDisable
 : <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a0270798fc9c5ee058ab4998d5df79b69">MobileRTCMeetingSettings</a>
@@ -495,12 +517,10 @@ $(function() {
 : <a class="el" href="interface_mobile_r_t_c_renderer.html#a9ce68093f479b8df797bc4b60199cafe">MobileRTCRenderer</a>
 </li>
 <li>userName
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#a2aafca5418b14c9b8a75786890c1142a">MobileRTCMeetingStartParam4WithoutLoginUser</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a2a04b796978e3c58c76f03aef807215c">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#a2aafca5418b14c9b8a75786890c1142a">MobileRTCMeetingStartParam4WithoutLoginUser</a>
 , <a class="el" href="interface_mobile_r_t_c_meeting_user_info.html#a425e6a3eb67ce6ef762880156dce2ed7">MobileRTCMeetingUserInfo</a>
 , <a class="el" href="interface_mobile_r_t_c_meeting_webinar_attendee_info.html#aef172e65c451ccfe19ddf6fa3d8aeddb">MobileRTCMeetingWebinarAttendeeInfo</a>
-</li>
-<li>userToken
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#a8bc90f0a3343583f146bce9a1eb05c23">MobileRTCMeetingStartParam4WithoutLoginUser</a>
 </li>
 <li>userType
 : <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#ae0c9464c9bc636654bbb5aefcd0cd811">MobileRTCMeetingStartParam4WithoutLoginUser</a>
@@ -510,7 +530,8 @@ $(function() {
 
 <h3><a id="index_v"></a>- v -</h3><ul>
 <li>vanityID
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#adc74061115827c0740c81ff82b34e56c">MobileRTCMeetingStartParam</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a9b21fd83e07cc89dc930922e6598c9d7">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param.html#adc74061115827c0740c81ff82b34e56c">MobileRTCMeetingStartParam</a>
 </li>
 <li>vBuffer
 : <a class="el" href="interface_mobile_r_t_c_video_raw_data.html#a946f7607c2cf0a22a90e6a16d0477728">MobileRTCVideoRawData</a>
@@ -531,6 +552,9 @@ $(function() {
 <li>waitingHUDHidden
 : <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#a56c59a67bc649152ae52db17f943beb4">MobileRTCMeetingSettings</a>
 </li>
+<li>webinarToken
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a29e393bed6d2027655fa6ae370e28807">MobileRTCMeetingJoinParam</a>
+</li>
 </ul>
 
 
@@ -543,7 +567,8 @@ $(function() {
 
 <h3><a id="index_z"></a>- z -</h3><ul>
 <li>zak
-: <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#a77cba03ef26ad2a7be2f11dd03164845">MobileRTCMeetingStartParam4WithoutLoginUser</a>
+: <a class="el" href="interface_mobile_r_t_c_meeting_join_param.html#a9f3e5dfb58ec99f457ba5e76c5499db7">MobileRTCMeetingJoinParam</a>
+, <a class="el" href="interface_mobile_r_t_c_meeting_start_param4_without_login_user.html#a77cba03ef26ad2a7be2f11dd03164845">MobileRTCMeetingStartParam4WithoutLoginUser</a>
 </li>
 </ul>
 </div><!-- contents -->

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['vanityid',['vanityID',['../interface_mobile_r_t_c_meeting_start_param.html#adc74061115827c0740c81ff82b34e56c',1,'MobileRTCMeetingStartParam']]],
+  ['vanityid',['vanityID',['../interface_mobile_r_t_c_meeting_start_param.html#adc74061115827c0740c81ff82b34e56c',1,'MobileRTCMeetingStartParam::vanityID()'],['../interface_mobile_r_t_c_meeting_join_param.html#a9b21fd83e07cc89dc930922e6598c9d7',1,'MobileRTCMeetingJoinParam::vanityID()']]],
   ['vbuffer',['vBuffer',['../interface_mobile_r_t_c_video_raw_data.html#a946f7607c2cf0a22a90e6a16d0477728',1,'MobileRTCVideoRawData']]],
   ['verify_3aphonenumber_3aandverifycode_3a',['verify:phoneNumber:andVerifyCode:',['../interface_mobile_r_t_c_verify_s_m_s_handler.html#ae9e3bc8d35f47bfbe2e31fe55d23de44',1,'MobileRTCVerifySMSHandler']]],
   ['videorawdatamemorymode',['videoRawdataMemoryMode',['../interface_mobile_r_t_c_s_d_k_init_context.html#a1fc99c29c9ab20bf179013242e4e2261',1,'MobileRTCSDKInitContext']]],

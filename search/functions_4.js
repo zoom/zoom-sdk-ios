@@ -4,6 +4,7 @@ var searchData=
   ['enablegreenvb_3a',['enableGreenVB:',['../category_mobile_r_t_c_meeting_service_07_virtual_background_08.html#ad2ae01597a6c4113378e8b88e59f1bb6',1,'MobileRTCMeetingService(VirtualBackground)::enableGreenVB:()'],['../interface_mobile_r_t_c_meeting_service.html#ad2ae01597a6c4113378e8b88e59f1bb6',1,'MobileRTCMeetingService::enableGreenVB:()']]],
   ['enablelanguageinterpretation_3a',['enableLanguageInterpretation:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#aaba45f7364fc64761c9b42310c0b238f',1,'MobileRTCMeetingItem -p']]],
   ['enablemeetingtopublic_3a',['enableMeetingToPublic:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#a6d602f29dcbe5a00c15b7b1dcc3d5f13',1,'MobileRTCMeetingItem -p']]],
+  ['enablemicoriginalinput_3a',['enableMicOriginalInput:',['../interface_mobile_r_t_c_meeting_settings.html#ac0d8e91428c724ddca8e74f5b36ce44c',1,'MobileRTCMeetingSettings']]],
   ['enableshowmymeetingelapsetime_3a',['enableShowMyMeetingElapseTime:',['../interface_mobile_r_t_c_meeting_settings.html#a57a550905067f0bc768de75c6212ec57',1,'MobileRTCMeetingSettings']]],
   ['enablewaitingroom_3a',['enableWaitingRoom:',['../protocol_mobile_r_t_c_meeting_item_01-p.html#ad0e52e35d9171dea9760313c867850fa',1,'MobileRTCMeetingItem -p']]],
   ['enablewaitingroomonentry_3a',['enableWaitingRoomOnEntry:',['../interface_mobile_r_t_c_waiting_room_service.html#a1de92259626f103a2e02e73d28f978db',1,'MobileRTCWaitingRoomService']]],

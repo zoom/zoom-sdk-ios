@@ -2,6 +2,7 @@ var searchData=
 [
   ['callinroomsystemhidden',['callinRoomSystemHidden',['../interface_mobile_r_t_c_meeting_settings.html#a04dfd4c044eacc13094a79312339b50f',1,'MobileRTCMeetingSettings']]],
   ['calloutroomsystemhidden',['calloutRoomSystemHidden',['../interface_mobile_r_t_c_meeting_settings.html#afb2a81c0e1679a114dcf43bbe788d3c7',1,'MobileRTCMeetingSettings']]],
+  ['changetoattendeehidden',['changeToAttendeeHidden',['../interface_mobile_r_t_c_meeting_settings.html#aeedca58bfba373ceb1b0a534675f2927',1,'MobileRTCMeetingSettings']]],
   ['channelnum',['channelNum',['../interface_mobile_r_t_c_audio_raw_data.html#aa9f7c809d152009aa18eed99dcd457e5',1,'MobileRTCAudioRawData']]],
   ['chatid',['chatId',['../interface_mobile_r_t_c_meeting_chat.html#a898e2fae35231f0db3e3940354297652',1,'MobileRTCMeetingChat']]],
   ['claimhostwithhostkeyhidden',['claimHostWithHostKeyHidden',['../interface_mobile_r_t_c_meeting_settings.html#a446713e127af0d3cfec009193e83c041',1,'MobileRTCMeetingSettings']]],

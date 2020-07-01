@@ -417,6 +417,7 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parentVC</td><td>Parent viewcontroller to present custom Participants UI. </td></tr>
+    <tr><td class="paramname">endButton</td><td>The endButton. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1029,6 +1030,7 @@ Specified Meeting Errors. </p><dl class="params"><dt>Parameters</dt><dd>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>ZERO(0) means pairing successfully, otherwise failed. </td></tr>
+    <tr><td class="paramname">meetingNumber</td><td>The meetng number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1060,7 +1062,12 @@ Specified Meeting Errors. </p><dl class="params"><dt>Parameters</dt><dd>
 </div><div class="memdoc">
 
 <p>The function will be invoked when the chat privilege of attendees changes. </p>
-<dl class="section return"><dt>Returns</dt><dd>currentPrivilege The chat privilege of the current attendee. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">currentPrivilege</td><td>The chat privilege of the current attendee. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section warning"><dt>Warning</dt><dd>only normal meeting(non webinar meeting) can get the callback. </dd></dl>
 
 </div>

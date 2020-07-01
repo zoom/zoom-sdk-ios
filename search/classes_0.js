@@ -36,6 +36,7 @@ var searchData=
   ['mobilertcmeetingchat',['MobileRTCMeetingChat',['../interface_mobile_r_t_c_meeting_chat.html',1,'']]],
   ['mobilertcmeetinginviteactionitem',['MobileRTCMeetingInviteActionItem',['../interface_mobile_r_t_c_meeting_invite_action_item.html',1,'']]],
   ['mobilertcmeetingitem_20_2dp',['MobileRTCMeetingItem -p',['../protocol_mobile_r_t_c_meeting_item_01-p.html',1,'']]],
+  ['mobilertcmeetingjoinparam',['MobileRTCMeetingJoinParam',['../interface_mobile_r_t_c_meeting_join_param.html',1,'']]],
   ['mobilertcmeetingservice',['MobileRTCMeetingService',['../interface_mobile_r_t_c_meeting_service.html',1,'']]],
   ['mobilertcmeetingservice_28appshare_29',['MobileRTCMeetingService(AppShare)',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html',1,'']]],
   ['mobilertcmeetingservice_28audio_29',['MobileRTCMeetingService(Audio)',['../category_mobile_r_t_c_meeting_service_07_audio_08.html',1,'']]],

@@ -77,8 +77,11 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a41713e7df2628be72fbc73cfb8aad112"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a41713e7df2628be72fbc73cfb8aad112">customizeMeetingTitle:</a></td></tr>
-<tr class="memdesc:a41713e7df2628be72fbc73cfb8aad112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to customize the meeting title/topic which will be displayed in the meeting bar.  <a href="#a41713e7df2628be72fbc73cfb8aad112">More...</a><br /></td></tr>
+<tr class="memdesc:a41713e7df2628be72fbc73cfb8aad112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to customize the meeting title which will be displayed in the meeting bar.  <a href="#a41713e7df2628be72fbc73cfb8aad112">More...</a><br /></td></tr>
 <tr class="separator:a41713e7df2628be72fbc73cfb8aad112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6718b02658b5abcb762e7f402367bba6"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a6718b02658b5abcb762e7f402367bba6">setMeetingTopic:</a></td></tr>
+<tr class="memdesc:a6718b02658b5abcb762e7f402367bba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to customize the meeting topic which will be displayed in the meeting info view.  <a href="#a6718b02658b5abcb762e7f402367bba6">More...</a><br /></td></tr>
+<tr class="separator:a6718b02658b5abcb762e7f402367bba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f992d503eaec8a26956579f37702dc4"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="category_mobile_r_t_c_meeting_service_07_customize_08.html#a0f992d503eaec8a26956579f37702dc4">isDialOutSupported</a></td></tr>
 <tr class="memdesc:a0f992d503eaec8a26956579f37702dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if user can dial out in the meeting.  <a href="#a0f992d503eaec8a26956579f37702dc4">More...</a><br /></td></tr>
 <tr class="separator:a0f992d503eaec8a26956579f37702dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -230,7 +233,7 @@ Instance Methods</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set to customize the meeting title/topic which will be displayed in the meeting bar. </p>
+<p>Set to customize the meeting title which will be displayed in the meeting bar. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">title</td><td>The topic/title of the meeting. </td></tr>
@@ -594,6 +597,37 @@ Instance Methods</h2></td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>App can invite Room System while App is in Meeting or in pre-Meeting. </dd></dl>
 
 <p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a00aed415c4af51425321eb5f99950cbc">MobileRTCMeetingService</a>.</p>
+
+</div>
+</div>
+<a id="a6718b02658b5abcb762e7f402367bba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6718b02658b5abcb762e7f402367bba6">&#9670;&nbsp;</a></span>setMeetingTopic:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) setMeetingTopic: </td>
+          <td></td>
+          <td class="paramtype">(NSString *_Nonnull)&#160;</td>
+          <td class="paramname"><em>meetingTopic</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set to customize the meeting topic which will be displayed in the meeting info view. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">topic</td><td>The topic of the meeting. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>only meeting original host can call the function. </dd>
+<dd>
+only in-meeting can call the function. </dd></dl>
+
+<p>Extends class <a class="el" href="interface_mobile_r_t_c_meeting_service.html#a6718b02658b5abcb762e7f402367bba6">MobileRTCMeetingService</a>.</p>
 
 </div>
 </div>

@@ -22,6 +22,7 @@ var searchData=
   ['appdidbecomeactive',['appDidBecomeActive',['../interface_mobile_r_t_c.html#a8405dd5825931f42b2191a1554db9f7a',1,'MobileRTC']]],
   ['appdidenterbackgroud',['appDidEnterBackgroud',['../interface_mobile_r_t_c.html#abe32bc55ce1959336e557afdd563bd5e',1,'MobileRTC']]],
   ['appgroupid',['appGroupId',['../interface_mobile_r_t_c_s_d_k_init_context.html#a716b048e0b5cc04495025e7e2651faa7',1,'MobileRTCSDKInitContext']]],
+  ['appsharewithreplaykit',['appShareWithReplayKit',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html#a5ced339638300079ad77604eba904114',1,'MobileRTCMeetingService(AppShare)::appShareWithReplayKit()'],['../interface_mobile_r_t_c_meeting_service.html#a5ced339638300079ad77604eba904114',1,'MobileRTCMeetingService::appShareWithReplayKit()']]],
   ['appsharewithview_3a',['appShareWithView:',['../category_mobile_r_t_c_meeting_service_07_app_share_08.html#a9cc919808a032a6c904a00d7f1975dc4',1,'MobileRTCMeetingService(AppShare)::appShareWithView:()'],['../interface_mobile_r_t_c_meeting_service.html#a9cc919808a032a6c904a00d7f1975dc4',1,'MobileRTCMeetingService::appShareWithView:()']]],
   ['appwillresignactive',['appWillResignActive',['../interface_mobile_r_t_c.html#a554b853b51c9732361e7b8af1d76bce2',1,'MobileRTC']]],
   ['appwillterminate',['appWillTerminate',['../interface_mobile_r_t_c.html#a030f613034d4c1b03975dd84d04a86e2',1,'MobileRTC']]],

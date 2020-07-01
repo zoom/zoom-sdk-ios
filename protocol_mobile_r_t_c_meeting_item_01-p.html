@@ -162,9 +162,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ac50faa07c5e33dc89bc2d396e1f61280"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#ac50faa07c5e33dc89bc2d396e1f61280">canJoinBeforeHost</a></td></tr>
 <tr class="memdesc:ac50faa07c5e33dc89bc2d396e1f61280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if attendee can join the meeting before host.  <a href="#ac50faa07c5e33dc89bc2d396e1f61280">More...</a><br /></td></tr>
 <tr class="separator:ac50faa07c5e33dc89bc2d396e1f61280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7a4c2d8425b84de67d4cd1c87aed7e17"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#a7a4c2d8425b84de67d4cd1c87aed7e17">setUsePMIAsMeetingID:</a></td></tr>
-<tr class="memdesc:a7a4c2d8425b84de67d4cd1c87aed7e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to use personal meeting ID(PMI) to start meeting.  <a href="#a7a4c2d8425b84de67d4cd1c87aed7e17">More...</a><br /></td></tr>
-<tr class="separator:a7a4c2d8425b84de67d4cd1c87aed7e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cc4384c68d1d220b3fe155ea0bbead4"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#a9cc4384c68d1d220b3fe155ea0bbead4">setUsePMIAsMeetingID:</a></td></tr>
+<tr class="memdesc:a9cc4384c68d1d220b3fe155ea0bbead4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to use personal meeting ID(PMI) to start meeting.  <a href="#a9cc4384c68d1d220b3fe155ea0bbead4">More...</a><br /></td></tr>
+<tr class="separator:a9cc4384c68d1d220b3fe155ea0bbead4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cf0f84e842b6891a1c70989370721bc"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_item_01-p.html#a7cf0f84e842b6891a1c70989370721bc">isUsePMIAsMeetingID</a></td></tr>
 <tr class="memdesc:a7cf0f84e842b6891a1c70989370721bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if the user starts the meeting with personal meeting ID.  <a href="#a7cf0f84e842b6891a1c70989370721bc">More...</a><br /></td></tr>
 <tr class="separator:a7cf0f84e842b6891a1c70989370721bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1380,14 +1380,14 @@ Set audio options in the meeting. </p><dl class="params"><dt>Parameters</dt><dd>
 
 </div>
 </div>
-<a id="a7a4c2d8425b84de67d4cd1c87aed7e17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a4c2d8425b84de67d4cd1c87aed7e17">&#9670;&nbsp;</a></span>setUsePMIAsMeetingID:()</h2>
+<a id="a9cc4384c68d1d220b3fe155ea0bbead4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cc4384c68d1d220b3fe155ea0bbead4">&#9670;&nbsp;</a></span>setUsePMIAsMeetingID:()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">- (void MobileRTCMeetingItem) setUsePMIAsMeetingID: </td>
+          <td class="memname">- (BOOL MobileRTCMeetingItem) setUsePMIAsMeetingID: </td>
           <td></td>
           <td class="paramtype">(BOOL)&#160;</td>
           <td class="paramname"><em>usePMI</em></td>
@@ -1403,6 +1403,7 @@ Set audio options in the meeting. </p><dl class="params"><dt>Parameters</dt><dd>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>YES means success to use the PMI as meeting ID, false means can't use PMI as meeting ID, please check interface 'isDisabledPMI' </dd></dl>
 
 </div>
 </div>

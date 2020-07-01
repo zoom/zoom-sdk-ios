@@ -109,6 +109,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a3d1db18aff501f3ef878c7ede89cd146"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_premeeting_service.html#a3d1db18aff501f3ef878c7ede89cd146">listMeeting</a></td></tr>
 <tr class="memdesc:a3d1db18aff501f3ef878c7ede89cd146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Designated for list all of meetings which belong to the logged in user.  <a href="#a3d1db18aff501f3ef878c7ede89cd146">More...</a><br /></td></tr>
 <tr class="separator:a3d1db18aff501f3ef878c7ede89cd146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d5cfe0490686334e7c45d945c4504a4"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_premeeting_service.html#a2d5cfe0490686334e7c45d945c4504a4">isDisabledPMI</a></td></tr>
+<tr class="memdesc:a2d5cfe0490686334e7c45d945c4504a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect the PMI Meeting is disabled or not in web backend.  <a href="#a2d5cfe0490686334e7c45d945c4504a4">More...</a><br /></td></tr>
+<tr class="separator:a2d5cfe0490686334e7c45d945c4504a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af262a13a5c10991cb43a9641a9345fc9"><td class="memItemLeft" align="right" valign="top">(nullable <a class="el" href="interface_mobile_r_t_c_dialin_country.html">MobileRTCDialinCountry</a> *)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_premeeting_service.html#af262a13a5c10991cb43a9641a9345fc9">getAvailableDialInCountry</a></td></tr>
 <tr class="memdesc:af262a13a5c10991cb43a9641a9345fc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">return available dial in country object before meeting item create, you can use the ‘allCountries’ for list all the availble country for user select.  <a href="#af262a13a5c10991cb43a9641a9345fc9">More...</a><br /></td></tr>
 <tr class="separator:af262a13a5c10991cb43a9641a9345fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,6 +295,26 @@ id&lt; <a class="el" href="protocol_mobile_r_t_c_premeeting_delegate-p.html">Mob
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object of id&lt;MobileRTCMeetingItem&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="a2d5cfe0490686334e7c45d945c4504a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d5cfe0490686334e7c45d945c4504a4">&#9670;&nbsp;</a></span>isDisabledPMI()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) isDisabledPMI </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detect the PMI Meeting is disabled or not in web backend. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means PMI meeting has disabled, can't setUsePMIAsMeetingID with Meeting Item. </dd></dl>
 
 </div>
 </div>
