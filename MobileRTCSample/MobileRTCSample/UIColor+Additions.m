@@ -12,9 +12,9 @@
 
 + (UIColor*)colorWithHex:(NSUInteger)hexColor
 {
-    CGFloat red = ((CGFloat)(hexColor & 0xFF0000)) / 255.f;
-    CGFloat green = ((CGFloat)(hexColor & 0xFF00)) / 255.f;
-    CGFloat blue = ((CGFloat)(hexColor & 0xFF)) / 255.f;
+    CGFloat red = ((hexColor >> 16) & 0xFF) / 255.f;
+    CGFloat green = ((hexColor >> 8) & 0xFF) / 255.f;
+    CGFloat blue = (hexColor & 0xFF) / 255.f;
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.f];
 }
