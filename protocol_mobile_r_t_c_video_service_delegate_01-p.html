@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>iOS API Doc: &lt;MobileRTCVideoServiceDelegate &gt; Protocol Reference</title>
+<title>iOS API: &lt;MobileRTCVideoServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">iOS API Doc
+   <div id="projectname">iOS API
    </div>
   </td>
  </tr>
@@ -90,6 +90,9 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a069762614d1921de1108ceebfa0d5046">onMyVideoStateChange</a></td></tr>
 <tr class="memdesc:a069762614d1921de1108ceebfa0d5046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that my video state changes. <br /></td></tr>
 <tr class="separator:a069762614d1921de1108ceebfa0d5046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43094df5283f63d21b5d198031652d7b"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a43094df5283f63d21b5d198031652d7b">onSinkMeetingVideoStatusChange:videoStatus:</a></td></tr>
+<tr class="memdesc:a43094df5283f63d21b5d198031652d7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked once the participant's video status changes(include myself).  <a href="#a43094df5283f63d21b5d198031652d7b">More...</a><br /></td></tr>
+<tr class="separator:a43094df5283f63d21b5d198031652d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fca9a37f9ec772ebe7dcee2b8a09010"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#a4fca9a37f9ec772ebe7dcee2b8a09010">onSpotlightVideoChange:</a></td></tr>
 <tr class="memdesc:a4fca9a37f9ec772ebe7dcee2b8a09010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the video status of spotlight user changes. Spotlight user means that the view will show only the specified user and won't change even other speaks.  <a href="#a4fca9a37f9ec772ebe7dcee2b8a09010">More...</a><br /></td></tr>
 <tr class="separator:a4fca9a37f9ec772ebe7dcee2b8a09010"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,6 +251,43 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">userID</td><td>The ID of user whose video status changes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43094df5283f63d21b5d198031652d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43094df5283f63d21b5d198031652d7b">&#9670;&nbsp;</a></span>onSinkMeetingVideoStatusChange:videoStatus:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_video_service_delegate-p.html">MobileRTCVideoServiceDelegate</a>) <a class="el" href="protocol_mobile_r_t_c_video_service_delegate_01-p.html#aad163e59e0cc9f12592c67528ea53c90">onSinkMeetingVideoStatusChange:</a> </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">videoStatus:</td>
+          <td></td>
+          <td class="paramtype">(MobileRTC_VideoStatus)&#160;</td>
+          <td class="paramname"><em>videoStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The function will be invoked once the participant's video status changes(include myself). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">userID</td><td>The ID of user whose video status changes. </td></tr>
+    <tr><td class="paramname">videoStatus</td><td>The video status of user whose video status changes. </td></tr>
   </table>
   </dd>
 </dl>

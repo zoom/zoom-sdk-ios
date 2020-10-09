@@ -5,6 +5,7 @@ var searchData=
   ['changetoattendeehidden',['changeToAttendeeHidden',['../interface_mobile_r_t_c_meeting_settings.html#aeedca58bfba373ceb1b0a534675f2927',1,'MobileRTCMeetingSettings']]],
   ['channelnum',['channelNum',['../interface_mobile_r_t_c_audio_raw_data.html#aa9f7c809d152009aa18eed99dcd457e5',1,'MobileRTCAudioRawData']]],
   ['chatid',['chatId',['../interface_mobile_r_t_c_meeting_chat.html#a898e2fae35231f0db3e3940354297652',1,'MobileRTCMeetingChat']]],
+  ['chatmessagetype',['chatMessageType',['../interface_mobile_r_t_c_meeting_chat.html#a969459629f2cdda86d6870105b096489',1,'MobileRTCMeetingChat']]],
   ['claimhostwithhostkeyhidden',['claimHostWithHostKeyHidden',['../interface_mobile_r_t_c_meeting_settings.html#a446713e127af0d3cfec009193e83c041',1,'MobileRTCMeetingSettings']]],
   ['clientkey',['clientKey',['../interface_mobile_r_t_c_auth_service.html#a0384411440a95c4af89d94834c317b42',1,'MobileRTCAuthService']]],
   ['clientsecret',['clientSecret',['../interface_mobile_r_t_c_auth_service.html#af2c7de9aa9669cf50d29b2a939dcde70',1,'MobileRTCAuthService']]],

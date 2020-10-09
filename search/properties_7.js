@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imagepath',['imagePath',['../interface_zoom_s_d_k_virtual_b_g_image_info.html#a0fc3f4146299b64c2d641d048ca01ac9',1,'ZoomSDKVirtualBGImageInfo']]],
+  ['imagepath',['imagePath',['../interface_mobile_r_t_c_virtual_b_g_image_info.html#a72c666f93dbbf09e4ff5e2fcc965e2ae',1,'MobileRTCVirtualBGImageInfo']]],
   ['insilentmode',['inSilentMode',['../interface_mobile_r_t_c_meeting_user_info.html#ae9ea7f32e4ea7bd4665a33758616468e',1,'MobileRTCMeetingUserInfo']]],
   ['invitecopyurl',['inviteCopyURL',['../interface_mobile_r_t_c_invite_helper.html#a41091d638cd99bc581c060de74d6083a',1,'MobileRTCInviteHelper']]],
   ['inviteemailcontent',['inviteEmailContent',['../interface_mobile_r_t_c_invite_helper.html#a86b31cd404ea7b62df702de4aec8e309',1,'MobileRTCInviteHelper']]],
@@ -16,11 +16,11 @@ var searchData=
   ['isincludedtollfree',['isIncludedTollfree',['../interface_mobile_r_t_c_dialin_country.html#a411fa2da7d349dcaf620c5ac13afdb6c',1,'MobileRTCDialinCountry']]],
   ['ismuted',['isMuted',['../interface_mobile_r_t_c_audio_status.html#afea68aa8217a18ace784af0ad91a4f37',1,'MobileRTCAudioStatus']]],
   ['ismyself',['isMyself',['../interface_mobile_r_t_c_meeting_chat.html#a2daacac76b3fd44f3e6a446ec56e868a',1,'MobileRTCMeetingChat']]],
-  ['isnone',['isNone',['../interface_zoom_s_d_k_virtual_b_g_image_info.html#a0b1ad8c610ae84c5f172f668056af738',1,'ZoomSDKVirtualBGImageInfo']]],
+  ['isnone',['isNone',['../interface_mobile_r_t_c_virtual_b_g_image_info.html#a14bbbf7452cfdf64733b51b48b931a98',1,'MobileRTCVirtualBGImageInfo']]],
   ['isprivate',['isPrivate',['../interface_mobile_r_t_c_meeting_chat.html#ae0941c287304d6b3d43a5b99e45d999d',1,'MobileRTCMeetingChat']]],
   ['ispurecallinuser',['isPureCallInUser',['../interface_mobile_r_t_c_meeting_user_info.html#a48b6851937c026c5b2c8db5a40ac64e3',1,'MobileRTCMeetingUserInfo']]],
   ['isreceiving',['isReceiving',['../interface_mobile_r_t_c_video_status.html#aea253bbf628f5da7f3d073cc5018d26b',1,'MobileRTCVideoStatus']]],
-  ['isselect',['isSelect',['../interface_zoom_s_d_k_virtual_b_g_image_info.html#a6d936d12d071f2467cb41c472567e57f',1,'ZoomSDKVirtualBGImageInfo']]],
+  ['isselect',['isSelect',['../interface_mobile_r_t_c_virtual_b_g_image_info.html#a8290cde0dc7e735841b585deb1db951e',1,'MobileRTCVirtualBGImageInfo']]],
   ['issending',['isSending',['../interface_mobile_r_t_c_video_status.html#a7b5515b4b49254765bbcb6f1db8cb875',1,'MobileRTCVideoStatus']]],
   ['issharingpurecomputeraudio',['isSharingPureComputerAudio',['../interface_mobile_r_t_c_meeting_user_info.html#a19bb401e4592a351b478d31651a95549',1,'MobileRTCMeetingUserInfo']]],
   ['issource',['isSource',['../interface_mobile_r_t_c_video_status.html#ab07f219ec3ce14604ece7646378ec003',1,'MobileRTCVideoStatus']]],

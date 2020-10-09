@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>iOS API Doc: &lt;MobileRTCAudioServiceDelegate &gt; Protocol Reference</title>
+<title>iOS API: &lt;MobileRTCAudioServiceDelegate &gt; Protocol Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">iOS API Doc
+   <div id="projectname">iOS API
    </div>
   </td>
  </tr>
@@ -87,6 +87,9 @@ Instance Methods</h2></td></tr>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_audio_service_delegate_01-p.html#a29d199dfc69b33eabbdbe34313266fa0">onSinkMeetingMyAudioTypeChange</a></td></tr>
 <tr class="memdesc:a29d199dfc69b33eabbdbe34313266fa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the audio type of the current user changes. <br /></td></tr>
 <tr class="separator:a29d199dfc69b33eabbdbe34313266fa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2233632035d61a8ec8940b47a0437deb"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_audio_service_delegate_01-p.html#a2233632035d61a8ec8940b47a0437deb">onSinkMeetingAudioStatusChange:audioStatus:</a></td></tr>
+<tr class="memdesc:a2233632035d61a8ec8940b47a0437deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the participant's audio status changes(include myself).  <a href="#a2233632035d61a8ec8940b47a0437deb">More...</a><br /></td></tr>
+<tr class="separator:a2233632035d61a8ec8940b47a0437deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01c171e6c6b492fea9dc9c189090a818"><td class="memItemLeft" align="right" valign="top"><a id="a01c171e6c6b492fea9dc9c189090a818"></a>
 (void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_audio_service_delegate_01-p.html#a01c171e6c6b492fea9dc9c189090a818">onAudioOutputChange</a></td></tr>
 <tr class="memdesc:a01c171e6c6b492fea9dc9c189090a818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback event that the output type of the current user's audio source changes. <br /></td></tr>
@@ -121,6 +124,43 @@ Instance Methods</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">UserID</td><td>The ID of user whose audio status changes. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2233632035d61a8ec8940b47a0437deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2233632035d61a8ec8940b47a0437deb">&#9670;&nbsp;</a></span>onSinkMeetingAudioStatusChange:audioStatus:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_audio_service_delegate-p.html">MobileRTCAudioServiceDelegate</a>) <a class="el" href="protocol_mobile_r_t_c_audio_service_delegate_01-p.html#a5d96c5e7c22bb0897f868aa755eb5e63">onSinkMeetingAudioStatusChange:</a> </td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userID</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">audioStatus:</td>
+          <td></td>
+          <td class="paramtype">(MobileRTC_AudioStatus)&#160;</td>
+          <td class="paramname"><em>audioStatus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback event that the participant's audio status changes(include myself). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">UserID</td><td>The ID of user whose audio status changes. </td></tr>
+    <tr><td class="paramname">audioStatus</td><td>The audio status of user whose audio status changes. </td></tr>
   </table>
   </dd>
 </dl>
