@@ -14,6 +14,9 @@
 #import "QAListViewController.h"
 #import "BOMeetingViewController.h"
 #import "VBViewController.h"
+#import "CameraCaptureAdapter.h"
+#import "SendPictureAdapter.h"
+#import "SendYUVAdapter.h"
 
 @interface BottomPanelView ()
 @property (strong, nonatomic)  CAGradientLayer      *gradientLayer;
@@ -28,6 +31,12 @@
 @property (strong, nonatomic) SDKVideoPresenter           *videoPresenter;
 @property (strong, nonatomic) SDKSharePresenter           *sharePresenter;
 @property (strong, nonatomic) SDKActionPresenter          *actionPresenter;
+
+@property (nonatomic,strong) CameraCaptureAdapter *cameraAdapter;
+@property (nonatomic,strong) SendPictureAdapter *picAdapter;
+@property (nonatomic,strong) SendYUVAdapter     *yuvAdapter;
+
+@property (nonatomic, strong) MobileRTCVideoSourceHelper *videoSourceHelper;
 @end
 
 @implementation BottomPanelView
@@ -50,6 +59,10 @@
         [self addSubview:self.shareButton];
         [self addSubview:self.chatButton];
         [self addSubview:self.moreButton];
+        
+        if ([[MobileRTC sharedRTC] hasRawDataLicense]) {
+            self.videoSourceHelper = [[MobileRTCVideoSourceHelper alloc] init];
+        }
     }
     return self;
 }
@@ -113,6 +126,8 @@
     self.videoPresenter = nil;
     self.sharePresenter = nil;
     self.actionPresenter = nil;
+    
+    self.videoSourceHelper = nil;
     [super dealloc];
 }
 
@@ -383,6 +398,37 @@
                                                                       }]];
                 }
                 
+            
+                if ([[MobileRTC sharedRTC] hasRawDataLicense]) {
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - Camera Data"
+                                                                        style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction *action) {
+                        self.cameraAdapter = [[CameraCaptureAdapter alloc] init];
+                        [self.videoSourceHelper setExternalVideoSource:self.cameraAdapter];
+                    }]];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - Picture Data"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                        self.picAdapter = [[SendPictureAdapter alloc] init];
+                        [self.videoSourceHelper setExternalVideoSource:self.picAdapter];
+                    }]];
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - YUV Data"
+                                                                    style:UIAlertActionStyleDefault
+                                                                  handler:^(UIAlertAction *action) {
+                        self.yuvAdapter = [[SendYUVAdapter alloc] init];
+                        [self.videoSourceHelper setExternalVideoSource:self.yuvAdapter];
+                    }]];
+                    
+                    
+                    [alertController addAction:[UIAlertAction actionWithTitle:@"Switch to internal video source"
+                                                                        style:UIAlertActionStyleDefault
+                                                                      handler:^(UIAlertAction *action) {
+                                                                          [self.videoSourceHelper setExternalVideoSource:nil];
+                                                                      }]];
+                    
+                }
             }
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface VideoViewController : UIViewController
-@property (strong, nonatomic) MobileRTCActiveVideoView        * videoView;
+@property (strong, nonatomic) MobileRTCPreviewVideoView  * preVideoView;
+@property (strong, nonatomic) MobileRTCVideoView        * videoView;
 @end
 

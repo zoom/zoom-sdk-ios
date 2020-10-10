@@ -511,27 +511,11 @@
     },
     {
       "pad_value" : 0,
-      "top" : "313",
-      "pad_pad_mode" : 0,
-      "pad_t" : 0,
-      "pad_r" : 0,
-      "pad_b" : 0,
-      "type" : "general_padding",
-      "pad_fill_mode" : 0,
-      "bottom" : "312",
-      "pad_l" : 0,
-      "name" : "313",
-      "weights" : {
-
-      }
-    },
-    {
-      "pad_value" : 0,
       "average_count_exclude_padding" : 1,
       "top_shape_style" : 0,
       "avg_or_max" : 0,
       "stride_x" : 2,
-      "pad_mode" : 2,
+      "pad_mode" : 0,
       "stride_y" : 2,
       "pad_t" : 0,
       "weights" : {
@@ -543,7 +527,7 @@
       "pad_b" : 0,
       "size_x" : 2,
       "pad_fill_mode" : 0,
-      "bottom" : "313",
+      "bottom" : "312",
       "pad_l" : 0,
       "name" : "314",
       "top" : "314"

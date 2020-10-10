@@ -18,6 +18,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self.view addSubview:self.videoView];
+    
+    [self.view addSubview:self.preVideoView];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -33,6 +35,7 @@
 - (void)dealloc
 {
     self.videoView = nil;
+    self.preVideoView = nil;
     [super dealloc];
 }
 
@@ -44,14 +47,23 @@
     self.videoView.frame = frame;
 }
 
-- (MobileRTCActiveVideoView*)videoView
+- (MobileRTCVideoView*)videoView
 {
     if (!_videoView)
     {
-        _videoView = [[MobileRTCActiveVideoView alloc] initWithFrame:self.view.bounds];
+        _videoView = [[MobileRTCVideoView alloc] initWithFrame:self.view.bounds];
         [_videoView setVideoAspect:MobileRTCVideoAspect_PanAndScan];
     }
     return _videoView;
+}
+
+- (MobileRTCPreviewVideoView*)preVideoView
+{
+    if (!_preVideoView)
+    {
+        _preVideoView = [[MobileRTCPreviewVideoView alloc] initWithFrame:self.view.bounds];
+    }
+    return _preVideoView;
 }
 
 /*

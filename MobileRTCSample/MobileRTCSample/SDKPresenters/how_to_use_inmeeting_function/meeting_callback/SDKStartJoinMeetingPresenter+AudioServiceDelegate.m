@@ -21,6 +21,11 @@
     }
 }
 
+- (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID audioStatus:(MobileRTC_AudioStatus)audioStatus
+{
+    NSLog(@"onSinkMeetingAudioStatusChange=%@, audioStatus=%@",@(userID), @(audioStatus));
+}
+
 - (void)onSinkMeetingMyAudioTypeChange
 {
     if (self.customMeetingVC)

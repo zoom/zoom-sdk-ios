@@ -17,7 +17,7 @@
 
 @implementation SDKAuthPresenter
 
-- (void)SDKAuth
+- (void)SDKAuth:(NSString *)jwtToken
 {
 
     MobileRTCAuthService *authService = [[MobileRTC sharedRTC] getAuthService];
@@ -25,7 +25,7 @@
     {
         authService.delegate = self;
         // Here need add your jwtToken, if jwtToken is nil or empty,We will user your clientKey and clientSecret to Auth, We recommend using JWTToken.
-        authService.jwtToken = KjwtToken;
+        authService.jwtToken = jwtToken;
         [authService sdkAuth];
     }
 }
@@ -37,7 +37,7 @@
     if (buttonIndex != alertView.cancelButtonIndex)
     {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self SDKAuth];
+            [self SDKAuth:KjwtToken];
         });
     }
 }

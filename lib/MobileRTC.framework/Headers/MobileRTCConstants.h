@@ -118,6 +118,8 @@ typedef enum {
     MobileRTCMeetError_VBRemoveNone,
     ///Virtual background not support
     MobileRTCMeetError_VBNoSupport,
+    ///Virtual background GreenScreen not support, only iPad support green screen.
+    MobileRTCMeetError_VBGreenScreenNoSupport,
     
     ///Unknown error.
     MobileRTCMeetError_Unknown,
@@ -128,16 +130,24 @@ typedef enum {
  @brief MobileRTCMeetingState An enumeration of meeting states.
  */
 typedef enum {
-    ///No meeting is running.
-    MobileRTCMeetingState_Idle              = 0,
-    ///Connect to the meeting server status.
-    MobileRTCMeetingState_Connecting        = 1,
-    ///Meeting is ready, in meeting status.
-    MobileRTCMeetingState_InMeeting         = 2,
-    ///Upgrade the attendees to panelist in webinar.
-    MobileRTCMeetingState_WebinarPromote    = 3,
-    ///Demote the attendees from the panelist.
-    MobileRTCMeetingState_WebinarDePromote  = 4,
+    MobileRTCMeetingState_Idle,///<No meeting is running.
+    MobileRTCMeetingState_Connecting,///<Connect to the meeting server status.
+    MobileRTCMeetingState_WaitingForHost,///<Waiting for the host to start the meeting.
+    MobileRTCMeetingState_InMeeting,///<Meeting is ready, in meeting status.
+    MobileRTCMeetingState_Disconnecting,///<Disconnect the meeting server, leave meeting status.
+    MobileRTCMeetingState_Reconnecting,///<Reconnecting meeting server status.
+    MobileRTCMeetingState_Failed,///<Failed to connect the meeting server.
+    MobileRTCMeetingState_Ended,///<Meeting ends.
+    MobileRTCMeetingState_Unknow,///<Unknown status.
+    MobileRTCMeetingState_Locked,///<Meeting is locked to prevent the further participants to join the meeting.
+    MobileRTCMeetingState_Unlocked,///<Meeting is open and participants can join the meeting.
+    MobileRTCMeetingState_InWaitingRoom,///<Participants who join the meeting before the start are in the waiting room.
+    MobileRTCMeetingState_WebinarPromote,///<Upgrade the attendees to panelist in webinar.
+    MobileRTCMeetingState_WebinarDePromote,///<Downgrade the attendees from the panelist.
+    MobileRTCMeetingState_JoinBO,///<Join the breakout room.
+    MobileRTCMeetingState_LeaveBO,///<Leave the breakout room.
+    MobileRTCMeetingState_WaitingExternalSessionKey,///<Waiting for the additional secret key.
+    
 }MobileRTCMeetingState;
 
 /*!
@@ -303,6 +313,33 @@ typedef enum {
     ///User can not unmute his Audio.
     MobileRTCAudioError_CannotUnmuteMyAudio                       = 3,
 }MobileRTCAudioError;
+
+
+typedef enum {
+    ///<Initialization.
+    MobileRTC_AudioStatus_None                                   = 0,
+    ///<Muted status.
+    MobileRTC_AudioStatus_Audio_Muted                            = 1,
+    ///<Unmuted status.
+    MobileRTC_AudioStatus_Audio_UnMuted                          = 2,
+    ///<Muted by the host.
+    MobileRTC_AudioStatus_Audio_Muted_ByHost                     = 3,
+    ///<Unmuted by the host.
+    MobileRTC_AudioStatus_Audio_UnMuted_ByHost                   = 4,
+    ///<The host mutes all.
+    MobileRTC_AudioStatus_Audio_MutedAll_ByHost                  = 5,
+    ///<The host unmutes all.
+    MobileRTC_AudioStatus_Audio_UnMutedAll_ByHost                = 6,
+}MobileRTC_AudioStatus;
+
+typedef enum {
+    ///<Muted status.
+    MobileRTC_VideoStatus_Video_ON                            = 0,
+    ///<Unmuted status.
+    MobileRTC_VideoStatus_Video_OFF                           = 1,
+    ///<Muted by the host.
+    MobileRTC_VideoStatus_Video_Muted_ByHost                  = 2,
+}MobileRTC_VideoStatus;
 
 /*!
  @brief MobileRTCVideoError An enumeration of video-related operational error states.
@@ -534,6 +571,24 @@ typedef NS_ENUM(NSUInteger, MobileRTCMeetingChatPriviledgeType) {
     MobileRTCMeetingChatPriviledge_Everyone_Publicly,
 };
 
+/*!
+ @brief Chat message type.
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCChatMessageType) {
+    /// For initialize.
+    MobileRTCChatMessageType_To_None = 0,
+    /// Chat message is send to all.
+    MobileRTCChatMessageType_To_All,
+    /// Chat message is send to all panelists.
+    MobileRTCChatMessageType_To_All_Panelist,
+    /// Chat message is send to individual attendee and cc panelists.
+    MobileRTCChatMessageType_To_Individual_Panelist,
+    /// Chat message is send to individual user.
+    MobileRTCChatMessageType_To_Individual,
+    /// Chat message is send to waiting room user.
+    MobileRTCChatMessageType_To_WaitingRoomUsers,
+};
+
 typedef NS_ENUM(NSUInteger, MobileRTCVideoType) {
     ///Video Camera Data
     MobileRTCVideoType_VideoData  = 1,
@@ -641,4 +696,23 @@ typedef NS_ENUM(NSUInteger, MobileRTCSMSServiceErr) {
 typedef NS_ENUM(NSUInteger, MobileRTCMinimizeMeetingState) {
     MobileRTCMinimizeMeeting_ShowMinimizeMeeting,
     MobileRTCMinimizeMeeting_BackFullScreenMeeting
+};
+
+/*!
+@brief free meeting need upgrade type.
+*/
+typedef enum{
+    FreeMeetingNeedUpgradeType_NONE,
+    FreeMeetingNeedUpgradeType_BY_ADMIN,
+    FreeMeetingNeedUpgradeType_BY_GIFTURL,
+}FreeMeetingNeedUpgradeType;
+
+/*!
+ @brief Result for requested help from attendee in BO Meeting
+ */
+typedef NS_ENUM(NSUInteger, MobileRTCBOHelpReply) {
+    MobileRTCBOHelpReply_Idle,    //host receive the help request and there is no other one currently requesting for help
+    MobileRTCBOHelpReply_Busy,    //host is handling other's request with the request dialog, no chance to show dialog for this request
+    MobileRTCBOHelpReply_Ignore,    //host click "later" button or close the request dialog directly
+    MobileRTCBOHelpReply_alreadyInBO    //host already in your BO meeting
 };

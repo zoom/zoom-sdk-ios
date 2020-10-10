@@ -2,7 +2,7 @@
 //  SDKStartJoinMeetingPresenter+BOServiceDelegate.h
 //  MobileRTCSample
 //
-//  Created by Jackie Chen on 2020/6/10.
+//  Created by Zoom Video Communications on 2020/6/10.
 //  Copyright © 2020 Zoom Video Communications, Inc. All rights reserved.
 //
 

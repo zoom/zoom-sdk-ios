@@ -10,6 +10,8 @@
 
 @interface CustomMeetingViewController (MeetingDelegate)
 
+- (void)onMeetingStateChange:(MobileRTCMeetingState)state;
+
 - (void)onSinkMeetingActiveVideo:(NSUInteger)userID;
 
 - (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID;

@@ -10,6 +10,7 @@
 		917D135524910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 917D135424910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m */; };
 		9197851423F4EACD0099BDDB /* BOMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9197851323F4EACD0099BDDB /* BOMeetingViewController.m */; };
 		91A9BE8B243C53D000D94794 /* VBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91A9BE8A243C53D000D94794 /* VBViewController.m */; };
+		91B2313224FDF4E100B8A777 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B2312E24FDF4E100B8A777 /* BaseNavigationController.m */; };
 		C123332B18D6D43100894EED /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C123332918D6D43100894EED /* InfoPlist.strings */; };
 		C123332D18D6D43100894EED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C123332C18D6D43100894EED /* main.m */; };
 		C123333118D6D43100894EED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C123333018D6D43100894EED /* AppDelegate.m */; };
@@ -42,6 +43,10 @@
 		D000E97D219BF1AC00FC9275 /* arrow_right_normal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D000E96C219BF1AC00FC9275 /* arrow_right_normal@3x.png */; };
 		D000E97E219BF1AC00FC9275 /* arrow_left_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D000E96D219BF1AC00FC9275 /* arrow_left_normal@2x.png */; };
 		D012776922C21BC000024227 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D012776722C21BC000024227 /* WebViewController.m */; };
+		D01FD56224F516540016ECBF /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0F8CD8621BA12E90055E2B7 /* VideoToolbox.framework */; };
+		D01FD56424F516650016ECBF /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01FD56324F516650016ECBF /* CoreMedia.framework */; };
+		D01FD56624F516790016ECBF /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01FD56524F516790016ECBF /* CoreVideo.framework */; };
+		D01FD56824F5167F0016ECBF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D01FD56724F5167F0016ECBF /* CoreGraphics.framework */; };
 		D020DAF02371819900E9D748 /* QAListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D020DAEC2371819700E9D748 /* QAListViewController.m */; };
 		D020DAF12371819900E9D748 /* QAListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D020DAEE2371819800E9D748 /* QAListTableViewCell.m */; };
 		D031005C21E301DC002CD293 /* Custom.strings in Resources */ = {isa = PBXBuildFile; fileRef = D031005E21E301DC002CD293 /* Custom.strings */; };
@@ -61,6 +66,7 @@
 		D05BBB3921A2B33000CD4A56 /* SDKInitPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BBB3821A2B33000CD4A56 /* SDKInitPresenter.m */; };
 		D05BBB5121A2BF4400CD4A56 /* SDKStartJoinMeetingPresenter+LoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BBB5021A2BF4400CD4A56 /* SDKStartJoinMeetingPresenter+LoginUser.m */; };
 		D05BBB5421A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D05BBB5321A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m */; };
+		D07716DB24DD4BA400AB14D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D07716DD24DD4BA400AB14D9 /* Localizable.strings */; };
 		D07D7FAA22F923CD0092C28A /* OpenGLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D07D7FA922F923CD0092C28A /* OpenGLViewController.m */; };
 		D093D4E622F876F1009253A2 /* OpenglView.m in Sources */ = {isa = PBXBuildFile; fileRef = D093D4E522F876F1009253A2 /* OpenglView.m */; };
 		D0A1C31621ACE0680077827D /* SDKMeetingSettingPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A1C31521ACE0680077827D /* SDKMeetingSettingPresenter.m */; };
@@ -72,6 +78,13 @@
 		D0BAD47321A3E7EE004AE4B1 /* SDKSharePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47221A3E7EE004AE4B1 /* SDKSharePresenter.m */; };
 		D0BAD47621A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47521A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m */; };
 		D0BAD47A21A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47921A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m */; };
+		D0C1171D24C57861000FD3C4 /* SendYUVAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */; };
+		D0C1172024C57861000FD3C4 /* CameraCaptureAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1171624C57861000FD3C4 /* CameraCaptureAdapter.m */; };
+		D0C1172124C57861000FD3C4 /* frame_two.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171A24C57861000FD3C4 /* frame_two.jpg */; };
+		D0C1172224C57861000FD3C4 /* frame_one.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171B24C57861000FD3C4 /* frame_one.jpg */; };
+		D0C1172324C57861000FD3C4 /* SendPictureAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1171C24C57861000FD3C4 /* SendPictureAdapter.m */; };
+		D0C1172824C5793D000FD3C4 /* waterMark.png in Resources */ = {isa = PBXBuildFile; fileRef = D0C1172624C5793D000FD3C4 /* waterMark.png */; };
+		D0C1172924C5793D000FD3C4 /* PreProcessHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1172724C5793D000FD3C4 /* PreProcessHelper.m */; };
 		D0E03CCB24639F120004CDF3 /* MobileRTCSampleScreenShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D91E333920A7D50300F64928 /* MobileRTCSampleScreenShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D0ECCE3B21CA50C000CFC386 /* SDKAuthPresenter+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ECCE3A21CA50C000CFC386 /* SDKAuthPresenter+Login.m */; };
 		D0ECCE5521CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0ECCE5421CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.m */; };
@@ -79,7 +92,7 @@
 		D0FFE118219D148000CD02A0 /* SDKAuthPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFE117219D148000CD02A0 /* SDKAuthPresenter.m */; };
 		D0FFE11D219D1D8700CD02A0 /* SDKStartJoinMeetingPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFE11C219D1D8700CD02A0 /* SDKStartJoinMeetingPresenter.m */; };
 		D91E333A20A7D50300F64928 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D90761EC20A5844E008FA1DB /* ReplayKit.framework */; };
-		D91E333E20A7D50300F64928 /* SampleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = D91E333D20A7D50300F64928 /* SampleHandler.m */; };
+		D91E333E20A7D50300F64928 /* SampleHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = D91E333D20A7D50300F64928 /* SampleHandler.mm */; };
 		D976769620B6A78800ABA524 /* MobileRTCScreenShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D976769520B6A78800ABA524 /* MobileRTCScreenShare.framework */; };
 		D993152B1F553C6C005972DC /* MeetingSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D99315281F553C6C005972DC /* MeetingSettingsViewController.m */; };
 		D993152C1F553C6C005972DC /* ScheduleTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D993152A1F553C6C005972DC /* ScheduleTableViewController.m */; };
@@ -230,6 +243,8 @@
 		9197851323F4EACD0099BDDB /* BOMeetingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BOMeetingViewController.m; sourceTree = "<group>"; };
 		91A9BE89243C53D000D94794 /* VBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VBViewController.h; sourceTree = "<group>"; };
 		91A9BE8A243C53D000D94794 /* VBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VBViewController.m; sourceTree = "<group>"; };
+		91B2312E24FDF4E100B8A777 /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		91B2313124FDF4E100B8A777 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
 		C123331D18D6D43100894EED /* MobileRTCSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileRTCSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C123332818D6D43100894EED /* MobileRTCSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MobileRTCSample-Info.plist"; sourceTree = "<group>"; };
 		C123332A18D6D43100894EED /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -278,6 +293,9 @@
 		D000E96D219BF1AC00FC9275 /* arrow_left_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_left_normal@2x.png"; sourceTree = "<group>"; };
 		D012776422C21BC000024227 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		D012776722C21BC000024227 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		D01FD56324F516650016ECBF /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		D01FD56524F516790016ECBF /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		D01FD56724F5167F0016ECBF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		D020DAEC2371819700E9D748 /* QAListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAListViewController.m; sourceTree = "<group>"; };
 		D020DAED2371819700E9D748 /* QAListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QAListViewController.h; sourceTree = "<group>"; };
 		D020DAEE2371819800E9D748 /* QAListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QAListTableViewCell.m; sourceTree = "<group>"; };
@@ -313,6 +331,13 @@
 		D05BBB5021A2BF4400CD4A56 /* SDKStartJoinMeetingPresenter+LoginUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKStartJoinMeetingPresenter+LoginUser.m"; sourceTree = "<group>"; };
 		D05BBB5221A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.h"; sourceTree = "<group>"; };
 		D05BBB5321A2C8C900CD4A56 /* SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.m"; sourceTree = "<group>"; };
+		D07716DC24DD4BA400AB14D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D07716DE24DD4BAF00AB14D9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D07716DF24DD4BB400AB14D9 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D07716E024DD4BC500AB14D9 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D07716E124DD4BC900AB14D9 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D07716E224DD4BCE00AB14D9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D07716E324DD4BD500AB14D9 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D07D7FA822F923CD0092C28A /* OpenGLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLViewController.h; sourceTree = "<group>"; };
 		D07D7FA922F923CD0092C28A /* OpenGLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLViewController.m; sourceTree = "<group>"; };
 		D093D4E422F876F1009253A2 /* OpenglView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenglView.h; sourceTree = "<group>"; };
@@ -335,6 +360,17 @@
 		D0BAD47521A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKAuthPresenter+AuthDelegate.m"; sourceTree = "<group>"; };
 		D0BAD47821A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKStartJoinMeetingPresenter+MeetingServiceDelegate.h"; sourceTree = "<group>"; };
 		D0BAD47921A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m"; sourceTree = "<group>"; };
+		D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendYUVAdapter.m; sourceTree = "<group>"; };
+		D0C1171324C57861000FD3C4 /* SendYUVAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendYUVAdapter.h; sourceTree = "<group>"; };
+		D0C1171624C57861000FD3C4 /* CameraCaptureAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCaptureAdapter.m; sourceTree = "<group>"; };
+		D0C1171724C57861000FD3C4 /* CameraCaptureAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCaptureAdapter.h; sourceTree = "<group>"; };
+		D0C1171924C57861000FD3C4 /* SendPictureAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPictureAdapter.h; sourceTree = "<group>"; };
+		D0C1171A24C57861000FD3C4 /* frame_two.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frame_two.jpg; sourceTree = "<group>"; };
+		D0C1171B24C57861000FD3C4 /* frame_one.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = frame_one.jpg; sourceTree = "<group>"; };
+		D0C1171C24C57861000FD3C4 /* SendPictureAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendPictureAdapter.m; sourceTree = "<group>"; };
+		D0C1172524C5793D000FD3C4 /* PreProcessHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreProcessHelper.h; sourceTree = "<group>"; };
+		D0C1172624C5793D000FD3C4 /* waterMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterMark.png; sourceTree = "<group>"; };
+		D0C1172724C5793D000FD3C4 /* PreProcessHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreProcessHelper.m; sourceTree = "<group>"; };
 		D0ECCE3921CA50C000CFC386 /* SDKAuthPresenter+Login.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKAuthPresenter+Login.h"; sourceTree = "<group>"; };
 		D0ECCE3A21CA50C000CFC386 /* SDKAuthPresenter+Login.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKAuthPresenter+Login.m"; sourceTree = "<group>"; };
 		D0ECCE5321CA52D000CFC386 /* SDKAuthPresenter+PremeetingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKAuthPresenter+PremeetingDelegate.h"; sourceTree = "<group>"; };
@@ -353,7 +389,7 @@
 		D90761EE20A5844E008FA1DB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D91E333920A7D50300F64928 /* MobileRTCSampleScreenShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MobileRTCSampleScreenShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D91E333C20A7D50300F64928 /* SampleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleHandler.h; sourceTree = "<group>"; };
-		D91E333D20A7D50300F64928 /* SampleHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleHandler.m; sourceTree = "<group>"; };
+		D91E333D20A7D50300F64928 /* SampleHandler.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = SampleHandler.mm; sourceTree = "<group>"; };
 		D91E333F20A7D50300F64928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D91E335820A7D56200F64928 /* MobileRTCSampleScreenShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MobileRTCSampleScreenShare.entitlements; sourceTree = "<group>"; };
 		D976769520B6A78800ABA524 /* MobileRTCScreenShare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileRTCScreenShare.framework; path = ../lib/MobileRTCScreenShare.framework; sourceTree = "<group>"; };
@@ -452,6 +488,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D01FD56824F5167F0016ECBF /* CoreGraphics.framework in Frameworks */,
+				D01FD56624F516790016ECBF /* CoreVideo.framework in Frameworks */,
+				D01FD56424F516650016ECBF /* CoreMedia.framework in Frameworks */,
+				D01FD56224F516540016ECBF /* VideoToolbox.framework in Frameworks */,
 				D976769620B6A78800ABA524 /* MobileRTCScreenShare.framework in Frameworks */,
 				D91E333A20A7D50300F64928 /* ReplayKit.framework in Frameworks */,
 			);
@@ -483,6 +523,9 @@
 		C123331F18D6D43100894EED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D01FD56724F5167F0016ECBF /* CoreGraphics.framework */,
+				D01FD56524F516790016ECBF /* CoreVideo.framework */,
+				D01FD56324F516650016ECBF /* CoreMedia.framework */,
 				D0F8CD8A21BA13230055E2B7 /* libsqlite3.tbd */,
 				D0F8CD8821BA12F40055E2B7 /* libz.1.2.5.tbd */,
 				D0F8CD8621BA12E90055E2B7 /* VideoToolbox.framework */,
@@ -524,6 +567,8 @@
 				D9FCEC181CEEB9CB0071F330 /* SplashViewController.m */,
 				D012776422C21BC000024227 /* WebViewController.h */,
 				D012776722C21BC000024227 /* WebViewController.m */,
+				91B2313124FDF4E100B8A777 /* BaseNavigationController.h */,
+				91B2312E24FDF4E100B8A777 /* BaseNavigationController.m */,
 				C123332718D6D43100894EED /* Supporting Files */,
 				C123335418D6D87B00894EED /* UIImage+Additions.h */,
 				C123335518D6D87B00894EED /* UIImage+Additions.m */,
@@ -753,6 +798,7 @@
 		D093D4E022F876B3009253A2 /* RawData */ = {
 			isa = PBXGroup;
 			children = (
+				D0C1170D24C57743000FD3C4 /* sendRawdata */,
 				D058CCA122FABF54004E6379 /* audioRawData */,
 				D093D4E322F876F1009253A2 /* openGL */,
 				D07D7FA822F923CD0092C28A /* OpenGLViewController.h */,
@@ -793,6 +839,56 @@
 				D0BAD45A21A3E37A004AE4B1 /* SDKAudioPresenter.m */,
 			);
 			path = how_to_use_customized_audio;
+			sourceTree = "<group>";
+		};
+		D0C1170D24C57743000FD3C4 /* sendRawdata */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1172424C5793D000FD3C4 /* PreProcess */,
+				D0C1171524C57861000FD3C4 /* CameraCapture */,
+				D0C1171824C57861000FD3C4 /* SendPicture */,
+				D0C1171024C57861000FD3C4 /* SendYUV */,
+			);
+			path = sendRawdata;
+			sourceTree = "<group>";
+		};
+		D0C1171024C57861000FD3C4 /* SendYUV */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1171324C57861000FD3C4 /* SendYUVAdapter.h */,
+				D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */,
+			);
+			path = SendYUV;
+			sourceTree = "<group>";
+		};
+		D0C1171524C57861000FD3C4 /* CameraCapture */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1171724C57861000FD3C4 /* CameraCaptureAdapter.h */,
+				D0C1171624C57861000FD3C4 /* CameraCaptureAdapter.m */,
+			);
+			path = CameraCapture;
+			sourceTree = "<group>";
+		};
+		D0C1171824C57861000FD3C4 /* SendPicture */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1171B24C57861000FD3C4 /* frame_one.jpg */,
+				D0C1171A24C57861000FD3C4 /* frame_two.jpg */,
+				D0C1171924C57861000FD3C4 /* SendPictureAdapter.h */,
+				D0C1171C24C57861000FD3C4 /* SendPictureAdapter.m */,
+			);
+			path = SendPicture;
+			sourceTree = "<group>";
+		};
+		D0C1172424C5793D000FD3C4 /* PreProcess */ = {
+			isa = PBXGroup;
+			children = (
+				D0C1172524C5793D000FD3C4 /* PreProcessHelper.h */,
+				D0C1172724C5793D000FD3C4 /* PreProcessHelper.m */,
+				D0C1172624C5793D000FD3C4 /* waterMark.png */,
+			);
+			path = PreProcess;
 			sourceTree = "<group>";
 		};
 		D0D7A41E21C8EC390040FA96 /* how_to_login_sdk */ = {
@@ -898,8 +994,9 @@
 			children = (
 				D91E335820A7D56200F64928 /* MobileRTCSampleScreenShare.entitlements */,
 				D91E333C20A7D50300F64928 /* SampleHandler.h */,
-				D91E333D20A7D50300F64928 /* SampleHandler.m */,
+				D91E333D20A7D50300F64928 /* SampleHandler.mm */,
 				D91E333F20A7D50300F64928 /* Info.plist */,
+				D07716DD24DD4BA400AB14D9 /* Localizable.strings */,
 			);
 			path = MobileRTCSampleScreenShare;
 			sourceTree = "<group>";
@@ -1085,6 +1182,7 @@
 				F76F00EE200F344A00A3C65F /* icon_meeting_stopshare@3x.png in Resources */,
 				D9FCEC331CEEB9F70071F330 /* zoom_intro2.png in Resources */,
 				D996D23F1C99473F00C284F0 /* Localizable.strings in Resources */,
+				D0C1172224C57861000FD3C4 /* frame_one.jpg in Resources */,
 				F76F0011200F27E300A3C65F /* icon_switchcam@3x.png in Resources */,
 				D000E975219BF1AC00FC9275 /* arrow_up_normal@3x.png in Resources */,
 				F76F0025200F27E300A3C65F /* icon_meeting_video@2x.png in Resources */,
@@ -1120,12 +1218,14 @@
 				F76F001C200F27E300A3C65F /* icon_wallview@2x.png in Resources */,
 				D9FCEC2D1CEEB9F70071F330 /* icon_setting.png in Resources */,
 				F76F001A200F27E300A3C65F /* icon_meeting_audio_mute@3x.png in Resources */,
+				D0C1172124C57861000FD3C4 /* frame_two.jpg in Resources */,
 				F76F0024200F27E300A3C65F /* icon_meeting_more@2x.png in Resources */,
 				D000E974219BF1AC00FC9275 /* arrow_up_normal.png in Resources */,
 				F76F00ED200F344A00A3C65F /* icon_meeting_share@3x.png in Resources */,
 				F76F00EB200F344A00A3C65F /* icon_meeting_stopshare@2x.png in Resources */,
 				D0400EA422CDC4D5008F7989 /* icon_meeting_audio_phone@2x.png in Resources */,
 				D000E97C219BF1AC00FC9275 /* arrow_up_normal@2x.png in Resources */,
+				D0C1172824C5793D000FD3C4 /* waterMark.png in Resources */,
 				F76F001D200F27E300A3C65F /* icon_meeting_video_mute@2x.png in Resources */,
 				F76F000E200F27E300A3C65F /* icon_wallview.png in Resources */,
 				D031005C21E301DC002CD293 /* Custom.strings in Resources */,
@@ -1138,6 +1238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D07716DB24DD4BA400AB14D9 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1175,6 +1276,7 @@
 				D057546F21B7F57C00FD95DA /* SDKStartJoinMeetingPresenter+WebinarServiceDelegate.m in Sources */,
 				D0BAD45521A3E137004AE4B1 /* SDKVideoPresenter.m in Sources */,
 				D000E941219BF0B500FC9275 /* BottomPanelView.m in Sources */,
+				D0C1172924C5793D000FD3C4 /* PreProcessHelper.m in Sources */,
 				D0438AE02313F3AB002D7AB7 /* ControlBar.m in Sources */,
 				D9FCEC191CEEB9CB0071F330 /* IntroViewController.m in Sources */,
 				D9FCEC1B1CEEB9CB0071F330 /* SplashViewController.m in Sources */,
@@ -1197,12 +1299,16 @@
 				917D135524910764001567F7 /* SDKStartJoinMeetingPresenter+BOServiceDelegate.m in Sources */,
 				D000E940219BF0B500FC9275 /* CustomMeetingViewController.m in Sources */,
 				F70F8ACF20E4B4B400659FC4 /* CustomRemoteControl.m in Sources */,
+				91B2313224FDF4E100B8A777 /* BaseNavigationController.m in Sources */,
 				D996D24A1C99478B00C284F0 /* SettingsViewController.m in Sources */,
+				D0C1171D24C57861000FD3C4 /* SendYUVAdapter.m in Sources */,
+				D0C1172024C57861000FD3C4 /* CameraCaptureAdapter.m in Sources */,
 				D07D7FAA22F923CD0092C28A /* OpenGLViewController.m in Sources */,
 				D000E942219BF0B500FC9275 /* ThumbTableViewCell.m in Sources */,
 				D000E93F219BF0B500FC9275 /* VideoViewController.m in Sources */,
 				D0FFE11D219D1D8700CD02A0 /* SDKStartJoinMeetingPresenter.m in Sources */,
 				D0ECCE3B21CA50C000CFC386 /* SDKAuthPresenter+Login.m in Sources */,
+				D0C1172324C57861000FD3C4 /* SendPictureAdapter.m in Sources */,
 				F7150A7C200F25CF00148CAA /* HorizontalTableView.m in Sources */,
 				D057546C21B7F56D00FD95DA /* SDKStartJoinMeetingPresenter+ShareServiceDelegate.m in Sources */,
 				D000E943219BF0B500FC9275 /* TopPanelView.m in Sources */,
@@ -1213,7 +1319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D91E333E20A7D50300F64928 /* SampleHandler.m in Sources */,
+				D91E333E20A7D50300F64928 /* SampleHandler.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1254,6 +1360,20 @@
 				D031005F21E301DF002CD293 /* zh-Hans */,
 			);
 			name = Custom.strings;
+			sourceTree = "<group>";
+		};
+		D07716DD24DD4BA400AB14D9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D07716DC24DD4BA400AB14D9 /* en */,
+				D07716DE24DD4BAF00AB14D9 /* zh-Hans */,
+				D07716DF24DD4BB400AB14D9 /* zh-Hant */,
+				D07716E024DD4BC500AB14D9 /* fr */,
+				D07716E124DD4BC900AB14D9 /* de */,
+				D07716E224DD4BCE00AB14D9 /* ja */,
+				D07716E324DD4BD500AB14D9 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		D996D23D1C99473F00C284F0 /* Localizable.strings */ = {

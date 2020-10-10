@@ -283,7 +283,9 @@
     ThumbTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
 
-    [self.videoPresenter pinVideo:YES withUser:userID];
+    if (self.pinOnClickBlock) {
+        self.pinOnClickBlock(userID);
+    }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

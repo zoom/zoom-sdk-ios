@@ -38,6 +38,11 @@
     }
 }
 
+- (void)onSinkMeetingVideoStatusChange:(NSUInteger)userID videoStatus:(MobileRTC_VideoStatus)videoStatus
+{
+    NSLog(@"onSinkMeetingVideoStatusChange=%@, videoStatus=%@",@(userID), @(videoStatus));
+}
+
 - (void)onMyVideoStateChange
 {
     if (self.customMeetingVC)

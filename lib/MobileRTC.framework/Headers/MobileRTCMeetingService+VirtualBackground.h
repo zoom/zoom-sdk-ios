@@ -11,7 +11,7 @@
 /*!
  @brief image item property
  */
-@interface ZoomSDKVirtualBGImageInfo : NSObject
+@interface MobileRTCVirtualBGImageInfo : NSObject
 
 /*!
  @brief None item if yes.
@@ -49,6 +49,7 @@
 /*!
  @brief is support virtual background.
  @return YES mean support, you can use it.
+ @warning device should be iPhone 8/ 8 plus X or above or be iPad Pro 9.7 above, OS should be iOS 11 or above.
  */
 - (BOOL)isSupportVirtualBG;
 
@@ -64,7 +65,7 @@
  @brief get the virtual background list.
  @return Return Narray of the items which include the None item.
  */
-- (NSArray * _Nonnull)getBGImageList;
+- (NSArray <MobileRTCVirtualBGImageInfo *>* _Nonnull)getBGImageList;
 
 /*!
  @brief add and use the image for virtual background.
@@ -77,13 +78,13 @@
  @brief Will use the previous one for virtual background.
  @return Remove result.
  */
-- (MobileRTCMeetError)removeBGImage:(ZoomSDKVirtualBGImageInfo *_Nonnull)bgImageInfo;
+- (MobileRTCMeetError)removeBGImage:(MobileRTCVirtualBGImageInfo *_Nonnull)bgImageInfo;
 
 /*!
  @brief use the specify image item for virtual background.
  @return The result of use image item.
  */
-- (MobileRTCMeetError)useBGImage:(ZoomSDKVirtualBGImageInfo *_Nonnull)bgImage;
+- (MobileRTCMeetError)useBGImage:(MobileRTCVirtualBGImageInfo *_Nonnull)bgImage;
 
 /*!
  @brief Disable the virtrual background, same as use a none image item.
@@ -102,6 +103,7 @@
  @brief Enable green virtual background mode.
  @param enable or disable.
  @return result of enable green virtual background.
+ @warning only iPad support Virtual background GreenScreen, iPhone does not support the feature.
  */
 - (MobileRTCMeetError)enableGreenVB:(BOOL)enable;
 
@@ -109,6 +111,7 @@
  @brief Select the point that regard as background.
  @param point in preview view.
  @return result of set background point action.
+ @warning only iPad support Virtual background GreenScreen, iPhone does not support the feature.
  */
 - (MobileRTCMeetError)selectGreenVBPoint:(CGPoint)point;
 

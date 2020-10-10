@@ -119,6 +119,10 @@ typedef enum {
  */
 @property (nonatomic, assign) NSUInteger       userID;
 /*!
+ @brief The ID of participantID.
+ */
+@property (nonatomic, retain) NSString* _Nullable       participantID;
+/*!
  @brief The screen name of user.
  */
 @property (nonatomic, retain) NSString* _Nonnull        userName;

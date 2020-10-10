@@ -118,20 +118,6 @@
  @brief Query if attendee is allowed to comment questions.
  @return YES means allowed, otherwise not.
  */
-- (BOOL)isAllowAttendeeAnswerQuestion DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)isAllowCommentQuestion; instead");
-
-/*!
- @brief Allow attendee to comment question.
- @param Enable Allow/Disallow attendee to comment question.
- @return YES means that the method is called successfully, otherwise not.
- @warning Only meeting host/co-host can run the function.
- */
-- (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)allowCommentQuestion:(BOOL)enable; instead");
-
-/*!
- @brief Query if attendee is allowed to comment questions.
- @return YES means allowed, otherwise not.
- */
 - (BOOL)isAllowCommentQuestion;
 
 /*!
@@ -297,4 +283,19 @@
  */
 - (BOOL)endLiving:(nonnull NSString *)questionID;
 
+/*!
+ @brief delete Quesion.
+ @param questionID question id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)deleteQuestion:(nonnull NSString *)questionID;
+
+/*!
+ @brief delete answerID.
+ @param answerID answerID id.
+ @return successs or not.
+ @warning Only meeting host/co-host/panelist can run the function.
+ */
+- (BOOL)deleteAnswer:(nonnull NSString *)answerID;
 @end

@@ -12,6 +12,7 @@ const CGFloat BTN_HEIGHT = 24;
 
 @interface ThumbView : UIView
 @property (nonatomic)         NSUInteger                  pinUserID;
+@property (nonatomic,copy) void(^pinOnClickBlock)(NSInteger pinUserID);
 - (void)updateFrame;
 - (void)updateThumbViewVideo;
 - (void)showThumbView;

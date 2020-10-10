@@ -151,6 +151,11 @@
     }
     
     [self.thumbView updateThumbViewVideo];
+    if (self.pinUserId) {
+        [self.videoVC.videoView showAttendeeVideoWithUserID:self.pinUserId];
+    } else {
+        [self.videoVC.videoView showAttendeeVideoWithUserID:[[[MobileRTC sharedRTC] getMeetingService] myselfUserID]];
+    }
 }
 
 - (void)updateMyAudioStatus
@@ -267,6 +272,10 @@
     if (!_thumbView)
     {
         _thumbView = [[ThumbView alloc] init];
+        _thumbView.pinOnClickBlock = ^(NSInteger pinUserID) {
+            self.pinUserId = pinUserID;
+            [self.videoVC.videoView showAttendeeVideoWithUserID:pinUserID];
+        };
     }
     
     return _thumbView;
@@ -469,10 +478,6 @@
     NSLog(@"Waiting Room: %@", arr);
     NSLog(@"userInfo: %@", userInfo);
     [ws admitToMeeting:userId];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [ws putInWaitingRoom:userId];
-    });
 }
 
 - (void)onWaitingRoomUserLeft:(NSUInteger)userId {

@@ -40,6 +40,11 @@
     [[[MobileRTC sharedRTC] getMeetingSettings] disableShowVideoPreviewWhenJoinMeeting:disabled];
 }
 
+- (void)onDisableVirtualBackground:(BOOL)disabled
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] disableVirtualBackground:disabled];
+}
+
 - (void)disableCallIn:(BOOL)disabled
 {
     [[[MobileRTC sharedRTC] getMeetingSettings] disableCallIn:disabled];
@@ -123,6 +128,11 @@
 - (void)setBottomBarHidden:(BOOL)hidden
 {
     [[MobileRTC sharedRTC] getMeetingSettings].bottomBarHidden = hidden;
+}
+
+- (void)setQaButtonHidden:(BOOL)hidden
+{
+    [[MobileRTC sharedRTC] getMeetingSettings].qaButtonHidden = hidden;
 }
 
 - (void)setEnableKubi:(BOOL)enabled

@@ -60,8 +60,13 @@
 
 - (void)onMeetingStateChange:(MobileRTCMeetingState)state
 {
+    NSLog(@"onMeetingStateChange:%d", state);
     if (self.mainVC) {
         [self.mainVC onMeetingStateChange:state];
+    }
+    
+    if (self.customMeetingVC) {
+        [self.customMeetingVC onMeetingStateChange:state];
     }
 }
 

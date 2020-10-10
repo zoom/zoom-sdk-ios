@@ -35,6 +35,7 @@
 #import <MobileRTC/MobileRTCWaitingRoomService.h>
 #import <MobileRTC/MobileRTCRenderer.h>
 #import <MobileRTC/MobileRTCAudioRawDataHelper.h>
+#import <MobileRTC/MobileRTCVideoSourceHelper.h>
 #import <MobileRTC/MobileRTCSMSService.h>
 
 /*!
@@ -98,6 +99,8 @@
     MobileRTCWaitingRoomService     *_waitingRoomService;
     
     MobileRTCSMSService             *_smsService;
+    
+    MobileRTCVideoSourceHelper      *_videoSourceHelper;
 }
 
 /*!
@@ -133,6 +136,7 @@
  @brief Call the function to switch MobileRTC domain.
  @param newDomain The new domain.
  @return YES indicates successfully. Otherwise not.
+ @warning After switch domain, need to auth again.
  */
 - (BOOL)switchDomain:(NSString * _Nonnull)newDomain force:(BOOL)force;
 
@@ -264,9 +268,33 @@
 - (void)appWillTerminate;
 
 /*!
+@brief Notify MobileRTC when the root UIViewController's traitCollection will change
+@param newCollection The first parameter of willTransitionToTraitCollection:withTransitionCoordinator which is UIContentContainer method.
+@param coordinator The second parameter of willTransitionToTraitCollection:withTransitionCoordinator which is UIContentContainer method.
+@warning Not work in Custom In-Meeting UI.
+@warning Call this method when the window.rootViewController recevived willTransitionToTraitCollection:withTransitionCoordinator.
+*/
+- (void)willTransitionToTraitCollection:(UITraitCollection *_Nullable)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>_Nullable)coordinator;
+
+/*!
+@brief Notify MobileRTC when the root UIViewController's view size will change
+@param size The first parameter of viewWillTransitionToSize:withTransitionCoordinator.
+@param coordinator the second parameter of viewWillTransitionToSize:withTransitionCoordinator.
+@warning Not work in Custom In-Meeting UI.
+@warning Call this method when the window.rootViewController recevived viewWillTransitionToSize:withTransitionCoordinator.
+*/
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>_Nullable)coordinator;
+
+/*!
  @brief Gets whether you have permission to use raw data.
  @warning It is necessary to call the method after auth success.
  */
 - (BOOL)hasRawDataLicense;
+
+/*!
+@brief Get the video source helper.@see MobileRTCVideoSourceHelper
+@return The object of MobileRTCVideoSourceHelper.
+*/
+- (MobileRTCVideoSourceHelper * _Nullable)getVideoSourceHelper;
 
 @end

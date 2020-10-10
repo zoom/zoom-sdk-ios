@@ -10,6 +10,9 @@
 #import "MobileRTCVideoRawData.h"
 #import "MobileRTCAudioRawData.h"
 #import "MobileRTCBORole.h"
+#import "MobileRTCPreProcessRawData.h"
+#import "MobileRTCVideoSender.h"
+#import "MobileRTCVideoCapabilityItem.h"
 
 #pragma mark - MobileRTCMeetingServiceDelegate
 /*!
@@ -124,13 +127,35 @@
 - (void)onFreeMeetingReminder:(BOOL)host
                canFreeUpgrade:(BOOL)freeUpgrade
                   isFirstGift:(BOOL)first
-                   completion:(void (^_Nonnull)(BOOL upgrade))completion;
+                   completion:(void (^_Nonnull)(BOOL upgrade))completion DEPRECATED_ATTRIBUTE;
 
 /*!
  @brief The result of upgrading free meeting.
  @param result ZERO(0) means the upgrade was successful, otherwise it failed.
  */
 - (void)onUpgradeFreeMeetingResult:(NSUInteger)result;
+
+/**
+ * @brief Designated for notify the free meeting need upgrade.
+ * @param type The enumeration of FreeMeetingNeedUpgradeType, if the type is FreeMeetingNeedUpgradeType_BY_GIFTURL, user can upgrade free meeting through url. if the type is FreeMeetingNeedUpgradeType_BY_ADMIN, user can ask admin user to upgrade the meeting.
+ * @param giftURL User can upgrade the free meeting through the url.
+ */
+- (void)onFreeMeetingNeedToUpgrade:(FreeMeetingNeedUpgradeType)type giftUpgradeURL:(NSString*_Nullable)giftURL;
+
+/**
+ * @brief Designated for notify the free meeting which has been upgraded to free trail meeting has started.
+ */
+- (void)onFreeMeetingUpgradeToGiftFreeTrialStart;
+
+/**
+ * @brief Designated for notify the free meeting which has been upgraded to free trail meeting has stoped.
+ */
+- (void)onFreeMeetingUpgradeToGiftFreeTrialStop;
+
+/**
+ * @brief Designated for notify the free meeting has been upgraded to professional meeting.
+ */
+- (void)onFreeMeetingUpgradedToProMeeting;
 
 /*!
  @brief Customize the invitation event.
@@ -263,6 +288,13 @@
 - (void)onSinkMeetingMyAudioTypeChange;
 
 /*!
+@brief Callback event that the participant's audio status changes(include myself).
+@param UserID The ID of user whose audio status changes.
+@param audioStatus The audio status of user whose audio status changes.
+*/
+- (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID audioStatus:(MobileRTC_AudioStatus)audioStatus;
+
+/*!
  @brief Callback event that the output type of the current user's audio source changes. 
  */
 - (void)onAudioOutputChange;
@@ -301,6 +333,13 @@
  @brief Callback event that my video state changes. 
  */
 - (void)onMyVideoStateChange;
+
+/*!
+@brief The function will be invoked once the participant's video status changes(include myself).
+@param userID The ID of user whose video status changes.
+@param videoStatus The video status of user whose video status changes.
+*/
+- (void)onSinkMeetingVideoStatusChange:(NSUInteger)userID videoStatus:(MobileRTC_VideoStatus)videoStatus;
 
 /*!
  @brief Callback event that the video status of spotlight user changes. Spotlight user means that the view will show only the specified user and won't change even other speaks.
@@ -534,6 +573,18 @@
 - (void)onSinkRevokeVoteupQuestion:(NSString *_Nonnull)questionID orderChanged:(BOOL)orderChanged;
 
 /*!
+@brief Callback event when delete question.
+@param questionIDArray The questionIDs.
+*/
+- (void)onSinkDeleteQuestion:(NSArray *_Nonnull)questionIDArray;
+
+/*!
+@brief Callback event when delete answer.
+@param answerIDArray The answerIDs.
+*/
+- (void)onSinkDeleteAnswer:(NSArray *_Nonnull)answerIDArray;
+
+/*!
  @brief Callback event of the permission that user is allowed to ask questions anonymously is changed.
  @param beAllowed YES means that user can ask question anonymously, otherwise not.
  */
@@ -595,6 +646,16 @@
  @warning only webinar meeting can get the callback.
  */
 - (void)onSinkAllowAttendeeChatNotification:(MobileRTCChatAllowAttendeeChat)currentPrivilege;
+
+/*!
+@brief The function will be invoked when attendde allow to talk.
+*/
+- (void)onSinkSelfAllowTalkNotification;
+
+/*!
+@brief The function will be invoked when attendde disallow to talk.
+*/
+- (void)onSinkSelfDisallowTalkNotification;
 @end
 
 #pragma mark - MobileRTCCustomizedUIMeetingDelegate
@@ -680,6 +741,65 @@
 - (void)onMobileRTCOneWayAudioAudioRawData:(MobileRTCAudioRawData *_Nonnull)rawData userId:(NSUInteger)userId;
 @end
 
+#pragma mark - MobileRTCPreProcessorDelegate
+/*!
+@protocol MobileRTCPreProcessorDelegate
+@brief This class is used to preprocess rawdata data before rendering.
+@discussion The MobileRTCPreProcessorDelegate protocol is required in the custom meeting UI view.
+*/
+@protocol MobileRTCPreProcessorDelegate <NSObject>
+
+@optional
+/*!
+@brief This callback is used to preprocess video's YUV420 data before rendering receive.
+@param rawData Video's YUV420 data.
+*/
+- (void)onPreProcessRawData:(MobileRTCPreProcessRawData *_Nonnull)rawData;
+
+@end
+
+#pragma mark - MobileRTCVideoSourceDelegate
+/*!
+@protocol MobileRTCVideoSourceDelegate
+@brief This class is used to send your own video rawdata.
+@discussion The MobileRTCVideoSourceDelegate protocol is required in the custom meeting UI view.
+*/
+@protocol MobileRTCVideoSourceDelegate <NSObject>
+
+@optional
+/*!
+@brief This callback is used to send data for initialization.
+@param rawDataSender please See MobileRTCVideoSender.
+@param supportCapabilityArray support capability list.
+@param suggestCapabilityItem suggest capability.
+*/
+- (void)onInitialize:(MobileRTCVideoSender *_Nonnull)rawDataSender supportCapabilityArray:(NSArray *_Nonnull)supportCapabilityArray suggestCapabilityItem:(MobileRTCVideoCapabilityItem *_Nonnull)suggestCapabilityItem;
+
+/*!
+@brief This callback is used to send data for initialization.
+@param rawDataSender please See MobileRTCVideoSender.
+@param supportCapabilityArray support capability list.
+@param suggestCapabilityItem suggest capability.
+*/
+- (void)onPropertyChange:(NSArray *_Nonnull)supportCapabilityArray suggestCapabilityItem:(MobileRTCVideoCapabilityItem *_Nonnull)suggestCapabilityItem;
+
+/*!
+@brief This callback is used to start send data.
+*/
+- (void)onStartSend;
+
+/*!
+@brief This callback is used to stop send data.
+*/
+- (void)onStopSend;
+
+/*!
+@brief This callback is used to uninitialize send data.
+*/
+- (void)onUninitialized;
+
+@end
+
 #pragma mark - MobileRTCAudioRawDataDelegate
 
 @class MobileRTCRealNameCountryInfo;
@@ -719,26 +839,31 @@
 @optional
 /*!
 @brief This method will notify the creator role gived.
+@param creator the creator role gived.
 */
 - (void)onHasCreatorRightsNotification:(MobileRTCBOCreator *_Nonnull)creator;
 
 /*!
 @brief This method will notify the admin role gived.
+@param admin the admin role gived.
 */
 - (void)onHasAdminRightsNotification:(MobileRTCBOAdmin * _Nonnull)admin;
 
 /*!
 @brief This method will notify the assistent role gived.
+@param assistant the assistant role gived.
 */
 - (void)onHasAssistantRightsNotification:(MobileRTCBOAssistant * _Nonnull)assistant;
 
 /*!
 @brief This method will notify the attendee role gived.
+@param attendee the attendee role gived.
 */
 - (void)onHasAttendeeRightsNotification:(MobileRTCBOAttendee * _Nonnull)attendee;
 
 /*!
 @brief This method will notify the data helper role gived.
+@param dataHelper the data helper role gived.
 */
 - (void)onHasDataHelperRightsNotification:(MobileRTCBOData * _Nonnull)dataHelper;
 
@@ -754,18 +879,26 @@
 
 /*!
 @brief This method will notify that lost assistant role.
+@param isStopBO wether the bo meeting has been stopped.
 */
-- (void)onLostAssistantRightsNotification;
+- (void)onLostAssistantRightsNotification:(BOOL)isStopBO;
 
 /*!
 @brief This method will notify that lost attendee role.
+@param isStopBO wether the bo meeting has been stopped.
 */
-- (void)onLostAttendeeRightsNotification;
+- (void)onLostAttendeeRightsNotification:(BOOL)isStopBO;
 
 /*!
 @brief This method will notify that lost data helper role.
 */
 - (void)onLostDataHelperRightsNotification;
+
+/*!
+@brief This method will notify that broadcast message.
+@param broadcastMsg the broadcast message received from host.
+*/
+- (void)onNewBroadcastMessageReceived:(NSString *_Nullable)broadcastMsg;
 
 @end
 
@@ -773,6 +906,7 @@
 @protocol MobileRTCBODataDelegate <MobileRTCMeetingServiceDelegate>
 /*!
 @brief The bo meeting information updated.
+@param boId the identifier for the bo meeting.
 */
 - (void)onBOInfoUpdated:(NSString *_Nullable)boId;
 
@@ -780,5 +914,37 @@
 @brief The un-assigned user update.
 */
 - (void)onUnAssignedUserUpdated;
+
+@end
+
+#pragma mark - MobileRTCBOServiceDelegate
+@protocol MobileRTCBOAdminDelegate <MobileRTCMeetingServiceDelegate>
+
+/*!
+@brief admin received help request from userID
+@param strUserID the identifier of the bo meeting user.
+*/
+- (void)onHelpRequestReceived:(NSString *_Nullable)strUserID;
+
+@end
+
+#pragma mark - MobileRTCBOServiceDelegate
+@protocol MobileRTCBOAttendeeDelegate <MobileRTCMeetingServiceDelegate>
+
+/*!
+@brief received the result of sending help request
+@param eResult the response result for the help request.
+*/
+- (void)onHelpRequestHandleResultReceived:(MobileRTCBOHelpReply)eResult;
+
+/*!
+@brief host join current bo meeting.
+*/
+- (void)onHostJoinedThisBOMeeting;
+
+/*!
+@brief host left current bo meeting.
+*/
+- (void)onHostLeaveThisBOMeeting;
 
 @end

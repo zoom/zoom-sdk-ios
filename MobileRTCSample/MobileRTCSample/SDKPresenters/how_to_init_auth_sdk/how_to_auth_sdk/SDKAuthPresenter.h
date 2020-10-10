@@ -10,7 +10,7 @@
 
 @interface SDKAuthPresenter : NSObject 
 
-- (void)SDKAuth;
+- (void)SDKAuth:(NSString *)jwtToken;
 
 @end
 

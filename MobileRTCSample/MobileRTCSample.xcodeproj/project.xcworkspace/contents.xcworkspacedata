@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Volumes/Workspace/Zoom/Code/B_35_7196/Client/src/application/ios/zoom-ios-mobilertc/MobileRTCSample/MobileRTCSample.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

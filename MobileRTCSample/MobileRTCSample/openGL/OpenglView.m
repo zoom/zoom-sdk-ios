@@ -35,6 +35,8 @@ enum TextureType
     DisplayMode             _displayMode;
     pthread_mutex_t         _lock;
     
+    BOOL enterBackground;
+    
 #ifdef DEBUG
     struct timeval          _time;
     NSInteger               _frameRate;
@@ -46,6 +48,10 @@ enum TextureType
 @implementation OpenglView
 
 - (BOOL)doInit{
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive:)
+    name:UIApplicationWillResignActiveNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
 
     self.backgroundColor = [UIColor blackColor];
     CAEAGLLayer *eaglLayer = (CAEAGLLayer*) self.layer;
@@ -345,8 +351,11 @@ TexCoordOut = TexCoordIn;\
     }
 }
 
-- (void)displayYUV:(MobileRTCVideoRawData *)rawData mode:(DisplayMode)mode
-{
+- (void)displayYUV:(MobileRTCVideoRawData *)rawData mode:(DisplayMode)mode mirror:(BOOL)mirror
+{ 
+	if (enterBackground) {
+        return;
+    }
     int w = (int)rawData.size.width;
     int h = (int)rawData.size.height;
 
@@ -370,7 +379,7 @@ TexCoordOut = TexCoordIn;\
         glBindTexture(GL_TEXTURE_2D, _textureYUV[TEXV]);
         glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, (GLsizei)(w + 1)/2, (GLsizei)(h + 1)/2, GL_RED_EXT, GL_UNSIGNED_BYTE, rawData.vBuffer);
         
-        [self renderWithRotate:rawData.rotation size:rawData.size andMode:mode];
+        [self renderWithRotate:rawData.rotation size:rawData.size andMode:mode mirror:mirror];
     pthread_mutex_unlock(&_lock);
 
 #ifdef DEBUG
@@ -396,7 +405,7 @@ TexCoordOut = TexCoordIn;\
 }
 
 
--(void)renderWithRotate:(MobileRTCVideoRawDataRotation)rotate size:(CGSize)rawSize andMode:(DisplayMode)mode {
+-(void)renderWithRotate:(MobileRTCVideoRawDataRotation)rotate size:(CGSize)rawSize andMode:(DisplayMode)mode mirror:(BOOL)mirror {
     
     glClearColor(0.0, 0.0, 0.0, 1.0);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -419,47 +428,97 @@ TexCoordOut = TexCoordIn;\
     
     switch (rotate) {
         case MobileRTCVideoRawDataRotationNone: {
-            GLfloat squareVertices[] = {
-                1.0 * cropSize.width, -1.0 * cropSize.height,
-                -1.0 * cropSize.width, -1.0 * cropSize.height,
-                1.0 * cropSize.width,  1.0 * cropSize.height,
-                -1.0 * cropSize.width,  1.0 * cropSize.height,
-            };
-            glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-            glEnableVertexAttribArray(ATTRIB_VERTEX);
+			if (mirror) {
+                GLfloat squareVertices[] = {
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  1.0 * cropSize.height,
+                    1.0 * cropSize.width,  1.0 * cropSize.height,
+                };
+                
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            } else {
+                GLfloat squareVertices[] = {
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                    1.0 * cropSize.width,  1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  1.0 * cropSize.height,
+                };
+                
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            }
+
         }
             break;
         case MobileRTCVideoRawDataRotation90: {
-            GLfloat squareVertices[] = {
-                -1.0 * cropSize.width,  1.0 * cropSize.height,
-                -1.0 * cropSize.width, -1.0 * cropSize.height,
-                1.0 * cropSize.width,  1.0 * cropSize.height,
-                1.0 * cropSize.width, -1.0 * cropSize.height,
-            };
-            glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-            glEnableVertexAttribArray(ATTRIB_VERTEX);
+			if (mirror) {
+                GLfloat squareVertices[] = {
+                    1.0 * cropSize.width,  1.0 * cropSize.height,
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  1.0 * cropSize.height,
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            } else {
+                GLfloat squareVertices[] = {
+                    -1.0 * cropSize.width,  1.0 * cropSize.height,
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                    1.0 * cropSize.width,  1.0 * cropSize.height,
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            }
+
         }
             break;
         case MobileRTCVideoRawDataRotation180: {
-            GLfloat squareVertices[] = {
-                1.0 * cropSize.width, 1.0 * cropSize.height,
-                -1.0 * cropSize.width,  1.0 * cropSize.height,
-                1.0 * cropSize.width, -1.0 * cropSize.height,
-                -1.0 * cropSize.width,  -1.0 * cropSize.height,
-            };
-            glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-            glEnableVertexAttribArray(ATTRIB_VERTEX);
+			if (mirror) {
+                GLfloat squareVertices[] = {
+                    -1.0 * cropSize.width, 1.0 * cropSize.height,
+                    1.0 * cropSize.width,  1.0 * cropSize.height,
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                    1.0 * cropSize.width,  -1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            } else {
+                GLfloat squareVertices[] = {
+                    1.0 * cropSize.width, 1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  1.0 * cropSize.height,
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  -1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            }
+
         }
             break;
         case MobileRTCVideoRawDataRotation270: {
-            GLfloat squareVertices[] = {
-                1.0 * cropSize.width, -1.0 * cropSize.height,
-                1.0 * cropSize.width, 1.0 * cropSize.height,
-                -1.0 * cropSize.width,  -1.0 * cropSize.height,
-                -1.0  * cropSize.width, 1.0 * cropSize.height,
-            };
-            glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
-            glEnableVertexAttribArray(ATTRIB_VERTEX);
+			if (mirror) {
+                GLfloat squareVertices[] = {
+                    -1.0 * cropSize.width, -1.0 * cropSize.height,
+                    -1.0 * cropSize.width, 1.0 * cropSize.height,
+                    1.0 * cropSize.width,  -1.0 * cropSize.height,
+                    1.0  * cropSize.width, 1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            } else {
+                GLfloat squareVertices[] = {
+                    1.0 * cropSize.width, -1.0 * cropSize.height,
+                    1.0 * cropSize.width, 1.0 * cropSize.height,
+                    -1.0 * cropSize.width,  -1.0 * cropSize.height,
+                    -1.0  * cropSize.width, 1.0 * cropSize.height,
+                };
+                glVertexAttribPointer(ATTRIB_VERTEX, 2, GL_FLOAT, 0, 0, squareVertices);
+                glEnableVertexAttribArray(ATTRIB_VERTEX);
+            }
+
         }
             break;
         default:
@@ -543,6 +602,14 @@ TexCoordOut = TexCoordIn;\
         }
     }
     [needRemove makeObjectsPerformSelector:@selector(removeFromSuperview)];
+}
+
+- (void)applicationWillResignActive:(NSNotification *)aNotification {
+    enterBackground = YES;
+}
+
+- (void)applicationDidBecomeActive:(NSNotification *)aNotification {
+    enterBackground = NO;
 }
 
 @end

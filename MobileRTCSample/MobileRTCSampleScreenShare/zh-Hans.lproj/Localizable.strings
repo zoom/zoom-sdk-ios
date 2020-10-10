@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MobileRTCSample
+
+  Created by Zoom Video Communications on 2020/8/7.
+  Copyright © 2020 Zoom Video Communications, Inc. All rights reserved.
+*/
+
+"Operation was unsuccessful" = "直播屏幕停止";
+
+"You have stopped screen sharing" = "您停止了屏幕共享";
+
+"Please try to restart broadcasting to Zoom" = "请尝试重启直播屏幕";
+
+"Connection failed" = "连接失败，请尝试重启直播屏幕";

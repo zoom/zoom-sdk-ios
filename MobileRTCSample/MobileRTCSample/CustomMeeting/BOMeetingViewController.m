@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     BOAdmin_AssignNewUserToBO,
     BOAdmin_SwitchUser,
     BOAdmin_CanStartBO,
+    BOAdmin_BroadcastMessage,
+    BOAdmin_HandleHelpRequest,
     
     // Assistant
     BOAssistant_JoinBO,
@@ -31,12 +33,16 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     BOAttendee_JoinBO,
     BOAttendee_LeaveBO,
     BOAttendee_GetBOName,
+    BOAttendee_RequestForHelp,
+    BOAttendee_IsHostInThisBO,
     
     // BOData
     BODataHelper_UnsignedUserList,
     BODataHelper_BOMeetingIDList,
     BODataHelper_GetBOUser,
     BODataHelper_GetBOMeeting,
+    BODataHelper_GetMyBOName,
+    BODataHelper_IsBOUserMyself,
 };
 
 @interface BOMeetingViewController () <UITableViewDataSource, UITableViewDelegate, MobileRTCMeetingServiceDelegate>
@@ -61,9 +67,21 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     [self.navigationItem.leftBarButtonItem setTintColor:RGBCOLOR(0x2D, 0x8C, 0xFF)];
     
     self.dataSource = [NSMutableArray array];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:@"BO_Update" object:nil];
     [self initDataSource];
     [self initTableView];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kBO_NOTIFICATION_DATA_UPDATE object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateTable) name:kBO_NOTIFICATION_HELP_RECEIVED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onBroadcastMessageNoti:) name:kBO_NOTIFICATION_BRODCASET_RECEIVED object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)dealloc {
@@ -72,6 +90,56 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     [_tableView release];
     _tableView = nil;
     [super dealloc];
+}
+
+- (void)handleBOHelpInOrder {
+    NSString *userId = [self handleRequsterIds:YES];
+    [self updateTable];
+    NSString *alertMsg = userId ? [NSString stringWithFormat:@"Request User:%@",userId] : @"No requested user found";
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Join BO for Help"
+                                                                             message:alertMsg
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+    if (userId) {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Accept"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+            MobileRTCBOAdmin *admin = [[[MobileRTC sharedRTC] getMeetingService] getAdminHelper];
+            if(admin) [admin joinBOByUserRequest:userId];
+        }]];
+        
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Ignore"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+            MobileRTCBOAdmin *admin = [[[MobileRTC sharedRTC] getMeetingService] getAdminHelper];
+            if(admin) [admin ignoreUserHelpRequest:userId];
+        }]];
+    } else {
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Close"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil]];
+    }
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (NSString *)handleRequsterIds:(BOOL)removed {
+    NSArray *boUIdList = [[NSUserDefaults standardUserDefaults] objectForKey:kBO_HELP_REQUESTER_IDS];
+    if (![boUIdList isKindOfClass:NSArray.class]) {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kBO_HELP_REQUESTER_IDS];
+        boUIdList = @[];
+        [[NSUserDefaults standardUserDefaults] setObject:boUIdList forKey:kBO_HELP_REQUESTER_IDS];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return nil;
+    } else {
+        NSMutableArray *boUserList2Write = [NSMutableArray arrayWithArray:boUIdList];
+        NSString *handleId = boUserList2Write.firstObject;
+        if (removed) {
+            [boUserList2Write removeObject:handleId];
+            [[NSUserDefaults standardUserDefaults] setObject:boUserList2Write forKey:kBO_HELP_REQUESTER_IDS];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        return handleId;
+    }
 }
 
 - (void)onDone:(id)sender
@@ -101,6 +169,8 @@ typedef NS_ENUM(NSUInteger, BOActions) {
         [self.dataSource addObject:@(BODataHelper_BOMeetingIDList)];
         [self.dataSource addObject:@(BODataHelper_GetBOUser)];
         [self.dataSource addObject:@(BODataHelper_GetBOMeeting)];
+        [self.dataSource addObject:@(BODataHelper_GetMyBOName)];
+        [self.dataSource addObject:@(BODataHelper_IsBOUserMyself)];
         
         NSLog(@"---BO--- Get Own DataHelper");
     }
@@ -112,6 +182,8 @@ typedef NS_ENUM(NSUInteger, BOActions) {
         [self.dataSource addObject:@(BOAdmin_AssignNewUserToBO)];
         [self.dataSource addObject:@(BOAdmin_SwitchUser)];
         [self.dataSource addObject:@(BOAdmin_CanStartBO)];
+        [self.dataSource addObject:@(BOAdmin_BroadcastMessage)];
+        [self.dataSource addObject:@(BOAdmin_HandleHelpRequest)];
         NSLog(@"---BO--- Get Own Admin");
     }
     
@@ -128,6 +200,8 @@ typedef NS_ENUM(NSUInteger, BOActions) {
         [self.dataSource addObject:@(BOAttendee_JoinBO)];
         [self.dataSource addObject:@(BOAttendee_LeaveBO)];
         [self.dataSource addObject:@(BOAttendee_GetBOName)];
+        [self.dataSource addObject:@(BOAttendee_RequestForHelp)];
+        [self.dataSource addObject:@(BOAttendee_IsHostInThisBO)];
         
         NSLog(@"---BO--- Get Own Attendee");
     }
@@ -197,6 +271,21 @@ typedef NS_ENUM(NSUInteger, BOActions) {
     NSString *cellName = [self getBOActionCaseName:index];
     cell.textLabel.text = cellName;
     return cell;
+}
+
+- (void)onBroadcastMessageNoti:(NSNotification *)noti {
+    NSString *broadcastMsg = noti.object;
+    if (![broadcastMsg isKindOfClass:NSString.class]) {
+        return;
+    }
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"BO Boradcast"
+                                                          message:[NSString stringWithFormat:@"Broadcast Msg:%@", broadcastMsg]
+                                                   preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Close"
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:nil]];
+    [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -462,6 +551,27 @@ typedef NS_ENUM(NSUInteger, BOActions) {
                                                                   handler:nil]];
             }
             break;
+        case BOAdmin_BroadcastMessage:
+        {
+            if (!admin)
+                return;
+            NSDate *date = [NSDate date];
+            NSString *broadcastMsg = [NSString stringWithFormat:@"BO_MSG_%@", @([date timeIntervalSince1970])];
+            BOOL sendResult = [admin broadcastMessage:broadcastMsg];
+            alertController = [UIAlertController alertControllerWithTitle:@"BOAdmin_BroadcastMessage"
+                                                                  message:sendResult ? @"Success" : @"Failed"
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Close"
+                                                                style:UIAlertActionStyleCancel
+                                                              handler:nil]];
+        }
+            break;
+        case BOAdmin_HandleHelpRequest:
+        {
+            [self handleBOHelpInOrder];
+        }
+            break;
+            
         // Assistant
         case BOAssistant_JoinBO:
             {
@@ -563,7 +673,40 @@ typedef NS_ENUM(NSUInteger, BOActions) {
                                                                   handler:nil]];
             }
             break;
+        case BOAttendee_RequestForHelp:
+        {
+            if (!attendee) {
+                NSLog(@"no object");
+                return;
+            }
             
+            BOOL requestResult = [attendee requestForHelp];
+            NSString *resultMsg = requestResult? @"succeed" : @"failed";
+            alertController = [UIAlertController alertControllerWithTitle:@"BOAttendee_RequestForHelp"
+                                                                  message:resultMsg
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Close"
+                                                                style:UIAlertActionStyleCancel
+                                                              handler:nil]];
+        }
+            break;
+        case BOAttendee_IsHostInThisBO:
+        {
+            if (!attendee) {
+                NSLog(@"no object");
+                return;
+            }
+            
+            BOOL requestResult = [attendee isHostInThisBO];
+            NSString *resultMsg = [NSString stringWithFormat:@"host now is %@ current BO meeting", requestResult? @"in" : @"not in"];
+            alertController = [UIAlertController alertControllerWithTitle:@"BOAttendee_RequestForHelp"
+                                                                  message:resultMsg
+                                                           preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Close"
+                                                                style:UIAlertActionStyleCancel
+                                                              handler:nil]];
+        }
+            break;
         // BOData
         case BODataHelper_UnsignedUserList:
             {
@@ -652,6 +795,53 @@ typedef NS_ENUM(NSUInteger, BOActions) {
                                                                   handler:nil]];
             }
             break;
+        case BODataHelper_GetMyBOName:
+            {
+                if (!dataHelper) {
+                    NSLog(@"no object");
+                    return;
+                }
+                NSString *currentBOName = [dataHelper getCurrentBOName];
+                NSLog(@"datahelper current meeting name: %@", currentBOName);
+                
+                alertController = [UIAlertController alertControllerWithTitle:@"BODataHelper_GetMyBOName"
+                                                                                         message:currentBOName
+                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                                                    style:UIAlertActionStyleCancel
+                                                                  handler:nil]];
+            }
+            break;
+        case BODataHelper_IsBOUserMyself:
+            {
+                if (!dataHelper) {
+                    NSLog(@"no object");
+                    return;
+                }
+                NSArray *unAssignUserArr = [dataHelper getUnassignedUserList];
+                NSArray *meetingArr = [dataHelper getBOMeetingIDList];
+                NSMutableString *alertText = [@"" mutableCopy];
+                for (NSString *userId in unAssignUserArr) {
+                    NSString *boolText = [dataHelper isBOUserMyself:userId] ? @"YES" : @"NO";
+                    [alertText appendFormat:@"%@-%@\n", userId, boolText];
+                }
+                for (NSString *meetingID in meetingArr) {
+                    MobileRTCBOMeeting *meeting = [dataHelper getBOMeetingByID:meetingID];
+                    NSArray *userList = [meeting getBOMeetingUserList];
+                    for (NSString *userId in userList) {
+                        NSString *boolText = [dataHelper isBOUserMyself:userId] ? @"YES" : @"NO";
+                        
+                        [alertText appendFormat:@"%@-%@\n",userId, boolText];
+                    }
+                }
+                
+                alertController = [UIAlertController alertControllerWithTitle:@"BODataHelper_IsBOUserMyself"
+                                                                                         message:alertText
+                                                                                  preferredStyle:UIAlertControllerStyleAlert];
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                                                    style:UIAlertActionStyleCancel
+                                                                  handler:nil]];
+            }
         default:
             NSLog(@"not support now");
             break;
@@ -694,6 +884,18 @@ typedef NS_ENUM(NSUInteger, BOActions) {
             return @"BOAdmin_SwitchUser";
         case BOAdmin_CanStartBO:
             return @"BOAdmin_CanStartBO";
+        case BOAdmin_BroadcastMessage:
+            return @"BOAdmin_BroadcastMessage";
+        case BOAdmin_HandleHelpRequest:
+        {
+            NSString *helpReqCellName = @"BOAdmin_HandleHelpRequest";
+            NSArray *array = [[NSUserDefaults standardUserDefaults] objectForKey:kBO_HELP_REQUESTER_IDS];
+            if (!(array && [array isKindOfClass:NSArray.class])) {
+                return helpReqCellName;
+            }
+            helpReqCellName = [NSString stringWithFormat:@"%@(%@)", helpReqCellName, @(array.count)];
+            return helpReqCellName;
+        }
         
         // Assistant
         case BOAssistant_JoinBO:
@@ -708,6 +910,10 @@ typedef NS_ENUM(NSUInteger, BOActions) {
             return @"BOAttendee_LeaveBO";
         case BOAttendee_GetBOName:
             return @"BOAttendee_GetBOName";
+        case BOAttendee_RequestForHelp:
+            return @"BOAttendee_RequestForHelp";
+        case BOAttendee_IsHostInThisBO:
+            return @"BOAttendee_IsHostInThisBO";
         
         // BOData
         case BODataHelper_UnsignedUserList:
@@ -718,6 +924,10 @@ typedef NS_ENUM(NSUInteger, BOActions) {
             return @"BODataHelper_GetBOUser";
         case BODataHelper_GetBOMeeting:
             return @"BODataHelper_GetBOMeeting";
+        case BODataHelper_GetMyBOName:
+            return @"BODataHelper_GetMyBOName";
+        case BODataHelper_IsBOUserMyself:
+            return @"BODataHelper_IsBOUserMyself";
             
         default:
             return @"not support";

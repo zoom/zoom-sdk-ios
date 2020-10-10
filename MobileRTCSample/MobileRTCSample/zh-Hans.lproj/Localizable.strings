@@ -28,6 +28,8 @@
 
 "Disable Show Video Preview" = "禁用视频预览";
 
+"Disable Virtual Background" = "禁用虚拟背景";
+
 "Driving Mode Setting" = "驾驶模式下，扬声器开启，视频关闭，麦克风静音";
 
 "Invite Participant" = "邀请与会人";
@@ -79,6 +81,8 @@
 "Hide Meeting More" = "隐藏更多菜单";
 
 "Hide Meeting Password" = "隐藏会议密码";
+
+"Hide Meeting Webinar Q&A" = "隐藏网络研讨会问答";
 
 "Show My Elapse Time" = "显示我在会议里的连接时间";
 

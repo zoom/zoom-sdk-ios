@@ -13,7 +13,7 @@ typedef enum : NSUInteger {
     DisplayMode_PanAndScan,
 } DisplayMode;
 
-- (void)displayYUV:(MobileRTCVideoRawData *)rawData mode:(DisplayMode)mode;
+- (void)displayYUV:(MobileRTCVideoRawData *)rawData mode:(DisplayMode)mode mirror:(BOOL)mirror;
 
 - (void)clearFrame;
 

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  MobileRTCSample
+
+  Created by Zoom Video Communications on 2020/8/7.
+  Copyright © 2020 Zoom Video Communications, Inc. All rights reserved.
+*/
+
+"Operation was unsuccessful" = "Operation was unsuccessful";
+
+"You have stopped screen sharing" = "you have stopped screen sharing";
+
+"Please try to restart broadcasting to Zoom" = "Please try to restart broadcasting to Zoom";
+
+"Connection failed" = "connection failed, restart broadcasting to Zoom for screen sharing";

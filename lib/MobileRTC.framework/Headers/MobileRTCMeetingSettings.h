@@ -15,90 +15,107 @@
 @interface MobileRTCMeetingSettings : NSObject
 
 /*!
- @brief Show/Hide meeting title in the meeting bar. 
+ @brief Show/Hide meeting title in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingTitleHidden;
 
 /*!
  @brief Show/Hide meeting title in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingPasswordHidden;
 
 /*!
  @brief Show/Hide the END/LEAVE MEETING button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingLeaveHidden;
 
 /*!
  @brief Show/Hide AUDIO button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingAudioHidden;
 
 /*!
  @brief Show/Hide VIDEO button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingVideoHidden;
 
 /*!
  @brief Show/Hide INVITE button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingInviteHidden;
 
 /*!
  @brief Show/Hide Chat in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingChatHidden;
 
 /*!
  @brief Show/Hide PARTICIPANT button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingParticipantHidden;
 
 /*!
  @brief Show/Hide SHARE button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingShareHidden;
 
 /*!
  @brief Show/Hide MORE button in the meeting bar.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL meetingMoreHidden;
 
 /*!
  @brief Show/Hide the BAR ON THE TOP of view in the meeting.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL topBarHidden;
 
 /*!
  @brief Show/Hide BAR at the bottom of the view in the meeting.
  @warning The BAR at the bottom of the view is available on iPhone.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL bottomBarHidden;
 
 /*!
  @brief Show/Hide disconnect audio button
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL disconnectAudioHidden;
 
 /*!
  @brief Enable/Disable Kubi Device in the meeting.
  @warning The option is available only on iPad if you want to use Kubi device. 
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL enableKubi;
 
 /*!
  @brief Change thumbnail video layout while viewing a share in the meeting.
  @warning If you set it to YES, the video of attendees will be placed at right of the Landscape(the device screen is oriented horizontally) or the bottom of Portrait(the device screen is oriented vertically) apart from the shared content, which means the video won't cover the content; if you set to NO, it will show only the video of active speaker and the video will be placed in the bottom right of the screen.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL thumbnailInShare;
 
 /*!
  @brief Show/Hide LEAVE MEETING item for the host.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL hostLeaveHidden;
 
 /*!
  @brief Show/Hide the hint message in the meeting.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL hintHidden;
 
@@ -109,43 +126,51 @@
 
 /*!
  @brief Show/Hide "Call in Room System" item in Invite h.323/SIP Room System.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL callinRoomSystemHidden;
 
 /*!
  @brief Show/Hide "Call out Room System" item in Invite h.323/SIP Room System.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL calloutRoomSystemHidden;
 
 /*!
  @brief Show/Hide "Enter Host Key to Claim Host" item in Menu More.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL claimHostWithHostKeyHidden;
 
 /*!
  @brief Show/Hide CLOSE CAPTION in a meeting.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL closeCaptionHidden;
 
 /*!
  @brief Show/Hide Q&A button in webinar meeting.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL qaButtonHidden;
 
 /*!
  @brief Show/Hide "Promote to Panelist" in webinar meeting.
  @warning Only host/co-host can see the option in webinar meeting‘s participants.
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL promoteToPanelistHidden;
 
 /*!
 @brief Show/Hide "Change to Attendee" in webinar meeting.
 @warning Only host/co-host can see the option in webinar meeting‘s participants.
+@warning The function only for Zoom UI.
 */
 @property (assign, nonatomic) BOOL changeToAttendeeHidden;
 
 /*!
  @brief Enable/Disable Proximity Sensors Monitoring in a meeting. 
+ @warning The function only for Zoom UI.
  */
 @property (assign, nonatomic) BOOL proximityMonitoringDisable;
 
@@ -204,84 +229,110 @@
 /*!
  @brief Query if driving mode is disabled.
  @return YES means muted, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)driveModeDisabled;
 
 /*!
  @brief Set to disable the Driving mode in the meeting.
  @param disabled YES means disabled, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (void)disableDriveMode:(BOOL)disabled;
 
 /*!
  @brief Query if Gallery View is disabled.
  @return YES means muted, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)galleryViewDisabled;
 
 /*!
  @brief Set to disable the Gallery View in the meeting.
  @param disabled YES means disabled, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (void)disableGalleryView:(BOOL)disabled;
 
 /*!
  @brief Query if it is disabled to call in.
  @return YES means disabled, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)callInDisabled;
 
 /*!
  @brief Set to disable the incoming calls.
  @param disabled The option value.
+ @warning The function only for Zoom UI.
  */
 - (void)disableCallIn:(BOOL)disabled;
 
 /*!
  @brief Query if it is disabled to call out.
  @return YES means disabled, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)callOutDisabled;
 
 /*!
  @brief Set to disable the outgoing calls. 
  @param disabled The option value.
+ @warning The function only for Zoom UI.
  */
 - (void)disableCallOut:(BOOL)disabled;
 
 /*!
  @brief Query if it is disabled to Minimize Meeting.
  @return YES means disabled, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)minimizeMeetingDisabled;
 
 /*!
  @brief Set to disable the Minimize Meeting.
  @param disabled The option value.
+ @warning The function only for Zoom UI.
  */
 - (void)disableMinimizeMeeting:(BOOL)disabled;
 
 /*!
+ @brief Query if it is disabled to Minimize Meeting.
+ @return YES means disabled, otherwise not.
+ */
+- (BOOL)freeMeetingUpgradeTipsDisabled;
+
+/*!
+@brief Set to disable the Minimize Meeting.
+@param disabled The option value.
+*/
+- (void)disableFreeMeetingUpgradeTips:(BOOL)disabled;
+
+/*!
  @brief Query Meeting setting of speaker off when present meeting.
  @return YES means speaker off, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)speakerOffWhenInMeeting;
 
 /*!
  @brief Set speaker off.  Default value is No, Need set to NO when not used.
- @param YES means speaker off, otherwise not
+ @param YES means speaker off, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (void)setSpeakerOffWhenInMeeting:(BOOL)speakerOff;
 
 /*!
  @brief Query show meeting elapse time.
  @return YES means show meeting elapse time, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (BOOL)showMyMeetingElapseTime;
 
 /*!
  @brief Enable show meeting elapse time.
  @param enable YES means show meeting elapse time, otherwise not.
+ @warning The function only for Zoom UI.
  */
 - (void)enableShowMyMeetingElapseTime:(BOOL)enable;
 
@@ -300,20 +351,35 @@
 /*!
 @brief Set the visibility of reaction on meeting UI. Default is displaying.
 @param hidden YES means hide reaction emotion.
+@warning The function only for Zoom UI.
 */
 - (void)hideReactionsOnMeetingUI:(BOOL)hidden;
 
 /*!
 @brief Query if it is disabled to show video preview when join meeting.
 @return YES means disabled, otherwise not.
+@warning The function only for Zoom UI.
 */
 - (BOOL)showVideoPreviewWhenJoinMeetingDisabled;
 
 /*!
 @brief Set to disable show video preview when join meeting.
 @param disabled The option value.
+@warning The function only for Zoom UI.
 */
 - (void)disableShowVideoPreviewWhenJoinMeeting:(BOOL)disabled;
+
+/*!
+@brief Query if it is disabled for virtual background.
+@return YES means disabled, otherwise not.
+*/
+- (BOOL)virtualBackgroundDisabled;
+
+/*!
+@brief Set to disable virtual background.
+@param disabled The option value.
+*/
+- (void)disableVirtualBackground:(BOOL)disabled;
 
 /*!
 @brief pre populate webinar registration info.
@@ -321,4 +387,12 @@
 @param username registration username.
 */
 - (void)prePopulateWebinarRegistrationInfo:(nonnull NSString *)email username:(nonnull NSString *)username;
+
+/*!
+@brief Set to disable confidential watermark.
+@param disabled The option value.
+@return YES means confidential watermark is disable, otherwise not.
+@warning The function only for Zoom UI.
+*/
+- (BOOL)disableConfidentialWatermark:(BOOL)disable;
 @end

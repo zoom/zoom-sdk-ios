@@ -14,16 +14,20 @@
 #define kTagButtonSwitch        2000
 #define kTagButtonAudio         (kTagButtonSwitch+1)
 #define kTagButtonVideo         (kTagButtonSwitch+2)
-#define kTagButtonShare         (kTagButtonSwitch+3)
+#define kTagButtonMore          (kTagButtonSwitch+3)
+
 
 @interface ControlBar ()
 @property (strong, nonatomic) UIButton          *switchBtn;
 @property (strong, nonatomic) UIButton          *audioBtn;
 @property (strong, nonatomic) UIButton          *videoBtn;
+@property (strong, nonatomic) UIButton          *moreBtn;
 
 @property (strong, nonatomic) SDKAudioPresenter           *audioPresenter;
 @property (strong, nonatomic) SDKVideoPresenter           *videoPresenter;
 @property (strong, nonatomic) SDKActionPresenter          *actionPresenter;
+
+@property (nonatomic, strong) MobileRTCVideoSourceHelper *videoSourceHelper;
 @end
 
 @implementation ControlBar
@@ -33,6 +37,8 @@
     self = [super init];
     if (self) {
         [self initSubView];
+        
+        self.videoSourceHelper = [[MobileRTCVideoSourceHelper alloc] init];
     }
     return self;
 }
@@ -41,10 +47,13 @@
     self.switchBtn = nil;
     self.audioBtn = nil;
     self.videoBtn = nil;
+    self.moreBtn = nil;
     
     self.audioPresenter = nil;
     self.videoPresenter = nil;
     self.actionPresenter = nil;
+    
+    self.videoSourceHelper = nil;
     [super dealloc];
 }
 
@@ -67,8 +76,10 @@
     _switchBtn.frame = CGRectMake(0, 0, button_width, button_width * ([UIImage imageNamed:@"icon_switch"].size.height/[UIImage imageNamed:@"icon_switch"].size.width));
     _audioBtn.frame = CGRectMake(0, CGRectGetMaxY(_switchBtn.frame), button_width, button_width * ([UIImage imageNamed:@"icon_mute"].size.height/[UIImage imageNamed:@"icon_mute"].size.width));
     _videoBtn.frame = CGRectMake(0, CGRectGetMaxY(_audioBtn.frame), button_width, button_width * ([UIImage imageNamed:@"icon_video_on"].size.height/[UIImage imageNamed:@"icon_video_on"].size.width));
+    _moreBtn.frame = CGRectMake(0, CGRectGetMaxY(_videoBtn.frame), button_width, button_width * ([UIImage imageNamed:@"icon_video_more"].size.height/[UIImage imageNamed:@"icon_video_more"].size.width));
     
-    float controlBar_height = Height(_switchBtn)+Height(_audioBtn)+Height(_videoBtn);
+    
+    float controlBar_height = Height(_switchBtn)+Height(_audioBtn)+Height(_videoBtn)+Height(_moreBtn);
     
     float controlBar_x = SCREEN_WIDTH-button_width - 5;
     float controlBar_y;
@@ -107,6 +118,13 @@
     [_videoBtn addTarget: self action: @selector(onBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_videoBtn];
     
+    _moreBtn = [[UIButton alloc] init];
+    _moreBtn.tag = kTagButtonMore;
+    [_moreBtn setImage:[UIImage imageNamed:@"icon_video_more"] forState:UIControlStateNormal];
+    [_moreBtn setImage:[UIImage imageNamed:@"icon_video_more"] forState:UIControlStateSelected];
+    [_moreBtn addTarget: self action: @selector(onBarButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_moreBtn];
+    
 }
 
 
@@ -126,6 +144,54 @@
         case kTagButtonVideo:
         {
             [self.videoPresenter muteMyVideo];
+            break;
+        }
+        case kTagButtonMore:
+        {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                     message:nil
+                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - Camera Data"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                self.cameraAdapter = [[CameraCaptureAdapter alloc] init];
+                [self.videoSourceHelper setExternalVideoSource:self.cameraAdapter];
+            }]];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - Picture Data"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                self.picAdapter = [[SendPictureAdapter alloc] init];
+                [self.videoSourceHelper setExternalVideoSource:self.picAdapter];
+            }]];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Send Rawdata - YUV Data"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                self.yuvAdapter = [[SendYUVAdapter alloc] init];
+                [self.videoSourceHelper setExternalVideoSource:self.yuvAdapter];
+            }]];
+            
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Switch to internal video source"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                                  [self.videoSourceHelper setExternalVideoSource:nil];
+                                                              }]];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            }]];
+            
+            UIPopoverPresentationController *popover = alertController.popoverPresentationController;
+            if (popover)
+            {
+                UIButton *btn = (UIButton*)sender;
+                popover.sourceView = btn;
+                popover.sourceRect = btn.bounds;
+                popover.permittedArrowDirections = UIPopoverArrowDirectionAny;
+            }
+            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [[appDelegate topViewController] presentViewController:alertController animated:YES completion:nil];
             break;
         }
        

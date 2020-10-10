@@ -45,6 +45,16 @@
     NSLog(@"onSinkDePromptPanelist2AttendeeResult %zd",errorCode);
 }
 
+- (void)onSinkSelfAllowTalkNotification
+{
+    NSLog(@"onSinkSelfAllowTalkNotification");
+}
+
+- (void)onSinkSelfDisallowTalkNotification
+{
+    NSLog(@"onSinkSelfDisallowTalkNotification");
+}
+
 #if 1
 #pragma mark - Webinar Q&A
 - (void)onSinkQAConnectStarted

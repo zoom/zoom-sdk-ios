@@ -142,6 +142,42 @@ typedef NS_ENUM(NSInteger, ZoomSampleQAListType) {
                                                           }]];
     }
     
+    if ([[[MobileRTC sharedRTC] getMeetingService] isMeetingCoHost] || [[[MobileRTC sharedRTC] getMeetingService] isMeetingCoHost]) {
+        BOOL isAllowAskQuestionAnonymously = [[[MobileRTC sharedRTC] getMeetingService] isAllowAskQuestionAnonymously];
+        NSString *allowAskQuestionTitle = isAllowAskQuestionAnonymously ? @"Disallow ask question anonymously" : @"Allow ask question anonymously";
+        [alertController addAction:[UIAlertAction actionWithTitle:allowAskQuestionTitle
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                                [[[MobileRTC sharedRTC] getMeetingService] allowAskQuestionAnonymously:!isAllowAskQuestionAnonymously];
+                                                          }]];
+        
+        BOOL isAllowAttendeeViewAllQuestion = [[[MobileRTC sharedRTC] getMeetingService] isAllowAttendeeViewAllQuestion];
+        NSString *allowAttendeeViewAllQuestionTitle = isAllowAttendeeViewAllQuestion ? @"Disallow attendee view all question" : @"Allow attendee view all question";
+        [alertController addAction:[UIAlertAction actionWithTitle:allowAttendeeViewAllQuestionTitle
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                                [[[MobileRTC sharedRTC] getMeetingService] allowAttendeeViewAllQuestion:!isAllowAttendeeViewAllQuestion];
+                                                          }]];
+        
+        if (isAllowAttendeeViewAllQuestion) {
+            BOOL isAllowAttendeeUpVoteQuestion = [[[MobileRTC sharedRTC] getMeetingService] isAllowAttendeeUpVoteQuestion];
+            NSString *allowAttendeeUpVoteQuestionTitle = isAllowAttendeeUpVoteQuestion ? @"Disallow attendee up vote question" : @"Allow attendee up vote question";
+            [alertController addAction:[UIAlertAction actionWithTitle:allowAttendeeUpVoteQuestionTitle
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                                    [[[MobileRTC sharedRTC] getMeetingService] allowAttendeeUpVoteQuestion:!isAllowAttendeeUpVoteQuestion];
+                                                              }]];
+            
+            BOOL isAllowCommentQuestion = [[[MobileRTC sharedRTC] getMeetingService] isAllowCommentQuestion];
+            NSString *allowCommentQuestionTitle = isAllowCommentQuestion ? @"Disallow comment question" : @"Allow comment question";
+            [alertController addAction:[UIAlertAction actionWithTitle:allowCommentQuestionTitle
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction *action) {
+                                                                    [[[MobileRTC sharedRTC] getMeetingService] allowCommentQuestion:!isAllowCommentQuestion];
+                                                              }]];
+        }
+        
+    }
     
     [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
     }]];
@@ -261,6 +297,24 @@ typedef NS_ENUM(NSInteger, ZoomSampleQAListType) {
                                                               }]];
         }
         
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Delete Question"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction *action) {
+                                                                    BOOL ret = [[[MobileRTC sharedRTC] getMeetingService] deleteQuestion:[questionItem getQuestionId]];
+                                                                    NSLog(@"Delete Question ===> %@",@(ret));
+                                                            }]];
+        
+        NSArray *answerList = [questionItem getAnswerlist];
+        if (answerList.count > 0) {
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Delete Answer"
+                                                                       style:UIAlertActionStyleDefault
+                                                                     handler:^(UIAlertAction *action) {
+                                                                    // There is a 500ms delete interval because of the frequency protection of the interface
+                                                                    BOOL ret = [[[MobileRTC sharedRTC] getMeetingService] deleteAnswer:[answerList[0] getAnswerID]];
+                                                                    NSLog(@"Delete Answer ===> %@",@(ret));
+                                                            }]];
+        }
+       
         
     } else { // attendee
         if ([[[MobileRTC sharedRTC] getMeetingService] isAllowCommentQuestion] && ![questionItem isMarkedAsDismissed]) {
@@ -399,6 +453,22 @@ typedef NS_ENUM(NSInteger, ZoomSampleQAListType) {
 - (void)onSinkRevokeVoteupQuestion:(NSString *_Nonnull)questionID orderChanged:(BOOL)orderChanged
 {
     NSLog(@"Webinar Q&A--onSinkRevokeUpvoteQuestion questionID=%@ orderChanged=%@", questionID, @(orderChanged));
+    [self updateData];
+}
+
+- (void)onSinkDeleteQuestion:(NSArray *_Nonnull)questionIDArray
+{
+    for (NSString * questionID in questionIDArray) {
+        NSLog(@"Webinar Q&A--onSinkDeleteQuestion %@", questionID);
+    }
+    [self updateData];
+}
+
+- (void)onSinkDeleteAnswer:(NSArray *_Nonnull)answerIDArray
+{
+    for (NSString * answerIDA in answerIDArray) {
+        NSLog(@"Webinar Q&A--onSinkDeleteAnswer %@", answerIDA);
+    }
     [self updateData];
 }
 

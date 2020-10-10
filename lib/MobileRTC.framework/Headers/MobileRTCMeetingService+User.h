@@ -104,6 +104,13 @@
 - (BOOL)isMyself:(NSUInteger)userID;
 
 /*!
+ @brief Query if the user join meeting from H323.
+ @param userID The ID of user.
+ @return TRUE means user join meeting from H323. FALSE not.
+ */
+- (BOOL)isH323User:(NSUInteger)userID;
+
+/*!
  @brief Raise hand of the current user.
  @return YES means that the method is called successfully, otherwise not.
  */
@@ -120,6 +127,12 @@
  @warning Only meeting host can run the function.
  */
 - (BOOL)lowerAllHand;
+
+/*!
+ @brief Query if the current user can claim to be a host
+ @return YES means that the current user can claim to be a host, otherwise not.
+ */
+- (BOOL)canClaimhost;
 
 /*!
  @brief Set to claim to be a host by host key.

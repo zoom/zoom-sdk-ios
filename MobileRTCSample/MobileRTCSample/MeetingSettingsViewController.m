@@ -8,6 +8,7 @@
 
 #import "MeetingSettingsViewController.h"
 #import "SDKMeetingSettingPresenter.h"
+#import "SendYUVAdapter.h"
 
 @interface MeetingSettingsViewController ()
 
@@ -17,6 +18,7 @@
 @property (retain, nonatomic) UITableViewCell *driveModeCell;
 @property (retain, nonatomic) UITableViewCell *galleryViewCell;
 @property (retain, nonatomic) UITableViewCell *videoPreviewCell;
+@property (retain, nonatomic) UITableViewCell *virtualBackgroundCell;
 
 @property (retain, nonatomic) UITableViewCell *callInCell;
 @property (retain, nonatomic) UITableViewCell *callOutCell;
@@ -44,9 +46,12 @@
 @property (retain, nonatomic) UITableViewCell *hostLeaveCell;
 @property (retain, nonatomic) UITableViewCell *hintCell;
 @property (retain, nonatomic) UITableViewCell *waitingHUDCell;
+@property (retain, nonatomic) UITableViewCell *webinarQACell;
 
 @property (retain, nonatomic) UITableViewCell *customMeetingCell;
 @property (retain, nonatomic) UITableViewCell *rawdataUICell;
+
+@property (retain, nonatomic) UITableViewCell *sendRawdataCell;
 
 @property (retain, nonatomic) UITableViewCell *showMyMeetingElapseTimeCell;
 
@@ -83,6 +88,10 @@
     }
     [layoutArray addObject:[self thumbnailCell]];
     [array addObject:layoutArray];
+    
+    NSMutableArray *sendRawdataArray = [NSMutableArray array];
+    [sendRawdataArray addObject:[self sendRawdataCell]];
+    [array addObject:sendRawdataArray];
 
     NSMutableArray *avArray = [NSMutableArray array];
     [avArray addObject:[self autoConnectAudioCell]];
@@ -100,6 +109,7 @@
         [disableArray addObject:[self enableKubiCell]];
     [disableArray addObject:[self galleryViewCell]];
     [disableArray addObject:[self videoPreviewCell]];
+    [disableArray addObject:[self virtualBackgroundCell]];
     [array addObject:disableArray];
     
     NSMutableArray *enableArray = [NSMutableArray array];
@@ -122,10 +132,8 @@
     [hiddenArray addObject:[self hostLeaveCell]];
     [hiddenArray addObject:[self hintCell]];
     [hiddenArray addObject:[self waitingHUDCell]];
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-    {
-        [hiddenArray addObject:[self botBarHiddenCell]];
-    }
+    [hiddenArray addObject:[self botBarHiddenCell]];
+    [hiddenArray addObject:[self webinarQACell]];
     [array addObject:hiddenArray];
     
     NSMutableArray *showArray = [NSMutableArray array];
@@ -321,6 +329,31 @@
     }
     
     return _videoPreviewCell;
+}
+
+- (UITableViewCell*)virtualBackgroundCell
+{
+    {
+        MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+        if (!settings)
+            return nil;
+        
+        BOOL disabled = [settings virtualBackgroundDisabled];
+        
+        if (!_virtualBackgroundCell)
+        {
+            _virtualBackgroundCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            _virtualBackgroundCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            _virtualBackgroundCell.textLabel.text = NSLocalizedString(@"Disable Virtual Background", @"");
+            
+            UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+            [sv setOn:disabled animated:NO];
+            [sv addTarget:self action:@selector(onDisableVirtualBackground:) forControlEvents:UIControlEventValueChanged];
+            _virtualBackgroundCell.accessoryView = sv;
+        }
+        
+        return _virtualBackgroundCell;
+    }
 }
 
 - (UITableViewCell*)callInCell
@@ -714,6 +747,29 @@
     return _botBarHiddenCell;
 }
 
+- (UITableViewCell*)webinarQACell
+{
+    MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+    if (!settings)
+        return nil;
+    
+    BOOL hidden = [settings qaButtonHidden];
+    
+    if (!_webinarQACell)
+    {
+        _webinarQACell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _webinarQACell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _webinarQACell.textLabel.text = NSLocalizedString(@"Hide Meeting Webinar Q&A", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        [sv setOn:hidden animated:NO];
+        [sv addTarget:self action:@selector(onHideWebinarQACell:) forControlEvents:UIControlEventValueChanged];
+        _webinarQACell.accessoryView = sv;
+    }
+    
+    return _webinarQACell;
+}
+
 - (UITableViewCell*)enableKubiCell
 {
     MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
@@ -758,6 +814,24 @@
     }
     
     return _thumbnailCell;
+}
+
+- (UITableViewCell*)sendRawdataCell
+{
+    if (!_sendRawdataCell)
+    {
+        _sendRawdataCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+        _sendRawdataCell.selectionStyle = UITableViewCellSelectionStyleNone;
+        _sendRawdataCell.textLabel.text = NSLocalizedString(@"Send Raw Data", @"");
+        
+        UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+        BOOL enableRawdataSend = [[NSUserDefaults standardUserDefaults] boolForKey:Raw_Data_Send_Enable];
+        [sv setOn:enableRawdataSend animated:NO];
+        [sv addTarget:self action:@selector(onSendRawdata:) forControlEvents:UIControlEventValueChanged];
+        _sendRawdataCell.accessoryView = sv;
+    }
+    
+    return _sendRawdataCell;
 }
 
 - (UITableViewCell*)hostLeaveCell
@@ -936,6 +1010,12 @@
     [self.settingPresenter onDisableVideoPreview:sv.on];
 }
 
+- (void)onDisableVirtualBackground:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter onDisableVirtualBackground:sv.on];
+}
+
 - (void)onDisableCallIn:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
@@ -1039,6 +1119,12 @@
     [self.settingPresenter setBottomBarHidden:sv.on];
 }
 
+- (void)onHideWebinarQACell:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter setQaButtonHidden:sv.on];
+}
+
 - (void)onEnableKubi:(id)sender
 {
     UISwitch *sv = (UISwitch*)sender;
@@ -1115,5 +1201,23 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter enableShowMyMeetingElapseTime:sv.on];
+}
+
+- (void)onSendRawdata:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self enableSendRawdata:sv.on];
+}
+
+-(void)enableSendRawdata:(BOOL)enable {
+    if (enable) {
+        SendYUVAdapter *yuvAdapter = [[SendYUVAdapter alloc] init];
+        [[[MobileRTC sharedRTC] getVideoSourceHelper] setExternalVideoSource:yuvAdapter];
+    } else {
+        [[[MobileRTC sharedRTC] getVideoSourceHelper] setExternalVideoSource:nil];
+    }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:enable forKey:Raw_Data_Send_Enable];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

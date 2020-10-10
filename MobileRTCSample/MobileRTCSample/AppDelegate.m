@@ -10,6 +10,7 @@
 #import "MainViewController.h"
 #import "SDKAuthPresenter.h"
 #import "SDKInitPresenter.h"
+#import "BaseNavigationController.h"
 
 @implementation AppDelegate
 
@@ -22,7 +23,7 @@
     NSLog(@"%@", paths[0]);
     
     MainViewController *mainVC = [[[MainViewController alloc] init] autorelease];
-    UINavigationController *navVC = [[[UINavigationController alloc] initWithRootViewController:mainVC] autorelease];
+    BaseNavigationController *navVC = [[[BaseNavigationController alloc] initWithRootViewController:mainVC] autorelease];
     navVC.navigationBarHidden = YES;
     
     self.window.rootViewController = navVC;
@@ -34,7 +35,7 @@
     [[[SDKInitPresenter alloc] init] SDKInit:navVC];
     
     //4. MobileRTC Authorize
-    [[[SDKAuthPresenter alloc] init] SDKAuth];
+    [[[SDKAuthPresenter alloc] init] SDKAuth:KjwtToken];
     
     return YES;
 }

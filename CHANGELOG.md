@@ -1,5 +1,134 @@
 # CHANGELOG
 
+## 2020-10-09 @ v5.2.41735.0928
+
+## Added:
+* Upgraded Zoom default UI to match Zoom client 5.2.1, including but not limit to the following new features:
+  * Dark mode support
+  * Support for split screen multitasking on iPad (Does not support 2 Zoom SDK apps running at the same time)
+  * Improved video and content sharing
+* iOS 14 support (Conditional)
+   * SDK does not support the new features that are newly introduced in iOS 14, such as App Clip; If you are using prior features, SDK could be built and run on iOS 14 
+* Added new callbacks for audio/video status:
+  * The interface in `MobileRTCMeetingDelegate.h`:
+      * `- (void)onSinkMeetingAudioStatusChange:(NSUInteger)userID audioStatus:(MobileRTC_AudioStatus)audioStatus;`
+      * `- (void)onSinkMeetingVideoStatusChange:(NSUInteger)userID videoStatus:(MobileRTC_VideoStatus)videoStatus;`
+* Added a new interface to get participantID in `MobileRTCMeetingUserInfo`.
+  * The interface in `MobileRTCMeetingUserInfo.h`:
+      * `@property (nonatomic, retain) NSString* _Nullable  participantID;`
+* Added new callbacks for free meeting upgrade prompt
+  * The interface in `MobileRTCMeetingDelegate.h`:
+      * `- (void)onFreeMeetingNeedToUpgrade:(FreeMeetingNeedUpgradeType)type giftUpgradeURL:(NSString*_Nullable)giftURL;`
+      * `- (void)onFreeMeetingUpgradeToGiftFreeTrialStart;`
+      * `- (void)onFreeMeetingUpgradeToGiftFreeTrialStop;`
+      * `- (void)onFreeMeetingUpgradedToProMeeting;`
+* Added new callbacks for the event when the webinar attendee is allowed or disallowed to talk.
+  * The interface in `MobileRTCMeetingDelegate.h`:
+      * `- (void)onSinkSelfAllowTalkNotification;`
+      * `- (void)onSinkSelfDisallowTalkNotification;`
+* Added new interfaces for the feature "Allow participants to rename themselves".
+  * The interface in `MobileRTCMeetingService+InMeeting.h`:
+      * `- (BOOL)isParticipantsRenameAllowed;`
+      * `- (void)allowParticipantsToRename:(BOOL)allow;`
+* Added new interfaces for the feature "Allow participants to unmute Themselves".
+  * The interface in `MobileRTCMeetingService+InMeeting.h`:
+      * `- (BOOL)isParticipantsUnmuteSelfAllowed;`
+      * `- (void)allowParticipantsToUnmuteSelf:(BOOL)allow;`
+* Added a new interface to allow the host/co-host to ask to unmute all participant's audio.
+  * The interface in `MobileRTCMeetingService+Audio.h`:
+      * `- (BOOL)askAllToUnmute;`
+* Added new interfaces to delete questions and answers in the webinar Q&A.
+  * The interface in `MobileRTCMeetingService+Webinar.h` and `MobileRTCMeetingDelegate.h`:
+      * `- (BOOL)deleteQuestion:(nonnull NSString *)questionID;`
+      * `- (BOOL)deleteAnswer:(nonnull NSString *)answerID;`
+      * `- (void)onSinkDeleteQuestion:(NSArray *_Nonnull)questionIDArray;`
+      * `- (void)onSinkDeleteAnswer:(NSArray *_Nonnull)answerIDArray;`
+* Added a new interface to disable virtual background.
+  * The interface in `MobileRTCMeetingSettings.h`:
+      * `- (BOOL)virtualBackgroundDisabled;`
+      * `- (void)disableVirtualBackground:(BOOL)disabled;`
+* Added chatMessageType in the MobileRTCMeetingChat object to show the chat message type.
+  * The interface in `MobileRTCMeetingChat.h`:
+      * `@property (nonatomic, readwrite) MobileRTCChatMessageType chatMessageType;`
+* Added a new interface isH323User in MobileRTCMeetingUserInfo to check whether the user is an H.323 user.
+  * The interface in `MobileRTCMeetingUserInfo.h`:
+      * `@property (nonatomic, assign) BOOL             isH323User;`
+* Added a new interface to check whether it is allowed to claim host.
+  * The interface in `MobileRTCMeetingUserInfo.h`:
+      * `- (BOOL)canClaimhost;`
+* Added new interfaces for participants to request for help and to broadcast messages while in the Breakout Room(BO).
+  * The interface in `MobileRTCBORole.h`
+      * `- (BOOL)ignoreUserHelpRequest:(NSString *)boUserId;`
+      * `- (BOOL)broadcastMessage:(NSString * _Nullable)strMsg;`
+      * `- (BOOL)requestForHelp;`
+      * `- (BOOL)isHostInThisBO;`
+      * `- (NSString  * _Nullable)getCurrentBOName;`
+      * `- (BOOL)isBOUserMyself:(NSString *_Nullable)boUserId;`
+* Added new callbacks for the events when the privilege has changed in the breakout room.
+  * The interface in `MobileRTCMeetingDelegate.h`:
+      * `- (void)onLostAssistantRightsNotification:(BOOL)isStopBO;`
+      * `- (void)onLostAttendeeRightsNotification:(BOOL)isStopBO;`
+* Added new callbacks for the events when the attendees seek for help or broadcast a message in the breakout room.
+  * The interface in `MobileRTCMeetingDelegate.h`:
+      * `- (void)onNewBroadcastMessageReceived:(NSString *_Nullable)broadcastMsg;`
+      * `- (void)onHelpRequestReceived:(NSString *_Nullable)strUserID;`
+      * `- (void)onHelpRequestHandleResultReceived:(MobileRTCBOHelpReply)eResult;`
+      * `- (void)onHostJoinedThisBOMeeting;`
+      * `- (void)onHostLeaveThisBOMeeting;`
+* Added Vietnamese and Italian language support.
+
+## Changed & Fixed:
+
+* MobileRTCScreenShareService now requires that the following frameworks need to be added to the Broadcast Extension target in addition to ReplayKit:
+
+    * `CoreGraphics.framework`
+    * `CoreVideo.framework`
+    * `CoreMedia.framework`
+    * `VideoToolbox.framework`
+* MobileRTCScreenShareService also now requires that SampleHandler.m be SampleHandler.mm. If using swift instead, the linker flag -lc++ must be added to the Broadcast Extension’s build settings under “Other linker flags”
+* Refined the In Meeting States:
+   ```
+      typedef enum {
+          MobileRTCMeetingState_Idle,///<No meeting is running.
+          MobileRTCMeetingState_Connecting,///<Connect to the meeting server status.
+          MobileRTCMeetingState_WaitingForHost,///<Waiting for the host to start the meeting.
+          MobileRTCMeetingState_InMeeting,///<Meeting is ready, in meeting status.
+          MobileRTCMeetingState_Disconnecting,///<Disconnect the meeting server, leave meeting status.
+          MobileRTCMeetingState_Reconnecting,///<Reconnecting meeting server status.
+          MobileRTCMeetingState_Failed,///<Failed to connect the meeting server.
+          MobileRTCMeetingState_Ended,///<Meeting ends.
+          MobileRTCMeetingState_Unknow,///<Unknown status.
+          MobileRTCMeetingState_Locked,///<Meeting is locked to prevent the further participants from joining the meeting.       MobileRTCMeetingState_Unlocked,///<Meeting is open and participants can join the meeting.
+          MobileRTCMeetingState_InWaitingRoom,///<Participants who join the meeting before the start are in the waiting room.
+          MobileRTCMeetingState_WebinarPromote,///<Upgrade the attendees to panelist in webinar.
+          MobileRTCMeetingState_WebinarDePromote,///<Downgrade the attendees from the panelist.
+          MobileRTCMeetingState_JoinBO,///<Join the breakout room.
+          MobileRTCMeetingState_LeaveBO,///<Leave the breakout room.
+          MobileRTCMeetingState_WaitingExternalSessionKey,///<Waiting for the additional secret key.
+      }MobileRTCMeetingState;
+    ```
+* Changed the minimum supported version of the MobileRTCScreenShare.Framework to iOS8.
+* Fixed an issue that error appears when trying to get the user ID of the active shared user and no one is sharing.
+* Fixed an issue that sets the width of the highlighters in annotation does not work.
+* Fixed an issue that checking the shared privilege returns incorrect results when using Custom UI.
+* Fixed an issue that the video preview does not present when the mobileRTCRootController is not being configured.
+* Fixed an issue where the  SDK becomes unresponsive when joining the meeting with meeting ID "000000".
+* Fixed an issue that the "The host has ended the meeting " alert can not be hidden.
+* Fixed an issue that using the virtual background interface results in getting "unable to find the symbol and cannot rename" error
+* Fixed an issue that prevented users from customizing the meeting title in the waiting room view.
+* Fixed an issue that the tip string text in the call-in UI in German overlaps itself.
+* Fixed an issue that the callback is not being triggered when raising/lowering the hand in the webinar.
+* Fixed an issue that the disclaimer window does not display when the MobileRTCRootViewController is not properly configured.
+* Fixed an issue that the watermark overlaps with the battery/connectivity status icons.
+* Fixed an issue that the screen sharing feature causes crashes on iPadOS 14.
+
+
+## Deprecated & Removed:
+
+* `- (void)onFreeMeetingReminder:(BOOL)host canFreeUpgrade:(BOOL)freeUpgrade isFirstGift:(BOOL)first completion:(void (^_Nonnull)(BOOL upgrade))completion DEPRECATED_ATTRIBUTE;`
+* `- (BOOL)isAllowAttendeeAnswerQuestion DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)isAllowCommentQuestion; instead");`
+* `- (BOOL)allowAttendeeAnswerQuestion:(BOOL)enable     DEPRECATED_MSG_ATTRIBUTE("Had deprecated. Please use - (BOOL)allowCommentQuestion:(BOOL)enable; instead");`
+
 ## 2020-06-30 @ v5.0.24433.0616
 
 ## Added:

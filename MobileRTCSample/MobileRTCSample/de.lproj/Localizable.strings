@@ -28,6 +28,8 @@
 
 "Disable Show Video Preview" = "Disable Show Video Preview";
 
+"Disable Virtual Background" = "Disable Virtual Background";
+
 "Driving Mode Setting" = "Driving Mode turns on speaker, stops video and mutes microphone";
 
 "Invite Participant" = "Invite Participant";
@@ -75,6 +77,10 @@
 "Hide Hint in Meeting" = "Hide Hint in Meeting";
 
 "Hide Meeting More" = "Hide Meeting More";
+
+"Hide Meeting Password" = "Hide Meeting Password";
+
+"Hide Meeting Webinar Q&A" = "Hide Meeting Webinar Q&A";
 
 "Show My Elapse Time" = "Show My Connected Time";
 

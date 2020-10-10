@@ -20,6 +20,10 @@
 
 - (void)disableGalleryView:(BOOL)disabled;
 
+- (void)onDisableVideoPreview:(BOOL)disabled;
+
+- (void)onDisableVirtualBackground:(BOOL)disabled;
+
 - (void)disableCallIn:(BOOL)disabled;
 
 - (void)disableCallOut:(BOOL)disabled;
@@ -53,6 +57,8 @@
 - (void)setTopBarHidden:(BOOL)hidden;
 
 - (void)setBottomBarHidden:(BOOL)hidden;
+
+- (void)setQaButtonHidden:(BOOL)hidden;
 
 - (void)setEnableKubi:(BOOL)enabled;
 

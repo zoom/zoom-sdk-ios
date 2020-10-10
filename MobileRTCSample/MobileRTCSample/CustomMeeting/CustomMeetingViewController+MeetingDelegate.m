@@ -10,6 +10,13 @@
 
 @implementation CustomMeetingViewController (MeetingDelegate)
 
+- (void)onMeetingStateChange:(MobileRTCMeetingState)state
+{
+    if (state == MobileRTCMeetingState_InMeeting) {
+        [self.videoVC.preVideoView removeFromSuperview];
+    }
+}
+
 - (void)onSinkMeetingActiveVideo:(NSUInteger)userID
 {
 //    self.shrinkVC.activeVideoID = userID;
@@ -125,5 +132,6 @@
 - (void)onEndButtonClick:(id)sender
 {
     [self.actionPresenter leaveMeeting];
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 @end

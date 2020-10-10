@@ -79,6 +79,13 @@
 - (BOOL)muteAllUserAudio:(BOOL)allowSelfUnmute;
 
 /*!
+@brief Ask to unmute audio of all attendees.
+@return YES means that the method is called successfully, otherwise not.
+@warning Only meeting host can run the function.
+*/
+- (BOOL)askAllToUnmute;
+
+/*!
  @brief Query if the meeting supports VoIP.
  @return YES means supported, otherwise not.
  */

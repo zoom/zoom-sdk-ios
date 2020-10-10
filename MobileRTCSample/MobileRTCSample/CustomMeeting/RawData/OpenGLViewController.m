@@ -12,6 +12,7 @@
 #import "AudioRawDataSaveSandboxHelper.h"
 #import "ControlBar.h"
 #import "BottomBarView.h"
+#import "PreProcessHelper.h"
 
 #define THUMB_WIDTH 128
 #define THUMB_HEIGHT (THUMB_WIDTH*4/3)
@@ -31,6 +32,8 @@
 
 @property (nonatomic, strong) MobileRTCAudioRawDataHelper *audioRawdataHelper;
 @property (nonatomic, strong) AudioRawDataSaveSandboxHelper *audioRawDataSaveSandboxHelper;
+
+@property (nonatomic, strong) PreProcessHelper *processor;
 @end
 
 @implementation OpenGLViewController
@@ -66,6 +69,9 @@
     self.audioRawDataSaveSandboxHelper = [[AudioRawDataSaveSandboxHelper alloc] init];
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     self.audioRawDataSaveSandboxHelper.filePath = [NSString stringWithFormat:@"%@/audio/%@.pcm", docPath, @([[NSDate date] timeIntervalSince1970] * 1000)];
+    
+//    self.processor = [[PreProcessHelper alloc] init];
+//    [self.processor setPreProcessor];
 }
 
 - (void)dealloc {
@@ -75,6 +81,8 @@
     self.audioRawdataHelper = nil;
     
     self.audioRawDataSaveSandboxHelper = nil;
+    
+    [self.processor cleanVideoCapturePreProcessor];
     [super dealloc];
 }
 
@@ -312,15 +320,15 @@
 //    }
     
     if ([self.fullRender isEqual:renderer]) {
-        DisplayMode mode = DisplayMode_PanAndScan;
-        [self.fullView displayYUV:rawData mode:mode];
+        DisplayMode mode = DisplayMode_LetterBox;
+        [self.fullView displayYUV:rawData mode:mode  mirror:YES];
     }
     
     NSArray *items = [self.bottomView getThumberViewItems:renderer.userId];
     for (ViewItem *item in items) {
         OpenglView *glView = (OpenglView *)item.view;
         if ([item.renderer isEqual:renderer]) {
-            [glView displayYUV:rawData mode:DisplayMode_PanAndScan];
+            [glView displayYUV:rawData mode:DisplayMode_PanAndScan  mirror:YES];
         }
     }
     

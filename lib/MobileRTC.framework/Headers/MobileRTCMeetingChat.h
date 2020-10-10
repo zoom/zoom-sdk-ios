@@ -42,6 +42,12 @@
  @brief The message timestamps.
  */
 @property (nonatomic, retain, readwrite) NSDate *_Nullable date;
+
+/*!
+ @brief The Chat message type.
+ */
+@property (nonatomic, readwrite) MobileRTCChatMessageType chatMessageType;
+
 /*!
  @brief Whether the message is sent by the user himself or not.
  */

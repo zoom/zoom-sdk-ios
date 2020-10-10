@@ -137,6 +137,22 @@ typedef enum : NSUInteger {
 @brief indicate that the bo can be start or not.
 */
 - (BOOL)canStartBO;
+
+/*!
+@brief join bo meeting for designated bo user id.
+*/
+- (BOOL)joinBOByUserRequest:(NSString * _Nullable)boUserId;
+
+/*!
+@brief reply ignore for the help request from bo attendees
+*/
+- (BOOL)ignoreUserHelpRequest:(NSString *)boUserId;
+
+/*!
+@brief broadcase message for all attendees in the meeting.
+*/
+- (BOOL)broadcastMessage:(NSString * _Nullable)strMsg;
+
 @end
 
 /*
@@ -144,7 +160,7 @@ typedef enum : NSUInteger {
 *        1) join bo meeting with bo id
 *        2) leave bo meeting
 *    2. Remarks:
-*        1) host in master meeting or bo meeting, co-host in bo conf, can get this role
+*        1) host in master meeting or bo meeting, co-host in bo meeting, can get this role
 */
 @interface MobileRTCBOAssistant : NSObject
 
@@ -188,6 +204,16 @@ typedef enum : NSUInteger {
 */
 - (NSString * _Nullable)getBOName;
 
+/*!
+@brief send help to admin
+*/
+- (BOOL)requestForHelp;
+
+/*!
+@brief if the host in current bo
+*/
+- (BOOL)isHostInThisBO;
+
 @end
 
 /*
@@ -219,6 +245,16 @@ typedef enum : NSUInteger {
 @brief get bo meeting object by bo meeting id
 */
 - (MobileRTCBOMeeting * _Nullable)getBOMeetingByID:(NSString * _Nullable)boId;
+
+/*!
+@brief get bo meeting name of current BO
+*/
+- (NSString  * _Nullable)getCurrentBOName;
+
+/*!
+@brief whether the boUserId is current user
+*/
+- (BOOL)isBOUserMyself:(NSString *_Nullable)boUserId;
 
 @end
 

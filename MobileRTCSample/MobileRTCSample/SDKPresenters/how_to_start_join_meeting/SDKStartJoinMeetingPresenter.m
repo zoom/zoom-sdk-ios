@@ -11,6 +11,7 @@
 #import "SDKStartJoinMeetingPresenter+RestApiWithoutLoginUser.h"
 #import "SDKStartJoinMeetingPresenter+JoinMeetingOnly.h"
 #import "SDKStartJoinMeetingPresenter+MeetingServiceDelegate.h"
+#import "MeetingSettingsViewController.h"
 
 @interface SDKStartJoinMeetingPresenter()
 
@@ -23,6 +24,8 @@
     self.rootVC = rootVC;
     
     [self initDelegate];
+    
+    [self checkMeetingSettingSendRawdataEnable];
     
     if ([[[MobileRTC sharedRTC] getAuthService] isLoggedIn])
     {
@@ -40,6 +43,8 @@
     self.rootVC = rootVC;
     
     [self initDelegate];
+    
+    [self checkMeetingSettingSendRawdataEnable];
     
     [self joinMeeting:meetingNo withPassword:pwd];
 }
@@ -59,6 +64,15 @@
         {
             ms.customizedUImeetingDelegate = self;
         }
+    }
+}
+
+- (void)checkMeetingSettingSendRawdataEnable {
+    BOOL enableRawdataSend = [[NSUserDefaults standardUserDefaults] boolForKey:Raw_Data_Send_Enable];
+    if (enableRawdataSend) {
+        MeetingSettingsViewController *meetingSetting = [[MeetingSettingsViewController alloc] init];
+        [meetingSetting enableSendRawdata:YES];
+        [meetingSetting release];
     }
 }
 

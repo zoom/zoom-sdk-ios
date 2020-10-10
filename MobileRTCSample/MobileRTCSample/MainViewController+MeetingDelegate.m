@@ -29,10 +29,9 @@
 
 - (void)onMeetingStateChange:(MobileRTCMeetingState)state;
 {
-    NSLog(@"onMeetingStateChange:%d", state);
     MobileRTCMeetingService *ms = [[MobileRTC sharedRTC] getMeetingService];
 
-    if (state == MobileRTCMeetingState_Idle) {
+    if (state == MobileRTCMeetingState_Ended) {
         [self.view insertSubview:self.webVC.view aboveSubview:self.splashVC.view];
         [self.view insertSubview:self.introVC.view aboveSubview:self.webVC.view];
         

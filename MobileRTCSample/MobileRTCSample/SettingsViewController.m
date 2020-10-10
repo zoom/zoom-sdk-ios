@@ -321,7 +321,7 @@
             BOOL ret = [[MobileRTC sharedRTC] switchDomain:newDomain.text force:YES];
             NSLog(@"switchDomain-ret ===> %d", ret);
             
-            [[[SDKAuthPresenter alloc] init] SDKAuth:@"New SDK Key" clientSecret:@"New SDK Secret"];
+            [[[SDKAuthPresenter alloc] init] SDKAuth:@"New JWT Token or New Key Secret"];
         }]];
         
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
