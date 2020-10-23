@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2020-10-22 @ v5.2.41739.1022
+
+## Changed & Fixed:
+
+* Fixed an issue that not setting the appGroupId while initializing the SDK results in crash
+* Fixed an issue that the SDK crashes when running on the devices that are iOS 9 or lower.
+
 ## 2020-10-09 @ v5.2.41735.0928
 
 ## Added:

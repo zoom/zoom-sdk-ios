@@ -79,6 +79,8 @@
 		D0BAD47621A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47521A4EFE0004AE4B1 /* SDKAuthPresenter+AuthDelegate.m */; };
 		D0BAD47A21A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0BAD47921A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m */; };
 		D0C1171D24C57861000FD3C4 /* SendYUVAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */; };
+		D0C1171E24C57861000FD3C4 /* 640x480.yuv in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171224C57861000FD3C4 /* 640x480.yuv */; };
+		D0C1171F24C57861000FD3C4 /* 640x480_2.yuv in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171424C57861000FD3C4 /* 640x480_2.yuv */; };
 		D0C1172024C57861000FD3C4 /* CameraCaptureAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C1171624C57861000FD3C4 /* CameraCaptureAdapter.m */; };
 		D0C1172124C57861000FD3C4 /* frame_two.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171A24C57861000FD3C4 /* frame_two.jpg */; };
 		D0C1172224C57861000FD3C4 /* frame_one.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D0C1171B24C57861000FD3C4 /* frame_one.jpg */; };
@@ -361,7 +363,9 @@
 		D0BAD47821A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKStartJoinMeetingPresenter+MeetingServiceDelegate.h"; sourceTree = "<group>"; };
 		D0BAD47921A528C0004AE4B1 /* SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m"; sourceTree = "<group>"; };
 		D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendYUVAdapter.m; sourceTree = "<group>"; };
+		D0C1171224C57861000FD3C4 /* 640x480.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 640x480.yuv; sourceTree = "<group>"; };
 		D0C1171324C57861000FD3C4 /* SendYUVAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendYUVAdapter.h; sourceTree = "<group>"; };
+		D0C1171424C57861000FD3C4 /* 640x480_2.yuv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 640x480_2.yuv; sourceTree = "<group>"; };
 		D0C1171624C57861000FD3C4 /* CameraCaptureAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraCaptureAdapter.m; sourceTree = "<group>"; };
 		D0C1171724C57861000FD3C4 /* CameraCaptureAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraCaptureAdapter.h; sourceTree = "<group>"; };
 		D0C1171924C57861000FD3C4 /* SendPictureAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPictureAdapter.h; sourceTree = "<group>"; };
@@ -855,6 +859,8 @@
 		D0C1171024C57861000FD3C4 /* SendYUV */ = {
 			isa = PBXGroup;
 			children = (
+				D0C1171424C57861000FD3C4 /* 640x480_2.yuv */,
+				D0C1171224C57861000FD3C4 /* 640x480.yuv */,
 				D0C1171324C57861000FD3C4 /* SendYUVAdapter.h */,
 				D0C1171124C57861000FD3C4 /* SendYUVAdapter.m */,
 			);
@@ -1213,7 +1219,9 @@
 				C123333318D6D43100894EED /* Images.xcassets in Resources */,
 				D993152F1F553CA1005972DC /* iTunesArtwork in Resources */,
 				D000E971219BF1AC00FC9275 /* icon_meeting_attendee@3x.png in Resources */,
+				D0C1171E24C57861000FD3C4 /* 640x480.yuv in Resources */,
 				F76F0018200F27E300A3C65F /* icon_meeting_noaudio@2x.png in Resources */,
+				D0C1171F24C57861000FD3C4 /* 640x480_2.yuv in Resources */,
 				D000E977219BF1AC00FC9275 /* arrow_down_normal@3x.png in Resources */,
 				F76F001C200F27E300A3C65F /* icon_wallview@2x.png in Resources */,
 				D9FCEC2D1CEEB9F70071F330 /* icon_setting.png in Resources */,

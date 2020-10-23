@@ -27,15 +27,21 @@
 
 ## Latest SDK News
 1. MobileRTCScreenShareService now requires that the following frameworks need to be added to the Broadcast Extension target in addition to ReplayKit:
+      
        * `CoreGraphics.framework`
        * `CoreVideo.framework`
        * `CoreMedia.framework`
        * `VideoToolbox.framework`
-2. MobileRTCScreenShareService also now requires that SampleHandler.m be SampleHandler.mm. If using swift instead, the linker flag -lc++ must be added to the Broadcast Extension’s build settings under “Other linker flags” 
-Starting from Client SDK 5.0, if you are using tokens to start a meeting, you will only need to retrieve ZAK from Zoom API. The user token has been deprecated. 
-3. To follow with Zoom client's recent changes, Zoom SDK has temporary remove the "Unmute All" interface in Client SDK 5.0.
-4. To align with Zoom’s [recent announcement](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) pertaining to our security initiative, Zoom Client SDKs have added **AES 256-bit GCM encryption** support, which provides more protection for meeting data and greater resistance to tampering. **The system-wide account enablement of AES 256-bit GCM encryption will take place on June 01, 2020.** You are **strongly recommended** to start the required upgrade to this latest version 4.6.21666.0428 at your earliest convenience. Please note that any Client SDK versions below 4.6.21666.0428 will **no longer be operational** from June 01.
-5. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
+       
+2. MobileRTCScreenShareService also now requires that `SampleHandler.m` be `SampleHandler.mm`. If using swift instead, the linker flag -lc++ must be added to the Broadcast Extension’s build settings under “Other linker flags” 
+
+3. Starting from Client SDK 5.0, if you are using tokens to start a meeting, you will only need to retrieve ZAK from Zoom API. The user token has been deprecated. 
+
+4. To follow with Zoom client's recent changes, Zoom SDK has temporary remove the "Unmute All" interface in Client SDK 5.0.
+
+5. To align with Zoom’s [recent announcement](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) pertaining to our security initiative, Zoom Client SDKs have added **AES 256-bit GCM encryption** support, which provides more protection for meeting data and greater resistance to tampering. **The system-wide account enablement of AES 256-bit GCM encryption will take place on June 01, 2020.** You are **strongly recommended** to start the required upgrade to this latest version 4.6.21666.0428 at your earliest convenience. Please note that any Client SDK versions below 4.6.21666.0428 will **no longer be operational** from June 01.
+
+6. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
 
 ## Full Documentation && Community Support
 You can find the full Zoom iOS SDK documentation and the community support forum here:
@@ -52,9 +58,9 @@ You can find the full Zoom iOS SDK documentation and the community support forum
 
 Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts up your applications with the power of Zoom.
 
-* **Easy to use**: Our SDK is built to be easy to use. Just import the libraries, call a few functions, and we will take care all video conferencing related stuffs for you.
-* **Localizable**: Our SDK naturally supports 7 major languages, and you can add more to grow your applications internationally.
-* **Custom Meeting UI**: If you want to add your own decorations to your Zoom meeting rooms, try our Custom UI feature to make your meeting room special.
+* **Easy to use**: Our SDK is built to be easy to use. Just import the libraries, call a few functions, and the Zoom video service is now added to your application.
+* **Localizable**: Our SDK naturally supports [multiple major languages](https://support.zoom.us/hc/en-us/articles/209982306-Change-your-language-on-Zoom), and you can add more to grow your applications internationally.
+* **Customizable Meeting UI**: If you want to add your own decorations to your Zoom meeting rooms, try our Custom UI feature to make your meeting UI special.
 
 ## Disclaimer
 
@@ -70,10 +76,9 @@ The following instructions will get you a copy of the project up and running on 
 
 Before you try out our SDK, you would need the following to get started:
 
-* **A Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup).
-  * Once you have your Zoom Account, sign up for a 60-days free trial at [https://marketplace.zoom.us/](https://marketplace.zoom.us/)
-* **An iOS device**
-  * **[Note]**:**The examples downloaded from here only works on real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.), please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
+* **A valid Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup) and then [create an SDK app on Marketplace](https://marketplace.zoom.us/docs/guides/build/sdk-app)
+* **An iOS device running iOS 8.0 or later**
+  * **[Note]**:**The examples downloaded from here only works on the real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.), please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
 
 ### Installing
 
@@ -97,8 +102,8 @@ Launch your **Xcode**, navigate to the "MobileRTCSample" folder, and open the Mo
 ```
 
 We provide 2 examples for you:
- * **MobileRTCSample**: An iOS app that has all basic features for login users.
- * **MobileRTCSampleScreenShare**: An iOS extension that enables screen sharing feature.
+ * **MobileRTCSample**: An iOS app that includes the implementation of different features in SDK.
+ * **MobileRTCSampleScreenShare**: An iOS broadcast extension that enables screen sharing feature with ReplayKit.
 
 
 ## Running the tests
@@ -156,7 +161,9 @@ Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
 
 ## Frequently Asked Questions (FAQ)
 
-* :one: `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
+* :one: The iOS SDK is written in 
+
+*  `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
   * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. This issue has been resolved since release version v4.1.34076.1024.
 * :two: `dyld: Library not loaded: MobileRTC.framework/MobileRTC`:
   * Our **iOS SDK** is a **dynamic library**, please import the **MobileRTC.framework** into:

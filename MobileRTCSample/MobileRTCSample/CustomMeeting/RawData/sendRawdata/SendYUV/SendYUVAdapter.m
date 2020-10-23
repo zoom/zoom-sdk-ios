@@ -52,7 +52,7 @@
 
 - (void)onStartSend
 {
-    // [self beginPullVideo];
+    [self beginPullVideo];
 }
 
 - (void)onStopSend
