@@ -191,7 +191,7 @@ For any issues regarding our SDK, please visit our new Community Support Forum a
 
 ## License
 
-Please refer to [LICENSE.md](LICENSE.md) file for details
+Please refer to [LICENSE.pdf](LICENSE.pdf) file for details
 
 ## Acknowledgments
 
