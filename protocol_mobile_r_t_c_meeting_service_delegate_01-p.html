@@ -80,7 +80,7 @@ Inheritance diagram for &lt;MobileRTCMeetingServiceDelegate &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Instance Methods</h2></td></tr>
 <tr class="memitem:a15b2ebf475ed166727fdedbdc5eae0c9"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a15b2ebf475ed166727fdedbdc5eae0c9">onMeetingError:message:</a></td></tr>
-<tr class="memdesc:a15b2ebf475ed166727fdedbdc5eae0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specified Meeting Response.  <a href="#a15b2ebf475ed166727fdedbdc5eae0c9">More...</a><br /></td></tr>
+<tr class="memdesc:a15b2ebf475ed166727fdedbdc5eae0c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specified Meeting Errors.  <a href="#a15b2ebf475ed166727fdedbdc5eae0c9">More...</a><br /></td></tr>
 <tr class="separator:a15b2ebf475ed166727fdedbdc5eae0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b2fc59b80eb44a8794a01f361a644e2"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a6b2fc59b80eb44a8794a01f361a644e2">onMeetingStateChange:</a></td></tr>
 <tr class="memdesc:a6b2fc59b80eb44a8794a01f361a644e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the user that the meeting status changes.  <a href="#a6b2fc59b80eb44a8794a01f361a644e2">More...</a><br /></td></tr>
@@ -209,6 +209,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a2e8c0b597af65bd25c5db8b243252635"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#a2e8c0b597af65bd25c5db8b243252635">onSinkAttendeeChatPriviledgeChanged:</a></td></tr>
 <tr class="memdesc:a2e8c0b597af65bd25c5db8b243252635"><td class="mdescLeft">&#160;</td><td class="mdescRight">The function will be invoked when the chat privilege of attendees changes.  <a href="#a2e8c0b597af65bd25c5db8b243252635">More...</a><br /></td></tr>
 <tr class="separator:a2e8c0b597af65bd25c5db8b243252635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7df1e4c154efcf9404d11230ea17a1f"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate_01-p.html#ae7df1e4c154efcf9404d11230ea17a1f">onSubscribeUserFail:size:userId:</a></td></tr>
+<tr class="memdesc:ae7df1e4c154efcf9404d11230ea17a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback when subscribe fail.  <a href="#ae7df1e4c154efcf9404d11230ea17a1f">More...</a><br /></td></tr>
+<tr class="separator:ae7df1e4c154efcf9404d11230ea17a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Method Documentation</h2>
 <a id="abf6a7568c81ea3b623a5f1e071282d1d"></a>
@@ -913,16 +916,8 @@ Instance Methods</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Specified Meeting Response. </p>
+<p>Specified Meeting Errors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">error</td><td>Internal error code. </td></tr>
-    <tr><td class="paramname">internalError</td><td>Internal error code.  This callback has been deprecated, please use - (void)onMeetingError:(MobileRTCMeetError)error message:(NSString*)message instead.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p><br />
-Specified Meeting Errors. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">error</td><td>Internal error code. </td></tr>
     <tr><td class="paramname">message</td><td>The message for meeting errors. </td></tr>
@@ -1129,6 +1124,59 @@ Specified Meeting Errors. </p><dl class="params"><dt>Parameters</dt><dd>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>only normal meeting(non webinar meeting) can get the callback. </dd></dl>
+
+</div>
+</div>
+<a id="ae7df1e4c154efcf9404d11230ea17a1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7df1e4c154efcf9404d11230ea17a1f">&#9670;&nbsp;</a></span>onSubscribeUserFail:size:userId:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void <a class="el" href="protocol_mobile_r_t_c_meeting_service_delegate-p.html">MobileRTCMeetingServiceDelegate</a>) onSubscribeUserFail: </td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&#160;</td>
+          <td class="paramname"><em>errorCode</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">size:</td>
+          <td></td>
+          <td class="paramtype">(NSInteger)&#160;</td>
+          <td class="paramname"><em>size</em></td>
+        </tr>
+        <tr>
+          <td class="paramkey">userId:</td>
+          <td></td>
+          <td class="paramtype">(NSUInteger)&#160;</td>
+          <td class="paramname"><em>userId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">optional</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Callback when subscribe fail. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">errorCode</td><td>errorCode. </td></tr>
+    <tr><td class="paramname">size</td><td>subscribe size. </td></tr>
+    <tr><td class="paramname">userId</td><td>subscribe userId. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>the call back only for Custom UI Mode. </dd></dl>
 
 </div>
 </div>

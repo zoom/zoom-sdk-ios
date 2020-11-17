@@ -142,6 +142,9 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:a304d124e8cd7206351ceb945d3a69d5d"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_mobile_r_t_c_s_m_s_service.html">MobileRTCSMSService</a> *_Nullable)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a304d124e8cd7206351ceb945d3a69d5d">getSMSService</a></td></tr>
 <tr class="memdesc:a304d124e8cd7206351ceb945d3a69d5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> sms service.  <a href="#a304d124e8cd7206351ceb945d3a69d5d">More...</a><br /></td></tr>
 <tr class="separator:a304d124e8cd7206351ceb945d3a69d5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f888cae965f74142820f24729fbfd32"><td class="memItemLeft" align="right" valign="top">(<a class="el" href="interface_mobile_r_t_c_direct_share_service.html">MobileRTCDirectShareService</a> *_Nullable)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a4f888cae965f74142820f24729fbfd32">getDirectShareService</a></td></tr>
+<tr class="memdesc:a4f888cae965f74142820f24729fbfd32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the default <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> direct share service.  <a href="#a4f888cae965f74142820f24729fbfd32">More...</a><br /></td></tr>
+<tr class="separator:a4f888cae965f74142820f24729fbfd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a388878c66edaf85b0ed9db9f95d783fb"><td class="memItemLeft" align="right" valign="top">(NSArray *_Nonnull)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c.html#a388878c66edaf85b0ed9db9f95d783fb">supportedLanguages</a></td></tr>
 <tr class="memdesc:a388878c66edaf85b0ed9db9f95d783fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the languages supported by <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a>. <br />
   <a href="#a388878c66edaf85b0ed9db9f95d783fb">More...</a><br /></td></tr>
@@ -215,6 +218,9 @@ NSString *&#160;</td><td class="memItemRight" valign="bottom"><b>_mobileRTCCusto
 <tr class="memitem:a4b4852ddca7b4d7de12b596a74d7ff66"><td class="memItemLeft" align="right" valign="top"><a id="a4b4852ddca7b4d7de12b596a74d7ff66"></a>
 <a class="el" href="interface_mobile_r_t_c_s_m_s_service.html">MobileRTCSMSService</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_smsService</b></td></tr>
 <tr class="separator:a4b4852ddca7b4d7de12b596a74d7ff66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30cab44a61b151e306356b066abeec9d"><td class="memItemLeft" align="right" valign="top"><a id="a30cab44a61b151e306356b066abeec9d"></a>
+<a class="el" href="interface_mobile_r_t_c_direct_share_service.html">MobileRTCDirectShareService</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_directShareService</b></td></tr>
+<tr class="separator:a30cab44a61b151e306356b066abeec9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d47d426f96966e70dcd2dc8815e4bb4"><td class="memItemLeft" align="right" valign="top"><a id="a2d47d426f96966e70dcd2dc8815e4bb4"></a>
 <a class="el" href="interface_mobile_r_t_c_video_source_helper.html">MobileRTCVideoSourceHelper</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>_videoSourceHelper</b></td></tr>
 <tr class="separator:a2d47d426f96966e70dcd2dc8815e4bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,6 +367,26 @@ The user can only obtain SDK configuration by initializing the class. </dd></dl>
  </p>
 <dl class="section warning"><dt>Warning</dt><dd>The <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> can not be called unless the authentication service is called successfully. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>The preconfigured authentication service. </dd></dl>
+
+</div>
+</div>
+<a id="a4f888cae965f74142820f24729fbfd32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f888cae965f74142820f24729fbfd32">&#9670;&nbsp;</a></span>getDirectShareService()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (<a class="el" href="interface_mobile_r_t_c_direct_share_service.html">MobileRTCDirectShareService</a> * _Nullable) getDirectShareService </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the default <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> direct share service. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="interface_mobile_r_t_c.html" title="Initialize the class to acquire all the services. ">MobileRTC</a> direct share service. </dd></dl>
 
 </div>
 </div>

@@ -184,6 +184,12 @@ Instance Methods</h2></td></tr>
 <tr class="memitem:ad761c06700b1180c053a944fd5476fd0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#ad761c06700b1180c053a944fd5476fd0">disableConfidentialWatermark:</a></td></tr>
 <tr class="memdesc:ad761c06700b1180c053a944fd5476fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to disable confidential watermark.  <a href="#ad761c06700b1180c053a944fd5476fd0">More...</a><br /></td></tr>
 <tr class="separator:ad761c06700b1180c053a944fd5476fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c167c2120a4f6a0986f1227358efc0"><td class="memItemLeft" align="right" valign="top">(BOOL)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#ad3c167c2120a4f6a0986f1227358efc0">copyMeetingUrlDisabled</a></td></tr>
+<tr class="memdesc:ad3c167c2120a4f6a0986f1227358efc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query if it is disabled for copy meeting url.  <a href="#ad3c167c2120a4f6a0986f1227358efc0">More...</a><br /></td></tr>
+<tr class="separator:ad3c167c2120a4f6a0986f1227358efc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76f16480e64bd6b53db0d9664980c31"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_mobile_r_t_c_meeting_settings.html#af76f16480e64bd6b53db0d9664980c31">disableCopyMeetingUrl:</a></td></tr>
+<tr class="memdesc:af76f16480e64bd6b53db0d9664980c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set to disable copy meeting url.  <a href="#af76f16480e64bd6b53db0d9664980c31">More...</a><br /></td></tr>
+<tr class="separator:af76f16480e64bd6b53db0d9664980c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -336,6 +342,27 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
 
 </div>
 </div>
+<a id="ad3c167c2120a4f6a0986f1227358efc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3c167c2120a4f6a0986f1227358efc0">&#9670;&nbsp;</a></span>copyMeetingUrlDisabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) copyMeetingUrlDisabled </td>
+          <td></td>
+          <td class="paramname"></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Query if it is disabled for copy meeting url. </p>
+<dl class="section return"><dt>Returns</dt><dd>YES means disabled, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The function only for Zoom UI. </dd></dl>
+
+</div>
+</div>
 <a id="ad24f37722aa491c5e74b3564b1a957fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad24f37722aa491c5e74b3564b1a957fa">&#9670;&nbsp;</a></span>disableCallIn:()</h2>
 
@@ -414,6 +441,33 @@ BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="inte
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>YES means confidential watermark is disable, otherwise not. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The function only for Zoom UI. </dd></dl>
+
+</div>
+</div>
+<a id="af76f16480e64bd6b53db0d9664980c31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af76f16480e64bd6b53db0d9664980c31">&#9670;&nbsp;</a></span>disableCopyMeetingUrl:()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (void) disableCopyMeetingUrl: </td>
+          <td></td>
+          <td class="paramtype">(BOOL)&#160;</td>
+          <td class="paramname"><em>disabled</em></td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set to disable copy meeting url. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">disabled</td><td>The option value. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section warning"><dt>Warning</dt><dd>The function only for Zoom UI. </dd></dl>
 
 </div>
