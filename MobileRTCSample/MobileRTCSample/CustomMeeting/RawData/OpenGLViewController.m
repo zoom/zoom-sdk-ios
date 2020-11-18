@@ -83,6 +83,7 @@
     self.audioRawDataSaveSandboxHelper = nil;
     
     [self.processor cleanVideoCapturePreProcessor];
+    self.processor = nil;
     [super dealloc];
 }
 

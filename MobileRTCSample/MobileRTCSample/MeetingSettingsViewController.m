@@ -19,6 +19,7 @@
 @property (retain, nonatomic) UITableViewCell *galleryViewCell;
 @property (retain, nonatomic) UITableViewCell *videoPreviewCell;
 @property (retain, nonatomic) UITableViewCell *virtualBackgroundCell;
+@property (retain, nonatomic) UITableViewCell *copyMeetingUrlCell;
 
 @property (retain, nonatomic) UITableViewCell *callInCell;
 @property (retain, nonatomic) UITableViewCell *callOutCell;
@@ -110,6 +111,7 @@
     [disableArray addObject:[self galleryViewCell]];
     [disableArray addObject:[self videoPreviewCell]];
     [disableArray addObject:[self virtualBackgroundCell]];
+    [disableArray addObject:[self copyMeetingUrlCell]];
     [array addObject:disableArray];
     
     NSMutableArray *enableArray = [NSMutableArray array];
@@ -353,6 +355,31 @@
         }
         
         return _virtualBackgroundCell;
+    }
+}
+
+- (UITableViewCell*)copyMeetingUrlCell
+{
+    {
+        MobileRTCMeetingSettings *settings = [[MobileRTC sharedRTC] getMeetingSettings];
+        if (!settings)
+            return nil;
+        
+        BOOL disabled = [settings copyMeetingUrlDisabled];
+        
+        if (!_copyMeetingUrlCell)
+        {
+            _copyMeetingUrlCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+            _copyMeetingUrlCell.selectionStyle = UITableViewCellSelectionStyleNone;
+            _copyMeetingUrlCell.textLabel.text = NSLocalizedString(@"Disable Copy Meeting Url", @"");
+            
+            UISwitch *sv = [[UISwitch alloc] initWithFrame:CGRectZero];
+            [sv setOn:disabled animated:NO];
+            [sv addTarget:self action:@selector(onDisableCopyMeetinUrl:) forControlEvents:UIControlEventValueChanged];
+            _copyMeetingUrlCell.accessoryView = sv;
+        }
+        
+        return _copyMeetingUrlCell;
     }
 }
 
@@ -1014,6 +1041,12 @@
 {
     UISwitch *sv = (UISwitch*)sender;
     [self.settingPresenter onDisableVirtualBackground:sv.on];
+}
+
+- (void)onDisableCopyMeetinUrl:(id)sender
+{
+    UISwitch *sv = (UISwitch*)sender;
+    [self.settingPresenter onDisableCopyMeetinUrl:sv.on];
 }
 
 - (void)onDisableCallIn:(id)sender

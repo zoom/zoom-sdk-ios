@@ -252,4 +252,18 @@
 }
 #endif
 
+#if 0
+- (void)onSubscribeUserFail:(NSInteger)errorCode size:(NSInteger)size userId:(NSUInteger)userId
+{
+    NSLog(@"onSubscribeUserFail: %@ size:%@ userId:%@",@(errorCode),@(size),@(userId));
+}
+#endif
+- (void)onSinkMeetingUserRaiseHand:(NSUInteger)userID {
+    NSLog(@"onSinkMeetingUserRaiseHand==%@", @(userID));
+}
+
+- (void)onSinkMeetingUserLowerHand:(NSUInteger)userID {
+    NSLog(@"onSinkMeetingUserLowerHand==%@", @(userID));
+}
+
 @end

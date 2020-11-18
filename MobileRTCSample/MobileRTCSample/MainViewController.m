@@ -14,7 +14,7 @@
 
 //#define kEnableSMSService
 
-@interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate,MobileRTCMeetingShareActionItemDelegate
+@interface MainViewController ()<UIAlertViewDelegate, UIActionSheetDelegate, MobileRTCMeetingServiceDelegate,MobileRTCMeetingShareActionItemDelegate,MobileRTCDirectShareServiceDelegate
 #if kEnableSMSService
 , MobileRTCSMSServiceDelegate
 #endif
@@ -299,8 +299,15 @@
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Zoom Meeting", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
                 [self startMeeting:NO];
             }]];
-        }
-        
+#if __IPHONE_12_0 && !TARGET_OS_SIMULATOR
+            if ([[[MobileRTC sharedRTC] getDirectShareService] canStartDirectShare]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Direct Share", @"") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                    [[[MobileRTC sharedRTC] getDirectShareService] startDirectShare];
+                    [[MobileRTC sharedRTC] getDirectShareService].delegate = self;
+                }]];
+            }
+#endif
+         }
         [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         }]];
         
@@ -529,6 +536,61 @@
     NSLog(@"verify sms result %@", @(result));
 }
 #endif
+
+
+#if __IPHONE_12_0 && !TARGET_OS_SIMULATOR
+
+- (void)onDirectShareStatusUpdate:(MobileRTCDirectShareStatus)status handler:(MobileRTCDirectShareViaMeetingIDOrPairingCodeHandler  *_Nullable)handler
+{
+    NSLog(@"onDirectShareStatusUpdate--->%@ handler--->%@",@(status), handler);
+    switch (status) {
+        case MobileRTCDirectShareStatus_Connecting:
+            // show connecting progress view on sample
+            break;
+        case MobileRTCDirectShareStatus_In_Direct_Share_Mode:
+            // hide connecting progress view on sample
+            break;
+        case MobileRTCDirectShareStatus_Ended:
+            [[[MobileRTC sharedRTC] getDirectShareService] stopDirectShare];
+            break;
+        case MobileRTCDirectShareStatus_Need_MeetingID_Or_PairingCode:
+        {
+            // hide connecting progress view on sample
+            
+            // input meetingID or pairingCode
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:@"Please input the meeting number or pairingCode" preferredStyle:UIAlertControllerStyleAlert];
+           
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = @"meeting number or pairingCode";
+                textField.text = @"";
+            }];
+            
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                BOOL stopDirectShare = [[[MobileRTC sharedRTC] getDirectShareService] stopDirectShare];
+                NSLog(@"stopDirectShare==>%@", @(stopDirectShare));
+            }]];
+
+            [alertController addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action){
+                if (handler) {
+                    [handler TryWithMeetingNumber:alertController.textFields.firstObject.text];
+                }
+            }]];
+
+            [self presentViewController:alertController animated:true completion:nil];
+            [alertController release];
+        }
+            break;
+        case MobileRTCDirectShareStatus_WrongMeetingID_Or_SharingKey:
+            // hide connecting progress view
+            // sample show tips
+            break;
+        default:
+            break;
+    }
+}
+
+#endif
+
 @end
 
 

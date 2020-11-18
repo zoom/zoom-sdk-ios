@@ -24,6 +24,8 @@
 
 - (void)onDisableVirtualBackground:(BOOL)disabled;
 
+- (void)onDisableCopyMeetinUrl:(BOOL)disabled;
+
 - (void)disableCallIn:(BOOL)disabled;
 
 - (void)disableCallOut:(BOOL)disabled;

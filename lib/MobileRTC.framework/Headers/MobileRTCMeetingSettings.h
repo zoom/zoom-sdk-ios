@@ -395,4 +395,18 @@
 @warning The function only for Zoom UI.
 */
 - (BOOL)disableConfidentialWatermark:(BOOL)disable;
+
+/*!
+@brief Query if it is disabled for copy meeting url.
+@return YES means disabled, otherwise not.
+@warning The function only for Zoom UI.
+*/
+- (BOOL)copyMeetingUrlDisabled;
+
+/*!
+@brief Set to disable copy meeting url.
+@param disabled The option value.
+@warning The function only for Zoom UI.
+*/
+- (void)disableCopyMeetingUrl:(BOOL)disabled;
 @end

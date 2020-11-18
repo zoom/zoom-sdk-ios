@@ -1,5 +1,85 @@
 # CHANGELOG
 
+## 2020-11-17 @ v5.2.42037.1112
+
+## Added:
+* Added new feature for supporting language interpreters within meetings. For info about this feature, please visit: https://support.zoom.us/hc/en-us/articles/360034919791-Language-interpretation-in-meetings-and-webinars  The new interfaces can be found in `MobileRTCMeetingService+Interpretation.h`:
+```  
+@interface MobileRTCInterpretationLanguage : NSObject
+  - (NSInteger)getLanguageID;
+  - (NSString * _Nullable)getLanguageAbbreviations;
+  - (NSString * _Nullable)getLanguageName;
+  @end
+
+  @interface MobileRTCMeetingInterpreter : NSObject
+  - (NSInteger)getUserID;
+  - (NSInteger)getLanguageID1;
+  - (NSInteger)getLanguageID2;
+  - (BOOL)isAvailable;
+  @end
+```
+
+  * Added the following members to `MobileRTCMeetingService`:
+      * `- (BOOL)isInterpretationEnabled;`
+      * `- (BOOL)isInterpretationStarted;`
+      * `- (BOOL)isInterpreter;`
+      * `- (MobileRTCInterpretationLanguage * _Nullable)getInterpretationLanguageByID:(NSInteger)lanID;`
+      * `- (NSArray <MobileRTCInterpretationLanguage *> * _Nullable)getAllLanguageList;`
+      * `- (NSArray <MobileRTCMeetingInterpreter *> * _Nullable)getInterpreterList;`
+      * `- (BOOL)addInterpreter:(NSUInteger)userID lan1:(NSInteger)lanID1 andLan2:(NSInteger)lanID2;`
+      * `- (BOOL)removeInterpreter:(NSUInteger)userID; `
+      * `- (BOOL)modifyInterpreter:(NSUInteger)userID lan1:(NSInteger)lanID1 andLan2:(NSInteger)lanID2;`
+      * `- (BOOL)startInterpretation;`
+      * `- (BOOL)stopInterpretation;`
+      * `- (NSArray <MobileRTCInterpretationLanguage *> * _Nullable)getAvailableLanguageList;`
+      * `- (BOOL)joinLanguageChannel:(NSInteger)lanID;`
+      * `- (NSInteger)getJoinedLanguageID;`
+      * `- (BOOL)turnOffMajorAudio;`
+      * `- (BOOL)turnOnMajorAudio;`
+      * `- (BOOL)isMajorAudioTurnOff;`
+      * `- (NSArray <MobileRTCInterpretationLanguage *> * _Nullable)getInterpreterLans;`
+      * `- (BOOL)setInterpreterActiveLan:(NSInteger)activeLanID;`
+      * `- (NSInteger)getInterpreterActiveLan;`
+
+  * Added new delegate for language interpretation callbacks:
+      ```
+      @protocol MobileRTCInterpretationServiceDelegate <MobileRTCMeetingServiceDelegate>
+      - (void)onInterpretationStart;
+      - (void)onInterpretationStop;
+      - (void)onInterpreterListChanged;
+      - (void)onInterpreterRoleChanged:(NSUInteger)userID isInterpreter:(BOOL)isInterpreter;
+      - (void)onInterpreterActiveLanguageChanged:(NSInteger)userID activeLanguageId:(NSInteger)activeLanID;
+      - (void)onInterpreterLanguageChanged:(NSInteger)lanID1 andLanguage2:(NSInteger)lanID2;
+      - (void)onAvailableLanguageListUpdated:(NSArray <MobileRTCInterpretationLanguage *> *_Nullable)availableLanguageList;
+      ```
+
+* Added new interface to support Direct Share. For info about this feature, please visit: https://support.zoom.us/hc/en-us/articles/214629303-Direct-sharing-in-Zoom-Rooms
+  The new interface can be found in `MobileRTCDirectShareService.h`:
+  * `- (BOOL)TryWithMeetingNumber:(NSString *_Nonnull)meetingNumber;`
+  * `- (BOOL)TryWithPairingCode:(NSString *_Nonnull)pairingCode;`
+  * `- (BOOL)cancel;`
+  * `- (void)onDirectShareStatusUpdate:(MobileRTCDirectShareStatus)status handler:(MobileRTCDirectShareViaMeetingIDOrPairingCodeHandler  *_Nullable)handler;`
+  * `- (BOOL)canStartDirectShare;`
+  * `- (BOOL)isDirectShareInProgress;`
+  * `- (BOOL)startDirectShare;`
+  * `- (BOOL)stopDirectShare;`
+
+* Added new members to disable copying Zoom URL when long pressing meeting ID
+  The new members were added in `MobileRTCMeetingSettings.h`:
+  * `- (BOOL)copyMeetingUrlDisabled;`
+  * `- (void)disableCopyMeetingUrl:(BOOL)disabled;`
+
+* Added new callback to notify the end-user that their video subscription failed when using Custom Meeting UI
+  The interface in MobileRTCMeetingDelegate.h:
+  * `- (void)onSubscribeUserFail:(NSInteger)errorCode size:(NSInteger)size userId:(NSUInteger)userId;`
+* Updated current enums to be NSEnums.
+
+## Changed & Fixed:
+* Fixed an issue that the `raiseMyHand` or `lowerHand` is not working properly when in a webinar.
+* Fixed an issue that the userID provided in the callback is incorrect when leaving the waiting room.
+* Fixed an issue that not setting the appGroupId while initializing the SDK results in crash
+* Fixed an issue that the SDK crashes when running on the devices that are iOS 9 or lower.
+
 ## 2020-10-22 @ v5.2.41739.1022
 
 ## Changed & Fixed:

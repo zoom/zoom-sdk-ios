@@ -76,7 +76,11 @@
 
 - (void)pullRunloop
 {
-    NSString *lpath = [[NSBundle mainBundle] pathForResource:@"640x480_2" ofType:@"yuv"];
+    NSString *lpath = [[NSBundle mainBundle] pathForResource:@"zoom_640X480" ofType:@"yuv"];
+    if (lpath.length == 0) {
+        NSLog(@"lpath = nil");
+        return;
+    }
     NSURL *fileUrl = [NSURL fileURLWithPath:lpath];
     NSString *path = fileUrl.path;
     if (path.length == 0) {

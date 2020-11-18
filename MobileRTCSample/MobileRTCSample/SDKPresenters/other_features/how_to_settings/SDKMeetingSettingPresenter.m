@@ -45,6 +45,11 @@
     [[[MobileRTC sharedRTC] getMeetingSettings] disableVirtualBackground:disabled];
 }
 
+- (void)onDisableCopyMeetinUrl:(BOOL)disabled
+{
+    [[[MobileRTC sharedRTC] getMeetingSettings] disableCopyMeetingUrl:disabled];
+}
+
 - (void)disableCallIn:(BOOL)disabled
 {
     [[[MobileRTC sharedRTC] getMeetingSettings] disableCallIn:disabled];

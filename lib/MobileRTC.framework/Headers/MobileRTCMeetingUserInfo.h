@@ -31,14 +31,14 @@
 /*!
  @brief An Enum for Audio Type.
  */
-typedef enum {
+typedef NS_ENUM(NSUInteger, MobileRTCAudioType) {
     ///VoIP
     MobileRTCAudioType_VoIP   = 0,
     ///Telephony
     MobileRTCAudioType_Telephony,
     ///None
     MobileRTCAudioType_None,
-}MobileRTCAudioType;
+};
 /*!
  @class MobileRTCVideoStatus
  @brief The object of the audio status of the current user in the meeting. 
@@ -59,7 +59,7 @@ typedef enum {
 
 @end
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, MobileRTCFeedbackType) {
 	/*!
 	 @brief There is no feedback from user.
 	 */
@@ -108,7 +108,7 @@ typedef enum {
 	 @brief Other expression.
 	 */
     MobileRTCFeedbackType_Emoji,
-}MobileRTCFeedbackType;
+};
 
 /*!
  @brief The information of the current user in the meeting.

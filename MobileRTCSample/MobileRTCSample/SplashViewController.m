@@ -27,6 +27,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.logoImageView];
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onViewClicked:)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+- (void)onViewClicked:(id)sender {
+    [[[MobileRTC sharedRTC] getMeetingService] showMeetingControlBar];
 }
 
 - (void)didReceiveMemoryWarning {

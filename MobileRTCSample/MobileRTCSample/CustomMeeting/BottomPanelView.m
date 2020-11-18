@@ -17,6 +17,9 @@
 #import "CameraCaptureAdapter.h"
 #import "SendPictureAdapter.h"
 #import "SendYUVAdapter.h"
+#import "SelectLanguageViewController.h"
+#import "ManageLanInterpreViewController.h"
+#import "InterpreterLanguageSelectViewController.h"
 
 @interface BottomPanelView ()
 @property (strong, nonatomic)  CAGradientLayer      *gradientLayer;
@@ -37,6 +40,7 @@
 @property (nonatomic,strong) SendYUVAdapter     *yuvAdapter;
 
 @property (nonatomic, strong) MobileRTCVideoSourceHelper *videoSourceHelper;
+@property (nonatomic, assign) BOOL isRaiseHand;
 @end
 
 @implementation BottomPanelView
@@ -282,6 +286,51 @@
             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil
                                                                                      message:nil
                                                                               preferredStyle:UIAlertControllerStyleActionSheet];
+            if (![[[MobileRTC sharedRTC] getMeetingService] isMeetingHost]
+                && ![[[MobileRTC sharedRTC] getMeetingService] isInterpreter]
+                && [[[MobileRTC sharedRTC] getMeetingService] isInterpretationStarted]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Select Language"
+                  style:UIAlertActionStyleDefault
+                handler:^(UIAlertAction *action) {
+                    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+                    SelectLanguageViewController *VC = [[SelectLanguageViewController alloc] init];
+                    VC.currentLanID = [[[MobileRTC sharedRTC] getMeetingService] getJoinedLanguageID];
+                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
+                    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+                    [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];
+                }]];
+            }
+            
+            
+            if ([[[MobileRTC sharedRTC] getMeetingService] isMeetingHost]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Manage LanInterpre"
+                                                                        style:UIAlertActionStyleDefault
+                                                                        handler:^(UIAlertAction *action) {
+                                                                            AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+                                                                            ManageLanInterpreViewController *VC = [[ManageLanInterpreViewController alloc] init];
+                                                                            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
+                                                                            nav.modalPresentationStyle = UIModalPresentationFullScreen;
+                                                                            [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];
+                                                                        }]];
+            }
+            
+            if ([[[MobileRTC sharedRTC] getMeetingService] isInterpreter]
+                && [[[MobileRTC sharedRTC] getMeetingService] isInterpretationStarted]) {
+                [alertController addAction:[UIAlertAction actionWithTitle:@"Interpreter Language Select"
+                  style:UIAlertActionStyleDefault
+                handler:^(UIAlertAction *action) {
+                    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+
+                    InterpreterLanguageSelectViewController *VC = [[InterpreterLanguageSelectViewController alloc] init];
+                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:VC];
+                    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+                    [[appDelegate topViewController] presentViewController:nav animated:YES completion:NULL];
+                }]];
+            }
+            
+            
             if ([[[MobileRTC sharedRTC] getMeetingService] isQAEnabled]) {
                 [alertController addAction:[UIAlertAction actionWithTitle:@"QA"
                                                                     style:UIAlertActionStyleDefault
@@ -430,6 +479,14 @@
                     
                 }
             }
+            
+            NSString *raiseHandString = _isRaiseHand ? @"Lower My Hand" : @"Raise My Hand";
+            [alertController addAction:[UIAlertAction actionWithTitle:raiseHandString
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction *action) {
+                                                                _isRaiseHand ? [ms lowerHand:[ms myselfUserID]] : [ms raiseMyHand];
+                                                                _isRaiseHand = !_isRaiseHand;
+                                                            }]];
             
             [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
             }]];

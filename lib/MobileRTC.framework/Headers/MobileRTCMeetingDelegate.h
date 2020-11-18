@@ -14,6 +14,7 @@
 #import "MobileRTCVideoSender.h"
 #import "MobileRTCVideoCapabilityItem.h"
 
+@class MobileRTCInterpretationLanguage;
 #pragma mark - MobileRTCMeetingServiceDelegate
 /*!
  @protocol MobileRTCMeetingServiceDelegate
@@ -22,14 +23,6 @@
 @protocol MobileRTCMeetingServiceDelegate <NSObject>
 
 @optional
-/*!
- @brief Specified Meeting Response.
- @param error Internal error code.
- @param internalError Internal error code.
- @waring This callback has been deprecated, please use - (void)onMeetingError:(MobileRTCMeetError)error message:(NSString*)message instead. 
- */
-//- (void)onMeetingReturn:(MobileRTCMeetError)error internalError:(NSInteger)internalError;
-
 /*!
  @brief Specified Meeting Errors.
  @param error Internal error code.
@@ -267,6 +260,15 @@
 @warning only normal meeting(non webinar meeting) can get the callback.
 */
 - (void)onSinkAttendeeChatPriviledgeChanged:(MobileRTCMeetingChatPriviledgeType)currentPrivilege;
+
+/*!
+@brief Callback when subscribe fail.
+@param errorCode errorCode.
+@param size subscribe size.
+@param userId subscribe userId.
+@warning the call back only for Custom UI Mode.
+*/
+- (void)onSubscribeUserFail:(NSInteger)errorCode size:(NSInteger)size userId:(NSUInteger)userId;
 @end
 
 #pragma mark - MobileRTCAudioServiceDelegate
@@ -475,6 +477,59 @@
  @param userID New size of the shared content and UserID
  */
 - (void)onSinkShareSizeChange:(NSUInteger)userID;
+
+@end
+
+#pragma mark - MobileRTCInterpretationServiceDelegate
+/*!
+ @protocol MobileRTCInterpretationServiceDelegate
+ @brief Callback event when the Interpretaion status change.
+ */
+@protocol MobileRTCInterpretationServiceDelegate <MobileRTCMeetingServiceDelegate>
+
+@optional
+
+/*!
+ @brief interpretation start callback. This function is used to inform the user interpretation has been started, and all users in meeting can get the event.
+*/
+- (void)onInterpretationStart;
+
+/*!
+ @brief interpretation stop callback. This function is used to inform the user interpretation has been stopped, and all users in meeting can get the event.
+*/
+- (void)onInterpretationStop;
+
+/*!
+ @brief interpreter list changed callback. when some interpreter leave meeting or preset interpreter join meeting, and only host can get the event.
+*/
+- (void)onInterpreterListChanged;
+
+/*!
+ @brief interpreter role changed callback. when a user's role changed(participant <-> interpreter), and all users in meeting can get the event.
+ @param userID Specify the user ID whose status changed.
+ @param isInterpreter Specify the user's role is interpreter or not.
+*/
+- (void)onInterpreterRoleChanged:(NSUInteger)userID isInterpreter:(BOOL)isInterpreter;
+
+/*!
+ @brief interpreter active language changed callback. when a interpreter's active language changed, and all users in meeting can get the event.
+ @param userID Specify the user ID whose active language changed.
+ @param activeLanID Specify the interpreter current active language id.
+*/
+- (void)onInterpreterActiveLanguageChanged:(NSInteger)userID activeLanguageId:(NSInteger)activeLanID;
+
+/*!
+ @brief interpreter languages changed callback. when a interpreter's languages changed, and only the interpreter can get the event.
+ @param lanID1 Specify the new language ID1.
+ @param lanID2 Specify the new language ID2.
+*/
+- (void)onInterpreterLanguageChanged:(NSInteger)lanID1 andLanguage2:(NSInteger)lanID2;
+
+/*!
+ @brief available languages changed callback. when available languages in meeting are changed, all non interpreter users in meeting can get the event.
+ @param availableLanguageList Specify the available languages list.
+*/
+- (void)onAvailableLanguageListUpdated:(NSArray <MobileRTCInterpretationLanguage *> *_Nullable)availableLanguageList;
 
 @end
 

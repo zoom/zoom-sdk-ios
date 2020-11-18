@@ -19,6 +19,7 @@
 #import <MobileRTC/MobileRTCMeetingService+Chat.h>
 #import <MobileRTC/MobileRTCMeetingService+Webinar.h>
 #import <MobileRTC/MobileRTCMeetingService+VirtualBackground.h>
+#import <MobileRTC/MobileRTCMeetingService+Interpretation.h>
 #import <MobileRTC/MobileRTCMeetingService+BO.h>
 #import <MobileRTC/MobileRTCMeetingSettings.h>
 #import <MobileRTC/MobileRTCInviteHelper.h>
@@ -37,6 +38,7 @@
 #import <MobileRTC/MobileRTCAudioRawDataHelper.h>
 #import <MobileRTC/MobileRTCVideoSourceHelper.h>
 #import <MobileRTC/MobileRTCSMSService.h>
+#import <MobileRTC/MobileRTCDirectShareService.h>
 
 /*!
  @brief MobileRTCSDKInitContext.
@@ -99,6 +101,7 @@
     MobileRTCWaitingRoomService     *_waitingRoomService;
     
     MobileRTCSMSService             *_smsService;
+    MobileRTCDirectShareService     *_directShareService;
     
     MobileRTCVideoSourceHelper      *_videoSourceHelper;
 }
@@ -228,6 +231,12 @@
  @return The MobileRTC sms service.
  */
 - (MobileRTCSMSService * _Nullable)getSMSService;
+
+/*!
+@brief Get the default MobileRTC direct share service.
+@return The MobileRTC direct share service.
+*/
+- (MobileRTCDirectShareService * _Nullable)getDirectShareService;
 
 /*!
  @brief Get the languages supported by MobileRTC.   
