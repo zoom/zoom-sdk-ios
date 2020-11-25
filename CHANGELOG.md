@@ -72,7 +72,10 @@
 * Added new callback to notify the end-user that their video subscription failed when using Custom Meeting UI
   The interface in MobileRTCMeetingDelegate.h:
   * `- (void)onSubscribeUserFail:(NSInteger)errorCode size:(NSInteger)size userId:(NSUInteger)userId;`
+
 * Updated current enums to be NSEnums.
+
+* Removed the watermark by default. If you wish to retain the Zoom watermark, please contact us via developersupport@zoom.us.
 
 ## Changed & Fixed:
 * Fixed an issue that the `raiseMyHand` or `lowerHand` is not working properly when in a webinar.
