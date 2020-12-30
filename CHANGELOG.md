@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## Obtaining SDK packages from Marketplace
+
+We are pleased to inform you that starting from v5.4.54520.1229, the Zoom SDK packages are moving to the Zoom App Marketplace. The packages are now available in the same location as your SDK Key & Secret. This change aims to provide you with a unified and seamless experience so that you can access the required SDK resources in one place. 
+
+If you have not used Zoom SDK before, please follow the steps in https://marketplace.zoom.us/docs/guides/build/sdk-app to create an SDK app on the Marketplace.
+
+If you already have an SDK app created, login to the **[Zoom App Marketplace](https://marketplace.zoom.us/)** using your developer account, click the **Manage** button on the top-right corner and locate your SDK app.
+<img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/mkt-01.png" style="margin:1vh 1vw;"/>
+
+Click on your SDK app, you can find the desired SDK packages from the **Download** tab
+<img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/mkt-02.png" style="margin:1vh 1vw;"/>
+
 ## 2020-11-17 @ v5.2.42037.1112
 
 ## Added:

@@ -1,6 +1,0 @@
-framework module MobileRTC {
-  umbrella header "MobileRTC.h"
-
-  export *
-  module * { export * }
-}

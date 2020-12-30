@@ -3,45 +3,22 @@
 <img src="https://s3.amazonaws.com/user-content.stoplight.io/8987/1541013063688" width="400px" max-height="400px" style="margin:auto;"/>
 </div>
 
+## Obtaining SDK packages from Marketplace
 
-> **The version in this repo is a device-only version. If you would like to use the version that supports both device and simulator, you can download the version (**ios-mobilertc-all-*.zip**) from the release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases)**
+We are pleased to inform you that starting from v5.4.54520.1229, the Zoom SDK packages are moving to the Zoom App Marketplace. The packages are now available in the same location as your SDK Key & Secret. This change aims to provide you with a unified and seamless experience so that you can access the required SDK resources in one place. 
 
-## Table of Contents  
-- [Latest SDK News](#latest-sdk-news)   
-- [Full Documentation && Community Support](#full-documentation-community-support)   
-- [What is Zoom iOS SDK?](#what-is-zoom-ios-sdk)   
-- [Disclaimer](#disclaimer)   
-- [Getting Started](#getting-started)   
-  - [Prerequisites](#prerequisites)   
-  - [Installing](#installing)   
-- [Running the tests](#running-the-tests)   
-- [Documentation](#documentation)   
-- [Navigating SDK sample files](#navigating-sdk-sample-files)   
-- [SDK Reference](#sdk-reference)   
-- [Versioning](#versioning)   
-- [Change log](#change-log)   
-- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)   
-- [Support](#support)   
-- [License](#license)   
-- [Acknowledgments](#acknowledgments)   
+If you have not used Zoom SDK before, please follow the steps in https://marketplace.zoom.us/docs/guides/build/sdk-app to create an SDK app on the Marketplace.
 
-## Latest SDK News
-1. MobileRTCScreenShareService now requires that the following frameworks need to be added to the Broadcast Extension target in addition to ReplayKit:
-      
-       * `CoreGraphics.framework`
-       * `CoreVideo.framework`
-       * `CoreMedia.framework`
-       * `VideoToolbox.framework`
-       
-2. MobileRTCScreenShareService also now requires that `SampleHandler.m` be `SampleHandler.mm`. If using swift instead, the linker flag -lc++ must be added to the Broadcast Extension’s build settings under “Other linker flags” 
+If you already have an SDK app created, login to the **[Zoom App Marketplace](https://marketplace.zoom.us/)** using your developer account, click the **Manage** button on the top-right corner and locate your SDK app.
+<img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/mkt-01.png" style="margin:1vh 1vw;"/>
 
-3. Starting from Client SDK 5.0, if you are using tokens to start a meeting, you will only need to retrieve ZAK from Zoom API. The user token has been deprecated. 
+Click on your SDK app, you can find the desired SDK packages from the **Download** tab
+<img src="https://s3-us-west-1.amazonaws.com/sdk.zoom.us/mkt-02.png" style="margin:1vh 1vw;"/>
 
-4. To follow with Zoom client's recent changes, Zoom SDK has temporary remove the "Unmute All" interface in Client SDK 5.0.
+## Previous Versions
 
-5. To align with Zoom’s [recent announcement](https://blog.zoom.us/wordpress/2020/04/22/zoom-hits-milestone-on-90-day-security-plan-releases-zoom-5-0/) pertaining to our security initiative, Zoom Client SDKs have added **AES 256-bit GCM encryption** support, which provides more protection for meeting data and greater resistance to tampering. **The system-wide account enablement of AES 256-bit GCM encryption will take place on June 01, 2020.** You are **strongly recommended** to start the required upgrade to this latest version 4.6.21666.0428 at your earliest convenience. Please note that any Client SDK versions below 4.6.21666.0428 will **no longer be operational** from June 01.
+If you are looking for the previous versions, please visit https://github.com/zoom/zoom-sdk-ios/releases
 
-6. New way to retrieve and to send SDK logs. Now you may use the "**Send Logs By Email**" feature to send email with logs for troubleshooting. Our demo app includes this feature, you may refer to the implementation in the demo app for your SDK app.
 
 ## Full Documentation && Community Support
 You can find the full Zoom iOS SDK documentation and the community support forum here:
@@ -65,120 +42,6 @@ Zoom SDK makes it easy to integrate Zoom with your iOS applications, and boosts 
 ## Disclaimer
 
 **Please be aware that all hard-coded variables and constants shown in the documentation and in the demo, such as Zoom Token, Zoom Access, Token, etc., are ONLY FOR DEMO AND TESTING PURPOSES. We STRONGLY DISCOURAGE the way of HARDCODING any Zoom Credentials (username, password, API Keys & secrets, SDK keys & secrets, etc.) or any Personal Identifiable Information (PII) inside your application. WE DON’T MAKE ANY COMMITMENTS ABOUT ANY LOSS CAUSED BY HARD-CODING CREDENTIALS OR SENSITIVE INFORMATION INSIDE YOUR APP WHEN DEVELOPING WITH OUR SDK**.
-
-## Getting Started
-
-The following instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-* For detailed instructions, please refer to our documentation website: [[https://marketplace.zoom.us/docs/sdk/native-sdks/iOS](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS)];
-* If you need support or assistance, please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/);
-
-### Prerequisites
-
-Before you try out our SDK, you would need the following to get started:
-
-* **A valid Zoom Account**: If you do not have one, you can sign up at [https://zoom.us/signup](https://zoom.us/signup) and then [create an SDK app on Marketplace](https://marketplace.zoom.us/docs/guides/build/sdk-app)
-* **An iOS device running iOS 8.0 or later**
-  * **[Note]**:**The examples downloaded from here only works on the real device. If you want to try it on iOS simulator, or on all architectures (x86_64, i386, etc.), please use the version (ios-mobilertc-all-*.zip) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);**
-
-### Installing
-
-Clone or download a copy of our SDK files from GitHub. After you unzipped the file, you should have the following folders:
-
-```
-├── CHANGELOG.md
-├── LICENSE.md
-├── [MobileRTCSample] <- Libraries and examples are inside
-├── README.md
-├── lib
-└── version.txt
-```
-Launch your **Xcode**, navigate to the "MobileRTCSample" folder, and open the MobileRTCSample.xcodeproj file.
-
-
-```
-├── MobileRTCSample
-├── MobileRTCSample.xcodeproj
-└── MobileRTCSampleScreenShare
-```
-
-We provide 2 examples for you:
- * **MobileRTCSample**: An iOS app that includes the implementation of different features in SDK.
- * **MobileRTCSampleScreenShare**: An iOS broadcast extension that enables screen sharing feature with ReplayKit.
-
-
-## Running the tests
-
-Connect your iOS device to your computer and simply press "Run" on selected example, the example will run on your device.
-
-
-## Documentation
-
-Please visit [[https://marketplace.zoom.us/docs/sdk/native-sdks/iOS](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS)] for details of each features and functions.
-
-## Navigating SDK sample files
-
-The following table provides the link to the implementation of each features in our demo app:
-
-| UI mode            | Feature                                                      | Corresponding sample files                                   |
-| ------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Essential features | SDK Initialization & Authentication                          | * [SDKInitPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_init_sdk/SDKInitPresenter.m) <br />* [SDKAuthPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_auth_sdk/SDKAuthPresenter.m) <br />* [SDKAuthPresenter+AuthDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_auth_sdk/SDKAuthPresenter%2BAuthDelegate.m) |
-|                    | Authenticate with Zoom REST API and start a meeting as API user | * [SDKStartJoinMeetingPresenter+RestApiuWithoutLoginUser.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/start_with_rest_api_user/SDKStartJoinMeetingPresenter%2BRestApiWithoutLoginUser.m) <br />* [SDKStartJoinMeetingPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/SDKStartJoinMeetingPresenter.m) |
-|                    | Login with email & password                                  | * [SDKAuthPresenter+Login.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_login_sdk/SDKAuthPresenter%2BLogin.m) <br />* [SDKAuthPresenter+AuthDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_auth_sdk/SDKAuthPresenter%2BAuthDelegate.m) |
-|                    | Login with SSO token                                         | * [SDKAuthPresenter+Login.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_login_sdk/SDKAuthPresenter%2BLogin.m) <br />* [SDKAuthPresenter+AuthDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_init_auth_sdk/how_to_auth_sdk/SDKAuthPresenter%2BAuthDelegate.m) |
-|                    | Start an instant meeting(For Logged-in user)                 | * [SDKStartJoinMeetingPresenter+LoginUser.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/start_with_login_user/SDKStartJoinMeetingPresenter%2BLoginUser.m) <br />* [SDKStartJoinMeetingPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/SDKStartJoinMeetingPresenter.m) |
-|                    | Join a meeting                                               | * [SDKStartJoinMeetingPresenter+JoinMeetingOnly.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/join_meeting/SDKStartJoinMeetingPresenter%2BJoinMeetingOnly.m) <br />* [SDKStartJoinMeetingPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_start_join_meeting/SDKStartJoinMeetingPresenter.m) |
-|                    | Schedule a meeting (For logged-in user)                      | * [SDKScheduleMeetingPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/other_features/schedule_meeting_for_login_user/SDKScheduleMeetingPresenter.m) <br />* [SDKAuthPresenter+PremeetingDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/other_features/schedule_meeting_for_login_user/SDKAuthPresenter%2BPremeetingDelegate.m) |
-|                    | Meeting callbacks                                            | * [SDKStartJoinMeetingPresenter+AudioServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BAudioServiceDelegate.m) <br />* [SDKStartJoinMeetingPresenter+CustomizedUIMeetingDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BCustomizedUIMeetingDelegate.m) <br />* [SDKStartJoinMeetingPresenter+MeetingServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BMeetingServiceDelegate.m) <br />* [SDKStartJoinMeetingPresenter+ShareServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BShareServiceDelegate.m) <br />* [SDKStartJoinMeetingPresenter+UserServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BUserServiceDelegate.m) <br />* [SDKStartJoinMeetingPresenter+VideoServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BVideoServiceDelegate.m) <br />* [SDKStartJoinMeetingPresenter+WebinarServiceDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/meeting_callback/SDKStartJoinMeetingPresenter%2BWebinarServiceDelegate.m) |
-|                    | Settings                                                     | * [SDKMeetingSettingPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/other_features/how_to_settings/SDKMeetingSettingPresenter.m) |
-|                    | Invitation                                                   | * [InviteViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/InviteViewController.m) |
-| Custom UI          | Audio                                                        | * [SDKAudioPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/how_to_use_customized_inmeeting_ui/how_to_use_customized_audio/SDKAudioPresenter.m) |
-|                    | Video                                                        | * [SDKVideoPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/how_to_use_customized_inmeeting_ui/how_to_use_customized_video/SDKVideoPresenter.m) |
-|                    | Share                                                        | * [SDKSharePresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/how_to_use_customized_inmeeting_ui/how_to_use_customized_share/SDKSharePresenter.m) |
-|                    | In-Meeting Action                                            | * [SDKActionPresenter.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/SDKPresenters/how_to_use_inmeeting_function/how_to_use_customized_inmeeting_ui/how_to_use_inmeeting_actions/SDKActionPresenter.m) |
-|                    | Basic UI view                                                | * [CustomMeetingViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/CustomMeetingViewController.m) <br />* [CustomMeetingViewController+MeetingDelegate.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/CustomMeetingViewController%2BMeetingDelegate.m) |
-|                    | Top Panel                                                    | * [TopPanelView.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/TopPanelView.m) |
-|                    | Bottom Panel                                                 | * [BottomPanelView.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/BottomPanelView.m) |
-|                    | Video View                                                   | * [VideoViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/VideoViewController.m) |
-|                    | Thumb View                                                   | * [ThumbView.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/ThumbView.m) <br />* [ThumbTableViewCell.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/ThumbTableViewCell.m) |
-|                    | Share View                                                   | * [RemoteShareViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/RemoteShareViewController.m) <br />* [LocalShareViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/LocalShareViewController.m) |
-|                    | QA View                                                      | * [QAListVewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/QAListViewController.m) <br />* [QAListTableViewCell.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/QAListTableViewCell.m) |
-|                    | Remote Control                                               | * [CustomRemoteControl.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/CustomRemoteControl.m) |
-|                    | Breakout Room                                                | * [BOMeetingViewController.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/BOMeetingViewController.m) |
-|                    | Annotation Bar                                               | * [AnnoFloatBarView.m](https://github.com/zoom/zoom-sdk-ios/blob/master/MobileRTCSample/MobileRTCSample/CustomMeeting/AnnoFloatBarView.m) |
-
-## SDK Reference
-
-You may find the SDK interface reference at [https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/sdk-reference](https://marketplace.zoom.us/docs/sdk/native-sdks/iOS/sdk-reference).
-If you would like to get a local copy of the SDK reference, you may [download it here](https://github.com/zoom/zoom-sdk-ios/archive/gh-pages.zip).
-
-## Versioning
-
-For the versions available, see the [tags on this repository](https://github.com/zoom/zoom-sdk-ios/tags).
-
-## Change log
-
-Please refer to our [CHANGELOG](CHANGELOG.md) for all changes.
-
-## Frequently Asked Questions (FAQ)
-
-* :one: The iOS SDK is written in 
-
-*  `dyld: Library not loaded: /usr/lib/libstdc++.6.dylib`:
-  * libstdc++ is deprecated for 5+ years, Apple removes it in XCode 10. This issue has been resolved since release version v4.1.34076.1024.
-* :two: `dyld: Library not loaded: MobileRTC.framework/MobileRTC`:
-  * Our **iOS SDK** is a **dynamic library**, please import the **MobileRTC.framework** into:
-    * **Link Binary With Libraries**
-    * **Embedded Binaries**
-* :three: `d:undefined symbols for architecture x86_64`:
-  * The examples downloaded from here only works on real device. If you want to try it on **iOS simulator**, or on all architectures (**x86_64, i386, etc.**) , please use the version (**ios-mobilertc-all-*.zip**) from release page: [https://github.com/zoom/zoom-sdk-ios/releases](https://github.com/zoom/zoom-sdk-ios/releases);
-* :four: `Unsupported Architecture. Your executable contains unsupported architecture '[x86_64, i386]`
-  * As the answer on StackOverflow([https://stackoverflow.com/questions/42641806/check-and-remove-unsupported-architecture-x86-64-i386-in-ipa-archive](https://stackoverflow.com/questions/42641806/check-and-remove-unsupported-architecture-x86-64-i386-in-ipa-archive)) says:
-> Apple has started complaining if app contains simulator architectures during distribution.
-
-  So if you are going to publish your application through App Store, please use the **device-only** version(which is the version in the master branch of our Github repo or the one you downloaded from our SDK documentation).
-  
-* Not finding what you want? We are here to help! Please visit our [Zoom Developer Community Forum](https://devforum.zoom.us/) for further assistance.
-
 
 ## Support
 
